@@ -1,0 +1,171 @@
+/* =========================
+   DESIGN SYSTEM
+========================= */
+:root{
+    /* Font Family */
+    --font-main:'Pretendard',sans-serif;
+
+    /* 디바이스 별 글씨 크기 기준 */
+    --fs-pc:16px;
+    --fs-pad:14px;
+    --fs-mo:12px;
+
+    /* 행간 */
+    --lh1:1.2;
+    --lh2:1.45;
+
+    /* 태그 글씨 크기 */
+    --fs-h4:1.25rem;
+    --fs-h3:1.5625rem;
+    --fs-h2:1.9531rem;
+    --fs-h1:2.4414rem;
+    --fs-body1:1rem;
+    --fs-body2:0.85rem;
+    --fs-detail:0.7225rem;
+
+    /* 글씨 두께 */
+    --fw1:400;
+    --fw2:700;
+
+    /* 여백 */
+    --space-3x-large:6rem;
+    --space-2x-large:3rem;
+    --space-x-large:2rem;
+    --space-normal:1rem;
+    --space-x-small:0.5rem;
+    --space-2x-small:0.25rem;
+
+    /* Skin Ivory */
+    --ivory-0:#FFF4D1;
+    --ivory-100:#FEEAAA;
+    --ivory-200:#FCE085;
+    --ivory-300:#FAD765;
+    --ivory-400:#F6CE4B;
+    --ivory-500:#F0C537;
+    --ivory-600:#EABD29;
+    --ivory-700:#E1B41F;
+    --ivory-800:#D7AA18;
+    --ivory-900:#CCA114;
+
+    /* Gray */
+    --gray-0:#FAFAFA;
+    --gray-100:#F6F6F6;
+    --gray-200:#EEEEEE;
+    --gray-300:#E2E2E2;
+    --gray-400:#D1D1D1;
+    --gray-500:#BABABA;
+    --gray-600:#9B9B9B;
+    --gray-700:#757575;
+    --gray-800:#484848;
+    --gray-900:#1A1A1A;
+
+    /* Semantic Color */
+    --success:#00FF6A;
+    --warning:#FF9500;
+    --error:#FF0000;
+    --info:#30BDD5;
+    --point:#A31E1E;
+
+    /* Base Color */
+    --white:#FFFFFF;
+    --black:#000000;
+
+    /* Layout */
+    --content-width:1620px;
+}
+
+/* =========================
+   BASE
+========================= */
+h1{font-size: var(--fs-h1);}
+h2{font-size: var(--fs-h2);}
+h3{font-size: var(--fs-h3);}
+h4{font-size: var(--fs-h4);}
+p{line-height: var(--lh2);}
+
+html{
+    font-size:var(--fs-pc);
+    font-family: 'Pretendard',sans-serif;
+    font-weight: var(--fw1);
+    color:var(--gray-900);
+}
+body{
+    width: 1920px;
+}
+main{
+    margin: 0 auto;
+}
+
+/* =========================
+   COMMON
+========================= */
+.common-frame{
+    width:100%;
+    max-width:var(--content-width);
+    margin:0 auto;
+    padding:0 var(--space-3x);
+    box-sizing:border-box;
+}
+.title-1{font-weight:var(--fw-bold);}
+
+.desc-1{
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    overflow:hidden;
+    color:var(--gray-700);
+}
+
+.title{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:var(--space-xl);
+    margin-bottom:var(--space-2xl);
+    text-align:center;
+    color:var(--gray-800);
+}
+
+.title h1{font-weight:var(--fw-bold);}
+
+.title span{
+    width:16px;
+    height:2px;
+    background:var(--gray-800);
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width:1024px){
+    main{
+        margin-top: 5rem;
+    }
+    .pc{display: none;}
+    .pad{display: block;}
+    .mo{display: none;}
+    html{
+        font-size:var(--fs-pad);
+    }
+    .common-frame{
+        padding:0 var(--space-x-large);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width:768px){
+    .pc{display: none;}
+    .pad{display: none;}
+    .mo{display: block;}
+    html{
+        font-size: var(--fs-mo);
+    }
+    .common-frame{
+        padding:0 var(--space-normal);
+    }
+    .grid-list {
+        grid-template-columns: repeat(2,minmax(50px,1fr));
+    }
+}

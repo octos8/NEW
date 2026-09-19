@@ -1,0 +1,243 @@
+/* =========================
+POSTER
+========================= */
+.poster-section{
+    position:relative;
+    width:100%;
+    padding:6rem 0 10rem;
+    overflow:hidden;
+}
+
+.poster-inner{
+    position:relative;
+}
+
+/* TITLE */
+.poster-heading{
+    width:100%;
+    padding-left:47%;
+    margin-bottom:7rem;
+}
+
+.poster-heading h2{
+    margin:0;
+    font-size:6.875rem;
+    font-weight:var(--fw2);
+    line-height:1;
+    letter-spacing:-.04em;
+    color:var(--gray-900);
+}
+
+.poster-heading p{
+    margin-top:2rem;
+    font-size:1.875rem;
+    line-height:var(--lh2);
+    color:var(--gray-900);
+}
+
+/* DECORATIVE POSTER */
+.poster-item:first-child .poster-content>span{
+    position:absolute;
+    top:12rem;
+    right:0;
+    z-index:-1;
+    font-size:23rem;
+    font-weight:var(--fw2);
+    line-height:1;
+    letter-spacing:-.06em;
+    color:var(--gray-100);
+    pointer-events:none;
+}
+
+/* POSTER LIST */
+.poster-list{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+}
+
+.poster-item{
+    position:relative;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    align-items:center;
+    min-height:46.875rem;
+}
+
+.poster-item figure{
+    width:31.25rem;
+    height:46.875rem;
+    margin:0;
+    overflow:hidden;
+}
+
+.poster-item figure img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* 1,3 LEFT IMAGE */
+.poster-item:nth-child(odd) figure{
+    justify-self:start;
+}
+
+.poster-item:nth-child(odd) .poster-content{
+    justify-self:end;
+}
+
+/* 2,4 RIGHT IMAGE */
+.poster-item:nth-child(even) figure{
+    justify-self:end;
+}
+
+.poster-item:nth-child(even) .poster-content{
+    justify-self:start;
+}
+
+/* CONTENT */
+.poster-content{
+    width:80%;
+    max-width:50rem;
+}
+
+.poster-content h3{
+    margin:0 0 1.5rem;
+    font-size:1.9531rem;
+    font-weight:var(--fw2);
+    line-height:var(--lh1);
+}
+
+.poster-content p{
+    margin:0;
+    font-size:1.5625rem;
+    line-height:var(--lh2);
+    color:var(--gray-800);
+    word-break:keep-all;
+}
+
+/* VERTICAL POSITION */
+.poster-item:nth-child(2),
+.poster-item:nth-child(3),
+.poster-item:nth-child(4){
+    margin-top:0;
+}
+
+/* =========================
+TABLET
+========================= */
+@media(max-width:1024px){
+    .poster-section{
+        padding:5rem 0 8rem;
+    }
+
+    .poster-heading{
+        padding-left:35%;
+        margin-bottom:6rem;
+    }
+
+    .poster-heading h2{
+        font-size:5rem;
+    }
+
+    .poster-heading p{
+        font-size:1.5rem;
+    }
+
+    .poster-item:first-child .poster-content>span{
+        top:12rem;
+        font-size:18rem;
+    }
+
+    .poster-item{
+        min-height:40rem;
+        gap:4rem;
+    }
+
+    .poster-item figure{
+        width:27rem;
+        height:40.5rem;
+    }
+
+    .poster-content{
+        width:100%;
+    }
+
+    .poster-content h3{
+        font-size:1.7rem;
+    }
+
+    .poster-content p{
+        font-size:1.25rem;
+    }
+}
+
+/* =========================
+MOBILE
+========================= */
+@media(max-width:768px){
+    .poster-section{
+        padding:4rem 0 6rem;
+    }
+
+    .poster-heading{
+        padding-left:0;
+        margin-bottom:5rem;
+    }
+
+    .poster-heading h2{
+        font-size:3.5rem;
+    }
+
+    .poster-heading p{
+        margin-top:1.5rem;
+        font-size:1.2rem;
+    }
+
+    .poster-item:first-child .poster-content>span{
+        top:8rem;
+        right:-1rem;
+        font-size:10rem;
+    }
+
+    .poster-list{
+        gap:6rem;
+    }
+
+    .poster-item{
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        min-height:auto;
+        gap:2.5rem;
+    }
+
+    .poster-item:nth-child(even){
+        flex-direction:column;
+    }
+
+    .poster-item figure{
+        width:100%;
+        height:auto;
+        aspect-ratio:2/3;
+    }
+
+    .poster-item:nth-child(odd) figure,
+    .poster-item:nth-child(even) figure{
+        align-self:auto;
+    }
+
+    .poster-content{
+        width:100%;
+        max-width:none;
+    }
+
+    .poster-content h3{
+        margin-bottom:1rem;
+        font-size:1.5rem;
+    }
+
+    .poster-content p{
+        font-size:1.1rem;
+    }
+}

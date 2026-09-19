@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <title>Notion</title>
+  <path d="M9 6 47 3 58 12 58 56 19 61 6 49 6 10Z" fill="#fff" stroke="#111" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M7 10 19 19 58 12M19 19V60M7 10 46 7 53 12 19 16Z" fill="#111" stroke="#111" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M24 25 33 24 46 44V25L42 25V22L54 21V24L51 25V51L46 52 30 29V49L34 49V52L23 53V50L26 49V28L24 28Z" fill="#111"/>
+</svg>

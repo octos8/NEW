@@ -1,0 +1,139 @@
+/* =========================
+BANNER
+========================= */
+.banner-section{
+    position:relative;
+    width:100%;
+    padding:6rem 0;
+    overflow:hidden;
+}
+
+.banner-inner{
+    position:relative;
+}
+
+/* TITLE */
+.banner-heading{
+    margin-bottom:6rem;
+}
+
+.banner-heading h2{
+    margin:0;
+    font-size:6.875rem;
+    font-weight:var(--fw2);
+    line-height:1;
+    letter-spacing:-.04em;
+    color:var(--gray-900);
+}
+
+.banner-heading p{
+    margin:1.75rem 0 0;
+    font-size:1.875rem;
+    line-height:var(--lh2);
+    color:var(--gray-900);
+}
+
+/* SLIDER */
+.banner-station{
+    position:relative;
+    width:100%;
+    height:51.125rem;
+    overflow:hidden;
+}
+
+.banner-train{
+    display:flex;
+    width:max-content;
+    height:100%;
+    transition:transform .7s ease;
+    will-change:transform;
+}
+
+.banner-train figure{
+    flex:0 0 101.25rem;
+    width:101.25rem;
+    height:51.125rem;
+    margin:0;
+    overflow:hidden;
+}
+
+.banner-train img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/* =========================
+TABLET
+========================= */
+@media(max-width:1024px){
+    .banner-section{
+        padding:5rem 0;
+    }
+
+    .banner-heading{
+        margin-bottom:4rem;
+    }
+
+    .banner-heading h2{
+        font-size:5rem;
+    }
+
+    .banner-heading p{
+        margin-top:1.5rem;
+        font-size:1.5rem;
+    }
+
+    .banner-station{
+        height:auto;
+        aspect-ratio:1.98/1;
+    }
+
+    .banner-train{
+        height:100%;
+    }
+
+    .banner-train figure{
+        flex:0 0 100vw;
+        width:100vw;
+        height:100%;
+    }
+}
+
+/* =========================
+MOBILE
+========================= */
+@media(max-width:768px){
+    .banner-section{
+        padding:4rem 0;
+    }
+
+    .banner-heading{
+        margin-bottom:3rem;
+    }
+
+    .banner-heading h2{
+        font-size:3.5rem;
+    }
+
+    .banner-heading p{
+        margin-top:1.25rem;
+        font-size:1.2rem;
+        word-break:keep-all;
+    }
+
+    .banner-station{
+        width:100%;
+        aspect-ratio:1.6/1;
+    }
+
+    .banner-train figure{
+        flex:0 0 100%;
+        width:100%;
+    }
+
+    .banner-train img{
+        object-position:center;
+    }
+}
