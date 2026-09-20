@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="웹 퍼블리셔 함국주의 디자인 및 퍼블리싱 포트폴리오입니다.">
     <title>Web Publisher 함국주 Portfolio </title>
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css">
+    <!-- 섹션 별 css -->
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/common.css">
@@ -15,19 +19,24 @@
     <link rel="stylesheet" href="./css/poster.css">
     <link rel="stylesheet" href="./css/banner.css">
     <link rel="stylesheet" href="./css/detail.css">
-    <link rel="stylesheet" href="./css/project.css">
-    
 </head>
+
 <body>
     <header class="site-header">
         <div class="header-inner">
+            <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <nav class="site-nav" aria-label="주요 메뉴">
                 <ul class="nav-list">
                     <li><a href="#home">HOME</a></li>
                     <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#banner">BANNER</a></li>
                     <li><a href="#popup">POPUP</a></li>
                     <li><a href="#poster">POSTER</a></li>
+                    <li><a href="#banner">BANNER</a></li>
                     <li><a href="#detail">DETAIL</a></li>
                     <li><a href="#project">PROJECT</a></li>
                     <li><a href="#contact">CONTACT</a></li>
@@ -57,27 +66,22 @@
                 <figure class="hero-visual">
                     <img src="./img/hero-main.jpg" alt="웹 퍼블리셔 포트폴리오 메인 비주얼">
                 </figure>
-
-                <button class="hero-menu-button" type="button" aria-label="다음 섹션으로 이동">
-                    <span></span>
-                    <span></span>
-                </button>
             </div>
         </section>
 
         <!-- ABOUT -->
         <section id="about" class="about-section">
             <div class="about-inner common-frame">
-                <header class="about-heading">
+                <header id="about-header" class="about-heading">
                     <h2 class="about-title">Structure-First Design</h2>
                     <div class="about-intro">
                         <h3>구조를 생각하는 것에서 디자인을 시작했습니다.</h3>
-                        <p>저는 단순히 ‘예쁜 화면’을 만드는 것보다<br>왜? 이 요소가 여기에 있어야 하는지를 먼저 고민했습니다.</p>
+                        <p>저는 단순히 ‘예쁜 화면’을 만드는 것보다<br>왜? 이 요소가 여기에 있어야 하는지를 먼저 고민합니다.</p>
                     </div>
                 </header>
-
                 <div class="profile-area">
                     <span class="profile-section-label">PROFILE</span>
+                    <span class="profile-side-label" aria-hidden="true">ABOUT ME</span>
 
                     <figure class="profile-photo">
                         <img src="./img/hm3.jpg" alt="웹 퍼블리셔 함국주 프로필">
@@ -87,11 +91,26 @@
                         <article class="profile-info">
                             <h3>ABOUT ME</h3>
                             <dl class="profile-list">
-                                <div><dt>NAME</dt><dd>함국주</dd></div>
-                                <div><dt>AGE</dt><dd>31</dd></div>
-                                <div><dt>BIRTH</dt><dd>1996. 11. 20</dd></div>
-                                <div><dt>PHONE</dt><dd>010-6278-5134</dd></div>
-                                <div><dt>CHARACTER</dt><dd>성실함, 부지런함</dd></div>
+                                <div>
+                                    <dt>NAME</dt>
+                                    <dd>함국주</dd>
+                                </div>
+                                <div>
+                                    <dt>AGE</dt>
+                                    <dd>31</dd>
+                                </div>
+                                <div>
+                                    <dt>BIRTH</dt>
+                                    <dd>1996. 11. 20</dd>
+                                </div>
+                                <div>
+                                    <dt>PHONE-NUMBER</dt>
+                                    <dd>010-6278-5134</dd>
+                                </div>
+                                <div>
+                                    <dt>CHARACTER</dt>
+                                    <dd>성실함, 부지런함</dd>
+                                </div>
                             </dl>
                         </article>
 
@@ -123,93 +142,178 @@
                         <span class="skills-heading-line"></span>
                     </header>
 
-                    <div class="skills-diagram">
-                        <article class="skill-group skill-design">
-                            <h4>DESIGN</h4>
-                            <p>브랜드와 사용자를 연결하는 시각적 경험을 만듭니다.</p>
-                            <ul class="skill-icons">
-                                <li><img src="./img/illustrator.svg" alt="Illustrator"></li>
-                                <li><img src="./img/photoshop.svg" alt="Photoshop"></li>
-                                <li><img src="./img/figma.svg" alt="Figma"></li>
-                            </ul>
-                        </article>
+                    <div class="skills-orbit">
+                        <span class="skills-dot" aria-hidden="true"></span>
 
-                        <article class="skill-group skill-publishing">
-                            <h4>PUBLISHING</h4>
-                            <p>디자인을 실제 경험할 수 있는 웹 화면으로 구현합니다.</p>
-                            <ul class="skill-icons">
-                                <li><img src="./img/html5.svg" alt="HTML5"></li>
-                                <li><img src="./img/css3.svg" alt="CSS3"></li>
-                                <li><img src="./img/javascript.svg" alt="JavaScript"></li>
-                                <li><img src="./img/responsive.svg" alt="Responsive Web"></li>
-                            </ul>
-                        </article>
+                        <a class="skill-menu skill-menu-publishing" type="button" data-skill="publishing" data-x="50"
+                            data-y="0">
+                            PUBLISHING
+                        </a>
 
-                        <article class="skill-group skill-development">
-                            <h4>DEVELOPMENT &amp; WORKFLOW</h4>
-                            <p>더 나은 결과를 위해 효율적인 협업과 개발 환경을 구축합니다.</p>
-                            <ul class="skill-icons">
-                                <li><img src="./img/git.svg" alt="Git"></li>
-                                <li><img src="./img/github.svg" alt="GitHub"></li>
-                                <li><img src="./img/notion.svg" alt="Notion"></li>
+                        <a class="skill-menu skill-menu-design" type="button" data-skill="design" data-x="0"
+                            data-y="50">
+                            DESIGN
+                        </a>
+
+                        <a class="skill-menu skill-menu-development" type="button" data-skill="development" data-x="100"
+                            data-y="50">
+                            DEVELOPMENT &amp; WORKFLOW
+                        </a>
+
+                        <div class="skill-detail" data-panel="publishing">
+                            <p class="skill-summary">디자인을 실제 경험할 수 있는 웹 화면으로 구현합니다.</p>
+                            <ul class="skill-program-list">
+                                <li>
+                                    <img src="./img/html5.svg" alt="HTML5">
+                                    <div>
+                                        <strong>HTML5</strong>
+                                        <p>시맨틱 태그를 활용해 웹페이지의 정보 구조와 콘텐츠 흐름을 체계적으로 구성할 수 있습니다.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./img/css3.svg" alt="CSS3">
+                                    <div>
+                                        <strong>CSS3</strong>
+                                        <p>Grid, Flexbox, Media Query를 활용해 디자인을 구현하고 다양한 화면에 대응하는 반응형 레이아웃을 제작할 수 있습니다.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./img/javascript.svg" alt="JavaScript">
+                                    <div>
+                                        <strong>JavaScript</strong>
+                                        <p>슬라이드, 메뉴, 스크롤 애니메이션 등 사용자와 상호작용하는 웹 인터페이스를 구현할 수 있습니다.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./img/responsive.svg" alt="Responsive Web">
+                                    <div>
+                                        <strong>Responsive Web</strong>
+                                        <p>PC, Tablet, Mobile 환경에 맞춰 콘텐츠 구조와 레이아웃이 자연스럽게 변화하도록 구현할 수 있습니다.</p>
+                                    </div>
+                                </li>
                             </ul>
-                        </article>
+                        </div>
+
+                        <div class="skill-detail" data-panel="design">
+                            <p class="skill-summary">브랜드와 사용자를 연결하는 시각적 경험을 만듭니다.</p>
+                            <ul class="skill-program-list">
+                                <li>
+                                    <img src="./img/illustrator.svg" alt="Illustrator">
+                                    <div><strong>Illustrator</strong>
+                                        <p>로고, 아이콘, 벡터 그래픽과 다양한 시각 디자인 요소를 제작할 수 있습니다.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./img/photoshop.svg" alt="Photoshop">
+                                    <div><strong>Photoshop</strong>
+                                        <p>이미지 보정과 합성, 배너·팝업·상세페이지 등 웹 그래픽을 제작할 수 있습니다.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./img/figma.svg" alt="Figma">
+                                    <div><strong>Figma</strong>
+                                        <p>웹 UI 설계부터 컴포넌트, 프로토타입과 반응형 인터페이스 디자인까지 제작할 수 있습니다.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-detail" data-panel="development">
+                            <p class="skill-summary">더 나은 결과를 위해 효율적인 협업과 개발 환경을 구축합니다.</p>
+                            <ul class="skill-program-list">
+                                <li>
+                                    <img src="./img/git.svg" alt="Git">
+                                    <div><strong>Git</strong>
+                                        <p>작업 내용을 버전별로 관리하고 변경 사항을 체계적으로 기록할 수 있습니다.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./img/github.svg" alt="GitHub">
+                                    <div><strong>GitHub</strong>
+                                        <p>프로젝트 소스를 관리하고 GitHub Pages를 활용한 웹사이트 배포가 가능합니다.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./img/notion.svg" alt="Notion">
+                                    <div><strong>Notion</strong>
+                                        <p>기획 자료와 프로젝트 일정을 정리하고 작업 내용을 문서화하여 관리할 수 있습니다.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </section>
-
             </div>
         </section>
+
         <!-- POPUP -->
         <section id="popup" class="popup-section">
-            <div class="hero-inner common-frame">
+            <div class="popup-inner common-frame">
                 <header class="section-heading popup-heading">
                     <h2>POPUP DESIGN</h2>
                     <p>짧은 순간에 핵심 메시지를 사용자에게 전달하였습니다.</p>
                 </header>
 
                 <div class="popup-layout">
-                    <div class="popup-description-viewport">
-                        <div class="popup-description-track">
-                            <article class="popup-description-slide is-active">
+                    <div class="popup-description-viewport swiper popup-text-swiper">
+                        <div class="popup-description-track swiper-wrapper">
+                            <article class="popup-description-slide swiper-slide">
                                 <h3>NETFLIX 콘텐츠 프로모션 팝업</h3>
                                 <p>넷플릭스 오리지널 콘텐츠 공개를 알리기 위한 프로모션 팝업으로, 작품 특유의 긴장감과 무게감이 전달될 수 있도록 구성하였습니다.</p>
+                                <div class="popup-tool">
+                                    <span>사용한 도구 :</span>
+                                    <strong>PhotoShop</strong>
+                                </div>
                             </article>
-
-                            <article class="popup-description-slide">
+                            <article class="popup-description-slide swiper-slide">
                                 <h3>NIKE 시즌 세일 팝업</h3>
                                 <p>나이키의 시즌 세일을 주제로 제작한 프로모션 팝업으로, 제품과 할인 메시지가 한눈에 전달될 수 있도록 구성하였습니다.</p>
+                                <div class="popup-tool">
+                                    <span>사용한 도구 :</span>
+                                    <strong>PhotoShop</strong>
+                                </div>
                             </article>
-
-                            <article class="popup-description-slide">
+                            <article class="popup-description-slide swiper-slide">
                                 <h3>OLIVE YOUNG 뷰티 프로모션 팝업</h3>
                                 <p>제품의 핵심 특징과 이벤트 정보를 직관적으로 확인할 수 있도록 구성한 프로모션 팝업입니다.</p>
+                                <div class="popup-tool">
+                                    <span>사용한 도구 :</span>
+                                    <strong>PhotoShop</strong>
+                                </div>
                             </article>
-
-                            <article class="popup-description-slide">
+                            <article class="popup-description-slide swiper-slide">
                                 <h3>KFC 프로모션 팝업</h3>
                                 <p>화면 진입과 동시에 할인율과 제품이 명확하게 인식되도록 구성한 프로모션 팝업입니다.</p>
+                                <div class="popup-tool">
+                                    <span>사용한 도구 :</span>
+                                    <strong>PhotoShop</strong>
+                                </div>
                             </article>
-
-                            <article class="popup-description-slide">
+                            <article class="popup-description-slide swiper-slide">
                                 <h3>TWOSOME PLACE 시즌 프로모션 팝업</h3>
                                 <p>여름 시즌 음료를 소개하기 위해 제작한 프로모션 팝업입니다.</p>
+                                <div class="popup-tool">
+                                    <span>사용한 도구 :</span>
+                                    <strong>PhotoShop</strong>
+                                </div>
                             </article>
                         </div>
                     </div>
 
-                    <div class="popup-station">
-                        <div class="popup-train">
-                            <figure class="popup-slide"><img src="./img/netflix-po.jpg" alt="Netflix Popup"></figure>
-                            <figure class="popup-slide"><img src="./img/nike-po.jpg" alt="Nike Popup"></figure>
-                            <figure class="popup-slide"><img src="./img/oliveyoung-po.jpg" alt="Olive Young Popup"></figure>
-                            <figure class="popup-slide"><img src="./img/kfc-po.jpg" alt="KFC Popup"></figure>
-                            <figure class="popup-slide"><img src="./img/TWOSOME PLACE-po.jpg" alt="Twosome Popup"></figure>
+                    <div class="popup-station swiper popup-image-swiper">
+                        <div class="popup-train swiper-wrapper">
+                            <figure class="popup-slide swiper-slide"><img src="./img/netflix-po.jpg"
+                                    alt="Netflix Popup"></figure>
+                            <figure class="popup-slide swiper-slide"><img src="./img/nike-po.jpg" alt="Nike Popup">
+                            </figure>
+                            <figure class="popup-slide swiper-slide"><img src="./img/oliveyoung-po.jpg"
+                                    alt="Olive Young Popup"></figure>
+                            <figure class="popup-slide swiper-slide"><img src="./img/kfc-po.jpg" alt="KFC Popup">
+                            </figure>
+                            <figure class="popup-slide swiper-slide"><img src="./img/TWOSOME PLACE-po.jpg"
+                                    alt="Twosome Popup"></figure>
                         </div>
-                    </div>
-
-                    <div class="popup-tool">
-                        <span>사용한 도구 :</span>
-                        <strong>PhotoShop</strong>
                     </div>
                 </div>
             </div>
@@ -223,58 +327,69 @@
                     <p>브랜드와 제품의 이미지를 한 장의 비주얼로 표현하였습니다.</p>
                 </header>
 
-                <div class="poster-list">
-                    <article class="poster-item">
-                        <figure><img src="./img/ikea-ps.jpg" alt="IKEA 욕실 수납 포스터"></figure>
-                        <div class="poster-content">
-                            <span>Poster</span>
-                            <h3>IKEA 욕실 수납 포스터</h3>
-                            <p>붉은 타일과 체크 패턴 바닥이 어우러진 공간을 배경으로 욕실 수납 가구의 개성과 실용성을 강조한 포스터입니다.</p>
-                        </div>
-                    </article>
+                <div class="poster-body">
+                    <div class="poster-decoration" aria-hidden="true">
+                        <span>Poster</span>
+                    </div>
+                    <div class="poster-list">
+                        <article class="poster-item">
+                            <figure><img src="./img/ikea-ps.jpg" alt="IKEA 욕실 수납 포스터"></figure>
+                            <div class="poster-content">
+                                <h3>IKEA 욕실 수납 포스터</h3>
+                                <p>붉은 타일과 체크 패턴 바닥이 어우러진 공간을 배경으로 욕실 수납 가구의 개성과 실용성을 강조한 포스터입니다.</p>
+                            </div>
+                        </article>
 
-                    <article class="poster-item">
-                        <div class="poster-content">
-                            <h3>SONY 여름 프로모션 포스터</h3>
-                            <p>강렬한 블루 배경과 대형 타이포그래피를 활용해 여름 시즌의 활기찬 에너지를 표현한 포스터입니다.</p>
-                        </div>
-                        <figure><img src="./img/sony-ps.jpg" alt="SONY 여름 프로모션 포스터"></figure>
-                    </article>
+                        <article class="poster-item">
+                            <div class="poster-content">
+                                <h3>SONY 여름 프로모션 포스터</h3>
+                                <p>강렬한 블루 배경과 대형 타이포그래피를 활용해 여름 시즌의 활기찬 에너지를 표현한 포스터입니다.</p>
+                            </div>
+                            <figure><img src="./img/sony-ps.jpg" alt="SONY 여름 프로모션 포스터"></figure>
+                        </article>
 
-                    <article class="poster-item">
-                        <figure><img src="./img/vans-ps.jpg" alt="VANS 스트리트 무드 포스터"></figure>
-                        <div class="poster-content">
-                            <h3>VANS 스트리트 무드 포스터</h3>
-                            <p>도심 배경과 빈티지한 질감을 활용해 자유롭고 개성 있는 스트리트 라이프스타일을 표현한 포스터입니다.</p>
-                        </div>
-                    </article>
+                        <article class="poster-item">
+                            <figure><img src="./img/vans-ps.jpg" alt="VANS 스트리트 무드 포스터"></figure>
+                            <div class="poster-content">
+                                <h3>VANS 스트리트 무드 포스터</h3>
+                                <p>도심 배경과 빈티지한 질감을 활용해 자유롭고 개성 있는 스트리트 라이프스타일을 표현한 포스터입니다.</p>
+                            </div>
+                        </article>
 
-                    <article class="poster-item">
-                        <div class="poster-content">
-                            <h3>WEPINK 뷰티 제품 포스터</h3>
-                            <p>부드러운 핑크 톤과 유려한 곡선 배경을 통해 뷰티 제품의 섬세한 이미지를 강조한 포스터입니다.</p>
-                        </div>
-                        <figure><img src="./img/wepink-ps.jpg" alt="WEPINK 뷰티 제품 포스터"></figure>
-                    </article>
+                        <article class="poster-item">
+                            <div class="poster-content">
+                                <h3>WEPINK 뷰티 제품 포스터</h3>
+                                <p>부드러운 핑크 톤과 유려한 곡선 배경을 통해 뷰티 제품의 섬세한 이미지를 강조한 포스터입니다.</p>
+                            </div>
+                            <figure><img src="./img/wepink-ps.jpg" alt="WEPINK 뷰티 제품 포스터"></figure>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- BANNER -->
         <section id="banner" class="banner-section">
             <div class="banner-inner common-frame">
                 <header class="section-heading banner-heading">
                     <h2>BANNER DESIGN</h2>
                     <p>브랜드 아이덴티티와 메시지를 결합한 배너 디자인을 제작하였습니다.</p>
                 </header>
-
-                <div class="banner-station">
-                    <div class="banner-train">
-                        <figure><img src="./img/medicube-be.jpg" alt="medicube-이미지"></figure>
-                        <figure><img src="./img/bulgari-be.jpg" alt="bulgari-이미지"></figure>
-                        <figure><img src="./img//Johnnie Walker-be.jpg" alt="Johnnie Walker-이미지"></figure>
-                        <figure><img src="./img/musinsa-be.jpg" alt="musinsa-이미지"></figure>
+                <div class="banner-station swiper banner-swiper">
+                    <div class="banner-train swiper-wrapper">
+                        <figure class="swiper-slide">
+                            <img src="./img/medicube-be.jpg" alt="Medicube 이미지">
+                        </figure>
+                        <figure class="swiper-slide">
+                            <img src="./img/bulgari-be.jpg" alt="Bulgari 이미지">
+                        </figure>
+                        <figure class="swiper-slide">
+                            <img src="./img/Johnnie Walker-be.jpg" alt="Johnnie Walker 이미지">
+                        </figure>
+                        <figure class="swiper-slide">
+                            <img src="./img/musinsa-be.jpg" alt="Musinsa 이미지">
+                        </figure>
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </section>
@@ -289,19 +404,37 @@
 
                 <div class="detail-list">
                     <article class="detail-card">
-                        <figure><img src="./img/novera-detail.jpg" alt="NOVERA 상세페이지"></figure>
+                        <figure>
+                            <a class="detail-preview" href="./detail-novera.html" target="_blank"
+                                rel="noopener noreferrer" aria-label="NOVERA 전체 상세페이지 보기 (새 탭)">
+                                <img src="./img/novera-detail2.png" alt="NOVERA 상세페이지">
+                                <span class="detail-preview-overlay" aria-hidden="true"><strong>CLICK</strong></span>
+                            </a>
+                        </figure>
                         <h3>NOVERA</h3>
                         <p>빛과 사운드의 에너지를 미래적인 비주얼로 구현한 ARC H1 프리미엄 헤드셋 상세페이지</p>
                     </article>
 
                     <article class="detail-card">
-                        <figure><img src="./img/lotion-detail.jpg" alt="LUNE 상세페이지"></figure>
+                        <figure>
+                            <a class="detail-preview" href="./detail-lune.html" target="_blank"
+                                rel="noopener noreferrer" aria-label="LUNE 전체 상세페이지 보기 (새 탭)">
+                                <img src="./img/lotion-detail1.png" alt="LUNE 상세페이지">
+                                <span class="detail-preview-overlay" aria-hidden="true"><strong>CLICK</strong></span>
+                            </a>
+                        </figure>
                         <h3>LUNE</h3>
                         <p>부드러운 빛과 미니멀한 여백으로 표현한 데일리 보습 케어 상세페이지</p>
                     </article>
 
                     <article class="detail-card">
-                        <figure><img src="./img/omega-detail.jpg" alt="NORDVIA 상세페이지"></figure>
+                        <figure>
+                            <a class="detail-preview" href="./detail-nordvia.html" target="_blank"
+                                rel="noopener noreferrer" aria-label="NORDVIA 전체 상세페이지 보기 (새 탭)">
+                                <img src="./img/omega-detail1.png" alt="NORDVIA 상세페이지">
+                                <span class="detail-preview-overlay" aria-hidden="true"><strong>CLICK</strong></span>
+                            </a>
+                        </figure>
                         <h3>NORDVIA</h3>
                         <p>청정한 바다의 이미지를 활용해 원료와 기능성을 강조한 오메가3 상세페이지</p>
                     </article>
@@ -311,6 +444,12 @@
 
         <section id="project" class="project-section"></section>
         <section id="contact" class="contact-section"></section>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+        <script src="./js/index.js"></script>
     </main>
+    <a class="top-link" href="#top" aria-label="페이지 맨 위로 이동">↑<span>TOP</span></a>
 </body>
+
 </html>

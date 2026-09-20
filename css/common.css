@@ -1,11 +1,11 @@
 /* =========================
-   DESIGN SYSTEM
+DESIGN SYSTEM
 ========================= */
 :root{
     /* Font Family */
     --font-main:'Pretendard',sans-serif;
 
-    /* 디바이스 별 글씨 크기 기준 */
+    /* 디바이스별 기준 글씨 크기 */
     --fs-pc:16px;
     --fs-pad:14px;
     --fs-mo:12px;
@@ -15,13 +15,13 @@
     --lh2:1.45;
 
     /* 태그 글씨 크기 */
-    --fs-h4:1.25rem;
-    --fs-h3:1.5625rem;
-    --fs-h2:1.9531rem;
     --fs-h1:2.4414rem;
+    --fs-h2:1.9531rem;
+    --fs-h3:1.5625rem;
+    --fs-h4:1.25rem;
     --fs-body1:1rem;
-    --fs-body2:0.85rem;
-    --fs-detail:0.7225rem;
+    --fs-body2:.85rem;
+    --fs-detail:.7225rem;
 
     /* 글씨 두께 */
     --fw1:400;
@@ -32,8 +32,8 @@
     --space-2x-large:3rem;
     --space-x-large:2rem;
     --space-normal:1rem;
-    --space-x-small:0.5rem;
-    --space-2x-small:0.25rem;
+    --space-x-small:.5rem;
+    --space-2x-small:.25rem;
 
     /* Skin Ivory */
     --ivory-0:#FFF4D1;
@@ -59,113 +59,85 @@
     --gray-800:#484848;
     --gray-900:#1A1A1A;
 
-    /* Semantic Color */
+    /* Semantic */
     --success:#00FF6A;
     --warning:#FF9500;
     --error:#FF0000;
     --info:#30BDD5;
-    --point:#A31E1E;
 
-    /* Base Color */
+    /* Base */
     --white:#FFFFFF;
     --black:#000000;
+    --point:#A31E1E;
 
     /* Layout */
-    --content-width:1620px;
+    --content-width:101.25rem;
+    --frame-pc:6rem;
+    --frame-pad:4rem;
+    --frame-mo:2rem;
 }
 
 /* =========================
-   BASE
+BASE
 ========================= */
-h1{font-size: var(--fs-h1);}
-h2{font-size: var(--fs-h2);}
-h3{font-size: var(--fs-h3);}
-h4{font-size: var(--fs-h4);}
-p{line-height: var(--lh2);}
-
 html{
     font-size:var(--fs-pc);
-    font-family: 'Pretendard',sans-serif;
-    font-weight: var(--fw1);
+    font-family:var(--font-main);
+    font-weight:var(--fw1);
     color:var(--gray-900);
 }
-body{
-    width: 1920px;
+
+h1{font-size:var(--fs-h1);}
+h2{
+    font-size:min(6.875rem,8vw);
+    line-height:1;
+    white-space:nowrap;
 }
-main{
-    margin: 0 auto;
-}
+h3{font-size:var(--fs-h3);}
+h4{font-size:var(--fs-h4);}
+p{line-height:var(--lh2);}
 
 /* =========================
-   COMMON
+COMMON
 ========================= */
 .common-frame{
-    width:100%;
+    width:calc(100% - var(--frame-pc));
     max-width:var(--content-width);
     margin:0 auto;
-    padding:0 var(--space-3x);
-    box-sizing:border-box;
-}
-.title-1{font-weight:var(--fw-bold);}
-
-.desc-1{
-    display:-webkit-box;
-    -webkit-box-orient:vertical;
-    -webkit-line-clamp:2;
-    overflow:hidden;
-    color:var(--gray-700);
-}
-
-.title{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:var(--space-xl);
-    margin-bottom:var(--space-2xl);
-    text-align:center;
-    color:var(--gray-800);
-}
-
-.title h1{font-weight:var(--fw-bold);}
-
-.title span{
-    width:16px;
-    height:2px;
-    background:var(--gray-800);
 }
 
 /* =========================
-   TABLET
+TABLET
 ========================= */
-@media (max-width:1024px){
-    main{
-        margin-top: 5rem;
-    }
-    .pc{display: none;}
-    .pad{display: block;}
-    .mo{display: none;}
+@media(max-width:1024px){
     html{
         font-size:var(--fs-pad);
     }
+
     .common-frame{
-        padding:0 var(--space-x-large);
+        width:calc(100% - var(--frame-pad));
+        max-width:none;
     }
 }
 
 /* =========================
-   MOBILE
+MOBILE
 ========================= */
-@media (max-width:768px){
-    .pc{display: none;}
-    .pad{display: none;}
-    .mo{display: block;}
+@media(max-width:768px){
     html{
-        font-size: var(--fs-mo);
+        font-size:var(--fs-mo);
     }
+
     .common-frame{
-        padding:0 var(--space-normal);
+        width:calc(100% - var(--frame-mo));
     }
-    .grid-list {
-        grid-template-columns: repeat(2,minmax(50px,1fr));
+}
+
+/* =========================
+SMALL MOBILE
+========================= */
+@media(max-width:320px){
+    .common-frame{
+        width:calc(100% - 1.5rem);
     }
 }
