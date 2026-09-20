@@ -5,14 +5,17 @@ POSTER
     position:relative;
     width:100%;
     padding:6rem 0 10rem;
-    overflow:hidden;
+    overflow:clip;
 }
 
 .poster-inner{
     position:relative;
 }
 
-/* TITLE */
+
+/* =========================
+TITLE
+========================= */
 .poster-heading{
     width:100%;
     padding-left:47%;
@@ -20,64 +23,147 @@ POSTER
 }
 
 .poster-heading h2{
+    position:relative;
+    width:fit-content;
+    max-width:100%;
     margin:0;
+
     font-size:6.875rem;
     font-weight:var(--fw2);
     line-height:1;
     letter-spacing:-.04em;
+
     color:var(--gray-900);
+
+    white-space:normal;
+    word-break:keep-all;
+}
+
+.poster-heading h2::before,
+.poster-heading h2::after{
+    content:"";
+    position:absolute;
+    top:calc(100% + 1rem);
+    right:0;
+
+    transform:translateY(-50%);
+
+    pointer-events:none;
+}
+
+.poster-heading h2::before{
+    width:33%;
+    height:.0625rem;
+
+    background:var(--gray-600);
+}
+
+.poster-heading h2::after{
+    width:1.25rem;
+    height:1.25rem;
+
+    border-radius:50%;
+
+    background:var(--point);
 }
 
 .poster-heading p{
     margin-top:2rem;
+
     font-size:1.875rem;
     line-height:var(--lh2);
+
     color:var(--gray-900);
+
+    word-break:keep-all;
 }
 
-/* DECORATIVE POSTER */
-.poster-item:first-child .poster-content>span{
+
+/* =========================
+DECORATIVE POSTER
+========================= */
+.poster-body{
+    position:relative;
+    isolation:isolate;
+}
+
+.poster-decoration{
     position:absolute;
+    inset:0;
+
+    z-index:0;
+
+    pointer-events:none;
+}
+
+.poster-decoration > span{
+    position:sticky;
     top:12rem;
-    right:0;
-    z-index:-1;
+
+    display:block;
+
+    width:max-content;
+
+    margin-left:auto;
+
     font-size:23rem;
     font-weight:var(--fw2);
     line-height:1;
     letter-spacing:-.06em;
+
     color:var(--gray-100);
+
+    white-space:nowrap;
+
     pointer-events:none;
 }
 
-/* POSTER LIST */
+
+/* =========================
+POSTER LIST
+========================= */
 .poster-list{
-    display:flex;
-    flex-direction:column;
-    gap:0;
+    position:relative;
+    z-index:1;
 }
 
 .poster-item{
     position:relative;
+
     display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
     align-items:center;
+
     min-height:46.875rem;
 }
 
+
+/* =========================
+POSTER IMAGE
+========================= */
 .poster-item figure{
     width:31.25rem;
     height:46.875rem;
+
     margin:0;
+
     overflow:hidden;
 }
 
 .poster-item figure img{
     width:100%;
     height:100%;
+
     object-fit:cover;
 }
 
-/* 1,3 LEFT IMAGE */
+
+/* =========================
+1 / 3 IMAGE LEFT
+========================= */
 .poster-item:nth-child(odd) figure{
     justify-self:start;
 }
@@ -86,7 +172,10 @@ POSTER
     justify-self:end;
 }
 
-/* 2,4 RIGHT IMAGE */
+
+/* =========================
+2 / 4 IMAGE RIGHT
+========================= */
 .poster-item:nth-child(even) figure{
     justify-self:end;
 }
@@ -95,41 +184,60 @@ POSTER
     justify-self:start;
 }
 
-/* CONTENT */
+
+/* =========================
+CONTENT
+========================= */
 .poster-content{
     width:80%;
     max-width:50rem;
+
+    min-width:0;
 }
 
 .poster-content h3{
     margin:0 0 1.5rem;
+
     font-size:1.9531rem;
     font-weight:var(--fw2);
     line-height:var(--lh1);
+
+    word-break:keep-all;
 }
 
 .poster-content p{
     margin:0;
+
     font-size:1.5625rem;
     line-height:var(--lh2);
+
     color:var(--gray-800);
+
     word-break:keep-all;
 }
 
-/* VERTICAL POSITION */
+
+/* =========================
+VERTICAL POSITION
+========================= */
 .poster-item:nth-child(2),
 .poster-item:nth-child(3),
 .poster-item:nth-child(4){
     margin-top:0;
 }
 
+
 /* =========================
 TABLET
 ========================= */
 @media(max-width:1024px){
+
     .poster-section{
         padding:5rem 0 8rem;
     }
+
+
+    /* TITLE */
 
     .poster-heading{
         padding-left:35%;
@@ -138,19 +246,29 @@ TABLET
 
     .poster-heading h2{
         font-size:5rem;
+
+        white-space:normal;
+        word-break:keep-all;
     }
 
     .poster-heading p{
         font-size:1.5rem;
     }
 
-    .poster-item:first-child .poster-content>span{
+
+    /* DECORATION */
+
+    .poster-decoration > span{
         top:12rem;
         font-size:18rem;
     }
 
+
+    /* POSTER ITEM */
+
     .poster-item{
         min-height:40rem;
+
         gap:4rem;
     }
 
@@ -172,72 +290,315 @@ TABLET
     }
 }
 
+
 /* =========================
 MOBILE
+기존 2열 구조 유지
 ========================= */
 @media(max-width:768px){
+
     .poster-section{
         padding:4rem 0 6rem;
     }
 
+
+    /* =========================
+    HEADING
+    ========================= */
+
     .poster-heading{
-        padding-left:0;
-        margin-bottom:5rem;
+        width:100%;
+
+        padding-left:25%;
+
+        margin-bottom:4rem;
     }
 
     .poster-heading h2{
-        font-size:3.5rem;
+        font-size:2.7rem;
+        line-height:1.05;
+
+        white-space:normal;
+        word-break:keep-all;
+    }
+
+    .poster-heading h2::before{
+        width:33%;
+    }
+
+    .poster-heading h2::after{
+        width:1rem;
+        height:1rem;
     }
 
     .poster-heading p{
         margin-top:1.5rem;
-        font-size:1.2rem;
+
+        font-size:1rem;
+        line-height:1.5;
+
+        word-break:keep-all;
     }
 
-    .poster-item:first-child .poster-content>span{
+
+    /* =========================
+    BACKGROUND POSTER TEXT
+    ========================= */
+
+    .poster-decoration > span{
         top:8rem;
-        right:-1rem;
+
         font-size:10rem;
     }
 
+
+    /* =========================
+    POSTER LIST
+    ========================= */
+
     .poster-list{
-        gap:6rem;
+        position:relative;
     }
+
+
+    /* =========================
+    2 COLUMN LAYOUT
+    ========================= */
 
     .poster-item{
-        display:flex;
-        flex-direction:column;
-        align-items:flex-start;
-        min-height:auto;
-        gap:2.5rem;
+        display:grid;
+
+        grid-template-columns:
+            40% 1fr;
+
+        align-items:center;
+
+        gap:1.5rem;
+
+        min-height:30rem;
     }
 
-    .poster-item:nth-child(even){
-        flex-direction:column;
-    }
+
+    /* =========================
+    POSTER IMAGE
+    ========================= */
 
     .poster-item figure{
-        width:100%;
-        height:auto;
-        aspect-ratio:2/3;
+        width:14rem;
+        height:21rem;
+
+        margin:0;
+
+        overflow:hidden;
     }
 
-    .poster-item:nth-child(odd) figure,
-    .poster-item:nth-child(even) figure{
-        align-self:auto;
+    .poster-item figure img{
+        width:100%;
+        height:100%;
+
+        object-fit:cover;
     }
+
+
+    /* =========================
+    1 / 3 IMAGE LEFT
+    ========================= */
+
+    .poster-item:nth-child(odd) figure{
+        justify-self:start;
+    }
+
+    .poster-item:nth-child(odd) .poster-content{
+        justify-self:end;
+    }
+
+
+    /* =========================
+    2 / 4 IMAGE RIGHT
+    ========================= */
+
+    .poster-item:nth-child(even) figure{
+        justify-self:end;
+    }
+
+    .poster-item:nth-child(even) .poster-content{
+        justify-self:start;
+    }
+
+
+    /* =========================
+    CONTENT
+    ========================= */
 
     .poster-content{
         width:100%;
         max-width:none;
+
+        min-width:0;
     }
 
     .poster-content h3{
-        margin-bottom:1rem;
-        font-size:1.5rem;
+        margin:0 0 1rem;
+
+        font-size:1.4rem;
+        line-height:1.2;
+
+        word-break:keep-all;
     }
 
     .poster-content p{
+        margin:0;
+
+        font-size:.95rem;
+        line-height:1.6;
+
+        word-break:keep-all;
+    }
+}
+
+
+/* =========================
+EXTRA SMALL MOBILE
+402px 이하
+========================= */
+@media(max-width:402px){
+
+    .poster-section{
+        padding:3rem 0 4.5rem;
+    }
+
+
+    /* =========================
+    HEADING
+    ========================= */
+
+    .poster-heading{
+        width:100%;
+
+        padding-left:0;
+
+        margin-bottom:3rem;
+    }
+
+    .poster-heading h2{
+        width:100%;
+        max-width:100%;
+
+        font-size:2rem;
+        line-height:1.1;
+
+        white-space:normal;
+        word-break:keep-all;
+    }
+
+    .poster-heading h2::before{
+        width:30%;
+    }
+
+    .poster-heading h2::after{
+        width:.75rem;
+        height:.75rem;
+    }
+
+    .poster-heading p{
+        margin-top:1rem;
+
+        font-size:.85rem;
+        line-height:1.5;
+
+        word-break:keep-all;
+    }
+
+
+    /* =========================
+    BACKGROUND POSTER TEXT
+    ========================= */
+
+    .poster-decoration > span{
+        top:6rem;
+
+        font-size:5rem;
+    }
+
+
+    /* =========================
+    POSTER ITEM
+    이미지 → 텍스트 세로 배치
+    ========================= */
+
+    .poster-item{
+        display:grid;
+
+        grid-template-columns:1fr;
+
+        align-items:start;
+
+        gap:1.25rem;
+
+        min-height:auto;
+
+        margin-bottom:4rem;
+    }
+
+
+    /* =========================
+    IMAGE
+    ========================= */
+
+    .poster-item figure{
+        grid-column:1;
+        grid-row:1;
+
+        width:10rem;
+        height:15rem;
+
+        margin:0;
+
+        justify-self:start;
+    }
+
+    .poster-item:nth-child(odd) figure,
+    .poster-item:nth-child(even) figure{
+        justify-self:start;
+    }
+
+
+    /* =========================
+    CONTENT
+    ========================= */
+
+    .poster-content{
+        grid-column:1;
+        grid-row:2;
+
+        width:100%;
+        max-width:none;
+
+        min-width:0;
+
+        justify-self:start;
+    }
+
+    .poster-item:nth-child(odd) .poster-content,
+    .poster-item:nth-child(even) .poster-content{
+        justify-self:start;
+    }
+
+    .poster-content h3{
+        margin:0 0 .6rem;
+
         font-size:1.1rem;
+        line-height:1.3;
+
+        word-break:keep-all;
+    }
+
+    .poster-content p{
+        margin:0;
+
+        font-size:.82rem;
+        line-height:1.6;
+
+        word-break:keep-all;
     }
 }

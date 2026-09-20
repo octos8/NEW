@@ -8,44 +8,52 @@ HERO
     overflow:hidden;
 }
 
+/* BACKGROUND */
 .hero-bg{
     position:absolute;
     top:0;
     left:50%;
-    width:101.25rem;
-    max-width:calc(100% - 3.75rem);
+    width:calc(100% - var(--frame-pc));
+    max-width:var(--content-width);
     height:100%;
     background:rgba(0,0,0,.8);
     transform:translateX(-50%);
 }
 
+/* INNER */
 .hero-inner{
     position:relative;
-    width:101.25rem;
-    max-width:calc(100% - 3.75rem);
+    width:calc(100% - var(--frame-pc));
+    max-width:var(--content-width);
     height:100%;
     margin:0 auto;
+    padding:10rem 2.3125rem 0;
 }
 
+/* =========================
+TITLE
+========================= */
 .hero-title{
-    position:absolute;
-    top:11.1875rem;
-    left:2.3125rem;
+    position:relative;
     z-index:3;
     margin:0;
     color:var(--white);
-    font-family:'Inter',var(--font-main);
-    font-size:12.6875rem;
+    font-family:var(--font-main);
+    font-size:10.5vw;
     font-weight:900;
     line-height:.9;
     letter-spacing:-.05em;
+    white-space:nowrap;
 }
 
+/* =========================
+DESCRIPTION
+========================= */
 .hero-description{
-    position:absolute;
-    top:28rem;
-    left:2.3125rem;
+    position:relative;
     z-index:3;
+    width:45%;
+    margin-top:5rem;
     color:var(--white);
     font-size:1.25rem;
     font-weight:var(--fw1);
@@ -54,175 +62,153 @@ HERO
 .hero-description p{
     margin:0;
     line-height:var(--lh2);
-}
-
-.hero-line{
-    position:absolute;
-    top:33.0625rem;
-    left:2.8125rem;
-    z-index:3;
-    width:58%;
-    height:.0625rem;
-    background:rgba(255,255,255,.8);
-}
-
-.hero-profile{
-    position:absolute;
-    top:32.3125rem;
-    right:18.125rem;
-    z-index:3;
-    display:flex;
-    align-items:center;
-    gap:1.5rem;
-    color:var(--white);
-    font-size:1.25rem;
-}
-
-.hero-job{font-weight:var(--fw1);}
-.hero-name{font-weight:var(--fw2);}
-
-.hero-visual{
-    position:absolute;
-    top:21.5625rem;
-    right:0;
-    z-index:1;
-    width:66.625rem;
-    height:39.5625rem;
-    margin:0;
-    overflow:hidden;
-}
-
-.hero-visual img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.hero-menu-button{
-    position:absolute;
-    left:50%;
-    bottom:.5625rem;
-    z-index:4;
-    width:2.875rem;
-    height:2.875rem;
-    padding:0;
-    border:.0625rem solid rgba(255,255,255,.7);
-    border-radius:50%;
-    background:transparent;
-    cursor:pointer;
-    transform:translateX(-50%);
-}
-
-.hero-menu-button span{
-    position:absolute;
-    top:1.3125rem;
-    width:.625rem;
-    height:.0625rem;
-    background:var(--white);
-}
-
-.hero-menu-button span:first-child{
-    left:.875rem;
-    transform:rotate(45deg);
-}
-
-.hero-menu-button span:last-child{
-    right:.875rem;
-    transform:rotate(-45deg);
+    word-break:keep-all;
 }
 
 /* =========================
-TABLET
+LINE
 ========================= */
-@media (max-width:1024px){
-    .hero-section{height:50rem;}
+.hero-line{
+    position:relative;
+    z-index:3;
+    width:38rem;
+    height:.0625rem;
+    margin-top:2rem;
+    background:rgba(255,255,255,.8);
+}
+
+/* =========================
+PROFILE
+========================= */
+.hero-profile{
+    position:relative;
+    z-index:3;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    width:58rem;
+    margin-top:-.8rem;
+    gap:1.5rem;
+    color:var(--white);
+    font-size:1.25rem;
+    white-space:nowrap;
+}
+
+.hero-job{
+    font-weight:var(--fw1);
+}
+
+.hero-name{
+    font-weight:var(--fw2);
+}
+
+/* =========================
+IMAGE
+========================= */
+.hero-visual{
+    position:absolute;
+    right:0;
+    bottom:0;
+    z-index:1;
+    width:66%;
+    margin:0;
+    line-height:0;
+}
+
+.hero-visual img{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+/* =========================
+TABLET - 1024
+========================= */
+@media(max-width:1024px){
+    .hero-section{
+        height:56rem;
+    }
 
     .hero-bg,
     .hero-inner{
-        width:100%;
-        max-width:calc(100% - 4rem);
+        width:calc(100% - var(--frame-pad));
+        max-width:none;
+    }
+
+    .hero-inner{
+        padding:8rem 2rem 0;
     }
 
     .hero-title{
-        top:10rem;
-        left:2rem;
-        font-size:9rem;
+        font-size:10.5vw;
     }
 
     .hero-description{
-        top:21rem;
-        left:2rem;
-        font-size:1.25rem;
+        width:52%;
+        margin-top:4rem;
+        font-size:1.1rem;
     }
 
     .hero-line{
-        top:27rem;
-        left:2rem;
         width:60%;
+        margin-top:2rem;
     }
 
     .hero-profile{
-        top:26rem;
-        right:2rem;
+        width:60%;
+        margin-top:-.7rem;
+        gap:1rem;
         font-size:1rem;
     }
 
     .hero-visual{
-        top:23rem;
-        right:0;
-        width:72%;
-        height:25rem;
+        width:70%;
     }
 }
 
 /* =========================
-MOBILE
+MOBILE - 768
 ========================= */
-@media (max-width:768px){
-    .hero-section{height:60rem;}
+@media(max-width:768px){
+    .hero-section{
+        height:60rem;
+    }
 
     .hero-bg,
     .hero-inner{
-        max-width:calc(100% - 2rem);
+        width:calc(100% - var(--frame-mo));
+    }
+
+    .hero-inner{
+        padding:9rem 1rem 0;
     }
 
     .hero-title{
-        top:10rem;
-        left:1rem;
-        font-size:5.5rem;
+        font-size:12vw;
     }
 
     .hero-description{
-        top:18rem;
-        left:1rem;
-        right:1rem;
+        width:100%;
+        margin-top:2.5rem;
         font-size:1rem;
     }
 
     .hero-line{
-        top:25rem;
-        left:1rem;
-        width:calc(100% - 2rem);
+        width:100%;
+        margin-top:3rem;
     }
 
     .hero-profile{
-        top:26rem;
-        left:1rem;
-        right:auto;
+        justify-content:flex-start;
+        width:100%;
+        margin-top:1.25rem;
         gap:1rem;
         font-size:.9rem;
     }
 
     .hero-visual{
-        top:31rem;
         right:0;
-        width:94%;
-        height:25rem;
-    }
-
-    .hero-menu-button{
-        width:3rem;
-        height:3rem;
         bottom:1rem;
+        width:78%;
     }
 }

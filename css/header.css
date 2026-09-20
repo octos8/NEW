@@ -2,40 +2,44 @@
 HEADER
 ========================= */
 .site-header{
-    position:absolute;
-    top:22px;
-    left:31px;
-    z-index:1000;
+    position:fixed;
+    top:1.375rem;
+    left:1.9375rem;
+    z-index:9999;
 }
 
 .header-inner{
-    width:887px;
+    position:relative;
+    width:55.4375rem;
+    max-width:calc(100vw - 3.875rem);
 }
 
 .site-nav{
     width:100%;
-    height:50px;
+    height:3.125rem;
     padding:0 var(--space-x-large);
-    background:rgba(255,255,255,.6);
-    border-radius:138px;
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter:blur(10px);
+    background:rgba(255,255,255,.65);
+    border-radius:8.625rem;
+    backdrop-filter:blur(.75rem);
+    -webkit-backdrop-filter:blur(.75rem);
+    box-shadow:0 .25rem 1.5rem rgba(0,0,0,.06);
 }
 
 .nav-list{
-    height:100%;
     display:flex;
     align-items:center;
-    gap:var(--space-2x-large);
+    justify-content:space-between;
+    width:100%;
+    height:100%;
     margin:0;
     padding:0;
     list-style:none;
 }
 
 .nav-list li{
-    height:100%;
     display:flex;
     align-items:center;
+    height:100%;
 }
 
 .nav-list a{
@@ -49,22 +53,24 @@ HEADER
     line-height:1;
     text-decoration:none;
     white-space:nowrap;
-    transition:opacity .3s ease;
-}
-
-.nav-list a:hover{
-    opacity:.5;
+    transition:color .25s ease;
 }
 
 .nav-list a::after{
     content:"";
     position:absolute;
-    left:0;
-    bottom:8px;
+    left:50%;
+    bottom:.5rem;
     width:0;
-    height:1px;
-    background:var(--gray-900);
-    transition:width .3s ease;
+    height:.0625rem;
+    background:var(--point);
+    transform:translateX(-50%);
+    transition:width .25s ease;
+}
+
+.nav-list a:hover,
+.nav-list a.active{
+    color:var(--point);
 }
 
 .nav-list a:hover::after,
@@ -72,66 +78,184 @@ HEADER
     width:100%;
 }
 
+.nav-toggle{
+    display:none;
+}
+
 /* =========================
-TABLET
+TABLET - 1024
 ========================= */
-@media (max-width:1024px){
+@media(max-width:1024px){
     .site-header{
-        top:20px;
-        left:var(--space-x-large);
-        right:var(--space-x-large);
+        top:1.25rem;
+        left:calc(var(--frame-pad) / 2);
+        right:calc(var(--frame-pad) / 2);
     }
 
     .header-inner{
         width:100%;
+        max-width:none;
     }
 
     .site-nav{
-        height:46px;
+        height:3rem;
         padding:0 var(--space-normal);
-        overflow-x:auto;
-        scrollbar-width:none;
-    }
-
-    .site-nav::-webkit-scrollbar{
-        display:none;
     }
 
     .nav-list{
-        width:max-content;
-        gap:var(--space-x-large);
-    }
-
-    .nav-list a{
-        font-size:var(--fs-body1);
-    }
-}
-
-/* =========================
-MOBILE
-========================= */
-@media (max-width:768px){
-    .site-header{
-        top:16px;
-        left:var(--space-normal);
-        right:var(--space-normal);
-    }
-
-    .site-nav{
-        height:42px;
-        padding:0 var(--space-normal);
-        border-radius:100px;
-    }
-
-    .nav-list{
-        gap:var(--space-normal);
+        justify-content:center;
+        gap:1.5rem;
     }
 
     .nav-list a{
         font-size:var(--fs-body2);
     }
+}
+
+/* =========================
+MOBILE - 768
+========================= */
+@media(max-width:768px){
+    .site-header{
+        top:1rem;
+        left:50%;
+        right:auto;
+        transform:translateX(-50%);
+    }
+
+    .header-inner{
+        width:auto;
+    }
+
+    .nav-toggle{
+        position:relative;
+        z-index:2;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        gap:.35rem;
+        width:3.75rem;
+        height:3.75rem;
+        margin:0 auto;
+        padding:0;
+        border:0;
+        border-radius:50%;
+        background:rgba(255,255,255,.88);
+        box-shadow:0 .25rem 1.5rem rgba(0,0,0,.1);
+        backdrop-filter:blur(.75rem);
+        -webkit-backdrop-filter:blur(.75rem);
+        cursor:pointer;
+    }
+
+    .nav-toggle span{
+        display:block;
+        width:1.5rem;
+        height:.125rem;
+        background:var(--gray-900);
+        border-radius:1rem;
+        transition:transform .3s ease,opacity .3s ease;
+    }
+
+    .site-nav{
+        position:absolute;
+        top:4.5rem;
+        left:50%;
+        width:15rem;
+        max-width:calc(100vw - 2rem);
+        height:auto;
+        max-height:0;
+        padding:0;
+        overflow:hidden;
+        border-radius:1.5rem;
+        background:rgba(255,255,255,.94);
+        box-shadow:0 .5rem 2rem rgba(0,0,0,.12);
+        backdrop-filter:blur(1rem);
+        -webkit-backdrop-filter:blur(1rem);
+        opacity:0;
+        visibility:hidden;
+        transform:translateX(-50%) translateY(-.75rem);
+        transition:max-height .4s ease,opacity .3s ease,transform .3s ease;
+    }
+
+    .nav-list{
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        height:auto;
+        padding:1rem;
+    }
+
+    .nav-list li{
+        width:100%;
+        height:auto;
+    }
+
+    .nav-list a{
+        justify-content:center;
+        width:100%;
+        height:auto;
+        padding:1rem;
+        font-size:1.15rem;
+        border-radius:1rem;
+    }
 
     .nav-list a::after{
-        bottom:6px;
+        display:none;
+    }
+
+    .nav-list a:hover,
+    .nav-list a.active{
+        color:var(--point);
+        background:var(--ivory-0);
+    }
+
+    .site-header.is-open .site-nav{
+        max-height:40rem;
+        opacity:1;
+        visibility:visible;
+        transform:translateX(-50%) translateY(0);
+    }
+
+    .site-header.is-open .nav-toggle span:nth-child(1){
+        transform:translateY(.475rem) rotate(45deg);
+    }
+
+    .site-header.is-open .nav-toggle span:nth-child(2){
+        opacity:0;
+    }
+
+    .site-header.is-open .nav-toggle span:nth-child(3){
+        transform:translateY(-.475rem) rotate(-45deg);
+    }
+}
+
+/* =========================
+SMALL MOBILE - 320
+========================= */
+@media(max-width:320px){
+    .site-header{
+        top:.75rem;
+    }
+
+    .nav-toggle{
+        width:3.5rem;
+        height:3.5rem;
+    }
+
+    .site-nav{
+        top:4.25rem;
+        width:calc(100vw - 1rem);
+        max-width:none;
+        border-radius:1.25rem;
+    }
+
+    .nav-list{
+        padding:.75rem;
+    }
+
+    .nav-list a{
+        padding:.85rem .5rem;
+        font-size:1rem;
     }
 }
