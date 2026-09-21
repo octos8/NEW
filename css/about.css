@@ -184,7 +184,7 @@ MOBILE - 768
     max-width: 100%;
     min-width: 0;
     min-height: 33.875rem;
-    padding: 3.125rem 4rem 3.125rem 3rem;
+    padding:3.125rem 3rem 3.125rem 4rem;
     background: var(--ivory-0);
 }
 
@@ -372,7 +372,7 @@ MOBILE - 768
     .profile-area {
         gap: 1.5rem;
         min-height: auto;
-        padding: 3rem 3rem 3rem 2rem;
+        padding:3rem 2.5rem 3rem 2.5rem;
     }
 
     .profile-section-label {
@@ -415,7 +415,7 @@ MOBILE - 768
     .profile-area {
         flex-direction: column;
         align-items: center;
-        padding: 4rem 2.5rem 3rem;
+        padding:4rem 2rem 3rem 3rem;
     }
 
     .profile-left {
@@ -474,7 +474,7 @@ MOBILE - 768
 @media(max-width:402px) {
     .profile-area {
         gap: 2rem;
-        padding: 3.5rem 2rem 2.5rem;
+        padding:3.5rem 1.75rem 2.5rem 2.25rem;
     }
 
     .profile-left {
@@ -529,7 +529,7 @@ MOBILE - 768
 @media(max-width:280px) {
     .profile-area {
         gap: 1.5rem;
-        padding: 3rem 1.5rem 2rem;
+        padding:3rem 1.375rem 2rem 1.625rem;
     }
 
     .profile-left {
@@ -573,7 +573,7 @@ MOBILE - 768
 
 @media(max-width:240px) {
     .profile-area {
-        padding: 2.75rem 1.25rem 1.75rem;
+        padding:2.75rem 1.125rem 1.75rem 1.375rem;
     }
 
     .profile-left {
