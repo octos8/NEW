@@ -86,25 +86,32 @@ HEADER
 TABLET - 1024
 ========================= */
 @media(max-width:1024px){
+
     .site-header{
         top:1.25rem;
         left:calc(var(--frame-pad) / 2);
-        right:calc(var(--frame-pad) / 2);
+        right:auto;
+        width:auto;
     }
 
     .header-inner{
-        width:100%;
-        max-width:none;
+        width:fit-content;
+        max-width:calc(100vw - var(--frame-pad));
+        margin:0;
+        padding:0;
     }
 
     .site-nav{
+        width:auto;
         height:3rem;
         padding:0 var(--space-normal);
     }
 
     .nav-list{
-        justify-content:center;
+        width:auto;
+        justify-content:flex-start;
         gap:1.5rem;
+        white-space:nowrap;
     }
 
     .nav-list a{

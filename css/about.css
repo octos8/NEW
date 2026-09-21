@@ -448,6 +448,10 @@ TOOLS & SKILLS
     overflow:hidden;
 }
 
+
+/* =========================
+HEADING
+========================= */
 .skills-heading{
     display:flex;
     flex-direction:column;
@@ -469,20 +473,23 @@ TOOLS & SKILLS
     background:var(--gray-900);
 }
 
+
 /* =========================
 ORBIT
 ========================= */
 .skills-orbit{
     position:relative;
     width:36.375rem;
-    max-width:70vw;
-    aspect-ratio:1/1;
+    height:36.375rem;
     margin:0 auto;
     border:.0625rem solid var(--gray-400);
     border-radius:50%;
 }
 
-/* POINT */
+
+/* =========================
+POINT
+========================= */
 .skills-dot{
     position:absolute;
     top:0;
@@ -493,9 +500,12 @@ ORBIT
     border-radius:50%;
     background:var(--point);
     transform:translate(-50%,-50%);
-    transition:left .45s ease,top .45s ease;
+    transition:
+        left .45s ease,
+        top .45s ease;
     pointer-events:none;
 }
+
 
 /* =========================
 MENU
@@ -521,23 +531,31 @@ MENU
     color:var(--point);
 }
 
+
+/* PUBLISHING */
 .skill-menu-publishing{
-    top:-5rem;
+    top:-3rem;
     left:50%;
     transform:translateX(-50%);
 }
 
+
+/* DESIGN */
 .skill-menu-design{
     top:50%;
-    right:calc(100% + 5rem);
+    right:calc(100% + 1rem);
     transform:translateY(-50%);
 }
 
-.skill-menu-development{
-    top:50%;
-    left:calc(100% + 5rem);
-    transform:translateY(-50%);
+
+/* DEVELOPMENT */
+.skill-menu-development {
+    top: 50%;
+    left: calc(100% + 1rem);
+    transform: translateY(-50%);
+    text-align: center;
 }
+
 
 /* =========================
 SKILL DETAIL
@@ -551,7 +569,9 @@ SKILL DETAIL
     opacity:0;
     visibility:hidden;
     transform:translate(-50%,-46%);
-    transition:opacity .35s ease,transform .35s ease;
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
 }
 
 .skill-detail.is-active{
@@ -576,6 +596,10 @@ SKILL DETAIL
     word-break:keep-all;
 }
 
+
+/* =========================
+PROGRAM LIST
+========================= */
 .skill-program-list{
     display:flex;
     flex-direction:column;
@@ -584,7 +608,7 @@ SKILL DETAIL
 
 .skill-program-list li{
     display:grid;
-    grid-template-columns:2.5rem 1fr;
+    grid-template-columns:2.5rem minmax(0,1fr);
     gap:1rem;
     align-items:start;
 }
@@ -610,10 +634,12 @@ SKILL DETAIL
     word-break:keep-all;
 }
 
+
 /* =========================
-TABLET - SKILLS 1024
+TABLET - 1024
 ========================= */
 @media(max-width:1024px){
+
     .skills-section{
         padding:5rem 0 8rem;
     }
@@ -626,76 +652,19 @@ TABLET - SKILLS 1024
         font-size:2.5rem;
     }
 
+
+    /* ORBIT */
+
     .skills-orbit{
         width:24rem;
-        max-width:65vw;
+        height:24rem;
     }
+
+
+    /* MENU */
 
     .skill-menu{
-        font-size:1.35rem;
-    }
-
-    .skill-menu-publishing{
-        top:-4.5rem;
-    }
-
-    .skill-menu-design{
-        right:calc(100% + 2rem);
-    }
-
-    .skill-menu-development{
-        left:calc(100% + 2rem);
-    }
-
-    .skill-detail{
-        width:19rem;
-        max-width:72%;
-    }
-
-    .skill-program-list{
-        gap:.8rem;
-    }
-
-    .skill-program-list li{
-        grid-template-columns:2.25rem 1fr;
-        gap:.8rem;
-    }
-
-    .skill-program-list img{
-        width:2rem;
-        height:2rem;
-    }
-}
-
-/* =========================
-MOBILE - SKILLS 768
-========================= */
-@media(max-width:768px){
-    .skills-section{
-        padding:4rem 0 6rem;
-    }
-
-    .skills-heading{
-        margin-bottom:6rem;
-    }
-
-    .skills-heading h3{
-        font-size:2.2rem;
-    }
-
-    .skills-orbit{
-        width:72vw;
-        max-width:22rem;
-        aspect-ratio:1/1;
-    }
-
-    .skills-dot{
-        width:1rem;
-        height:1rem;
-    }
-
-    .skill-menu{
-        font-size:1rem;
+        font-size:1.2rem;
     }
 
     .skill-menu-publishing{
@@ -703,22 +672,19 @@ MOBILE - SKILLS 768
     }
 
     .skill-menu-design{
-        top:50%;
-        right:auto;
-        left:0;
-        transform:translate(-55%,-50%);
+        right:calc(100% + 1.5rem);
     }
 
     .skill-menu-development{
-        top:50%;
-        right:0;
-        left:auto;
-        transform:translate(55%,-50%);
+        left:calc(100% + 1.5rem);
     }
 
+
+    /* DETAIL */
+
     .skill-detail{
-        width:17rem;
-        max-width:72%;
+        width:16rem;
+        max-width:68%;
     }
 
     .skill-detail h4{
@@ -728,15 +694,19 @@ MOBILE - SKILLS 768
     .skill-summary{
         margin-bottom:1rem;
         font-size:.9rem;
+        line-height:1.45;
     }
+
+
+    /* PROGRAM */
 
     .skill-program-list{
         gap:.7rem;
     }
 
     .skill-program-list li{
-        grid-template-columns:1.8rem 1fr;
-        gap:.65rem;
+        grid-template-columns:1.8rem minmax(0,1fr);
+        gap:.6rem;
     }
 
     .skill-program-list img{
@@ -750,5 +720,411 @@ MOBILE - SKILLS 768
 
     .skill-program-list p{
         font-size:.75rem;
+        line-height:1.4;
+    }
+}
+
+
+/* =========================
+MOBILE - 768
+원 안에 전부 들어오도록 축소
+========================= */
+@media(max-width:768px){
+
+    .skills-section{
+        padding:4rem 0 6rem;
+    }
+
+    .skills-heading{
+        margin-bottom:5rem;
+    }
+
+    .skills-heading h3{
+        font-size:2.2rem;
+    }
+
+    .skills-heading-line{
+        width:5rem;
+        margin-top:1.25rem;
+    }
+
+
+    /* =========================
+    ORBIT
+    ========================= */
+
+    .skills-orbit{
+        width:20rem;
+        height:20rem;
+        max-width:80vw;
+    }
+
+    .skills-dot{
+        width:.85rem;
+        height:.85rem;
+    }
+
+
+    /* =========================
+    MENU
+    원 밖으로 밀어내지 않음
+    ========================= */
+
+    .skill-menu{
+        font-size:.85rem;
+    }
+
+    .skill-menu-publishing{
+        top:-2rem;
+        left:50%;
+
+        transform:translateX(-50%);
+    }
+
+    .skill-menu-design{
+        top:50%;
+        right:auto;
+        left:-4rem;
+        transform:translateY(-50%);
+    }
+
+    .skill-menu-development{
+        top:50%;
+        right:-6.5rem;
+        left:auto;
+        max-width:6.5rem;
+        text-align:center;
+        white-space:normal;
+        transform:translateY(-50%);
+    }
+
+    /* =========================
+    DETAIL
+    ========================= */
+
+    .skill-detail{
+        width:12.5rem;
+        max-width:62%;
+    }
+
+    .skill-detail h4{
+        margin-bottom:.45rem;
+        font-size:1rem;
+        line-height:1.2;
+    }
+
+    .skill-summary{
+        margin-bottom:.65rem;
+        font-size:.72rem;
+        line-height:1.35;
+    }
+
+
+    /* =========================
+    PROGRAM LIST
+    ========================= */
+
+    .skill-program-list{
+        gap:.45rem;
+    }
+
+    .skill-program-list li{
+        grid-template-columns:1.25rem minmax(0,1fr);
+        gap:.4rem;
+    }
+
+    .skill-program-list img{
+        width:1.1rem;
+        height:1.1rem;
+    }
+
+    .skill-program-list strong{
+        margin-bottom:.08rem;
+        font-size:.72rem;
+        line-height:1.2;
+    }
+
+    .skill-program-list p{
+        font-size:.58rem;
+        line-height:1.3;
+    }
+}
+
+
+/* =========================
+EXTRA SMALL MOBILE - 402
+========================= */
+@media(max-width:402px){
+
+    .skills-section{
+        padding:3.5rem 0 5rem;
+
+        /* 오른쪽 글씨 잘림 방지 */
+        overflow:visible;
+    }
+
+    /* =========================
+    HEADING
+    ========================= */
+    .skills-heading{
+        margin-bottom:4rem;
+    }
+
+    .skills-heading h3{
+        font-size:1.6rem;
+        line-height:1.1;
+    }
+
+    .skills-heading-line{
+        width:4.5rem;
+        margin-top:1rem;
+    }
+
+
+    /* =========================
+    ORBIT
+    ========================= */
+    .skills-orbit{
+        width:15rem;
+        height:15rem;
+
+        max-width:none;
+
+        margin:0 auto;
+    }
+
+    .skills-dot{
+        width:.65rem;
+        height:.65rem;
+    }
+
+
+    /* =========================
+    MENU
+    ========================= */
+    .skill-menu{
+        font-size:.62rem;
+        line-height:1.15;
+    }
+
+    .skill-menu-publishing{
+        top:-1.5rem;
+        left:50%;
+        transform:translateX(-50%);
+    }
+
+    .skill-menu-design{
+        top:50%;
+        left:-2.7rem;
+        right:auto;
+        transform:translateY(-50%);
+    }
+
+    .skill-menu-development{
+        top:50%;
+        right:-5rem;
+        left:auto;
+        width:4.5rem;
+        text-align:center;
+        white-space:normal;
+        word-break:keep-all;
+        transform:translateY(-50%);
+    }
+
+
+    /* =========================
+    DETAIL
+    ========================= */
+    .skill-detail{
+        width:9rem;
+        max-width:none;
+    }
+
+    .skill-detail h4{
+        margin-bottom:.3rem;
+
+        font-size:.75rem;
+        line-height:1.15;
+    }
+
+    .skill-summary{
+        margin-bottom:.45rem;
+
+        font-size:.52rem;
+        line-height:1.3;
+    }
+
+
+    /* =========================
+    PROGRAM LIST
+    ========================= */
+    .skill-program-list{
+        gap:.28rem;
+    }
+
+    .skill-program-list li{
+        grid-template-columns:.85rem minmax(0,1fr);
+
+        gap:.3rem;
+    }
+
+    .skill-program-list img{
+        width:.8rem;
+        height:.8rem;
+    }
+
+    .skill-program-list strong{
+        margin-bottom:.05rem;
+
+        font-size:.55rem;
+        line-height:1.1;
+    }
+
+    .skill-program-list p{
+        font-size:.43rem;
+        line-height:1.25;
+    }
+}
+
+
+/* =========================
+ULTRA SMALL MOBILE
+280px 이하 / 240px 대응
+========================= */
+@media(max-width:280px){
+
+    .skills-section{
+        padding:2.5rem 0 3.5rem;
+        overflow:visible;
+    }
+
+
+    /* =========================
+    HEADING
+    ========================= */
+    .skills-heading{
+        margin-bottom:3rem;
+    }
+
+    .skills-heading h3{
+        font-size:1.05rem;
+        line-height:1.1;
+        white-space:nowrap;
+    }
+
+    .skills-heading-line{
+        width:3rem;
+        height:.0625rem;
+        margin-top:.75rem;
+    }
+
+
+    /* =========================
+    ORBIT
+    ========================= */
+    .skills-orbit{
+        width:9.5rem;
+        height:9.5rem;
+        max-width:none;
+        margin:0 auto;
+    }
+
+    .skills-dot{
+        width:.4rem;
+        height:.4rem;
+    }
+
+
+    /* =========================
+    MENU
+    ========================= */
+    .skill-menu{
+        font-size:.4rem;
+        line-height:1.1;
+    }
+
+    .skill-menu-publishing{
+        top:-0.75rem;
+        left:50%;
+        transform:translateX(-50%);
+    }
+
+    .skill-menu-design{
+        top:50%;
+        left:-1.7rem;
+        right:auto;
+
+        transform:translateY(-50%);
+    }
+
+    .skill-menu-development{
+        top:50%;
+        right:-3rem;
+        left:auto;
+
+        width:2.8rem;
+
+        font-size:.37rem;
+        line-height:1.1;
+
+        text-align:center;
+
+        white-space:normal;
+        word-break:keep-all;
+
+        transform:translateY(-50%);
+    }
+
+
+    /* =========================
+    CENTER DETAIL
+    ========================= */
+    .skill-detail{
+        width:5.8rem;
+        max-width:none;
+    }
+
+    .skill-detail h4{
+        margin-bottom:.18rem;
+
+        font-size:.48rem;
+        line-height:1.1;
+    }
+
+    .skill-summary{
+        margin-bottom:.28rem;
+
+        font-size:.32rem;
+        line-height:1.2;
+    }
+
+
+    /* =========================
+    PROGRAM LIST
+    ========================= */
+    .skill-program-list{
+        gap:.16rem;
+    }
+
+    .skill-program-list li{
+        grid-template-columns:.55rem minmax(0,1fr);
+        gap:.15rem;
+    }
+
+    .skill-program-list img{
+        width:.5rem;
+        height:.5rem;
+    }
+
+    .skill-program-list strong{
+        margin-bottom:.02rem;
+
+        font-size:.36rem;
+        line-height:1.05;
+    }
+
+    .skill-program-list p{
+        font-size:.27rem;
+        line-height:1.15;
     }
 }
