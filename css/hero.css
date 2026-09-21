@@ -8,27 +8,41 @@ HERO
     overflow:hidden;
 }
 
-/* BACKGROUND */
+
+/* =========================
+BACKGROUND
+========================= */
 .hero-bg{
     position:absolute;
+
     top:0;
     left:50%;
+
     width:calc(100% - var(--frame-pc));
     max-width:var(--content-width);
     height:100%;
+
     background:rgba(0,0,0,.8);
+
     transform:translateX(-50%);
 }
 
-/* INNER */
+
+/* =========================
+INNER
+========================= */
 .hero-inner{
     position:relative;
+
     width:calc(100% - var(--frame-pc));
     max-width:var(--content-width);
     height:100%;
+
     margin:0 auto;
+
     padding:10rem 2.3125rem 0;
 }
+
 
 /* =========================
 TITLE
@@ -36,15 +50,20 @@ TITLE
 .hero-title{
     position:relative;
     z-index:3;
+
     margin:0;
+
     color:var(--white);
+
     font-family:var(--font-main);
     font-size:10.5vw;
     font-weight:900;
     line-height:.9;
     letter-spacing:-.05em;
+
     white-space:nowrap;
 }
+
 
 /* =========================
 DESCRIPTION
@@ -52,45 +71,74 @@ DESCRIPTION
 .hero-description{
     position:relative;
     z-index:3;
+
     width:45%;
+
     margin-top:5rem;
+
     color:var(--white);
+
     font-size:1.25rem;
     font-weight:var(--fw1);
 }
 
 .hero-description p{
     margin:0;
+
     line-height:var(--lh2);
+
     word-break:keep-all;
 }
 
+
 /* =========================
 LINE
+화면 크기에 맞춰 같이 축소
 ========================= */
 .hero-line{
     position:relative;
     z-index:3;
-    width:38rem;
+
+    /* 기존 고정 38rem 제거 */
+    width:38%;
+
     height:.0625rem;
+
     margin-top:2rem;
+
     background:rgba(255,255,255,.8);
 }
 
+
 /* =========================
 PROFILE
+LINE과 같은 부모 기준으로 계산
 ========================= */
 .hero-profile{
     position:relative;
     z-index:3;
+
     display:flex;
     align-items:center;
     justify-content:flex-end;
-    width:58rem;
+
+    /*
+    line 38%
+    profile 58%
+
+    두 값이 같은 부모 기준으로 줄어들기 때문에
+    화면이 작아져도 비율 유지
+    */
+    width:58%;
+
     margin-top:-.8rem;
+
     gap:1.5rem;
+
     color:var(--white);
+
     font-size:1.25rem;
+
     white-space:nowrap;
 }
 
@@ -102,29 +150,38 @@ PROFILE
     font-weight:var(--fw2);
 }
 
+
 /* =========================
 IMAGE
 ========================= */
 .hero-visual{
     position:absolute;
+
     right:0;
     bottom:0;
+
     z-index:1;
+
     width:66%;
+
     margin:0;
+
     line-height:0;
 }
 
 .hero-visual img{
     display:block;
+
     width:100%;
     height:auto;
 }
+
 
 /* =========================
 TABLET - 1024
 ========================= */
 @media(max-width:1024px){
+
     .hero-section{
         height:56rem;
     }
@@ -139,39 +196,62 @@ TABLET - 1024
         padding:8rem 2rem 0;
     }
 
+
+    /* TITLE */
+
     .hero-title{
         font-size:10.5vw;
     }
 
+
+    /* DESCRIPTION */
+
     .hero-description{
         width:52%;
+
         margin-top:4rem;
+
         font-size:1.1rem;
     }
 
+
+    /* LINE */
+
     .hero-line{
-        width:60%;
+        width:38%;
+
         margin-top:2rem;
     }
 
+
+    /* PROFILE */
+
     .hero-profile{
-        width:60%;
+        width:58%;
+
         margin-top:-.7rem;
+
         gap:1rem;
+
         font-size:1rem;
     }
 
+
+    /* IMAGE */
+
     .hero-visual{
-        width:70%;
+        width:58%;
     }
 }
+
 
 /* =========================
 MOBILE - 768
 ========================= */
 @media(max-width:768px){
+
     .hero-section{
-        height:60rem;
+        height:40rem;
     }
 
     .hero-bg,
@@ -183,32 +263,113 @@ MOBILE - 768
         padding:9rem 1rem 0;
     }
 
+
+    /* TITLE */
+
     .hero-title{
         font-size:12vw;
     }
 
+
+    /* DESCRIPTION */
+
     .hero-description{
         width:100%;
+
         margin-top:2.5rem;
+
         font-size:1rem;
     }
 
+
+    /* LINE */
+
     .hero-line{
-        width:100%;
+        width:52%;
+
         margin-top:3rem;
     }
 
+
+    /* PROFILE */
+
     .hero-profile{
-        justify-content:flex-start;
-        width:100%;
-        margin-top:1.25rem;
-        gap:1rem;
-        font-size:.9rem;
+        width:72%;
+
+        margin-top:-.5rem;
+
+        gap:.7rem;
+
+        font-size:.75rem;
     }
+
+
+    /* IMAGE */
 
     .hero-visual{
         right:0;
         bottom:1rem;
+
+        width:74%;
+    }
+}
+
+
+/* =========================
+SMALL MOBILE - 402
+========================= */
+@media(max-width:402px){
+
+    .hero-section{
+        height:32rem;
+    }
+
+    .hero-inner{
+        padding:7rem .75rem 0;
+    }
+
+
+    /* TITLE */
+
+    .hero-title{
+        font-size:12vw;
+    }
+
+
+    /* DESCRIPTION */
+
+    .hero-description{
+        margin-top:2rem;
+
+        font-size:.75rem;
+    }
+
+
+    /* LINE */
+
+    .hero-line{
+        width:48%;
+
+        margin-top:2rem;
+    }
+
+
+    /* PROFILE */
+
+    .hero-profile{
+        width:72%;
+
+        margin-top:-.4rem;
+
+        gap:.4rem;
+
+        font-size:.55rem;
+    }
+
+
+    /* IMAGE */
+
+    .hero-visual{
         width:78%;
     }
 }

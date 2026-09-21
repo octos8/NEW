@@ -4,14 +4,15 @@ BANNER
 .banner-section{
     position:relative;
     width:100%;
-    height:62.5rem;
+    height:auto;
+    min-height:62.5rem;
     padding:5rem 0;
     overflow:hidden;
 }
 
 .banner-inner{
     position:relative;
-    height:100%;
+    height:auto;
 }
 
 
@@ -52,29 +53,28 @@ SWIPER
     width:78%;
     max-width:75rem;
 
-    /* 원본 배너 비율 유지 */
-    aspect-ratio:1620 / 818;
+    /* 이미지와 설명 높이에 맞춤 */
     margin:0 auto;
     overflow:hidden;
-    --swiper-pagination-color:var(--ivory-500);
-    --swiper-pagination-bullet-inactive-color:var(--ivory-500);
-    --swiper-pagination-bullet-inactive-opacity:.35;
+    --swiper-pagination-color:var(--point);
+    --swiper-pagination-bullet-inactive-color:var(--gray-300);
+    --swiper-pagination-bullet-inactive-opacity:1;
     --swiper-pagination-bullet-size:.875rem;
 }
 
 .banner-train{
     width:100%;
-    height:100%;
+    height:auto;
 }
 
 .banner-train .swiper-slide{
     width:100%;
-    height:100%;
+    height:auto;
 }
 
 .banner-train figure{
     width:100%;
-    height:100%;
+    height:auto;
     margin:0;
     overflow:hidden;
     line-height:0;
@@ -83,7 +83,8 @@ SWIPER
 .banner-train img{
     display:block;
     width:100%;
-    height:100%;
+    height:auto;
+    aspect-ratio:1620 / 818;
     /* 이미지 전체가 보이게 */
     object-fit:contain;
     object-position:center;
@@ -93,6 +94,34 @@ SWIPER
 /* =========================
 TABLET - 1024
 ========================= */
+.banner-caption{
+    padding:1.5rem .5rem 0;
+    text-align:center;
+    line-height:var(--lh2);
+    word-break:keep-all;
+    overflow-wrap:anywhere;
+}
+
+.banner-caption h3{
+    margin:0 0 .75rem;
+    font-size:1.5rem;
+    font-weight:var(--fw2);
+    line-height:var(--lh1);
+}
+
+.banner-caption p{
+    margin:0;
+    font-size:1rem;
+    color:var(--gray-700);
+}
+
+.banner-station .swiper-pagination{
+    position:relative;
+    bottom:auto;
+    margin-top:1.5rem;
+    line-height:1;
+}
+
 @media(max-width:1024px){
 
     .banner-section{
@@ -129,8 +158,6 @@ TABLET - 1024
         width:90%;
         max-width:none;
 
-        /* 비율 변경하지 않음 */
-        aspect-ratio:1620 / 818;
     }
 }
 
@@ -185,8 +212,6 @@ MOBILE - 768
     .banner-station.swiper{
         width:100%;
         max-width:none;
-        /* 기존 1.6 / 1 삭제 */
-        aspect-ratio:1620 / 818;
         margin:0 auto;
     }
 
@@ -194,12 +219,12 @@ MOBILE - 768
     .banner-train .swiper-slide,
     .banner-train figure{
         width:100%;
-        height:100%;
+        height:auto;
     }
 
     .banner-train img{
         width:100%;
-        height:100%;
+        height:auto;
         object-fit:contain;
         object-position:center;
     }
@@ -210,6 +235,18 @@ MOBILE - 768
 EXTRA SMALL MOBILE - 402
 ========================= */
 @media(max-width:402px){
+
+    .banner-caption{
+        padding-top:1rem;
+    }
+
+    .banner-caption h3{
+        font-size:1.1rem;
+    }
+
+    .banner-caption p{
+        font-size:.85rem;
+    }
 
     .banner-section{
         padding:3rem 0 4.5rem;
@@ -238,7 +275,6 @@ EXTRA SMALL MOBILE - 402
 
     .banner-station.swiper{
         width:100%;
-        aspect-ratio:1620 / 818;
     }
 
     .banner-train img{

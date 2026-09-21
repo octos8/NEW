@@ -48,6 +48,87 @@ document.addEventListener('DOMContentLoaded', () => {
             block: 'start'
         });
     });
+
+    /* =========================
+    ABOUT INTRO SCROLL ANIMATION
+    다른 JS와 충돌하지 않도록 독립 실행
+    ========================= */
+    (() => {
+
+        const aboutIntro = document.querySelector('.about-intro');
+        if (!aboutIntro) return;
+        const aboutIntroObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    entry.target.classList.toggle('is-visible', entry.isIntersecting);
+                });
+            },
+            {
+                threshold: 0,
+                rootMargin: '0px 0px -24px 0px'
+            }
+        );
+        aboutIntroObserver.observe(aboutIntro);
+    })();
+
+    /* Load once with defer, alongside the existing site JavaScript. */
+    (() => {
+        const init = () => {
+            if (!('IntersectionObserver' in window) ||
+                window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (!entry.target.matches('.skills-heading')) {
+                        entry.target.classList.toggle('about-revealed', entry.isIntersecting);
+                        return;
+                    }
+
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('about-revealed');
+                    observer.unobserve(entry.target);
+                });
+            }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
+
+            document.querySelectorAll('.education-info, .certification-info, .skills-heading').forEach(target => {
+                if (target.classList.contains('about-reveal-ready')) return;
+                target.classList.add('about-reveal-ready');
+                observer.observe(target);
+            });
+        };
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init, { once: true });
+        } else {
+            init();
+        }
+    })();
+
+    /* POSTER SCROLL ANIMATION */
+    (() => {
+        if (reducedMotion || !('IntersectionObserver' in window)) return;
+
+        const posterBody = document.querySelector('.poster-body');
+        if (!posterBody) return;
+
+        const posterObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                entry.target.classList.toggle('is-poster-visible', entry.isIntersecting);
+            });
+        }, {
+            threshold: 0,
+            rootMargin: '0px 0px -24px 0px'
+        });
+
+        posterBody.classList.add('poster-motion-ready');
+        posterObserver.observe(posterBody);
+
+        /* 항목의 위치는 유지하고 내부 이미지와 설명만 이동 */
+        posterBody.querySelectorAll('.poster-list > .poster-item').forEach(item => {
+            item.classList.add('poster-motion-ready');
+            posterObserver.observe(item);
+        });
+    })();
+
     /* TOOLS & SKILLS */
     const skillMenus = document.querySelectorAll('.skill-menu');
     const skillPanels = document.querySelectorAll('.skill-detail');
@@ -142,30 +223,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* MOBILE MENU */
-const header=document.querySelector('.site-header');
-const navToggle=document.querySelector('.nav-toggle');
-const mobileNavLinks=document.querySelectorAll('.site-nav a');
+    const header = document.querySelector('.site-header');
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileNavLinks = document.querySelectorAll('.site-nav a');
 
-navToggle?.addEventListener('click',()=>{
-    const isOpen=header.classList.toggle('is-open');
-    navToggle.setAttribute('aria-expanded',isOpen);
-    navToggle.setAttribute('aria-label',isOpen?'메뉴 닫기':'메뉴 열기');
-});
-
-mobileNavLinks.forEach(link=>{
-    link.addEventListener('click',()=>{
-        header.classList.remove('is-open');
-        navToggle?.setAttribute('aria-expanded','false');
-        navToggle?.setAttribute('aria-label','메뉴 열기');
+    navToggle?.addEventListener('click', () => {
+        const isOpen = header.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', isOpen);
+        navToggle.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
     });
-});
 
-document.addEventListener('click',e=>{
-    if(!header?.classList.contains('is-open'))return;
-    if(header.contains(e.target))return;
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            header.classList.remove('is-open');
+            navToggle?.setAttribute('aria-expanded', 'false');
+            navToggle?.setAttribute('aria-label', '메뉴 열기');
+        });
+    });
 
-    header.classList.remove('is-open');
-    navToggle?.setAttribute('aria-expanded','false');
-    navToggle?.setAttribute('aria-label','메뉴 열기');
-});
+    document.addEventListener('click', e => {
+        if (!header?.classList.contains('is-open')) return;
+        if (header.contains(e.target)) return;
+
+        header.classList.remove('is-open');
+        navToggle?.setAttribute('aria-expanded', 'false');
+        navToggle?.setAttribute('aria-label', '메뉴 열기');
+    });
 });

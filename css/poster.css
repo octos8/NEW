@@ -119,6 +119,36 @@ POSTER LIST
 /* =========================
 POSTER IMAGE
 ========================= */
+/* 스크롤 진입 효과: 기존 배치와 sticky 위치 유지 */
+.poster-body.poster-motion-ready .poster-decoration > span,
+.poster-item.poster-motion-ready > *{
+    opacity:0;
+    transition:opacity 1s ease, transform 1.2s ease;
+}
+
+.poster-body.poster-motion-ready .poster-decoration > span{
+    transform:translateY(-4rem);
+}
+
+.poster-item.poster-motion-ready > *{
+    transform:translateY(4rem);
+}
+
+.poster-body.poster-motion-ready.is-poster-visible .poster-decoration > span,
+.poster-item.poster-motion-ready.is-poster-visible > *{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@media(prefers-reduced-motion:reduce){
+    .poster-body.poster-motion-ready .poster-decoration > span,
+    .poster-item.poster-motion-ready > *{
+        opacity:1;
+        transform:none;
+        transition:none;
+    }
+}
+
 .poster-item figure{
     width:31.25rem;
     height:46.875rem;

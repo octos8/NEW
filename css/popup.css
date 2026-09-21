@@ -160,7 +160,7 @@ DECORATION
 .popup-layout::before{
     content:"";
     position:absolute;
-    top:3rem;
+    top:15rem;
     left:2rem;
     width:.0625rem;
     height:16.25rem;
@@ -170,7 +170,7 @@ DECORATION
 .popup-layout::after{
     content:"";
     position:absolute;
-    top:19rem;
+    top:31rem;
     left:1.40625rem;
     width:1.25rem;
     height:1.25rem;
