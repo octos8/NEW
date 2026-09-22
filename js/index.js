@@ -1,6 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
+    const heroName = document.querySelector('.hero-name');
+    const playHeroName = () => {
+        if (!heroName || reducedMotion) return;
+        heroName.classList.remove('is-entering');
+        void heroName.offsetWidth;
+        heroName.classList.add('is-entering');
+    };
+    playHeroName();
+
+    // Replay once HOME has scrolled back into view, including long scrolls.
+    let heroScrollFrame;
+    const replayHeroOnHome = target => {
+        cancelAnimationFrame(heroScrollFrame);
+        const startedAt = performance.now();
+        const waitForHome = () => {
+            if (Math.abs(target.getBoundingClientRect().top) <= 2 || window.scrollY <= 2) {
+                playHeroName();
+                return;
+            }
+            if (performance.now() - startedAt > 2500) return;
+            heroScrollFrame = requestAnimationFrame(waitForHome);
+        };
+        heroScrollFrame = requestAnimationFrame(waitForHome);
+    };
+
     /* HEADER NAV */
     const navLinks = document.querySelectorAll('.nav-list a');
     const sections = [...navLinks]
@@ -12,10 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = document.querySelector(link.getAttribute('href'));
             if (!target) return;
             e.preventDefault();
+            cancelAnimationFrame(heroScrollFrame);
             target.scrollIntoView({
                 behavior: reducedMotion ? 'auto' : 'smooth',
                 block: 'start'
             });
+            if (target.id === 'home') replayHeroOnHome(target);
         });
     });
 
@@ -90,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
 
-            document.querySelectorAll('.education-info, .certification-info, .skills-heading').forEach(target => {
+            document.querySelectorAll('.education-info, .certification-info, .skills-heading, .skill-menu').forEach(target => {
                 if (target.classList.contains('about-reveal-ready')) return;
                 target.classList.add('about-reveal-ready');
                 observer.observe(target);

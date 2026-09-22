@@ -150,6 +150,19 @@ LINE과 같은 부모 기준으로 계산
     font-weight:var(--fw2);
 }
 
+.hero-name.is-entering{
+    animation:hero-name-enter 1.1s cubic-bezier(.22,1,.36,1) both;
+}
+
+@keyframes hero-name-enter{
+    from{opacity:0; transform:translateX(5rem);}
+    to{opacity:1; transform:translateX(0);}
+}
+
+@media(prefers-reduced-motion:reduce){
+    .hero-name.is-entering{animation:none;}
+}
+
 
 /* =========================
 IMAGE
@@ -175,6 +188,7 @@ IMAGE
     width:100%;
     height:auto;
 }
+
 
 
 /* =========================

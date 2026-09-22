@@ -2,6 +2,7 @@
 BANNER
 ========================= */
 .banner-section{
+    background:var(--ivory-0);
     position:relative;
     width:100%;
     height:auto;
@@ -31,7 +32,7 @@ TITLE
     font-weight:var(--fw2);
     line-height:1;
     letter-spacing:-.04em;
-    color:var(--gray-900);
+    color:var(--point);
     white-space:normal;
     word-break:keep-all;
 }
@@ -59,7 +60,7 @@ SWIPER
     --swiper-pagination-color:var(--point);
     --swiper-pagination-bullet-inactive-color:var(--gray-300);
     --swiper-pagination-bullet-inactive-opacity:1;
-    --swiper-pagination-bullet-size:.875rem;
+    --swiper-pagination-bullet-size:14px;
 }
 
 .banner-train{
@@ -95,23 +96,30 @@ SWIPER
 TABLET - 1024
 ========================= */
 .banner-caption{
+    container-type:inline-size;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0, 1fr));
+    align-items:start;
+    gap:1.5rem;
     padding:1.5rem .5rem 0;
-    text-align:center;
+    text-align:left;
     line-height:var(--lh2);
     word-break:keep-all;
     overflow-wrap:anywhere;
 }
 
 .banner-caption h3{
-    margin:0 0 .75rem;
-    font-size:1.5rem;
+    margin:0;
+    font-size:min(1.5rem, 2.5cqi);
+    white-space:nowrap;
     font-weight:var(--fw2);
     line-height:var(--lh1);
 }
 
 .banner-caption p{
     margin:0;
-    font-size:1rem;
+    font-size:min(1rem, 2cqi);
+    white-space:nowrap;
     color:var(--gray-700);
 }
 
@@ -123,6 +131,9 @@ TABLET - 1024
 }
 
 @media(max-width:1024px){
+    .banner-station.swiper{
+        --swiper-pagination-bullet-size:12px;
+    }
 
     .banner-section{
         height:auto;
@@ -166,6 +177,9 @@ TABLET - 1024
 MOBILE - 768
 ========================= */
 @media(max-width:768px){
+    .banner-station.swiper{
+        --swiper-pagination-bullet-size:10px;
+    }
 
     .banner-section{
         height:auto;
@@ -238,14 +252,15 @@ EXTRA SMALL MOBILE - 402
 
     .banner-caption{
         padding-top:1rem;
+        gap:.75rem;
     }
 
     .banner-caption h3{
-        font-size:1.1rem;
+        font-size:min(1.1rem, 2.5cqi);
     }
 
     .banner-caption p{
-        font-size:.85rem;
+        font-size:min(.85rem, 2cqi);
     }
 
     .banner-section{

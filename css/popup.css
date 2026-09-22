@@ -2,6 +2,7 @@
 POPUP
 ========================= */
 .popup-section{
+    background:var(--ivory-0);
     position:relative;
     width:100%;
     min-height:62.5rem;
@@ -27,7 +28,7 @@ TITLE
     font-weight:var(--fw2);
     line-height:1;
     letter-spacing:-.04em;
-    color:var(--gray-900);
+    color:var(--point);
     white-space:normal;
     word-break:keep-all;
 }
@@ -72,6 +73,7 @@ DESCRIPTION
 }
 
 .popup-description-slide.swiper-slide{
+    container-type:inline-size;
     width:100%;
     padding:0 2rem 0 8rem;
     box-sizing:border-box;
@@ -80,7 +82,8 @@ DESCRIPTION
 
 .popup-description-slide h3{
     margin:0 0 2rem;
-    font-size:1.9531rem;
+    font-size:min(1.9531rem, 4cqi);
+    white-space:nowrap;
     font-weight:var(--fw2);
     line-height:var(--lh1);
     color:var(--gray-900);
@@ -233,7 +236,7 @@ TABLET
 
     .popup-description-slide h3{
         margin-bottom:1.5rem;
-        font-size:1.6rem;
+        font-size:min(1.6rem, 4cqi);
     }
 
     .popup-description-slide p{
@@ -321,9 +324,10 @@ MOBILE
     .popup-station.swiper{
         order:1;
         flex:none;
-        width:14rem;
-        height:21rem;
-        max-width:none;
+        width:min(100%, 23.333rem);
+        height:auto;
+        aspect-ratio:2 / 3;
+        max-width:100%;
         margin:0 auto;
     }
 
@@ -352,7 +356,7 @@ MOBILE
 
     .popup-description-slide h3{
         margin:0 0 1rem;
-        font-size:1.3rem;
+        font-size:min(1.3rem, 4cqi);
         line-height:1.3;
         text-align:center;
         word-break:keep-all;
@@ -448,9 +452,10 @@ EXTRA SMALL MOBILE
     .popup-station.swiper{
         order:1;
         flex:none;
-        width:10rem;
-        height:15rem;
-        max-width:none;
+        width:min(100%, 20rem);
+        height:auto;
+        aspect-ratio:2 / 3;
+        max-width:100%;
         margin:0 auto;
     }
 
@@ -478,7 +483,7 @@ EXTRA SMALL MOBILE
 
     .popup-description-slide h3{
         margin:0 0 .75rem;
-        font-size:1.1rem;
+        font-size:min(1.1rem, 4cqi);
         line-height:1.3;
         text-align:center;
         word-break:keep-all;

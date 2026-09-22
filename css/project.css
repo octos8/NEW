@@ -1,0 +1,108 @@
+/* Figma section7 — Responsive Web Project (167:157) */
+.project-section{
+    padding:6rem 0 7rem;
+    color:var(--black);
+    background:var(--white);
+    text-align:center;
+}
+
+.project-section .project-heading{
+    width:100%;
+    padding:0;
+    margin:0;
+}
+
+.project-section .project-heading h2{
+    margin:0;
+    font-size:min(100px, 6vw);
+    font-weight:var(--fw2);
+    line-height:1.2;
+    letter-spacing:0;
+    white-space:nowrap;
+}
+
+.project-section .project-heading > p{
+    margin:15px auto 0;
+    font-size:16px;
+    line-height:1.2;
+    word-break:keep-all;
+}
+
+.project-section .project-breakpoints{
+    margin-top:80px;
+}
+
+.project-section .project-breakpoints > h3{
+    margin:0;
+    font-size:16px;
+    font-weight:var(--fw2);
+    line-height:1.2;
+}
+
+.project-section .project-device-list{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    width:min(100%, 546px);
+    padding:0;
+    margin:57px auto 0;
+    list-style:none;
+}
+
+.project-section .project-device-list > li{min-width:0;}
+
+.project-section .project-device-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:68px;
+    height:68px;
+    margin:0 auto 16px;
+}
+
+.project-section .project-device-icon img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.project-section .project-device-icon-mobile img{
+    width:52.94%;
+    height:86.27%;
+}
+
+.project-section .project-device-list h4{
+    margin:0;
+    font-size:16px;
+    font-weight:var(--fw2);
+    line-height:1.2;
+}
+
+.project-section .project-device-list p{
+    margin:3px 0 0;
+    font-size:14px;
+    font-weight:var(--fw2);
+    line-height:1.2;
+}
+
+@media(max-width:1024px){
+    .project-section{padding:5rem 0 6rem;}
+    .project-section .project-heading > p{font-size:14px; line-height:1.5;}
+}
+
+@media(max-width:768px){
+    .project-section{padding:4rem 0 5rem;}
+    .project-section .project-heading > p{max-width:38rem; font-size:12px;}
+    .project-section .project-breakpoints{margin-top:48px;}
+    .project-section .project-device-list{margin-top:32px;}
+    .project-section .project-device-icon{width:56px; height:56px;}
+    .project-section .project-device-list h4{font-size:13px;}
+    .project-section .project-device-list p{font-size:12px;}
+}
+
+@media(max-width:402px){
+    .project-section .project-heading > p{font-size:11px;}
+    .project-section .project-device-icon{width:48px; height:48px; margin-bottom:12px;}
+    .project-section .project-device-list h4{font-size:11px;}
+    .project-section .project-device-list p{font-size:10px;}
+}
