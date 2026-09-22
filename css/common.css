@@ -152,3 +152,22 @@ SMALL MOBILE
         width:calc(100% - 1.5rem);
     }
 }
+
+/* Shared section heading rhythm. */
+main section h3 { margin-bottom: 1rem; }
+main section h3 + * { margin-top: 0; }
+main .section-heading > p.section-summary,
+main .project-section .project-heading > p,
+main .about-intro > p {
+    font-size: 18px;
+    white-space: normal;
+    line-height: 1.65;
+}
+main .about-intro h3,
+main .profile-area article h3,
+main .popup-description-slide h3,
+main .poster-content h3,
+main .banner-caption h3,
+main .detail-card h3,
+main .aesop-case h3,
+main .lune-case h3 { margin-bottom: 1rem; }

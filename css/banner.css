@@ -296,3 +296,22 @@ EXTRA SMALL MOBILE - 402
         object-fit:contain;
     }
 }
+
+/* Keep the banner, caption and pagination within a compact showcase. */
+.banner-section { min-height: 0; padding: min(4rem, 5vh) 0; }
+.banner-section .banner-heading { margin-bottom: 2rem; }
+.banner-section .banner-station.swiper { width: 82%; max-width: 1200px; }
+.banner-section .banner-train img { max-height: 56svh; }
+.banner-section .banner-caption { padding-top: 1rem; gap: 1rem; }
+.banner-section .swiper-pagination { margin-top: 1rem; }
+@media (max-width: 1024px) {
+    .banner-section .banner-station.swiper { width: 94%; }
+}
+@media (max-width: 768px) {
+    .banner-section { padding: 2rem 0; }
+    .banner-section .banner-heading { margin-bottom: 1.5rem; }
+    .banner-section .banner-station.swiper { width: 100%; }
+    .banner-section .banner-caption { grid-template-columns: 1fr; gap: 0; }
+    .banner-section .banner-caption h3 { font-size: 16px; white-space: normal; }
+    .banner-section .banner-caption p { font-size: 14px; white-space: normal; }
+}

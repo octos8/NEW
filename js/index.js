@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
 
-            document.querySelectorAll('.education-info, .certification-info, .skills-heading, .skill-menu').forEach(target => {
+            document.querySelectorAll('.profile-info, .education-info, .certification-info, .skills-heading, .skill-menu').forEach(target => {
                 if (target.classList.contains('about-reveal-ready')) return;
                 target.classList.add('about-reveal-ready');
                 observer.observe(target);

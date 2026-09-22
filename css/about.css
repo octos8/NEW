@@ -49,6 +49,8 @@ ABOUT INTRO H3
 기존 스타일 + 애니메이션만 추가
 ========================= */
 .about-intro h3 {
+    position: relative;
+    left: -5rem;
     margin: 0 0 1.25rem;
     font-size: 1.9531rem;
     font-weight: var(--fw2);
@@ -125,6 +127,7 @@ TABLET - 1024
 
     .about-intro h3 {
         font-size: 1.7rem;
+        left: -3rem;
     }
 
     .about-intro p {
@@ -159,6 +162,7 @@ MOBILE - 768
 
     .about-intro h3 {
         font-size: 1.5rem;
+        left: -1rem;
     }
 
     .about-intro p {
@@ -1483,6 +1487,7 @@ ULTRA SMALL MOBILE
 }
 
 /* Only hide after the observer is ready. Without JS, content stays visible. */
+.profile-info.about-reveal-ready,
 .education-info.about-reveal-ready,
 .certification-info.about-reveal-ready {
     opacity: 0;
@@ -1507,6 +1512,7 @@ ULTRA SMALL MOBILE
     transition: opacity .8s ease, transform .8s ease;
 }
 
+.profile-info.about-reveal-ready.about-revealed,
 .education-info.about-reveal-ready.about-revealed,
 .certification-info.about-reveal-ready.about-revealed,
 .skills-heading.about-reveal-ready.about-revealed {
@@ -1522,6 +1528,7 @@ ULTRA SMALL MOBILE
         transition: none;
     }
 
+    .profile-info.about-reveal-ready,
     .education-info.about-reveal-ready,
     .certification-info.about-reveal-ready,
     .skills-heading.about-reveal-ready {
@@ -1529,4 +1536,59 @@ ULTRA SMALL MOBILE
         transform: none;
         transition: none;
     }
+}
+
+/* Full-width profile with equal portrait and content columns. */
+.about-inner .profile-area {
+    width: 100vw;
+    max-width: none;
+    margin-left: calc(50% - 50vw);
+    padding: 7rem max(3rem, calc((100vw - 1620px) / 2)) 4rem;
+    gap: 5%;
+}
+.profile-area .profile-left { flex: 1 1 0; max-width: none; }
+.profile-area .profile-content { margin-top: 0; gap: 2rem; }
+.profile-area .profile-section-label { font-size: 3rem; right: 4%; }
+.profile-area .profile-info { order: -1; }
+.profile-area .certification-label { margin-bottom: 1rem; }
+@media (max-width: 768px) {
+    .about-inner .profile-area { padding: 6rem 2rem 3rem; gap: 2rem; }
+    .profile-area .profile-left { flex: none; width: 60%; max-width: 24rem; }
+    .profile-area .profile-content { width: 100%; max-width: none; }
+    .profile-area .profile-section-label { font-size: 2.5rem; }
+    .profile-area .profile-info { padding: 0; }
+    .profile-area .profile-list { max-width: 32rem; margin: 0 auto; }
+}
+
+/* Compact introduction and profile; skills continue below this screen. */
+.profile-area .profile-list div {
+    grid-template-columns: minmax(110px, 9rem) minmax(0, 1fr);
+    gap: .2rem .75rem;
+    margin-bottom: .3rem;
+}
+.profile-area .profile-content { gap: 1.25rem; }
+@media (min-width: 769px) {
+    .about-section { padding-top: 2rem; }
+    .about-heading { min-height: 13rem; }
+    .about-heading .about-title { font-size: min(72px, 6vw); }
+    .about-intro { top: 6rem; width: 48%; max-width: none; }
+    .about-inner .profile-area { padding-top: 5rem; padding-bottom: 2rem; min-height: 0; }
+    .profile-area .profile-photo { height: min(34rem, 56svh); aspect-ratio: auto; }
+    .profile-area .profile-photo img { object-position: center 30%; }
+    .profile-area .profile-content { --profile-list-size: 1rem; }
+    .profile-area article h3 { font-size: 1.5rem; }
+    .profile-area .certification-info li,
+    .profile-area .education-info p { font-size: 1rem; }
+    .profile-area .certification-info ul { gap: .3rem; }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .about-heading { min-height: 15rem; }
+    .about-intro { top: 6rem; width: 65%; }
+    .profile-area .profile-content { --profile-list-size: .9rem; }
+    .profile-area .profile-list div { grid-template-columns: 100px minmax(0, 1fr); gap: .2rem .4rem; }
+}
+@media (max-width: 768px) {
+    .about-heading { padding-bottom: 2rem; }
+    .about-intro { margin-top: 2rem; }
+    .profile-area .profile-content { gap: 1.25rem; }
 }

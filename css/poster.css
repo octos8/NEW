@@ -593,3 +593,5 @@ EXTRA SMALL MOBILE
         height:100%;
     }
 }
+
+.poster-section .poster-heading h2::before { width: 50%; }

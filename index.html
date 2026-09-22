@@ -80,7 +80,7 @@
         <section id="about" class="about-section">
             <div class="about-inner common-frame">
                 <header id="about-header" class="about-heading">
-                    <h2 class="about-title">Structure-First Design</h2>
+                    <h2 class="about-title">Structure-first design</h2>
                     <div class="about-intro">
                         <h3>구조를 생각하는 것에서 디자인을 시작했습니다.</h3>
                         <p>저는 단순히 ‘예쁜 화면’을 만드는 것보다<br>왜? 이 요소가 여기에 있어야 하는지를 먼저 고민합니다.</p>
@@ -90,12 +90,17 @@
                     <span class="profile-section-label">PROFILE</span>
                     <span class="profile-side-label" aria-hidden="true">ABOUT ME</span>
 
-                    <!-- 왼쪽: 사진 + ABOUT ME -->
+                    <!-- 왼쪽: 프로필 사진 -->
                     <div class="profile-left">
                         <figure class="profile-photo">
                             <img src="./img/hm3.jpg" alt="웹 퍼블리셔 함국주 프로필">
                         </figure>
 
+
+                    </div>
+
+                    <!-- 오른쪽: ABOUT ME + EDUCATION + CERTIFICATIONS -->
+                    <div class="profile-content">
                         <article class="profile-info">
                             <h3>ABOUT ME</h3>
                             <dl class="profile-list">
@@ -121,10 +126,6 @@
                                 </div>
                             </dl>
                         </article>
-                    </div>
-
-                    <!-- 오른쪽: EDUCATION + CERTIFICATIONS -->
-                    <div class="profile-content">
                         <article class="education-info">
                             <h3>EDUCATION &amp; TRAINING</h3>
                             <p class="education-label">교육/과정명 / 교육 기간</p>
@@ -265,7 +266,7 @@
         <section id="popup" class="popup-section">
             <div class="popup-inner common-frame">
                 <header class="section-heading popup-heading">
-                    <h2>POPUP</h2>
+                    <h2>Popup</h2>
                     <p class="section-summary">짧은 순간에 전하는 핵심 혜택.<br>브랜드의 개성과 메시지를 팝업에 담았습니다.</p>
                 </header>
 
@@ -343,7 +344,7 @@
         <section id="poster" class="poster-section">
             <div class="poster-inner common-frame">
                 <header class="section-heading poster-heading">
-                    <h2>POSTER</h2>
+                    <h2>Poster</h2>
                     <p class="section-summary">한 장에 담은 브랜드의 개성.<br>색과 질감으로 제품의 분위기를 표현했습니다.</p>
                 </header>
 
@@ -396,7 +397,7 @@
         <section id="banner" class="banner-section">
             <div class="banner-inner common-frame">
                 <header class="section-heading banner-heading">
-                    <h2>BANNER</h2>
+                    <h2>Banner</h2>
                     <p class="section-summary">시선을 끌고, 메시지를 선명하게.<br>제품과 핵심 문구를 배너에 담았습니다.</p>
                 </header>
                 <div class="banner-station swiper banner-swiper">
@@ -439,7 +440,7 @@
         <section id="detail" class="detail-section">
             <div class="detail-inner common-frame">
                 <header class="section-heading detail-heading">
-                    <h2>DETAIL</h2>
+                    <h2>Detail</h2>
                     <p class="section-summary">제품의 매력에서 선택의 이유까지.<br>특징과 정보를 순서대로 전하는 상세페이지입니다.</p>
                 </header>
 
@@ -486,7 +487,7 @@
         <section id="project" class="project-section" aria-labelledby="project-title">
             <div class="project-inner common-frame">
                 <header class="project-heading">
-                    <h2 id="project-title">Responsive Web Project</h2>
+                    <h2 id="project-title">Responsive web project</h2>
                     <p>다양한 디바이스 환경에 맞춰 레이아웃을 유연하게 설계하고,<br>
                         어디서나 자연스럽고 일관된 사용자 경험을 제공할 수 있도록 디자인하였습니다.</p>
                 </header>
@@ -515,15 +516,34 @@
                 </div>
             </div>
             <article class="aesop-case common-frame" aria-labelledby="aesop-title">
-                <header class="aesop-heading">
-                    <h3 id="aesop-title">Team Project <span aria-hidden="true">-</span> KKS</h3>
-                    <p>기존 이솝의 절제된 브랜드 아이덴티티를 유지하면서, 제품 탐색과<br>프로모션 콘텐츠의 시각적 경험을 강화한 반응형 웹 리디자인 프로젝트입니다.</p>
+                <div class="aesop-opening">
+                    <header class="aesop-heading">
+                        <div class="aesop-opening-brand">
+                            <p class="aesop-opening-credit">TEAM PROJECT · KKS</p>
+                            <img class="aesop-logo" src="./img/aesop-logo.svg" alt="Aesop" width="254" height="66" loading="lazy">
+                        </div>
+                        <p class="aesop-eyebrow" lang="en">RESPONSIVE WEBSITE</p>
+                        <h3 id="aesop-title">반응형 웹사이트-리디자인</h3>
+                    </header>
+                    <div class="aesop-opening-layout">
+                        <figure class="aesop-opening-visual">
+                            <div class="aesop-opening-phone">
+                                <img src="./img/aesop-home-mobile.jpg" alt="이솝 리디자인 모바일 홈페이지 목업" width="402" height="716" loading="lazy">
+                            </div>
+                        </figure>
+                        <div class="aesop-opening-copy">
+                            <h4>일상에 스며드는 절제된 아름다움</h4>
+                            <p>감각적인 제품과 공간으로 일상의 가치를 전하는<br>이솝의 브랜드 경험을 웹사이트에 담았습니다.</p>
+                            <p>여백을 살린 구성과 차분한 색감으로,<br>제품 고유의 분위기에 집중할 수 있는<br>반응형 웹사이트를 디자인했습니다.</p>
+                            <h5>브랜드 리뉴얼 방향성</h5>
+                            <p>기존 이솝의 절제된 브랜드 아이덴티티를 유지하면서, 제품 탐색과 프로모션 콘텐츠의 시각적 경험을 강화했습니다. 화면의 크기에 맞춰 자연스럽게 이어지는 구성으로 편안한 탐색 경험을 제안합니다.</p>
                     <nav class="aesop-links" aria-label="이솝 프로젝트 사이트">
                         <a href="https://kr.aesop.com/" target="_blank" rel="noopener noreferrer">Original<span class="aesop-sr-only"> (새 탭)</span></a>
                         <a href="https://octos8.github.io/Aesop-projects/" target="_blank" rel="noopener noreferrer">Re-Design<span class="aesop-sr-only"> (새 탭)</span></a>
                     </nav>
-                    <img class="aesop-logo" src="./img/aesop-logo.svg" alt="Aesop" width="254" height="66" loading="lazy">
-                </header>
+                        </div>
+                    </div>
+                </div>
                 <div class="aesop-cover">
                     <div class="aesop-pc-mockup">
                         <img class="aesop-cover-desktop" src="./img/MacBook_Mockup_2-1.jpg" alt="" width="1600" height="1200" loading="lazy">
@@ -537,21 +557,6 @@
                     </dl>
                     <img class="aesop-cover-mobile" src="./img/aesop-cover-mobile.png" alt="이솝 모바일 리디자인" width="517" height="390" loading="lazy">
                 </div>
-                <section class="aesop-overview" aria-labelledby="aesop-overview-title">
-                    <div class="aesop-overview-intro">
-                        <h3 id="aesop-overview-title">Aesop-Overview</h3>
-                        <p>기존의 브랜드 정체성을 기반으로 제품 이미지와 텍스트를 중심으로 한 간결한 구조를 유지하고 있으며, 브랜드 스토리, 공간, 소재, 라이프스타일을 함께 보여주며 Aesop만의 경험을 전달하는 데 초점을 두고 있습니다.</p>
-                    </div>
-                    <img class="aesop-desktop" src="./img/aesop-desktop.png" alt="이솝 데스크톱 화면" width="1003" height="700" loading="lazy">
-                    <div class="aesop-devices">
-                        <img class="aesop-tablet" src="./img/aesop-tablet.png" alt="이솝 태블릿 화면" width="1000" height="795" loading="lazy">
-                        <img class="aesop-mobile" src="./img/aesop-mobile.png" alt="이솝 모바일 화면" width="482" height="869" loading="lazy">
-                    </div>
-                    <div class="aesop-overview-copy">
-                        <p>팀 프로젝트에서는 이러한 브랜드 감성을 그대로 모방하기보다, 직관적인 정보 탐색과 시각적 집중도를 높이는 방향으로 재해석하고자 했습니다. 기존의 미니멀한 분위기는 유지하되, 메인 비주얼의 크기와 콘텐츠 구분을 강화하고 상품 및 프로모션 영역의 정보 구조를 명확하게 정리하여 사용자가 각 페이지의 목적을 빠르게 이해할 수 있도록 구성했습니다.</p>
-                        <p>또한 PC, 태블릿, 모바일 환경에서도 동일한 브랜드 경험이 이어질 수 있도록 화면 크기에 따라 이미지와 텍스트의 비율, 여백, 콘텐츠 배치를 조정했습니다.</p>
-                    </div>
-                </section>
                 <section class="aesop-typography" aria-labelledby="aesop-type-title">
                     <h3 id="aesop-type-title">Typography</h3>
                     <div class="aesop-type-intro">
@@ -633,7 +638,7 @@
                             <p>디바이스별 화면 폭에 맞춰 이미지와 텍스트의 비율을 조정했습니다. 주요 메뉴와 제품 정보는 쉽게 찾을 수 있도록 배치하고, 일관된 서체와 컬러로 브랜드의 인상을 유지했습니다.</p>
                         </div>
                         <div class="aesop-responsive-finale">
-                            <h3>모든 디바이스에서, 동일한 완성도로!</h3>
+                            <h3>어떤 화면에서도, 변함없는 브랜드 경험</h3>
                             <p>각기 다른 화면 속에서도 자연스럽게 이어지는 경험.<br>PC부터 태블릿, 모바일까지 이솝의 디자인을 일관되게 전달합니다.</p>
                             <div class="aesop-responsive-stage">
                                 <div class="aesop-device aesop-device--tablet responsive-stage-tablet"><div class="aesop-device-screen"><img src="./img/aesop-purchase-tablet.jpg" alt="태블릿에서 보는 이솝 제품 구매 페이지" width="1044" height="2765" loading="lazy"></div></div>

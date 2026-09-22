@@ -235,3 +235,14 @@ MOBILE - 768
         font-size:1rem;
     }
 }
+/* Wider previews also widen their full-image hover overlays. */
+.detail-section { height: auto; min-height: 62.5rem; }
+.detail-section .detail-list { width: 100%; }
+@media (max-width: 1024px) {
+    .detail-section { min-height: 0; }
+    .detail-section .detail-card { width: 95%; }
+}
+@media (max-width: 768px) {
+    .detail-section .detail-list { width: 100%; }
+    .detail-section .detail-card { width: 100%; }
+}

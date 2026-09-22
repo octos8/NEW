@@ -1,5 +1,9 @@
 /* Figma 167:168 — Aesop case study inside #project */
 .aesop-case {
+    --aesop-main: #354437;
+    --aesop-surface: #f8f9f5;
+    --aesop-tint: #e3e8dd;
+    --aesop-line: #c9d1c2;
     margin-top: 7rem;
     text-align: left;
     color: var(--black);
@@ -680,7 +684,7 @@
     max-width: 1280px;
     margin-top: 120px;
     background: #fff;
-    color: #252b26;
+    color: var(--aesop-main);
 }
 .aesop-heading {
     display: flex;
@@ -706,7 +710,7 @@
     isolation: isolate;
     width: 100%;
     margin-top: 30px;
-    padding: 70px 8% 60px;
+    padding: 70px 8% 0;
     display: grid;
     grid-template-columns: 3fr 2fr;
     gap: 36px;
@@ -718,14 +722,14 @@
     position: absolute;
     z-index: -1;
     inset: 0;
-    background: #eee7d7;
+    background: var(--aesop-tint);
     border-radius: 65% 0 0 0;
 }
-.aesop-pc-mockup { grid-column: 1; grid-row: 1 / 3; border-radius: 8px; transform: rotate(-3deg); box-shadow: 0 24px 30px #35443725; }
+.aesop-pc-mockup { grid-column: 1; grid-row: 1 / 3; align-self: end; border-radius: 8px 8px 0 0; transform: none; box-shadow: 0 24px 30px #35443725; }
 .aesop-facts { grid-column: 2; width: 100%; min-height: 0; padding: 0; gap: 18px; color: #354437; }
 .aesop-facts dt { font-size: 13px; }
 .aesop-facts dd { font-size: 13px; word-spacing: 0; }
-.aesop-cover-mobile { position: static; grid-column: 2; width: 100%; margin: 0; }
+.aesop-cover-mobile { position: static; grid-column: 2; align-self: end; width: 100%; margin: 0; object-position: center bottom; }
 .aesop-overview { width: 100%; padding: 0 10%; margin-top: 120px; gap: 70px 50px; grid-template-columns: 1fr 1fr; }
 .aesop-overview h3 { font-size: 24px; margin-bottom: 24px; }
 .aesop-overview p { font-size: 14px; line-height: 1.85; }
@@ -739,12 +743,20 @@
 .aesop-palette-content > p { max-width: none; line-height: 1.8; }
 .aesop-palette { max-width: none; }
 .aesop-palette li { aspect-ratio: auto; height: 54px; }
-.aesop-typography { margin-top: 110px; padding: 50px 10%; background: #eee7d7; }
+.aesop-typography { margin-top: 110px; padding: 50px 10%; background: var(--aesop-tint); }
 .aesop-typography > h3 { margin-bottom: 24px; font-size: 22px; }
 .aesop-type-intro { grid-template-columns: 1fr 2fr; gap: 40px; }
 .aesop-type-intro .aesop-type-name { font-size: 40px; }
 .aesop-type-intro > p:last-child { font-size: 13px; line-height: 1.8; }
 .aesop-type-scale { margin-top: 36px; }
+.aesop-typography .aesop-type-scale { overflow-x: auto; }
+.aesop-typography .aesop-type-row {
+    grid-template-columns: minmax(460px, 1fr) 210px 65px 90px;
+    min-width: 873px;
+    column-gap: 16px;
+}
+.aesop-typography .aesop-type-row p { white-space: nowrap; }
+.aesop-typography .aesop-type-row .aesop-type-sample { grid-column: auto; }
 .aesop-type-row { grid-template-columns: 54% 24% 10% 12%; padding: 12px 0; border-bottom: 1px dashed #92988e; font-size: 12px; }
 .aesop-type-row p { white-space: normal; }
 .aesop-type-row .aesop-type-sample { font-size: 16px; }
@@ -759,7 +771,7 @@
     right: 0;
     top: 25%;
     bottom: 0;
-    background: #e3e7dc;
+    background: var(--aesop-tint);
     border-radius: 0 65% 0 0;
 }
 .aesop-responsive-lineup { max-width: 850px; }
@@ -772,7 +784,7 @@
 .aesop-responsive-finale { margin-top: 100px; }
 .aesop-responsive-finale h3 { font-size: 26px; }
 .aesop-responsive-stage { max-width: 650px; margin-top: 60px; }
-.aesop-responsive-stage::before { background: #eee7d7; bottom: -10%; }
+.aesop-responsive-stage::before { background: var(--aesop-tint); bottom: -10%; }
 @media (max-width: 1024px) {
     .aesop-heading { padding-top: 40px; }
     .aesop-cover { gap: 24px; padding-left: 6%; padding-right: 6%; }
@@ -786,7 +798,7 @@
     .aesop-logo { width: 170px; margin-bottom: 24px; }
     .aesop-heading > p { font-size: 13px; }
     .aesop-heading > p br { display: none; }
-    .aesop-cover { grid-template-columns: 1fr; padding: 45px 8%; gap: 32px; }
+    .aesop-cover { grid-template-columns: 1fr; padding: 45px 8% 0; gap: 32px; }
     .aesop-pc-mockup { grid-column: 1; grid-row: auto; }
     .aesop-facts { grid-column: 1; }
     .aesop-cover-mobile { grid-column: 1; width: 75%; justify-self: end; }
@@ -814,3 +826,120 @@
 /* 이솝 영역의 모든 텍스트를 볼드체로 표시 */
 .aesop-case, .aesop-case * { font-weight: 700; }
 .aesop-case .aesop-type-row p { font-weight: 700; }
+
+/* Aesop opening: centered brand and muted architectural color blocks. */
+.aesop-opening {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 40px 8% 72px;
+    background: var(--aesop-surface);
+    color: var(--aesop-main);
+}
+.aesop-opening .aesop-heading { display: block; padding: 0; text-align: center; }
+.aesop-opening-brand { display: flex; flex-direction: column; align-items: center; gap: 18px; margin-bottom: 36px; }
+.aesop-opening-brand .aesop-opening-credit { margin: 0; color: var(--aesop-main); font-size: 12px; letter-spacing: .08em; }
+.aesop-opening-brand .aesop-logo { order: 0; width: min(200px, 22cqi); height: auto; margin: 0; }
+.aesop-opening .aesop-eyebrow {
+    margin: 0 0 22px;
+    max-width: none;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+.aesop-eyebrow span { font-weight: 400; }
+.aesop-opening .aesop-heading h3 {
+    display: block;
+    width: auto;
+    color: #354437;
+    font-size: min(42px, 3.8cqi);
+    line-height: 1.25;
+    letter-spacing: -.045em;
+}
+.aesop-opening .aesop-heading h3 > span { color: #af9271; }
+.aesop-opening-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 8%;
+    margin-top: 48px;
+    padding-top: 40px;
+    border-top: 1px solid var(--aesop-line);
+}
+.aesop-opening-visual {
+    display: grid;
+    place-items: center;
+    margin: 0;
+    padding: 56px 32px;
+    min-width: 0;
+    border: 1px solid var(--aesop-line);
+    border-radius: 160px 160px 12px 12px;
+    background: linear-gradient(145deg, #e3e8dd, #edf0e8);
+}
+.aesop-opening-phone {
+    position: relative;
+    width: 72%;
+    max-width: 235px;
+    padding: 6px;
+    border: 2px solid #363834;
+    border-radius: 34px;
+    background: #fafaf8;
+    box-shadow: 2px 2px 0 #bfc0bb, 4px 4px 0 #676964, 12px 22px 30px #252b2620;
+    transform: rotate(-10deg);
+}
+.aesop-opening-phone::after {
+    content: '';
+    position: absolute;
+    top: 13px;
+    left: 36%;
+    width: 28%;
+    height: 10px;
+    border-radius: 20px;
+    background: #242623;
+}
+.aesop-opening-phone img { width: 100%; height: auto; border-radius: 26px; }
+.aesop-opening-copy { min-width: 0; padding: 12px 0; }
+.aesop-opening-copy h4 { max-width: 360px; margin: 0 0 24px; color: var(--aesop-main); font-size: 26px; line-height: 1.4; letter-spacing: -.035em; text-wrap: balance; }
+.aesop-opening-copy p { font-size: 15px; font-weight: 400; line-height: 1.85; }
+.aesop-opening-copy br { display: none; }
+.aesop-opening-copy p + p { margin-top: 12px; }
+.aesop-opening-copy h5 { margin: 28px 0 12px; padding-top: 24px; border-top: 1px solid var(--aesop-line); font-size: 15px; }
+.aesop-opening .aesop-links { flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.aesop-opening .aesop-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 130px;
+    min-height: 44px;
+    padding: 12px 28px;
+    border: 1px solid var(--aesop-main);
+    border-radius: 999px;
+    background: var(--aesop-tint);
+    color: var(--aesop-main);
+    font-size: 13px;
+    text-decoration: none;
+    transition: background-color .2s ease;
+}
+.aesop-opening .aesop-links a:hover,
+.aesop-opening .aesop-links a:focus-visible { background: #c9d5c4; color: var(--aesop-main); }
+.aesop-case .aesop-responsive { color: var(--aesop-main); }
+.aesop-case .aesop-type-row { border-bottom-color: var(--aesop-line); }
+@media (max-width: 1024px) {
+    .aesop-opening { padding: 32px 6% 48px; }
+    .aesop-opening-layout { gap: 6%; margin-top: 36px; }
+    .aesop-opening-visual { padding: 44px 20px; }
+    .aesop-opening-copy h4 { font-size: 22px; }
+    .aesop-opening-copy p { font-size: 14px; }
+    .aesop-opening-copy br { display: none; }
+}
+@media (max-width: 768px) {
+    .aesop-opening { padding: 28px 7% 40px; }
+    .aesop-opening .aesop-eyebrow { font-size: 10px; margin-bottom: 15px; }
+    .aesop-opening .aesop-heading h3 { font-size: min(30px, 6cqi); }
+    .aesop-opening-layout { grid-template-columns: 1fr; gap: 32px; margin-top: 28px; padding-top: 28px; }
+    .aesop-opening-visual { width: 100%; max-width: 380px; justify-self: center; padding: 40px 24px; }
+    .aesop-opening-phone { width: 180px; }
+    .aesop-opening-copy { max-width: 440px; margin: 0 auto; padding: 0; }
+}
