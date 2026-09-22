@@ -759,8 +759,8 @@
 .aesop-typography .aesop-type-row .aesop-type-sample { grid-column: auto; }
 .aesop-type-row { grid-template-columns: 54% 24% 10% 12%; padding: 12px 0; border-bottom: 1px dashed #92988e; font-size: 12px; }
 .aesop-type-row p { white-space: normal; }
-.aesop-type-row .aesop-type-sample { font-size: 16px; }
-.aesop-type-row:first-child .aesop-type-sample { font-size: 24px; }
+.aesop-type-row .aesop-type-sample { font-size: inherit; }
+.aesop-type-row:first-child .aesop-type-sample { font-size: inherit; }
 .aesop-responsive { margin-top: 90px; }
 .aesop-responsive-hero { padding: 70px 8% 90px; isolation: isolate; }
 .aesop-responsive-hero::before {
@@ -807,8 +807,8 @@
     .aesop-typography { padding: 32px 6%; margin-top: 65px; }
     .aesop-type-intro .aesop-type-name { font-size: 32px; }
     .aesop-type-row { grid-template-columns: 1fr 1fr; gap: 8px 16px; }
-    .aesop-type-row .aesop-type-sample { grid-column: 1 / -1; font-size: 14px; }
-    .aesop-type-row:first-child .aesop-type-sample { font-size: 18px; }
+    .aesop-type-row .aesop-type-sample { grid-column: 1 / -1; font-size: inherit; }
+    .aesop-type-row:first-child .aesop-type-sample { font-size: inherit; }
     .aesop-colors { margin: 65px 6%; }
     .aesop-color-layout { grid-template-columns: 1fr; gap: 20px; }
     .aesop-main-color { width: 48px; }
@@ -906,7 +906,7 @@
 .aesop-opening-copy br { display: none; }
 .aesop-opening-copy p + p { margin-top: 12px; }
 .aesop-opening-copy h5 { margin: 28px 0 12px; padding-top: 24px; border-top: 1px solid var(--aesop-line); font-size: 15px; }
-.aesop-opening .aesop-links { flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.aesop-opening .aesop-links { justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
 .aesop-opening .aesop-links a {
     display: inline-flex;
     align-items: center;
