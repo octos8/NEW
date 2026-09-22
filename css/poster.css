@@ -18,7 +18,8 @@ TITLE
 ========================= */
 .poster-heading{
     width:100%;
-    padding-left:47%;
+    padding-left:0;
+    text-align:right;
     margin-bottom:7rem;
 }
 
@@ -26,7 +27,7 @@ TITLE
     position:relative;
     width:fit-content;
     max-width:100%;
-    margin:0;
+    margin:0 0 0 auto;
     font-size:6.875rem;
     font-weight:var(--fw2);
     line-height:1;
@@ -238,7 +239,7 @@ TABLET
     /* TITLE */
 
     .poster-heading{
-        padding-left:35%;
+        padding-left:0;
         margin-bottom:6rem;
     }
 
@@ -304,7 +305,7 @@ MOBILE
 
     .poster-heading{
         width:100%;
-        padding-left:25%;
+        padding-left:0;
         margin-bottom:4rem;
     }
 
@@ -321,7 +322,7 @@ MOBILE
         content: "";
         position: absolute;
         top: calc(100% - (-0.375rem));
-        right: 92px;
+        right: 0;
         transform: translateY(-50%);
         pointer-events: none;
     }
@@ -358,8 +359,9 @@ MOBILE
 
     .poster-item{
         display:grid;
+        --poster-image-width:min(26rem, 48%);
         /* 이미지 영역 + 남은 텍스트 영역 */
-        grid-template-columns: 14rem minmax(0,1fr);
+        grid-template-columns: var(--poster-image-width) minmax(0,1fr);
         align-items:center;
         column-gap:1.5rem;
         min-height:30rem;
@@ -370,9 +372,11 @@ MOBILE
     IMAGE
     ========================= */
 
-    .poster-item figure{
-        width:14rem;
-        height:21rem;
+    .poster-item figure,
+    .poster-item:nth-child(even) figure{
+        width:100%;
+        height:auto;
+        aspect-ratio:2 / 3;
         margin:0;
         overflow:hidden;
     }
@@ -380,6 +384,7 @@ MOBILE
     .poster-item figure img{
         width:100%;
         height:100%;
+        aspect-ratio:2 / 3;
         object-fit:cover;
     }
 
@@ -396,7 +401,7 @@ MOBILE
     /* 짝수 */
 
     .poster-item:nth-child(even){
-        grid-template-columns: minmax(0,1fr) 14rem;
+        grid-template-columns: minmax(0,1fr) var(--poster-image-width);
     }
 
     .poster-item:nth-child(even) figure{
@@ -460,11 +465,11 @@ EXTRA SMALL MOBILE
     }
 
     .poster-heading h2{
-        width:100%;
+        width:fit-content;
         max-width:100%;
         font-size:2rem;
         line-height:1.1;
-        text-align:center;
+        text-align:right;
         white-space:normal;
         word-break:keep-all;
     }
@@ -482,7 +487,7 @@ EXTRA SMALL MOBILE
         margin:1rem auto 0;
         font-size:.85rem;
         line-height:1.5;
-        text-align:center;
+        text-align:right;
         word-break:keep-all;
     }
 
@@ -505,6 +510,7 @@ EXTRA SMALL MOBILE
     .poster-item,
     .poster-item:nth-child(even){
         display:grid;
+        --poster-image-width:min(100%, 26rem);
         grid-template-columns:1fr;
         align-items:start;
         row-gap:1.25rem;
@@ -521,8 +527,8 @@ EXTRA SMALL MOBILE
     .poster-item:nth-child(even) figure{
         grid-column:1;
         grid-row:1;
-        width:10rem;
-        height:15rem;
+        width:var(--poster-image-width);
+        height:auto;
         margin:0 auto;
         justify-self:center;
     }
@@ -566,5 +572,24 @@ EXTRA SMALL MOBILE
         line-height:1.6;
         text-align:center;
         word-break:keep-all;
+    }
+}
+
+@media(max-width:280px){
+    .poster-item,
+    .poster-item:nth-child(even){
+        --poster-image-width:100%;
+    }
+
+    .poster-item figure,
+    .poster-item:nth-child(even) figure{
+        width:var(--poster-image-width);
+        min-width:0;
+        height:auto;
+    }
+
+    .poster-item figure img{
+        width:100%;
+        height:100%;
     }
 }

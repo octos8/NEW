@@ -88,6 +88,16 @@ html{
     scroll-behavior:smooth;
 }
 
+.section-heading{
+    container-type:inline-size;
+}
+
+.section-heading > p.section-summary{
+    font-size:min(1.5rem, 3.6cqi);
+    line-height:1.65;
+    white-space:nowrap;
+}
+
 h1{font-size:var(--fs-h1);}
 h2{
     font-size:min(6.875rem,8vw);

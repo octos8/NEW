@@ -36,6 +36,7 @@ ABOUT HEADING
 ABOUT INTRO
 ========================= */
 .about-intro {
+    container-type: inline-size;
     position: absolute;
     top: 10rem;
     right: 0;
@@ -71,8 +72,9 @@ ABOUT INTRO P
 기존 스타일 + 애니메이션만 추가
 ========================= */
 .about-intro p {
-    margin: 0 0 0 7.5rem;
-    font-size: 1.5625rem;
+    margin: 0;
+    font-size: min(1.5625rem, 3.3cqi);
+    white-space: nowrap;
     line-height: var(--lh2);
     color: var(--gray-900);
     word-break: keep-all;
@@ -127,7 +129,7 @@ TABLET - 1024
 
     .about-intro p {
         margin-left: 0;
-        font-size: 1.35rem;
+        font-size: min(1.35rem, 3.3cqi);
     }
 }
 
@@ -161,7 +163,7 @@ MOBILE - 768
 
     .about-intro p {
         margin-left: 0;
-        font-size: 1.15rem;
+        font-size: min(1.15rem, 3.3cqi);
     }
 }
 
@@ -174,6 +176,7 @@ MOBILE - 768
 }
 
 .profile-area {
+    --profile-list-size:1rem;
     position: relative;
     display: flex;
     flex-direction: row;
@@ -283,7 +286,7 @@ MOBILE - 768
 }
 
 .profile-info>h3 {
-    text-align: center;
+    text-align: left;
 }
 
 .certification-info > h3{
@@ -308,7 +311,6 @@ MOBILE - 768
 }
 
 .profile-list {
-    --profile-list-size:1rem;
     margin: 0;
     text-align: left;
 }
@@ -359,6 +361,10 @@ MOBILE - 768
     list-style: none;
 }
 
+.certification-label {
+    margin-bottom: 2rem;
+}
+
 .certification-info li,
 .education-info p {
     min-width: 0;
@@ -394,7 +400,7 @@ MOBILE - 768
         margin-left:0;
     }
 
-    .profile-list{
+    .profile-area{
         --profile-list-size:.75rem;
     }
 
@@ -506,7 +512,7 @@ MOBILE - 768
         font-size: 1.15rem;
     }
 
-    .profile-list{
+    .profile-area{
         --profile-list-size:.7rem;
     }
 
@@ -555,7 +561,7 @@ MOBILE - 768
         font-size: .9rem;
     }
 
-    .profile-list{
+    .profile-area{
         --profile-list-size:.5rem;
     }
 
@@ -600,7 +606,7 @@ MOBILE - 768
         column-gap: .35rem;
     }
 
-    .profile-list{
+    .profile-area{
         --profile-list-size:.45rem;
     }
 
@@ -737,6 +743,7 @@ MENU
 SKILL DETAIL
 ========================= */
 .skill-detail {
+    container-type: inline-size;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -766,7 +773,8 @@ SKILL DETAIL
 .skill-summary {
     margin: 0 0 1.5rem;
     text-align: center;
-    font-size: var(--fs-body1);
+    font-size: min(var(--fs-body1), 3.5cqi);
+    white-space: nowrap;
     line-height: var(--lh2);
     color: var(--gray-700);
     word-break: keep-all;
@@ -869,7 +877,7 @@ TABLET - 1024
 
     .skill-summary {
         margin-bottom: 1rem;
-        font-size: .9rem;
+        font-size: min(.9rem, 3.5cqi);
         line-height: 1.45;
     }
 
@@ -991,7 +999,7 @@ MOBILE - 768
 
     .skill-summary {
         margin-bottom: .65rem;
-        font-size: .72rem;
+        font-size: min(.72rem, 3.5cqi);
         line-height: 1.35;
     }
 
@@ -1126,7 +1134,7 @@ EXTRA SMALL MOBILE - 402
     .skill-summary {
         margin-bottom: .45rem;
 
-        font-size: .52rem;
+        font-size: min(.52rem, 3.5cqi);
         line-height: 1.3;
     }
 
@@ -1254,7 +1262,7 @@ ULTRA SMALL MOBILE
 
     .skill-summary {
         margin-bottom: .3rem;
-        font-size: .36rem;
+        font-size: min(.36rem, 3.5cqi);
         line-height: 1.2;
     }
 
@@ -1378,7 +1386,7 @@ ULTRA SMALL MOBILE
 
     .skill-summary {
         margin-bottom: .28rem;
-        font-size: .32rem;
+        font-size: min(.32rem, 3.5cqi);
         line-height: 1.2;
     }
 
@@ -1410,11 +1418,87 @@ ULTRA SMALL MOBILE
     }
 }
 
+/* Give mobile profile content more space while keeping it inside the frame. */
+@media (min-width:280px) and (max-width:768px) {
+    .about-intro {
+        margin-left:auto;
+        text-align:right;
+    }
+
+    .profile-area {
+        padding:4rem 1rem 3rem;
+        gap:3rem;
+    }
+
+    .profile-left {
+        max-width:30rem;
+    }
+
+    .profile-content {
+        max-width:53.333rem;
+        padding:0;
+        container-type:inline-size;
+    }
+
+    .profile-content article h3 {
+        font-size:min(2rem, 6.4cqi);
+    }
+
+    .profile-content .education-info {
+        padding:0;
+    }
+
+    .profile-content .education-info p {
+        line-height:1.6;
+    }
+
+    .profile-content .certification-info li {
+        font-size:min(1.667rem, 5.5cqi);
+        line-height:1.6;
+    }
+
+}
+
+@media (min-width:280px) and (max-width:402px) {
+    .profile-left {
+        max-width:23.333rem;
+    }
+}
+
+@media (max-width:768px) {
+    .profile-content .education-info > h3,
+    .profile-content .certification-info > h3 {
+        font-size: 1.15rem;
+    }
+
+    .profile-content .education-info > p,
+    .profile-content .certification-info > p,
+    .certification-info ul {
+        font-size: var(--profile-list-size);
+    }
+
+    .profile-content .certification-info ul > li {
+        font-size: inherit;
+    }
+}
+
 /* Only hide after the observer is ready. Without JS, content stays visible. */
 .education-info.about-reveal-ready,
 .certification-info.about-reveal-ready {
     opacity: 0;
-    transition: opacity .8s ease;
+    transform: translateY(3.5rem);
+    transition: opacity .9s ease, transform .9s cubic-bezier(.22,1,.36,1);
+}
+
+.skill-menu.about-reveal-ready {
+    opacity: 0;
+    translate: 0 3rem;
+    transition: color .25s ease, opacity .8s ease, translate .8s cubic-bezier(.22,1,.36,1);
+}
+
+.skill-menu.about-reveal-ready.about-revealed {
+    opacity: 1;
+    translate: 0 0;
 }
 
 .skills-heading.about-reveal-ready {
@@ -1431,6 +1515,12 @@ ULTRA SMALL MOBILE
 }
 
 @media(prefers-reduced-motion:reduce) {
+
+    .skill-menu.about-reveal-ready {
+        opacity: 1;
+        translate: none;
+        transition: none;
+    }
 
     .education-info.about-reveal-ready,
     .certification-info.about-reveal-ready,

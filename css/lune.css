@@ -1,0 +1,123 @@
+/* LUNE 개인 프로젝트 — 크림과 살구색의 반응형 케이스 스터디 */
+.lune-case { margin-top: 150px; max-width: 1280px; color: #302a23; text-align: left; background: #fff; font-family: Pretendard, sans-serif; }
+.lune-case *, .lune-case *::before, .lune-case *::after { box-sizing: border-box; }
+.lune-case img { display: block; width: 100%; }
+.lune-case p { margin: 0; font-size: 14px; line-height: 1.8; word-break: keep-all; }
+.lune-opening { padding: 90px 10% 80px; background: linear-gradient(#fff 0%, #fff2d7 50%, #ffe0b5 100%); }
+.lune-heading { text-align: center; }
+.lune-heading .lune-eyebrow { font-size: 12px; letter-spacing: 2px; }
+.lune-heading h3 { margin: 20px 0 12px; font-size: 34px; line-height: 1.3; }
+.lune-heading h3 strong { font-size: 48px; margin-right: 12px; letter-spacing: -3px; }
+.lune-links { display: flex; gap: 24px; justify-content: center; margin-top: 24px; }
+.lune-links a { color: #725236; font-size: 13px; text-underline-offset: 6px; }
+.lune-links a:focus-visible { outline: 2px solid #725236; outline-offset: 6px; }
+.lune-hero-mockup { position: relative; width: 90%; margin: 70px auto 100px; padding: 0 0 7% 12%; }
+.lune-browser { border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 8px 20px 28px #64472e40; }
+.lune-browser-bar { display: flex; align-items: center; gap: 6px; padding: 12px; background: #eeedeb; }
+.lune-browser-bar i { width: 7px; height: 7px; border-radius: 50%; background: #d89686; }
+.lune-browser-bar i:nth-child(2) { background: #e4c783; }
+.lune-browser-bar i:nth-child(3) { background: #a7b994; }
+.lune-browser-bar span { margin: auto; font-size: 10px; color: #80786d; }
+.lune-screen { position: relative; overflow: hidden; background: #fff; }
+.lune-screen img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.lune-screen-pc { aspect-ratio: 1920 / 1024; }
+.lune-screen-mobile { aspect-ratio: 402 / 874; }
+.lune-screen-tablet { aspect-ratio: 1024 / 1366; }
+.lune-phone, .lune-tablet { background: #252321; padding: 6px; border-radius: 22px; box-shadow: 0 0 0 1px #b8afa3, 6px 15px 18px #4e392c30; }
+.lune-phone .lune-screen { border-radius: 17px; }
+.lune-tablet { border-radius: 14px; padding: 9px; }
+.lune-tablet .lune-screen { border-radius: 6px; }
+.lune-hero-phone { position: absolute; width: 23%; left: 0; bottom: 0; }
+.lune-introduction { display: grid; grid-template-columns: 1fr 1.15fr; gap: 60px; align-items: center; }
+.lune-introduction h3 { font-size: 16px; margin: 0 0 14px; }
+.lune-introduction h3:not(:first-child) { margin-top: 28px; }
+.lune-facts { margin: 0; display: grid; gap: 12px; }
+.lune-facts > div { display: grid; grid-template-columns: 90px 1fr; font-size: 13px; }
+.lune-facts dt { font-weight: 700; }
+.lune-facts dd { margin: 0; }
+.lune-phone-fan { position: relative; aspect-ratio: 1.25; }
+.lune-phone-fan .lune-phone { position: absolute; width: 31%; top: 10%; }
+.lune-phone-fan .lune-phone:nth-child(1) { left: 3%; transform: rotate(18deg); }
+.lune-phone-fan .lune-phone:nth-child(2) { left: 35%; top: 7%; z-index: 2; transform: rotate(-10deg); }
+.lune-phone-fan .lune-phone:nth-child(3) { right: 0; transform: rotate(12deg); }
+.lune-system { padding: 80px 10%; background: linear-gradient(#fff 0%, #fff 18%, #ffe0b5 18%, #fff2d7 100%); }
+.lune-section-heading { text-align: center; }
+.lune-section-heading h3 { font-size: 32px; margin: 0 0 12px; }
+.lune-page-gallery { position: relative; aspect-ratio: 1.9; margin: 65px 0; }
+.lune-page-gallery img { position: absolute; width: 43%; height: 78%; object-fit: cover; object-position: top; border: 1px solid #ded4c7; border-radius: 4px; box-shadow: 8px 18px 25px #84614230; }
+.lune-page-gallery img:nth-child(1) { left: 0; top: 18%; transform: rotate(-8deg); }
+.lune-page-gallery img:nth-child(2) { left: 29%; top: 0; transform: rotate(5deg); }
+.lune-page-gallery img:nth-child(3) { right: 0; top: 24%; transform: rotate(-3deg); }
+.lune-system-details > h3 { font-size: 20px; margin: 0 0 40px; }
+.lune-system-row { display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; margin-top: 45px; }
+.lune-system-row h3 { font-size: 14px; margin: 0 0 20px; color: #785332; }
+.lune-palette { display: grid; grid-template-columns: repeat(4, 1fr); list-style: none; padding: 0; margin: 20px 0 0; }
+.lune-palette li { font-size: 12px; line-height: 1.8; }
+.lune-palette span { display: block; height: 55px; margin-bottom: 12px; background: #fff2d7; }
+.lune-palette li:nth-child(2) span { background: #ffe0b5; }
+.lune-palette li:nth-child(3) span { background: #f8c794; }
+.lune-palette li:nth-child(4) span { background: #d8ae7e; }
+.lune-palette small { display: block; font-size: 10px; }
+.lune-system-row .lune-font-name { font-size: 40px; font-weight: 700; }
+.lune-system-row .lune-font-sample { font-size: 21px; font-weight: 700; margin-top: 12px; }
+.lune-typography { padding: 70px 10% 90px; }
+.lune-device-group { position: relative; aspect-ratio: 1.7; margin: 10px auto 70px; width: 100%; max-width: 850px; }
+.lune-monitor { position: absolute; width: 70%; left: 2%; top: 0; padding: 7px 7px 26px; border-radius: 10px; background: #292724; box-shadow: 0 12px 15px #4e392c20; }
+.lune-monitor::before { content: ''; position: absolute; width: 14%; height: 25%; left: 43%; top: 100%; background: linear-gradient(90deg,#a49e95,#ddd8ce,#a49e95); }
+.lune-monitor::after { content: ''; position: absolute; width: 32%; height: 4%; top: 123%; left: 34%; border-radius: 50% 50% 3px 3px; background: #b7b1a6; }
+.lune-device-group > .lune-tablet { position: absolute; width: 28%; right: 7%; bottom: 5%; }
+.lune-device-group > .lune-phone { position: absolute; width: 14%; right: 0; bottom: 2%; }
+.lune-typography > h3 { font-size: 14px; color: #785332; margin: 0 0 28px; }
+.lune-type-example > span { display: inline-block; padding: 7px 18px; background: #ffe0b5; border-radius: 8px; font-size: 13px; }
+.lune-type-example h3 { font-size: 30px; margin: 20px 0 12px; }
+.lune-type-table { border-collapse: collapse; width: 100%; margin-top: 32px; font-size: 14px; text-align: left; }
+.lune-type-table caption { text-align: left; font-size: 12px; padding-bottom: 12px; color: #786b5b; }
+.lune-type-table th, .lune-type-table td { padding: 16px 8px; border-bottom: 1px solid #ded6cc; }
+.lune-type-table thead { color: #786b5b; }
+.lune-type-table td:nth-child(3),
+.lune-type-table td:nth-child(4),
+.lune-type-table td:nth-child(5) { white-space: nowrap; }
+.lune-type-table tbody tr:nth-child(5) th,
+.lune-type-table tbody tr:nth-child(7) th,
+.lune-type-table tbody tr:nth-child(8) th { font-weight: 700; }
+.lune-finale { padding: 80px 10% 35px; text-align: center; background: linear-gradient(#fff2d7,#ffe0b5); }
+.lune-finale h3 { margin: 0 0 30px; font-size: 34px; line-height: 1.4; }
+.lune-finale p + p { margin-top: 20px; }
+.lune-finale .lune-device-group { margin-top: 65px; margin-bottom: 20px; text-align: left; }
+@media (max-width: 1024px) {
+    .lune-introduction, .lune-system-row { gap: 30px; }
+    .lune-heading h3 { font-size: 26px; }
+    .lune-heading h3 strong { font-size: 38px; }
+    .lune-case p { font-size: 13px; }
+    .lune-system-row .lune-font-name { font-size: 32px; }
+}
+@media (max-width: 768px) {
+    .lune-case { margin-top: 70px; }
+    .lune-opening, .lune-system, .lune-typography, .lune-finale { padding: 45px 6%; }
+    .lune-heading h3 { font-size: 22px; }
+    .lune-heading h3 strong { display: block; margin: 0 0 12px; }
+    .lune-hero-mockup { width: 100%; margin: 40px auto 60px; }
+    .lune-browser-bar { padding: 7px; gap: 3px; }
+    .lune-browser-bar span { font-size: 7px; }
+    .lune-browser-bar i { width: 4px; height: 4px; }
+    .lune-phone { padding: 3px; border-radius: 12px; }
+    .lune-phone .lune-screen { border-radius: 9px; }
+    .lune-tablet { padding: 4px; border-radius: 9px; }
+    .lune-introduction, .lune-system-row { grid-template-columns: 1fr; gap: 30px; }
+    .lune-phone-fan { width: 90%; max-width: 380px; margin: auto; }
+    .lune-section-heading h3 { font-size: 25px; }
+    .lune-page-gallery { margin: 40px 0 60px; }
+    .lune-system-details > h3 { font-size: 18px; }
+    .lune-system-row { margin-top: 35px; }
+    .lune-system-row .lune-font-sample { font-size: 18px; }
+    .lune-device-group { margin-bottom: 45px; }
+    .lune-monitor { padding: 4px 4px 12px; border-radius: 6px; }
+    .lune-type-example h3 { font-size: 22px; }
+    .lune-type-table { font-size: 11px; }
+    .lune-type-table th, .lune-type-table td { padding: 12px 3px; }
+    .lune-finale h3 { font-size: 25px; }
+    .lune-finale p br { display: none; }
+}
+
+/* LUNE의 모든 텍스트를 볼드체로 표시 */
+.lune-case, .lune-case * { font-weight: 700; }
