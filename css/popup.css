@@ -511,13 +511,13 @@ EXTRA SMALL MOBILE
 }
 
 /* Bring the work closer to its heading. */
-.popup-section .popup-heading { margin-bottom: 2rem; }
+.popup-section .popup-heading { margin-bottom: 1rem; }
 
 /* Compact showcase, preserving the original 2:3 artwork ratio. */
 .popup-section { min-height: 0; padding: 3rem 0; }
 .popup-section .popup-station.swiper {
     flex: 0 0 auto;
-    width: min(28rem, 42svh);
+    width: min(31rem, 46svh);
     height: auto;
     aspect-ratio: 2 / 3;
 }
@@ -526,12 +526,12 @@ EXTRA SMALL MOBILE
 .popup-section .popup-layout::after { top: calc(75% - .625rem); }
 @media (max-width: 1024px) {
     .popup-section { padding: 2.5rem 0; }
-    .popup-section .popup-station.swiper { width: min(22rem, 42svh); }
+    .popup-section .popup-station.swiper { width: min(24rem, 46svh); }
     .popup-section .popup-layout { gap: 2rem; }
 }
 @media (max-width: 768px) {
     .popup-section { padding: 2rem 0; }
-    .popup-section .popup-heading { margin-bottom: 1.5rem; }
-    .popup-section .popup-station.swiper { width: min(100%, 21rem, 36svh); }
+    .popup-section .popup-heading { margin-bottom: 1rem; }
+    .popup-section .popup-station.swiper { width: min(100%, 23rem, 40svh); }
     .popup-section .popup-layout { gap: 1.5rem; }
 }
