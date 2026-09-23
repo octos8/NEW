@@ -76,10 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* =========================
-    ABOUT INTRO SCROLL ANIMATION
-    다른 JS와 충돌하지 않도록 독립 실행
-    ========================= */
+    /* ==== ABOUT INTRO SCROLL ANIMATION 다른 JS와 충돌하지 않도록 독립 실행   ======================== */
     (() => {
 
         const aboutIntro = document.querySelector('.about-intro');
@@ -117,8 +114,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
 
-            document.querySelectorAll('.profile-info, .education-info, .certification-info, .skills-heading, .skill-menu').forEach(target => {
+            document.querySelectorAll('.profile-left, .profile-info, .education-info, .certification-info, .skills-heading, .skill-menu').forEach(target => {
                 if (target.classList.contains('about-reveal-ready')) return;
+                if (target.matches('.certification-info')) {
+                    target.querySelectorAll(':scope > ul > li').forEach((item, index) => {
+                        item.style.setProperty('--reveal-delay', `${1.5 + index}s`);
+                    });
+                }
                 target.classList.add('about-reveal-ready');
                 observer.observe(target);
             });

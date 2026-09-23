@@ -1,18 +1,21 @@
 /* =========================
 ABOUT
 ========================= */
-.about-section {
+.about-section,
+.about-profile-section {
     position: relative;
     width: 100%;
-    padding-top: 6rem;
     margin-left: 0;
     overflow: hidden;
+}
+
+.about-section {
+    padding-top: 6rem;
 }
 
 .about-inner {
     position: relative;
 }
-
 
 /* =========================
 ABOUT HEADING
@@ -31,7 +34,6 @@ ABOUT HEADING
     white-space: nowrap;
 }
 
-
 /* =========================
 ABOUT INTRO
 ========================= */
@@ -43,7 +45,6 @@ ABOUT INTRO
     width: 42%;
     margin-bottom: 6rem;
 }
-
 
 /* =========================
 ABOUT INTRO H3
@@ -69,7 +70,6 @@ ABOUT INTRO H3
         transform 1.2s ease;
 }
 
-
 /* =========================
 ABOUT INTRO P
 기존 스타일 + 애니메이션만 추가
@@ -91,7 +91,6 @@ ABOUT INTRO P
         transform 1.2s ease .25s;
 }
 
-
 /* =========================
 ABOUT INTRO ACTIVE
 ========================= */
@@ -105,7 +104,6 @@ ABOUT INTRO ACTIVE
     opacity: 1;
     transform: translateX(0);
 }
-
 
 /* =========================
 TABLET - 1024
@@ -136,7 +134,6 @@ TABLET - 1024
         font-size: min(1.35rem, 3.3cqi);
     }
 }
-
 
 /* =========================
 MOBILE - 768
@@ -193,7 +190,7 @@ MOBILE - 768
     min-width: 0;
     min-height: 33.875rem;
     padding: 3.125rem 3rem 3.125rem 4rem;
-    background: var(--ivory-0);
+    background-color: #f5f0e6;
 }
 
 .profile-section-label {
@@ -208,28 +205,11 @@ MOBILE - 768
     overflow-wrap: anywhere;
 }
 
-.profile-side-label {
-    display: block;
-    position: absolute;
-    top: 14rem;
-    right: 1rem;
-    z-index: 2;
-    font-size: 1.9531rem;
-    font-weight: var(--fw2);
-    line-height: 1;
-    letter-spacing: .15em;
-    white-space: nowrap;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    color: transparent;
-    -webkit-text-stroke: .0625rem var(--gray-700);
-}
-
 .profile-left {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 0 0 30%;
     min-width: 0;
     max-width: 100%;
     gap: 1rem;
@@ -250,16 +230,8 @@ MOBILE - 768
 
 .profile-photo img {
     display: block;
-    width: 100%;
-    height: auto;
+    height: 30rem;
     object-fit: contain;
-}
-
-.profile-info {
-    width: 100%;
-    min-width: 0;
-    max-width: 100%;
-    margin: 0 auto;
 }
 
 .profile-content {
@@ -270,7 +242,6 @@ MOBILE - 768
     flex: 1 1 0;
     min-width: 0;
     max-width: 100%;
-    gap: 2rem;
     margin-top: 4rem;
     padding: 0;
 }
@@ -288,10 +259,6 @@ MOBILE - 768
     line-height: 1.2;
     word-break: keep-all;
     overflow-wrap: anywhere;
-}
-
-.profile-info>h3 {
-    text-align: left;
 }
 
 .certification-info>h3 {
@@ -315,41 +282,6 @@ MOBILE - 768
     order: 1;
 }
 
-.profile-list {
-    margin: 0;
-    text-align: left;
-}
-
-.profile-list div {
-    font-family: var(--font-main);
-    font-weight: var(--fw1);
-    display: grid;
-    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-    align-items: start;
-    gap: .25rem .75rem;
-    min-width: 0;
-    margin-bottom: .65rem;
-}
-
-.profile-list dt {
-    flex: 0 1 auto;
-    min-width: 0;
-    max-width: 100%;
-    font-size: var(--profile-list-size);
-    font-weight: inherit;
-    white-space: nowrap;
-}
-
-.profile-list dd {
-    flex: 1 1 5rem;
-    min-width: 0;
-    max-width: 100%;
-    margin: 0;
-    font-size: var(--profile-list-size);
-    line-height: var(--lh2);
-    white-space: nowrap;
-}
-
 .certification-label,
 .education-label {
     margin: 0 0 .75rem;
@@ -366,10 +298,6 @@ MOBILE - 768
     margin: 0;
     padding: 0;
     list-style: none;
-}
-
-.certification-label {
-    margin-bottom: 2rem;
 }
 
 .certification-info li,
@@ -392,19 +320,9 @@ MOBILE - 768
         font-size: 1.6rem;
     }
 
-    .profile-side-label {
-        right: .65rem;
-        font-size: 1.4rem;
-    }
-
     .profile-area article h3 {
         font-size: 1.6rem;
 
-    }
-
-    .profile-list div {
-        column-gap: .75rem;
-        margin-left: 0;
     }
 
     .profile-area {
@@ -442,16 +360,7 @@ MOBILE - 768
         width: 100%;
         max-width: 32rem;
         padding: 0 1rem;
-        gap: 2.5rem;
         margin: 0;
-    }
-
-    .profile-info {
-        padding: 0 1rem;
-    }
-
-    .profile-list div {
-        margin-left: 0;
     }
 
     .profile-section-label {
@@ -460,19 +369,8 @@ MOBILE - 768
         font-size: 1.5rem;
     }
 
-    .certification-label {
-        text-align: center;
-    }
-
     .certification-info li {
         text-align: center;
-    }
-
-    .profile-side-label {
-        right: .6rem;
-        top: 27rem;
-        font-size: 1.15rem;
-        letter-spacing: .12em;
     }
 
     .profile-area article h3 {
@@ -497,11 +395,9 @@ MOBILE - 768
     }
 
     .profile-content {
-        gap: 2rem;
         padding: 0;
     }
 
-    .profile-info,
     .education-info {
         margin: 0 auto;
         padding: 0;
@@ -510,12 +406,6 @@ MOBILE - 768
     .profile-section-label {
         right: .75rem;
         font-size: 1.15rem;
-    }
-
-    .profile-side-label {
-        right: .35rem;
-        font-size: .85rem;
-        letter-spacing: .1em;
     }
 
     .profile-area article h3 {
@@ -537,9 +427,6 @@ MOBILE - 768
         font-size: .7rem;
     }
 
-    .profile-list div {
-        column-gap: .5rem;
-    }
 }
 
 @media(max-width:280px) {
@@ -552,19 +439,9 @@ MOBILE - 768
         max-width: 10rem;
     }
 
-    .profile-content {
-        gap: 1.5rem;
-    }
-
     .profile-section-label {
         right: .5rem;
         font-size: .9rem;
-    }
-
-    .profile-side-label {
-        top: 22rem;
-        right: .25rem;
-        font-size: .6rem;
     }
 
     .profile-area article h3 {
@@ -601,19 +478,8 @@ MOBILE - 768
         font-size: .8rem;
     }
 
-    .profile-side-label {
-        top: 4.5rem;
-        right: .2rem;
-        font-size: .55rem;
-        letter-spacing: .08em;
-    }
-
     .profile-area article h3 {
         font-size: .8rem;
-    }
-
-    .profile-list div {
-        column-gap: .35rem;
     }
 
     .profile-area {
@@ -640,7 +506,6 @@ TOOLS & SKILLS
     overflow: hidden;
 }
 
-
 /* =========================
 HEADING
 ========================= */
@@ -665,7 +530,6 @@ HEADING
     background: var(--gray-900);
 }
 
-
 /* =========================
 ORBIT
 ========================= */
@@ -677,7 +541,6 @@ ORBIT
     border: .0625rem solid var(--gray-400);
     border-radius: 50%;
 }
-
 
 /* =========================
 POINT
@@ -697,7 +560,6 @@ POINT
         top .45s ease;
     pointer-events: none;
 }
-
 
 /* =========================
 MENU
@@ -723,14 +585,12 @@ MENU
     color: var(--point);
 }
 
-
 /* PUBLISHING */
 .skill-menu-publishing {
     top: -3rem;
     left: 50%;
     transform: translateX(-50%);
 }
-
 
 /* DESIGN */
 .skill-menu-design {
@@ -739,7 +599,6 @@ MENU
     transform: translateY(-50%);
 }
 
-
 /* DEVELOPMENT */
 .skill-menu-development {
     top: 50%;
@@ -747,7 +606,6 @@ MENU
     transform: translateY(-50%);
     text-align: center;
 }
-
 
 /* =========================
 SKILL DETAIL
@@ -790,7 +648,6 @@ SKILL DETAIL
     word-break: keep-all;
 }
 
-
 /* =========================
 PROGRAM LIST
 ========================= */
@@ -828,7 +685,6 @@ PROGRAM LIST
     word-break: keep-all;
 }
 
-
 /* =========================
 TABLET - 1024
 ========================= */
@@ -846,14 +702,12 @@ TABLET - 1024
         font-size: 2.5rem;
     }
 
-
     /* ORBIT */
 
     .skills-orbit {
         width: 24rem;
         height: 24rem;
     }
-
 
     /* MENU */
 
@@ -873,7 +727,6 @@ TABLET - 1024
         left: calc(100% + 1.5rem);
     }
 
-
     /* DETAIL */
 
     .skill-detail {
@@ -890,7 +743,6 @@ TABLET - 1024
         font-size: min(.9rem, 3.5cqi);
         line-height: 1.45;
     }
-
 
     /* PROGRAM */
 
@@ -918,7 +770,6 @@ TABLET - 1024
     }
 }
 
-
 /* =========================
 MOBILE - 768
 원 안에 전부 들어오도록 축소
@@ -942,7 +793,6 @@ MOBILE - 768
         margin-top: 1.25rem;
     }
 
-
     /* =========================
     ORBIT
     ========================= */
@@ -957,7 +807,6 @@ MOBILE - 768
         width: .85rem;
         height: .85rem;
     }
-
 
     /* =========================
     MENU
@@ -1013,7 +862,6 @@ MOBILE - 768
         line-height: 1.35;
     }
 
-
     /* =========================
     PROGRAM LIST
     ========================= */
@@ -1044,7 +892,6 @@ MOBILE - 768
     }
 }
 
-
 /* =========================
 EXTRA SMALL MOBILE - 402
 ========================= */
@@ -1074,7 +921,6 @@ EXTRA SMALL MOBILE - 402
         margin-top: 1rem;
     }
 
-
     /* =========================
     ORBIT
     ========================= */
@@ -1091,7 +937,6 @@ EXTRA SMALL MOBILE - 402
         width: .65rem;
         height: .65rem;
     }
-
 
     /* =========================
     MENU
@@ -1125,7 +970,6 @@ EXTRA SMALL MOBILE - 402
         transform: translateY(-50%);
     }
 
-
     /* =========================
     DETAIL
     ========================= */
@@ -1147,7 +991,6 @@ EXTRA SMALL MOBILE - 402
         font-size: min(.52rem, 3.5cqi);
         line-height: 1.3;
     }
-
 
     /* =========================
     PROGRAM LIST
@@ -1180,7 +1023,6 @@ EXTRA SMALL MOBILE - 402
     }
 }
 
-
 /* =========================
 ULTRA SMALL MOBILE
 241px ~ 280px
@@ -1210,7 +1052,6 @@ ULTRA SMALL MOBILE
         margin-top: .85rem;
     }
 
-
     /* ORBIT */
     .skills-orbit {
         width: 11rem;
@@ -1223,7 +1064,6 @@ ULTRA SMALL MOBILE
         width: .45rem;
         height: .45rem;
     }
-
 
     /* MENU */
     .skill-menu {
@@ -1257,7 +1097,6 @@ ULTRA SMALL MOBILE
         transform: translateY(-50%);
     }
 
-
     /* CENTER DETAIL */
     .skill-detail {
         width: 6.8rem;
@@ -1275,7 +1114,6 @@ ULTRA SMALL MOBILE
         font-size: min(.36rem, 3.5cqi);
         line-height: 1.2;
     }
-
 
     /* PROGRAM LIST */
     .skill-program-list {
@@ -1304,7 +1142,6 @@ ULTRA SMALL MOBILE
     }
 }
 
-
 /* =========================
 240px 이하
 현재 사용하던 작은 크기 유지
@@ -1315,7 +1152,6 @@ ULTRA SMALL MOBILE
         padding: 2.5rem 0 3.5rem;
         overflow: visible;
     }
-
 
     /* HEADING */
     .skills-heading {
@@ -1334,7 +1170,6 @@ ULTRA SMALL MOBILE
         margin-top: .75rem;
     }
 
-
     /* ORBIT */
     .skills-orbit {
         width: 9.5rem;
@@ -1347,7 +1182,6 @@ ULTRA SMALL MOBILE
         width: .4rem;
         height: .4rem;
     }
-
 
     /* MENU */
     .skill-menu {
@@ -1381,7 +1215,6 @@ ULTRA SMALL MOBILE
         transform: translateY(-50%);
     }
 
-
     /* CENTER DETAIL */
     .skill-detail {
         width: 5.8rem;
@@ -1399,7 +1232,6 @@ ULTRA SMALL MOBILE
         font-size: min(.32rem, 3.5cqi);
         line-height: 1.2;
     }
-
 
     /* PROGRAM LIST */
     .skill-program-list {
@@ -1493,13 +1325,35 @@ ULTRA SMALL MOBILE
     }
 }
 
-/* Only hide after the observer is ready. Without JS, content stays visible. */
-.profile-info.about-reveal-ready,
-.education-info.about-reveal-ready,
-.certification-info.about-reveal-ready {
+/* 사진과 프로필은 고정하고 ABOUT ME만 크게 올라온다. */
+.profile-area .profile-left.about-reveal-ready > .profile-side-label {
+    opacity: 0;
+    translate: 0 17rem;
+    transition: none;
+}
+
+.profile-area .profile-left.about-reveal-ready.about-revealed > .profile-side-label {
+    opacity: var(--profile-reveal-opacity, 1);
+    translate: 0 0;
+    transition: opacity .6s ease, translate 8.0s cubic-bezier(.16, 1, .3, 1);
+}
+
+/* 구분선이 있는 행은 고정하고 내용과 연도만 위로 등장시킨다. */
+.education-info.about-reveal-ready > span,
+.certification-info.about-reveal-ready > ul > li > div,
+.certification-info.about-reveal-ready > ul > li > span {
     opacity: 0;
     transform: translateY(3.5rem);
+    transition: none;
+}
+
+.education-info.about-reveal-ready.about-revealed > span,
+.certification-info.about-reveal-ready.about-revealed > ul > li > div,
+.certification-info.about-reveal-ready.about-revealed > ul > li > span {
+    opacity: 1;
+    transform: translateY(0);
     transition: opacity .9s ease, transform .9s cubic-bezier(.22, 1, .36, 1);
+    transition-delay: var(--reveal-delay, 0s);
 }
 
 .skill-menu.about-reveal-ready {
@@ -1519,9 +1373,6 @@ ULTRA SMALL MOBILE
     transition: opacity .8s ease, transform .8s ease;
 }
 
-.profile-info.about-reveal-ready.about-revealed,
-.education-info.about-reveal-ready.about-revealed,
-.certification-info.about-reveal-ready.about-revealed,
 .skills-heading.about-reveal-ready.about-revealed {
     opacity: 1;
     transform: none;
@@ -1529,15 +1380,25 @@ ULTRA SMALL MOBILE
 
 @media(prefers-reduced-motion:reduce) {
 
+    .profile-area .profile-left.about-reveal-ready.about-revealed > .profile-side-label,
+    .profile-area .profile-left.about-reveal-ready > .profile-side-label {
+        opacity: var(--profile-reveal-opacity, 1);
+        translate: none;
+        transition: none;
+    }
+
     .skill-menu.about-reveal-ready {
         opacity: 1;
         translate: none;
         transition: none;
     }
 
-    .profile-info.about-reveal-ready,
-    .education-info.about-reveal-ready,
-    .certification-info.about-reveal-ready,
+    .education-info.about-reveal-ready > span,
+    .certification-info.about-reveal-ready > ul > li > div,
+    .certification-info.about-reveal-ready > ul > li > span,
+    .education-info.about-reveal-ready.about-revealed > span,
+    .certification-info.about-reveal-ready.about-revealed > ul > li > div,
+    .certification-info.about-reveal-ready.about-revealed > ul > li > span,
     .skills-heading.about-reveal-ready {
         opacity: 1;
         transform: none;
@@ -1550,32 +1411,16 @@ ULTRA SMALL MOBILE
     width: 100vw;
     max-width: none;
     margin-left: calc(50% - 50vw);
-    padding: 7rem max(3rem, calc((100vw - 1620px) / 2)) 4rem;
-    gap: 2rem;
-}
-
-.profile-area .profile-left {
-    flex: 1 1 0;
-    max-width: none;
+    padding: 5rem 2rem 2rem 2rem;
 }
 
 .profile-area .profile-content {
     margin-top: 0;
-    gap: 2rem;
 }
 
 .profile-area .profile-section-label {
     font-size: 3rem;
     right: 4%;
-}
-
-.profile-area .profile-info {
-    order: -1;
-}
-
-.profile-area .certification-label {
-    margin-bottom: 1rem;
-    font-size: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -1599,26 +1444,9 @@ ULTRA SMALL MOBILE
         font-size: 2.5rem;
     }
 
-    .profile-area .profile-info {
-        padding: 0;
-    }
-
-    .profile-area .profile-list {
-        max-width: 32rem;
-        margin: 0 auto;
-    }
 }
 
 /* Compact introduction and profile; skills continue below this screen. */
-.profile-area .profile-list div {
-    grid-template-columns: minmax(110px, 9rem) minmax(0, 1fr);
-    gap: .2rem .75rem;
-    margin-bottom: .3rem;
-}
-
-.profile-area .profile-content {
-    gap: 1.25rem;
-}
 
 @media (max-width: 768px) {
     .about-heading {
@@ -1629,9 +1457,6 @@ ULTRA SMALL MOBILE
         margin-top: 2rem;
     }
 
-    .profile-area .profile-content {
-        gap: 1.25rem;
-    }
 }
 
 /* Keep the introduction at the right of the original About heading. */
@@ -1653,5 +1478,155 @@ ULTRA SMALL MOBILE
         filter: none;
         transform: none;
         transition: none;
+    }
+}
+/* 사진 위치를 유지한 채 오른쪽 이력을 flex로 정렬 */
+
+.profile-area .profile-content.profile-timeline {
+    gap: 0;
+    padding: 0 1rem 0 5rem;
+}
+
+.profile-area .profile-left .profile-side-label {
+    --profile-reveal-opacity: .1;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    font-weight: var(--fw2);
+    white-space: nowrap;
+    top: 2%;
+    right: auto;
+    left: 112%;
+    width: 100%;
+    max-width: none;
+    font-size: 7rem;
+    line-height: 1;
+    letter-spacing: -.04em;
+    color: var(--ivory-700);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    pointer-events: none;
+    opacity: 0.1;
+}
+
+.profile-timeline .certification-info > h3 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.profile-timeline .certification-info ul {
+    gap: 0;
+}
+
+.profile-area .profile-timeline .education-info,
+.profile-area .profile-timeline .certification-info ul > li {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.25rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--gray-900);
+    text-align: left;
+}
+
+.profile-area .profile-timeline .certification-info li:last-child {
+    border-bottom: 0;
+}
+
+.profile-timeline .education-info > div,
+.profile-timeline .certification-info li > div {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.profile-area .profile-timeline .education-info h3,
+.profile-timeline .certification-info h4 {
+    margin: 0 0 .65rem;
+    font-size: .85rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.profile-area .profile-timeline .education-info p,
+.profile-area .profile-timeline .certification-info ul > li {
+    margin: 0;
+    font-size: .85rem;
+    line-height: 1.65;
+}
+
+.profile-timeline small {
+    display: block;
+    margin-top: .2rem;
+    color: var(--gray-700);
+    font-size: .75rem;
+    line-height: 1.6;
+}
+
+.profile-timeline small:not(:last-child) {
+    margin-bottom: .75rem;
+}
+
+.profile-timeline .education-info > span,
+.profile-timeline .certification-info li > span {
+    flex: 0 0 auto;
+    color: #b47d68;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 3.5rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -.04em;
+    white-space: nowrap;
+}
+
+.profile-summary {
+    align-self: flex-start;
+    width: 100%;
+    margin: .75rem 0 0;
+    font-size: 1rem;
+}
+
+.profile-summary > div {
+    display: flex;
+    gap: 1rem;
+    padding: .3rem 0;
+}
+
+.profile-summary dt {
+    flex: 0 0 4.5rem;
+    font-weight: 600;
+}
+
+.profile-summary dd {
+    min-width: 0;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 768px) {
+    .profile-area .profile-content.profile-timeline {
+        padding: 0;
+    }
+
+    .profile-area .profile-left .profile-side-label {
+        width: 4rem;
+        font-size: 4rem;
+    }
+
+    .profile-timeline .education-info > span,
+    .profile-timeline .certification-info li > span {
+        font-size: 2.5rem;
+    }
+
+    .profile-area .profile-timeline .education-info h3,
+    .profile-timeline .certification-info h4,
+    .profile-area .profile-timeline .education-info p,
+    .profile-area .profile-timeline .certification-info ul > li {
+        font-size: 1rem;
     }
 }

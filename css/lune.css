@@ -106,7 +106,6 @@
 .lune-type-table tbody tr:nth-child(8) { --sample-size: 10; }
 .lune-case .lune-type-table tbody th {
     font-family: var(--font-main);
-    font-size: min(calc(var(--sample-size) * 1px), calc(var(--sample-size) * .07cqi));
     font-weight: 700;
     line-height: 1.4;
 }
