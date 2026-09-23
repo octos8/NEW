@@ -240,7 +240,6 @@ MOBILE - 768
 .detail-section .detail-heading { margin-bottom: 3rem; }
 .detail-section .detail-list {
     width: 100%;
-    max-width: 90rem;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
 }

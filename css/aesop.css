@@ -104,74 +104,6 @@
     margin: 2rem auto 0;
 }
 
-.aesop-cover {
-    position: relative;
-    width: min(100%, 977px);
-    margin: 80px auto 0;
-    background: #4d4d4d;
-    overflow: hidden;
-}
-
-.aesop-pc-mockup {
-    position: relative;
-    overflow: hidden;
-}
-
-.aesop-cover-desktop {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-}
-
-.aesop-pc-screen {
-    position: absolute;
-    left: 14.43%;
-    top: 13.44%;
-    width: 71.13%;
-    height: 55.25%;
-    object-fit: cover;
-    object-position: center top;
-    clip-path: none;
-}
-
-.aesop-facts {
-    display: grid;
-    gap: 14px;
-    width: 47%;
-    min-height: 225px;
-    margin: 0;
-    padding: 56px 0 40px 4.9%;
-    color: var(--white);
-}
-
-.aesop-facts>div {
-    display: grid;
-    grid-template-columns: 104px minmax(0, 1fr);
-    align-items: baseline;
-}
-
-.aesop-facts dt {
-    font-size: 16px;
-    font-weight: 700;
-}
-
-.aesop-facts dd {
-    margin: 0;
-    font-size: 14px;
-    word-spacing: 8px;
-}
-
-.aesop-cover-mobile {
-    position: absolute;
-    right: 1.5%;
-    bottom: 0;
-    width: 52.9%;
-    height: auto;
-    aspect-ratio: 517 / 390;
-    object-fit: contain;
-}
-
 .aesop-overview {
     display: grid;
     grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
@@ -430,7 +362,7 @@
     }
 
 
-.aesop-responsive h3 {
+    .aesop-responsive h3 {
         font-size: min(39px, 7cqi);
     }
 
@@ -481,6 +413,7 @@
     color: #252a25;
     text-align: left;
 }
+
 .aesop-responsive-hero {
     position: relative;
     padding: 6% 8% 10%;
@@ -494,6 +427,7 @@
     margin: 0 auto;
     isolation: isolate;
 }
+
 .aesop-responsive-lineup::before {
     content: '';
     position: absolute;
@@ -506,18 +440,21 @@
     filter: blur(9px);
     z-index: -1;
 }
+
 .aesop-device {
     position: absolute;
     overflow: hidden;
     background: #171917;
     box-shadow: 0 12px 20px #0002;
 }
+
 .aesop-device-screen {
     position: relative;
     width: 100%;
     overflow: hidden;
 }
-.aesop-device-screen > img {
+
+.aesop-device-screen>img {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -525,26 +462,44 @@
     object-fit: cover;
     object-position: center top;
 }
-.responsive-tablet { width: 30%; left: 8%; bottom: 16%; }
+
+.responsive-tablet {
+    width: 30%;
+    left: 8%;
+    bottom: 16%;
+}
+
 .aesop-device--phone {
     border: 7px solid #171917;
     border-radius: 28px;
     background: #171917;
 }
+
 .aesop-device--tablet {
     border: 10px solid #171917;
     border-radius: 24px;
     background: #171917;
 }
+
 .aesop-device--desktop {
     border: 10px solid #171917;
     border-bottom-width: 26px;
     border-radius: 12px;
 }
+
 /* 테두리를 제외한 실제 화면의 가로 / 세로 비율 */
-.aesop-device--phone > .aesop-device-screen { aspect-ratio: 402 / 874; }
-.aesop-device--tablet > .aesop-device-screen { aspect-ratio: 1024 / 1366; }
-.aesop-device--desktop > .aesop-device-screen { aspect-ratio: 1920 / 1024; }
+.aesop-device--phone>.aesop-device-screen {
+    aspect-ratio: 402 / 874;
+}
+
+.aesop-device--tablet>.aesop-device-screen {
+    aspect-ratio: 1024 / 1366;
+}
+
+.aesop-device--desktop>.aesop-device-screen {
+    aspect-ratio: 1920 / 1024;
+}
+
 .responsive-desktop {
     position: absolute;
     width: 62%;
@@ -552,12 +507,14 @@
     bottom: 12%;
     z-index: 2;
 }
-.responsive-desktop > .aesop-device {
+
+.responsive-desktop>.aesop-device {
     position: relative;
     width: 100%;
     height: auto;
     border-radius: 10px 10px 4px 4px;
 }
+
 /* 노트북 하단 받침 */
 .responsive-desktop::after {
     content: '';
@@ -570,6 +527,7 @@
     background: linear-gradient(#d8d9d8, #929592 55%, #454845);
     box-shadow: 0 4px 5px #0003;
 }
+
 .responsive-desktop::before {
     content: '';
     position: absolute;
@@ -581,25 +539,30 @@
     border-radius: 0 0 5px 5px;
     background: #747874;
 }
+
 .responsive-phone {
     width: 15%;
     left: 5%;
     bottom: 7%;
     z-index: 3;
 }
+
 .aesop-responsive-lineup .aesop-device--phone {
     border-radius: 14px;
 }
+
 .aesop-responsive-lineup .aesop-device--tablet {
     border-radius: 16px;
     box-shadow: 0 0 0 2px #a8aaa8, 0 12px 18px #0002;
 }
+
 .aesop-responsive-body {
     position: relative;
     isolation: isolate;
     padding: 7% 12% 0;
     background: #ede8dc;
 }
+
 .aesop-responsive-body::before {
     content: '';
     position: absolute;
@@ -611,13 +574,40 @@
     border-radius: 0 0 50% 50%;
     background: #fff;
 }
-.aesop-responsive-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 6%; align-items: center; }
-.aesop-responsive h3 { margin: 0 0 24px; font-size: 30px; line-height: 1.25; }
-.aesop-responsive-copy h3 { color: #ae8c69; }
-.aesop-responsive p { font-size: 16px; line-height: 1.75; font-weight: 700; }
-.aesop-responsive-copy p + p { margin-top: 18px; }
-.aesop-responsive-phones { position: relative; aspect-ratio: .78; }
-.aesop-responsive-phones > .aesop-device:first-child {
+
+.aesop-responsive-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6%;
+    align-items: center;
+}
+
+.aesop-responsive h3 {
+    margin: 0 0 24px;
+    font-size: 30px;
+    line-height: 1.25;
+}
+
+.aesop-responsive-copy h3 {
+    color: #ae8c69;
+}
+
+.aesop-responsive p {
+    font-size: 16px;
+    line-height: 1.75;
+    font-weight: 700;
+}
+
+.aesop-responsive-copy p+p {
+    margin-top: 18px;
+}
+
+.aesop-responsive-phones {
+    position: relative;
+    aspect-ratio: .78;
+}
+
+.aesop-responsive-phones>.aesop-device:first-child {
     position: absolute;
     width: 46%;
     right: 8%;
@@ -625,7 +615,8 @@
     transform: rotate(22deg);
     filter: drop-shadow(8px 14px 8px #0002);
 }
-.aesop-responsive-phones > .aesop-device:last-child {
+
+.aesop-responsive-phones>.aesop-device:last-child {
     position: absolute;
     width: 46%;
     left: 6%;
@@ -634,11 +625,34 @@
     filter: drop-shadow(8px 14px 8px #0002);
 }
 
-.aesop-responsive-detail { width: 49%; margin-top: 10%; }
-.aesop-responsive-detail h3 { font-size: 20px; margin-bottom: 18px; }
-.aesop-responsive-finale { position: relative; margin-top: 12%; text-align: center; }
-.aesop-responsive-finale > p { max-width: 580px; margin: 0 auto; }
-.aesop-responsive-stage { position: relative; width: 90%; margin: 10% auto 0; aspect-ratio: 1.1; }
+.aesop-responsive-detail {
+    width: 49%;
+    margin-top: 10%;
+}
+
+.aesop-responsive-detail h3 {
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+.aesop-responsive-finale {
+    position: relative;
+    margin-top: 12%;
+    text-align: center;
+}
+
+.aesop-responsive-finale>p {
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+.aesop-responsive-stage {
+    position: relative;
+    width: 90%;
+    margin: 10% auto 0;
+    aspect-ratio: 1.1;
+}
+
 .aesop-responsive-stage::before {
     content: '';
     position: absolute;
@@ -650,42 +664,129 @@
     background: linear-gradient(110deg, #a39687 0%, #bfb3a3 45%, #ded5c7 45%, #f6f1e7 100%);
     clip-path: polygon(0 75%, 48% 0, 100% 45%, 100% 100%, 0 100%);
 }
-.responsive-stage-tablet { width: 52%; left: 18%; bottom: 10%; transform: rotate(-9deg); }
-.responsive-stage-phone { width: 24%; right: 12%; bottom: 8%; transform: rotate(7deg); }
+
+.responsive-stage-tablet {
+    width: 52%;
+    left: 18%;
+    bottom: 10%;
+    transform: rotate(-9deg);
+}
+
+.responsive-stage-phone {
+    width: 24%;
+    right: 12%;
+    bottom: 8%;
+    transform: rotate(7deg);
+}
+
 /* 태블릿 크기 */
 @media (max-width: 1024px) {
-    .aesop-responsive h3 { font-size: 22px; }
-    .aesop-responsive p { font-size: 14px; }
-    .aesop-responsive-detail h3 { font-size: 16px; }
-    .aesop-device--phone { border-width: 5px; border-radius: 20px; }
-    .aesop-device--tablet { border-width: 7px; border-radius: 18px; }
-    .aesop-device--desktop { border-width: 7px; border-bottom-width: 18px; }
+    .aesop-responsive h3 {
+        font-size: 22px;
+    }
+
+    .aesop-responsive p {
+        font-size: 14px;
+    }
+
+    .aesop-responsive-detail h3 {
+        font-size: 16px;
+    }
+
+    .aesop-device--phone {
+        border-width: 5px;
+        border-radius: 20px;
+    }
+
+    .aesop-device--tablet {
+        border-width: 7px;
+        border-radius: 18px;
+    }
+
+    .aesop-device--desktop {
+        border-width: 7px;
+        border-bottom-width: 18px;
+    }
 }
+
 @media (max-width: 768px) {
-    .aesop-responsive h3 { font-size: 18px; }
-    .aesop-responsive p { font-size: 12px; }
-    .aesop-responsive-detail h3 { font-size: 14px; }
-    .aesop-device--phone { border-width: 3px; border-radius: 12px; }
-    .aesop-device--tablet { border-width: 4px; border-radius: 10px; }
-    .aesop-device--desktop { border-width: 4px; border-bottom-width: 10px; }
-    .aesop-responsive { margin-top: 80px; }
-    .aesop-responsive-body { padding: 10% 7% 0; }
-    .aesop-responsive-intro { grid-template-columns: 1fr; gap: 32px; }
-    .aesop-responsive-phones { width: 75%; max-width: 340px; justify-self: center; }
-    .aesop-responsive-detail { width: 100%; margin-top: 16%; }
-    .aesop-responsive-finale { margin-top: 18%; }
-    .aesop-responsive-body::before { height: 42%; top: -5%; }
-    .aesop-responsive-stage { width: 100%; margin-top: 16%; }
-    .aesop-responsive h3 { margin-bottom: 18px; }
+    .aesop-responsive h3 {
+        font-size: 18px;
+    }
+
+    .aesop-responsive p {
+        font-size: 12px;
+    }
+
+    .aesop-responsive-detail h3 {
+        font-size: 14px;
+    }
+
+    .aesop-device--phone {
+        border-width: 3px;
+        border-radius: 12px;
+    }
+
+    .aesop-device--tablet {
+        border-width: 4px;
+        border-radius: 10px;
+    }
+
+    .aesop-device--desktop {
+        border-width: 4px;
+        border-bottom-width: 10px;
+    }
+
+    .aesop-responsive {
+        margin-top: 80px;
+    }
+
+    .aesop-responsive-body {
+        padding: 10% 7% 0;
+    }
+
+    .aesop-responsive-intro {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .aesop-responsive-phones {
+        width: 75%;
+        max-width: 340px;
+        justify-self: center;
+    }
+
+    .aesop-responsive-detail {
+        width: 100%;
+        margin-top: 16%;
+    }
+
+    .aesop-responsive-finale {
+        margin-top: 18%;
+    }
+
+    .aesop-responsive-body::before {
+        height: 42%;
+        top: -5%;
+    }
+
+    .aesop-responsive-stage {
+        width: 100%;
+        margin-top: 16%;
+    }
+
+    .aesop-responsive h3 {
+        margin-bottom: 18px;
+    }
 }
 
 /* 이솝 케이스 스터디: 여백과 곡선 중심의 편집 디자인 */
 .aesop-case {
-    max-width: 1280px;
     margin-top: 120px;
     background: #fff;
     color: var(--aesop-main);
 }
+
 .aesop-heading {
     display: flex;
     flex-direction: column;
@@ -693,6 +794,7 @@
     padding: 70px 10% 30px;
     text-align: left;
 }
+
 .aesop-heading h3 {
     justify-content: flex-start;
     margin: 0;
@@ -702,67 +804,178 @@
     background: transparent;
     font-size: 18px;
 }
-.aesop-logo { order: -1; width: 220px; height: auto; margin: 0 0 32px; }
-.aesop-heading > p { max-width: 620px; font-size: 15px; font-weight: 700; line-height: 1.8; }
-.aesop-links { justify-content: flex-start; gap: 28px; margin-top: 28px; }
-.aesop-links a { padding: 8px 0; border: 0; border-bottom: 1px solid #354437; border-radius: 0; background: transparent; font-size: 13px; }
-.aesop-cover {
-    isolation: isolate;
-    width: 100%;
-    margin-top: 30px;
-    padding: 70px 8% 0;
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 36px;
-    align-items: center;
+
+.aesop-logo {
+    order: -1;
+    width: 220px;
+    height: auto;
+    margin: 0 0 32px;
+}
+
+.aesop-heading>p {
+    max-width: 620px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.8;
+}
+
+.aesop-links {
+    justify-content: flex-start;
+    gap: 28px;
+    margin-top: 28px;
+}
+
+.aesop-links a {
+    padding: 8px 0;
+    border: 0;
+    border-bottom: 1px solid #354437;
+    border-radius: 0;
     background: transparent;
+    font-size: 13px;
 }
-.aesop-cover::before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    inset: 0;
+
+.aesop-overview {
+    width: 100%;
+    padding: 0 10%;
+    margin-top: 120px;
+    gap: 70px 50px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.aesop-overview h3 {
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+.aesop-overview p {
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.aesop-overview>.aesop-desktop {
+    transform: rotate(-5deg);
+}
+
+.aesop-devices {
+    padding-right: 20%;
+}
+
+.aesop-colors {
+    margin: 110px 10%;
+}
+
+.aesop-colors>h3 {
+    margin-bottom: 26px;
+    font-size: 22px;
+}
+
+.aesop-color-description {
+    max-width: 760px;
+    line-height: 1.8;
+}
+
+.aesop-color-layout {
+    grid-template-columns: 90px 1fr;
+    gap: 32px;
+    margin-top: 32px;
+    align-items: center;
+}
+
+.aesop-main-color {
+    width: 64px;
+    border-radius: 50%;
+}
+
+.aesop-palette-content>p {
+    max-width: none;
+    line-height: 1.8;
+}
+
+.aesop-palette {
+    max-width: none;
+}
+
+.aesop-palette li {
+    aspect-ratio: auto;
+    height: 54px;
+}
+
+.aesop-typography {
+    margin-top: 110px;
+    padding: 50px 10%;
     background: var(--aesop-tint);
-    border-radius: 65% 0 0 0;
 }
-.aesop-pc-mockup { grid-column: 1; grid-row: 1 / 3; align-self: end; border-radius: 8px 8px 0 0; transform: none; box-shadow: 0 24px 30px #35443725; }
-.aesop-facts { grid-column: 2; width: 100%; min-height: 0; padding: 0; gap: 18px; color: #354437; }
-.aesop-facts dt { font-size: 13px; }
-.aesop-facts dd { font-size: 13px; word-spacing: 0; }
-.aesop-cover-mobile { position: static; grid-column: 2; align-self: end; width: 100%; margin: 0; object-position: center bottom; }
-.aesop-overview { width: 100%; padding: 0 10%; margin-top: 120px; gap: 70px 50px; grid-template-columns: 1fr 1fr; }
-.aesop-overview h3 { font-size: 24px; margin-bottom: 24px; }
-.aesop-overview p { font-size: 14px; line-height: 1.85; }
-.aesop-overview > .aesop-desktop { transform: rotate(-5deg); }
-.aesop-devices { padding-right: 20%; }
-.aesop-colors { margin: 110px 10%; }
-.aesop-colors > h3 { margin-bottom: 26px; font-size: 22px; }
-.aesop-color-description { max-width: 760px; line-height: 1.8; }
-.aesop-color-layout { grid-template-columns: 90px 1fr; gap: 32px; margin-top: 32px; align-items: center; }
-.aesop-main-color { width: 64px; border-radius: 50%; }
-.aesop-palette-content > p { max-width: none; line-height: 1.8; }
-.aesop-palette { max-width: none; }
-.aesop-palette li { aspect-ratio: auto; height: 54px; }
-.aesop-typography { margin-top: 110px; padding: 50px 10%; background: var(--aesop-tint); }
-.aesop-typography > h3 { margin-bottom: 24px; font-size: 22px; }
-.aesop-type-intro { grid-template-columns: 1fr 2fr; gap: 40px; }
-.aesop-type-intro .aesop-type-name { font-size: 40px; }
-.aesop-type-intro > p:last-child { font-size: 13px; line-height: 1.8; }
-.aesop-type-scale { margin-top: 36px; }
-.aesop-typography .aesop-type-scale { container-type: inline-size; }
+
+.aesop-typography>h3 {
+    margin-bottom: 24px;
+    font-size: 22px;
+}
+
+.aesop-type-intro {
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+}
+
+.aesop-type-intro .aesop-type-name {
+    font-size: 40px;
+}
+
+.aesop-type-intro>p:last-child {
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.aesop-type-scale {
+    margin-top: 36px;
+}
+
+.aesop-typography .aesop-type-scale {
+    container-type: inline-size;
+}
+
 .aesop-typography .aesop-type-row {
     grid-template-columns: minmax(0, 65fr) minmax(0, 19fr) minmax(0, 7fr) minmax(0, 9fr);
     min-width: 0;
     column-gap: 1cqi;
 }
-.aesop-typography .aesop-type-row p { white-space: nowrap; font-size: min(12px, 1cqi); }
-.aesop-typography .aesop-type-row .aesop-type-sample { grid-column: auto; }
-.aesop-type-row { grid-template-columns: 54% 24% 10% 12%; padding: 12px 0; border-bottom: 1px dashed #92988e; font-size: 12px; }
-.aesop-type-row p { white-space: normal; }
-.aesop-type-row .aesop-type-sample { font-size: inherit; }
-.aesop-type-row:first-child .aesop-type-sample { font-size: inherit; }
-.aesop-responsive { margin-top: 90px; }
-.aesop-responsive-hero { padding: 70px 8% 90px; isolation: isolate; }
+
+.aesop-typography .aesop-type-row p {
+    white-space: nowrap;
+    font-size: min(12px, 1cqi);
+}
+
+.aesop-typography .aesop-type-row .aesop-type-sample {
+    grid-column: auto;
+}
+
+.aesop-type-row {
+    grid-template-columns: 54% 24% 10% 12%;
+    padding: 12px 0;
+    border-bottom: 1px dashed #92988e;
+    font-size: 12px;
+}
+
+.aesop-type-row p {
+    white-space: normal;
+}
+
+.aesop-type-row .aesop-type-sample {
+    font-size: inherit;
+}
+
+.aesop-type-row:first-child .aesop-type-sample {
+    font-size: inherit;
+}
+
+.aesop-responsive {
+    margin-top: 90px;
+}
+
+.aesop-responsive-hero {
+    padding: 70px 8% 90px;
+    isolation: isolate;
+}
+
 .aesop-responsive-hero::before {
     content: '';
     position: absolute;
@@ -774,58 +987,226 @@
     background: var(--aesop-tint);
     border-radius: 0 65% 0 0;
 }
-.aesop-responsive-lineup { max-width: 850px; }
-.aesop-responsive-body { padding: 90px 10% 50px; background: #fff; }
-.aesop-responsive-body::before { display: none; }
-.aesop-responsive-intro { grid-template-columns: 1.4fr 1fr; gap: 50px; }
-.aesop-responsive-copy h3 { color: #354437; font-size: 30px; }
-.aesop-responsive p { font-size: 14px; line-height: 1.85; }
-.aesop-responsive-detail { width: 62%; margin-top: 55px; }
-.aesop-responsive-finale { margin-top: 100px; }
-.aesop-responsive-finale h3 { font-size: 26px; }
-.aesop-responsive-stage { max-width: 650px; margin-top: 60px; }
-.aesop-responsive-stage::before { background: var(--aesop-tint); bottom: -10%; }
+
+.aesop-responsive-lineup {
+    max-width: 850px;
+}
+
+.aesop-responsive-body {
+    padding: 90px 10% 50px;
+    background: #fff;
+}
+
+.aesop-responsive-body::before {
+    display: none;
+}
+
+.aesop-responsive-intro {
+    grid-template-columns: 1.4fr 1fr;
+    gap: 50px;
+}
+
+.aesop-responsive-copy h3 {
+    color: #354437;
+    font-size: 30px;
+}
+
+.aesop-responsive p {
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.aesop-responsive-detail {
+    width: 62%;
+    margin-top: 55px;
+}
+
+.aesop-responsive-finale {
+    margin-top: 100px;
+}
+
+.aesop-responsive-finale h3 {
+    font-size: 26px;
+}
+
+.aesop-responsive-stage {
+    max-width: 650px;
+    margin-top: 60px;
+}
+
+.aesop-responsive-stage::before {
+    background: var(--aesop-tint);
+    bottom: -10%;
+}
+
 @media (max-width: 1024px) {
-    .aesop-heading { padding-top: 40px; }
-    .aesop-cover { gap: 24px; padding-left: 6%; padding-right: 6%; }
-    .aesop-overview { gap: 40px 30px; }
-    .aesop-type-intro { grid-template-columns: 1fr; gap: 20px; }
-    .aesop-responsive-copy h3 { font-size: 24px; }
+    .aesop-heading {
+        padding-top: 40px;
+    }
+
+    .aesop-cover {
+        gap: 24px;
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .aesop-overview {
+        gap: 40px 30px;
+    }
+
+    .aesop-type-intro {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .aesop-responsive-copy h3 {
+        font-size: 24px;
+    }
 }
+
 @media (max-width: 768px) {
-    .aesop-case { margin-top: 60px; }
-    .aesop-heading { padding: 35px 6% 20px; }
-    .aesop-logo { width: 170px; margin-bottom: 24px; }
-    .aesop-heading > p { font-size: 13px; }
-    .aesop-heading > p br { display: none; }
-    .aesop-cover { grid-template-columns: 1fr; padding: 45px 8% 0; gap: 32px; }
-    .aesop-pc-mockup { grid-column: 1; grid-row: auto; }
-    .aesop-facts { grid-column: 1; }
-    .aesop-cover-mobile { grid-column: 1; width: 75%; justify-self: end; }
-    .aesop-overview { grid-template-columns: 1fr; padding: 0 6%; margin-top: 65px; gap: 36px; }
-    .aesop-overview > .aesop-desktop { width: 90%; }
-    .aesop-typography { padding: 32px 6%; margin-top: 65px; }
-    .aesop-type-intro .aesop-type-name { font-size: 32px; }
-    .aesop-type-row { grid-template-columns: 1fr 1fr; gap: 8px 16px; }
-    .aesop-type-row .aesop-type-sample { grid-column: 1 / -1; font-size: inherit; }
-    .aesop-type-row:first-child .aesop-type-sample { font-size: inherit; }
-    .aesop-colors { margin: 65px 6%; }
-    .aesop-color-layout { grid-template-columns: 1fr; gap: 20px; }
-    .aesop-main-color { width: 48px; }
-    .aesop-palette li { height: 36px; }
-    .aesop-responsive { margin-top: 60px; }
-    .aesop-responsive-hero { padding: 40px 6% 55px; }
-    .aesop-responsive-body { padding: 55px 6% 35px; }
-    .aesop-responsive-intro { grid-template-columns: 1fr; gap: 36px; }
-    .aesop-responsive-copy h3 { font-size: 22px; }
-    .aesop-responsive-detail { width: 100%; margin-top: 40px; }
-    .aesop-responsive-finale { margin-top: 60px; }
-    .aesop-responsive-finale h3 { font-size: 22px; }
-    .aesop-responsive-stage { margin-top: 40px; }
+    .aesop-case {
+        margin-top: 60px;
+    }
+
+    .aesop-heading {
+        padding: 35px 6% 20px;
+    }
+
+    .aesop-logo {
+        width: 170px;
+        margin-bottom: 24px;
+    }
+
+    .aesop-heading>p {
+        font-size: 13px;
+    }
+
+    .aesop-heading>p br {
+        display: none;
+    }
+
+    .aesop-cover {
+        grid-template-columns: 1fr;
+        padding: 45px 8% 0;
+        gap: 32px;
+    }
+
+    .aesop-pc-mockup {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .aesop-facts {
+        grid-column: 1;
+    }
+
+    .aesop-cover-mobile {
+        grid-column: 1;
+        width: 75%;
+        justify-self: end;
+    }
+
+    .aesop-overview {
+        grid-template-columns: 1fr;
+        padding: 0 6%;
+        margin-top: 65px;
+        gap: 36px;
+    }
+
+    .aesop-overview>.aesop-desktop {
+        width: 90%;
+    }
+
+    .aesop-typography {
+        padding: 32px 6%;
+        margin-top: 65px;
+    }
+
+    .aesop-type-intro .aesop-type-name {
+        font-size: 32px;
+    }
+
+    .aesop-type-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 16px;
+    }
+
+    .aesop-type-row .aesop-type-sample {
+        grid-column: 1 / -1;
+        font-size: inherit;
+    }
+
+    .aesop-type-row:first-child .aesop-type-sample {
+        font-size: inherit;
+    }
+
+    .aesop-colors {
+        margin: 65px 6%;
+    }
+
+    .aesop-color-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .aesop-main-color {
+        width: 48px;
+    }
+
+    .aesop-palette li {
+        height: 36px;
+    }
+
+    .aesop-responsive {
+        margin-top: 60px;
+    }
+
+    .aesop-responsive-hero {
+        padding: 40px 6% 55px;
+    }
+
+    .aesop-responsive-body {
+        padding: 55px 6% 35px;
+    }
+
+    .aesop-responsive-intro {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .aesop-responsive-copy h3 {
+        font-size: 22px;
+    }
+
+    .aesop-responsive-detail {
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .aesop-responsive-finale {
+        margin-top: 60px;
+    }
+
+    .aesop-responsive-finale h3 {
+        font-size: 22px;
+    }
+
+    .aesop-responsive-stage {
+        margin-top: 40px;
+    }
 }
+
 /* 이솝 영역의 모든 텍스트를 볼드체로 표시 */
-.aesop-case, .aesop-case * { font-weight: 700; }
-.aesop-case .aesop-type-row p { font-weight: 400; }
+.aesop-case,
+.aesop-case * {
+    font-weight: 700;
+}
+
+.aesop-case .aesop-type-row p {
+    font-weight: 400;
+}
+
 .aesop-case .aesop-type-row .aesop-type-sample {
     font-family: var(--font-main);
     font-size: min(calc(var(--sample-size) * 1px), calc(var(--sample-size) * .075cqi));
@@ -833,7 +1214,10 @@
     line-height: 1.4;
     white-space: nowrap;
 }
-.aesop-case .aesop-type-row:nth-child(6) p { font-weight: 700; }
+
+.aesop-case .aesop-type-row:nth-child(6) p {
+    font-weight: 700;
+}
 
 /* Aesop opening: centered brand and muted architectural color blocks. */
 .aesop-opening {
@@ -844,10 +1228,35 @@
     background: var(--aesop-surface);
     color: var(--aesop-main);
 }
-.aesop-opening .aesop-heading { display: block; padding: 0; text-align: center; }
-.aesop-opening-brand { display: flex; flex-direction: column; align-items: center; gap: 18px; margin-bottom: 36px; }
-.aesop-opening-brand .aesop-opening-credit { margin: 0; color: var(--aesop-main); font-size: 12px; letter-spacing: .08em; }
-.aesop-opening-brand .aesop-logo { order: 0; width: min(200px, 22cqi); height: auto; margin: 0; }
+
+.aesop-opening .aesop-heading {
+    display: block;
+    padding: 0;
+    text-align: center;
+}
+
+.aesop-opening-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 36px;
+}
+
+.aesop-opening-brand .aesop-opening-credit {
+    margin: 0;
+    color: var(--aesop-main);
+    font-size: 12px;
+    letter-spacing: .08em;
+}
+
+.aesop-opening-brand .aesop-logo {
+    order: 0;
+    width: min(200px, 22cqi);
+    height: auto;
+    margin: 0;
+}
+
 .aesop-opening .aesop-eyebrow {
     margin: 0 0 22px;
     max-width: none;
@@ -857,7 +1266,11 @@
     font-weight: 400;
     line-height: 1.4;
 }
-.aesop-eyebrow span { font-weight: 400; }
+
+.aesop-eyebrow span {
+    font-weight: 400;
+}
+
 .aesop-opening .aesop-heading h3 {
     display: block;
     width: auto;
@@ -866,7 +1279,11 @@
     line-height: 1.25;
     letter-spacing: -.045em;
 }
-.aesop-opening .aesop-heading h3 > span { color: #af9271; }
+
+.aesop-opening .aesop-heading h3>span {
+    color: #af9271;
+}
+
 .aesop-opening-layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -876,6 +1293,7 @@
     padding-top: 40px;
     border-top: 1px solid var(--aesop-line);
 }
+
 .aesop-opening-visual {
     display: grid;
     place-items: center;
@@ -886,6 +1304,7 @@
     border-radius: 160px 160px 12px 12px;
     background: linear-gradient(145deg, #e3e8dd, #edf0e8);
 }
+
 .aesop-opening-phone {
     position: relative;
     width: 72%;
@@ -897,6 +1316,7 @@
     box-shadow: 2px 2px 0 #bfc0bb, 4px 4px 0 #676964, 12px 22px 30px #252b2620;
     transform: rotate(-10deg);
 }
+
 .aesop-opening-phone::after {
     content: '';
     position: absolute;
@@ -907,14 +1327,56 @@
     border-radius: 20px;
     background: #242623;
 }
-.aesop-opening-phone img { width: 100%; height: auto; border-radius: 26px; }
-.aesop-opening-copy { min-width: 0; padding: 12px 0; }
-.aesop-opening-copy h4 { max-width: 360px; margin: 0 0 24px; color: var(--aesop-main); font-size: 26px; line-height: 1.4; letter-spacing: -.035em; text-wrap: balance; }
-.aesop-opening-copy p { font-size: 15px; font-weight: 400; line-height: 1.85; }
-.aesop-opening-copy br { display: none; }
-.aesop-opening-copy p + p { margin-top: 12px; }
-.aesop-opening-copy h5 { margin: 28px 0 12px; padding-top: 24px; border-top: 1px solid var(--aesop-line); font-size: 15px; }
-.aesop-opening .aesop-links { justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+
+.aesop-opening-phone img {
+    width: 100%;
+    height: auto;
+    border-radius: 26px;
+}
+
+.aesop-opening-copy {
+    min-width: 0;
+    padding: 12px 0;
+}
+
+.aesop-opening-copy h4 {
+    max-width: 360px;
+    margin: 0 0 24px;
+    color: var(--aesop-main);
+    font-size: 26px;
+    line-height: 1.4;
+    letter-spacing: -.035em;
+    text-wrap: balance;
+}
+
+.aesop-opening-copy p {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.85;
+}
+
+.aesop-opening-copy br {
+    display: none;
+}
+
+.aesop-opening-copy p+p {
+    margin-top: 12px;
+}
+
+.aesop-opening-copy h5 {
+    margin: 28px 0 12px;
+    padding-top: 24px;
+    border-top: 1px solid var(--aesop-line);
+    font-size: 15px;
+}
+
+.aesop-opening .aesop-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
 .aesop-opening .aesop-links a {
     display: inline-flex;
     align-items: center;
@@ -930,24 +1392,83 @@
     text-decoration: none;
     transition: background-color .2s ease;
 }
+
 .aesop-opening .aesop-links a:hover,
-.aesop-opening .aesop-links a:focus-visible { background: #c9d5c4; color: var(--aesop-main); }
-.aesop-case .aesop-responsive { color: var(--aesop-main); }
-.aesop-case .aesop-type-row { border-bottom-color: var(--aesop-line); }
-@media (max-width: 1024px) {
-    .aesop-opening { padding: 32px 6% 48px; }
-    .aesop-opening-layout { gap: 6%; margin-top: 36px; }
-    .aesop-opening-visual { padding: 44px 20px; }
-    .aesop-opening-copy h4 { font-size: 22px; }
-    .aesop-opening-copy p { font-size: 14px; }
-    .aesop-opening-copy br { display: none; }
+.aesop-opening .aesop-links a:focus-visible {
+    background: #c9d5c4;
+    color: var(--aesop-main);
 }
+
+.aesop-case .aesop-responsive {
+    color: var(--aesop-main);
+}
+
+.aesop-case .aesop-type-row {
+    border-bottom-color: var(--aesop-line);
+}
+
+@media (max-width: 1024px) {
+    .aesop-opening {
+        padding: 32px 6% 48px;
+    }
+
+    .aesop-opening-layout {
+        gap: 6%;
+        margin-top: 36px;
+    }
+
+    .aesop-opening-visual {
+        padding: 44px 20px;
+    }
+
+    .aesop-opening-copy h4 {
+        font-size: 22px;
+    }
+
+    .aesop-opening-copy p {
+        font-size: 14px;
+    }
+
+    .aesop-opening-copy br {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
-    .aesop-opening { padding: 28px 7% 40px; }
-    .aesop-opening .aesop-eyebrow { font-size: 10px; margin-bottom: 15px; }
-    .aesop-opening .aesop-heading h3 { font-size: min(30px, 6cqi); }
-    .aesop-opening-layout { grid-template-columns: 1fr; gap: 32px; margin-top: 28px; padding-top: 28px; }
-    .aesop-opening-visual { width: 100%; max-width: 380px; justify-self: center; padding: 40px 24px; }
-    .aesop-opening-phone { width: 180px; }
-    .aesop-opening-copy { max-width: 440px; margin: 0 auto; padding: 0; }
+    .aesop-opening {
+        padding: 28px 7% 40px;
+    }
+
+    .aesop-opening .aesop-eyebrow {
+        font-size: 10px;
+        margin-bottom: 15px;
+    }
+
+    .aesop-opening .aesop-heading h3 {
+        font-size: min(30px, 6cqi);
+    }
+
+    .aesop-opening-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin-top: 28px;
+        padding-top: 28px;
+    }
+
+    .aesop-opening-visual {
+        width: 100%;
+        max-width: 380px;
+        justify-self: center;
+        padding: 40px 24px;
+    }
+
+    .aesop-opening-phone {
+        width: 180px;
+    }
+
+    .aesop-opening-copy {
+        max-width: 440px;
+        margin: 0 auto;
+        padding: 0;
+    }
 }
