@@ -82,8 +82,8 @@ DESCRIPTION
 
 .popup-description-slide h3{
     margin:0 0 2rem;
-    font-size:min(1.9531rem, 4cqi);
-    white-space:nowrap;
+    font-size:1.75rem;
+    white-space:normal;
     font-weight:var(--fw2);
     line-height:var(--lh1);
     color:var(--gray-900);
@@ -236,7 +236,7 @@ TABLET
 
     .popup-description-slide h3{
         margin-bottom:1.5rem;
-        font-size:min(1.6rem, 4cqi);
+        font-size:1.6rem;
     }
 
     .popup-description-slide p{
@@ -356,7 +356,7 @@ MOBILE
 
     .popup-description-slide h3{
         margin:0 0 1rem;
-        font-size:min(1.3rem, 4cqi);
+        font-size:1.4rem;
         line-height:1.3;
         text-align:center;
         word-break:keep-all;
@@ -483,7 +483,7 @@ EXTRA SMALL MOBILE
 
     .popup-description-slide h3{
         margin:0 0 .75rem;
-        font-size:min(1.1rem, 4cqi);
+        font-size:1.3rem;
         line-height:1.3;
         text-align:center;
         word-break:keep-all;
@@ -510,28 +510,57 @@ EXTRA SMALL MOBILE
     }
 }
 
-/* Bring the work closer to its heading. */
-.popup-section .popup-heading { margin-bottom: 1rem; }
-
-/* Compact showcase, preserving the original 2:3 artwork ratio. */
+/* Active artwork with a muted preview of the next popup. */
 .popup-section { min-height: 0; padding: 3rem 0; }
+.popup-section .popup-heading { margin-bottom: 5rem; }
+.popup-section .popup-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 25fr) minmax(0, 71fr);
+    gap: 4%;
+    align-items: center;
+}
+.popup-section .popup-description-viewport.swiper {
+    width: 100%;
+    max-width: none;
+}
+.popup-section .popup-description-slide.swiper-slide { padding: 0; }
 .popup-section .popup-station.swiper {
-    flex: 0 0 auto;
-    width: min(31rem, 46svh);
+    width: calc(100% + 24px);
+    max-width: none;
+    height: auto;
+    aspect-ratio: auto;
+    padding: 12px;
+    margin: -12px;
+    box-sizing: border-box;
+}
+.popup-section .popup-slide.swiper-slide {
     height: auto;
     aspect-ratio: 2 / 3;
+    opacity: .45;
+    filter: blur(7px);
+    transition: filter 700ms ease, opacity 700ms ease;
 }
-.popup-section .popup-layout { gap: 3rem; }
-.popup-section .popup-layout::before { top: 25%; height: 50%; }
-.popup-section .popup-layout::after { top: calc(75% - .625rem); }
+.popup-section .popup-slide.swiper-slide-active {
+    opacity: 1;
+    filter: none;
+}
+.popup-section .popup-slide.swiper-slide-next { cursor: pointer; }
+.popup-section .popup-layout::before,
+.popup-section .popup-layout::after { display: none; }
 @media (max-width: 1024px) {
     .popup-section { padding: 2.5rem 0; }
-    .popup-section .popup-station.swiper { width: min(24rem, 46svh); }
-    .popup-section .popup-layout { gap: 2rem; }
+    .popup-section .popup-heading { margin-bottom: 3rem; }
+    .popup-section .popup-layout {
+        grid-template-columns: minmax(0, 34fr) minmax(0, 62fr);
+    }
 }
 @media (max-width: 768px) {
     .popup-section { padding: 2rem 0; }
-    .popup-section .popup-heading { margin-bottom: 1rem; }
-    .popup-section .popup-station.swiper { width: min(100%, 23rem, 40svh); }
-    .popup-section .popup-layout { gap: 1.5rem; }
+    .popup-section .popup-heading { margin-bottom: 2.5rem; }
+    .popup-section .popup-layout { display: flex; gap: 2rem; }
+    .popup-section .popup-description-viewport.swiper { max-width: 32rem; }
+    .popup-section .popup-description-slide.swiper-slide { padding: 0 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .popup-section .popup-slide.swiper-slide { transition: none; }
 }

@@ -235,14 +235,42 @@ MOBILE - 768
         font-size:1rem;
     }
 }
-/* Wider previews also widen their full-image hover overlays. */
-.detail-section { height: auto; min-height: 62.5rem; }
-.detail-section .detail-list { width: 100%; }
+/* Three aligned previews beneath the centered introduction. */
+.detail-section { height: auto; min-height: 0; }
+.detail-section .detail-heading { margin-bottom: 3rem; }
+.detail-section .detail-list {
+    width: 100%;
+    max-width: 90rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+.detail-section .detail-card {
+    width: 100%;
+    max-width: none;
+    text-align: left;
+}
+.detail-section .detail-card figure { margin-bottom: 2rem; }
+.detail-section .detail-preview { aspect-ratio: 41 / 50; }
+.detail-section .detail-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+.detail-section .detail-card h3 { margin-bottom: .5rem; }
 @media (max-width: 1024px) {
-    .detail-section { min-height: 0; }
-    .detail-section .detail-card { width: 95%; }
+    .detail-section { padding: 4rem 0; }
+    .detail-section .detail-card figure { margin-bottom: 1.5rem; }
 }
 @media (max-width: 768px) {
-    .detail-section .detail-list { width: 100%; }
-    .detail-section .detail-card { width: 100%; }
+    .detail-section .detail-heading { margin-bottom: 2.5rem; }
+    .detail-section .detail-list {
+        grid-template-columns: 1fr;
+        max-width: 31.25rem;
+        gap: 3rem;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .detail-preview img,
+    .detail-preview-overlay { transition: none; }
 }

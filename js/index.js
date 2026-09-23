@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* POPUP TEXT SWIPER */
     const popupTextSwiper = new Swiper('.popup-text-swiper', {
         loop: true,
-        speed: 700,
+        speed: reducedMotion ? 0 : 700,
         allowTouchMove: false,
         effect: 'fade',
         fadeEffect: {
@@ -218,18 +218,27 @@ document.addEventListener('DOMContentLoaded', () => {
     /* POPUP IMAGE SWIPER */
     const popupImageSwiper = new Swiper('.popup-image-swiper', {
         loop: true,
-        speed: 700,
-        slidesPerView: 1,
-        spaceBetween: 0,
+        speed: reducedMotion ? 0 : 700,
+        slidesPerView: 1.18,
+        spaceBetween: 20,
+        breakpoints: {
+            769: { slidesPerView: 1.45, spaceBetween: 28 },
+            1025: { slidesPerView: 2, spaceBetween: 48 }
+        },
         grabCursor: true,
-        autoplay: reducedMotion ? false : {
+        autoplay: {
             delay: 2500,
             disableOnInteraction: false,
-            pauseOnMouseEnter: true
+            pauseOnMouseEnter: false
         },
         on: {
             slideChange() {
-                popupTextSwiper.slideToLoop(this.realIndex, 700);
+                popupTextSwiper.slideToLoop(this.realIndex, reducedMotion ? 0 : 700);
+            },
+            click(swiper) {
+                if (swiper.clickedSlide?.classList.contains('swiper-slide-next')) {
+                    swiper.slideNext();
+                }
             }
         }
     });
@@ -237,8 +246,9 @@ document.addEventListener('DOMContentLoaded', () => {
         slidesPerView: 1,
         spaceBetween: 0,
         loop: true,
-        speed: 900,
-        autoplay: {
+        speed: reducedMotion ? 0 : 900,
+        grabCursor: true,
+        autoplay: reducedMotion ? false : {
             delay: 3500,
             disableOnInteraction: false,
             pauseOnMouseEnter: true

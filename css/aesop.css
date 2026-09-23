@@ -126,13 +126,13 @@
 
 .aesop-pc-screen {
     position: absolute;
-    left: 23.75%;
-    top: 25%;
-    width: 51.65%;
-    height: 42.6%;
+    left: 14.43%;
+    top: 13.44%;
+    width: 71.13%;
+    height: 55.25%;
     object-fit: cover;
     object-position: center top;
-    clip-path: polygon(1.3% 0, 98.2% 0, 100% 100%, 0 100%);
+    clip-path: none;
 }
 
 .aesop-facts {
@@ -749,13 +749,13 @@
 .aesop-type-intro .aesop-type-name { font-size: 40px; }
 .aesop-type-intro > p:last-child { font-size: 13px; line-height: 1.8; }
 .aesop-type-scale { margin-top: 36px; }
-.aesop-typography .aesop-type-scale { overflow-x: auto; }
+.aesop-typography .aesop-type-scale { container-type: inline-size; }
 .aesop-typography .aesop-type-row {
-    grid-template-columns: minmax(460px, 1fr) 210px 65px 90px;
-    min-width: 873px;
-    column-gap: 16px;
+    grid-template-columns: minmax(0, 65fr) minmax(0, 19fr) minmax(0, 7fr) minmax(0, 9fr);
+    min-width: 0;
+    column-gap: 1cqi;
 }
-.aesop-typography .aesop-type-row p { white-space: nowrap; }
+.aesop-typography .aesop-type-row p { white-space: nowrap; font-size: min(12px, 1cqi); }
 .aesop-typography .aesop-type-row .aesop-type-sample { grid-column: auto; }
 .aesop-type-row { grid-template-columns: 54% 24% 10% 12%; padding: 12px 0; border-bottom: 1px dashed #92988e; font-size: 12px; }
 .aesop-type-row p { white-space: normal; }
@@ -825,7 +825,15 @@
 }
 /* 이솝 영역의 모든 텍스트를 볼드체로 표시 */
 .aesop-case, .aesop-case * { font-weight: 700; }
-.aesop-case .aesop-type-row p { font-weight: 700; }
+.aesop-case .aesop-type-row p { font-weight: 400; }
+.aesop-case .aesop-type-row .aesop-type-sample {
+    font-family: var(--font-main);
+    font-size: min(calc(var(--sample-size) * 1px), calc(var(--sample-size) * .075cqi));
+    font-weight: var(--sample-weight);
+    line-height: 1.4;
+    white-space: nowrap;
+}
+.aesop-case .aesop-type-row:nth-child(6) p { font-weight: 700; }
 
 /* Aesop opening: centered brand and muted architectural color blocks. */
 .aesop-opening {

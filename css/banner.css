@@ -297,21 +297,27 @@ EXTRA SMALL MOBILE - 402
     }
 }
 
-/* Keep the banner, caption and pagination within a compact showcase. */
+/* Full-width artwork with the title and description beneath it. */
 .banner-section { min-height: 0; padding: min(4rem, 5vh) 0; }
-.banner-section .banner-heading { margin-bottom: 2rem; }
-.banner-section .banner-station.swiper { width: 82%; max-width: min(1200px, calc(56svh * 1620 / 818)); }
+.banner-section .banner-heading { margin-bottom: 1.25rem; }
+.banner-section .banner-station.swiper { width: 100%; max-width: none; }
 .banner-section .banner-train img { width: 100%; height: auto; max-height: none; aspect-ratio: auto; }
-.banner-section .banner-caption { width: 100%; padding: 1rem 0 0; gap: 1rem; }
-.banner-section .swiper-pagination { margin-top: 1rem; }
-@media (max-width: 1024px) {
-    .banner-section .banner-station.swiper { width: 94%; }
+.banner-section .banner-caption {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 1.5rem 0 0;
+    gap: 0;
 }
+.banner-section .banner-caption h3,
+.banner-section .banner-caption p { min-width: 0; white-space: normal; }
+.banner-section .banner-caption h3 { padding-right: 1.5rem; }
+.banner-section .banner-caption p { text-align: right; }
+.banner-section .swiper-pagination { margin-top: 1rem; }
 @media (max-width: 768px) {
     .banner-section { padding: 2rem 0; }
     .banner-section .banner-heading { margin-bottom: 1.5rem; }
     .banner-section .banner-station.swiper { width: 100%; }
-    .banner-section .banner-caption { grid-template-columns: 1fr; gap: 0; }
-    .banner-section .banner-caption h3 { font-size: 16px; white-space: normal; }
+    .banner-section .banner-caption { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+    .banner-section .banner-caption h3 { margin-bottom: 0; padding-right: 0; font-size: 16px; white-space: normal; }
     .banner-section .banner-caption p { font-size: 14px; white-space: normal; }
 }

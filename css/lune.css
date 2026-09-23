@@ -62,16 +62,57 @@
 .lune-system-row .lune-font-sample { font-size: 21px; font-weight: 700; margin-top: 12px; }
 .lune-typography { padding: 70px 10% 90px; }
 .lune-device-group { position: relative; aspect-ratio: 1.7; margin: 10px auto 70px; width: 100%; max-width: 850px; }
-.lune-monitor { position: absolute; width: 70%; left: 2%; top: 0; padding: 7px 7px 26px; border-radius: 10px; background: #292724; box-shadow: 0 12px 15px #4e392c20; }
-.lune-monitor::before { content: ''; position: absolute; width: 14%; height: 25%; left: 43%; top: 100%; background: linear-gradient(90deg,#a49e95,#ddd8ce,#a49e95); }
-.lune-monitor::after { content: ''; position: absolute; width: 32%; height: 4%; top: 123%; left: 34%; border-radius: 50% 50% 3px 3px; background: #b7b1a6; }
+.lune-device-group > .lune-monitor {
+    position: absolute;
+    width: 84%;
+    left: -5%;
+    top: 0;
+    aspect-ratio: 3 / 2;
+    padding: 0;
+    border-radius: 0;
+    background: url('../img/monitor-premium-front.png') center / contain no-repeat;
+    box-shadow: none;
+}
+.lune-monitor > .lune-screen.lune-screen-pc {
+    position: absolute;
+    left: 11.05%;
+    top: 6.35%;
+    width: 79%;
+    height: 66.4%;
+    aspect-ratio: auto;
+    border-radius: 0;
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, .35% 97.55%);
+}
 .lune-device-group > .lune-tablet { position: absolute; width: 28%; right: 7%; bottom: 5%; }
 .lune-device-group > .lune-phone { position: absolute; width: 14%; right: 0; bottom: 2%; }
 .lune-typography > h3 { font-size: 14px; color: #785332; margin: 0 0 28px; }
+.lune-font-intro,
+.lune-font-typography { background: #fff2d7; }
+.lune-font-typography { padding-top: 48px; }
+.lune-font-typography > h3 { font-size: 14px; color: #785332; margin: 0 0 28px; }
 .lune-type-example > span { display: inline-block; padding: 7px 18px; background: #ffe0b5; border-radius: 8px; font-size: 13px; }
 .lune-type-example h3 { font-size: 30px; margin: 20px 0 12px; }
+.lune-type-table-scroll { width: 100%; container-type: inline-size; }
 .lune-type-table { border-collapse: collapse; width: 100%; margin-top: 32px; font-size: 14px; text-align: left; }
+.lune-type-table th, .lune-type-table td { white-space: nowrap; }
 .lune-type-table caption { text-align: left; font-size: 12px; padding-bottom: 12px; color: #786b5b; }
+.lune-type-table tbody tr:nth-child(1) { --sample-size: 39; }
+.lune-type-table tbody tr:nth-child(2) { --sample-size: 31; }
+.lune-type-table tbody tr:nth-child(3) { --sample-size: 25; }
+.lune-type-table tbody tr:nth-child(4) { --sample-size: 20; }
+.lune-type-table tbody tr:nth-child(5),
+.lune-type-table tbody tr:nth-child(6) { --sample-size: 16; }
+.lune-type-table tbody tr:nth-child(7) { --sample-size: 13; }
+.lune-type-table tbody tr:nth-child(8) { --sample-size: 10; }
+.lune-case .lune-type-table tbody th {
+    font-family: var(--font-main);
+    font-size: min(calc(var(--sample-size) * 1px), calc(var(--sample-size) * .07cqi));
+    font-weight: 700;
+    line-height: 1.4;
+}
+.lune-case .lune-type-table tbody tr:nth-child(5) th,
+.lune-case .lune-type-table tbody tr:nth-child(7) th,
+.lune-case .lune-type-table tbody tr:nth-child(8) th { font-weight: 400; }
 .lune-type-table th, .lune-type-table td { padding: 16px 8px; border-bottom: 1px solid #ded6cc; }
 .lune-type-table thead { color: #786b5b; }
 .lune-type-table td:nth-child(3),
@@ -121,3 +162,13 @@
 
 /* LUNE의 모든 텍스트를 볼드체로 표시 */
 .lune-case, .lune-case * { font-weight: 700; }
+/* Keep every typography row on one line within the available width. */
+.lune-case .lune-type-table { table-layout: fixed; }
+.lune-case .lune-type-table th,
+.lune-case .lune-type-table td { padding-left: .5cqi; padding-right: .5cqi; font-size: min(14px, 1cqi); }
+.lune-case .lune-type-table th:first-child { width: 60%; }
+.lune-case .lune-type-table th:nth-child(2) { width: 19%; }
+.lune-case .lune-type-table th:nth-child(3) { width: 6%; }
+.lune-case .lune-type-table th:nth-child(4) { width: 9%; }
+.lune-case .lune-type-table th:nth-child(5) { width: 6%; }
+.lune-case .lune-type-table tbody th { font-size: min(calc(var(--sample-size) * 1px), calc(var(--sample-size) * .07cqi)); }
