@@ -172,8 +172,9 @@ POSTER IMAGE
     justify-self:start;
 }
 
-.poster-item:nth-child(odd) .poster-content{
-    justify-self:end;
+.poster-item:nth-child(odd) .poster-content {
+    justify-self: end;
+    max-width: 100%;
 }
 
 
@@ -208,7 +209,7 @@ CONTENT
 
 .poster-content p{
     margin:0;
-    font-size:1.5625rem;
+    font-size:18px;
     line-height:var(--lh2);
     color:var(--gray-800);
     word-break:keep-all;
@@ -284,7 +285,7 @@ TABLET
     }
 
     .poster-content p{
-        font-size:1.25rem;
+        font-size:18px;
     }
 }
 
@@ -435,7 +436,7 @@ MOBILE
 
     .poster-content p{
         margin:0;
-        font-size:.95rem;
+        font-size:18px;
         line-height:1.6;
         word-break:keep-all;
     }
@@ -568,7 +569,7 @@ EXTRA SMALL MOBILE
 
     .poster-content p{
         margin:0 auto;
-        font-size:.82rem;
+        font-size:18px;
         line-height:1.6;
         text-align:center;
         word-break:keep-all;

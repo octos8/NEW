@@ -143,7 +143,7 @@ TOOL
     display: flex;
     align-items: center;
     gap: .75rem;
-    font-size: var(--fs-body1);
+    font-size: 14px;
     line-height: var(--lh2);
 }
 
@@ -151,13 +151,14 @@ TOOL
     margin-top: 1rem;
 }
 
-.popup-tool span {
-    color: var(--gray-700);
-}
-
-.popup-tool strong {
-    color: var(--gray-900);
-    font-weight: var(--fw2);
+.popup-tool > span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .3rem .75rem;
+    border: 1px solid #000;
+    border-radius: 999px;
+    color: #000;
 }
 
 
@@ -374,7 +375,7 @@ MOBILE
     .popup-tool {
         justify-content: center;
         margin-top: 1rem;
-        font-size: .85rem;
+        font-size: 14px;
         line-height: 1.5;
         text-align: center;
     }
@@ -496,7 +497,7 @@ EXTRA SMALL MOBILE
     .popup-tool {
         justify-content: center;
         margin-top: .75rem;
-        font-size: .8rem;
+        font-size: 14px;
         text-align: center;
     }
 }
@@ -514,7 +515,7 @@ EXTRA SMALL MOBILE
 .popup-section .popup-layout {
     display: grid;
     grid-template-columns: minmax(0, 25fr) minmax(0, 71fr);
-    gap: 4%;
+    gap: 0%;
     align-items: center;
 }
 
@@ -533,7 +534,8 @@ EXTRA SMALL MOBILE
     max-width: none;
     height: auto;
     aspect-ratio: auto;
-    margin: -12px;
+    margin: -12px 0 -12px auto;
+    justify-self: end;
     box-sizing: border-box;
 }
 
@@ -542,17 +544,31 @@ EXTRA SMALL MOBILE
     aspect-ratio: 2 / 3;
     opacity: .45;
     filter: blur(7px);
-    transition: filter 700ms ease, opacity 700ms ease;
+    transform: perspective(1200px) translateZ(-100px) scale(.5);
+    transform-origin: center;
+    z-index: 1;
+    transition: transform 700ms ease, filter 700ms ease, opacity 700ms ease;
 }
 
 .popup-section .popup-slide.swiper-slide-active {
     opacity: 1;
     filter: none;
+    transform: perspective(1200px) translateZ(0) rotateY(0) scale(1);
+    z-index: 3;
 }
 
 .popup-section .popup-slide.swiper-slide-prev,
 .popup-section .popup-slide.swiper-slide-next {
     cursor: pointer;
+    z-index: 2;
+}
+
+.popup-section .popup-slide.swiper-slide-prev {
+    transform: perspective(1200px) translateX(25%) translateZ(-100px) rotateY(25deg) scale(.5);
+}
+
+.popup-section .popup-slide.swiper-slide-next {
+    transform: perspective(1200px) translateX(-25%) translateZ(-100px) rotateY(-25deg) scale(.5);
 }
 
 .popup-section .popup-layout::before,
