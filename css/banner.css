@@ -2,7 +2,7 @@
 BANNER
 ========================= */
 .banner-section{
-    background:var(--ivory-0);
+    background:#f5f0e6;
     position:relative;
     width:100%;
     height:auto;
@@ -85,7 +85,6 @@ SWIPER
     display:block;
     width:100%;
     height:auto;
-    aspect-ratio:1620 / 818;
     /* 이미지 전체가 보이게 */
     object-fit:contain;
     object-position:center;
@@ -297,11 +296,17 @@ EXTRA SMALL MOBILE - 402
     }
 }
 
-/* Full-width artwork with the title and description beneath it. */
+/* Original image proportions beside the section introduction. */
 .banner-section { min-height: 0; padding: min(4rem, 5vh) 0; }
-.banner-section .banner-heading { margin-bottom: 1.25rem; }
-.banner-section .banner-station.swiper { width: 100%; max-width: none; }
-.banner-section .banner-train img { width: 100%; height: auto; max-height: none; aspect-ratio: auto; }
+.banner-section .banner-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 800px);
+    align-items: start;
+    gap: 3rem;
+}
+.banner-section .banner-heading { min-width: 0; margin-bottom: 0; }
+.banner-section .banner-station.swiper { min-width: 0; width: 100%; max-width: 800px; }
+.banner-section .banner-train img { width: 100%; height: auto; max-height: none; aspect-ratio: auto; object-fit: contain; }
 .banner-section .banner-caption {
     width: 100%;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -313,8 +318,16 @@ EXTRA SMALL MOBILE - 402
 .banner-section .banner-caption h3 { padding-right: 1.5rem; }
 .banner-section .banner-caption p { text-align: right; }
 .banner-section .swiper-pagination { margin-top: 1rem; }
+@media (min-width: 769px) and (max-width: 1200px) {
+    .banner-section .banner-inner {
+        grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+        gap: 2rem;
+    }
+    .banner-section .banner-heading h2 { font-size: min(6.875rem, 7vw); }
+}
 @media (max-width: 768px) {
     .banner-section { padding: 2rem 0; }
+    .banner-section .banner-inner { grid-template-columns: minmax(0, 1fr); gap: 0; }
     .banner-section .banner-heading { margin-bottom: 1.5rem; }
     .banner-section .banner-station.swiper { width: 100%; }
     .banner-section .banner-caption { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }

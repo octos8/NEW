@@ -118,7 +118,7 @@ OVERLAY
 }
 
 .detail-preview:hover img{
-    transform:scale(1.02);
+    transform:none;
 }
 
 .detail-preview:hover .detail-preview-overlay,
@@ -139,7 +139,7 @@ TEXT
 
 .detail-card p{
     margin:0;
-    font-size:var(--fs-body2);
+    font-size:11px;
     line-height:var(--lh2);
     color:var(--gray-700);
     word-break:keep-all;
@@ -231,9 +231,6 @@ MOBILE - 768
         font-size:1.4rem;
     }
 
-    .detail-card p{
-        font-size:1rem;
-    }
 }
 /* Three aligned previews beneath the centered introduction. */
 .detail-section { height: auto; min-height: 0; }
@@ -253,7 +250,7 @@ MOBILE - 768
 .detail-section .detail-preview img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center top;
 }
 .detail-section .detail-card h3 { margin-bottom: .5rem; }
