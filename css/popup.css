@@ -1,19 +1,18 @@
 /* =========================
 POPUP
 ========================= */
+
 .popup-section {
     background: #f5f0e6;
     position: relative;
     width: 100%;
-    min-height: 62.5rem;
-    padding: 4rem 0 6rem;
     overflow: hidden;
 }
-
 
 /* =========================
 TITLE
 ========================= */
+
 .popup-heading {
     position: relative;
     z-index: 2;
@@ -45,10 +44,10 @@ main .popup-heading > p.section-summary {
     white-space: nowrap;
 }
 
-
 /* =========================
 LAYOUT
 ========================= */
+
 .popup-layout {
     position: relative;
     display: flex;
@@ -58,10 +57,10 @@ LAYOUT
     gap: 4rem;
 }
 
-
 /* =========================
 DESCRIPTION
 ========================= */
+
 .popup-description-viewport.swiper {
     position: relative;
     flex: 1 1 auto;
@@ -102,10 +101,10 @@ DESCRIPTION
     word-break: keep-all;
 }
 
-
 /* =========================
 IMAGE
 ========================= */
+
 .popup-station.swiper {
     position: relative;
     flex: 0 0 31.25rem;
@@ -135,10 +134,10 @@ IMAGE
     object-fit: cover;
 }
 
-
 /* =========================
 TOOL
 ========================= */
+
 .popup-tool {
     display: flex;
     align-items: center;
@@ -161,10 +160,10 @@ TOOL
     color: #000;
 }
 
-
 /* =========================
 DECORATION
 ========================= */
+
 .popup-layout::before {
     content: "";
     position: absolute;
@@ -186,16 +185,14 @@ DECORATION
     background: var(--point);
 }
 
-
 /* =========================
 TABLET
 1024px
 ========================= */
-@media(max-width:1024px) {
 
+@media(max-width:1024px) {
     .popup-section {
         min-height: auto;
-        padding: 4rem 0 6rem;
     }
 
     .popup-heading {
@@ -203,12 +200,9 @@ TABLET
     }
 
     .popup-heading h2 {
-
         white-space: normal;
         word-break: keep-all;
     }
-
-
 
     /* LAYOUT */
 
@@ -219,7 +213,6 @@ TABLET
         align-items: center;
         gap: 2.5rem;
     }
-
 
     /* DESCRIPTION */
 
@@ -243,7 +236,6 @@ TABLET
         line-height: 1.6;
     }
 
-
     /* IMAGE */
 
     .popup-station.swiper {
@@ -253,7 +245,6 @@ TABLET
         margin: 0;
     }
 
-
     /* DECORATION */
 
     .popup-layout::before,
@@ -262,23 +253,20 @@ TABLET
     }
 }
 
-
 /* =========================
 MOBILE
 768px
 이미지 + 텍스트 가운데 배치
 ========================= */
-@media(max-width:768px) {
 
+@media(max-width:768px) {
     .popup-section {
         min-height: auto;
-        padding: 3rem 0 5rem;
     }
 
-
     /* =========================
-    TITLE
-    ========================= */
+        TITLE
+        ========================= */
 
     .popup-heading {
         margin-bottom: 3rem;
@@ -298,10 +286,9 @@ MOBILE
         word-break: keep-all;
     }
 
-
     /* =========================
-    LAYOUT
-    ========================= */
+        LAYOUT
+        ========================= */
 
     .popup-layout {
         display: flex;
@@ -312,11 +299,10 @@ MOBILE
         gap: 2rem;
     }
 
-
     /* =========================
-    IMAGE
-    위쪽
-    ========================= */
+        IMAGE
+        위쪽
+        ========================= */
 
     .popup-station.swiper {
         order: 1;
@@ -328,11 +314,10 @@ MOBILE
         margin: 0 auto;
     }
 
-
     /* =========================
-    DESCRIPTION
-    아래쪽
-    ========================= */
+        DESCRIPTION
+        아래쪽
+        ========================= */
 
     .popup-description-viewport.swiper {
         order: 2;
@@ -367,10 +352,9 @@ MOBILE
         word-break: keep-all;
     }
 
-
     /* =========================
-    TOOL
-    ========================= */
+        TOOL
+        ========================= */
 
     .popup-tool {
         justify-content: center;
@@ -380,7 +364,6 @@ MOBILE
         text-align: center;
     }
 
-
     /* DECORATION */
 
     .popup-layout::before,
@@ -389,21 +372,19 @@ MOBILE
     }
 }
 
-
 /* =========================
 EXTRA SMALL MOBILE
 402px 이하
 ========================= */
-@media(max-width:402px) {
 
+@media(max-width:402px) {
     .popup-section {
         padding: 3rem 0 4.5rem;
     }
 
-
     /* =========================
-    TITLE
-    ========================= */
+        TITLE
+        ========================= */
 
     .popup-heading {
         margin-bottom: 3rem;
@@ -423,11 +404,9 @@ EXTRA SMALL MOBILE
         word-break: keep-all;
     }
 
-
-
     /* =========================
-    LAYOUT
-    ========================= */
+        LAYOUT
+        ========================= */
 
     .popup-layout {
         display: flex;
@@ -438,10 +417,9 @@ EXTRA SMALL MOBILE
         gap: 1.5rem;
     }
 
-
     /* =========================
-    IMAGE
-    ========================= */
+        IMAGE
+        ========================= */
 
     .popup-station.swiper {
         order: 1;
@@ -453,10 +431,9 @@ EXTRA SMALL MOBILE
         margin: 0 auto;
     }
 
-
     /* =========================
-    DESCRIPTION
-    ========================= */
+        DESCRIPTION
+        ========================= */
 
     .popup-description-viewport.swiper {
         order: 2;
@@ -491,8 +468,8 @@ EXTRA SMALL MOBILE
     }
 
     /* =========================
-    TOOL
-    ========================= */
+        TOOL
+        ========================= */
 
     .popup-tool {
         justify-content: center;
@@ -503,6 +480,7 @@ EXTRA SMALL MOBILE
 }
 
 /* Centered artwork with muted previews on both sides. */
+
 .popup-section {
     min-height: 0;
     padding: 3rem 0;
@@ -529,6 +507,7 @@ EXTRA SMALL MOBILE
 }
 
 .popup-section .popup-station.swiper {
+    left: -1.5rem;
     min-width: 0;
     width: calc(100% - 210px);
     max-width: none;
@@ -602,6 +581,10 @@ EXTRA SMALL MOBILE
     .popup-section .popup-layout {
         display: flex;
         gap: 2rem;
+    }
+
+    .popup-section .popup-station.swiper {
+        left: 0;
     }
 
     .popup-section .popup-description-viewport.swiper {

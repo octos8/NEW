@@ -1,386 +1,319 @@
 /* =========================
 HERO
 ========================= */
-.hero-section{
-    position:relative;
-    width:100%;
-    height:62.5rem;
-    overflow:hidden;
-}
 
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 730px;
+    overflow: hidden;
+}
 
 /* =========================
 BACKGROUND
 ========================= */
-.hero-bg{
-    position:absolute;
 
-    top:0;
-    left:0;
-
-    width:100%;
-    max-width:none;
-    height:100%;
-
-    background:rgba(0,0,0,.8);
-
-    transform:none;
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    background: rgba(0,0,0,.8);
+    transform: none;
 }
-
 
 /* =========================
 INNER
 ========================= */
-.hero-inner{
-    position:relative;
 
-    width:calc(100% - var(--frame-pc));
-    max-width:var(--content-width);
-    height:100%;
-
-    margin:0 auto;
-
-    padding:10rem 2.3125rem 0;
+.hero-inner {
+    position: relative;
+    width: calc(100% - var(--frame-pc));
+    max-width: var(--content-width);
+    height: 100%;
+    margin: 0 auto;
+    padding: 9rem 2.3125rem 0;
 }
-
 
 /* =========================
 TITLE
 ========================= */
-.hero-title{
-    position:relative;
-    z-index:3;
 
-    margin:0;
-
-    color:var(--white);
-
-    font-family:var(--font-main);
-    font-size:10.5vw;
-    font-weight:900;
-    line-height:.9;
-    letter-spacing:-.05em;
-
-    white-space:nowrap;
+.hero-title {
+    position: relative;
+    z-index: 3;
+    margin: 0;
+    color: var(--white);
+    font-family: var(--font-main);
+    font-size: 10.5vw;
+    font-weight: 900;
+    line-height: .9;
+    letter-spacing: -.05em;
+    white-space: nowrap;
 }
-
 
 /* =========================
 DESCRIPTION
 ========================= */
-.hero-description{
-    position:relative;
-    z-index:3;
 
-    width:45%;
-
-    margin-top:5rem;
-
-    color:var(--white);
-
-    font-size:1.25rem;
-    font-weight:var(--fw1);
+.hero-description {
+    position: relative;
+    z-index: 3;
+    width: 45%;
+    margin-top: 4rem;
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: var(--fw1);
 }
 
-.hero-description p{
-    margin:0;
-
-    line-height:var(--lh2);
-
-    word-break:keep-all;
+.hero-description p {
+    margin: 0;
+    line-height: var(--lh2);
+    word-break: keep-all;
 }
-
 
 /* =========================
 LINE
 화면 크기에 맞춰 같이 축소
 ========================= */
-.hero-line{
-    position:relative;
-    z-index:3;
 
+.hero-line {
+    position: relative;
+    z-index: 3;
     /* 기존 고정 38rem 제거 */
-    width:38%;
-
-    height:.0625rem;
-
-    margin-top:2rem;
-
-    background:rgba(255,255,255,.8);
+    width: 38%;
+    height: .0625rem;
+    margin-top: 2rem;
+    background: rgba(255,255,255,.8);
 }
-
 
 /* =========================
 PROFILE
 LINE과 같은 부모 기준으로 계산
 ========================= */
-.hero-profile{
-    position:relative;
-    z-index:3;
 
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
-
+.hero-profile {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     /*
-    line 38%
-    profile 58%
+        line 38%
+        profile 58%
 
-    두 값이 같은 부모 기준으로 줄어들기 때문에
-    화면이 작아져도 비율 유지
-    */
-    width:58%;
-
-    margin-top:-.8rem;
-
-    gap:1.5rem;
-
-    color:var(--white);
-
-    font-size:1.25rem;
-
-    white-space:nowrap;
+        두 값이 같은 부모 기준으로 줄어들기 때문에
+        화면이 작아져도 비율 유지
+        */
+    width: 58%;
+    margin-top: -.8rem;
+    gap: 1.5rem;
+    color: var(--white);
+    font-size: 1.25rem;
+    white-space: nowrap;
 }
 
-.hero-job{
-    font-weight:var(--fw1);
+.hero-job {
+    font-weight: var(--fw1);
 }
 
-.hero-name{
-    font-weight:var(--fw2);
+.hero-name {
+    font-weight: var(--fw2);
 }
 
-.hero-name.is-entering{
-    animation:hero-name-enter 2.2s cubic-bezier(.25,.46,.45,.94) both;
+.hero-name.is-entering {
+    animation: hero-name-enter 2.2s cubic-bezier(.25,.46,.45,.94) both;
 }
 
-@keyframes hero-name-enter{
-    from{opacity:0; transform:translateX(min(18rem, 35vw));}
-    to{opacity:1; transform:translateX(0);}
+@keyframes hero-name-enter {
+    from {
+        opacity: 0;
+        transform: translateX(min(18rem, 35vw));
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-@media(prefers-reduced-motion:reduce){
-    .hero-name.is-entering{animation:none;}
+@media(prefers-reduced-motion:reduce) {
+    .hero-name.is-entering {
+        animation: none;
+    }
 }
-
 
 /* =========================
 IMAGE
 ========================= */
-.hero-visual{
-    position:absolute;
 
-    right:calc((100% - 100vw) / 2);
-    bottom:0;
-
-    z-index:1;
-
-    width:66%;
-
-    margin:0;
-
-    line-height:0;
+.hero-visual {
+    position: absolute;
+    right: calc((100% - 100vw) / 2);
+    bottom: 0;
+    z-index: 1;
+    width: 66%;
+    margin: 0;
+    line-height: 0;
 }
 
-.hero-visual img{
-    display:block;
-
-    width:100%;
-    height:auto;
+.hero-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
-
-
 
 /* =========================
 TABLET - 1024
 ========================= */
-@media(max-width:1024px){
 
-    .hero-section{
-        height:56rem;
+@media(max-width:1024px) {
+    .hero-section {
+        height: 500px;
     }
 
-    .hero-inner{
-        width:calc(100% - var(--frame-pad));
-        max-width:none;
+    .hero-inner {
+        width: calc(100% - var(--frame-pad));
+        max-width: none;
+        padding: 8rem 2rem 0;
     }
-
-    .hero-inner{
-        padding:8rem 2rem 0;
-    }
-
 
     /* TITLE */
 
-    .hero-title{
-        font-size:10.5vw;
+    .hero-title {
+        font-size: 10.5vw;
     }
-
 
     /* DESCRIPTION */
 
-    .hero-description{
-        width:52%;
-
-        margin-top:4rem;
-
-        font-size:1.1rem;
+    .hero-description {
+        width: 52%;
+        margin-top: 4rem;
+        font-size: 1.1rem;
     }
-
 
     /* LINE */
 
-    .hero-line{
-        width:38%;
-
-        margin-top:2rem;
+    .hero-line {
+        width: 38%;
+        margin-top: 2rem;
     }
-
 
     /* PROFILE */
 
-    .hero-profile{
-        width:58%;
-
-        margin-top:-.7rem;
-
-        gap:1rem;
-
-        font-size:1rem;
+    .hero-profile {
+        width: 58%;
+        margin-top: -.7rem;
+        gap: 1rem;
+        font-size: 1rem;
     }
-
 
     /* IMAGE */
 
-    .hero-visual{
-        width:58%;
+    .hero-visual {
+        width: 58%;
     }
 }
-
 
 /* =========================
 MOBILE - 768
 ========================= */
-@media(max-width:768px){
 
-    .hero-section{
-        height:40rem;
+@media(max-width:768px) {
+    .hero-section {
+        height: 500px;
     }
 
-    .hero-inner{
-        width:calc(100% - var(--frame-mo));
+    .hero-inner {
+        width: calc(100% - var(--frame-mo));
+        padding: 9rem 1rem 0;
     }
-
-    .hero-inner{
-        padding:9rem 1rem 0;
-    }
-
 
     /* TITLE */
 
-    .hero-title{
-        font-size:12vw;
+    .hero-title {
+        font-size: 12vw;
     }
-
 
     /* DESCRIPTION */
 
-    .hero-description{
-        width:100%;
-
-        margin-top:2.5rem;
-
-        font-size:1rem;
+    .hero-description {
+        width: 100%;
+        margin-top: 2.5rem;
+        font-size: 1rem;
     }
-
 
     /* LINE */
 
-    .hero-line{
-        width:52%;
-
-        margin-top:3rem;
+    .hero-line {
+        width: 52%;
+        margin-top: 3rem;
     }
-
 
     /* PROFILE */
 
-    .hero-profile{
-        width:72%;
-
-        margin-top:-.5rem;
-
-        gap:.7rem;
-
-        font-size:.75rem;
+    .hero-profile {
+        width: 72%;
+        margin-top: -.5rem;
+        gap: .7rem;
+        font-size: .75rem;
     }
-
 
     /* IMAGE */
 
-    .hero-visual{
-        bottom:1rem;
-
-        width:74%;
+    .hero-visual {
+        bottom: 1rem;
+        width: 74%;
     }
 }
-
 
 /* =========================
 SMALL MOBILE - 402
 ========================= */
-@media(max-width:402px){
 
-    .hero-section{
-        height:32rem;
+@media(max-width:402px) {
+    .hero-section {
+        height: 500px;
     }
 
-    .hero-inner{
-        padding:7rem .75rem 0;
+    .hero-inner {
+        padding: 7rem .75rem 0;
     }
-
 
     /* TITLE */
 
-    .hero-title{
-        font-size:12vw;
+    .hero-title {
+        font-size: 12vw;
     }
-
 
     /* DESCRIPTION */
 
-    .hero-description{
-        margin-top:2rem;
-
-        font-size:.75rem;
+    .hero-description {
+        margin-top: 2rem;
+        font-size: .75rem;
     }
-
 
     /* LINE */
 
-    .hero-line{
-        width:48%;
-
-        margin-top:2rem;
+    .hero-line {
+        width: 48%;
+        margin-top: 2rem;
     }
-
 
     /* PROFILE */
 
-    .hero-profile{
-        width:72%;
-
-        margin-top:-.4rem;
-
-        gap:.4rem;
-
-        font-size:.55rem;
+    .hero-profile {
+        width: 72%;
+        margin-top: -.4rem;
+        gap: .4rem;
+        font-size: .55rem;
     }
-
 
     /* IMAGE */
 
-    .hero-visual{
-        width:78%;
+    .hero-visual {
+        width: 78%;
     }
 }

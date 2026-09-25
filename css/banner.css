@@ -1,307 +1,298 @@
 /* =========================
 BANNER
 ========================= */
-.banner-section{
-    background-color:transparent;
-    position:relative;
-    width:100%;
-    height:auto;
-    min-height:62.5rem;
-    padding:5rem 0;
-    overflow:hidden;
+
+.banner-section {
+    background-color: transparent;
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
 }
 
-.banner-inner{
-    position:relative;
-    height:auto;
+.banner-inner {
+    position: relative;
+    height: auto;
 }
-
 
 /* =========================
 TITLE
 ========================= */
-.banner-heading{
-    margin-bottom:4rem;
+
+.banner-heading {
+    margin-bottom: 4rem;
 }
 
-.banner-heading h2{
-    width:fit-content;
-    max-width:100%;
-    margin:0;
-    font-size:6.875rem;
-    font-weight:var(--fw2);
-    line-height:1;
-    letter-spacing:-.04em;
-    color:var(--point);
-    white-space:normal;
-    word-break:keep-all;
+.banner-heading h2 {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0;
+    font-size: 6.875rem;
+    font-weight: var(--fw2);
+    line-height: 1;
+    letter-spacing: -.04em;
+    color: var(--point);
+    white-space: normal;
+    word-break: keep-all;
 }
 
-.banner-heading p{
-    margin:1.75rem 0 0;
-    font-size:1.875rem;
-    line-height:var(--lh2);
-    color:var(--gray-900);
-    word-break:keep-all;
+.banner-heading p {
+    margin: 1.75rem 0 0;
+    font-size: 1.875rem;
+    line-height: var(--lh2);
+    color: var(--gray-900);
+    word-break: keep-all;
 }
-
 
 /* =========================
 SWIPER
 ========================= */
-.banner-station.swiper{
-    position:relative;
-    width:78%;
-    max-width:75rem;
 
+.banner-station.swiper {
+    position: relative;
+    width: 78%;
+    max-width: 75rem;
     /* 이미지와 설명 높이에 맞춤 */
-    margin:0 auto;
-    overflow:hidden;
-    --swiper-pagination-color:var(--point);
-    --swiper-pagination-bullet-inactive-color:var(--gray-300);
-    --swiper-pagination-bullet-inactive-opacity:1;
-    --swiper-pagination-bullet-size:12px;
+    margin: 0 auto;
+    overflow: hidden;
+    --swiper-pagination-color: var(--point);
+    --swiper-pagination-bullet-inactive-color: var(--gray-300);
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    --swiper-pagination-bullet-size: 12px;
 }
 
-.banner-train{
-    width:100%;
-    height:auto;
+.banner-train {
+    width: 100%;
+    height: auto;
 }
 
-.banner-train .swiper-slide{
-    width:100%;
-    height:auto;
+.banner-train .swiper-slide {
+    width: 100%;
+    height: auto;
 }
 
-.banner-train figure{
-    width:100%;
-    height:auto;
-    margin:0;
-    overflow:hidden;
-    line-height:0;
+.banner-train figure {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    line-height: 0;
 }
 
-.banner-train img{
-    display:block;
-    width:100%;
-    height:auto;
+.banner-train img {
+    display: block;
+    width: 100%;
+    height: auto;
     /* 이미지 전체가 보이게 */
-    object-fit:contain;
-    object-position:center;
+    object-fit: contain;
+    object-position: center;
 }
-
 
 /* =========================
 TABLET - 1024
 ========================= */
-.banner-caption{
-    container-type:inline-size;
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0, 1fr));
-    align-items:start;
-    gap:1.5rem;
-    padding:1.5rem .5rem 0;
-    text-align:left;
-    line-height:var(--lh2);
-    word-break:keep-all;
-    overflow-wrap:anywhere;
+
+.banner-caption {
+    container-type: inline-size;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 1.5rem;
+    padding: 1.5rem .5rem 0;
+    text-align: left;
+    line-height: var(--lh2);
+    word-break: keep-all;
+    overflow-wrap: anywhere;
 }
 
-.banner-caption h3{
-    margin:0;
-    font-size:min(1.5rem, 2.5cqi);
-    white-space:nowrap;
-    font-weight:var(--fw2);
-    line-height:var(--lh1);
+.banner-caption h3 {
+    margin: 0;
+    font-size: min(1.5rem, 2.5cqi);
+    white-space: nowrap;
+    font-weight: var(--fw2);
+    line-height: var(--lh1);
 }
 
-.banner-caption p{
-    margin:0;
-    font-size:min(1rem, 2cqi);
-    white-space:nowrap;
-    color:var(--gray-700);
+.banner-caption p {
+    margin: 0;
+    font-size: min(1rem, 2cqi);
+    white-space: nowrap;
+    color: var(--gray-700);
 }
 
-.banner-station .swiper-pagination{
-    position:relative;
-    bottom:auto;
-    margin-top:1.5rem;
-    line-height:1;
+.banner-station .swiper-pagination {
+    position: relative;
+    bottom: auto;
+    margin-top: 1.5rem;
+    line-height: 1;
 }
 
-@media(max-width:1024px){
-    .banner-station.swiper{
-        --swiper-pagination-bullet-size:10px;
+@media(max-width:1024px) {
+    .banner-section {
+        height: auto;
+        min-height: auto;
+        padding: 5rem 0 7rem;
     }
 
-    .banner-section{
-        height:auto;
-        min-height:auto;
-        padding:5rem 0 7rem;
+    .banner-inner {
+        height: auto;
     }
-
-    .banner-inner{
-        height:auto;
-    }
-
 
     /* TITLE */
 
-    .banner-heading{
-        margin-bottom:4rem;
+    .banner-heading {
+        margin-bottom: 4rem;
     }
 
-    .banner-heading h2{
-        font-size:5rem;
-        white-space:normal;
-        word-break:keep-all;
+    .banner-heading h2 {
+        font-size: 5rem;
+        white-space: normal;
+        word-break: keep-all;
     }
 
-    .banner-heading p{
-        font-size:1.5rem;
+    .banner-heading p {
+        font-size: 1.5rem;
     }
-
 
     /* BANNER */
 
-    .banner-station.swiper{
-        width:90%;
-        max-width:none;
-
+    .banner-station.swiper {
+        --swiper-pagination-bullet-size: 10px;
+        width: 90%;
+        max-width: none;
     }
 }
-
 
 /* =========================
 MOBILE - 768
 ========================= */
-@media(max-width:768px){
-    .banner-station.swiper{
-        --swiper-pagination-bullet-size:8px;
+
+@media(max-width:768px) {
+    .banner-section {
+        height: auto;
+        min-height: auto;
     }
 
-    .banner-section{
-        height:auto;
-        min-height:auto;
-        padding:4rem 0 6rem;
+    .banner-inner {
+        height: auto;
     }
-
-    .banner-inner{
-        height:auto;
-    }
-
 
     /* =========================
-    TITLE
-    ========================= */
+        TITLE
+        ========================= */
 
-    .banner-heading{
-        margin-bottom:3rem;
-        text-align:left;
+    .banner-heading {
+        margin-bottom: 3rem;
+        text-align: left;
     }
 
-    .banner-heading h2{
-        width:100%;
-        font-size:3rem;
-        line-height:1.05;
-        text-align:left;
-        white-space:normal;
-        word-break:keep-all;
+    .banner-heading h2 {
+        width: 100%;
+        font-size: 3rem;
+        line-height: 1.05;
+        text-align: left;
+        white-space: normal;
+        word-break: keep-all;
     }
 
-    .banner-heading p{
-        margin:1.25rem 0 0;
-        font-size:1.2rem;
-        line-height:1.5;
-        text-align:left;
-        word-break:keep-all;
+    .banner-heading p {
+        margin: 1.25rem 0 0;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        text-align: left;
+        word-break: keep-all;
     }
-
 
     /* =========================
-    BANNER
-    ========================= */
+        BANNER
+        ========================= */
 
-    .banner-station.swiper{
-        width:100%;
-        max-width:none;
-        margin:0 auto;
+    .banner-station.swiper {
+        --swiper-pagination-bullet-size: 8px;
+        width: 100%;
+        max-width: none;
+        margin: 0 auto;
     }
 
     .banner-train,
     .banner-train .swiper-slide,
-    .banner-train figure{
-        width:100%;
-        height:auto;
+    .banner-train figure {
+        width: 100%;
+        height: auto;
     }
 
-    .banner-train img{
-        width:100%;
-        height:auto;
-        object-fit:contain;
-        object-position:center;
+    .banner-train img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
     }
 }
-
 
 /* =========================
 EXTRA SMALL MOBILE - 402
 ========================= */
-@media(max-width:402px){
 
-    .banner-caption{
-        padding-top:1rem;
-        gap:.75rem;
+@media(max-width:402px) {
+    .banner-caption {
+        padding-top: 1rem;
+        gap: .75rem;
     }
 
-    .banner-caption h3{
-        font-size:min(1.1rem, 2.5cqi);
+    .banner-caption h3 {
+        font-size: min(1.1rem, 2.5cqi);
     }
 
-    .banner-caption p{
-        font-size:min(.85rem, 2cqi);
+    .banner-caption p {
+        font-size: min(.85rem, 2cqi);
     }
 
-    .banner-section{
-        padding:3rem 0 4.5rem;
+    .banner-section {
+        padding: 3rem 0 4.5rem;
     }
-
 
     /* TITLE */
 
-    .banner-heading{
-        margin-bottom:2.5rem;
+    .banner-heading {
+        margin-bottom: 2.5rem;
     }
 
-    .banner-heading h2{
-        font-size:2rem;
-        line-height:1.1;
+    .banner-heading h2 {
+        font-size: 2rem;
+        line-height: 1.1;
     }
 
-    .banner-heading p{
-        margin-top:1rem;
-        font-size:.85rem;
-        line-height:1.5;
+    .banner-heading p {
+        margin-top: 1rem;
+        font-size: .85rem;
+        line-height: 1.5;
     }
-
 
     /* BANNER */
 
-    .banner-station.swiper{
-        width:100%;
+    .banner-station.swiper {
+        width: 100%;
     }
 
-    .banner-train img{
-        object-fit:contain;
+    .banner-train img {
+        object-fit: contain;
     }
 }
 
-/* Original image proportions beside the section introduction. */
-.banner-section { min-height: 0; padding: min(2rem, 3vh) 0; }
+/* Wide banner with inset edges and pagination over the artwork. */
+
+.banner-section {
+    min-height: 0;
+    padding: min(2rem, 3vh) 0;
+}
+
 .banner-section .banner-inner {
+    width: 92%;
+    max-width: 1750px;
     align-items: start;
     gap: 2rem;
 }
+
 .banner-section .banner-heading {
     display: flex;
     align-items: center;
@@ -311,41 +302,153 @@ EXTRA SMALL MOBILE - 402
     margin-bottom: 0;
     text-align: right;
 }
-.banner-section .banner-heading h2 { flex-shrink: 0; margin: 0; }
-.banner-section .banner-heading > p { margin: 0; }
-.banner-section .banner-station.swiper { min-width: 0; width: 100%; max-width: none; margin-top: 2rem; }
-.banner-section .banner-train { width: 100%; height: 400px; }
+
+.banner-section .banner-heading h2 {
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.banner-section .banner-heading>p {
+    margin: 0;
+}
+
+/* Keep the artwork and captions aligned within the full-width carousel. */
+
+.banner-section .banner-station.swiper {
+    --banner-image-height: min(600px, 33.5vw);
+    min-width: 0;
+    width: 100%;
+    max-width: none;
+    margin: 2rem auto 0;
+}
+
+.banner-section .banner-train {
+    width: 100%;
+    height: auto;
+}
+
 .banner-section .banner-train .swiper-slide {
     display: grid;
-    grid-template-rows: minmax(0, 1fr) auto;
-    height: 100%;
+    grid-template-rows: auto auto;
+    height: auto;
 }
-.banner-section .banner-train img { width: 100%; height: 100%; min-height: 0; max-height: none; aspect-ratio: auto; object-fit: contain; }
+
+.banner-section .banner-train figure {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+}
+
+.banner-section .banner-train img {
+    width: 100%;
+    height: var(--banner-image-height);
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
 .banner-section .banner-caption {
     width: 100%;
     padding: 1.5rem 0 0;
     gap: 0;
 }
+
 .banner-section .banner-caption h3,
-.banner-section .banner-caption p { min-width: 0; white-space: normal; }
-.banner-section .banner-caption h3 { padding-right: 1.5rem; }
-.banner-section .banner-caption p { text-align: right; }
-.banner-section .swiper-pagination { margin-top: 1rem; }
+.banner-section .banner-caption p {
+    min-width: 0;
+    white-space: normal;
+}
+
+.banner-section .banner-caption h3 {
+    padding-right: 1.5rem;
+}
+
+.banner-section .banner-caption p {
+    text-align: right;
+}
+
+.banner-section .swiper-pagination {
+    position: absolute;
+    top: calc(var(--banner-image-height) - 2rem);
+    left: 0;
+    bottom: auto;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    z-index: 2;
+}
+
+.banner-section .swiper-pagination-bullet {
+    background: #fff;
+    opacity: .65;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .15);
+}
+
+.banner-section .swiper-pagination-bullet-active {
+    background: var(--point);
+    opacity: 1;
+}
+
 @media (min-width: 769px) and (max-width: 1200px) {
     .banner-section .banner-inner {
         grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
         gap: 2rem;
     }
-    .banner-section .banner-heading h2 { font-size: min(6.875rem, 7vw); }
+
+    .banner-section .banner-heading h2 {
+        font-size: min(6.875rem, 7vw);
+    }
 }
+
 @media (max-width: 768px) {
-    .banner-section { padding: 1rem 0; }
-    .banner-section .banner-inner { grid-template-columns: minmax(0, 1fr); gap: 0; }
-    .banner-section .banner-heading { flex-wrap: wrap; justify-content: flex-start; gap: 1rem; margin-bottom: 1rem; text-align: left; }
-    .banner-section .banner-heading h2 { width: auto; }
-    .banner-section .banner-heading h2 { margin-left: 0; }
-    .banner-section .banner-station.swiper { width: 100%; margin-top: 0; }
-    .banner-section .banner-caption { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
-    .banner-section .banner-caption h3 { margin-bottom: 0; padding-right: 0; font-size: 16px; white-space: normal; }
-    .banner-section .banner-caption p { font-size: 14px; white-space: normal; }
+    .banner-section {
+        padding: 1rem 0;
+    }
+
+    .banner-section .banner-inner {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+    }
+
+    .banner-section .banner-heading {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    .banner-section .banner-heading h2 {
+        width: auto;
+        margin-left: 0;
+    }
+
+    .banner-section .banner-station.swiper {
+        --banner-image-height: calc(92vw * 970 / 1920);
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .banner-section .banner-train figure {
+        width: 100%;
+    }
+
+    .banner-section .banner-caption {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: .75rem;
+    }
+
+    .banner-section .banner-caption h3 {
+        margin-bottom: 0;
+        padding-right: 0;
+        font-size: 16px;
+        white-space: normal;
+    }
+
+    .banner-section .banner-caption p {
+        font-size: 14px;
+        white-space: normal;
+    }
 }

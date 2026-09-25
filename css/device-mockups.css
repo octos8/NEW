@@ -1,4 +1,5 @@
 /* Generated device shells; the original website images remain separate layers. */
+
 .aesop-case .aesop-device--tablet,
 .lune-case .lune-tablet {
     aspect-ratio: 3 / 4;
@@ -9,6 +10,7 @@
     background: url('../img/tablet-premium-portrait.png') center / 100% 100% no-repeat;
     box-shadow: none;
 }
+
 .aesop-case .aesop-device--tablet > .aesop-device-screen,
 .lune-case .lune-tablet > .lune-screen {
     position: absolute;
@@ -22,22 +24,26 @@
 }
 
 /* The final device groups show the landscape variant. */
+
 .aesop-case .responsive-stage-tablet,
 .lune-finale .lune-device-group > .lune-tablet {
     aspect-ratio: 4 / 3;
     background-image: url('../img/tablet-premium-landscape.png');
 }
+
 .aesop-case .responsive-stage-tablet {
     width: 68%;
     left: 5%;
     bottom: 14%;
     transform: none;
 }
+
 .lune-finale .lune-device-group > .lune-tablet {
     width: 43%;
     right: 5%;
     bottom: 3%;
 }
+
 .aesop-case .responsive-stage-tablet > .aesop-device-screen,
 .lune-finale .lune-tablet > .lune-screen {
     left: 13.7%;
@@ -49,6 +55,7 @@
 }
 
 /* Front-facing phones. Positions and rotations remain controlled by each scene. */
+
 .aesop-case .aesop-device--phone,
 .lune-case .lune-phone {
     aspect-ratio: 850 / 1850;
@@ -59,6 +66,7 @@
     background: url('../img/phone-premium-front.png') center / 100% 100% no-repeat;
     box-shadow: none;
 }
+
 .aesop-case .aesop-device--phone > .aesop-device-screen,
 .lune-case .lune-phone > .lune-screen {
     position: absolute;
@@ -70,6 +78,7 @@
     border-radius: 10% / 4.3%;
     overflow: hidden;
 }
+
 .aesop-case .aesop-device--phone::after,
 .lune-case .lune-phone::after {
     content: '';
@@ -89,25 +98,52 @@
     max-width: 270px;
     filter: drop-shadow(10px 16px 14px #252b2620);
 }
+
 .aesop-case .aesop-opening-phone .aesop-device-screen > img {
     height: 100%;
     border-radius: 0;
 }
-.aesop-case .aesop-opening-phone::after { height: auto; }
+
+.aesop-case .aesop-opening-phone::after {
+    height: auto;
+}
 
 /* Gentle perspective for the overlapping phone compositions. */
+
 .aesop-case .aesop-responsive-phones > .aesop-device--phone,
 .lune-case .lune-phone-fan > .lune-phone {
     aspect-ratio: 2 / 3;
     background-image: url('../img/phone-premium-angle.png');
 }
-.aesop-case .aesop-responsive-phones > .aesop-device--phone { width: 65%; }
-.aesop-case .aesop-responsive-phones > .aesop-device--phone:first-child { right: -4%; }
-.aesop-case .aesop-responsive-phones > .aesop-device--phone:last-child { left: -6%; }
-.lune-case .lune-phone-fan > .lune-phone { width: 46%; }
-.lune-case .lune-phone-fan > .lune-phone:nth-child(1) { left: -6%; }
-.lune-case .lune-phone-fan > .lune-phone:nth-child(2) { left: 25%; }
-.lune-case .lune-phone-fan > .lune-phone:nth-child(3) { right: -8%; }
+
+.aesop-case .aesop-responsive-phones > .aesop-device--phone {
+    width: 65%;
+}
+
+.aesop-case .aesop-responsive-phones > .aesop-device--phone:first-child {
+    right: -4%;
+}
+
+.aesop-case .aesop-responsive-phones > .aesop-device--phone:last-child {
+    left: -6%;
+}
+
+.lune-case .lune-phone-fan > .lune-phone {
+    width: 46%;
+}
+
+.lune-case .lune-phone-fan > .lune-phone:nth-child(1) {
+    left: -6%;
+}
+
+.lune-case .lune-phone-fan > .lune-phone:nth-child(2) {
+    left: 25%;
+}
+
+.lune-case .lune-phone-fan > .lune-phone:nth-child(3) {
+    right: -8%;
+}
+
 .aesop-case .aesop-responsive-phones > .aesop-device--phone > .aesop-device-screen,
 .lune-case .lune-phone-fan > .lune-phone > .lune-screen {
     left: 24.1%;
@@ -117,6 +153,7 @@
     border-radius: 0;
     clip-path: polygon(0 9%, 1% 6.8%, 3% 5.2%, 7% 3.9%, 13% 3%, 85% 0, 92% .5%, 97% 2%, 99% 4%, 100% 6%, 100% 94%, 99% 97%, 95% 99%, 89% 100%, 13% 97.5%, 7% 96.9%, 3% 95.4%, 1% 93.5%, 0 91%);
 }
+
 .aesop-case .aesop-responsive-phones > .aesop-device--phone::after,
 .lune-case .lune-phone-fan > .lune-phone::after {
     left: 41.2%;

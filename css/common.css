@@ -1,161 +1,176 @@
 /* =========================
 DESIGN SYSTEM
 ========================= */
-:root{
+
+:root {
     /* Font Family */
-    --font-main:'Pretendard',sans-serif;
-
+    --font-main: 'Pretendard',sans-serif;
     /* 디바이스별 기준 글씨 크기 */
-    --fs-pc:16px;
-    --fs-pad:14px;
-    --fs-mo:12px;
-
+    --fs-pc: 16px;
+    --fs-pad: 14px;
+    --fs-mo: 12px;
     /* 행간 */
-    --lh1:1.2;
-    --lh2:1.45;
-
+    --lh1: 1.2;
+    --lh2: 1.45;
     /* 태그 글씨 크기 */
-    --fs-h1:2.4414rem;
-    --fs-h2:1.9531rem;
-    --fs-h3:1.5625rem;
-    --fs-h4:1.25rem;
-    --fs-body1:1rem;
-    --fs-body2:.85rem;
-    --fs-detail:.7225rem;
-
+    --fs-h1: 2.4414rem;
+    --fs-h2: 1.9531rem;
+    --fs-h3: 1.5625rem;
+    --fs-h4: 1.25rem;
+    --fs-body1: 1rem;
+    --fs-body2: .85rem;
+    --fs-detail: .7225rem;
     /* 글씨 두께 */
-    --fw1:400;
-    --fw2:700;
-
+    --fw1: 400;
+    --fw2: 700;
     /* 여백 */
-    --space-3x-large:6rem;
-    --space-2x-large:3rem;
-    --space-x-large:2rem;
-    --space-normal:1rem;
-    --space-x-small:.5rem;
-    --space-2x-small:.25rem;
-
+    --space-3x-large: 6rem;
+    --space-2x-large: 3rem;
+    --space-x-large: 2rem;
+    --space-normal: 1rem;
+    --space-x-small: .5rem;
+    --space-2x-small: .25rem;
     /* Skin Ivory */
-    --ivory-0:#FFF4D1;
-    --ivory-100:#FEEAAA;
-    --ivory-200:#FCE085;
-    --ivory-300:#FAD765;
-    --ivory-400:#F6CE4B;
-    --ivory-500:#F0C537;
-    --ivory-600:#EABD29;
-    --ivory-700:#E1B41F;
-    --ivory-800:#D7AA18;
-    --ivory-900:#CCA114;
-
+    --ivory-0: #FFF4D1;
+    --ivory-100: #FEEAAA;
+    --ivory-200: #FCE085;
+    --ivory-300: #FAD765;
+    --ivory-400: #F6CE4B;
+    --ivory-500: #F0C537;
+    --ivory-600: #EABD29;
+    --ivory-700: #E1B41F;
+    --ivory-800: #D7AA18;
+    --ivory-900: #CCA114;
     /* Gray */
-    --gray-0:#FAFAFA;
-    --gray-100:#F6F6F6;
-    --gray-200:#EEEEEE;
-    --gray-300:#E2E2E2;
-    --gray-400:#D1D1D1;
-    --gray-500:#BABABA;
-    --gray-600:#9B9B9B;
-    --gray-700:#757575;
-    --gray-800:#484848;
-    --gray-900:#1A1A1A;
-
+    --gray-0: #FAFAFA;
+    --gray-100: #F6F6F6;
+    --gray-200: #EEEEEE;
+    --gray-300: #E2E2E2;
+    --gray-400: #D1D1D1;
+    --gray-500: #BABABA;
+    --gray-600: #9B9B9B;
+    --gray-700: #757575;
+    --gray-800: #484848;
+    --gray-900: #1A1A1A;
     /* Semantic */
-    --success:#00FF6A;
-    --warning:#FF9500;
-    --error:#FF0000;
-    --info:#30BDD5;
-
+    --success: #00FF6A;
+    --warning: #FF9500;
+    --error: #FF0000;
+    --info: #30BDD5;
     /* Base */
-    --white:#FFFFFF;
-    --black:#000000;
-    --point:#A31E1E;
-
+    --white: #FFFFFF;
+    --black: #000000;
+    --point: #A31E1E;
     /* Layout */
-    --content-width:101.25rem;
-    --frame-pc:6rem;
-    --frame-pad:4rem;
-    --frame-mo:2rem;
+    --content-width: 101.25rem;
+    --frame-pc: 6rem;
+    --frame-pad: 4rem;
+    --frame-mo: 2rem;
 }
 
 /* =========================
 BASE
 ========================= */
-html{
-    font-size:var(--fs-pc);
-    font-family:var(--font-main);
-    font-weight:var(--fw1);
-    color:var(--gray-900);
-    scroll-behavior:smooth;
+
+html {
+    font-size: var(--fs-pc);
+    font-family: var(--font-main);
+    font-weight: var(--fw1);
+    color: var(--gray-900);
+    scroll-behavior: smooth;
 }
 
-.section-heading{
-    container-type:inline-size;
+.section-heading {
+    container-type: inline-size;
 }
 
-.section-heading > p.section-summary{
-    font-size:min(1.5rem, 3.6cqi);
-    line-height:1.65;
-    white-space:nowrap;
+.section-heading > p.section-summary {
+    font-size: min(1.5rem, 3.6cqi);
+    line-height: 1.65;
+    white-space: nowrap;
 }
 
-h1{font-size:var(--fs-h1);}
-h2{
-    font-size:min(6.875rem,8vw);
-    line-height:1;
-    white-space:nowrap;
+h1 {
+    font-size: var(--fs-h1);
 }
-h3{font-size:var(--fs-h3);}
-h4{font-size:var(--fs-h4);}
-p{line-height:var(--lh2);}
+
+h2 {
+    font-size: min(6.875rem,8vw);
+    line-height: 1;
+    white-space: nowrap;
+}
+
+h3 {
+    font-size: var(--fs-h3);
+}
+
+h4 {
+    font-size: var(--fs-h4);
+}
+
+p {
+    line-height: var(--lh2);
+}
 
 /* =========================
 COMMON
 ========================= */
-.common-frame{
-    width:calc(100% - var(--frame-pc));
-    max-width:var(--content-width);
-    margin:0 auto;
+
+.common-frame {
+    width: calc(100% - var(--frame-pc));
+    max-width: var(--content-width);
+    margin: 0 auto;
 }
 
 /* =========================
 TABLET
 ========================= */
-@media(max-width:1024px){
-    html{
-        font-size:var(--fs-pad);
+
+@media(max-width:1024px) {
+    html {
+        font-size: var(--fs-pad);
     }
 
-    .common-frame{
-        width:calc(100% - var(--frame-pad));
-        max-width:none;
+    .common-frame {
+        width: calc(100% - var(--frame-pad));
+        max-width: none;
     }
 }
 
 /* =========================
 MOBILE
 ========================= */
-@media(max-width:768px){
-    html{
-        font-size:var(--fs-mo);
+
+@media(max-width:768px) {
+    html {
+        font-size: var(--fs-mo);
     }
 
-    .common-frame{
-        width:calc(100% - var(--frame-mo));
+    .common-frame {
+        width: calc(100% - var(--frame-mo));
     }
 }
 
 /* =========================
 SMALL MOBILE
 ========================= */
-@media(max-width:320px){
-    .common-frame{
-        width:calc(100% - 1.5rem);
+
+@media(max-width:320px) {
+    .common-frame {
+        width: calc(100% - 1.5rem);
     }
 }
 
 /* Shared section heading rhythm. */
-main section h3 { margin-bottom: 1rem; }
-main section h3 + * { margin-top: 0; }
+
+main section h3 {
+    margin-bottom: 1rem;
+}
+
+main section h3 + * {
+    margin-top: 0;
+}
+
 main .section-heading > p.section-summary,
 main .project-section .project-heading > p,
 main .about-intro > p {
@@ -163,6 +178,7 @@ main .about-intro > p {
     white-space: normal;
     line-height: 1.65;
 }
+
 main .about-intro h3,
 main .profile-area article h3,
 main .popup-description-slide h3,
@@ -170,4 +186,6 @@ main .poster-content h3,
 main .banner-caption h3,
 main .detail-card h3,
 main .aesop-case h3,
-main .lune-case h3 { margin-bottom: 1rem; }
+main .lune-case h3 {
+    margin-bottom: 1rem;
+}

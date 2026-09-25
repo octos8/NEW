@@ -1,175 +1,177 @@
 /* =========================
 POSTER
 ========================= */
-.poster-section{
-    position:relative;
-    width:100%;
-    padding:6rem 0 10rem;
-    overflow:clip;
+
+.poster-section {
+    position: relative;
+    width: 100%;
+    padding: 6rem 0 10rem;
+    overflow: clip;
 }
 
-.poster-inner{
-    position:relative;
+.poster-inner {
+    position: relative;
 }
-
 
 /* =========================
 TITLE
 ========================= */
-.poster-heading{
-    width:100%;
-    padding-left:0;
-    text-align:right;
-    margin-bottom:7rem;
+
+.poster-heading {
+    width: 100%;
+    padding-left: 0;
+    text-align: right;
+    margin-bottom: 7rem;
 }
 
-.poster-heading h2{
-    position:relative;
-    width:fit-content;
-    max-width:100%;
-    margin:0 0 0 auto;
-    font-size:6.875rem;
-    font-weight:var(--fw2);
-    line-height:1;
-    letter-spacing:-.04em;
-    color:var(--gray-900);
-    white-space:normal;
-    word-break:keep-all;
+.poster-heading h2 {
+    position: relative;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 0 0 auto;
+    font-size: 6.875rem;
+    font-weight: var(--fw2);
+    line-height: 1;
+    letter-spacing: -.04em;
+    color: var(--gray-900);
+    white-space: normal;
+    word-break: keep-all;
 }
 
 .poster-heading h2::before,
-.poster-heading h2::after{
-    content:"";
-    position:absolute;
-    top:calc(100% + 1rem);
-    right:0;
-    transform:translateY(-50%);
-    pointer-events:none;
+.poster-heading h2::after {
+    content: "";
+    position: absolute;
+    top: calc(100% + 1rem);
+    right: 0;
+    transform: translateY(-50%);
+    pointer-events: none;
 }
 
-.poster-heading h2::before{
-    width:33%;
-    height:.0625rem;
-    background:var(--gray-600);
+.poster-heading h2::before {
+    width: 33%;
+    height: .0625rem;
+    background: var(--gray-600);
 }
 
-.poster-heading h2::after{
-    width:1.25rem;
-    height:1.25rem;
-    border-radius:50%;
-    background:var(--point);
+.poster-heading h2::after {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    background: var(--point);
 }
 
-.poster-heading p{
-    margin:2rem 0 0;
-    font-size:1.875rem;
-    line-height:var(--lh2);
-    color:var(--gray-900);
-    word-break:keep-all;
+.poster-heading p {
+    margin: 2rem 0 0;
+    font-size: 1.875rem;
+    line-height: var(--lh2);
+    color: var(--gray-900);
+    word-break: keep-all;
 }
-
 
 /* =========================
 DECORATIVE POSTER
 ========================= */
-.poster-body{
-    position:relative;
-    isolation:isolate;
+
+.poster-body {
+    position: relative;
+    isolation: isolate;
 }
 
-.poster-decoration{
-    position:absolute;
-    inset:0;
-    z-index:0;
-    pointer-events:none;
+.poster-decoration {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
 }
 
-.poster-decoration > span{
-    position:sticky;
-    top:12rem;
-    display:block;
-    width:max-content;
-    margin-left:auto;
-    font-size:23rem;
-    font-weight:var(--fw2);
-    line-height:1;
-    letter-spacing:-.06em;
-    color:var(--gray-100);
-    white-space:nowrap;
-    pointer-events:none;
+.poster-decoration > span {
+    position: sticky;
+    top: 12rem;
+    display: block;
+    width: max-content;
+    margin-left: auto;
+    font-size: 23rem;
+    font-weight: var(--fw2);
+    line-height: 1;
+    letter-spacing: -.06em;
+    color: var(--gray-100);
+    white-space: nowrap;
+    pointer-events: none;
 }
-
 
 /* =========================
 POSTER LIST
 ========================= */
-.poster-list{
-    position:relative;
-    z-index:1;
+
+.poster-list {
+    position: relative;
+    z-index: 1;
 }
 
-.poster-item{
-    position:relative;
-    display:grid;
+.poster-item {
+    position: relative;
+    display: grid;
     grid-template-columns: repeat(2,minmax(0,1fr));
-    align-items:center;
-    min-height:46.875rem;
+    align-items: center;
+    min-height: 46.875rem;
 }
-
 
 /* =========================
 POSTER IMAGE
 ========================= */
+
 /* 스크롤 진입 효과: 기존 배치와 sticky 위치 유지 */
+
 .poster-body.poster-motion-ready .poster-decoration > span,
-.poster-item.poster-motion-ready > *{
-    opacity:0;
-    transition:opacity 1s ease, transform 1.2s ease;
+.poster-item.poster-motion-ready > * {
+    opacity: 0;
+    transition: opacity 1s ease, transform 1.2s ease;
 }
 
-.poster-body.poster-motion-ready .poster-decoration > span{
-    transform:translateY(-4rem);
+.poster-body.poster-motion-ready .poster-decoration > span {
+    transform: translateY(-4rem);
 }
 
-.poster-item.poster-motion-ready > *{
-    transform:translateY(4rem);
+.poster-item.poster-motion-ready > * {
+    transform: translateY(4rem);
 }
 
 .poster-body.poster-motion-ready.is-poster-visible .poster-decoration > span,
-.poster-item.poster-motion-ready.is-poster-visible > *{
-    opacity:1;
-    transform:translateY(0);
+.poster-item.poster-motion-ready.is-poster-visible > * {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-@media(prefers-reduced-motion:reduce){
+@media(prefers-reduced-motion:reduce) {
     .poster-body.poster-motion-ready .poster-decoration > span,
-    .poster-item.poster-motion-ready > *{
-        opacity:1;
-        transform:none;
-        transition:none;
+    .poster-item.poster-motion-ready > * {
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
 }
 
-.poster-item figure{
-    width:31.25rem;
-    height:46.875rem;
-    margin:0;
-    overflow:hidden;
+.poster-item figure {
+    width: 31.25rem;
+    height: 46.875rem;
+    margin: 0;
+    overflow: hidden;
 }
 
-.poster-item figure img{
-    display:block;
-    width:100%;
-    height:100%;
-    object-fit:cover;
+.poster-item figure img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-
 
 /* =========================
 1 / 3 IMAGE LEFT
 ========================= */
-.poster-item:nth-child(odd) figure{
-    justify-self:start;
+
+.poster-item:nth-child(odd) figure {
+    justify-self: start;
 }
 
 .poster-item:nth-child(odd) .poster-content {
@@ -177,147 +179,144 @@ POSTER IMAGE
     max-width: 100%;
 }
 
-
 /* =========================
 2 / 4 IMAGE RIGHT
 ========================= */
-.poster-item:nth-child(even) figure{
-    justify-self:end;
+
+.poster-item:nth-child(even) figure {
+    justify-self: end;
 }
 
-.poster-item:nth-child(even) .poster-content{
-    justify-self:start;
+.poster-item:nth-child(even) .poster-content {
+    justify-self: start;
 }
-
 
 /* =========================
 CONTENT
 ========================= */
-.poster-content{
-    width:80%;
-    max-width:50rem;
-    min-width:0;
+
+.poster-content {
+    width: 80%;
+    max-width: 50rem;
+    min-width: 0;
 }
 
-.poster-content h3{
-    margin:0 0 1.5rem;
-    font-size:1.9531rem;
-    font-weight:var(--fw2);
-    line-height:var(--lh1);
-    word-break:keep-all;
+.poster-content h3 {
+    margin: 0 0 1.5rem;
+    font-size: 1.9531rem;
+    font-weight: var(--fw2);
+    line-height: var(--lh1);
+    word-break: keep-all;
 }
 
-.poster-content p{
-    margin:0;
-    font-size:18px;
-    line-height:var(--lh2);
-    color:var(--gray-800);
-    word-break:keep-all;
+.poster-content > p {
+    margin: 0;
+    font-size: 16px;
+    line-height: var(--lh2);
+    color: var(--gray-800);
+    word-break: keep-all;
 }
-
 
 /* =========================
 VERTICAL POSITION
 ========================= */
+
 .poster-item:nth-child(2),
 .poster-item:nth-child(3),
-.poster-item:nth-child(4){
-    margin-top:0;
+.poster-item:nth-child(4) {
+    margin-top: 0;
 }
-
 
 /* =========================
 TABLET
 1024px
 ========================= */
-@media(max-width:1024px){
 
-    .poster-section{
-        padding:5rem 0 8rem;
+@media(max-width:1024px) {
+    .poster-section {
+        padding: 5rem 0 8rem;
     }
-
 
     /* TITLE */
 
-    .poster-heading{
-        padding-left:0;
-        margin-bottom:6rem;
+    .poster-heading {
+        padding-left: 0;
+        margin-bottom: 6rem;
     }
 
-    .poster-heading h2{
-        font-size:5rem;
-        line-height:1;
-        white-space:normal;
-        word-break:keep-all;
+    .poster-heading h2 {
+        font-size: 5rem;
+        line-height: 1;
+        white-space: normal;
+        word-break: keep-all;
     }
 
-    .poster-heading p{
-        font-size:1.5rem;
+    .poster-heading p {
+        font-size: 1.5rem;
     }
-
 
     /* DECORATION */
 
-    .poster-decoration>span{
-        top:12rem;
-        font-size:18rem;
+    .poster-decoration>span {
+        top: 12rem;
+        font-size: 18rem;
     }
-
 
     /* POSTER ITEM */
 
-    .poster-item{
-        min-height:40rem;
-        gap:3rem;
+    .poster-item {
+        min-height: 40rem;
+        gap: 3rem;
     }
 
-    .poster-item figure{
-        width:27rem;
-        height:40.5rem;
+    .poster-item figure {
+        width: 27rem;
+        height: 40.5rem;
     }
 
-    .poster-content{
-        width:100%;
+    .poster-content {
+        width: 100%;
     }
 
-    .poster-content h3{
-        font-size:1.7rem;
+    .poster-content h3 {
+        font-size: 1.7rem;
     }
 
-    .poster-content p{
-        font-size:18px;
+    .poster-content > p {
+        font-size: 16px;
     }
 }
-
 
 /* =========================
 MOBILE
 768px
 기존 좌우 구조 유지
 ========================= */
-@media(max-width:768px){
-    .poster-section{padding:4rem 0 6rem;
-    }
 
+@media(max-width:768px) {
+    .poster-section {
+        padding: 4rem 0 6rem;
+    }
 
     /* =========================
-    HEADING
-    ========================= */
+        HEADING
+        ========================= */
 
-    .poster-heading{
-        width:100%;
-        padding-left:0;
-        margin-bottom:4rem;
+    .poster-heading {
+        width: 100%;
+        padding-left: 0;
+        margin-bottom: 4rem;
     }
 
-    .poster-heading h2{
-        width:fit-content;
-        max-width:100%;
-        font-size:2.7rem;
-        line-height:1.05;
-        white-space:normal;
-        word-break:keep-all;
+    .poster-heading h2 {
+        width: fit-content;
+        max-width: 100%;
+        font-size: 2.7rem;
+        line-height: 1.05;
+        white-space: normal;
+        word-break: keep-all;
     }
+
     .poster-heading h2::before,
     .poster-heading h2::after {
         content: "";
@@ -327,175 +326,169 @@ MOBILE
         transform: translateY(-50%);
         pointer-events: none;
     }
-    .poster-heading h2::before{
-        width:33%;
+
+    .poster-heading h2::before {
+        width: 33%;
     }
 
-    .poster-heading h2::after{
-        width:1rem;
-        height:1rem;
+    .poster-heading h2::after {
+        width: 1rem;
+        height: 1rem;
     }
 
-    .poster-heading p{
-        margin-top:1.5rem;
-        font-size:1rem;
-        line-height:1.5;
-        word-break:keep-all;
+    .poster-heading p {
+        margin-top: 1.5rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        word-break: keep-all;
     }
-
 
     /* =========================
-    BACKGROUND POSTER TEXT
-    ========================= */
+        BACKGROUND POSTER TEXT
+        ========================= */
 
-    .poster-decoration > span{
-        top:8rem;
-        font-size:10rem;
+    .poster-decoration > span {
+        top: 8rem;
+        font-size: 10rem;
     }
 
-
     /* =========================
-    POSTER ITEM
-    ========================= */
+        POSTER ITEM
+        ========================= */
 
-    .poster-item{
-        display:grid;
-        --poster-image-width:min(26rem, 48%);
+    .poster-item {
+        display: grid;
+        --poster-image-width: min(26rem, 48%);
         /* 이미지 영역 + 남은 텍스트 영역 */
         grid-template-columns: var(--poster-image-width) minmax(0,1fr);
-        align-items:center;
-        column-gap:1.5rem;
-        min-height:30rem;
+        align-items: center;
+        column-gap: 1.5rem;
+        min-height: 30rem;
     }
-
 
     /* =========================
-    IMAGE
-    ========================= */
+        IMAGE
+        ========================= */
 
     .poster-item figure,
-    .poster-item:nth-child(even) figure{
-        width:100%;
-        height:auto;
-        aspect-ratio:2 / 3;
-        margin:0;
-        overflow:hidden;
+    .poster-item:nth-child(even) figure {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 2 / 3;
+        margin: 0;
+        overflow: hidden;
     }
 
-    .poster-item figure img{
-        width:100%;
-        height:100%;
-        aspect-ratio:2 / 3;
-        object-fit:cover;
+    .poster-item figure img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 2 / 3;
+        object-fit: cover;
     }
-
 
     /* 홀수 */
 
-    .poster-item:nth-child(odd) figure{justify-self:start;
+    .poster-item:nth-child(odd) figure {
+        justify-self: start;
     }
 
-    .poster-item:nth-child(odd) .poster-content{justify-self:end;
+    .poster-item:nth-child(odd) .poster-content {
+        justify-self: end;
     }
-
 
     /* 짝수 */
 
-    .poster-item:nth-child(even){
+    .poster-item:nth-child(even) {
         grid-template-columns: minmax(0,1fr) var(--poster-image-width);
     }
 
-    .poster-item:nth-child(even) figure{
-        grid-column:2;
-        justify-self:end;
+    .poster-item:nth-child(even) figure {
+        grid-column: 2;
+        justify-self: end;
     }
 
-    .poster-item:nth-child(even) .poster-content{
-        grid-column:1;
-        grid-row:1;
-        justify-self:start;
+    .poster-item:nth-child(even) .poster-content {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: start;
     }
-
 
     /* =========================
-    CONTENT
-    ========================= */
+        CONTENT
+        ========================= */
 
-    .poster-content{
-        width:100%;
-        max-width:none;
-        min-width:0;
+    .poster-content {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
     }
 
-    .poster-content h3{
-        margin:0 0 1rem;
-        font-size:1.4rem;
-        line-height:1.25;
-        word-break:keep-all;
+    .poster-content h3 {
+        margin: 0 0 1rem;
+        font-size: 1.4rem;
+        line-height: 1.25;
+        word-break: keep-all;
     }
 
-    .poster-content p{
-        margin:0;
-        font-size:18px;
-        line-height:1.6;
-        word-break:keep-all;
+    .poster-content > p {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.6;
+        word-break: keep-all;
     }
 }
-
 
 /* =========================
 EXTRA SMALL MOBILE
 402px 이하
 이미지 + 텍스트 세로 / 가운데 정렬
 ========================= */
-@media(max-width:402px){
 
-    .poster-section{
-        padding:3rem 0 4.5rem;
+@media(max-width:402px) {
+    .poster-section {
+        padding: 3rem 0 4.5rem;
     }
-
 
     /* =========================
-    HEADING
-    ========================= */
+        HEADING
+        ========================= */
 
-    .poster-heading{
-        width:100%;
-        padding-left:0;
-        margin-bottom:3rem;
+    .poster-heading {
+        width: 100%;
+        padding-left: 0;
+        margin-bottom: 3rem;
     }
 
-    .poster-heading h2{
-        width:fit-content;
-        max-width:100%;
-        font-size:2rem;
-        line-height:1.1;
-        text-align:right;
-        white-space:normal;
-        word-break:keep-all;
+    .poster-heading h2 {
+        width: fit-content;
+        max-width: 100%;
+        font-size: 2rem;
+        line-height: 1.1;
+        text-align: right;
+        white-space: normal;
+        word-break: keep-all;
     }
 
-    .poster-heading h2::before{
-        width:30%;
+    .poster-heading h2::before {
+        width: 30%;
     }
 
-    .poster-heading h2::after{
-        width:.75rem;
-        height:.75rem;
+    .poster-heading h2::after {
+        width: .75rem;
+        height: .75rem;
     }
 
-    .poster-heading p{
-        margin:1rem auto 0;
-        font-size:.85rem;
-        line-height:1.5;
-        text-align:right;
-        word-break:keep-all;
+    .poster-heading p {
+        margin: 1rem auto 0;
+        font-size: .85rem;
+        line-height: 1.5;
+        text-align: right;
+        word-break: keep-all;
     }
-
 
     /* =========================
-    BACKGROUND POSTER TEXT
-    ========================= */
+        BACKGROUND POSTER TEXT
+        ========================= */
 
     .poster-decoration > span {
         top: 6rem;
@@ -503,96 +496,95 @@ EXTRA SMALL MOBILE
         right: 3rem;
     }
 
-
     /* =========================
-    POSTER ITEM
-    ========================= */
+        POSTER ITEM
+        ========================= */
 
     .poster-item,
-    .poster-item:nth-child(even){
-        display:grid;
-        --poster-image-width:min(100%, 26rem);
-        grid-template-columns:1fr;
-        align-items:start;
-        row-gap:1.25rem;
-        min-height:auto;
-        margin-bottom:5rem;
+    .poster-item:nth-child(even) {
+        display: grid;
+        --poster-image-width: min(100%, 26rem);
+        grid-template-columns: 1fr;
+        align-items: start;
+        row-gap: 1.25rem;
+        min-height: auto;
+        margin-bottom: 5rem;
     }
 
-
     /* =========================
-    IMAGE
-    ========================= */
+        IMAGE
+        ========================= */
 
     .poster-item figure,
-    .poster-item:nth-child(even) figure{
-        grid-column:1;
-        grid-row:1;
-        width:var(--poster-image-width);
-        height:auto;
-        margin:0 auto;
-        justify-self:center;
+    .poster-item:nth-child(even) figure {
+        grid-column: 1;
+        grid-row: 1;
+        width: var(--poster-image-width);
+        height: auto;
+        margin: 0 auto;
+        justify-self: center;
     }
 
-    .poster-item:nth-child(odd) figure{
-        justify-self:center;
+    .poster-item:nth-child(odd) figure {
+        justify-self: center;
     }
-
 
     /* =========================
-    CONTENT
-    ========================= */
+        CONTENT
+        ========================= */
 
     .poster-content,
-    .poster-item:nth-child(even) .poster-content{
-        grid-column:1;
-        grid-row:2;
-        width:100%;
-        max-width:20rem;
-        min-width:0;
-        margin:0 auto;
-        justify-self:center;
-        text-align:center;
+    .poster-item:nth-child(even) .poster-content {
+        grid-column: 1;
+        grid-row: 2;
+        width: 100%;
+        max-width: 20rem;
+        min-width: 0;
+        margin: 0 auto;
+        justify-self: center;
+        text-align: center;
     }
 
-    .poster-item:nth-child(odd) .poster-content{
-        justify-self:center;
+    .poster-item:nth-child(odd) .poster-content {
+        justify-self: center;
     }
 
-    .poster-content h3{
-        margin:0 0 .6rem;
-        font-size:1.1rem;
-        line-height:1.3;
-        text-align:center;
-        word-break:keep-all;
+    .poster-content h3 {
+        margin: 0 0 .6rem;
+        font-size: 1.1rem;
+        line-height: 1.3;
+        text-align: center;
+        word-break: keep-all;
     }
 
-    .poster-content p{
-        margin:0 auto;
-        font-size:18px;
-        line-height:1.6;
-        text-align:center;
-        word-break:keep-all;
+    .poster-content > p {
+        margin: 0 auto;
+        font-size: 16px;
+        line-height: 1.6;
+        text-align: center;
+        word-break: keep-all;
     }
 }
 
-@media(max-width:280px){
+@media(max-width:280px) {
     .poster-item,
-    .poster-item:nth-child(even){
-        --poster-image-width:100%;
+    .poster-item:nth-child(even) {
+        --poster-image-width: 100%;
     }
 
     .poster-item figure,
-    .poster-item:nth-child(even) figure{
-        width:var(--poster-image-width);
-        min-width:0;
-        height:auto;
+    .poster-item:nth-child(even) figure {
+        width: var(--poster-image-width);
+        min-width: 0;
+        height: auto;
     }
 
-    .poster-item figure img{
-        width:100%;
-        height:100%;
+    .poster-item figure img {
+        width: 100%;
+        height: 100%;
     }
 }
 
-.poster-section .poster-heading h2::before { width: 50%; }
+.poster-section .poster-heading h2::before {
+    width: 50%;
+}
