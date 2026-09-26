@@ -6,7 +6,6 @@
     --aesop-tint: #e3e8dd;
     --aesop-line: #c9d1c2;
     text-align: left;
-    container-type: inline-size;
 }
 
 .aesop-case *,
@@ -146,7 +145,7 @@
 .aesop-type-row {
     display: grid;
     align-items: baseline;
-    padding-bottom: min(76px, 4.69136cqi);
+    padding-bottom: 48px;
 }
 
 .aesop-type-row p {
@@ -191,39 +190,7 @@
     background: var(--swatch);
 }
 
-@media(max-width:1024px) {
-    .aesop-overview {
-        padding: 0;
-    }
-
-    .aesop-overview h3 {
-        font-size: 26px;
-        margin-bottom: 24px;
-    }
-
-    .aesop-overview p {
-        font-size: 16px;
-    }
-
-    .aesop-typography {
-        margin-top: 120px;
-    }
-
-    .aesop-type-intro>p:last-child {
-        font-size: 14px;
-    }
-}
-
 @media(max-width:768px) {
-    .aesop-links {
-        margin-top: 40px;
-        gap: 48px;
-    }
-
-    .aesop-logo {
-        height: 52px;
-    }
-
     .aesop-cover {
         margin-top: 48px;
     }
@@ -262,17 +229,8 @@
         justify-self: center;
     }
 
-    .aesop-type-intro {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-
     .aesop-colors {
         margin-top: 48px;
-    }
-
-    .aesop-color-layout {
-        margin-top: 32px;
     }
 }
 
@@ -282,13 +240,9 @@
         font-size: 14px;
     }
 
-    .aesop-heading>p {
-        font-size: 12px;
-    }
-
     .aesop-cover-mobile {
         position: relative;
-        width: 80%;
+
         margin: -8px 0 0 auto;
     }
 
@@ -300,14 +254,6 @@
 
     .aesop-facts>div {
         grid-template-columns: 104px minmax(0, 1fr);
-    }
-
-    .aesop-overview p {
-        font-size: 14px;
-    }
-
-    .aesop-typography {
-        margin-top: 80px;
     }
 }
 
@@ -519,7 +465,6 @@
 
 .aesop-responsive-detail h3 {
     font-size: 20px;
-    margin-bottom: 18px;
 }
 
 .aesop-responsive-finale {
@@ -570,10 +515,6 @@
         font-size: 22px;
     }
 
-    .aesop-responsive p {
-        font-size: 14px;
-    }
-
     .aesop-responsive-detail h3 {
         font-size: 16px;
     }
@@ -597,10 +538,6 @@
 @media (max-width: 768px) {
     .aesop-responsive h3 {
         font-size: 18px;
-    }
-
-    .aesop-responsive p {
-        font-size: 12px;
     }
 
     .aesop-responsive-detail h3 {
@@ -635,10 +572,6 @@
 
     .aesop-responsive-stage {
         width: 100%;
-    }
-
-    .aesop-responsive h3 {
-        margin-bottom: 18px;
     }
 }
 
@@ -709,7 +642,6 @@
 
 .aesop-overview h3 {
     font-size: 24px;
-    margin-bottom: 24px;
 }
 
 .aesop-overview p {
@@ -730,7 +662,6 @@
 }
 
 .aesop-colors>h3 {
-    margin-bottom: 26px;
     font-size: 22px;
 }
 
@@ -772,7 +703,6 @@
 }
 
 .aesop-typography>h3 {
-    margin-bottom: 24px;
     font-size: 22px;
 }
 
@@ -791,23 +721,19 @@
 }
 
 .aesop-type-scale {
-    container-type: inline-size;
     margin-top: 36px;
-}
-
-.aesop-typography .aesop-type-scale {
-    container-type: inline-size;
 }
 
 .aesop-typography .aesop-type-row {
     grid-template-columns: minmax(0, 65fr) minmax(0, 19fr) minmax(0, 7fr) minmax(0, 9fr);
     min-width: 0;
-    column-gap: 1cqi;
+    column-gap: 12px;
 }
 
 .aesop-typography .aesop-type-row p {
-    white-space: nowrap;
-    font-size: min(12px, 1cqi);
+    white-space: normal;
+    overflow-wrap: anywhere;
+    font-size: 12px;
 }
 
 .aesop-typography .aesop-type-row .aesop-type-sample {
@@ -945,10 +871,6 @@
         margin-bottom: 24px;
     }
 
-    .aesop-heading>p {
-        font-size: 13px;
-    }
-
     .aesop-heading>p br {
         display: none;
     }
@@ -1001,11 +923,6 @@
 
     .aesop-type-row .aesop-type-sample {
         grid-column: 1 / -1;
-        font-size: inherit;
-    }
-
-    .aesop-type-row:first-child .aesop-type-sample {
-        font-size: inherit;
     }
 
     .aesop-colors {
@@ -1077,10 +994,10 @@
 
 .aesop-case .aesop-type-row .aesop-type-sample {
     font-family: var(--font-main);
-    font-size: min(calc(var(--sample-size) * 1px), calc(var(--sample-size) * .075cqi));
+    font-size: calc(var(--sample-size) * 1px);
     font-weight: var(--sample-weight);
     line-height: 1.4;
-    white-space: nowrap;
+    white-space: normal;
 }
 
 /* Aesop opening: centered brand and muted architectural color blocks. */
@@ -1117,7 +1034,8 @@
 
 .aesop-opening-brand .aesop-logo {
     order: 0;
-    width: min(200px, 22cqi);
+    width: 200px;
+    max-width: 100%;
     height: auto;
     margin: 0;
 }
@@ -1140,7 +1058,7 @@
     display: block;
     width: auto;
     color: #354437;
-    font-size: min(42px, 3.8cqi);
+    font-size: 42px;
     line-height: 1.25;
     letter-spacing: -.045em;
 }
@@ -1289,14 +1207,6 @@
     .aesop-opening-copy h4 {
         font-size: 22px;
     }
-
-    .aesop-opening-copy p {
-        font-size: 14px;
-    }
-
-    .aesop-opening-copy br {
-        display: none;
-    }
 }
 
 @media (max-width: 768px) {
@@ -1310,7 +1220,7 @@
     }
 
     .aesop-opening .aesop-heading h3 {
-        font-size: min(30px, 6cqi);
+        font-size: 30px;
     }
 
     .aesop-opening-layout {
@@ -1400,4 +1310,58 @@
     white-space: nowrap;
     font-weight: var(--fw1);
     font-size: var(--fs-body2);
+}
+
+@media(max-width:768px) {
+    .aesop-typography .aesop-type-row {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .aesop-typography .aesop-type-row .aesop-type-sample {
+        grid-column: 1 / -1;
+    }
+}
+
+@media(max-width:402px) {
+    .aesop-opening .aesop-heading h3 {
+        font-size: 24px;
+    }
+}
+
+/* 설명문은 화면 단계마다 2px씩 축소한다. */
+@media(max-width:1024px) {
+    .aesop-heading > p,
+    .aesop-opening-copy p {
+        font-size: 13px;
+    }
+
+    .aesop-overview p,
+    .aesop-responsive p {
+        font-size: 12px;
+    }
+
+    .aesop-color-description,
+    .aesop-palette-content > p,
+    .aesop-type-intro > p:last-child {
+        font-size: 11px;
+    }
+}
+
+@media(max-width:768px) {
+    .aesop-heading > p,
+    .aesop-opening-copy p {
+        font-size: 11px;
+    }
+
+    .aesop-overview p,
+    .aesop-responsive p {
+        font-size: 10px;
+    }
+
+    .aesop-color-description,
+    .aesop-palette-content > p,
+    .aesop-type-intro > p:last-child {
+        font-size: 9px;
+    }
 }

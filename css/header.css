@@ -153,7 +153,7 @@ MOBILE - 768
     .site-header {
         top: 1rem;
         left: 50%;
-        right: auto;
+
         transform: translateX(-50%);
     }
 
@@ -240,7 +240,6 @@ MOBILE - 768
 
     .nav-list a:hover,
     .nav-list a.active {
-        color: var(--point);
         background: var(--ivory-0);
     }
 

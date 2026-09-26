@@ -182,29 +182,19 @@ TABLET - 1024
 
     /* TITLE */
 
-    .hero-title {
-        font-size: 10.5vw;
-    }
-
     /* DESCRIPTION */
 
     .hero-description {
         width: 52%;
-        margin-top: 4rem;
+
         font-size: 1.1rem;
     }
 
     /* LINE */
 
-    .hero-line {
-        width: 38%;
-        margin-top: 2rem;
-    }
-
     /* PROFILE */
 
     .hero-profile {
-        width: 58%;
         margin-top: -.7rem;
         gap: 1rem;
         font-size: 1rem;
@@ -222,10 +212,6 @@ MOBILE - 768
 ========================= */
 
 @media(max-width:768px) {
-    .hero-section {
-        height: 500px;
-    }
-
     .hero-inner {
         width: calc(100% - var(--frame-mo));
         padding: 9rem 1rem 0;
@@ -274,19 +260,11 @@ SMALL MOBILE - 402
 ========================= */
 
 @media(max-width:402px) {
-    .hero-section {
-        height: 500px;
-    }
-
     .hero-inner {
         padding: 7rem .75rem 0;
     }
 
     /* TITLE */
-
-    .hero-title {
-        font-size: 12vw;
-    }
 
     /* DESCRIPTION */
 
@@ -305,7 +283,6 @@ SMALL MOBILE - 402
     /* PROFILE */
 
     .hero-profile {
-        width: 72%;
         margin-top: -.4rem;
         gap: .4rem;
         font-size: .55rem;

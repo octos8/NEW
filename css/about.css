@@ -41,7 +41,6 @@ ABOUT INTRO
 ========================= */
 
 .about-intro {
-    container-type: inline-size;
     position: absolute;
     top: 10rem;
     right: 0;
@@ -57,7 +56,7 @@ ABOUT INTRO H3
 .about-intro h3 {
     position: relative;
     left: -5rem;
-    margin: 0 0 1.25rem;
+
     font-size: 1.9531rem;
     font-weight: var(--fw2);
     line-height: var(--lh1);
@@ -78,9 +77,7 @@ ABOUT INTRO P
 
 .about-intro p {
     margin: 0;
-    font-size: min(1.5625rem, 3.3cqi);
-    white-space: nowrap;
-    line-height: var(--lh2);
+
     color: var(--gray-900);
     word-break: keep-all;
     /* ANIMATION */
@@ -126,12 +123,10 @@ TABLET - 1024
 
     .about-intro h3 {
         font-size: 1.7rem;
-        left: -3rem;
     }
 
     .about-intro p {
         margin-left: 0;
-        font-size: min(1.35rem, 3.3cqi);
     }
 }
 
@@ -158,12 +153,6 @@ MOBILE - 768
 
     .about-intro h3 {
         font-size: 1.5rem;
-        left: -1rem;
-    }
-
-    .about-intro p {
-        margin-left: 0;
-        font-size: min(1.15rem, 3.3cqi);
     }
 }
 
@@ -252,7 +241,6 @@ MOBILE - 768
 }
 
 .profile-area article h3 {
-    margin: 0 0 1rem;
     font-size: 1.9531rem;
     font-weight: var(--fw2);
     line-height: 1.2;
@@ -281,13 +269,6 @@ MOBILE - 768
     order: 1;
 }
 
-.certification-label,
-.education-label {
-    margin: 0 0 .75rem;
-    color: var(--gray-600);
-    font-size: var(--fs-body2);
-}
-
 .certification-info ul {
     display: flex;
     flex-direction: column;
@@ -309,10 +290,6 @@ MOBILE - 768
 }
 
 @media(max-width:1024px) {
-    .profile-section-label {
-        font-size: 1.6rem;
-    }
-
     .profile-area article h3 {
         font-size: 1.6rem;
     }
@@ -320,7 +297,6 @@ MOBILE - 768
     .profile-area {
         gap: 1.5rem;
         min-height: auto;
-        padding: 3rem 2.5rem 3rem 2.5rem;
         --profile-list-size: .75rem;
     }
 
@@ -328,11 +304,6 @@ MOBILE - 768
     .education-info p {
         font-size: .92rem;
         line-height: 1.55;
-    }
-
-    .certification-label,
-    .education-label {
-        font-size: .8rem;
     }
 }
 
@@ -342,70 +313,24 @@ MOBILE - 768
     .profile-area {
         flex-direction: column;
         align-items: center;
-        padding: 4rem 2rem 3rem 3rem;
-    }
-
-    .profile-left {
-        flex: none;
-        width: 100%;
-        max-width: 18rem;
     }
 
     .profile-content {
         flex: none;
-        width: 100%;
-        max-width: 32rem;
-        padding: 0 1rem;
-        margin: 0;
     }
 
     .profile-section-label {
         top: 1.25rem;
-        right: 1rem;
-        font-size: 1.5rem;
-    }
-
-    .certification-info li {
-        text-align: center;
     }
 
     .profile-area article h3 {
-        font-size: 1.5rem;
-        text-align: center;
-    }
-
-    .education-info {
-        padding: 0 1rem;
         text-align: center;
     }
 }
 
 @media(max-width:402px) {
-    .profile-area {
-        gap: 2rem;
-        padding: 3.5rem 1.75rem 2.5rem 2.25rem;
-    }
-
-    .profile-left {
-        max-width: 14rem;
-    }
-
-    .profile-content {
-        padding: 0;
-    }
-
     .education-info {
         margin: 0 auto;
-        padding: 0;
-    }
-
-    .profile-section-label {
-        right: .75rem;
-        font-size: 1.15rem;
-    }
-
-    .profile-area article h3 {
-        font-size: 1.15rem;
     }
 
     .profile-area {
@@ -417,30 +342,10 @@ MOBILE - 768
         font-size: .78rem;
         line-height: 1.5;
     }
-
-    .certification-label,
-    .education-label {
-        font-size: .7rem;
-    }
 }
 
 @media(max-width:280px) {
-    .profile-left {
-        max-width: 10rem;
-    }
-
-    .profile-section-label {
-        right: .5rem;
-        font-size: .9rem;
-    }
-
-    .profile-area article h3 {
-        font-size: .9rem;
-    }
-
     .profile-area {
-        gap: 1.5rem;
-        padding: 3rem 1.375rem 2rem 1.625rem;
         --profile-list-size: .5rem;
     }
 
@@ -449,40 +354,16 @@ MOBILE - 768
         font-size: .65rem;
         line-height: 1.45;
     }
-
-    .certification-label,
-    .education-label {
-        font-size: .6rem;
-    }
 }
 
 @media(max-width:240px) {
-    .profile-left {
-        max-width: 9rem;
-    }
-
-    .profile-section-label {
-        right: .4rem;
-        font-size: .8rem;
-    }
-
-    .profile-area article h3 {
-        font-size: .8rem;
-    }
-
     .profile-area {
-        padding: 2.75rem 1.125rem 1.75rem 1.375rem;
         --profile-list-size: .45rem;
     }
 
     .certification-info li,
     .education-info p {
         font-size: .6rem;
-    }
-
-    .certification-label,
-    .education-label {
-        font-size: .55rem;
     }
 }
 
@@ -608,7 +489,6 @@ SKILL DETAIL
 ========================= */
 
 .skill-detail {
-    container-type: inline-size;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -627,18 +507,11 @@ SKILL DETAIL
     transform: translate(-50%, -50%);
 }
 
-.skill-detail h4 {
-    margin: 0 0 .75rem;
-    text-align: center;
-    font-size: 1.5625rem;
-    font-weight: var(--fw2);
-}
-
 .skill-summary {
     margin: 0 0 1.5rem;
     text-align: center;
-    font-size: min(var(--fs-body1), 3.5cqi);
-    white-space: nowrap;
+    font-size: var(--fs-body2);
+    white-space: normal;
     line-height: var(--lh2);
     color: var(--gray-700);
     word-break: keep-all;
@@ -676,7 +549,7 @@ PROGRAM LIST
 
 .skill-program-list p {
     margin: 0;
-    font-size: var(--fs-body2);
+    font-size: var(--fs-detail);
     line-height: var(--lh2);
     color: var(--gray-700);
     word-break: keep-all;
@@ -731,13 +604,9 @@ TABLET - 1024
         max-width: 68%;
     }
 
-    .skill-detail h4 {
-        font-size: 1.3rem;
-    }
-
     .skill-summary {
         margin-bottom: 1rem;
-        font-size: min(.9rem, 3.5cqi);
+        font-size: .9rem;
         line-height: 1.45;
     }
 
@@ -816,25 +685,19 @@ MOBILE - 768
 
     .skill-menu-publishing {
         top: -2rem;
-        left: 50%;
-        transform: translateX(-50%);
     }
 
     .skill-menu-design {
-        top: 50%;
         right: auto;
         left: -4rem;
-        transform: translateY(-50%);
     }
 
     .skill-menu-development {
-        top: 50%;
         right: -6.5rem;
         left: auto;
         max-width: 6.5rem;
-        text-align: center;
+
         white-space: normal;
-        transform: translateY(-50%);
     }
 
     /* =========================
@@ -846,15 +709,9 @@ MOBILE - 768
         max-width: 62%;
     }
 
-    .skill-detail h4 {
-        margin-bottom: .45rem;
-        font-size: 1rem;
-        line-height: 1.2;
-    }
-
     .skill-summary {
         margin-bottom: .65rem;
-        font-size: min(.72rem, 3.5cqi);
+        font-size: .72rem;
         line-height: 1.35;
     }
 
@@ -922,10 +779,7 @@ EXTRA SMALL MOBILE - 402
         ========================= */
 
     .skills-orbit {
-        width: 12.375rem;
-        height: 12.375rem;
         max-width: none;
-        margin: 0 auto;
     }
 
     .skills-dot {
@@ -944,26 +798,18 @@ EXTRA SMALL MOBILE - 402
 
     .skill-menu-publishing {
         top: -1.5rem;
-        left: 50%;
-        transform: translateX(-50%);
     }
 
     .skill-menu-design {
-        top: 50%;
         left: -2.7rem;
-        right: auto;
-        transform: translateY(-50%);
     }
 
     .skill-menu-development {
-        top: 50%;
         right: -5rem;
-        left: auto;
+
         width: 4.5rem;
-        text-align: center;
-        white-space: normal;
+
         word-break: keep-all;
-        transform: translateY(-50%);
     }
 
     /* =========================
@@ -975,15 +821,9 @@ EXTRA SMALL MOBILE - 402
         max-width: none;
     }
 
-    .skill-detail h4 {
-        margin-bottom: .3rem;
-        font-size: .75rem;
-        line-height: 1.15;
-    }
-
     .skill-summary {
         margin-bottom: .45rem;
-        font-size: min(.52rem, 3.5cqi);
+        font-size: .52rem;
         line-height: 1.3;
     }
 
@@ -1026,7 +866,6 @@ ULTRA SMALL MOBILE
 @media(max-width:280px) {
     .skills-section {
         padding: 2.8rem 0 4rem;
-        overflow: visible;
     }
 
     /* HEADING */
@@ -1037,7 +876,7 @@ ULTRA SMALL MOBILE
 
     .skills-heading h3 {
         font-size: 1.2rem;
-        line-height: 1.1;
+
         white-space: nowrap;
     }
 
@@ -1048,13 +887,6 @@ ULTRA SMALL MOBILE
     }
 
     /* ORBIT */
-
-    .skills-orbit {
-        width: 12.375rem;
-        height: 12.375rem;
-        max-width: none;
-        margin: 0 auto;
-    }
 
     .skills-dot {
         width: .45rem;
@@ -1070,46 +902,29 @@ ULTRA SMALL MOBILE
 
     .skill-menu-publishing {
         top: -0.9rem;
-        left: 50%;
-        transform: translateX(-50%);
     }
 
     .skill-menu-design {
-        top: 50%;
         left: -2rem;
-        right: auto;
-        transform: translateY(-50%);
     }
 
     .skill-menu-development {
-        top: 50%;
         right: -3.6rem;
-        left: auto;
+
         width: 3.2rem;
         font-size: .43rem;
         line-height: 1.1;
-        text-align: center;
-        white-space: normal;
-        word-break: keep-all;
-        transform: translateY(-50%);
     }
 
     /* CENTER DETAIL */
 
     .skill-detail {
         width: 6.8rem;
-        max-width: none;
-    }
-
-    .skill-detail h4 {
-        margin-bottom: .2rem;
-        font-size: .54rem;
-        line-height: 1.1;
     }
 
     .skill-summary {
         margin-bottom: .3rem;
-        font-size: min(.36rem, 3.5cqi);
+        font-size: .36rem;
         line-height: 1.2;
     }
 
@@ -1149,7 +964,6 @@ ULTRA SMALL MOBILE
 @media(max-width:240px) {
     .skills-section {
         padding: 2.5rem 0 3.5rem;
-        overflow: visible;
     }
 
     /* HEADING */
@@ -1160,24 +974,15 @@ ULTRA SMALL MOBILE
 
     .skills-heading h3 {
         font-size: 1.05rem;
-        line-height: 1.1;
-        white-space: nowrap;
     }
 
     .skills-heading-line {
         width: 3rem;
-        height: .0625rem;
+
         margin-top: .75rem;
     }
 
     /* ORBIT */
-
-    .skills-orbit {
-        width: 12.375rem;
-        height: 12.375rem;
-        max-width: none;
-        margin: 0 auto;
-    }
 
     .skills-dot {
         width: .4rem;
@@ -1188,52 +993,28 @@ ULTRA SMALL MOBILE
 
     .skill-menu {
         font-size: .4rem;
-        line-height: 1.1;
     }
 
     .skill-menu-publishing {
         top: -0.75rem;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .skill-menu-design {
-        top: 50%;
-        left: -2rem;
-        right: auto;
-        transform: translateY(-50%);
     }
 
     .skill-menu-development {
-        top: 50%;
         right: -3rem;
-        left: auto;
+
         width: 2.8rem;
         font-size: .37rem;
-        line-height: 1.1;
-        text-align: center;
-        white-space: normal;
-        word-break: keep-all;
-        transform: translateY(-50%);
     }
 
     /* CENTER DETAIL */
 
     .skill-detail {
         width: 5.8rem;
-        max-width: none;
-    }
-
-    .skill-detail h4 {
-        margin-bottom: .18rem;
-        font-size: .48rem;
-        line-height: 1.1;
     }
 
     .skill-summary {
         margin-bottom: .28rem;
-        font-size: min(.32rem, 3.5cqi);
-        line-height: 1.2;
+        font-size: .32rem;
     }
 
     /* PROGRAM LIST */
@@ -1253,61 +1034,11 @@ ULTRA SMALL MOBILE
     }
 
     .skill-program-list strong {
-        margin-bottom: .02rem;
         font-size: .36rem;
-        line-height: 1.05;
     }
 
     .skill-program-list p {
         font-size: .27rem;
-        line-height: 1.15;
-    }
-}
-
-/* Give mobile profile content more space while keeping it inside the frame. */
-
-@media (min-width:280px) and (max-width:768px) {
-    .about-intro {
-        margin-left: auto;
-        text-align: right;
-    }
-
-    .profile-area {
-        padding: 4rem 1rem 3rem;
-        gap: 3rem;
-    }
-
-    .profile-left {
-        max-width: 30rem;
-    }
-
-    .profile-content {
-        max-width: 53.333rem;
-        padding: 0;
-        container-type: inline-size;
-    }
-
-    .profile-content article h3 {
-        font-size: min(2rem, 6.4cqi);
-    }
-
-    .profile-content .education-info {
-        padding: 0;
-    }
-
-    .profile-content .education-info p {
-        line-height: 1.6;
-    }
-
-    .profile-content .certification-info li {
-        font-size: min(1.667rem, 5.5cqi);
-        line-height: 1.6;
-    }
-}
-
-@media (min-width:280px) and (max-width:402px) {
-    .profile-left {
-        max-width: 23.333rem;
     }
 }
 
@@ -1321,10 +1052,6 @@ ULTRA SMALL MOBILE
     .profile-content .certification-info>p,
     .certification-info ul {
         font-size: var(--profile-list-size);
-    }
-
-    .profile-content .certification-info ul>li {
-        font-size: inherit;
     }
 }
 
@@ -1443,10 +1170,6 @@ ULTRA SMALL MOBILE
     .profile-area .profile-content {
         width: 100%;
         max-width: none;
-    }
-
-    .profile-area .profile-section-label {
-        font-size: 2.5rem;
     }
 }
 

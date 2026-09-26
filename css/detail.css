@@ -7,7 +7,6 @@ DETAIL
     width: 100%;
     padding: 3rem 0;
     overflow: hidden;
-    box-sizing: border-box;
 }
 
 .detail-inner {
@@ -35,8 +34,7 @@ TITLE
 
 .detail-heading p {
     margin: 1rem 0 0;
-    font-size: 1.25rem;
-    line-height: var(--lh2);
+
     color: var(--gray-800);
 }
 
@@ -135,7 +133,6 @@ TEXT
 ========================= */
 
 .detail-card h3 {
-    margin: 0 0 .5rem;
     font-size: 1.25rem;
     font-weight: var(--fw2);
     line-height: var(--lh1);
@@ -156,8 +153,6 @@ TABLET - 1024
 
 @media(max-width:1024px) {
     .detail-section {
-        height: auto;
-        min-height: auto;
         overflow: visible;
     }
 
@@ -167,10 +162,6 @@ TABLET - 1024
 
     .detail-heading {
         margin-bottom: 4rem;
-    }
-
-    .detail-heading p {
-        font-size: 1.35rem;
     }
 
     /* 한 줄에 하나씩 */
@@ -188,8 +179,6 @@ TABLET - 1024
     }
 
     .detail-card figure {
-        width: 100%;
-        height: auto;
         margin-bottom: 1.5rem;
     }
 
@@ -205,29 +194,21 @@ MOBILE - 768
 ========================= */
 
 @media(max-width:768px) {
-    .detail-section {
-        padding: 4rem 0 6rem;
-    }
-
     .detail-heading {
         margin-bottom: 3rem;
     }
 
     .detail-heading p {
         margin-top: 1.25rem;
-        font-size: 1.1rem;
     }
 
     .detail-list {
-        grid-template-columns: 1fr;
         gap: 4rem;
-        width: 100%;
     }
 
     .detail-card {
         width: 100%;
         max-width: 31.25rem;
-        margin: 0 auto;
     }
 
     .detail-card figure {

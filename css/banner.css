@@ -38,8 +38,7 @@ TITLE
 
 .banner-heading p {
     margin: 1.75rem 0 0;
-    font-size: 1.875rem;
-    line-height: var(--lh2);
+
     color: var(--gray-900);
     word-break: keep-all;
 }
@@ -93,7 +92,6 @@ TABLET - 1024
 ========================= */
 
 .banner-caption {
-    container-type: inline-size;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
@@ -106,8 +104,7 @@ TABLET - 1024
 }
 
 .banner-caption h3 {
-    margin: 0;
-    font-size: min(1.5rem, 2.5cqi);
+    font-size: 1.5rem;
     white-space: nowrap;
     font-weight: var(--fw2);
     line-height: var(--lh1);
@@ -115,7 +112,7 @@ TABLET - 1024
 
 .banner-caption p {
     margin: 0;
-    font-size: min(1rem, 2cqi);
+    font-size: 1rem;
     white-space: nowrap;
     color: var(--gray-700);
 }
@@ -128,30 +125,10 @@ TABLET - 1024
 }
 
 @media(max-width:1024px) {
-    .banner-section {
-        height: auto;
-        min-height: auto;
-        padding: 5rem 0 7rem;
-    }
-
-    .banner-inner {
-        height: auto;
-    }
-
     /* TITLE */
-
-    .banner-heading {
-        margin-bottom: 4rem;
-    }
 
     .banner-heading h2 {
         font-size: 5rem;
-        white-space: normal;
-        word-break: keep-all;
-    }
-
-    .banner-heading p {
-        font-size: 1.5rem;
     }
 
     /* BANNER */
@@ -168,15 +145,6 @@ MOBILE - 768
 ========================= */
 
 @media(max-width:768px) {
-    .banner-section {
-        height: auto;
-        min-height: auto;
-    }
-
-    .banner-inner {
-        height: auto;
-    }
-
     /* =========================
         TITLE
         ========================= */
@@ -191,16 +159,12 @@ MOBILE - 768
         font-size: 3rem;
         line-height: 1.05;
         text-align: left;
-        white-space: normal;
-        word-break: keep-all;
     }
 
     .banner-heading p {
         margin: 1.25rem 0 0;
-        font-size: 1.2rem;
-        line-height: 1.5;
+
         text-align: left;
-        word-break: keep-all;
     }
 
     /* =========================
@@ -210,8 +174,6 @@ MOBILE - 768
     .banner-station.swiper {
         --swiper-pagination-bullet-size: 8px;
         width: 100%;
-        max-width: none;
-        margin: 0 auto;
     }
 
     .banner-train,
@@ -219,13 +181,6 @@ MOBILE - 768
     .banner-train figure {
         width: 100%;
         height: auto;
-    }
-
-    .banner-train img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        object-position: center;
     }
 }
 
@@ -240,15 +195,11 @@ EXTRA SMALL MOBILE - 402
     }
 
     .banner-caption h3 {
-        font-size: min(1.1rem, 2.5cqi);
+        font-size: 1.1rem;
     }
 
     .banner-caption p {
-        font-size: min(.85rem, 2cqi);
-    }
-
-    .banner-section {
-        padding: 3rem 0 4.5rem;
+        font-size: .85rem;
     }
 
     /* TITLE */
@@ -264,19 +215,9 @@ EXTRA SMALL MOBILE - 402
 
     .banner-heading p {
         margin-top: 1rem;
-        font-size: .85rem;
-        line-height: 1.5;
     }
 
     /* BANNER */
-
-    .banner-station.swiper {
-        width: 100%;
-    }
-
-    .banner-train img {
-        object-fit: contain;
-    }
 }
 
 /* Wide banner with inset edges and pagination over the artwork. */
@@ -295,7 +236,7 @@ EXTRA SMALL MOBILE - 402
 
 .banner-section .banner-heading {
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: flex-end;
     gap: 2rem;
     min-width: 0;
@@ -306,6 +247,8 @@ EXTRA SMALL MOBILE - 402
 .banner-section .banner-heading h2 {
     flex-shrink: 0;
     margin: 0;
+    position: relative;
+    top: 8px;
 }
 
 .banner-section .banner-heading>p {
@@ -394,7 +337,6 @@ EXTRA SMALL MOBILE - 402
 @media (min-width: 769px) and (max-width: 1200px) {
     .banner-section .banner-inner {
         grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-        gap: 2rem;
     }
 
     .banner-section .banner-heading h2 {
@@ -427,12 +369,8 @@ EXTRA SMALL MOBILE - 402
 
     .banner-section .banner-station.swiper {
         --banner-image-height: calc(92vw * 970 / 1920);
-        width: 100%;
-        margin-top: 0;
-    }
 
-    .banner-section .banner-train figure {
-        width: 100%;
+        margin-top: 0;
     }
 
     .banner-section .banner-caption {
@@ -448,7 +386,7 @@ EXTRA SMALL MOBILE - 402
     }
 
     .banner-section .banner-caption p {
-        font-size: 14px;
+        font-size: 12px;
         white-space: normal;
     }
 }

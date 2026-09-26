@@ -63,8 +63,7 @@ TITLE
 
 .poster-heading p {
     margin: 2rem 0 0;
-    font-size: 1.875rem;
-    line-height: var(--lh2);
+
     color: var(--gray-900);
     word-break: keep-all;
 }
@@ -202,7 +201,6 @@ CONTENT
 }
 
 .poster-content h3 {
-    margin: 0 0 1.5rem;
     font-size: 1.9531rem;
     font-weight: var(--fw2);
     line-height: var(--lh1);
@@ -240,25 +238,16 @@ TABLET
     /* TITLE */
 
     .poster-heading {
-        padding-left: 0;
         margin-bottom: 6rem;
     }
 
     .poster-heading h2 {
         font-size: 5rem;
-        line-height: 1;
-        white-space: normal;
-        word-break: keep-all;
-    }
-
-    .poster-heading p {
-        font-size: 1.5rem;
     }
 
     /* DECORATION */
 
     .poster-decoration>span {
-        top: 12rem;
         font-size: 18rem;
     }
 
@@ -281,10 +270,6 @@ TABLET
     .poster-content h3 {
         font-size: 1.7rem;
     }
-
-    .poster-content > p {
-        font-size: 16px;
-    }
 }
 
 /* =========================
@@ -303,32 +288,17 @@ MOBILE
         ========================= */
 
     .poster-heading {
-        width: 100%;
-        padding-left: 0;
         margin-bottom: 4rem;
     }
 
     .poster-heading h2 {
-        width: fit-content;
-        max-width: 100%;
         font-size: 2.7rem;
         line-height: 1.05;
-        white-space: normal;
-        word-break: keep-all;
     }
 
     .poster-heading h2::before,
     .poster-heading h2::after {
-        content: "";
-        position: absolute;
         top: calc(100% - (-0.375rem));
-        right: 0;
-        transform: translateY(-50%);
-        pointer-events: none;
-    }
-
-    .poster-heading h2::before {
-        width: 33%;
     }
 
     .poster-heading h2::after {
@@ -338,9 +308,6 @@ MOBILE
 
     .poster-heading p {
         margin-top: 1.5rem;
-        font-size: 1rem;
-        line-height: 1.5;
-        word-break: keep-all;
     }
 
     /* =========================
@@ -357,11 +324,10 @@ MOBILE
         ========================= */
 
     .poster-item {
-        display: grid;
         --poster-image-width: min(26rem, 48%);
         /* 이미지 영역 + 남은 텍스트 영역 */
         grid-template-columns: var(--poster-image-width) minmax(0,1fr);
-        align-items: center;
+
         column-gap: 1.5rem;
         min-height: 30rem;
     }
@@ -380,21 +346,10 @@ MOBILE
     }
 
     .poster-item figure img {
-        width: 100%;
-        height: 100%;
         aspect-ratio: 2 / 3;
-        object-fit: cover;
     }
 
     /* 홀수 */
-
-    .poster-item:nth-child(odd) figure {
-        justify-self: start;
-    }
-
-    .poster-item:nth-child(odd) .poster-content {
-        justify-self: end;
-    }
 
     /* 짝수 */
 
@@ -404,13 +359,11 @@ MOBILE
 
     .poster-item:nth-child(even) figure {
         grid-column: 2;
-        justify-self: end;
     }
 
     .poster-item:nth-child(even) .poster-content {
         grid-column: 1;
         grid-row: 1;
-        justify-self: start;
     }
 
     /* =========================
@@ -418,23 +371,16 @@ MOBILE
         ========================= */
 
     .poster-content {
-        width: 100%;
         max-width: none;
-        min-width: 0;
     }
 
     .poster-content h3 {
-        margin: 0 0 1rem;
         font-size: 1.4rem;
         line-height: 1.25;
-        word-break: keep-all;
     }
 
     .poster-content > p {
-        margin: 0;
-        font-size: 16px;
         line-height: 1.6;
-        word-break: keep-all;
     }
 }
 
@@ -454,19 +400,13 @@ EXTRA SMALL MOBILE
         ========================= */
 
     .poster-heading {
-        width: 100%;
-        padding-left: 0;
         margin-bottom: 3rem;
     }
 
     .poster-heading h2 {
-        width: fit-content;
-        max-width: 100%;
         font-size: 2rem;
         line-height: 1.1;
         text-align: right;
-        white-space: normal;
-        word-break: keep-all;
     }
 
     .poster-heading h2::before {
@@ -480,10 +420,8 @@ EXTRA SMALL MOBILE
 
     .poster-heading p {
         margin: 1rem auto 0;
-        font-size: .85rem;
-        line-height: 1.5;
+
         text-align: right;
-        word-break: keep-all;
     }
 
     /* =========================
@@ -492,7 +430,7 @@ EXTRA SMALL MOBILE
 
     .poster-decoration > span {
         top: 6rem;
-        font-size: 10rem;
+
         right: 3rem;
     }
 
@@ -520,7 +458,7 @@ EXTRA SMALL MOBILE
         grid-column: 1;
         grid-row: 1;
         width: var(--poster-image-width);
-        height: auto;
+
         margin: 0 auto;
         justify-self: center;
     }
@@ -550,19 +488,15 @@ EXTRA SMALL MOBILE
     }
 
     .poster-content h3 {
-        margin: 0 0 .6rem;
         font-size: 1.1rem;
         line-height: 1.3;
         text-align: center;
-        word-break: keep-all;
     }
 
     .poster-content > p {
         margin: 0 auto;
-        font-size: 16px;
-        line-height: 1.6;
+
         text-align: center;
-        word-break: keep-all;
     }
 }
 
@@ -574,17 +508,23 @@ EXTRA SMALL MOBILE
 
     .poster-item figure,
     .poster-item:nth-child(even) figure {
-        width: var(--poster-image-width);
         min-width: 0;
-        height: auto;
-    }
-
-    .poster-item figure img {
-        width: 100%;
-        height: 100%;
     }
 }
 
 .poster-section .poster-heading h2::before {
     width: 50%;
+}
+
+/* 본문: PC 16px → 태블릿 14px → 모바일 12px */
+@media(max-width:1024px) {
+    .poster-content > p {
+        font-size: 14px;
+    }
+}
+
+@media(max-width:768px) {
+    .poster-content > p {
+        font-size: 12px;
+    }
 }
