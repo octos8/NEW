@@ -76,6 +76,7 @@
     opacity: 1;
     filter: blur(0);
     transform: translateY(0);
+    text-wrap: nowrap;
 }
 
 .about-intro.is-visible p {
@@ -642,6 +643,14 @@
     transform: none;
 }
 
+/* 1042px 이하 */
+@media (max-width: 1042px) {
+    .skills-orbit {
+        width: 24.375rem;
+        height: 24.375rem;
+    }
+}
+
 /* 1024px 이하 */
 @media (max-width: 1024px) {
     .about-section {
@@ -695,11 +704,6 @@
     }
 
     /* ORBIT */
-
-    .skills-orbit {
-        width: 14.375rem;
-        height: 14.375rem;
-    }
 
     /* MENU */
 
@@ -824,8 +828,8 @@
     /* ORBIT */
 
     .skills-orbit {
-        width: 12.375rem;
-        height: 12.375rem;
+        width: 20.375rem;
+        height: 20.375rem;
         max-width: 80vw;
     }
 
@@ -942,6 +946,7 @@
     .profile-area .profile-timeline .education-info p,
     .profile-area .profile-timeline .certification-info ul > li {
         font-size: var(--timeline-text-size);
+        text-wrap: nowrap;
     }
 }
 
@@ -951,6 +956,21 @@
         --timeline-text-size: .85rem;
         --timeline-date-size: .65rem;
         --timeline-year-size: 2rem;
+    }
+
+    .profile-timeline .education-info > div,
+    .profile-timeline .certification-info li > div {
+        container-type: inline-size;
+        text-wrap: nowrap;
+    }
+
+    .profile-area .profile-timeline .education-info p {
+        text-wrap: nowrap;
+        font-size: 0.75rem;
+    }
+
+    .profile-timeline .certification-info li > div {
+        font-size: min(var(--timeline-text-size), 4.8cqi);
     }
 
     .profile-area .profile-left > .profile-section-label {
@@ -970,11 +990,11 @@
     }
 
     .about-intro h3 {
-        font-size: 1.25rem;
+        font-size: 16px;
     }
 
     main .about-intro > p {
-        font-size: .9rem;
+        font-size: 11px;
     }
 
     .education-info {
@@ -1110,11 +1130,11 @@
     }
 
     .about-intro h3 {
-        font-size: 1.1rem;
+        font-size: 11px;
     }
 
     main .about-intro > p {
-        font-size: .8rem;
+        font-size: 8px;
     }
 
     .about-inner .profile-area {
@@ -1153,6 +1173,11 @@
     .skills-dot {
         width: .45rem;
         height: .45rem;
+    }
+
+    .skills-orbit {
+        width: 16.375rem;
+        height: 16.375rem;
     }
 
     /* MENU */

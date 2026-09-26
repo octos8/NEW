@@ -317,10 +317,6 @@
     display: none;
 }
 
-.aesop-opening-copy p + p {
-    margin-top: 12px;
-}
-
 .aesop-opening-copy h5 {
     margin: 28px 0 12px;
     padding-top: 24px;
@@ -762,10 +758,6 @@
 
 .aesop-case .aesop-responsive-copy > h3 {
     margin-bottom: 2rem;
-}
-
-.aesop-responsive-copy > p + p {
-    margin-top: 1rem;
 }
 
 .aesop-responsive-phones {

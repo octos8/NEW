@@ -151,7 +151,7 @@
 
 .banner-section .swiper-pagination {
     position: absolute;
-    top: calc(var(--banner-image-height) - 2rem);
+    top: calc(var(--banner-image-height) - (-1.25rem));
     left: 0;
     bottom: auto;
     width: 100%;

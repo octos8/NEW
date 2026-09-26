@@ -5,7 +5,6 @@
     width: 100%;
     color: #302a23;
     text-align: left;
-    background: #fff;
 }
 
 .lune-case *::before,
@@ -17,15 +16,6 @@
     display: block;
     width: 100%;
 }
-
-.lune-case p {
-    margin: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.8;
-    word-break: keep-all;
-}
-
 /* 도입부 */
 
 .lune-opening {
@@ -49,12 +39,16 @@
     font-size: 34px;
     line-height: 1.3;
 }
-
+.lune-heading .lune-word{
+    font-weight: var(--fw2);
+}
 #lune-title,
 #lune-system-title {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: var(--fw2);
+    padding-right: 2rem;
 }
 
 #lune-title img,
@@ -70,7 +64,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 12px;
-    margin-top: 24px;
+    margin-top: 2rem;
 }
 
 .lune-links a {
@@ -226,10 +220,11 @@
 
 .lune-introduction .lune-intro-copy h3 {
     margin: 0 0 1.75rem;
-    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-size: var(--fs-h2);
     line-height: 1.4;
     letter-spacing: -.035em;
     word-break: keep-all;
+    font-weight: var(--fw2);
 }
 
 .lune-case .lune-intro-copy p {
@@ -239,16 +234,13 @@
     overflow-wrap: break-word;
 }
 
-.lune-intro-copy p + p {
-    margin-top: 1rem;
-}
-
 .lune-intro-copy h4 {
     margin: 2rem 0 1rem;
     padding-top: 1.5rem;
     border-top: 1px solid #d8c6ae;
     font-size: 1rem;
     line-height: 1.5;
+    font-weight: var(--fw2);
 }
 
 .lune-facts {
@@ -372,13 +364,6 @@
     bottom: 2%;
 }
 
-/* LUNE의 모든 텍스트를 볼드체로 표시 */
-
-.lune-case,
-.lune-case * {
-    font-weight: 700;
-}
-
 /* 디자인 시스템 */
 
 .lune-system {
@@ -429,29 +414,32 @@
     transform: rotate(-3deg);
 }
 
-.lune-system-details {
-    overflow: hidden;
-    background-color: #fff;
-    border-radius: 24px;
-}
-
 .lune-system-details > h3 {
-    padding: 3rem 3rem 0rem;
+    padding: 3rem 3rem 1rem 3rem;
+    font-weight: var(--fw2);
+    font-size: 20px;
+    color: #785332;
 }
 
 .lune-system-row {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
+    display: flex;
     gap: 60px;
-    margin: 3rem;
+    margin: 1rem 3rem;
     align-items: center;
 }
 
 .lune-system-row h3 {
-    font-size: 14px;
-    color: #785332;
+    font-size: 16px;
+    color: #b29270;
+    font-weight: var(--fw2);
+    margin-bottom: 1rem;
 }
-
+.desc{
+    font-size: 14px;
+}
+.lune-system-row .left{
+    max-width: 100%;
+}
 .lune-palette {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -490,13 +478,11 @@
 }
 
 .lune-system-row .lune-font-name {
-    font-size: var(--fs-body2);
+    font-size: var(--fs-h2);
     font-weight: var(--fw2);
 }
 
 .lune-font-overview {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
     align-items: baseline;
     gap: 1rem 1.5rem;
     grid-column: 1 / -1;
@@ -506,6 +492,25 @@
 .lune-font-overview > h3 {
     grid-column: 1 / -1;
     margin: 0;
+    font-size: 16px;
+    color: #b29270;
+    font-weight: var(--fw2);
+    margin-bottom: 1rem;
+}
+.lune-font-name{
+    font-size: var(--fs-h2);
+    font-weight: var(--fw2);
+    margin-bottom: 1rem;
+}
+.lune-font-intro {
+    display: flex;
+    justify-content: space-between;
+}
+.lune-font-why h3{
+    font-size: 16px;
+    color: #b29270;
+    font-weight: var(--fw2);
+    margin-bottom: 1rem;
 }
 
 .lune-system-row .lune-font-sample {
@@ -517,12 +522,14 @@
 /* 타이포그래피 표 */
 
 .lune-font-typography {
-    padding: 48px 58px 40px;
+    padding: 3rem 3rem;
 }
 
 .lune-type-heading h3 {
     font-size: 20px;
-    color: #b29270;
+    color: #785332;
+    font-weight: var(--fw2);
+    margin-bottom: 2rem;
 }
 
 .lune-case .lune-font-intro p:not(.lune-font-name):not(.lune-font-sample) {
@@ -547,8 +554,10 @@
 .lune-type-table caption {
     padding-bottom: 12px;
     text-align: left;
-    font-size: 14px;
-    color: #786b5b;
+    font-size: 20px;
+    color: #785332;
+    font-weight: var(--fw2);
+    margin-top: 2rem;
 }
 
 .lune-type-table thead {
@@ -576,15 +585,15 @@
 }
 
 .lune-type-table td:nth-child(2) {
-    width: 12%;
+    width: 15%;
 }
 
 .lune-type-table td:nth-child(3) {
-    width: 9%;
+    width: 8%;
 }
 
 .lune-type-table td:nth-child(4) {
-    width: 12%;
+    width: 9%;
 }
 
 .lune-type-table td:nth-child(5) {
@@ -637,10 +646,8 @@
 .lune-finale h3 {
     font-size: 34px;
     line-height: 1.4;
-}
-
-.lune-finale p + p {
-    margin-top: 20px;
+    font-weight: var(--fw2);
+    margin-bottom: 2rem;
 }
 
 .lune-finale .lune-device-group {
@@ -665,7 +672,7 @@
     }
 
     .lune-system-row.lune-font-intro {
-        padding: 32px 24px 0;
+        padding: 0;
         gap: 24px;
     }
 
@@ -790,7 +797,7 @@
     }
 
     .lune-system-row.lune-font-intro {
-        padding: 28px 16px 0;
+        padding: 0;
     }
 
     .lune-font-typography {

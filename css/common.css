@@ -76,62 +76,12 @@ html {
     scroll-behavior: smooth;
 }
 
-h1 {
-    font-size: var(--fs-h1);
-}
-
-h2 {
-    font-size: min(6.875rem,8vw);
-    line-height: 1;
-    white-space: nowrap;
-}
-
-h3 {
-    font-size: var(--fs-h3);
-}
-
-h4 {
-    font-size: var(--fs-h4);
-}
-
-p {
-    line-height: var(--lh2);
-}
-
 /* COMMON */
 
 .common-frame {
     width: calc(100% - var(--frame-pc));
     max-width: var(--content-width);
     margin: 0 auto;
-}
-
-/* 공통 제목 간격과 설명문 */
-
-main section h3 + * {
-    margin-top: 0;
-}
-
-main .section-heading > p.section-summary,
-main .project-section .project-heading > p,
-main .about-intro > p {
-    font-size: 1rem;
-    white-space: normal;
-    line-height: 1.65;
-}
-
-main .section-heading > p.section-summary {
-    font-size: var(--section-summary-size, 1rem);
-}
-
-main .about-intro h3,
-main .profile-area article h3,
-main .popup-description-slide h3,
-main .poster-content h3,
-main .banner-caption h3,
-main .detail-card h3,
-main .aesop-case h3 {
-    margin-bottom: 1rem;
 }
 
 /* 1024px 이하 */

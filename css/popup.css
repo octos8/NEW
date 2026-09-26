@@ -141,7 +141,7 @@ main .popup-heading > p.section-summary {
     display: flex;
     align-items: center;
     gap: .75rem;
-    font-size: 14px;
+    font-size: 11px;
     line-height: var(--lh2);
 }
 
@@ -153,7 +153,7 @@ main .popup-heading > p.section-summary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: .3rem .75rem;
+    padding: .25rem .55rem;
     border: 1px solid #000;
     border-radius: 999px;
     color: #000;

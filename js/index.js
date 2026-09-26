@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
         speed: reducedMotion ? 0 : 900,
         grabCursor: true,
         autoplay: reducedMotion ? false : {
-            delay: 3500,
+            delay: 2500,
             disableOnInteraction: false,
             pauseOnMouseEnter: true
         },
