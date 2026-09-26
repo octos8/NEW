@@ -7,6 +7,16 @@
     text-align: center;
 }
 
+/* 프로젝트 링크: 원래 위치를 지나면 상단 메뉴 아래에 고정 */
+.project-section .project-links-sticky {
+    position: fixed;
+    z-index: 20;
+    top: var(--project-links-top);
+    left: var(--project-links-left);
+    width: var(--project-links-width);
+    margin: 0;
+}
+
 .project-section .project-heading {
     width: 100%;
     padding: 0;
@@ -24,7 +34,6 @@
 
 .project-section .project-heading > p {
     margin: 15px auto 0;
-
     word-break: keep-all;
 }
 
@@ -75,6 +84,7 @@
 
 .project-section .project-device-list h4 {
     margin: 0;
+    text-align: center;
     font-size: 16px;
     font-weight: var(--fw2);
     line-height: 1.2;
@@ -82,18 +92,21 @@
 
 .project-section .project-device-list p {
     margin: 3px 0 0;
+    text-align: center;
     font-size: 14px;
     font-weight: var(--fw2);
     line-height: 1.2;
 }
 
-@media(max-width:1024px) {
+/* 1024px 이하 */
+@media (max-width: 1024px) {
     .project-section {
         padding: 5rem 0 6rem;
     }
 }
 
-@media(max-width:768px) {
+/* 768px 이하 */
+@media (max-width: 768px) {
     .project-section {
         padding: 4rem 0 5rem;
     }
@@ -124,7 +137,8 @@
     }
 }
 
-@media(max-width:402px) {
+/* 402px 이하 */
+@media (max-width: 402px) {
     .project-section .project-device-icon {
         width: 48px;
         height: 48px;

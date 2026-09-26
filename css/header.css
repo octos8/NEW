@@ -1,6 +1,4 @@
-/* =========================
-HEADER
-========================= */
+/* HEADER */
 
 .site-header {
     position: fixed;
@@ -108,11 +106,8 @@ HEADER
     font-size: .625rem;
 }
 
-/* =========================
-TABLET - 1024
-========================= */
-
-@media(max-width:1024px) {
+/* 1024px 이하 */
+@media (max-width: 1024px) {
     .site-header {
         top: 1.25rem;
         left: calc(var(--frame-pad) / 2);
@@ -145,15 +140,11 @@ TABLET - 1024
     }
 }
 
-/* =========================
-MOBILE - 768
-========================= */
-
-@media(max-width:768px) {
+/* 768px 이하 */
+@media (max-width: 768px) {
     .site-header {
         top: 1rem;
         left: 50%;
-
         transform: translateX(-50%);
     }
 
@@ -268,11 +259,8 @@ MOBILE - 768
     }
 }
 
-/* =========================
-SMALL MOBILE - 320
-========================= */
-
-@media(max-width:320px) {
+/* 320px 이하 */
+@media (max-width: 320px) {
     .site-header {
         top: .75rem;
     }

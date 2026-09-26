@@ -1,6 +1,4 @@
-/* =========================
-HERO
-========================= */
+/* HERO */
 
 .hero-section {
     position: relative;
@@ -9,9 +7,7 @@ HERO
     overflow: hidden;
 }
 
-/* =========================
-BACKGROUND
-========================= */
+/* BACKGROUND */
 
 .hero-bg {
     position: absolute;
@@ -24,9 +20,7 @@ BACKGROUND
     transform: none;
 }
 
-/* =========================
-INNER
-========================= */
+/* INNER */
 
 .hero-inner {
     position: relative;
@@ -37,9 +31,7 @@ INNER
     padding: 9rem 2.3125rem 0;
 }
 
-/* =========================
-TITLE
-========================= */
+/* TITLE */
 
 .hero-title {
     position: relative;
@@ -54,9 +46,7 @@ TITLE
     white-space: nowrap;
 }
 
-/* =========================
-DESCRIPTION
-========================= */
+/* DESCRIPTION */
 
 .hero-description {
     position: relative;
@@ -74,25 +64,18 @@ DESCRIPTION
     word-break: keep-all;
 }
 
-/* =========================
-LINE
-화면 크기에 맞춰 같이 축소
-========================= */
+/* LINE 화면 크기에 맞춰 같이 축소 */
 
 .hero-line {
     position: relative;
     z-index: 3;
-    /* 기존 고정 38rem 제거 */
     width: 38%;
     height: .0625rem;
     margin-top: 2rem;
     background: rgba(255,255,255,.8);
 }
 
-/* =========================
-PROFILE
-LINE과 같은 부모 기준으로 계산
-========================= */
+/* PROFILE LINE과 같은 부모 기준으로 계산 */
 
 .hero-profile {
     position: relative;
@@ -100,13 +83,6 @@ LINE과 같은 부모 기준으로 계산
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    /*
-        line 38%
-        profile 58%
-
-        두 값이 같은 부모 기준으로 줄어들기 때문에
-        화면이 작아져도 비율 유지
-        */
     width: 58%;
     margin-top: -.8rem;
     gap: 1.5rem;
@@ -139,15 +115,7 @@ LINE과 같은 부모 기준으로 계산
     }
 }
 
-@media(prefers-reduced-motion:reduce) {
-    .hero-name.is-entering {
-        animation: none;
-    }
-}
-
-/* =========================
-IMAGE
-========================= */
+/* IMAGE */
 
 .hero-visual {
     position: absolute;
@@ -165,11 +133,8 @@ IMAGE
     height: auto;
 }
 
-/* =========================
-TABLET - 1024
-========================= */
-
-@media(max-width:1024px) {
+/* 1024px 이하 */
+@media (max-width: 1024px) {
     .hero-section {
         height: 500px;
     }
@@ -186,7 +151,6 @@ TABLET - 1024
 
     .hero-description {
         width: 52%;
-
         font-size: 1.1rem;
     }
 
@@ -207,11 +171,8 @@ TABLET - 1024
     }
 }
 
-/* =========================
-MOBILE - 768
-========================= */
-
-@media(max-width:768px) {
+/* 768px 이하 */
+@media (max-width: 768px) {
     .hero-inner {
         width: calc(100% - var(--frame-mo));
         padding: 9rem 1rem 0;
@@ -250,16 +211,17 @@ MOBILE - 768
     /* IMAGE */
 
     .hero-visual {
-        bottom: 1rem;
+        bottom: -1rem;
         width: 74%;
     }
 }
 
-/* =========================
-SMALL MOBILE - 402
-========================= */
+/* 402px 이하 */
+@media (max-width: 402px) {
+    .hero-section {
+        height: 420px;
+    }
 
-@media(max-width:402px) {
     .hero-inner {
         padding: 7rem .75rem 0;
     }
@@ -291,6 +253,21 @@ SMALL MOBILE - 402
     /* IMAGE */
 
     .hero-visual {
+        bottom: 0;
         width: 78%;
+    }
+}
+
+/* 280px 이하 */
+@media (max-width: 280px) {
+    .hero-section {
+        height: 360px;
+    }
+}
+
+/* 접근성: 동작 줄이기 */
+@media (prefers-reduced-motion: reduce) {
+    .hero-name.is-entering {
+        animation: none;
     }
 }

@@ -1,12 +1,12 @@
-/* =========================
-DETAIL
-========================= */
+/* DETAIL */
 
 .detail-section {
     position: relative;
     width: 100%;
     padding: 3rem 0;
     overflow: hidden;
+    height: auto;
+    min-height: 0;
 }
 
 .detail-inner {
@@ -14,13 +14,11 @@ DETAIL
     height: 100%;
 }
 
-/* =========================
-TITLE
-========================= */
+/* TITLE */
 
-.detail-heading {
-    margin-bottom: 2.5rem;
+.detail-section .detail-heading {
     text-align: center;
+    margin-bottom: 3rem;
 }
 
 .detail-heading h2 {
@@ -34,35 +32,33 @@ TITLE
 
 .detail-heading p {
     margin: 1rem 0 0;
-
     color: var(--gray-800);
 }
 
-/* =========================
-LIST
-========================= */
+/* LIST */
 
-.detail-list {
+.detail-section .detail-list {
     display: grid;
-    grid-template-columns: repeat(3,minmax(0,1fr));
-    gap: 1.5rem;
     align-items: start;
-    width: 76%;
     margin: 0 auto;
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
 }
 
-.detail-card {
+.detail-section .detail-card {
     min-width: 0;
+    width: 100%;
+    max-width: none;
+    text-align: left;
 }
 
-/* =========================
-IMAGE
-========================= */
+/* IMAGE */
 
-.detail-card figure {
+.detail-section .detail-card figure {
     width: 100%;
     height: auto;
-    margin: 0 0 1rem;
+    margin: 0 0 2rem;
     overflow: hidden;
     background: transparent;
     line-height: 0;
@@ -78,16 +74,14 @@ IMAGE
     text-decoration: none;
 }
 
-.detail-preview img {
+.detail-section .detail-preview img {
     display: block;
+    transition: transform .3s ease;
     width: 100%;
     height: auto;
-    transition: transform .3s ease;
 }
 
-/* =========================
-OVERLAY
-========================= */
+/* OVERLAY */
 
 .detail-preview-overlay {
     position: absolute;
@@ -128,15 +122,14 @@ OVERLAY
     opacity: 1;
 }
 
-/* =========================
-TEXT
-========================= */
+/* TEXT */
 
-.detail-card h3 {
+.detail-section .detail-card h3 {
     font-size: 1.25rem;
     font-weight: var(--fw2);
     line-height: var(--lh1);
     color: var(--gray-900);
+    margin-bottom: .5rem;
 }
 
 .detail-card p {
@@ -147,118 +140,24 @@ TEXT
     word-break: keep-all;
 }
 
-/* =========================
-TABLET - 1024
-========================= */
-
-@media(max-width:1024px) {
+/* 1024px 이하 */
+@media (max-width: 1024px) {
     .detail-section {
         overflow: visible;
+        padding: 4rem 0;
     }
 
     .detail-inner {
         height: auto;
     }
 
-    .detail-heading {
-        margin-bottom: 4rem;
-    }
-
-    /* 한 줄에 하나씩 */
-
-    .detail-list {
-        grid-template-columns: 1fr;
-        gap: 5rem;
-        width: 100%;
-    }
-
-    .detail-card {
-        width: 70%;
-        max-width: 36rem;
+    .detail-section .detail-card {
         margin: 0 auto;
     }
 
-    .detail-card figure {
-        margin-bottom: 1.5rem;
-    }
-
-    .detail-preview,
-    .detail-preview img {
+    .detail-preview {
         width: 100%;
         height: auto;
-    }
-}
-
-/* =========================
-MOBILE - 768
-========================= */
-
-@media(max-width:768px) {
-    .detail-heading {
-        margin-bottom: 3rem;
-    }
-
-    .detail-heading p {
-        margin-top: 1.25rem;
-    }
-
-    .detail-list {
-        gap: 4rem;
-    }
-
-    .detail-card {
-        width: 100%;
-        max-width: 31.25rem;
-    }
-
-    .detail-card figure {
-        margin-bottom: 1.25rem;
-    }
-
-    .detail-card h3 {
-        font-size: 1.4rem;
-    }
-}
-
-/* Three aligned previews beneath the centered introduction. */
-
-.detail-section {
-    height: auto;
-    min-height: 0;
-}
-
-.detail-section .detail-heading {
-    margin-bottom: 3rem;
-}
-
-.detail-section .detail-list {
-    width: 100%;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-}
-
-.detail-section .detail-card {
-    width: 100%;
-    max-width: none;
-    text-align: left;
-}
-
-.detail-section .detail-card figure {
-    margin-bottom: 2rem;
-}
-
-.detail-section .detail-preview img {
-    width: 100%;
-    height: auto;
-}
-
-.detail-section .detail-card h3 {
-    margin-bottom: .5rem;
-}
-
-@media (max-width: 1024px) {
-    .detail-section {
-        padding: 4rem 0;
     }
 
     .detail-section .detail-card figure {
@@ -266,7 +165,16 @@ MOBILE - 768
     }
 }
 
+/* 768px 이하 */
 @media (max-width: 768px) {
+    .detail-heading p {
+        margin-top: 1.25rem;
+    }
+
+    .detail-section .detail-card h3 {
+        font-size: 1.4rem;
+    }
+
     .detail-section .detail-heading {
         margin-bottom: 2.5rem;
     }
@@ -278,8 +186,9 @@ MOBILE - 768
     }
 }
 
+/* 접근성: 동작 줄이기 */
 @media (prefers-reduced-motion: reduce) {
-    .detail-preview img,
+    .detail-section .detail-preview img,
     .detail-preview-overlay {
         transition: none;
     }

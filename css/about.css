@@ -1,16 +1,10 @@
-/* =========================
-ABOUT
-========================= */
+/* ABOUT */
 
-.about-section,
-.about-profile-section {
+.about-section {
     position: relative;
     width: 100%;
     margin-left: 0;
     overflow: hidden;
-}
-
-.about-section {
     padding-top: 6rem;
 }
 
@@ -18,9 +12,7 @@ ABOUT
     position: relative;
 }
 
-/* =========================
-ABOUT HEADING
-========================= */
+/* ABOUT HEADING */
 
 .about-heading {
     position: relative;
@@ -36,60 +28,49 @@ ABOUT HEADING
     white-space: nowrap;
 }
 
-/* =========================
-ABOUT INTRO
-========================= */
+/* ABOUT INTRO */
 
-.about-intro {
+.about-heading .about-intro {
     position: absolute;
     top: 10rem;
     right: 0;
     width: 42%;
     margin-bottom: 6rem;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
 }
 
-/* =========================
-ABOUT INTRO H3
-기존 스타일 + 애니메이션만 추가
-========================= */
+/* ABOUT INTRO HEADING */
 
 .about-intro h3 {
     position: relative;
-    left: -5rem;
-
     font-size: 1.9531rem;
     font-weight: var(--fw2);
     line-height: var(--lh1);
     word-break: keep-all;
-    /* ANIMATION */
     opacity: 0;
     filter: blur(10px);
     transform: translateY(1rem);
     transition: opacity 1.2s ease,
         filter 1.4s ease,
         transform 1.2s ease;
+    left: 0;
 }
 
-/* =========================
-ABOUT INTRO P
-기존 스타일 + 애니메이션만 추가
-========================= */
+/* ABOUT INTRO DESCRIPTION */
 
 .about-intro p {
     margin: 0;
-
     color: var(--gray-900);
     word-break: keep-all;
-    /* ANIMATION */
     opacity: 0;
     transform: translateX(4rem);
     transition: opacity 1s ease .25s,
         transform 1.2s ease .25s;
 }
 
-/* =========================
-ABOUT INTRO ACTIVE
-========================= */
+/* ABOUT INTRO ACTIVE */
 
 .about-intro.is-visible h3 {
     opacity: 1;
@@ -102,70 +83,17 @@ ABOUT INTRO ACTIVE
     transform: translateX(0);
 }
 
-/* =========================
-TABLET - 1024
-========================= */
-
-@media(max-width:1024px) {
-    .about-section {
-        padding-top: 4rem;
-    }
-
-    .about-heading {
-        min-height: 21rem;
-    }
-
-    .about-intro {
-        top: 8.5rem;
-        width: 54%;
-        max-width: 31rem;
-    }
-
-    .about-intro h3 {
-        font-size: 1.7rem;
-    }
-
-    .about-intro p {
-        margin-left: 0;
-    }
-}
-
-/* =========================
-MOBILE - 768
-========================= */
-
-@media(max-width:768px) {
-    .about-section {
-        padding-top: 3rem;
-    }
-
-    .about-heading {
-        min-height: auto;
-    }
-
-    .about-intro {
-        position: relative;
-        top: auto;
-        right: auto;
-        width: 100%;
-        max-width: none;
-    }
-
-    .about-intro h3 {
-        font-size: 1.5rem;
-    }
+.about-profile-section {
+    position: relative;
+    width: 100%;
+    margin-left: 0;
+    overflow: hidden;
 }
 
 /* PROFILE: desktop left column / right column */
 
-.profile-area,
-.profile-area *,
-.profile-area *::before,
-.profile-area *::after {
+.about-inner .profile-area {
     box-sizing: border-box;
-}
-
-.profile-area {
     --profile-list-size: 1rem;
     position: relative;
     display: flex;
@@ -173,27 +101,34 @@ MOBILE - 768
     flex-wrap: nowrap;
     align-items: flex-start;
     gap: 8rem;
-    width: 100%;
-    max-width: 100%;
     min-width: 0;
     min-height: 33.875rem;
-    padding: 3.125rem 3rem 3.125rem 4rem;
     background-color: #f5f0e6;
+    width: 100vw;
+    max-width: none;
+    margin-left: calc(50% - 50vw);
+    padding: 2rem 2rem;
 }
 
-.profile-section-label {
+.profile-area *,
+.profile-area *::before,
+.profile-area *::after {
+    box-sizing: border-box;
+}
+
+.profile-area .profile-section-label {
     position: absolute;
     top: 1.375rem;
-    right: 2rem;
     max-width: calc(100% - 2rem);
     z-index: 3;
     color: var(--point);
-    font-size: 1.9531rem;
     font-weight: var(--fw2);
     overflow-wrap: anywhere;
+    font-size: 3rem;
+    right: 4%;
 }
 
-.profile-left {
+.profile-area .profile-left {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -216,13 +151,16 @@ MOBILE - 768
     overflow: hidden;
 }
 
-.profile-photo img {
+.profile-left .profile-photo img {
     display: block;
-    height: 30rem;
     object-fit: contain;
+    width: auto;
+    height: 23rem;
+    max-width: 100%;
+    margin-inline: auto;
 }
 
-.profile-content {
+.profile-area .profile-content {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -230,8 +168,8 @@ MOBILE - 768
     flex: 1 1 0;
     min-width: 0;
     max-width: 100%;
-    margin-top: 4rem;
     padding: 0;
+    margin-top: 0;
 }
 
 .profile-area article {
@@ -248,24 +186,25 @@ MOBILE - 768
     overflow-wrap: anywhere;
 }
 
-.certification-info>h3 {
+.certification-info > h3 {
     text-align: left;
 }
 
-.education-info,
+.education-info {
+    flex: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    order: 0;
+}
+
 .certification-info {
     flex: none;
     width: 100%;
     margin: 0;
     padding: 0;
     text-align: left;
-}
-
-.education-info {
-    order: 0;
-}
-
-.certification-info {
     order: 1;
 }
 
@@ -287,924 +226,6 @@ MOBILE - 768
     line-height: var(--lh2);
     word-break: keep-all;
     overflow-wrap: anywhere;
-}
-
-@media(max-width:1024px) {
-    .profile-area article h3 {
-        font-size: 1.6rem;
-    }
-
-    .profile-area {
-        gap: 1.5rem;
-        min-height: auto;
-        --profile-list-size: .75rem;
-    }
-
-    .certification-info li,
-    .education-info p {
-        font-size: .92rem;
-        line-height: 1.55;
-    }
-}
-
-/* Only screens at or below 768px use a single column. */
-
-@media(max-width:768px) {
-    .profile-area {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .profile-content {
-        flex: none;
-    }
-
-    .profile-section-label {
-        top: 1.25rem;
-    }
-
-    .profile-area article h3 {
-        text-align: center;
-    }
-}
-
-@media(max-width:402px) {
-    .education-info {
-        margin: 0 auto;
-    }
-
-    .profile-area {
-        --profile-list-size: .7rem;
-    }
-
-    .certification-info li,
-    .education-info p {
-        font-size: .78rem;
-        line-height: 1.5;
-    }
-}
-
-@media(max-width:280px) {
-    .profile-area {
-        --profile-list-size: .5rem;
-    }
-
-    .certification-info li,
-    .education-info p {
-        font-size: .65rem;
-        line-height: 1.45;
-    }
-}
-
-@media(max-width:240px) {
-    .profile-area {
-        --profile-list-size: .45rem;
-    }
-
-    .certification-info li,
-    .education-info p {
-        font-size: .6rem;
-    }
-}
-
-/* =========================
-TOOLS & SKILLS
-========================= */
-
-.skills-section {
-    width: 100%;
-    padding: 6rem 0 10rem;
-    overflow: hidden;
-}
-
-/* =========================
-HEADING
-========================= */
-
-.skills-heading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 7rem;
-    text-align: center;
-}
-
-.skills-heading h3 {
-    margin: 0;
-    font-size: 2.9375rem;
-    font-weight: var(--fw2);
-}
-
-.skills-heading-line {
-    width: 6.25rem;
-    height: .125rem;
-    margin-top: 1.5rem;
-    background: var(--gray-900);
-}
-
-/* =========================
-ORBIT
-========================= */
-
-.skills-orbit {
-    position: relative;
-    width: 28.375rem;
-    height: 28.375rem;
-    margin: 0 auto;
-    border: .0625rem solid var(--gray-400);
-    border-radius: 50%;
-}
-
-/* =========================
-POINT
-========================= */
-
-.skills-dot {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    z-index: 10;
-    width: 1.25rem;
-    height: 1.25rem;
-    border-radius: 50%;
-    background: var(--point);
-    transform: translate(-50%, -50%);
-    transition: left .45s ease,
-        top .45s ease;
-    pointer-events: none;
-}
-
-/* =========================
-MENU
-========================= */
-
-.skill-menu {
-    position: absolute;
-    z-index: 5;
-    padding: 0;
-    border: 0;
-    background: none;
-    color: var(--gray-900);
-    font-family: var(--font-main);
-    font-size: 1.5625rem;
-    font-weight: var(--fw2);
-    line-height: 1.2;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: color .25s ease;
-}
-
-.skill-menu:hover,
-.skill-menu.is-active {
-    color: var(--point);
-}
-
-/* PUBLISHING */
-
-.skill-menu-publishing {
-    top: -3rem;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* DESIGN */
-
-.skill-menu-design {
-    top: 50%;
-    right: calc(100% + 1rem);
-    transform: translateY(-50%);
-}
-
-/* DEVELOPMENT */
-
-.skill-menu-development {
-    top: 50%;
-    left: calc(100% + 1rem);
-    transform: translateY(-50%);
-    text-align: center;
-}
-
-/* =========================
-SKILL DETAIL
-========================= */
-
-.skill-detail {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 21rem;
-    max-width: 70%;
-    opacity: 0;
-    visibility: hidden;
-    transform: translate(-50%, -46%);
-    transition: opacity .35s ease,
-        transform .35s ease;
-}
-
-.skill-detail.is-active {
-    opacity: 1;
-    visibility: visible;
-    transform: translate(-50%, -50%);
-}
-
-.skill-summary {
-    margin: 0 0 1.5rem;
-    text-align: center;
-    font-size: var(--fs-body2);
-    white-space: normal;
-    line-height: var(--lh2);
-    color: var(--gray-700);
-    word-break: keep-all;
-}
-
-/* =========================
-PROGRAM LIST
-========================= */
-
-.skill-program-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.skill-program-list li {
-    display: grid;
-    grid-template-columns: 2.5rem minmax(0, 1fr);
-    gap: 1rem;
-    align-items: start;
-}
-
-.skill-program-list img {
-    width: 2.25rem;
-    height: 2.25rem;
-    object-fit: contain;
-}
-
-.skill-program-list strong {
-    display: block;
-    margin-bottom: .25rem;
-    font-size: var(--fs-body1);
-    font-weight: var(--fw2);
-}
-
-.skill-program-list p {
-    margin: 0;
-    font-size: var(--fs-detail);
-    line-height: var(--lh2);
-    color: var(--gray-700);
-    word-break: keep-all;
-}
-
-/* =========================
-TABLET - 1024
-========================= */
-
-@media(max-width:1024px) {
-    .skills-section {
-        padding: 5rem 0 8rem;
-    }
-
-    .skills-heading {
-        margin-bottom: 6rem;
-    }
-
-    .skills-heading h3 {
-        font-size: 2.5rem;
-    }
-
-    /* ORBIT */
-
-    .skills-orbit {
-        width: 14.375rem;
-        height: 14.375rem;
-    }
-
-    /* MENU */
-
-    .skill-menu {
-        font-size: 1.2rem;
-    }
-
-    .skill-menu-publishing {
-        top: -4rem;
-    }
-
-    .skill-menu-design {
-        right: calc(100% + 1.5rem);
-    }
-
-    .skill-menu-development {
-        left: calc(100% + 1.5rem);
-    }
-
-    /* DETAIL */
-
-    .skill-detail {
-        width: 16rem;
-        max-width: 68%;
-    }
-
-    .skill-summary {
-        margin-bottom: 1rem;
-        font-size: .9rem;
-        line-height: 1.45;
-    }
-
-    /* PROGRAM */
-
-    .skill-program-list {
-        gap: .7rem;
-    }
-
-    .skill-program-list li {
-        grid-template-columns: 1.8rem minmax(0, 1fr);
-        gap: .6rem;
-    }
-
-    .skill-program-list img {
-        width: 1.6rem;
-        height: 1.6rem;
-    }
-
-    .skill-program-list strong {
-        font-size: .9rem;
-    }
-
-    .skill-program-list p {
-        font-size: .75rem;
-        line-height: 1.4;
-    }
-}
-
-/* =========================
-MOBILE - 768
-원 안에 전부 들어오도록 축소
-========================= */
-
-@media(max-width:768px) {
-    .skills-section {
-        padding: 4rem 0 6rem;
-    }
-
-    .skills-heading {
-        margin-bottom: 5rem;
-    }
-
-    .skills-heading h3 {
-        font-size: 2.2rem;
-    }
-
-    .skills-heading-line {
-        width: 5rem;
-        margin-top: 1.25rem;
-    }
-
-    /* =========================
-        ORBIT
-        ========================= */
-
-    .skills-orbit {
-        width: 12.375rem;
-        height: 12.375rem;
-        max-width: 80vw;
-    }
-
-    .skills-dot {
-        width: .85rem;
-        height: .85rem;
-    }
-
-    /* =========================
-        MENU
-        원 밖으로 밀어내지 않음
-        ========================= */
-
-    .skill-menu {
-        font-size: .85rem;
-    }
-
-    .skill-menu-publishing {
-        top: -2rem;
-    }
-
-    .skill-menu-design {
-        right: auto;
-        left: -4rem;
-    }
-
-    .skill-menu-development {
-        right: -6.5rem;
-        left: auto;
-        max-width: 6.5rem;
-
-        white-space: normal;
-    }
-
-    /* =========================
-        DETAIL
-        ========================= */
-
-    .skill-detail {
-        width: 12.5rem;
-        max-width: 62%;
-    }
-
-    .skill-summary {
-        margin-bottom: .65rem;
-        font-size: .72rem;
-        line-height: 1.35;
-    }
-
-    /* =========================
-        PROGRAM LIST
-        ========================= */
-
-    .skill-program-list {
-        gap: .45rem;
-    }
-
-    .skill-program-list li {
-        grid-template-columns: 1.25rem minmax(0, 1fr);
-        gap: .4rem;
-    }
-
-    .skill-program-list img {
-        width: 1.1rem;
-        height: 1.1rem;
-    }
-
-    .skill-program-list strong {
-        margin-bottom: .08rem;
-        font-size: .72rem;
-        line-height: 1.2;
-    }
-
-    .skill-program-list p {
-        font-size: .58rem;
-        line-height: 1.3;
-    }
-}
-
-/* =========================
-EXTRA SMALL MOBILE - 402
-========================= */
-
-@media(max-width:402px) {
-    .skills-section {
-        padding: 3.5rem 0 5rem;
-        /* 오른쪽 글씨 잘림 방지 */
-        overflow: visible;
-    }
-
-    /* =========================
-        HEADING
-        ========================= */
-
-    .skills-heading {
-        margin-bottom: 4rem;
-    }
-
-    .skills-heading h3 {
-        font-size: 1.6rem;
-        line-height: 1.1;
-    }
-
-    .skills-heading-line {
-        width: 4.5rem;
-        margin-top: 1rem;
-    }
-
-    /* =========================
-        ORBIT
-        ========================= */
-
-    .skills-orbit {
-        max-width: none;
-    }
-
-    .skills-dot {
-        width: .65rem;
-        height: .65rem;
-    }
-
-    /* =========================
-        MENU
-        ========================= */
-
-    .skill-menu {
-        font-size: .62rem;
-        line-height: 1.15;
-    }
-
-    .skill-menu-publishing {
-        top: -1.5rem;
-    }
-
-    .skill-menu-design {
-        left: -2.7rem;
-    }
-
-    .skill-menu-development {
-        right: -5rem;
-
-        width: 4.5rem;
-
-        word-break: keep-all;
-    }
-
-    /* =========================
-        DETAIL
-        ========================= */
-
-    .skill-detail {
-        width: 9rem;
-        max-width: none;
-    }
-
-    .skill-summary {
-        margin-bottom: .45rem;
-        font-size: .52rem;
-        line-height: 1.3;
-    }
-
-    /* =========================
-        PROGRAM LIST
-        ========================= */
-
-    .skill-program-list {
-        gap: .28rem;
-    }
-
-    .skill-program-list li {
-        grid-template-columns: .85rem minmax(0, 1fr);
-        gap: .3rem;
-    }
-
-    .skill-program-list img {
-        width: .8rem;
-        height: .8rem;
-    }
-
-    .skill-program-list strong {
-        margin-bottom: .05rem;
-        font-size: .55rem;
-        line-height: 1.1;
-    }
-
-    .skill-program-list p {
-        font-size: .43rem;
-        line-height: 1.25;
-    }
-}
-
-/* =========================
-ULTRA SMALL MOBILE
-241px ~ 280px
-조금 크게
-========================= */
-
-@media(max-width:280px) {
-    .skills-section {
-        padding: 2.8rem 0 4rem;
-    }
-
-    /* HEADING */
-
-    .skills-heading {
-        margin-bottom: 3.3rem;
-    }
-
-    .skills-heading h3 {
-        font-size: 1.2rem;
-
-        white-space: nowrap;
-    }
-
-    .skills-heading-line {
-        width: 3.5rem;
-        height: .0625rem;
-        margin-top: .85rem;
-    }
-
-    /* ORBIT */
-
-    .skills-dot {
-        width: .45rem;
-        height: .45rem;
-    }
-
-    /* MENU */
-
-    .skill-menu {
-        font-size: .46rem;
-        line-height: 1.1;
-    }
-
-    .skill-menu-publishing {
-        top: -0.9rem;
-    }
-
-    .skill-menu-design {
-        left: -2rem;
-    }
-
-    .skill-menu-development {
-        right: -3.6rem;
-
-        width: 3.2rem;
-        font-size: .43rem;
-        line-height: 1.1;
-    }
-
-    /* CENTER DETAIL */
-
-    .skill-detail {
-        width: 6.8rem;
-    }
-
-    .skill-summary {
-        margin-bottom: .3rem;
-        font-size: .36rem;
-        line-height: 1.2;
-    }
-
-    /* PROGRAM LIST */
-
-    .skill-program-list {
-        gap: .18rem;
-    }
-
-    .skill-program-list li {
-        grid-template-columns: .6rem minmax(0, 1fr);
-        gap: .18rem;
-    }
-
-    .skill-program-list img {
-        width: .55rem;
-        height: .55rem;
-    }
-
-    .skill-program-list strong {
-        margin-bottom: .02rem;
-        font-size: .4rem;
-        line-height: 1.05;
-    }
-
-    .skill-program-list p {
-        font-size: .3rem;
-        line-height: 1.15;
-    }
-}
-
-/* =========================
-240px 이하
-현재 사용하던 작은 크기 유지
-========================= */
-
-@media(max-width:240px) {
-    .skills-section {
-        padding: 2.5rem 0 3.5rem;
-    }
-
-    /* HEADING */
-
-    .skills-heading {
-        margin-bottom: 3rem;
-    }
-
-    .skills-heading h3 {
-        font-size: 1.05rem;
-    }
-
-    .skills-heading-line {
-        width: 3rem;
-
-        margin-top: .75rem;
-    }
-
-    /* ORBIT */
-
-    .skills-dot {
-        width: .4rem;
-        height: .4rem;
-    }
-
-    /* MENU */
-
-    .skill-menu {
-        font-size: .4rem;
-    }
-
-    .skill-menu-publishing {
-        top: -0.75rem;
-    }
-
-    .skill-menu-development {
-        right: -3rem;
-
-        width: 2.8rem;
-        font-size: .37rem;
-    }
-
-    /* CENTER DETAIL */
-
-    .skill-detail {
-        width: 5.8rem;
-    }
-
-    .skill-summary {
-        margin-bottom: .28rem;
-        font-size: .32rem;
-    }
-
-    /* PROGRAM LIST */
-
-    .skill-program-list {
-        gap: .16rem;
-    }
-
-    .skill-program-list li {
-        grid-template-columns: .55rem minmax(0, 1fr);
-        gap: .15rem;
-    }
-
-    .skill-program-list img {
-        width: .5rem;
-        height: .5rem;
-    }
-
-    .skill-program-list strong {
-        font-size: .36rem;
-    }
-
-    .skill-program-list p {
-        font-size: .27rem;
-    }
-}
-
-@media (max-width:768px) {
-    .profile-content .education-info>h3,
-    .profile-content .certification-info>h3 {
-        font-size: 1.15rem;
-    }
-
-    .profile-content .education-info>p,
-    .profile-content .certification-info>p,
-    .certification-info ul {
-        font-size: var(--profile-list-size);
-    }
-}
-
-/* 사진과 프로필은 고정하고 ABOUT ME만 크게 올라온다. */
-
-.profile-area .profile-left.about-reveal-ready > .profile-side-label {
-    opacity: 0;
-    translate: 0 17rem;
-    transition: none;
-}
-
-.profile-area .profile-left.about-reveal-ready.about-revealed > .profile-side-label {
-    opacity: var(--profile-reveal-opacity, 1);
-    translate: 0 0;
-    transition: opacity .6s ease, translate 8.0s cubic-bezier(.16, 1, .3, 1);
-}
-
-/* 구분선이 있는 행은 고정하고 내용과 연도만 위로 등장시킨다. */
-
-.education-info.about-reveal-ready > span,
-.certification-info.about-reveal-ready > ul > li > div,
-.certification-info.about-reveal-ready > ul > li > span {
-    opacity: 0;
-    transform: translateY(3.5rem);
-    transition: none;
-}
-
-.education-info.about-reveal-ready.about-revealed > span,
-.certification-info.about-reveal-ready.about-revealed > ul > li > div,
-.certification-info.about-reveal-ready.about-revealed > ul > li > span {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity .9s ease, transform .9s cubic-bezier(.22, 1, .36, 1);
-    transition-delay: var(--reveal-delay, 0s);
-}
-
-.skill-menu.about-reveal-ready {
-    opacity: 0;
-    translate: 0 3rem;
-    transition: color .25s ease, opacity .8s ease, translate .8s cubic-bezier(.22, 1, .36, 1);
-}
-
-.skill-menu.about-reveal-ready.about-revealed {
-    opacity: 1;
-    translate: 0 0;
-}
-
-.skills-heading.about-reveal-ready {
-    opacity: 0;
-    transform: translateY(2rem);
-    transition: opacity .8s ease, transform .8s ease;
-}
-
-.skills-heading.about-reveal-ready.about-revealed {
-    opacity: 1;
-    transform: none;
-}
-
-@media(prefers-reduced-motion:reduce) {
-    .profile-area .profile-left.about-reveal-ready.about-revealed > .profile-side-label,
-    .profile-area .profile-left.about-reveal-ready > .profile-side-label {
-        opacity: var(--profile-reveal-opacity, 1);
-        translate: none;
-        transition: none;
-    }
-
-    .skill-menu.about-reveal-ready {
-        opacity: 1;
-        translate: none;
-        transition: none;
-    }
-
-    .education-info.about-reveal-ready > span,
-    .certification-info.about-reveal-ready > ul > li > div,
-    .certification-info.about-reveal-ready > ul > li > span,
-    .education-info.about-reveal-ready.about-revealed > span,
-    .certification-info.about-reveal-ready.about-revealed > ul > li > div,
-    .certification-info.about-reveal-ready.about-revealed > ul > li > span,
-    .skills-heading.about-reveal-ready {
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
-}
-
-/* Full-width profile with equal portrait and content columns. */
-
-.about-inner .profile-area {
-    width: 100vw;
-    max-width: none;
-    margin-left: calc(50% - 50vw);
-    padding: 2rem 2rem;
-}
-
-.profile-area .profile-content {
-    margin-top: 0;
-}
-
-.profile-area .profile-section-label {
-    font-size: 3rem;
-    right: 4%;
-}
-
-@media (max-width: 768px) {
-    .about-inner .profile-area {
-        padding: 2rem 2rem 3rem;
-        gap: 2rem;
-    }
-
-    .profile-area .profile-left {
-        flex: none;
-        width: 66%;
-        max-width: 26.4rem;
-    }
-
-    .profile-area .profile-content {
-        width: 100%;
-        max-width: none;
-    }
-}
-
-/* Compact introduction and profile; skills continue below this screen. */
-
-@media (max-width: 768px) {
-    .about-heading {
-        padding-bottom: 2rem;
-    }
-
-    .about-intro {
-        margin-top: 2rem;
-    }
-}
-
-/* Keep the introduction at the right of the original About heading. */
-
-.about-heading .about-intro {
-    margin-left: auto;
-    margin-right: 0;
-    text-align: right;
-}
-
-.about-heading .about-intro h3 {
-    left: 0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .about-intro h3,
-    .about-intro p {
-        opacity: 1;
-        filter: none;
-        transform: none;
-        transition: none;
-    }
 }
 
 /* 사진 위치를 유지한 채 오른쪽 이력을 flex로 정렬 */
@@ -1249,7 +270,16 @@ ULTRA SMALL MOBILE
     gap: 0;
 }
 
-.profile-area .profile-timeline .education-info,
+.profile-area .profile-timeline .education-info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.25rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--gray-900);
+    text-align: left;
+}
+
 .profile-area .profile-timeline .certification-info ul > li {
     display: flex;
     align-items: flex-start;
@@ -1258,6 +288,9 @@ ULTRA SMALL MOBILE
     padding: 0.8rem 0;
     border-bottom: 1px solid var(--gray-900);
     text-align: left;
+    margin: 0;
+    font-size: .85rem;
+    line-height: 1.65;
 }
 
 .profile-area .profile-timeline .certification-info li:last-child {
@@ -1279,8 +312,7 @@ ULTRA SMALL MOBILE
     text-align: left;
 }
 
-.profile-area .profile-timeline .education-info p,
-.profile-area .profile-timeline .certification-info ul > li {
+.profile-area .profile-timeline .education-info p {
     margin: 0;
     font-size: .85rem;
     line-height: 1.65;
@@ -1320,13 +352,6 @@ ULTRA SMALL MOBILE
     font-weight: 400;
     letter-spacing: .18em;
     text-align: center;
-}
-
-.profile-left .profile-photo img {
-    width: auto;
-    height: 23rem;
-    max-width: 100%;
-    margin-inline: auto;
 }
 
 .profile-summary {
@@ -1388,7 +413,506 @@ ULTRA SMALL MOBILE
     text-underline-offset: .2em;
 }
 
+/* TOOLS & SKILLS */
+
+.skills-section {
+    width: 100%;
+    padding: 6rem 0 10rem;
+    overflow: hidden;
+}
+
+/* HEADING */
+
+.skills-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 7rem;
+    text-align: center;
+}
+
+.skills-heading h3 {
+    margin: 0;
+    font-size: 2.9375rem;
+    font-weight: var(--fw2);
+}
+
+.skills-heading-line {
+    width: 6.25rem;
+    height: .125rem;
+    margin-top: 1.5rem;
+    background: var(--gray-900);
+}
+
+/* ORBIT */
+
+.skills-orbit {
+    position: relative;
+    width: 28.375rem;
+    height: 28.375rem;
+    margin: 0 auto;
+    border: .0625rem solid var(--gray-400);
+    border-radius: 50%;
+}
+
+/* POINT */
+
+.skills-dot {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 10;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    background: var(--point);
+    transform: translate(-50%, -50%);
+    transition: left .45s ease,
+        top .45s ease;
+    pointer-events: none;
+}
+
+/* MENU */
+
+.skill-menu {
+    position: absolute;
+    z-index: 5;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--gray-900);
+    font-family: var(--font-main);
+    font-size: 1.5625rem;
+    font-weight: var(--fw2);
+    line-height: 1.2;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: color .25s ease;
+}
+
+.skill-menu:hover,
+.skill-menu.is-active {
+    color: var(--point);
+}
+
+/* PUBLISHING */
+
+.skill-menu-publishing {
+    top: -3rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* DESIGN */
+
+.skill-menu-design {
+    top: 50%;
+    right: calc(100% + 1rem);
+    transform: translateY(-50%);
+}
+
+/* DEVELOPMENT */
+
+.skill-menu-development {
+    top: 50%;
+    left: calc(100% + 1rem);
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+/* SKILL DETAIL */
+
+.skill-detail {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 21rem;
+    max-width: 70%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -46%);
+    transition: opacity .35s ease,
+        transform .35s ease;
+}
+
+.skill-detail.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%);
+}
+
+.skill-summary {
+    margin: 0 0 1.5rem;
+    text-align: center;
+    font-size: var(--fs-body2);
+    white-space: normal;
+    line-height: var(--lh2);
+    color: var(--gray-700);
+    word-break: keep-all;
+}
+
+/* PROGRAM LIST */
+
+.skill-program-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.skill-program-list li {
+    display: grid;
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+}
+
+.skill-program-list img {
+    width: 2.25rem;
+    height: 2.25rem;
+    object-fit: contain;
+}
+
+.skill-program-list strong {
+    display: block;
+    margin-bottom: .25rem;
+    font-size: var(--fs-body1);
+    font-weight: var(--fw2);
+}
+
+.skill-program-list p {
+    margin: 0;
+    font-size: var(--fs-detail);
+    line-height: var(--lh2);
+    color: var(--gray-700);
+    word-break: keep-all;
+}
+
+/* 사진과 프로필은 고정하고 ABOUT ME만 크게 올라온다. */
+
+.profile-area .profile-left.about-reveal-ready > .profile-side-label {
+    opacity: 0;
+    translate: 0 17rem;
+    transition: none;
+}
+
+.profile-area .profile-left.about-reveal-ready.about-revealed > .profile-side-label {
+    opacity: var(--profile-reveal-opacity, 1);
+    translate: 0 0;
+    transition: opacity .6s ease, translate 8.0s cubic-bezier(.16, 1, .3, 1);
+}
+
+/* 구분선이 있는 행은 고정하고 내용과 연도만 위로 등장시킨다. */
+
+.education-info.about-reveal-ready > span,
+.certification-info.about-reveal-ready > ul > li > div,
+.certification-info.about-reveal-ready > ul > li > span {
+    opacity: 0;
+    transform: translateY(3.5rem);
+    transition: none;
+}
+
+.education-info.about-reveal-ready.about-revealed > span,
+.certification-info.about-reveal-ready.about-revealed > ul > li > div,
+.certification-info.about-reveal-ready.about-revealed > ul > li > span {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .9s ease, transform .9s cubic-bezier(.22, 1, .36, 1);
+    transition-delay: var(--reveal-delay, 0s);
+}
+
+.skill-menu.about-reveal-ready {
+    opacity: 0;
+    translate: 0 3rem;
+    transition: color .25s ease, opacity .8s ease, translate .8s cubic-bezier(.22, 1, .36, 1);
+}
+
+.skill-menu.about-reveal-ready.about-revealed {
+    opacity: 1;
+    translate: 0 0;
+}
+
+.skills-heading.about-reveal-ready {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.skills-heading.about-reveal-ready.about-revealed {
+    opacity: 1;
+    transform: none;
+}
+
+/* 1024px 이하 */
+@media (max-width: 1024px) {
+    .about-section {
+        padding-top: 4rem;
+    }
+
+    .about-heading {
+        min-height: 21rem;
+    }
+
+    .about-heading .about-intro {
+        top: 8.5rem;
+        width: 54%;
+        max-width: 31rem;
+    }
+
+    .about-intro h3 {
+        font-size: 1.7rem;
+    }
+
+    .about-intro p {
+        margin-left: 0;
+    }
+
+    .profile-area article h3 {
+        font-size: 1.6rem;
+    }
+
+    .about-inner .profile-area {
+        gap: 1.5rem;
+        min-height: auto;
+        --profile-list-size: .75rem;
+    }
+
+    .certification-info li,
+    .education-info p {
+        font-size: .92rem;
+        line-height: 1.55;
+    }
+
+    .skills-section {
+        padding: 5rem 0 8rem;
+    }
+
+    .skills-heading {
+        margin-bottom: 6rem;
+    }
+
+    .skills-heading h3 {
+        font-size: 2.5rem;
+    }
+
+    /* ORBIT */
+
+    .skills-orbit {
+        width: 14.375rem;
+        height: 14.375rem;
+    }
+
+    /* MENU */
+
+    .skill-menu {
+        font-size: 1.2rem;
+    }
+
+    .skill-menu-publishing {
+        top: -4rem;
+    }
+
+    .skill-menu-design {
+        right: calc(100% + 1.5rem);
+    }
+
+    .skill-menu-development {
+        left: calc(100% + 1.5rem);
+    }
+
+    /* DETAIL */
+
+    .skill-detail {
+        width: 70%;
+        max-width: 70%;
+    }
+
+    .skill-summary {
+        margin-bottom: .4rem;
+        font-size: .5rem;
+        line-height: 1.3;
+    }
+
+    /* PROGRAM */
+
+    .skill-program-list {
+        gap: .35rem;
+    }
+
+    .skill-program-list li {
+        grid-template-columns: 1rem minmax(0, 1fr);
+        gap: .3rem;
+    }
+
+    .skill-program-list img {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .skill-program-list strong {
+        font-size: .55rem;
+        margin-bottom: .1rem;
+    }
+
+    .skill-program-list p {
+        font-size: .34rem;
+        line-height: 1.3;
+    }
+}
+
+/* 768px 이하 */
 @media (max-width: 768px) {
+    .about-section {
+        padding-top: 3rem;
+    }
+
+    .about-heading {
+        min-height: auto;
+        padding-bottom: 2rem;
+    }
+
+    .about-heading .about-intro {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        max-width: none;
+        margin-top: 2rem;
+    }
+
+    .about-intro h3 {
+        font-size: 1.5rem;
+    }
+
+    .about-inner .profile-area {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 2rem 3rem;
+        gap: 2rem;
+    }
+
+    .profile-area .profile-content {
+        flex: none;
+        width: 100%;
+        max-width: none;
+    }
+
+    .profile-area .profile-section-label {
+        top: 1.25rem;
+    }
+
+    .profile-area article h3 {
+        text-align: center;
+    }
+
+    .skills-section {
+        padding: 4rem 0 6rem;
+    }
+
+    .skills-heading {
+        margin-bottom: 5rem;
+    }
+
+    .skills-heading h3 {
+        font-size: 2.2rem;
+    }
+
+    .skills-heading-line {
+        width: 5rem;
+        margin-top: 1.25rem;
+    }
+
+    /* ORBIT */
+
+    .skills-orbit {
+        width: 12.375rem;
+        height: 12.375rem;
+        max-width: 80vw;
+    }
+
+    .skills-dot {
+        width: .85rem;
+        height: .85rem;
+    }
+
+    /* MENU 원 밖으로 밀어내지 않음 */
+
+    .skill-menu {
+        font-size: .85rem;
+    }
+
+    .skill-menu-publishing {
+        top: -2rem;
+    }
+
+    .skill-menu-design {
+        right: auto;
+        left: -4rem;
+    }
+
+    .skill-menu-development {
+        right: -6.5rem;
+        left: auto;
+        max-width: 6.5rem;
+        white-space: normal;
+    }
+
+    /* DETAIL */
+
+    .skill-detail {
+        width: 70%;
+        max-width: 70%;
+    }
+
+    .skill-summary {
+        margin-bottom: .3rem;
+        font-size: .42rem;
+        line-height: 1.25;
+    }
+
+    /* PROGRAM LIST */
+
+    .skill-program-list {
+        gap: .25rem;
+    }
+
+    .skill-program-list li {
+        grid-template-columns: .8rem minmax(0, 1fr);
+        gap: .25rem;
+    }
+
+    .skill-program-list img {
+        width: .8rem;
+        height: .8rem;
+    }
+
+    .skill-program-list strong {
+        margin-bottom: .08rem;
+        font-size: .46rem;
+        line-height: 1.2;
+    }
+
+    .skill-program-list p {
+        font-size: .33rem;
+        line-height: 1.25;
+    }
+
+    .profile-content .education-info > h3,
+    .profile-content .certification-info > h3 {
+        font-size: 1.15rem;
+    }
+
+    .profile-content .education-info > p,
+    .profile-content .certification-info > p,
+    .certification-info ul {
+        font-size: var(--profile-list-size);
+    }
+
+    .profile-area .profile-left {
+        flex: none;
+        width: 66%;
+        max-width: 26.4rem;
+    }
+
     .profile-area .profile-content.profile-timeline {
         padding: 0;
     }
@@ -1398,15 +922,422 @@ ULTRA SMALL MOBILE
         font-size: 4rem;
     }
 
+    .profile-timeline {
+        --timeline-text-size: 1rem;
+        --timeline-date-size: .75rem;
+        --timeline-year-size: 2.5rem;
+    }
+
+    .profile-timeline small {
+        font-size: var(--timeline-date-size);
+    }
+
     .profile-timeline .education-info > span,
     .profile-timeline .certification-info li > span {
-        font-size: 2.5rem;
+        font-size: var(--timeline-year-size);
     }
 
     .profile-area .profile-timeline .education-info h3,
     .profile-timeline .certification-info h4,
     .profile-area .profile-timeline .education-info p,
     .profile-area .profile-timeline .certification-info ul > li {
+        font-size: var(--timeline-text-size);
+    }
+}
+
+/* 402px 이하 */
+@media (max-width: 402px) {
+    .profile-timeline {
+        --timeline-text-size: .85rem;
+        --timeline-date-size: .65rem;
+        --timeline-year-size: 2rem;
+    }
+
+    .profile-area .profile-left > .profile-section-label {
         font-size: 1rem;
+    }
+
+    .profile-summary {
+        font-size: .9rem;
+    }
+
+    .profile-summary .profile-identity h3 {
+        font-size: 1.2rem;
+    }
+
+    .profile-summary .profile-identity p {
+        font-size: .8rem;
+    }
+
+    .about-intro h3 {
+        font-size: 1.25rem;
+    }
+
+    main .about-intro > p {
+        font-size: .9rem;
+    }
+
+    .education-info {
+        margin: 0 auto;
+    }
+
+    .about-inner .profile-area {
+        --profile-list-size: .7rem;
+    }
+
+    .certification-info li,
+    .education-info p {
+        font-size: .78rem;
+        line-height: 1.5;
+    }
+
+    .skills-section {
+        padding: 3.5rem 0 5rem;
+        overflow: visible;
+    }
+
+    /* HEADING */
+
+    .skills-heading {
+        margin-bottom: 4rem;
+    }
+
+    .skills-heading h3 {
+        font-size: 1.6rem;
+        line-height: 1.1;
+    }
+
+    .skills-heading-line {
+        width: 4.5rem;
+        margin-top: 1rem;
+    }
+
+    /* ORBIT */
+
+    .skills-orbit {
+        max-width: none;
+    }
+
+    .skills-dot {
+        width: .65rem;
+        height: .65rem;
+    }
+
+    /* MENU */
+
+    .skill-menu {
+        font-size: .62rem;
+        line-height: 1.15;
+    }
+
+    .skill-menu-publishing {
+        top: -1.5rem;
+    }
+
+    .skill-menu-design {
+        left: -2.7rem;
+    }
+
+    .skill-menu-development {
+        right: -5rem;
+        width: 4.5rem;
+        word-break: keep-all;
+    }
+
+    /* DETAIL */
+
+    .skill-detail {
+        width: 70%;
+        max-width: 70%;
+    }
+
+    .skill-summary {
+        margin-bottom: .45rem;
+        font-size: .4rem;
+        line-height: 1.3;
+    }
+
+    /* PROGRAM LIST */
+
+    .skill-program-list {
+        gap: .28rem;
+    }
+
+    .skill-program-list li {
+        grid-template-columns: .85rem minmax(0, 1fr);
+        gap: .3rem;
+    }
+
+    .skill-program-list img {
+        width: .8rem;
+        height: .8rem;
+    }
+
+    .skill-program-list strong {
+        margin-bottom: .05rem;
+        font-size: .44rem;
+        line-height: 1.1;
+    }
+
+    .skill-program-list p {
+        font-size: .31rem;
+        line-height: 1.25;
+    }
+}
+
+/* 280px 이하 */
+@media (max-width: 280px) {
+    .profile-timeline {
+        --timeline-text-size: .75rem;
+        --timeline-date-size: .6rem;
+        --timeline-year-size: 1.6rem;
+    }
+
+    .profile-area .profile-left > .profile-section-label {
+        font-size: .85rem;
+    }
+
+    .profile-summary {
+        font-size: .8rem;
+    }
+
+    .profile-summary .profile-identity h3 {
+        font-size: 1rem;
+    }
+
+    .profile-summary .profile-identity p {
+        font-size: .7rem;
+    }
+
+    .about-intro h3 {
+        font-size: 1.1rem;
+    }
+
+    main .about-intro > p {
+        font-size: .8rem;
+    }
+
+    .about-inner .profile-area {
+        --profile-list-size: .5rem;
+    }
+
+    .certification-info li,
+    .education-info p {
+        font-size: .65rem;
+        line-height: 1.45;
+    }
+
+    .skills-section {
+        padding: 2.8rem 0 4rem;
+    }
+
+    /* HEADING */
+
+    .skills-heading {
+        margin-bottom: 3.3rem;
+    }
+
+    .skills-heading h3 {
+        font-size: 1.2rem;
+        white-space: nowrap;
+    }
+
+    .skills-heading-line {
+        width: 3.5rem;
+        height: .0625rem;
+        margin-top: .85rem;
+    }
+
+    /* ORBIT */
+
+    .skills-dot {
+        width: .45rem;
+        height: .45rem;
+    }
+
+    /* MENU */
+
+    .skill-menu {
+        font-size: .46rem;
+        line-height: 1.1;
+    }
+
+    .skill-menu-publishing {
+        top: -0.9rem;
+    }
+
+    .skill-menu-design {
+        left: -2rem;
+    }
+
+    .skill-menu-development {
+        right: -3.6rem;
+        width: 3.2rem;
+        font-size: .43rem;
+        line-height: 1.1;
+    }
+
+    /* CENTER DETAIL */
+
+    .skill-detail {
+        width: 70%;
+    }
+
+    .skill-summary {
+        margin-bottom: .3rem;
+        font-size: .34rem;
+        line-height: 1.5;
+    }
+
+    /* PROGRAM LIST */
+
+    .skill-program-list {
+        gap: .3rem;
+    }
+
+    .skill-program-list li {
+        grid-template-columns: .6rem minmax(0, 1fr);
+        gap: .18rem;
+    }
+
+    .skill-program-list img {
+        width: .55rem;
+        height: .55rem;
+    }
+
+    .skill-program-list strong {
+        margin-bottom: .1rem;
+        font-size: .38rem;
+        line-height: 1.3;
+    }
+
+    .skill-program-list p {
+        font-size: .28rem;
+        line-height: 1.5;
+    }
+}
+
+/* 240px 이하 */
+@media (max-width: 240px) {
+    .about-inner .profile-area {
+        --profile-list-size: .45rem;
+    }
+
+    .certification-info li,
+    .education-info p {
+        font-size: .6rem;
+    }
+
+    .skills-section {
+        padding: 2.5rem 0 3.5rem;
+    }
+
+    /* HEADING */
+
+    .skills-heading {
+        margin-bottom: 3rem;
+    }
+
+    .skills-heading h3 {
+        font-size: 1.05rem;
+    }
+
+    .skills-heading-line {
+        width: 3rem;
+        margin-top: .75rem;
+    }
+
+    /* ORBIT */
+
+    .skills-dot {
+        width: .4rem;
+        height: .4rem;
+    }
+
+    /* MENU */
+
+    .skill-menu {
+        font-size: .4rem;
+    }
+
+    .skill-menu-publishing {
+        top: -0.75rem;
+    }
+
+    .skill-menu-development {
+        right: -3rem;
+        width: 2.8rem;
+        font-size: .37rem;
+    }
+
+    /* CENTER DETAIL */
+
+    .skill-detail {
+        width: 5.8rem;
+    }
+
+    .skill-summary {
+        margin-bottom: .28rem;
+        font-size: .32rem;
+    }
+
+    /* PROGRAM LIST */
+
+    .skill-program-list {
+        gap: .16rem;
+    }
+
+    .skill-program-list li {
+        grid-template-columns: .55rem minmax(0, 1fr);
+        gap: .15rem;
+    }
+
+    .skill-program-list img {
+        width: .5rem;
+        height: .5rem;
+    }
+
+    .skill-program-list strong {
+        font-size: .36rem;
+    }
+
+    .skill-program-list p {
+        font-size: .27rem;
+    }
+}
+
+/* 접근성: 동작 줄이기 */
+@media (prefers-reduced-motion: reduce) {
+    .profile-area .profile-left.about-reveal-ready.about-revealed > .profile-side-label,
+    .profile-area .profile-left.about-reveal-ready > .profile-side-label {
+        opacity: var(--profile-reveal-opacity, 1);
+        translate: none;
+        transition: none;
+    }
+
+    .skill-menu.about-reveal-ready {
+        opacity: 1;
+        translate: none;
+        transition: none;
+    }
+
+    .education-info.about-reveal-ready > span,
+    .certification-info.about-reveal-ready > ul > li > div,
+    .certification-info.about-reveal-ready > ul > li > span,
+    .education-info.about-reveal-ready.about-revealed > span,
+    .certification-info.about-reveal-ready.about-revealed > ul > li > div,
+    .certification-info.about-reveal-ready.about-revealed > ul > li > span,
+    .skills-heading.about-reveal-ready {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .about-intro h3,
+    .about-intro p {
+        opacity: 1;
+        filter: none;
+        transform: none;
+        transition: none;
     }
 }

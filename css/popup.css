@@ -1,22 +1,20 @@
-/* =========================
-POPUP
-========================= */
+/* POPUP */
 
 .popup-section {
     background: #f5f0e6;
     position: relative;
     width: 100%;
     overflow: hidden;
+    min-height: 0;
+    padding: 3rem 0;
 }
 
-/* =========================
-TITLE
-========================= */
+/* TITLE */
 
-.popup-heading {
+.popup-section .popup-heading {
     position: relative;
     z-index: 2;
-    margin-bottom: 4rem;
+    margin-bottom: -6rem;
 }
 
 .popup-heading h2 {
@@ -34,52 +32,47 @@ TITLE
 
 .popup-heading p {
     margin: 1.5rem 0 0;
-
     color: var(--gray-900);
     word-break: keep-all;
 }
 
 main .popup-heading > p.section-summary {
-    font-size: 18px;
+    font-size: var(--section-summary-size, 18px);
     white-space: normal;
 }
 
-/* =========================
-LAYOUT
-========================= */
+/* LAYOUT */
 
-.popup-layout {
+.popup-section .popup-layout {
     position: relative;
-    display: flex;
     flex-wrap: nowrap;
-    align-items: center;
     width: 100%;
-    gap: 4rem;
+    display: grid;
+    grid-template-columns: minmax(0, 25fr) minmax(0, 71fr);
+    gap: 0%;
+    align-items: center;
 }
 
-/* =========================
-DESCRIPTION
-========================= */
+/* DESCRIPTION */
 
-.popup-description-viewport.swiper {
+.popup-section .popup-description-viewport.swiper {
     position: relative;
     flex: 1 1 auto;
-    width: auto;
     min-width: 0;
-    max-width: 40rem;
     margin: 0;
     overflow: hidden;
+    width: 100%;
+    max-width: none;
 }
 
 .popup-description-track.swiper-wrapper {
     width: 100%;
 }
 
-.popup-description-slide.swiper-slide {
+.popup-section .popup-description-slide.swiper-slide {
     width: 100%;
-    padding: 0 2rem 0 8rem;
-
     line-height: 0;
+    padding: 0;
 }
 
 .popup-description-slide h3 {
@@ -99,17 +92,20 @@ DESCRIPTION
     word-break: keep-all;
 }
 
-/* =========================
-IMAGE
-========================= */
+/* IMAGE */
 
-.popup-station.swiper {
+.popup-section .popup-station.swiper {
     position: relative;
     flex: 0 0 31.25rem;
-    width: 31.25rem;
-    height: 46.875rem;
-    margin: 0 auto;
     overflow: hidden;
+    left: -1.5rem;
+    min-width: 0;
+    width: calc(100% - 210px);
+    max-width: none;
+    height: auto;
+    aspect-ratio: auto;
+    margin: -12px 0 -12px auto;
+    justify-self: end;
 }
 
 .popup-train.swiper-wrapper {
@@ -117,12 +113,19 @@ IMAGE
     height: 100%;
 }
 
-.popup-slide.swiper-slide {
+.popup-section .popup-slide.swiper-slide {
     width: 100%;
-    height: 100%;
     margin: 0;
     overflow: hidden;
     line-height: 0;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    opacity: .45;
+    filter: blur(7px);
+    transform: perspective(1200px) translateZ(-100px) scale(.5);
+    transform-origin: center;
+    z-index: 1;
+    transition: transform 700ms ease, filter 700ms ease, opacity 700ms ease;
 }
 
 .popup-slide img {
@@ -132,9 +135,7 @@ IMAGE
     object-fit: cover;
 }
 
-/* =========================
-TOOL
-========================= */
+/* TOOL */
 
 .popup-tool {
     display: flex;
@@ -144,7 +145,7 @@ TOOL
     line-height: var(--lh2);
 }
 
-.popup-description-slide.swiper-slide>p+.popup-tool {
+.popup-description-slide.swiper-slide > p + .popup-tool {
     margin-top: 1rem;
 }
 
@@ -158,11 +159,9 @@ TOOL
     color: #000;
 }
 
-/* =========================
-DECORATION
-========================= */
+/* DECORATION */
 
-.popup-layout::before {
+.popup-section .popup-layout::before {
     content: "";
     position: absolute;
     top: 15rem;
@@ -170,9 +169,10 @@ DECORATION
     width: .0625rem;
     height: 16.25rem;
     background: var(--gray-900);
+    display: none;
 }
 
-.popup-layout::after {
+.popup-section .popup-layout::after {
     content: "";
     position: absolute;
     top: 31rem;
@@ -181,30 +181,42 @@ DECORATION
     height: 1.25rem;
     border-radius: 50%;
     background: var(--point);
+    display: none;
 }
 
-/* =========================
-TABLET
-1024px
-========================= */
+.popup-section .popup-slide.swiper-slide-active {
+    opacity: 1;
+    filter: none;
+    transform: perspective(1200px) translateZ(0) rotateY(0) scale(1);
+    z-index: 3;
+}
 
-@media(max-width:1024px) {
+.popup-section .popup-slide.swiper-slide-prev {
+    cursor: pointer;
+    z-index: 2;
+    transform: perspective(1200px) translateX(25%) translateZ(-100px) rotateY(25deg) scale(.5);
+}
+
+.popup-section .popup-slide.swiper-slide-next {
+    cursor: pointer;
+    z-index: 2;
+    transform: perspective(1200px) translateX(-25%) translateZ(-100px) rotateY(-25deg) scale(.5);
+}
+
+/* 1920px 이상 */
+@media (min-width: 1920px) {
+    .popup-section {
+        height: 1000px;
+    }
+}
+
+/* 1024px 이하 */
+@media (max-width: 1024px) {
     /* LAYOUT */
 
-    .popup-layout {
+    .popup-section .popup-layout {
         flex-direction: row;
-
-        gap: 2.5rem;
-    }
-
-    /* DESCRIPTION */
-
-    .popup-description-viewport.swiper {
-        max-width: none;
-    }
-
-    .popup-description-slide.swiper-slide {
-        padding: 0 1rem 0 2rem;
+        grid-template-columns: minmax(0, 34fr) minmax(0, 62fr);
     }
 
     .popup-description-slide p {
@@ -213,90 +225,65 @@ TABLET
 
     /* IMAGE */
 
-    .popup-station.swiper {
+    .popup-section .popup-station.swiper {
         flex: 0 0 22rem;
-        width: 22rem;
-        height: 33rem;
-        margin: 0;
     }
 
-    /* DECORATION */
-
-    .popup-layout::before,
-    .popup-layout::after {
-        display: none;
+    .popup-section {
+        padding: 2.5rem 0;
     }
+
+    .popup-section .popup-heading {
+        margin-bottom: -3rem;
+    }
+
 }
 
-/* =========================
-MOBILE
-768px
-이미지 + 텍스트 가운데 배치
-========================= */
-
-@media(max-width:768px) {
-    /* =========================
-        TITLE
-        ========================= */
-
-    .popup-heading {
-        margin-bottom: 3rem;
-    }
-
+/* 768px 이하 */
+@media (max-width: 768px) {
     .popup-heading h2 {
         line-height: 1.05;
+        font-size: 5.7rem;
     }
 
     .popup-heading p {
         margin: 1.25rem 0 0;
     }
 
-    /* =========================
-        LAYOUT
-        ========================= */
+    /* LAYOUT */
 
-    .popup-layout {
+    .popup-section .popup-layout {
         flex-direction: column;
-
         justify-content: center;
-
+        display: flex;
         gap: 2rem;
     }
 
-    /* =========================
-        IMAGE
-        위쪽
-        ========================= */
+    /* IMAGE 위쪽 */
 
-    .popup-station.swiper {
+    .popup-section .popup-station.swiper {
         order: 1;
         flex: none;
-        width: min(100%, 23.333rem);
-        height: auto;
-        aspect-ratio: 2 / 3;
-        max-width: 100%;
+        left: 0;
+        width: 100%;
+        max-width: 40rem;
         margin: 0 auto;
+        align-self: center;
     }
 
-    /* =========================
-        DESCRIPTION
-        아래쪽
-        ========================= */
+    /* DESCRIPTION 아래쪽 */
 
-    .popup-description-viewport.swiper {
+    .popup-section .popup-description-viewport.swiper {
         order: 2;
         flex: none;
-        width: 100%;
-        max-width: 32rem;
-
         margin: 0 auto;
         text-align: center;
+        max-width: 32rem;
     }
 
-    .popup-description-slide.swiper-slide {
-        padding: 0 1rem;
-
+    .popup-section .popup-description-slide.swiper-slide {
         text-align: center;
+        padding: 0 1rem;
     }
 
     .popup-description-slide h3 {
@@ -308,173 +295,18 @@ MOBILE
         width: 100%;
         max-width: 30rem;
         margin: 0 auto;
-
         text-align: center;
     }
 
-    /* =========================
-        TOOL
-        ========================= */
+    /* TOOL */
 
     .popup-tool {
         justify-content: center;
         margin-top: 1rem;
-
         line-height: 1.5;
         text-align: center;
     }
 
-    /* DECORATION */
-}
-
-/* =========================
-EXTRA SMALL MOBILE
-402px 이하
-========================= */
-
-@media(max-width:402px) {
-    /* =========================
-        TITLE
-        ========================= */
-
-    .popup-heading h2 {
-        width: 100%;
-
-        line-height: 1.1;
-        white-space: nowrap;
-    }
-
-    .popup-heading p {
-        margin-top: 1rem;
-    }
-
-    /* =========================
-        LAYOUT
-        ========================= */
-
-    .popup-layout {
-        gap: 1.5rem;
-    }
-
-    /* =========================
-        IMAGE
-        ========================= */
-
-    .popup-station.swiper {
-        width: min(100%, 20rem);
-    }
-
-    /* =========================
-        DESCRIPTION
-        ========================= */
-
-    .popup-description-viewport.swiper {
-        max-width: 22rem;
-    }
-
-    .popup-description-slide.swiper-slide {
-        padding: 0 .75rem;
-    }
-
-    /* =========================
-        TOOL
-        ========================= */
-
-    .popup-tool {
-        margin-top: .75rem;
-    }
-}
-
-/* Centered artwork with muted previews on both sides. */
-
-.popup-section {
-    min-height: 0;
-    padding: 3rem 0;
-}
-
-.popup-section .popup-heading {
-    margin-bottom: -6rem;
-}
-
-.popup-section .popup-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 25fr) minmax(0, 71fr);
-    gap: 0%;
-    align-items: center;
-}
-
-.popup-section .popup-description-viewport.swiper {
-    width: 100%;
-    max-width: none;
-}
-
-.popup-section .popup-description-slide.swiper-slide {
-    padding: 0;
-}
-
-.popup-section .popup-station.swiper {
-    left: -1.5rem;
-    min-width: 0;
-    width: calc(100% - 210px);
-    max-width: none;
-    height: auto;
-    aspect-ratio: auto;
-    margin: -12px 0 -12px auto;
-    justify-self: end;
-}
-
-.popup-section .popup-slide.swiper-slide {
-    height: auto;
-    aspect-ratio: 2 / 3;
-    opacity: .45;
-    filter: blur(7px);
-    transform: perspective(1200px) translateZ(-100px) scale(.5);
-    transform-origin: center;
-    z-index: 1;
-    transition: transform 700ms ease, filter 700ms ease, opacity 700ms ease;
-}
-
-.popup-section .popup-slide.swiper-slide-active {
-    opacity: 1;
-    filter: none;
-    transform: perspective(1200px) translateZ(0) rotateY(0) scale(1);
-    z-index: 3;
-}
-
-.popup-section .popup-slide.swiper-slide-prev,
-.popup-section .popup-slide.swiper-slide-next {
-    cursor: pointer;
-    z-index: 2;
-}
-
-.popup-section .popup-slide.swiper-slide-prev {
-    transform: perspective(1200px) translateX(25%) translateZ(-100px) rotateY(25deg) scale(.5);
-}
-
-.popup-section .popup-slide.swiper-slide-next {
-    transform: perspective(1200px) translateX(-25%) translateZ(-100px) rotateY(-25deg) scale(.5);
-}
-
-.popup-section .popup-layout::before,
-.popup-section .popup-layout::after {
-    display: none;
-}
-
-@media (max-width: 1024px) {
-    .popup-section {
-        padding: 2.5rem 0;
-    }
-
-    .popup-section .popup-heading {
-        margin-bottom: -3rem;
-    }
-
-    .popup-section .popup-layout {
-        grid-template-columns: minmax(0, 34fr) minmax(0, 62fr);
-    }
-}
-
-@media (max-width: 768px) {
     .popup-section {
         padding: 2rem 0;
     }
@@ -483,44 +315,32 @@ EXTRA SMALL MOBILE
         margin-bottom: 2.5rem;
     }
 
-    .popup-section .popup-layout {
-        display: flex;
-        gap: 2rem;
+}
+
+/* 402px 이하 */
+@media (max-width: 402px) {
+    /* TITLE */
+
+    .popup-heading h2 {
+        width: 100%;
+        line-height: 1.1;
+        white-space: nowrap;
     }
 
-    .popup-section .popup-station.swiper {
-        left: 0;
+    .popup-heading p {
+        margin-top: 1rem;
     }
 
-    .popup-section .popup-description-viewport.swiper {
-        max-width: 32rem;
-    }
+    /* TOOL */
 
-    .popup-section .popup-description-slide.swiper-slide {
-        padding: 0 1rem;
+    .popup-tool {
+        margin-top: .75rem;
     }
 }
 
+/* 접근성: 동작 줄이기 */
 @media (prefers-reduced-motion: reduce) {
     .popup-section .popup-slide.swiper-slide {
         transition: none;
-    }
-}
-
-@media (min-width: 1920px) {
-    .popup-section {
-        height: 1000px;
-    }
-}
-
-@media(max-width:1024px) {
-    main .popup-heading > p.section-summary {
-        font-size: 16px;
-    }
-}
-
-@media(max-width:768px) {
-    main .popup-heading > p.section-summary {
-        font-size: 14px;
     }
 }

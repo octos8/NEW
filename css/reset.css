@@ -1,15 +1,23 @@
+/* 기본 스타일 초기화 */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-size: inherit;
     font-weight: inherit;
 }
 
-ul,ol {
+ul,
+ol {
     list-style: none;
 }
 

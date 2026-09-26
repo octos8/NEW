@@ -131,7 +131,8 @@ footer {
     text-align: center;
 }
 
-@media(max-width:1024px) {
+/* 1024px 이하 */
+@media (max-width: 1024px) {
     .project-intro h1 {
         font-size: 2rem;
     }
@@ -141,10 +142,12 @@ footer {
     }
 }
 
-@media(max-width:768px) {
+/* 768px 이하 */
+@media (max-width: 768px) {
     .project-intro h1 {
         font-size: 1.75rem;
     }
+
     .detail-view {
         width: calc(100% - 2rem);
         padding-top: 6rem;
@@ -164,15 +167,17 @@ footer {
     }
 }
 
-@media(prefers-reduced-motion:reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-}
-
-@media(max-width:402px) {
+/* 402px 이하 */
+@media (max-width: 402px) {
     .display-title {
         font-size: 2.25rem;
         overflow-wrap: anywhere;
+    }
+}
+
+/* 접근성: 동작 줄이기 */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
     }
 }
