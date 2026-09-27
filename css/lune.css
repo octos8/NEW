@@ -8,7 +8,8 @@
     text-align: left;
 }
 
-.lune-case *::before, .lune-case *::after {
+.lune-case *::before,
+.lune-case *::after {
     box-sizing: border-box;
 }
 
@@ -43,7 +44,8 @@
     font-weight: var(--fw2);
 }
 
-#lune-title, #lune-system-title {
+#lune-title,
+#lune-system-title {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,7 +53,8 @@
     padding-right: 32px;
 }
 
-#lune-title img, #lune-system-title img {
+#lune-title img,
+#lune-system-title img {
     flex-shrink: 0;
     width: auto;
     height: 100px;
@@ -83,7 +86,8 @@
     transition: background-color .2s ease;
 }
 
-.lune-links a:hover, .lune-links a:focus-visible {
+.lune-links a:hover,
+.lune-links a:focus-visible {
     background: #ffe0b5;
     color: #725236;
 }
@@ -163,7 +167,8 @@
     aspect-ratio: 1024 / 1366;
 }
 
-.lune-phone, .lune-tablet {
+.lune-phone,
+.lune-tablet {
     background: #252321;
     padding: 6px;
     border-radius: 22px;
@@ -241,7 +246,7 @@
     gap: 20px;
 }
 
-.lune-facts > div {
+.lune-facts>div {
     display: grid;
     grid-template-columns: 104px minmax(0, 1fr);
     align-items: baseline;
@@ -318,7 +323,7 @@
     max-width: 850px;
 }
 
-.lune-device-group > .lune-monitor {
+.lune-device-group>.lune-monitor {
     position: absolute;
     width: 84%;
     left: -5%;
@@ -330,7 +335,7 @@
     box-shadow: none;
 }
 
-.lune-monitor > .lune-screen.lune-screen-pc {
+.lune-monitor>.lune-screen.lune-screen-pc {
     position: absolute;
     left: 11.05%;
     top: 6.35%;
@@ -341,14 +346,14 @@
     clip-path: polygon(0 5%, 100% 0, 100% 100%, .35% 97.55%);
 }
 
-.lune-device-group > .lune-tablet {
+.lune-device-group>.lune-tablet {
     position: absolute;
     width: 28%;
     right: 7%;
     bottom: 5%;
 }
 
-.lune-device-group > .lune-phone {
+.lune-device-group>.lune-phone {
     position: absolute;
     width: 14%;
     right: 0;
@@ -403,7 +408,7 @@
     transform: rotate(-3deg);
 }
 
-.lune-system-details > h3 {
+.lune-system-details>h3 {
     padding: 48px 48px 16px 48px;
     font-weight: var(--fw2);
     font-size: 20px;
@@ -481,7 +486,7 @@
     min-width: 0;
 }
 
-.lune-font-overview > h3 {
+.lune-font-overview>h3 {
     grid-column: 1 / -1;
     margin: 0;
     font-size: 16px;
@@ -620,7 +625,7 @@
 .lune-finale {
     padding: 80px 96px 35px;
     text-align: center;
-    background: linear-gradient(#fff2d7,#ffe0b5);
+    background: linear-gradient(#fff2d7, #ffe0b5);
 }
 
 .lune-finale h3 {
@@ -651,331 +656,581 @@
     flex-wrap: wrap;
 }
 
-.lune-font-intro > div {
+.lune-font-intro>div {
     flex: 1 1 280px;
 }
 
 /* RESPONSIVE: original rules above are preserved. */
 
-@media (max-width: 1280px) {
-  .lune-opening, .lune-system, .lune-typography, .lune-finale { padding: 80px var(--page-gutter); }
-  .lune-heading h3, .lune-section-heading h3, .lune-finale h3 { font-size: 34px; }
-  #lune-title, #lune-system-title { padding-right: 2.5vw; }
-  #lune-title img, #lune-system-title img { height: 100px; }
-  .lune-hero-mockup { margin-block: 70px 100px; }
-  .lune-browser-bar { padding: 12px; gap: 4px; }
-  .lune-browser-bar i { width: 5px; height: 5px; }
-  .lune-introduction { gap: 60px; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); }
-  .lune-introduction .lune-intro-copy h3 { margin-bottom: 16px; }
-  .lune-case .lune-intro-copy p, .lune-intro-copy h4 { font-size: 16px; }
-  .lune-facts { gap: 12px; }
-  .lune-facts > div { grid-template-columns: minmax(0, .8fr) minmax(0, 1.5fr); gap: 6px; font-size: 13px; }
-  .lune-fact-tags { gap: 4px; }
-  .lune-facts .lune-fact-tag { padding-inline: 4px; white-space: normal; }
-  .lune-page-gallery { margin-block: 64px; }
-  .lune-system-details > h3 { padding: 24px 0 12px; }
-  .lune-system-row { margin: 16px 0; gap: 60px; }
-  .lune-system-row > div { flex: 1 1 0; }
-  .lune-system-row h3 { font-size: 16px; }
-  .lune-palette li { font-size: 12px; overflow-wrap: anywhere; }
-  .lune-palette small { font-size: 9px; }
-  .lune-palette span { height: 55px; }
-  .lune-font-typography { padding: 32px 0; }
-  .lune-font-intro { flex-wrap: nowrap; gap: 16px; }
-  .lune-font-intro > div { flex: 1 1 0; }
-  .lune-type-table .lune-type-row { grid-template-columns: minmax(0, 1fr) minmax(0, .4fr) minmax(0, .2fr) minmax(0, .26fr); column-gap: 12px; }
-  .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(1) .lune-type-sample { font-size: 38px; }
-  .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(2) .lune-type-sample { font-size: 31px; }
-  .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(3) .lune-type-sample { font-size: 25px; }
-  .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(4) .lune-type-sample { font-size: 20px; }
-  .lune-finale .lune-device-group { margin-top: 64px; }
-}
-
-@media (max-width: 1024px) {
-    .lune-opening, .lune-system, .lune-typography, .lune-finale {
-        padding: 64px var(--page-gutter);
-    }
-    .lune-heading h3, .lune-section-heading h3, .lune-finale h3 {
-        font-size: 27px;
-    }
-    #lune-title img, #lune-system-title img {
-        height: 80px;
-    }
-    .lune-hero-mockup {
-        margin-block: 56px 80px;
-    }
-    .lune-browser-bar {
-        padding: 10px;
-    }
-    .lune-introduction {
-        gap: 48px;
-    }
-    .lune-case .lune-intro-copy p, .lune-intro-copy h4 {
-        font-size: 13px;
-    }
-    .lune-facts > div {
-        font-size: 10px;
-    }
-    .lune-page-gallery {
-        margin-block: 51px;
-    }
-    .lune-system-row {
-        gap: 48px;
-    }
-    .lune-system-row h3 {
-        font-size: 13px;
-    }
-    .lune-palette li {
-        font-size: 10px;
-    }
-    .lune-palette span {
-        height: 44px;
-    }
-    .lune-type-table .lune-type-row {
-        column-gap: 10px;
-    }
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(1) .lune-type-sample {
-        font-size: 31px;
-    }
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(2) .lune-type-sample {
-        font-size: 25px;
-    }
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(3) .lune-type-sample {
-        font-size: 20px;
-    }
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(4) .lune-type-sample {
-        font-size: 16px;
-    }
-    .lune-finale .lune-device-group {
-        margin-top: 51px;
-    }
-}
-
-@media (max-width: 768px) {
-    .lune-opening, .lune-system, .lune-typography, .lune-finale {
-        padding: 48px var(--page-gutter);
-    }
-    .lune-heading h3, .lune-section-heading h3, .lune-finale h3 {
-        font-size: 20px;
-    }
-    #lune-title img, #lune-system-title img {
-        height: 60px;
-    }
-    .lune-hero-mockup {
-        margin-block: 42px 60px;
-    }
-    .lune-browser-bar {
-        padding: 7px;
-    }
-    .lune-introduction {
-        gap: 36px;
-    }
-    .lune-case .lune-intro-copy p, .lune-intro-copy h4 {
-        font-size: 11px;
-    }
-    .lune-facts > div {
-        font-size: 10px;
-    }
-    .lune-page-gallery {
-        margin-block: 38px;
-    }
-    .lune-system-row {
-        gap: 36px;
-    }
-    .lune-system-row h3 {
-        font-size: 12px;
-    }
-    .lune-palette li {
-        font-size: 9px;
-    }
-    .lune-palette span {
-        height: 33px;
-    }
-    .lune-type-table .lune-type-row {
-        column-gap: 7px;
-    }
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(1) .lune-type-sample {
-        font-size: 23px;
-    }
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(2) .lune-type-sample {
-        font-size: 18px;
-    }
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(3) .lune-type-sample {
-        font-size: 16px;
-    }
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(4) .lune-type-sample {
-        font-size: 14px;
-    }
-    .lune-finale .lune-device-group {
-        margin-top: 38px;
-    }
-}
-
-@media (max-width: 402px) {
-    .lune-opening, .lune-system, .lune-typography, .lune-finale {
-        padding: 40px var(--page-gutter);
-    }
-    .lune-heading h3, .lune-section-heading h3, .lune-finale h3 {
-        font-size: 20px;
-    }
-    #lune-title img, #lune-system-title img {
-        height: 48px;
-    }
-    .lune-hero-mockup {
-        margin-block: 28px 40px;
-    }
-    .lune-browser-bar {
-        padding: 4px;
-    }
-    .lune-introduction {
-        gap: 19px;
-    }
-    .lune-case .lune-intro-copy p, .lune-intro-copy h4 {
-        font-size: 11px;
-    }
-    .lune-facts > div {
-        font-size: 10px;
-    }
-    .lune-page-gallery {
-        margin-block: 28px;
-    }
-    .lune-system-row {
-        gap: 19px;
-    }
-    .lune-system-row h3 {
-        font-size: 12px;
-    }
-    .lune-palette li {
-        font-size: 9px;
-    }
-    .lune-palette span {
-        height: 24px;
-    }
-    .lune-type-table .lune-type-row {
-        column-gap: 4px;
-    }
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(1) .lune-type-sample {
-        font-size: 20px;
-    }
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(2) .lune-type-sample {
-        font-size: 18px;
-    }
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(3) .lune-type-sample {
-        font-size: 16px;
-    }
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(4) .lune-type-sample {
-        font-size: 14px;
-    }
-    .lune-finale .lune-device-group {
-        margin-top: 28px;
-    }
-}
-
-@media (max-width: 280px) {
-    .lune-opening, .lune-system, .lune-typography, .lune-finale {
-        padding: 40px var(--page-gutter);
-    }
-    .lune-heading h3, .lune-section-heading h3, .lune-finale h3 {
-        font-size: 20px;
-    }
-    #lune-title img, #lune-system-title img {
-        height: 48px;
-    }
-    .lune-hero-mockup {
-        margin-block: 28px 40px;
-    }
-    .lune-browser-bar {
-        padding: 4px;
-    }
-    .lune-introduction {
-        gap: 13px;
-    }
-    .lune-case .lune-intro-copy p, .lune-intro-copy h4 {
-        font-size: 11px;
-    }
-    .lune-facts > div {
-        font-size: 10px;
-    }
-    .lune-page-gallery {
-        margin-block: 28px;
-    }
-    .lune-system-row {
-        gap: 13px;
-    }
-    .lune-system-row h3 {
-        font-size: 12px;
-    }
-    .lune-palette li {
-        font-size: 9px;
-    }
-    .lune-palette span {
-        height: 24px;
-    }
-    .lune-type-table .lune-type-row {
-        column-gap: 4px;
-    }
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(1) .lune-type-sample {
-        font-size: 20px;
-    }
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(2) .lune-type-sample {
-        font-size: 18px;
-    }
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(3) .lune-type-sample {
-        font-size: 16px;
-    }
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(4) .lune-type-sample {
-        font-size: 14px;
-    }
-    .lune-finale .lune-device-group {
-        margin-top: 28px;
-    }
-}
-
 /* Match the Aesop typography scale, including the table header. */
 @media (max-width: 1716px) {
-  #project .lune-type-table { container-type: inline-size; }
-  #project .lune-type-table .lune-type-row {
-    grid-template-columns: minmax(0, 55fr) minmax(0, 29fr) minmax(0, 6fr) minmax(0, 10fr);
-    column-gap: .75cqw;
-    padding-block: 12px;
-  }
-  #project .lune-type-table .lune-type-cell { font-size: min(12px, 1.5cqw); white-space: nowrap; overflow-wrap: normal; }
-  #project .lune-type-body .lune-type-row:nth-child(1) .lune-type-sample { font-size: min(39px, 2.5cqw); }
-  #project .lune-type-body .lune-type-row:nth-child(2) .lune-type-sample { font-size: min(31px, 2.2cqw); }
-  #project .lune-type-body .lune-type-row:nth-child(3) .lune-type-sample { font-size: min(25px, 1.95cqw); }
-  #project .lune-type-body .lune-type-row:nth-child(4) .lune-type-sample { font-size: min(20px, 1.8cqw); }
-  #project .lune-type-body .lune-type-row:nth-child(5) .lune-type-sample,
-  #project .lune-type-body .lune-type-row:nth-child(6) .lune-type-sample { font-size: min(16px, 1.65cqw); }
-  #project .lune-type-body .lune-type-row:nth-child(7) .lune-type-sample { font-size: min(13px, 1.5cqw); }
-  #project .lune-type-body .lune-type-row:nth-child(8) .lune-type-sample { font-size: min(10px, 1.4cqw); }
+    #project .lune-type-table {
+        container-type: inline-size;
+    }
+
+    #project .lune-type-table .lune-type-row {
+        grid-template-columns: minmax(0, 55fr) minmax(0, 29fr) minmax(0, 6fr) minmax(0, 10fr);
+        column-gap: 0.5rem;
+        padding-block: 0.75rem;
+    }
+
+    #project .lune-type-table .lune-type-cell {
+        font-size: 0.75rem;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    #project .lune-type-body .lune-type-row:nth-child(1) .lune-type-sample {
+        font-size: 1.4375rem;
+    }
+
+    #project .lune-type-body .lune-type-row:nth-child(2) .lune-type-sample {
+        font-size: 1.3375rem;
+    }
+
+    #project .lune-type-body .lune-type-row:nth-child(3) .lune-type-sample {
+        font-size: 1.2625rem;
+    }
+
+    #project .lune-type-body .lune-type-row:nth-child(4) .lune-type-sample {
+        font-size: 1.15rem;
+    }
+
+    #project .lune-type-body .lune-type-row:nth-child(5) .lune-type-sample,
+    #project .lune-type-body .lune-type-row:nth-child(6) .lune-type-sample {
+        font-size: 1rem;
+    }
+
+    #project .lune-type-body .lune-type-row:nth-child(7) .lune-type-sample {
+        font-size: 0.8125rem;
+    }
+
+    #project .lune-type-body .lune-type-row:nth-child(8) .lune-type-sample {
+        font-size: 0.625rem;
+    }
 }
 
 @media (max-width: 1280px) {
+    .lune-opening,
+    .lune-system,
+    .lune-typography,
+    .lune-finale {
+        padding: 5rem var(--page-gutter);
+    }
+
+    .lune-heading h3,
+    .lune-section-heading h3,
+    .lune-finale h3 {
+        font-size: 2.125rem;
+    }
+
+    #lune-title,
+    #lune-system-title {
+        padding-right: 2rem;
+    }
+
+    #lune-title img,
+    #lune-system-title img {
+        height: 6.25rem;
+    }
+
+    .lune-hero-mockup {
+        margin-block: 4.375rem 6.25rem;
+    }
+
+    .lune-browser-bar {
+        padding: 0.75rem;
+        gap: 0.25rem;
+    }
+
+    .lune-browser-bar i {
+        width: 0.3125rem;
+        height: 0.3125rem;
+    }
+
+    .lune-introduction {
+        gap: 3.75rem;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    }
+
+    .lune-introduction .lune-intro-copy h3 {
+        margin-bottom: 1rem;
+    }
+
+    .lune-case .lune-intro-copy p,
+    .lune-intro-copy h4 {
+        font-size: 1rem;
+    }
+
+
+    .lune-facts {
+        gap: 0.75rem;
+    }
+
+    .lune-facts>div {
+        grid-template-columns: minmax(0, .8fr) minmax(0, 1.5fr);
+        gap: 0.375rem;
+        font-size: 0.8125rem;
+    }
+
+    .lune-fact-tags {
+        gap: 0.25rem;
+    }
+
+    .lune-facts .lune-fact-tag {
+        padding-inline: 0.25rem;
+        white-space: normal;
+    }
+
+    .lune-page-gallery {
+        margin-block: 4rem;
+    }
+
+    .lune-system-details>h3 {
+        padding: 1.5rem 0 0.75rem;
+    }
+
+    .lune-system-row {
+        margin: 1rem 0;
+        gap: 3.75rem;
+    }
+
+    .lune-system-row>div {
+        flex: 1 1 0;
+    }
+
+    .lune-system-row h3 {
+        font-size: 1rem;
+    }
+
+    .lune-palette li {
+        font-size: 0.75rem;
+        overflow-wrap: anywhere;
+    }
+
+    .lune-palette small {
+        font-size: 0.5625rem;
+    }
+
+    .lune-palette span {
+        height: 3.4375rem;
+    }
+
+    .lune-font-typography {
+        padding: 2rem 0;
+    }
+
+    .lune-font-intro {
+        flex-wrap: nowrap;
+        gap: 1rem;
+    }
+
+    .lune-font-intro>div {
+        flex: 1 1 0;
+    }
+
+    .lune-type-table .lune-type-row {
+        grid-template-columns: minmax(0, 1fr) minmax(0, .4fr) minmax(0, .2fr) minmax(0, .26fr);
+        column-gap: 0.75rem;
+    }
+
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(1) .lune-type-sample {
+        font-size: 2.375rem;
+    }
+
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(2) .lune-type-sample {
+        font-size: 1.9375rem;
+    }
+
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(3) .lune-type-sample {
+        font-size: 1.5625rem;
+    }
+
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(4) .lune-type-sample {
+        font-size: 1.25rem;
+    }
+
+    .lune-finale .lune-device-group {
+        margin-top: 4rem;
+    }
+
     #project .lune-type-table .lune-type-row {
-        padding-block: 10px;
+        padding-block: 0.625rem;
     }
 }
 
 @media (max-width: 1024px) {
+    #lune-title,
+    #lune-system-title {
+        padding-right: 1.6rem;
+    }
+
+    .lune-opening,
+    .lune-system,
+    .lune-typography,
+    .lune-finale {
+        padding: 4rem var(--page-gutter);
+    }
+
+    .lune-heading h3,
+    .lune-section-heading h3,
+    .lune-finale h3 {
+        font-size: 1.6875rem;
+    }
+
+    #lune-title img,
+    #lune-system-title img {
+        height: 5rem;
+    }
+
+    .lune-hero-mockup {
+        margin-block: 3.5rem 5rem;
+    }
+
+    .lune-browser-bar {
+        padding: 0.625rem;
+    }
+
+    .lune-introduction {
+        gap: 3rem;
+    }
+
+    .lune-case .lune-intro-copy p,
+    .lune-intro-copy h4 {
+        font-size: 0.8125rem;
+    }
+
+    .lune-facts>div {
+        font-size: 0.625rem;
+    }
+
+    .lune-page-gallery {
+        margin-block: 3.1875rem;
+    }
+
+    .lune-system-row {
+        gap: 3rem;
+    }
+
+    .lune-system-row h3 {
+        font-size: 0.8125rem;
+    }
+
+    .lune-palette li {
+        font-size: 0.625rem;
+    }
+
+    .lune-palette span {
+        height: 2.75rem;
+    }
+
+    .lune-type-table .lune-type-row {
+        column-gap: 0.625rem;
+    }
+
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(1) .lune-type-sample {
+        font-size: 1.9375rem;
+    }
+
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(2) .lune-type-sample {
+        font-size: 1.5625rem;
+    }
+
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(3) .lune-type-sample {
+        font-size: 1.25rem;
+    }
+
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(4) .lune-type-sample {
+        font-size: 1rem;
+    }
+
+    .lune-finale .lune-device-group {
+        margin-top: 3.1875rem;
+    }
+
     #project .lune-type-table .lune-type-row {
-        padding-block: 8px;
+        padding-block: 0.5rem;
     }
 }
 
 @media (max-width: 768px) {
+    #lune-title,
+    #lune-system-title {
+        padding-right: 1.2rem;
+    }
+
+    .lune-opening,
+    .lune-system,
+    .lune-typography,
+    .lune-finale {
+        padding: 3rem var(--page-gutter);
+    }
+
+    .lune-heading h3,
+    .lune-section-heading h3,
+    .lune-finale h3 {
+        font-size: 1.25rem;
+    }
+
+    #lune-title img,
+    #lune-system-title img {
+        height: 3.75rem;
+    }
+
+    .lune-hero-mockup {
+        margin-block: 2.625rem 3.75rem;
+    }
+
+    .lune-browser-bar {
+        padding: 0.4375rem;
+    }
+
+    .lune-introduction {
+        gap: 2.25rem;
+    }
+
+    .lune-case .lune-intro-copy p,
+    .lune-intro-copy h4 {
+        font-size: 0.6875rem;
+    }
+
+    .lune-facts>div {
+        font-size: 0.625rem;
+    }
+
+    .lune-page-gallery {
+        margin-block: 2.375rem;
+    }
+
+    .lune-system-row {
+        gap: 2.25rem;
+    }
+
+    .lune-system-row h3 {
+        font-size: 0.75rem;
+    }
+
+    .lune-palette li {
+        font-size: 0.5625rem;
+    }
+
+    .lune-palette span {
+        height: 2.0625rem;
+    }
+
+    .lune-type-table .lune-type-row {
+        column-gap: 0.4375rem;
+    }
+
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(1) .lune-type-sample {
+        font-size: 1.4375rem;
+    }
+
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(2) .lune-type-sample {
+        font-size: 1.125rem;
+    }
+
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(3) .lune-type-sample {
+        font-size: 1rem;
+    }
+
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(4) .lune-type-sample {
+        font-size: 0.875rem;
+    }
+
+    .lune-finale .lune-device-group {
+        margin-top: 2.375rem;
+    }
+
     #project .lune-type-table .lune-type-row {
-        padding-block: 6px;
+        padding-block: 0.375rem;
     }
 }
 
 @media (max-width: 402px) {
+    #lune-title,
+    #lune-system-title {
+        padding-right: 0.625rem;
+    }
+
+    .lune-opening,
+    .lune-system,
+    .lune-typography,
+    .lune-finale {
+        padding: 2.5rem var(--page-gutter);
+    }
+
+    .lune-heading h3,
+    .lune-section-heading h3,
+    .lune-finale h3 {
+        font-size: 1.25rem;
+    }
+
+    #lune-title img,
+    #lune-system-title img {
+        height: 3rem;
+    }
+
+    .lune-hero-mockup {
+        margin-block: 1.75rem 2.5rem;
+    }
+
+    .lune-browser-bar {
+        padding: 0.25rem;
+    }
+
+    .lune-introduction {
+        gap: 1.1875rem;
+    }
+
+    .lune-case .lune-intro-copy p,
+    .lune-intro-copy h4 {
+        font-size: 0.6875rem;
+    }
+
+    .lune-facts>div {
+        font-size: 0.625rem;
+    }
+
+    .lune-page-gallery {
+        margin-block: 1.75rem;
+    }
+
+    .lune-system-row {
+        gap: 1.1875rem;
+    }
+
+    .lune-system-row h3 {
+        font-size: 0.75rem;
+    }
+
+    .lune-palette li {
+        font-size: 0.5625rem;
+    }
+
+    .lune-palette span {
+        height: 1.5rem;
+    }
+
+    .lune-type-table .lune-type-row {
+        column-gap: 0.25rem;
+    }
+
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(1) .lune-type-sample {
+        font-size: 1.25rem;
+    }
+
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(2) .lune-type-sample {
+        font-size: 1.125rem;
+    }
+
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(3) .lune-type-sample {
+        font-size: 1rem;
+    }
+
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(4) .lune-type-sample {
+        font-size: 0.875rem;
+    }
+
+    .lune-finale .lune-device-group {
+        margin-top: 1.75rem;
+    }
+
     #project .lune-type-table .lune-type-row {
-        padding-block: 6px;
+        padding-block: 0.375rem;
     }
 }
 
 @media (max-width: 280px) {
+    #lune-title,
+    #lune-system-title {
+        padding-right: 0.4375rem;
+    }
+
+    .lune-opening,
+    .lune-system,
+    .lune-typography,
+    .lune-finale {
+        padding: 2.5rem var(--page-gutter);
+    }
+
+    .lune-heading h3,
+    .lune-section-heading h3,
+    .lune-finale h3 {
+        font-size: 1.25rem;
+    }
+
+    #lune-title img,
+    #lune-system-title img {
+        height: 3rem;
+    }
+
+    .lune-hero-mockup {
+        margin-block: 1.75rem 2.5rem;
+    }
+
+    .lune-browser-bar {
+        padding: 0.25rem;
+    }
+
+    .lune-introduction {
+        gap: 0.8125rem;
+    }
+
+    .lune-case .lune-intro-copy p,
+    .lune-intro-copy h4 {
+        font-size: 0.6875rem;
+    }
+
+    .lune-facts>div {
+        font-size: 0.625rem;
+    }
+
+    .lune-page-gallery {
+        margin-block: 1.75rem;
+    }
+
+    .lune-system-row {
+        gap: 0.8125rem;
+    }
+
+    .lune-system-row h3 {
+        font-size: 0.75rem;
+    }
+
+    .lune-palette li {
+        font-size: 0.5625rem;
+    }
+
+    .lune-palette span {
+        height: 1.5rem;
+    }
+
+    .lune-type-table .lune-type-row {
+        column-gap: 0.25rem;
+    }
+
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(1) .lune-type-sample {
+        font-size: 1.25rem;
+    }
+
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(2) .lune-type-sample {
+        font-size: 1.125rem;
+    }
+
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(3) .lune-type-sample {
+        font-size: 1rem;
+    }
+
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(4) .lune-type-sample {
+        font-size: 0.875rem;
+    }
+
+    .lune-finale .lune-device-group {
+        margin-top: 1.75rem;
+    }
+
     #project .lune-type-table .lune-type-row {
-        padding-block: 6px;
+        padding-block: 0.375rem;
     }
 }

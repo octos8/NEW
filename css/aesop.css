@@ -359,10 +359,16 @@
     gap: 16px;
 }
 
-.aesop-case .aesop-facts dt, .aesop-case .aesop-facts dd {
+.aesop-case .aesop-facts dt{
+     margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 600;
+}
+.aesop-case .aesop-facts dd {
+    font-weight: 400;
     margin: 0;
     font-size: 16px;
-    font-weight: 600;
     line-height: 1.5;
 }
 
@@ -855,324 +861,348 @@
 /* RESPONSIVE: original rules above are preserved. */
 
 @media (max-width: 1280px) {
-  .aesop-case { margin-top: 120px; }
-  .aesop-opening { padding: 40px var(--page-gutter) 72px; }
-  .aesop-opening-brand .aesop-logo { width: 200px; }
-  .aesop-opening .aesop-heading h3 { letter-spacing: 8px; }
-  .aesop-opening-layout { gap: 64px; margin-top: 32px; padding-top: 24px; }
-  .aesop-opening-visual { padding: 56px 32px; }
-  .aesop-opening-copy h4 { font-size: 26px; margin-bottom: 16px; }
-  .aesop-opening-copy p, .aesop-opening-copy h5 { font-size: 15px; }
-  .aesop-case .aesop-facts { gap: 12px; margin-top: 24px; }
-  .aesop-case .aesop-facts > div { grid-template-columns: minmax(0, .8fr) minmax(0, 1.5fr); gap: 6px; }
-  .aesop-case .aesop-facts dt, .aesop-case .aesop-facts dd { font-size: 16px; }
-  .aesop-case .aesop-facts-tools dd { gap: 4px; }
-  .aesop-fact-tag { padding-inline: 4px; white-space: normal; }
-  .aesop-overview { margin-top: 120px; padding-inline: var(--page-gutter); gap: 70px 50px; }
-  .aesop-overview h3 { font-size: 24px; margin-bottom: 16px; }
-  .aesop-overview p, .aesop-responsive p { font-size: 14px; }
-  .aesop-devices { padding: 0 5vw 2.5vw 0; }
-  .aesop-colors { margin: 110px var(--page-gutter); }
-  .aesop-color-layout { grid-template-columns: 90px minmax(0, 1fr); gap: 32px; }
-  .aesop-main-color { width: min(64px, 100%); }
-  .aesop-palette li { height: 54px; }
-  .aesop-typography { margin-top: 110px; padding: 32px var(--page-gutter); }
-  .aesop-type-intro { gap: 16px; }
-  .aesop-type-intro .aesop-type-name { font-size: 40px; }
+  .aesop-case { margin-top: 7.5rem; }
+  .aesop-opening { padding: 2.5rem var(--page-gutter) 4.5rem; }
+  .aesop-opening-brand .aesop-logo { width: 12.5rem; }
+  .aesop-opening .aesop-heading h3 { letter-spacing: 0.5rem; }
+  .aesop-opening-layout { gap: 4rem; margin-top: 2rem; padding-top: 1.5rem; }
+  .aesop-opening-visual { padding: 3.5rem 2rem; }
+  .aesop-opening-copy h4 { font-size: 1.625rem; margin-bottom: 1rem; }
+  .aesop-opening-copy p, .aesop-opening-copy h5 { font-size: 0.9375rem; }
+  .aesop-case .aesop-facts { gap: 0.75rem; margin-top: 1.5rem; }
+  .aesop-case .aesop-facts > div { grid-template-columns: minmax(0, .8fr) minmax(0, 1.5fr); gap: 0.375rem; }
+  .aesop-case .aesop-facts dt, .aesop-case .aesop-facts dd { font-size: 1rem; }
+  .aesop-case .aesop-facts-tools dd { gap: 0.25rem; }
+  .aesop-fact-tag { padding-inline: 0.25rem; white-space: normal; }
+  .aesop-overview { margin-top: 7.5rem; padding-inline: var(--page-gutter); gap: 4.375rem 3.125rem; }
+  .aesop-overview h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+  .aesop-overview p, .aesop-responsive p { font-size: 0.875rem; }
+  .aesop-devices { padding: 0 4rem 2rem 0; }
+  .aesop-colors { margin: 6.875rem var(--page-gutter); }
+  .aesop-color-layout { grid-template-columns: 5.625rem minmax(0, 1fr); gap: 2rem; }
+  .aesop-main-color { width: 100%; max-width: 4rem; }
+  .aesop-palette li { height: 3.375rem; }
+  .aesop-typography { margin-top: 6.875rem; padding: 2rem var(--page-gutter); }
+  .aesop-type-intro { gap: 1rem; }
+  .aesop-type-intro .aesop-type-name { font-size: 2.5rem; }
 
-  .aesop-responsive { margin-top: 90px; }
-  .aesop-responsive-body { padding: 32px var(--page-gutter); }
-  .aesop-responsive h3 { font-size: 30px; }
-  .aesop-responsive-finale { margin-top: 96px; }
-  .aesop-responsive-stage { height: auto; aspect-ratio: 650 / 400; margin-top: 60px; }
-  .aesop-device--desktop { border-width: 10px; border-bottom-width: 26px; }
+  .aesop-responsive { margin-top: 5.625rem; }
+  .aesop-responsive-body { padding: 2rem var(--page-gutter); }
+  .aesop-responsive h3 { font-size: 1.875rem; }
+  .aesop-responsive-finale { margin-top: 6rem; }
+  .aesop-responsive-stage { height: auto; aspect-ratio: 650 / 400; margin-top: 3.75rem; }
+  .aesop-device--desktop { border-width: 0.625rem; border-bottom-width: 1.625rem; }
+}
+
+@media (max-width: 1024px) {
+    .aesop-devices {
+        padding: 0 3.2rem 1.6rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .aesop-devices {
+        padding: 0 2.4rem 1.2rem 0;
+    }
+}
+
+@media (max-width: 402px) {
+    .aesop-devices {
+        padding: 0 1.25625rem 0.625rem 0;
+    }
+}
+
+@media (max-width: 280px) {
+    .aesop-devices {
+        padding: 0 0.875rem 0.4375rem 0;
+    }
 }
 
 @media (max-width: 1024px) {
     .aesop-case {
-        margin-top: 96px;
+        margin-top: 6rem;
     }
     .aesop-opening {
-        padding: 32px var(--page-gutter) 57px;
+        padding: 2rem var(--page-gutter) 3.5625rem;
     }
     .aesop-opening-brand .aesop-logo {
-        width: 160px;
+        width: 10rem;
     }
     .aesop-opening .aesop-heading h3 {
-        letter-spacing: 6px;
+        letter-spacing: 0.375rem;
     }
     .aesop-opening-layout {
-        gap: 51px;
+        gap: 3.1875rem;
     }
     .aesop-opening-visual {
-        padding: 45px 26px;
+        padding: 2.8125rem 1.625rem;
     }
     .aesop-opening-copy h4 {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
     .aesop-opening-copy p, .aesop-opening-copy h5 {
-        font-size: 12px;
+        font-size: 0.75rem;
     }
     .aesop-case .aesop-facts dt, .aesop-case .aesop-facts dd {
-        font-size: 13px;
+        font-size: 0.8125rem;
     }
     .aesop-overview {
-        margin-top: 96px;
-        gap: 56px 40px;
+        margin-top: 6rem;
+        gap: 3.5rem 2.5rem;
     }
     .aesop-overview h3 {
-        font-size: 19px;
+        font-size: 1.1875rem;
     }
     .aesop-overview p, .aesop-responsive p {
-        font-size: 11px;
+        font-size: 0.6875rem;
     }
     .aesop-colors {
-        margin: 88px var(--page-gutter);
+        margin: 5.5rem var(--page-gutter);
     }
     .aesop-color-layout {
-        grid-template-columns: 72px minmax(0, 1fr);
-        gap: 26px;
+        grid-template-columns: 4.5rem minmax(0, 1fr);
+        gap: 1.625rem;
     }
     .aesop-palette li {
-        height: 43px;
+        height: 2.6875rem;
     }
     .aesop-typography {
-        margin-top: 88px;
+        margin-top: 5.5rem;
     }
     .aesop-type-intro .aesop-type-name {
-        font-size: 32px;
+        font-size: 2rem;
     }
     .aesop-responsive {
-        margin-top: 72px;
+        margin-top: 4.5rem;
     }
     .aesop-responsive h3 {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
     .aesop-responsive-finale {
-        margin-top: 77px;
+        margin-top: 4.8125rem;
     }
     .aesop-responsive-stage {
-        margin-top: 48px;
+        margin-top: 3rem;
     }
     .aesop-device--desktop {
-        border-width: 8px;
-        border-bottom-width: 20px;
+        border-width: 0.5rem;
+        border-bottom-width: 1.25rem;
     }
 }
 
 @media (max-width: 768px) {
     .aesop-case {
-        margin-top: 72px;
+        margin-top: 4.5rem;
     }
     .aesop-opening {
-        padding: 32px var(--page-gutter) 43px;
+        padding: 2rem var(--page-gutter) 2.6875rem;
     }
     .aesop-opening-brand .aesop-logo {
-        width: 120px;
+        width: 7.5rem;
     }
     .aesop-opening .aesop-heading h3 {
-        letter-spacing: 5px;
+        letter-spacing: 0.3125rem;
     }
     .aesop-opening-layout {
-        gap: 38px;
+        gap: 2.375rem;
     }
     .aesop-opening-visual {
-        padding: 34px 19px;
+        padding: 2.125rem 1.1875rem;
     }
     .aesop-opening-copy h4 {
-        font-size: 16px;
+        font-size: 1rem;
     }
     .aesop-opening-copy p, .aesop-opening-copy h5 {
-        font-size: 11px;
+        font-size: 0.6875rem;
     }
     .aesop-case .aesop-facts dt, .aesop-case .aesop-facts dd {
-        font-size: 10px;
+        font-size: 0.625rem;
     }
     .aesop-overview {
-        margin-top: 72px;
-        gap: 42px 30px;
+        margin-top: 4.5rem;
+        gap: 2.625rem 1.875rem;
     }
     .aesop-overview h3 {
-        font-size: 16px;
+        font-size: 1rem;
     }
     .aesop-overview p, .aesop-responsive p {
-        font-size: 11px;
+        font-size: 0.6875rem;
     }
     .aesop-colors {
-        margin: 66px var(--page-gutter);
+        margin: 4.125rem var(--page-gutter);
     }
     .aesop-color-layout {
-        grid-template-columns: 54px minmax(0, 1fr);
-        gap: 19px;
+        grid-template-columns: 3.375rem minmax(0, 1fr);
+        gap: 1.1875rem;
     }
     .aesop-palette li {
-        height: 32px;
+        height: 2rem;
     }
     .aesop-typography {
-        margin-top: 66px;
+        margin-top: 4.125rem;
     }
     .aesop-type-intro .aesop-type-name {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
     .aesop-responsive {
-        margin-top: 54px;
+        margin-top: 3.375rem;
     }
     .aesop-responsive h3 {
-        font-size: 18px;
+        font-size: 1.125rem;
     }
     .aesop-responsive-finale {
-        margin-top: 58px;
+        margin-top: 3.625rem;
     }
     .aesop-responsive-stage {
-        margin-top: 36px;
+        margin-top: 2.25rem;
     }
     .aesop-device--desktop {
-        border-width: 6px;
-        border-bottom-width: 15px;
+        border-width: 0.375rem;
+        border-bottom-width: 0.9375rem;
     }
 }
 
 @media (max-width: 402px) {
     .aesop-case {
-        margin-top: 48px;
+        margin-top: 3rem;
     }
     .aesop-opening {
-        padding: 32px var(--page-gutter) 40px;
+        padding: 2rem var(--page-gutter) 2.5rem;
     }
     .aesop-opening-brand .aesop-logo {
-        width: 110px;
+        width: 6.875rem;
     }
     .aesop-opening .aesop-heading h3 {
-        letter-spacing: 3px;
+        letter-spacing: 0.1875rem;
     }
     .aesop-opening-layout {
-        gap: 20px;
+        gap: 1.25rem;
     }
     .aesop-opening-visual {
-        padding: 18px 10px;
+        padding: 1.125rem 0.625rem;
     }
     .aesop-opening-copy h4 {
-        font-size: 16px;
+        font-size: 1rem;
     }
     .aesop-opening-copy p, .aesop-opening-copy h5 {
-        font-size: 11px;
+        font-size: 0.6875rem;
     }
     .aesop-case .aesop-facts dt, .aesop-case .aesop-facts dd {
-        font-size: 10px;
+        font-size: 0.625rem;
     }
     .aesop-overview {
-        margin-top: 40px;
-        gap: 24px 16px;
+        margin-top: 2.5rem;
+        gap: 1.5rem 1rem;
     }
     .aesop-overview h3 {
-        font-size: 16px;
+        font-size: 1rem;
     }
     .aesop-overview p, .aesop-responsive p {
-        font-size: 11px;
+        font-size: 0.6875rem;
     }
     .aesop-colors {
-        margin: 40px var(--page-gutter);
+        margin: 2.5rem var(--page-gutter);
     }
     .aesop-color-layout {
-        grid-template-columns: 36px minmax(0, 1fr);
-        gap: 12px;
+        grid-template-columns: 2.25rem minmax(0, 1fr);
+        gap: 0.75rem;
     }
     .aesop-palette li {
-        height: 24px;
+        height: 1.5rem;
     }
     .aesop-typography {
-        margin-top: 40px;
+        margin-top: 2.5rem;
     }
     .aesop-type-intro .aesop-type-name {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
     .aesop-responsive {
-        margin-top: 40px;
+        margin-top: 2.5rem;
     }
     .aesop-responsive h3 {
-        font-size: 17px;
+        font-size: 1.0625rem;
     }
     .aesop-responsive-finale {
-        margin-top: 40px;
+        margin-top: 2.5rem;
     }
     .aesop-responsive-stage {
-        margin-top: 24px;
+        margin-top: 1.5rem;
     }
     .aesop-device--desktop {
-        border-width: 3px;
-        border-bottom-width: 8px;
+        border-width: 0.1875rem;
+        border-bottom-width: 0.5rem;
     }
 }
 
 @media (max-width: 280px) {
     .aesop-case {
-        margin-top: 48px;
+        margin-top: 3rem;
     }
     .aesop-opening {
-        padding: 32px var(--page-gutter) 40px;
+        padding: 2rem var(--page-gutter) 2.5rem;
     }
     .aesop-opening-brand .aesop-logo {
-        width: 110px;
+        width: 6.875rem;
     }
     .aesop-opening .aesop-heading h3 {
-        letter-spacing: 2px;
+        letter-spacing: 0.125rem;
     }
     .aesop-opening-layout {
-        gap: 14px;
+        gap: 0.875rem;
     }
     .aesop-opening-visual {
-        padding: 16px 8px;
+        padding: 1rem 0.5rem;
     }
     .aesop-opening-copy h4 {
-        font-size: 16px;
+        font-size: 1rem;
     }
     .aesop-opening-copy p, .aesop-opening-copy h5 {
-        font-size: 11px;
+        font-size: 0.6875rem;
     }
     .aesop-case .aesop-facts dt, .aesop-case .aesop-facts dd {
-        font-size: 10px;
+        font-size: 0.625rem;
     }
     .aesop-overview {
-        margin-top: 40px;
-        gap: 24px 12px;
+        margin-top: 2.5rem;
+        gap: 1.5rem 0.75rem;
     }
     .aesop-overview h3 {
-        font-size: 16px;
+        font-size: 1rem;
     }
     .aesop-overview p, .aesop-responsive p {
-        font-size: 11px;
+        font-size: 0.6875rem;
     }
     .aesop-colors {
-        margin: 40px var(--page-gutter);
+        margin: 2.5rem var(--page-gutter);
     }
     .aesop-color-layout {
-        grid-template-columns: 36px minmax(0, 1fr);
-        gap: 12px;
+        grid-template-columns: 2.25rem minmax(0, 1fr);
+        gap: 0.75rem;
     }
     .aesop-palette li {
-        height: 24px;
+        height: 1.5rem;
     }
     .aesop-typography {
-        margin-top: 40px;
+        margin-top: 2.5rem;
     }
     .aesop-type-intro .aesop-type-name {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
     .aesop-responsive {
-        margin-top: 40px;
+        margin-top: 2.5rem;
     }
     .aesop-responsive h3 {
-        font-size: 17px;
+        font-size: 1.0625rem;
     }
     .aesop-responsive-finale {
-        margin-top: 40px;
+        margin-top: 2.5rem;
     }
     .aesop-responsive-stage {
-        margin-top: 24px;
+        margin-top: 1.5rem;
     }
     .aesop-device--desktop {
-        border-width: 3px;
-        border-bottom-width: 7px;
+        border-width: 0.1875rem;
+        border-bottom-width: 0.4375rem;
     }
 }
 
@@ -1181,54 +1211,65 @@
   .aesop-type-scale { container-type: inline-size; }
   .aesop-typography .aesop-type-scale .aesop-type-row {
     grid-template-columns: minmax(0, 55fr) minmax(0, 29fr) minmax(0, 6fr) minmax(0, 10fr);
-    column-gap: .75cqw;
-    padding-block: 12px;
+    column-gap: 0.5rem;
+    padding-block: 0.75rem;
   }
   .aesop-case .aesop-type-scale .aesop-type-row p {
     min-width: 0;
-    white-space: nowrap;
-    overflow-wrap: normal;
+    white-space: normal;
+    overflow-wrap: anywhere;
     word-break: normal;
-    font-size: min(12px, 1.5cqw);
+    font-size: 0.75rem;
   }
   .aesop-case .aesop-type-scale .aesop-type-row .aesop-type-sample {
-    font-size: min(var(--sample-size), var(--sample-fluid, 2.5cqw));
+    font-size: var(--sample-size-rem);
   }
-  .aesop-type-scale .aesop-type-row:nth-child(2) { --sample-fluid: 2.2cqw; }
-  .aesop-type-scale .aesop-type-row:nth-child(3) { --sample-fluid: 1.95cqw; }
-  .aesop-type-scale .aesop-type-row:nth-child(4) { --sample-fluid: 1.8cqw; }
-  .aesop-type-scale .aesop-type-row:nth-child(5),
-  .aesop-type-scale .aesop-type-row:nth-child(6) { --sample-fluid: 1.65cqw; }
-  .aesop-type-scale .aesop-type-row:nth-child(7) { --sample-fluid: 1.5cqw; }
-  .aesop-type-scale .aesop-type-row:nth-child(8) { --sample-fluid: 1.4cqw; }
 }
 
 @media (max-width: 1280px) {
     .aesop-typography .aesop-type-scale .aesop-type-row {
-        padding-block: 10px;
+        padding-block: 0.625rem;
     }
 }
 
 @media (max-width: 1024px) {
     .aesop-typography .aesop-type-scale .aesop-type-row {
-        padding-block: 8px;
+        padding-block: 0.5rem;
     }
 }
 
 @media (max-width: 768px) {
     .aesop-typography .aesop-type-scale .aesop-type-row {
-        padding-block: 6px;
+        padding-block: 0.375rem;
     }
 }
 
 @media (max-width: 402px) {
     .aesop-typography .aesop-type-scale .aesop-type-row {
-        padding-block: 6px;
+        padding-block: 0.375rem;
     }
 }
 
 @media (max-width: 280px) {
     .aesop-typography .aesop-type-scale .aesop-type-row {
-        padding-block: 6px;
+        padding-block: 0.375rem;
     }
+}
+
+@media (max-width: 1716px) {
+    .aesop-case .aesop-responsive-phones > .aesop-device--phone {
+        bottom: -50%;
+    }
+    .aesop-case .aesop-responsive-phones > .aesop-device--phone:first-child {
+        top: 66%;
+    }
+
+    .aesop-type-scale .aesop-type-row:nth-child(1) { --sample-size-rem: 1.4375rem; }
+    .aesop-type-scale .aesop-type-row:nth-child(2) { --sample-size-rem: 1.3375rem; }
+    .aesop-type-scale .aesop-type-row:nth-child(3) { --sample-size-rem: 1.2625rem; }
+    .aesop-type-scale .aesop-type-row:nth-child(4) { --sample-size-rem: 1.15rem; }
+    .aesop-type-scale .aesop-type-row:nth-child(5) { --sample-size-rem: 1rem; }
+    .aesop-type-scale .aesop-type-row:nth-child(6) { --sample-size-rem: 1rem; }
+    .aesop-type-scale .aesop-type-row:nth-child(7) { --sample-size-rem: 0.8125rem; }
+    .aesop-type-scale .aesop-type-row:nth-child(8) { --sample-size-rem: 0.625rem; }
 }

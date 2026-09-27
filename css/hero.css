@@ -15,7 +15,7 @@
     width: 100%;
     max-width: none;
     height: 100%;
-    background: rgba(0,0,0,.8);
+    background: rgba(0, 0, 0, .8);
     transform: none;
 }
 
@@ -40,7 +40,7 @@
     width: 30%;
     height: 1px;
     margin-top: 32px;
-    background: rgba(255,255,255,.8);
+    background: rgba(255, 255, 255, .8);
 }
 
 .hero-job {
@@ -52,7 +52,7 @@
 }
 
 .hero-name.is-entering {
-    animation: hero-name-enter 2.2s cubic-bezier(.25,.46,.45,.94) both;
+    animation: hero-name-enter 2.2s cubic-bezier(.25, .46, .45, .94) both;
 }
 
 @keyframes hero-name-enter {
@@ -124,87 +124,186 @@
 /* RESPONSIVE: original rules above are preserved. */
 
 @media (max-width: 1280px) {
-  .hero-section { height: 678px; }
-  .hero-inner { margin-inline: var(--page-gutter); padding: 140px 2vw 0; }
-  .hero-title { letter-spacing: -.045em; white-space: nowrap; }
-  .hero-description { margin-top: 64px; width: 48%; }
-  .hero-profile { gap: 23px; width: 62%; font-size: 20px; }
-  .hero-visual { right: calc(-1 * var(--page-gutter)); }
-  .hero-line { margin-top: 32px; }
+    .hero-section {
+        height: 42.375rem;
+    }
+
+    .hero-inner {
+        margin-inline: var(--page-gutter);
+        padding: 8.75rem 1.6rem 0;
+    }
+
+    .hero-title {
+        letter-spacing: -0.2953125rem;
+        white-space: nowrap;
+    }
+
+    .hero-description {
+        margin-top: 4rem;
+        width: 48%;
+    }
+
+    .hero-profile {
+        width: 52%;
+    }
+
+    .hero-visual {
+        right: calc(-1 * var(--page-gutter));
+    }
+
+    .hero-line {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-inner {
+        padding: 8.75rem 1.28125rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-inner {
+        padding: 8.75rem 0.9625rem 0;
+    }
+}
+
+@media (max-width: 402px) {
+    .hero-inner {
+        padding: 8.75rem 0.5rem 0;
+    }
+}
+
+@media (max-width: 280px) {
+    .hero-inner {
+        padding: 8.75rem 0.35rem 0;
+    }
 }
 
 @media (max-width: 1024px) {
     .hero-section {
-        height: 543px;
+        height: 40.0625rem;
     }
+
     .hero-inner {
-        padding: 113px 2vw 0;
+        padding: 7.0625rem 1.28125rem 0;
     }
+
     .hero-description {
-        margin-top: 51px;
+        margin-top: 3.1875rem;
     }
+
     .hero-profile {
-        gap: 18px;
-        font-size: 16px;
+        gap: 1.125rem;
+        font-size: 1rem;
     }
+
     .hero-line {
-        margin-top: 26px;
+        margin-top: 1.625rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-inner {
+        padding: 7.0625rem 0.9625rem 0;
+    }
+}
+
+@media (max-width: 402px) {
+    .hero-inner {
+        padding: 7.0625rem 0.5rem 0;
+    }
+}
+
+@media (max-width: 280px) {
+    .hero-inner {
+        padding: 7.0625rem 0.35rem 0;
     }
 }
 
 @media (max-width: 768px) {
     .hero-section {
-        height: 407px;
+        height: 25.4375rem;
     }
+
     .hero-inner {
-        padding: 110px 2vw 0;
+        padding: 6.875rem 0.9625rem 0;
     }
+
     .hero-description {
-        margin-top: 38px;
+        margin-top: 2.375rem;
     }
+
     .hero-profile {
-        gap: 14px;
-        font-size: 12px;
+        gap: 0.875rem;
+        font-size: 0.75rem;
     }
+
     .hero-line {
-        margin-top: 20px;
+        margin-top: 1.25rem;
+    }
+}
+
+@media (max-width: 402px) {
+    .hero-inner {
+        padding: 6.875rem 0.5rem 0;
+    }
+}
+
+@media (max-width: 280px) {
+    .hero-inner {
+        padding: 6.875rem 0.35rem 0;
     }
 }
 
 @media (max-width: 402px) {
     .hero-section {
-        height: 400px;
+        height: 25rem;
     }
+
     .hero-inner {
-        padding: 110px 2vw 0;
+        padding: 6.875rem 0.5rem 0;
     }
+
     .hero-description {
-        margin-top: 24px;
+        margin-top: 1.5rem;
     }
+
     .hero-profile {
-        gap: 8px;
-        font-size: 11px;
+        gap: 0.5rem;
+        font-size: 0.6875rem;
     }
+
     .hero-line {
-        margin-top: 20px;
+        margin-top: 1.25rem;
+    }
+}
+
+@media (max-width: 280px) {
+    .hero-inner {
+        padding: 6.875rem 0.35rem 0;
     }
 }
 
 @media (max-width: 280px) {
     .hero-section {
-        height: 400px;
+        height: 25rem;
     }
+
     .hero-inner {
-        padding: 110px 2vw 0;
+        padding: 6.875rem 0.35rem 0;
     }
+
     .hero-description {
-        margin-top: 24px;
+        margin-top: 1.5rem;
     }
+
     .hero-profile {
-        gap: 8px;
-        font-size: 11px;
+        gap: 0.5rem;
+        font-size: 0.6875rem;
     }
+
     .hero-line {
-        margin-top: 20px;
+        margin-top: 1.25rem;
     }
 }

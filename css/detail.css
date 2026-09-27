@@ -134,59 +134,59 @@
 /* RESPONSIVE: original rules above are preserved. */
 
 @media (max-width: 1280px) {
-  .detail-heading h2 { font-size: 112px; }
-  .detail-section .detail-heading { margin-bottom: 48px; }
-  .detail-section .detail-card figure { margin-bottom: 20px; }
-  .detail-section .detail-card h3 { font-size: 20px; }
+  .detail-heading h2 { font-size: 7rem; }
+  .detail-section .detail-heading { margin-bottom: 3rem; }
+  .detail-section .detail-card figure { margin-bottom: 1.25rem; }
+  .detail-section .detail-card h3 { font-size: 1.25rem; }
 }
 
 @media (max-width: 1024px) {
     .detail-heading h2 {
-        font-size: 90px;
+        font-size: 5.625rem;
     }
     .detail-section .detail-heading {
-        margin-bottom: 38px;
+        margin-bottom: 2.375rem;
     }
     .detail-section .detail-card h3 {
-        font-size: 16px;
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 768px) {
     .detail-heading h2 {
-        font-size: 67px;
+        font-size: 4.1875rem;
     }
     .detail-section .detail-heading {
-        margin-bottom: 29px;
+        margin-bottom: 1.8125rem;
     }
     .detail-section .detail-card h3 {
-        font-size: 16px;
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 402px) {
     .detail-heading h2 {
-        font-size: 38px;
+        font-size: 2.375rem;
     }
     .detail-section .detail-heading {
-        margin-bottom: 24px;
+        margin-bottom: 1.5rem;
     }
     .detail-section .detail-card h3 {
-        font-size: 16px;
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 280px) {
     .detail-heading h2 {
-        font-size: 38px;
+        font-size: 2.375rem;
     }
     .detail-section .detail-heading {
-        margin-bottom: 24px;
+        margin-bottom: 1.5rem;
     }
     .detail-section .detail-card h3 {
-        font-size: 16px;
+        font-size: 1rem;
     }
 }
 @media (max-width: 767px) {
-  .detail-section .detail-list { grid-template-columns: minmax(0, 1fr); max-width: 420px; gap: 36px; }
+  .detail-section .detail-list { grid-template-columns: minmax(0, 1fr); max-width: 26.25rem; gap: 2.25rem; }
 }

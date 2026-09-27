@@ -188,99 +188,99 @@
 /* RESPONSIVE: original rules above are preserved. */
 
 @media (max-width: 1280px) {
-  .poster-section { padding-block: 96px 160px; }
-  .poster-heading { margin-bottom: 112px; }
-  .poster-item { min-height: 750px; column-gap: 26px; padding-block: 20px; }
+  .poster-section { padding-block: 6rem 10rem; }
+  .poster-heading { margin-bottom: 7rem; }
+  .poster-item { min-height: 46.875rem; column-gap: 1.625rem; padding-block: 1.25rem; }
   .poster-content { width: 92%; }
-  .poster-content h3 { font-size: 31px; margin-bottom: 12px; }
-  .poster-content > p { font-size: 16px; }
-  .poster-decoration > span { font-size: 256px; top: 100px; }
+  .poster-content h3 { font-size: 1.9375rem; margin-bottom: 0.75rem; }
+  .poster-content > p { font-size: 1rem; }
+  .poster-decoration > span { font-size: 16rem; top: 6.25rem; }
 }
 
 @media (max-width: 1024px) {
     .poster-section {
-        padding-block: 77px 128px;
+        padding-block: 4.8125rem 8rem;
     }
     .poster-heading {
-        margin-bottom: 90px;
+        margin-bottom: 5.625rem;
     }
     .poster-item {
-        min-height: 600px;
-        column-gap: 20px;
+        min-height: 37.5rem;
+        column-gap: 1.25rem;
     }
     .poster-content h3 {
-        font-size: 25px;
+        font-size: 1.5625rem;
     }
     .poster-content > p {
-        font-size: 13px;
+        font-size: 0.8125rem;
     }
     .poster-decoration > span {
-        font-size: 205px;
+        font-size: 12.8125rem;
     }
 }
 
 @media (max-width: 768px) {
     .poster-section {
-        padding-block: 58px 96px;
+        padding-block: 3.625rem 6rem;
     }
     .poster-heading {
-        margin-bottom: 67px;
+        margin-bottom: 4.1875rem;
     }
     .poster-item {
-        min-height: 450px;
-        column-gap: 15px;
+        min-height: 28.125rem;
+        column-gap: 0.9375rem;
     }
     .poster-content h3 {
-        font-size: 18px;
+        font-size: 1.125rem;
     }
     .poster-content > p {
-        font-size: 11px;
+        font-size: 0.6875rem;
     }
     .poster-decoration > span {
-        font-size: 154px;
+        font-size: 9.625rem;
     }
 }
 
 @media (max-width: 402px) {
     .poster-section {
-        padding-block: 48px 56px;
+        padding-block: 3rem 3.5rem;
     }
     .poster-heading {
-        margin-bottom: 40px;
+        margin-bottom: 2.5rem;
     }
     .poster-item {
-        min-height: 260px;
-        column-gap: 12px;
+        min-height: 16.25rem;
+        column-gap: 0.75rem;
     }
     .poster-content h3 {
-        font-size: 15px;
+        font-size: 0.9375rem;
     }
     .poster-content > p {
-        font-size: 11px;
+        font-size: 0.6875rem;
     }
     .poster-decoration > span {
-        font-size: 80px;
+        font-size: 5rem;
     }
 }
 
 @media (max-width: 280px) {
     .poster-section {
-        padding-block: 48px 56px;
+        padding-block: 3rem 3.5rem;
     }
     .poster-heading {
-        margin-bottom: 40px;
+        margin-bottom: 2.5rem;
     }
     .poster-item {
-        min-height: 260px;
-        column-gap: 12px;
+        min-height: 16.25rem;
+        column-gap: 0.75rem;
     }
     .poster-content h3 {
-        font-size: 15px;
+        font-size: 0.9375rem;
     }
     .poster-content > p {
-        font-size: 11px;
+        font-size: 0.6875rem;
     }
     .poster-decoration > span {
-        font-size: 64px;
+        font-size: 4rem;
     }
 }

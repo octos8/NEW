@@ -103,116 +103,120 @@
 
 @media (max-width: 1280px) {
     .project-section {
-        padding-top: 96px;
+        padding-top: 6rem;
     }
 
     .project-section .project-breakpoints {
-        margin-top: 80px;
+        margin-top: 5rem;
     }
 
     .project-section .project-device-list {
-        margin-top: 57px;
+        margin-top: 3.5625rem;
     }
 
     .project-section .project-device-icon {
-        width: 68px;
-        height: 68px;
+        width: 4.25rem;
+        height: 4.25rem;
     }
 
     .project-section .project-device-list h4 {
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     .project-section .project-device-list p {
-        font-size: 14px;
+        font-size: 0.875rem;
     }
 }
 
 @media (max-width: 1024px) {
     .project-section {
-        padding-top: 77px;
+        padding-top: 4.8125rem;
     }
     .project-section .project-breakpoints {
-        margin-top: 64px;
+        margin-top: 4rem;
     }
     .project-section .project-device-list {
-        margin-top: 46px;
+        margin-top: 2.875rem;
     }
     .project-section .project-device-icon {
-        width: 54px;
-        height: 54px;
+        width: 3.375rem;
+        height: 3.375rem;
     }
     .project-section .project-device-list h4 {
-        font-size: 13px;
+        font-size: 0.8125rem;
     }
     .project-section .project-device-list p {
-        font-size: 11px;
+        font-size: 0.6875rem;
     }
 }
 
 @media (max-width: 768px) {
+.project-section .project-heading {
+    }
+
+
     .project-section {
-        padding-top: 58px;
+        padding-top: 3.625rem;
     }
     .project-section .project-breakpoints {
-        margin-top: 48px;
+        margin-top: 3rem;
     }
     .project-section .project-device-list {
-        margin-top: 34px;
+        margin-top: 2.125rem;
     }
     .project-section .project-device-icon {
-        width: 41px;
-        height: 41px;
+        width: 2.5625rem;
+        height: 2.5625rem;
     }
     .project-section .project-device-list h4 {
-        font-size: 12px;
+        font-size: 0.75rem;
     }
     .project-section .project-device-list p {
-        font-size: 10px;
+        font-size: 0.625rem;
     }
 }
 
 @media (max-width: 402px) {
     .project-section {
-        padding-top: 48px;
+        padding-top: 3rem;
     }
     .project-section .project-breakpoints {
-        margin-top: 32px;
+        margin-top: 2rem;
     }
     .project-section .project-device-list {
-        margin-top: 24px;
+        margin-top: 1.5rem;
     }
     .project-section .project-device-icon {
-        width: 40px;
-        height: 40px;
+        width: 2.5rem;
+        height: 2.5rem;
     }
     .project-section .project-device-list h4 {
-        font-size: 12px;
+        font-size: 0.75rem;
     }
     .project-section .project-device-list p {
-        font-size: 10px;
+        font-size: 0.625rem;
     }
 }
 
 @media (max-width: 280px) {
     .project-section {
-        padding-top: 48px;
+        padding-top: 3rem;
     }
     .project-section .project-breakpoints {
-        margin-top: 32px;
+        margin-top: 2rem;
     }
     .project-section .project-device-list {
-        margin-top: 24px;
+        margin-top: 1.5rem;
     }
     .project-section .project-device-icon {
-        width: 40px;
-        height: 40px;
+        width: 2.5rem;
+        height: 2.5rem;
     }
     .project-section .project-device-list h4 {
-        font-size: 12px;
+        font-size: 0.75rem;
     }
     .project-section .project-device-list p {
-        font-size: 10px;
+        font-size: 0.625rem;
     }
 }
 
@@ -235,133 +239,133 @@
     }
 
     #project .project-heading>p {
-        margin-top: min(15px, 1vw);
+        margin-top: 1.075rem;
     }
 
     #project .project-breakpoints {
-        margin-top: min(80px, 4.66vw);
+        margin-top: 5rem;
     }
 
     #project .project-device-list {
-        margin-top: min(57px, 3.32vw);
-        max-width: min(546px, 50vw);
+        margin-top: 3.5625rem;
+        width: 53.625rem; max-width: 34.125rem;
     }
 
     #project .project-device-icon {
-        width: min(68px, 5.3vw);
-        height: min(68px, 5.3vw);
-        margin-bottom: min(16px, .94vw);
+        width: 5.68125rem;
+        height: 5.68125rem;
+        margin-bottom: 1.00625rem;
     }
 
     #project :is(.aesop-case, .lune-case) {
-        margin-top: min(120px, 7vw);
+        margin-top: 7.50625rem;
     }
 
     #project :is(.aesop-opening, .lune-opening, .lune-system, .lune-finale) {
-        padding: min(72px, 4.2vw) var(--page-gutter);
+        padding: 4.50625rem var(--page-gutter);
     }
 
     #project :is(.aesop-opening-layout, .lune-introduction) {
-        gap: min(64px, 3.73vw);
+        gap: 4rem;
     }
 
     #project .aesop-opening-layout {
-        margin-top: min(48px, 2.8vw);
-        padding-top: min(40px, 2.33vw);
+        margin-top: 3rem;
+        padding-top: 2.5rem;
     }
 
     #project .aesop-opening-visual {
-        padding: min(56px, 3.26vw) min(32px, 1.86vw);
+        padding: 3.49375rem 1.99375rem;
     }
 
     #project .aesop-opening-copy {
-        padding-block: min(12px, .7vw);
+        padding-block: 0.75rem;
     }
 
     #project :is(.aesop-opening-copy h4, .lune-introduction .lune-intro-copy h3) {
-        margin-bottom: min(24px, 1.4vw);
+        margin-bottom: 1.5rem;
     }
 
     #project :is(.aesop-opening-copy h5, .lune-intro-copy h4) {
-        margin: min(28px, 1.63vw) 0 min(12px, .7vw);
-        padding-top: min(24px, 1.4vw);
+        margin: 1.75rem 0 0.75rem;
+        padding-top: 1.5rem;
     }
 
     #project :is(.aesop-facts, .lune-facts) {
-        gap: min(20px, 1.16vw);
-        margin-top: min(32px, 1.86vw);
+        gap: 1.24375rem;
+        margin-top: 1.99375rem;
     }
 
     #project :is(.aesop-facts > div, .lune-facts > div) {
         grid-template-columns: minmax(0, .8fr) minmax(0, 1.5fr);
-        gap: min(12px, .7vw);
+        gap: 0.75rem;
     }
 
     #project :is(.aesop-facts-tools dd, .lune-fact-tags) {
-        gap: min(8px, .46vw);
+        gap: 0.49375rem;
     }
 
     #project :is(.aesop-fact-tag, .lune-fact-tag) {
-        padding: min(1px, .06vw) min(8px, .46vw);
+        padding: 0.0625rem 0.49375rem;
     }
 
     #project :is(.aesop-typography, .lune-font-typography) {
-        padding-block: min(48px, 2.8vw);
+        padding-block: 3rem;
     }
 
     #project :is(.aesop-type-intro, .lune-font-intro) {
-        gap: min(24px, 1.4vw);
+        gap: 1.5rem;
     }
 
     #project :is(.aesop-typography > h3, .aesop-colors > h3, .lune-type-heading h3) {
-        margin-bottom: min(40px, 2.33vw);
+        margin-bottom: 2.5rem;
     }
 
     #project :is(.aesop-type-scale, .lune-type-table-scroll) {
-        margin-top: min(36px, 2.1vw);
+        margin-top: 2.25rem;
     }
 
     #project .aesop-colors {
-        margin-block: min(110px, 6.4vw);
+        margin-block: 6.8625rem;
     }
 
     #project .aesop-responsive-body {
-        padding: min(48px, 2.8vw) var(--page-gutter);
+        padding: 3rem var(--page-gutter);
     }
 
     #project .aesop-responsive {
-        margin-top: min(90px, 5.25vw);
+        margin-top: 5.63125rem;
     }
 
     #project .aesop-responsive-finale {
-        margin-top: min(96px, 5.6vw);
+        margin-top: 6.00625rem;
     }
 
     #project :is(.aesop-responsive h3, .lune-finale h3) {
-        margin-bottom: min(24px, 1.4vw);
+        margin-bottom: 1.5rem;
     }
 
     #project .aesop-responsive-stage {
         height: auto;
         aspect-ratio: 650 / 400;
-        margin-top: min(60px, 3.5vw);
+        margin-top: 3.75625rem;
     }
 
     #project .lune-hero-mockup {
-        margin-block: min(70px, 4.08vw) min(100px, 5.83vw);
+        margin-block: 4.375rem 6.25rem;
     }
 
     #project .lune-page-gallery {
-        margin-block: min(65px, 3.79vw);
+        margin-block: 4.0625rem;
     }
 
     #project .lune-system-details>h3 {
-        padding: min(48px, 2.8vw) 0 min(16px, .93vw);
+        padding: 3rem 0 1rem;
     }
 
     #project .lune-system-row {
-        gap: min(60px, 3.5vw);
-        margin: min(16px, .93vw) 0;
+        gap: 3.75625rem;
+        margin: 1rem 0;
     }
 
     #project .lune-system-row>div {
@@ -373,362 +377,917 @@
     }
 
     #project .lune-type-table .lune-type-caption {
-        margin-top: min(32px, 1.86vw);
-        padding-bottom: min(12px, .7vw);
+        margin-top: 1.99375rem;
+        padding-bottom: 0.75rem;
     }
 
     #project .lune-finale .lune-device-group {
-        margin-top: min(65px, 3.79vw);
+        margin-top: 4.0625rem;
     }
 
     #project :is(#lune-title, #lune-system-title) {
-        padding-right: min(32px, 1.86vw);
+        padding-right: 1.99375rem;
     }
 
     #project :is(#lune-title, #lune-system-title) img {
-        height: min(100px, 7vw);
+        height: 7.50625rem;
+    }
+}
+
+@media (max-width: 1280px) {
+    #project .project-heading>p {
+        margin-top: 0.8rem;
+    }
+    #project .project-breakpoints {
+        margin-top: 3.725rem;
+    }
+    #project .project-device-list {
+        margin-top: 2.65625rem;
+        width: 40rem;
+    }
+    #project .project-device-icon {
+        width: 4.2375rem;
+        height: 4.2375rem;
+        margin-bottom: 0.75rem;
+    }
+    #project :is(.aesop-case, .lune-case) {
+        margin-top: 5.6rem;
+    }
+    #project :is(.aesop-opening, .lune-opening, .lune-system, .lune-finale) {
+        padding: 3.3625rem var(--page-gutter);
+    }
+    #project :is(.aesop-opening-layout, .lune-introduction) {
+        gap: 2.98125rem;
+    }
+    #project .aesop-opening-layout {
+        margin-top: 2.2375rem;
+        padding-top: 1.8625rem;
+    }
+    #project .aesop-opening-visual {
+        padding: 2.60625rem 1.4875rem;
+    }
+    #project .aesop-opening-copy {
+        padding-block: 0.5625rem;
+    }
+    #project :is(.aesop-opening-copy h4, .lune-introduction .lune-intro-copy h3) {
+        margin-bottom: 1.11875rem;
+    }
+    #project :is(.aesop-opening-copy h5, .lune-intro-copy h4) {
+        margin: 1.30625rem 0 0.5625rem;
+        padding-top: 1.11875rem;
+    }
+    #project :is(.aesop-facts, .lune-facts) {
+        gap: 0.925rem;
+        margin-top: 1.4875rem;
+    }
+    #project :is(.aesop-facts > div, .lune-facts > div) {
+        gap: 0.5625rem;
+    }
+    #project :is(.aesop-facts-tools dd, .lune-fact-tags) {
+        gap: 0.36875rem;
+    }
+    #project :is(.aesop-fact-tag, .lune-fact-tag) {
+        padding: 0.05rem 0.36875rem;
+    }
+    #project :is(.aesop-typography, .lune-font-typography) {
+        padding-block: 2.2375rem;
+    }
+    #project :is(.aesop-type-intro, .lune-font-intro) {
+        gap: 1.11875rem;
+    }
+    #project :is(.aesop-typography > h3, .aesop-colors > h3, .lune-type-heading h3) {
+        margin-bottom: 1.8625rem;
+    }
+    #project :is(.aesop-type-scale, .lune-type-table-scroll) {
+        margin-top: 1.68125rem;
+    }
+    #project .aesop-colors {
+        margin-block: 5.11875rem;
+    }
+    #project .aesop-responsive-body {
+        padding: 2.2375rem var(--page-gutter);
+    }
+    #project .aesop-responsive {
+        margin-top: 4.2rem;
+    }
+    #project .aesop-responsive-finale {
+        margin-top: 4.48125rem;
+    }
+    #project :is(.aesop-responsive h3, .lune-finale h3) {
+        margin-bottom: 1.11875rem;
+    }
+    #project .aesop-responsive-stage {
+        margin-top: 2.8rem;
+    }
+    #project .lune-hero-mockup {
+        margin-block: 3.2625rem 4.6625rem;
+    }
+    #project .lune-page-gallery {
+        margin-block: 3.03125rem;
+    }
+    #project .lune-system-details>h3 {
+        padding: 2.2375rem 0 0.74375rem;
+    }
+    #project .lune-system-row {
+        gap: 2.8rem;
+        margin: 0.74375rem 0;
+    }
+    #project .lune-type-table .lune-type-caption {
+        margin-top: 1.4875rem;
+        padding-bottom: 0.5625rem;
+    }
+    #project .lune-finale .lune-device-group {
+        margin-top: 3.03125rem;
+    }
+    #project :is(#lune-title, #lune-system-title) {
+        padding-right: 1.4875rem;
+    }
+    #project :is(#lune-title, #lune-system-title) img {
+        height: 5.6rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    #project .project-heading>p {
+        margin-top: 0.6375rem;
+    }
+    #project .project-breakpoints {
+        margin-top: 2.98125rem;
+    }
+    #project .project-device-list {
+        margin-top: 2.125rem;
+        width: 32rem;
+    }
+    #project .project-device-icon {
+        width: 3.39375rem;
+        height: 3.39375rem;
+        margin-bottom: 0.6rem;
+    }
+    #project :is(.aesop-case, .lune-case) {
+        margin-top: 4.48125rem;
+    }
+    #project :is(.aesop-opening, .lune-opening, .lune-system, .lune-finale) {
+        padding: 2.6875rem var(--page-gutter);
+    }
+    #project :is(.aesop-opening-layout, .lune-introduction) {
+        gap: 2.3875rem;
+    }
+    #project .aesop-opening-layout {
+        margin-top: 1.79375rem;
+        padding-top: 1.49375rem;
+    }
+    #project .aesop-opening-visual {
+        padding: 2.0875rem 1.1875rem;
+    }
+    #project .aesop-opening-copy {
+        padding-block: 0.45rem;
+    }
+    #project :is(.aesop-opening-copy h4, .lune-introduction .lune-intro-copy h3) {
+        margin-bottom: 0.89375rem;
+    }
+    #project :is(.aesop-opening-copy h5, .lune-intro-copy h4) {
+        margin: 1.04375rem 0 0.45rem;
+        padding-top: 0.89375rem;
+    }
+    #project :is(.aesop-facts, .lune-facts) {
+        gap: 0.74375rem;
+        margin-top: 1.1875rem;
+    }
+    #project :is(.aesop-facts > div, .lune-facts > div) {
+        gap: 0.45rem;
+    }
+    #project :is(.aesop-facts-tools dd, .lune-fact-tags) {
+        gap: 0.29375rem;
+    }
+    #project :is(.aesop-fact-tag, .lune-fact-tag) {
+        padding: 0.0375rem 0.29375rem;
+    }
+    #project :is(.aesop-typography, .lune-font-typography) {
+        padding-block: 1.79375rem;
+    }
+    #project :is(.aesop-type-intro, .lune-font-intro) {
+        gap: 0.89375rem;
+    }
+    #project :is(.aesop-typography > h3, .aesop-colors > h3, .lune-type-heading h3) {
+        margin-bottom: 1.49375rem;
+    }
+    #project :is(.aesop-type-scale, .lune-type-table-scroll) {
+        margin-top: 1.34375rem;
+    }
+    #project .aesop-colors {
+        margin-block: 4.09375rem;
+    }
+    #project .aesop-responsive-body {
+        padding: 1.79375rem var(--page-gutter);
+    }
+    #project .aesop-responsive {
+        margin-top: 3.3625rem;
+    }
+    #project .aesop-responsive-finale {
+        margin-top: 3.58125rem;
+    }
+    #project :is(.aesop-responsive h3, .lune-finale h3) {
+        margin-bottom: 0.89375rem;
+    }
+    #project .aesop-responsive-stage {
+        margin-top: 2.2375rem;
+    }
+    #project .lune-hero-mockup {
+        margin-block: 2.6125rem 3.73125rem;
+    }
+    #project .lune-page-gallery {
+        margin-block: 2.425rem;
+    }
+    #project .lune-system-details>h3 {
+        padding: 1.79375rem 0 0.59375rem;
+    }
+    #project .lune-system-row {
+        gap: 2.2375rem;
+        margin: 0.59375rem 0;
+    }
+    #project .lune-type-table .lune-type-caption {
+        margin-top: 1.1875rem;
+        padding-bottom: 0.45rem;
+    }
+    #project .lune-finale .lune-device-group {
+        margin-top: 2.425rem;
+    }
+    #project :is(#lune-title, #lune-system-title) {
+        padding-right: 1.1875rem;
+    }
+    #project :is(#lune-title, #lune-system-title) img {
+        height: 4.48125rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #project .project-heading>p {
+        margin-top: 0.48125rem;
+    }
+    #project .project-breakpoints {
+        margin-top: 2.2375rem;
+    }
+    #project .project-device-list {
+        margin-top: 1.59375rem;
+        width: 24rem;
+    }
+    #project .project-device-icon {
+        width: 2.54375rem;
+        height: 2.54375rem;
+        margin-bottom: 0.45rem;
+    }
+    #project :is(.aesop-case, .lune-case) {
+        margin-top: 3.3625rem;
+    }
+    #project :is(.aesop-opening, .lune-opening, .lune-system, .lune-finale) {
+        padding: 2.01875rem var(--page-gutter);
+    }
+    #project :is(.aesop-opening-layout, .lune-introduction) {
+        gap: 1.7875rem;
+    }
+    #project .aesop-opening-layout {
+        margin-top: 1.34375rem;
+        padding-top: 1.11875rem;
+    }
+    #project .aesop-opening-visual {
+        padding: 1.5625rem 0.89375rem;
+    }
+    #project .aesop-opening-copy {
+        padding-block: 0.3375rem;
+    }
+    #project :is(.aesop-opening-copy h4, .lune-introduction .lune-intro-copy h3) {
+        margin-bottom: 0.675rem;
+    }
+    #project :is(.aesop-opening-copy h5, .lune-intro-copy h4) {
+        margin: 0.78125rem 0 0.3375rem;
+        padding-top: 0.675rem;
+    }
+    #project :is(.aesop-facts, .lune-facts) {
+        gap: 0.55625rem;
+        margin-top: 0.89375rem;
+    }
+    #project :is(.aesop-facts > div, .lune-facts > div) {
+        gap: 0.3375rem;
+    }
+    #project :is(.aesop-facts-tools dd, .lune-fact-tags) {
+        gap: 0.21875rem;
+    }
+    #project :is(.aesop-fact-tag, .lune-fact-tag) {
+        padding: 0.03125rem 0.21875rem;
+    }
+    #project :is(.aesop-typography, .lune-font-typography) {
+        padding-block: 1.34375rem;
+    }
+    #project :is(.aesop-type-intro, .lune-font-intro) {
+        gap: 0.675rem;
+    }
+    #project :is(.aesop-typography > h3, .aesop-colors > h3, .lune-type-heading h3) {
+        margin-bottom: 1.11875rem;
+    }
+    #project :is(.aesop-type-scale, .lune-type-table-scroll) {
+        margin-top: 1.00625rem;
+    }
+    #project .aesop-colors {
+        margin-block: 3.075rem;
+    }
+    #project .aesop-responsive-body {
+        padding: 1.34375rem var(--page-gutter);
+    }
+    #project .aesop-responsive {
+        margin-top: 2.51875rem;
+    }
+    #project .aesop-responsive-finale {
+        margin-top: 2.6875rem;
+    }
+    #project :is(.aesop-responsive h3, .lune-finale h3) {
+        margin-bottom: 0.675rem;
+    }
+    #project .aesop-responsive-stage {
+        margin-top: 1.68125rem;
+    }
+    #project .lune-hero-mockup {
+        margin-block: 1.95625rem 2.8rem;
+    }
+    #project .lune-page-gallery {
+        margin-block: 1.81875rem;
+    }
+    #project .lune-system-details>h3 {
+        padding: 1.34375rem 0 0.44375rem;
+    }
+    #project .lune-system-row {
+        gap: 1.68125rem;
+        margin: 0.44375rem 0;
+    }
+    #project .lune-type-table .lune-type-caption {
+        margin-top: 0.89375rem;
+        padding-bottom: 0.3375rem;
+    }
+    #project .lune-finale .lune-device-group {
+        margin-top: 1.81875rem;
+    }
+    #project :is(#lune-title, #lune-system-title) {
+        padding-right: 0.89375rem;
+    }
+    #project :is(#lune-title, #lune-system-title) img {
+        height: 3.3625rem;
+    }
+}
+
+@media (max-width: 402px) {
+    #project .project-heading>p {
+        margin-top: 0.25rem;
+    }
+    #project .project-breakpoints {
+        margin-top: 1.16875rem;
+    }
+    #project .project-device-list {
+        margin-top: 0.83125rem;
+        width: 12.5625rem;
+    }
+    #project .project-device-icon {
+        width: 1.33125rem;
+        height: 1.33125rem;
+        margin-bottom: 0.2375rem;
+    }
+    #project :is(.aesop-case, .lune-case) {
+        margin-top: 1.75625rem;
+    }
+    #project :is(.aesop-opening, .lune-opening, .lune-system, .lune-finale) {
+        padding: 1.05625rem var(--page-gutter);
+    }
+    #project :is(.aesop-opening-layout, .lune-introduction) {
+        gap: 0.9375rem;
+    }
+    #project .aesop-opening-layout {
+        margin-top: 0.70625rem;
+        padding-top: 0.5875rem;
+    }
+    #project .aesop-opening-visual {
+        padding: 0.81875rem 0.46875rem;
+    }
+    #project .aesop-opening-copy {
+        padding-block: 0.175rem;
+    }
+    #project :is(.aesop-opening-copy h4, .lune-introduction .lune-intro-copy h3) {
+        margin-bottom: 0.35rem;
+    }
+    #project :is(.aesop-opening-copy h5, .lune-intro-copy h4) {
+        margin: 0.4125rem 0 0.175rem;
+        padding-top: 0.35rem;
+    }
+    #project :is(.aesop-facts, .lune-facts) {
+        gap: 0.29375rem;
+        margin-top: 0.46875rem;
+    }
+    #project :is(.aesop-facts > div, .lune-facts > div) {
+        gap: 0.175rem;
+    }
+    #project :is(.aesop-facts-tools dd, .lune-fact-tags) {
+        gap: 0.1125rem;
+    }
+    #project :is(.aesop-fact-tag, .lune-fact-tag) {
+        padding: 0.0125rem 0.1125rem;
+    }
+    #project :is(.aesop-typography, .lune-font-typography) {
+        padding-block: 0.70625rem;
+    }
+    #project :is(.aesop-type-intro, .lune-font-intro) {
+        gap: 0.35rem;
+    }
+    #project :is(.aesop-typography > h3, .aesop-colors > h3, .lune-type-heading h3) {
+        margin-bottom: 0.5875rem;
+    }
+    #project :is(.aesop-type-scale, .lune-type-table-scroll) {
+        margin-top: 0.525rem;
+    }
+    #project .aesop-colors {
+        margin-block: 1.60625rem;
+    }
+    #project .aesop-responsive-body {
+        padding: 0.70625rem var(--page-gutter);
+    }
+    #project .aesop-responsive {
+        margin-top: 1.31875rem;
+    }
+    #project .aesop-responsive-finale {
+        margin-top: 1.40625rem;
+    }
+    #project :is(.aesop-responsive h3, .lune-finale h3) {
+        margin-bottom: 0.35rem;
+    }
+    #project .aesop-responsive-stage {
+        margin-top: 0.88125rem;
+    }
+    #project .lune-hero-mockup {
+        margin-block: 1.025rem 1.4625rem;
+    }
+    #project .lune-page-gallery {
+        margin-block: 0.95rem;
+    }
+    #project .lune-system-details>h3 {
+        padding: 0.70625rem 0 0.23125rem;
+    }
+    #project .lune-system-row {
+        gap: 0.88125rem;
+        margin: 0.23125rem 0;
+    }
+    #project .lune-type-table .lune-type-caption {
+        margin-top: 0.46875rem;
+        padding-bottom: 0.175rem;
+    }
+    #project .lune-finale .lune-device-group {
+        margin-top: 0.95rem;
+    }
+    #project :is(#lune-title, #lune-system-title) {
+        padding-right: 0.46875rem;
+    }
+    #project :is(#lune-title, #lune-system-title) img {
+        height: 1.75625rem;
+    }
+}
+
+@media (max-width: 280px) {
+    #project .project-heading>p {
+        margin-top: 0.175rem;
+    }
+    #project .project-breakpoints {
+        margin-top: 0.8125rem;
+    }
+    #project .project-device-list {
+        margin-top: 0.58125rem;
+        width: 8.75rem;
+    }
+    #project .project-device-icon {
+        width: 0.925rem;
+        height: 0.925rem;
+        margin-bottom: 0.1625rem;
+    }
+    #project :is(.aesop-case, .lune-case) {
+        margin-top: 1.225rem;
+    }
+    #project :is(.aesop-opening, .lune-opening, .lune-system, .lune-finale) {
+        padding: 0.7375rem var(--page-gutter);
+    }
+    #project :is(.aesop-opening-layout, .lune-introduction) {
+        gap: 0.65rem;
+    }
+    #project .aesop-opening-layout {
+        margin-top: 0.4875rem;
+        padding-top: 0.40625rem;
+    }
+    #project .aesop-opening-visual {
+        padding: 0.56875rem 0.325rem;
+    }
+    #project .aesop-opening-copy {
+        padding-block: 0.125rem;
+    }
+    #project :is(.aesop-opening-copy h4, .lune-introduction .lune-intro-copy h3) {
+        margin-bottom: 0.24375rem;
+    }
+    #project :is(.aesop-opening-copy h5, .lune-intro-copy h4) {
+        margin: 0.2875rem 0 0.125rem;
+        padding-top: 0.24375rem;
+    }
+    #project :is(.aesop-facts, .lune-facts) {
+        gap: 0.2rem;
+        margin-top: 0.325rem;
+    }
+    #project :is(.aesop-facts > div, .lune-facts > div) {
+        gap: 0.125rem;
+    }
+    #project :is(.aesop-facts-tools dd, .lune-fact-tags) {
+        gap: 0.08125rem;
+    }
+    #project :is(.aesop-fact-tag, .lune-fact-tag) {
+        padding: 0.0125rem 0.08125rem;
+    }
+    #project :is(.aesop-typography, .lune-font-typography) {
+        padding-block: 0.4875rem;
+    }
+    #project :is(.aesop-type-intro, .lune-font-intro) {
+        gap: 0.24375rem;
+    }
+    #project :is(.aesop-typography > h3, .aesop-colors > h3, .lune-type-heading h3) {
+        margin-bottom: 0.40625rem;
+    }
+    #project :is(.aesop-type-scale, .lune-type-table-scroll) {
+        margin-top: 0.36875rem;
+    }
+    #project .aesop-colors {
+        margin-block: 1.11875rem;
+    }
+    #project .aesop-responsive-body {
+        padding: 0.4875rem var(--page-gutter);
+    }
+    #project .aesop-responsive {
+        margin-top: 0.91875rem;
+    }
+    #project .aesop-responsive-finale {
+        margin-top: 0.98125rem;
+    }
+    #project :is(.aesop-responsive h3, .lune-finale h3) {
+        margin-bottom: 0.24375rem;
+    }
+    #project .aesop-responsive-stage {
+        margin-top: 0.6125rem;
+    }
+    #project .lune-hero-mockup {
+        margin-block: 0.7125rem 1.01875rem;
+    }
+    #project .lune-page-gallery {
+        margin-block: 0.6625rem;
+    }
+    #project .lune-system-details>h3 {
+        padding: 0.4875rem 0 0.1625rem;
+    }
+    #project .lune-system-row {
+        gap: 0.6125rem;
+        margin: 0.1625rem 0;
+    }
+    #project .lune-type-table .lune-type-caption {
+        margin-top: 0.325rem;
+        padding-bottom: 0.125rem;
+    }
+    #project .lune-finale .lune-device-group {
+        margin-top: 0.6625rem;
+    }
+    #project :is(#lune-title, #lune-system-title) {
+        padding-right: 0.325rem;
+    }
+    #project :is(#lune-title, #lune-system-title) img {
+        height: 1.225rem;
     }
 }
 
 /* Text widths calibrated for the current copy; explicit <br> breaks stay intact. */
 @media (max-width: 1716px) {
     #project-title {
-        font-size: min(64px, 6.897778vw);
+        font-size: 4rem;
     }
 
     #project header.project-heading>p {
-        font-size: min(16px, 1.724444vw);
+        font-size: 1rem;
     }
 
     #breakpoint-title {
-        font-size: min(16px, 1.724444vw);
+        font-size: 1rem;
     }
 
     #project ul.project-device-list>li:nth-of-type(1)>h4 {
-        font-size: min(16px, 1.724444vw);
+        font-size: 1rem;
     }
 
     #project ul.project-device-list>li:nth-of-type(1)>p {
-        font-size: min(14px, 1.508889vw);
+        font-size: 0.875rem;
     }
 
     #project ul.project-device-list>li:nth-of-type(2)>h4 {
-        font-size: min(16px, 1.724444vw);
+        font-size: 1rem;
     }
 
     #project ul.project-device-list>li:nth-of-type(2)>p {
-        font-size: min(14px, 1.508889vw);
+        font-size: 0.875rem;
     }
 
     #project ul.project-device-list>li:nth-of-type(3)>h4 {
-        font-size: min(16px, 1.724444vw);
+        font-size: 1rem;
     }
 
     #project ul.project-device-list>li:nth-of-type(3)>p {
-        font-size: min(14px, 1.508889vw);
+        font-size: 0.875rem;
     }
 
     #project p.aesop-eyebrow {
-        font-size: min(14px, 1.508889vw);
+        font-size: 0.875rem;
     }
 
     #aesop-title {
-        font-size: min(25px, 2.694444vw);
+        font-size: 1.5625rem;
     }
 
     #project nav.aesop-links>a:nth-of-type(1) {
-        font-size: min(13px, 1.401111vw);
+        font-size: 0.8125rem;
     }
 
     #project nav.aesop-links>a:nth-of-type(2) {
-        font-size: min(13px, 1.401111vw);
+        font-size: 0.8125rem;
     }
 
     #project div.aesop-opening-copy>h4 {
-        font-size: min(26px, 2.802222vw);
+        font-size: 1.625rem;
     }
 
     #project h5 {
-        font-size: min(15px, 1.616667vw);
+        font-size: 0.9375rem;
     }
 
     #project .aesop-opening-copy > p {
-        font-size: 12px;
+        font-size: 0.75rem;
         white-space: normal;
-        text-wrap: wrap;
+        word-break: keep-all;
         overflow-wrap: anywhere;
         line-height: 1.6;
     }
-
+    .aesop-opening-copy> p br {
+        display: none;
+    }
     #project dl.aesop-facts>div:nth-of-type(1)>dt {
-        font-size: min(16px, 1.724444vw);
+        font-size: 1rem;
     }
 
     #project dl.aesop-facts>div:nth-of-type(1)>dd {
-        font-size: min(16px, 1.724444vw);
+        font-size: 1rem;
     }
 
     #project dl.aesop-facts>div:nth-of-type(2)>dt {
-        font-size: min(16px, 1.724444vw);
+        font-size: 1rem;
     }
 
     #project dl.aesop-facts>div:nth-of-type(2)>dd {
-        font-size: min(16px, 1.724444vw);
+        font-size: 1rem;
     }
 
     #project dl.aesop-facts>div.aesop-facts-tools:nth-of-type(3)>dt {
-        font-size: min(16px, 1.724444vw);
+        font-size: 1rem;
     }
 
     #project dl.aesop-facts>div.aesop-facts-tools:nth-of-type(3)>dd>span.aesop-fact-tag {
-        font-size: min(13.6px, 0.708614vw);
+        font-size: 0.85rem;
     }
 
     #project dl.aesop-facts>div.aesop-facts-tools:nth-of-type(4)>dt {
-        font-size: min(16px, 1.724444vw);
+        font-size: 1rem;
     }
 
     #project dl.aesop-facts>div.aesop-facts-tools:nth-of-type(4)>dd>span.aesop-fact-tag:nth-of-type(1) {
-        font-size: min(13.6px, 0.708580vw);
+        font-size: 0.85rem;
     }
 
     #project dl.aesop-facts>div.aesop-facts-tools:nth-of-type(4)>dd>span.aesop-fact-tag:nth-of-type(2) {
-        font-size: min(13.6px, 0.708580vw);
+        font-size: 0.85rem;
     }
 
     #project dl.aesop-facts>div.aesop-facts-tools:nth-of-type(4)>dd>span.aesop-fact-tag:nth-of-type(3) {
-        font-size: min(13.6px, 0.708580vw);
+        font-size: 0.85rem;
     }
 
     #aesop-type-title {
-        font-size: min(22px, 2.371111vw);
+        font-size: 1.375rem;
     }
 
     #project p.aesop-type-name {
-        font-size: min(40px, 4.311111vw);
+        font-size: 2.5rem;
     }
 
     #aesop-color-title {
-        font-size: min(22px, 2.371111vw);
+        font-size: 1.375rem;
     }
 
     #project p.aesop-color-description {
-        font-size: min(13px, 1.401111vw);
+        font-size: 0.8125rem;
     }
 
     #project div.aesop-palette-content>p {
-        font-size: min(13px, 1.318576vw);
+        font-size: 0.8125rem;
     }
 
     #project div.aesop-responsive-copy>h3 {
-        font-size: min(30px, 3.233333vw);
+        font-size: 1.875rem;
     }
 
     #project div.aesop-responsive-copy>p:nth-of-type(1) {
-        font-size: min(14px, 1.508889vw);
+        font-size: 0.875rem;
     }
 
     #project div.aesop-responsive-copy>p:nth-of-type(2) {
-        font-size: min(14px, 0.924486vw);
+        font-size: 0.875rem;
     }
 
     #project div.aesop-responsive-detail>h3 {
-        font-size: min(20px, 2.155556vw);
+        font-size: 1.25rem;
     }
 
     #project div.aesop-responsive-detail>p {
-        font-size: min(14px, 0.942679vw);
+        font-size: 0.875rem;
     }
 
     #project div.aesop-responsive-finale>h3 {
-        font-size: min(26px, 2.802222vw);
+        font-size: 1.625rem;
     }
 
     #project div.aesop-responsive-finale>p {
-        font-size: min(14px, 1.508889vw);
+        font-size: 0.875rem;
     }
 
     #project p.lune-eyebrow {
-        font-size: min(12px, 1.293333vw);
+        font-size: 0.75rem;
     }
 
     #lune-title {
-        font-size: min(34px, 3.664444vw);
+        font-size: 2.125rem;
     }
 
     #project p.lune-word {
-        font-size: min(16px, 1.724444vw);
+        font-size: 1rem;
     }
 
     #project nav.lune-links>a {
-        font-size: min(13px, 1.401111vw);
+        font-size: 0.8125rem;
     }
 
     #project div.lune-browser-bar>span {
-        font-size: min(10px, 1.077778vw);
+        font-size: 0.625rem;
     }
 
     #project div.lune-intro-copy>h3 {
-        font-size: min(31px, 3.341111vw);
-    }
-
-    #project div.lune-intro-copy>p:nth-of-type(1) {
-        font-size: min(16px, 1.400410vw);
-    }
-
-    #project div.lune-intro-copy>p:nth-of-type(2) {
-        font-size: min(16px, 0.815379vw);
+        font-size: 1.9375rem;
     }
 
     #project div.lune-intro-copy>h4 {
-        font-size: min(16px, 1.724444vw);
-    }
-
-    #project div.lune-intro-copy>p:nth-of-type(3) {
-        font-size: min(16px, 0.821411vw);
+        font-size: 1rem;
     }
 
     #project dl.lune-facts>div:nth-of-type(1)>dt {
-        font-size: min(13px, 1.401111vw);
+        font-size: 0.8125rem;
     }
 
     #project dl.lune-facts>div:nth-of-type(1)>dd {
-        font-size: min(13px, 1.401111vw);
+        font-size: 0.8125rem;
     }
 
     #project dl.lune-facts>div:nth-of-type(2)>dt {
-        font-size: min(13px, 1.401111vw);
+        font-size: 0.8125rem;
     }
 
     #project dl.lune-facts>div:nth-of-type(2)>dd {
-        font-size: min(13px, 1.401111vw);
+        font-size: 0.8125rem;
     }
 
     #project dl.lune-facts>div:nth-of-type(3)>dt {
-        font-size: min(13px, 1.401111vw);
+        font-size: 0.8125rem;
     }
 
     #project dl.lune-facts>div:nth-of-type(3)>dd {
-        font-size: min(13px, 1.401111vw);
+        font-size: 0.8125rem;
     }
 
     #project dl.lune-facts>div:nth-of-type(4)>dt {
-        font-size: min(13px, 1.401111vw);
+        font-size: 0.8125rem;
     }
 
     #project dl.lune-facts>div:nth-of-type(4)>dd.lune-fact-tags>span.lune-fact-tag {
-        font-size: min(13px, 0.677332vw);
+        font-size: 0.8125rem;
     }
 
     #project dl.lune-facts>div:nth-of-type(5)>dt {
-        font-size: min(13px, 1.401111vw);
+        font-size: 0.8125rem;
     }
 
     #project dl.lune-facts>div:nth-of-type(5)>dd.lune-fact-tags>span.lune-fact-tag:nth-of-type(1) {
-        font-size: min(13px, 0.677293vw);
+        font-size: 0.8125rem;
     }
 
     #project dl.lune-facts>div:nth-of-type(5)>dd.lune-fact-tags>span.lune-fact-tag:nth-of-type(2) {
-        font-size: min(13px, 0.677293vw);
+        font-size: 0.8125rem;
     }
 
     #project dl.lune-facts>div:nth-of-type(5)>dd.lune-fact-tags>span.lune-fact-tag:nth-of-type(3) {
-        font-size: min(13px, 0.677293vw);
+        font-size: 0.8125rem;
     }
 
     #lune-system-title {
-        font-size: min(32px, 3.448889vw);
+        font-size: 2rem;
     }
 
     #project header.lune-section-heading>p {
-        font-size: min(16px, 1.724444vw);
+        font-size: 1rem;
     }
 
     #project div.lune-system-details>h3 {
-        font-size: min(20px, 2.155556vw);
+        font-size: 1.25rem;
     }
 
     #project div.lune-system-row>div:nth-of-type(1)>h3 {
-        font-size: min(16px, 1.724444vw);
+        font-size: 1rem;
     }
 
     #project div.lune-system-row>div:nth-of-type(1)>p {
-        font-size: min(16px, 1.724444vw);
+        font-size: 1rem;
     }
 
     #project ul.lune-palette>li:nth-of-type(1) {
-        font-size: min(12px, 0.026944vw);
+        font-size: 0.75rem;
     }
 
     #project ul.lune-palette>li:nth-of-type(1)>small {
-        font-size: min(10px, 1.077778vw);
+        font-size: 0.625rem;
     }
 
     #project ul.lune-palette>li:nth-of-type(2) {
-        font-size: min(12px, 0.026944vw);
+        font-size: 0.75rem;
     }
 
     #project ul.lune-palette>li:nth-of-type(2)>small {
-        font-size: min(10px, 1.077778vw);
+        font-size: 0.625rem;
     }
 
     #project ul.lune-palette>li:nth-of-type(3) {
-        font-size: min(12px, 0.025867vw);
+        font-size: 0.75rem;
     }
 
     #project ul.lune-palette>li:nth-of-type(3)>small {
-        font-size: min(10px, 1.077778vw);
+        font-size: 0.625rem;
     }
 
     #project ul.lune-palette>li:nth-of-type(4) {
-        font-size: min(12px, 0.025867vw);
+        font-size: 0.75rem;
     }
 
     #project ul.lune-palette>li:nth-of-type(4)>small {
-        font-size: min(10px, 1.077778vw);
+        font-size: 0.625rem;
     }
 
     #project div.lune-system-row>div:nth-of-type(2)>h3 {
-        font-size: min(16px, 1.724444vw);
+        font-size: 1rem;
     }
 
     #project p.desc {
-        font-size: min(14px, 0.906289vw);
+        font-size: 0.75rem;
     }
 
     #lune-type-title {
-        font-size: min(20px, 2.155556vw);
+        font-size: 1.25rem;
     }
 
     #project div.lune-font-overview>h3 {
-        font-size: min(16px, 1.724444vw);
+        font-size: 1rem;
     }
 
     #project p.lune-font-name {
-        font-size: min(31px, 3.341111vw);
+        font-size: 1.9375rem;
     }
 
     #project div.lune-font-why>h3 {
-        font-size: min(16px, 1.724444vw);
+        font-size: 1rem;
     }
 
     #project .aesop-type-intro > .aesop-type-name + p {
-        font-size: min(12px, 1.012413vw);
+        font-size: 0.75rem;
     }
 
     #project div.lune-font-why>p {
-        font-size: min(12px, 1.012413vw);
+        font-size: 0.75rem;
     }
 
     #lune-type-caption {
-        font-size: min(20px, 2.155556vw);
+        font-size: 1.25rem;
     }
 
     #lune-finale-title {
-        font-size: min(34px, 3.664444vw);
+        font-size: 2.125rem;
     }
 
     #project section.lune-finale>p {
-        font-size: min(16px, 1.724444vw);
+        font-size: 1rem;
     }
 }
