@@ -658,37 +658,277 @@
 /* RESPONSIVE: original rules above are preserved. */
 
 @media (max-width: 1280px) {
-  .lune-opening, .lune-system, .lune-typography, .lune-finale { padding: clamp(40px, 6.25vw, 80px) var(--page-gutter); }
-  .lune-heading h3, .lune-section-heading h3, .lune-finale h3 { font-size: clamp(20px, 2.65vw, 34px); }
+  .lune-opening, .lune-system, .lune-typography, .lune-finale { padding: 80px var(--page-gutter); }
+  .lune-heading h3, .lune-section-heading h3, .lune-finale h3 { font-size: 34px; }
   #lune-title, #lune-system-title { padding-right: 2.5vw; }
-  #lune-title img, #lune-system-title img { height: clamp(48px, 7.8vw, 100px); }
-  .lune-hero-mockup { margin-block: clamp(28px, 5.5vw, 70px) clamp(40px, 7.8vw, 100px); }
-  .lune-browser-bar { padding: clamp(4px, .94vw, 12px); gap: 4px; }
+  #lune-title img, #lune-system-title img { height: 100px; }
+  .lune-hero-mockup { margin-block: 70px 100px; }
+  .lune-browser-bar { padding: 12px; gap: 4px; }
   .lune-browser-bar i { width: 5px; height: 5px; }
-  .lune-introduction { gap: clamp(12px, 4.7vw, 60px); grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); }
+  .lune-introduction { gap: 60px; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); }
   .lune-introduction .lune-intro-copy h3 { margin-bottom: 16px; }
-  .lune-case .lune-intro-copy p, .lune-intro-copy h4 { font-size: clamp(11px, 1.25vw, 16px); }
+  .lune-case .lune-intro-copy p, .lune-intro-copy h4 { font-size: 16px; }
   .lune-facts { gap: 12px; }
-  .lune-facts > div { grid-template-columns: minmax(0, .8fr) minmax(0, 1.5fr); gap: 6px; font-size: clamp(10px, 1vw, 13px); }
+  .lune-facts > div { grid-template-columns: minmax(0, .8fr) minmax(0, 1.5fr); gap: 6px; font-size: 13px; }
   .lune-fact-tags { gap: 4px; }
   .lune-facts .lune-fact-tag { padding-inline: 4px; white-space: normal; }
-  .lune-page-gallery { margin-block: clamp(28px, 5vw, 65px); }
+  .lune-page-gallery { margin-block: 64px; }
   .lune-system-details > h3 { padding: 24px 0 12px; }
-  .lune-system-row { margin: 16px 0; gap: clamp(12px, 4.7vw, 60px); }
+  .lune-system-row { margin: 16px 0; gap: 60px; }
   .lune-system-row > div { flex: 1 1 0; }
-  .lune-system-row h3 { font-size: clamp(12px, 1.25vw, 16px); }
-  .lune-palette li { font-size: clamp(9px, .94vw, 12px); overflow-wrap: anywhere; }
+  .lune-system-row h3 { font-size: 16px; }
+  .lune-palette li { font-size: 12px; overflow-wrap: anywhere; }
   .lune-palette small { font-size: 9px; }
-  .lune-palette span { height: clamp(24px, 4.3vw, 55px); }
+  .lune-palette span { height: 55px; }
   .lune-font-typography { padding: 32px 0; }
   .lune-font-intro { flex-wrap: nowrap; gap: 16px; }
   .lune-font-intro > div { flex: 1 1 0; }
-  .lune-type-table .lune-type-row { grid-template-columns: minmax(0, 1fr) minmax(0, .4fr) minmax(0, .2fr) minmax(0, .26fr); column-gap: clamp(4px, .94vw, 12px); }
-  .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(1) .lune-type-sample { font-size: clamp(20px, 3vw, 39px); }
-  .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(2) .lune-type-sample { font-size: clamp(18px, 2.4vw, 31px); }
-  .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(3) .lune-type-sample { font-size: clamp(16px, 1.95vw, 25px); }
-  .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(4) .lune-type-sample { font-size: clamp(14px, 1.56vw, 20px); }
-  .lune-finale .lune-device-group { margin-top: clamp(28px, 5vw, 65px); }
+  .lune-type-table .lune-type-row { grid-template-columns: minmax(0, 1fr) minmax(0, .4fr) minmax(0, .2fr) minmax(0, .26fr); column-gap: 12px; }
+  .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(1) .lune-type-sample { font-size: 38px; }
+  .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(2) .lune-type-sample { font-size: 31px; }
+  .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(3) .lune-type-sample { font-size: 25px; }
+  .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(4) .lune-type-sample { font-size: 20px; }
+  .lune-finale .lune-device-group { margin-top: 64px; }
+}
+
+@media (max-width: 1024px) {
+    .lune-opening, .lune-system, .lune-typography, .lune-finale {
+        padding: 64px var(--page-gutter);
+    }
+    .lune-heading h3, .lune-section-heading h3, .lune-finale h3 {
+        font-size: 27px;
+    }
+    #lune-title img, #lune-system-title img {
+        height: 80px;
+    }
+    .lune-hero-mockup {
+        margin-block: 56px 80px;
+    }
+    .lune-browser-bar {
+        padding: 10px;
+    }
+    .lune-introduction {
+        gap: 48px;
+    }
+    .lune-case .lune-intro-copy p, .lune-intro-copy h4 {
+        font-size: 13px;
+    }
+    .lune-facts > div {
+        font-size: 10px;
+    }
+    .lune-page-gallery {
+        margin-block: 51px;
+    }
+    .lune-system-row {
+        gap: 48px;
+    }
+    .lune-system-row h3 {
+        font-size: 13px;
+    }
+    .lune-palette li {
+        font-size: 10px;
+    }
+    .lune-palette span {
+        height: 44px;
+    }
+    .lune-type-table .lune-type-row {
+        column-gap: 10px;
+    }
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(1) .lune-type-sample {
+        font-size: 31px;
+    }
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(2) .lune-type-sample {
+        font-size: 25px;
+    }
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(3) .lune-type-sample {
+        font-size: 20px;
+    }
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(4) .lune-type-sample {
+        font-size: 16px;
+    }
+    .lune-finale .lune-device-group {
+        margin-top: 51px;
+    }
+}
+
+@media (max-width: 768px) {
+    .lune-opening, .lune-system, .lune-typography, .lune-finale {
+        padding: 48px var(--page-gutter);
+    }
+    .lune-heading h3, .lune-section-heading h3, .lune-finale h3 {
+        font-size: 20px;
+    }
+    #lune-title img, #lune-system-title img {
+        height: 60px;
+    }
+    .lune-hero-mockup {
+        margin-block: 42px 60px;
+    }
+    .lune-browser-bar {
+        padding: 7px;
+    }
+    .lune-introduction {
+        gap: 36px;
+    }
+    .lune-case .lune-intro-copy p, .lune-intro-copy h4 {
+        font-size: 11px;
+    }
+    .lune-facts > div {
+        font-size: 10px;
+    }
+    .lune-page-gallery {
+        margin-block: 38px;
+    }
+    .lune-system-row {
+        gap: 36px;
+    }
+    .lune-system-row h3 {
+        font-size: 12px;
+    }
+    .lune-palette li {
+        font-size: 9px;
+    }
+    .lune-palette span {
+        height: 33px;
+    }
+    .lune-type-table .lune-type-row {
+        column-gap: 7px;
+    }
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(1) .lune-type-sample {
+        font-size: 23px;
+    }
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(2) .lune-type-sample {
+        font-size: 18px;
+    }
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(3) .lune-type-sample {
+        font-size: 16px;
+    }
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(4) .lune-type-sample {
+        font-size: 14px;
+    }
+    .lune-finale .lune-device-group {
+        margin-top: 38px;
+    }
+}
+
+@media (max-width: 402px) {
+    .lune-opening, .lune-system, .lune-typography, .lune-finale {
+        padding: 40px var(--page-gutter);
+    }
+    .lune-heading h3, .lune-section-heading h3, .lune-finale h3 {
+        font-size: 20px;
+    }
+    #lune-title img, #lune-system-title img {
+        height: 48px;
+    }
+    .lune-hero-mockup {
+        margin-block: 28px 40px;
+    }
+    .lune-browser-bar {
+        padding: 4px;
+    }
+    .lune-introduction {
+        gap: 19px;
+    }
+    .lune-case .lune-intro-copy p, .lune-intro-copy h4 {
+        font-size: 11px;
+    }
+    .lune-facts > div {
+        font-size: 10px;
+    }
+    .lune-page-gallery {
+        margin-block: 28px;
+    }
+    .lune-system-row {
+        gap: 19px;
+    }
+    .lune-system-row h3 {
+        font-size: 12px;
+    }
+    .lune-palette li {
+        font-size: 9px;
+    }
+    .lune-palette span {
+        height: 24px;
+    }
+    .lune-type-table .lune-type-row {
+        column-gap: 4px;
+    }
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(1) .lune-type-sample {
+        font-size: 20px;
+    }
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(2) .lune-type-sample {
+        font-size: 18px;
+    }
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(3) .lune-type-sample {
+        font-size: 16px;
+    }
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(4) .lune-type-sample {
+        font-size: 14px;
+    }
+    .lune-finale .lune-device-group {
+        margin-top: 28px;
+    }
+}
+
+@media (max-width: 280px) {
+    .lune-opening, .lune-system, .lune-typography, .lune-finale {
+        padding: 40px var(--page-gutter);
+    }
+    .lune-heading h3, .lune-section-heading h3, .lune-finale h3 {
+        font-size: 20px;
+    }
+    #lune-title img, #lune-system-title img {
+        height: 48px;
+    }
+    .lune-hero-mockup {
+        margin-block: 28px 40px;
+    }
+    .lune-browser-bar {
+        padding: 4px;
+    }
+    .lune-introduction {
+        gap: 13px;
+    }
+    .lune-case .lune-intro-copy p, .lune-intro-copy h4 {
+        font-size: 11px;
+    }
+    .lune-facts > div {
+        font-size: 10px;
+    }
+    .lune-page-gallery {
+        margin-block: 28px;
+    }
+    .lune-system-row {
+        gap: 13px;
+    }
+    .lune-system-row h3 {
+        font-size: 12px;
+    }
+    .lune-palette li {
+        font-size: 9px;
+    }
+    .lune-palette span {
+        height: 24px;
+    }
+    .lune-type-table .lune-type-row {
+        column-gap: 4px;
+    }
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(1) .lune-type-sample {
+        font-size: 20px;
+    }
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(2) .lune-type-sample {
+        font-size: 18px;
+    }
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(3) .lune-type-sample {
+        font-size: 16px;
+    }
+    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(4) .lune-type-sample {
+        font-size: 14px;
+    }
+    .lune-finale .lune-device-group {
+        margin-top: 28px;
+    }
 }
 
 /* Match the Aesop typography scale, including the table header. */
@@ -697,7 +937,7 @@
   #project .lune-type-table .lune-type-row {
     grid-template-columns: minmax(0, 55fr) minmax(0, 29fr) minmax(0, 6fr) minmax(0, 10fr);
     column-gap: .75cqw;
-    padding-block: clamp(6px, 1cqw, 12px);
+    padding-block: 12px;
   }
   #project .lune-type-table .lune-type-cell { font-size: min(12px, 1.5cqw); white-space: nowrap; overflow-wrap: normal; }
   #project .lune-type-body .lune-type-row:nth-child(1) .lune-type-sample { font-size: min(39px, 2.5cqw); }
@@ -708,4 +948,34 @@
   #project .lune-type-body .lune-type-row:nth-child(6) .lune-type-sample { font-size: min(16px, 1.65cqw); }
   #project .lune-type-body .lune-type-row:nth-child(7) .lune-type-sample { font-size: min(13px, 1.5cqw); }
   #project .lune-type-body .lune-type-row:nth-child(8) .lune-type-sample { font-size: min(10px, 1.4cqw); }
+}
+
+@media (max-width: 1280px) {
+    #project .lune-type-table .lune-type-row {
+        padding-block: 10px;
+    }
+}
+
+@media (max-width: 1024px) {
+    #project .lune-type-table .lune-type-row {
+        padding-block: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    #project .lune-type-table .lune-type-row {
+        padding-block: 6px;
+    }
+}
+
+@media (max-width: 402px) {
+    #project .lune-type-table .lune-type-row {
+        padding-block: 6px;
+    }
+}
+
+@media (max-width: 280px) {
+    #project .lune-type-table .lune-type-row {
+        padding-block: 6px;
+    }
 }

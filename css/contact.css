@@ -84,7 +84,55 @@
 /* RESPONSIVE: original rules above are preserved. */
 
 @media (max-width: 1280px) {
-  .contact-section { --contact-title-size: clamp(30px, 6.25vw, 80px); --contact-body-size: clamp(12px, 1.56vw, 20px); --contact-gutter: var(--page-gutter); --contact-copy-gap: clamp(20px, 3.125vw, 40px); --contact-author-gap: clamp(32px, 5vw, 64px); }
-  .contact-content { min-height: 0; padding-block: clamp(64px, 12.5vw, 160px) clamp(72px, 14vw, 180px); }
+  .contact-section { --contact-title-size: 80px; --contact-body-size: 20px; --contact-gutter: var(--page-gutter); --contact-copy-gap: 40px; --contact-author-gap: 64px; }
+  .contact-content { min-height: 0; padding-block: 160px 179px; }
   .contact-title { letter-spacing: -.025em; }
+}
+
+@media (max-width: 1024px) {
+    .contact-section {
+        --contact-title-size: 64px;
+        --contact-body-size: 16px;
+        --contact-copy-gap: 32px;
+        --contact-author-gap: 51px;
+    }
+    .contact-content {
+        padding-block: 128px 143px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        --contact-title-size: 48px;
+        --contact-body-size: 12px;
+        --contact-copy-gap: 24px;
+        --contact-author-gap: 38px;
+    }
+    .contact-content {
+        padding-block: 96px 108px;
+    }
+}
+
+@media (max-width: 402px) {
+    .contact-section {
+        --contact-title-size: 30px;
+        --contact-body-size: 12px;
+        --contact-copy-gap: 20px;
+        --contact-author-gap: 32px;
+    }
+    .contact-content {
+        padding-block: 64px 72px;
+    }
+}
+
+@media (max-width: 280px) {
+    .contact-section {
+        --contact-title-size: 30px;
+        --contact-body-size: 12px;
+        --contact-copy-gap: 20px;
+        --contact-author-gap: 32px;
+    }
+    .contact-content {
+        padding-block: 64px 72px;
+    }
 }

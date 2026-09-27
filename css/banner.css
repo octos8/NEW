@@ -169,9 +169,57 @@
 
 @media (max-width: 1280px) {
   .banner-section .banner-inner { width: 100%; }
-  .banner-section .banner-heading { gap: clamp(12px, 2.5vw, 32px); flex-wrap: nowrap; }
+  .banner-section .banner-heading { gap: 32px; flex-wrap: nowrap; }
   .banner-section .banner-caption { padding-top: 16px; gap: 12px; }
-  .banner-section .banner-caption h3 { font-size: clamp(14px, 1.875vw, 24px); padding-right: 0; }
-  .banner-section .banner-caption p { font-size: clamp(11px, 1.25vw, 16px); }
+  .banner-section .banner-caption h3 { font-size: 24px; padding-right: 0; }
+  .banner-section .banner-caption p { font-size: 16px; }
   .banner-section .swiper-pagination { top: auto; margin-top: 16px; }
+}
+
+@media (max-width: 1024px) {
+    .banner-section .banner-heading {
+        gap: 26px;
+    }
+    .banner-section .banner-caption h3 {
+        font-size: 19px;
+    }
+    .banner-section .banner-caption p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-section .banner-heading {
+        gap: 19px;
+    }
+    .banner-section .banner-caption h3 {
+        font-size: 14px;
+    }
+    .banner-section .banner-caption p {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 402px) {
+    .banner-section .banner-heading {
+        gap: 12px;
+    }
+    .banner-section .banner-caption h3 {
+        font-size: 14px;
+    }
+    .banner-section .banner-caption p {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 280px) {
+    .banner-section .banner-heading {
+        gap: 12px;
+    }
+    .banner-section .banner-caption h3 {
+        font-size: 14px;
+    }
+    .banner-section .banner-caption p {
+        font-size: 11px;
+    }
 }

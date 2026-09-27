@@ -191,10 +191,34 @@
 /* RESPONSIVE: original rules above are preserved. */
 
 @media (max-width: 1280px) {
-  .popup-section { min-height: 0; padding-block: clamp(32px, 3.75vw, 48px); }
+  .popup-section { min-height: 0; padding-block: 48px; }
   .popup-section .popup-layout { gap: 24px; }
   .popup-section .popup-station.swiper { flex: 0 0 52%; width: 52%; }
   .popup-heading p { margin-top: 12px; }
+}
+
+@media (max-width: 1024px) {
+    .popup-section {
+        padding-block: 38px;
+    }
+}
+
+@media (max-width: 768px) {
+    .popup-section {
+        padding-block: 32px;
+    }
+}
+
+@media (max-width: 402px) {
+    .popup-section {
+        padding-block: 32px;
+    }
+}
+
+@media (max-width: 280px) {
+    .popup-section {
+        padding-block: 32px;
+    }
 }
 @media (max-width: 767px) {
   .popup-section .popup-heading,

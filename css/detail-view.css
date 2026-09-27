@@ -139,13 +139,101 @@ footer {
 /* RESPONSIVE: original rules above are preserved. */
 
 @media (max-width: 1280px) {
-  .detail-view { padding: 96px clamp(16px, 3vw, 40px) 40px; }
-  .back-link { right: clamp(16px, 3vw, 40px); gap: 8px; }
-  .project-brand { font-size: clamp(22px, 2.5vw, 32px); }
-  .project-intro h1 { font-size: clamp(23px, 3.75vw, 48px); }
-  .display-title { font-size: clamp(42px, 9.375vw, 120px); margin-block: clamp(32px, 6.25vw, 80px); overflow-wrap: anywhere; }
+  .detail-view { padding: 96px 38px 40px; }
+  .back-link { right: 38px; gap: 8px; }
+  .project-brand { font-size: 32px; }
+  .project-intro h1 { font-size: 48px; }
+  .display-title { font-size: 120px; margin-block: 80px; overflow-wrap: anywhere; }
   .design-points { margin-bottom: 40px; }
-  .design-points h2 { font-size: clamp(19px, 1.875vw, 24px); margin-bottom: 24px; }
+  .design-points h2 { font-size: 24px; margin-bottom: 24px; }
   .design-points dt { font-size: 16px; margin-top: 24px; }
   .design-points dd { font-size: 14px; }
+}
+
+@media (max-width: 1024px) {
+    .detail-view {
+        padding: 96px 31px 40px;
+    }
+    .back-link {
+        right: 31px;
+    }
+    .project-brand {
+        font-size: 26px;
+    }
+    .project-intro h1 {
+        font-size: 38px;
+    }
+    .display-title {
+        font-size: 96px;
+        margin-block: 64px;
+    }
+    .design-points h2 {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 768px) {
+    .detail-view {
+        padding: 96px 23px 40px;
+    }
+    .back-link {
+        right: 23px;
+    }
+    .project-brand {
+        font-size: 22px;
+    }
+    .project-intro h1 {
+        font-size: 29px;
+    }
+    .display-title {
+        font-size: 72px;
+        margin-block: 48px;
+    }
+    .design-points h2 {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 402px) {
+    .detail-view {
+        padding: 96px 16px 40px;
+    }
+    .back-link {
+        right: 16px;
+    }
+    .project-brand {
+        font-size: 22px;
+    }
+    .project-intro h1 {
+        font-size: 23px;
+    }
+    .display-title {
+        font-size: 42px;
+        margin-block: 32px;
+    }
+    .design-points h2 {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 280px) {
+    .detail-view {
+        padding: 96px 16px 40px;
+    }
+    .back-link {
+        right: 16px;
+    }
+    .project-brand {
+        font-size: 22px;
+    }
+    .project-intro h1 {
+        font-size: 23px;
+    }
+    .display-title {
+        font-size: 42px;
+        margin-block: 32px;
+    }
+    .design-points h2 {
+        font-size: 19px;
+    }
 }

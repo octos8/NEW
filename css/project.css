@@ -103,37 +103,125 @@
 
 @media (max-width: 1280px) {
     .project-section {
-        padding-top: clamp(48px, 7.5vw, 96px);
+        padding-top: 96px;
     }
 
     .project-section .project-breakpoints {
-        margin-top: clamp(32px, 6.25vw, 80px);
+        margin-top: 80px;
     }
 
     .project-section .project-device-list {
-        margin-top: clamp(24px, 4.45vw, 57px);
+        margin-top: 57px;
     }
 
     .project-section .project-device-icon {
-        width: clamp(40px, 5.3vw, 68px);
-        height: clamp(40px, 5.3vw, 68px);
+        width: 68px;
+        height: 68px;
     }
 
     .project-section .project-device-list h4 {
-        font-size: clamp(12px, 1.25vw, 16px);
+        font-size: 16px;
     }
 
     .project-section .project-device-list p {
-        font-size: clamp(10px, 1.1vw, 14px);
+        font-size: 14px;
     }
 }
 
-/* PROJECT fluid layout: preserve explicit HTML line breaks only. */
+@media (max-width: 1024px) {
+    .project-section {
+        padding-top: 77px;
+    }
+    .project-section .project-breakpoints {
+        margin-top: 64px;
+    }
+    .project-section .project-device-list {
+        margin-top: 46px;
+    }
+    .project-section .project-device-icon {
+        width: 54px;
+        height: 54px;
+    }
+    .project-section .project-device-list h4 {
+        font-size: 13px;
+    }
+    .project-section .project-device-list p {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-section {
+        padding-top: 58px;
+    }
+    .project-section .project-breakpoints {
+        margin-top: 48px;
+    }
+    .project-section .project-device-list {
+        margin-top: 34px;
+    }
+    .project-section .project-device-icon {
+        width: 41px;
+        height: 41px;
+    }
+    .project-section .project-device-list h4 {
+        font-size: 12px;
+    }
+    .project-section .project-device-list p {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 402px) {
+    .project-section {
+        padding-top: 48px;
+    }
+    .project-section .project-breakpoints {
+        margin-top: 32px;
+    }
+    .project-section .project-device-list {
+        margin-top: 24px;
+    }
+    .project-section .project-device-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .project-section .project-device-list h4 {
+        font-size: 12px;
+    }
+    .project-section .project-device-list p {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 280px) {
+    .project-section {
+        padding-top: 48px;
+    }
+    .project-section .project-breakpoints {
+        margin-top: 32px;
+    }
+    .project-section .project-device-list {
+        margin-top: 24px;
+    }
+    .project-section .project-device-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .project-section .project-device-list h4 {
+        font-size: 12px;
+    }
+    .project-section .project-device-list p {
+        font-size: 10px;
+    }
+}
+
+/* PROJECT responsive layout: wrap content within the viewport. */
 @media (max-width: 1716px) {
     #project :is(h2, h3, h4, h5, p, dt, dd, a, small, .aesop-fact-tag, .lune-fact-tag, .lune-palette li, .lune-type-cell, .lune-type-caption, .lune-browser-bar span) {
-        white-space: nowrap;
-        text-wrap: nowrap;
-        overflow-wrap: normal;
+        white-space: normal;
+        text-wrap: wrap;
+        overflow-wrap: anywhere;
         word-break: normal;
         min-width: 0;
     }

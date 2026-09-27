@@ -124,11 +124,87 @@
 /* RESPONSIVE: original rules above are preserved. */
 
 @media (max-width: 1280px) {
-  .hero-section { height: clamp(400px, 53vw, 680px); }
-  .hero-inner { margin-inline: var(--page-gutter); padding: clamp(110px, 11vw, 140px) 2vw 0; }
+  .hero-section { height: 678px; }
+  .hero-inner { margin-inline: var(--page-gutter); padding: 140px 2vw 0; }
   .hero-title { letter-spacing: -.045em; white-space: nowrap; }
-  .hero-description { margin-top: clamp(24px, 5vw, 64px); width: 48%; }
-  .hero-profile { gap: clamp(8px, 1.8vw, 24px); width: 62%; font-size: clamp(11px, 1.55vw, 20px); }
+  .hero-description { margin-top: 64px; width: 48%; }
+  .hero-profile { gap: 23px; width: 62%; font-size: 20px; }
   .hero-visual { right: calc(-1 * var(--page-gutter)); }
-  .hero-line { margin-top: clamp(20px, 2.5vw, 32px); }
+  .hero-line { margin-top: 32px; }
+}
+
+@media (max-width: 1024px) {
+    .hero-section {
+        height: 543px;
+    }
+    .hero-inner {
+        padding: 113px 2vw 0;
+    }
+    .hero-description {
+        margin-top: 51px;
+    }
+    .hero-profile {
+        gap: 18px;
+        font-size: 16px;
+    }
+    .hero-line {
+        margin-top: 26px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 407px;
+    }
+    .hero-inner {
+        padding: 110px 2vw 0;
+    }
+    .hero-description {
+        margin-top: 38px;
+    }
+    .hero-profile {
+        gap: 14px;
+        font-size: 12px;
+    }
+    .hero-line {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 402px) {
+    .hero-section {
+        height: 400px;
+    }
+    .hero-inner {
+        padding: 110px 2vw 0;
+    }
+    .hero-description {
+        margin-top: 24px;
+    }
+    .hero-profile {
+        gap: 8px;
+        font-size: 11px;
+    }
+    .hero-line {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 280px) {
+    .hero-section {
+        height: 400px;
+    }
+    .hero-inner {
+        padding: 110px 2vw 0;
+    }
+    .hero-description {
+        margin-top: 24px;
+    }
+    .hero-profile {
+        gap: 8px;
+        font-size: 11px;
+    }
+    .hero-line {
+        margin-top: 20px;
+    }
 }
