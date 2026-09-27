@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
-    /* AESOP: 화면에 보이는 동안 아래로 스크롤하면 가볍게 흔들림 */
+    /* AESOP: 화면에 보이는 동안 아래로 스크롤하면 내부 휴대폰만 가볍게 흔들림 */
     (() => {
         const visual = document.querySelector('.aesop-opening-visual');
-        if (!visual || !visual.animate) return;
+        const phone = visual?.querySelector('.aesop-opening-phone');
+        if (!phone || !phone.animate) return;
 
         const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
         const shakeAngle = 1.2; // 흔들림 각도(deg)
@@ -28,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             lastScrollY = currentScrollY;
             if (!visible || !scrollingDown || motionPreference.matches || shakeAnimation) return;
 
-            shakeAnimation = visual.animate([
+            shakeAnimation = phone.animate([
                 { rotate: '0deg' },
                 { rotate: `${shakeAngle}deg` },
                 { rotate: `${-shakeAngle}deg` },
@@ -74,6 +75,49 @@ document.addEventListener('DOMContentLoaded', () => {
         heroScrollFrame = requestAnimationFrame(waitForHome);
     };
 
+    /* HEADER MENU POPUP */
+    const navToggle = document.querySelector('.nav-toggle');
+    const navPopup = document.querySelector('#nav-popup');
+    const siteNav = document.querySelector('.site-nav');
+    const mobileMenu = window.matchMedia('(max-width: 768px)');
+
+    const closeNav = () => {
+        if (!navPopup?.open) return;
+        navPopup.close();
+        navToggle?.setAttribute('aria-expanded', 'false');
+    };
+
+    // Keep one navigation list and move it into the dialog only on mobile.
+    const syncNavLayout = () => {
+        if (!navPopup || !siteNav) return;
+        closeNav();
+        if (mobileMenu.matches) {
+            navPopup.append(siteNav);
+        } else {
+            navPopup.before(siteNav);
+            if (document.activeElement === navToggle) {
+                siteNav.querySelector('a')?.focus({ preventScroll: true });
+            }
+        }
+    };
+    syncNavLayout();
+    mobileMenu.addEventListener('change', syncNavLayout);
+
+    navToggle?.addEventListener('click', () => {
+        if (!mobileMenu.matches || !navPopup || navPopup.open) return;
+        navPopup.showModal();
+        navToggle.setAttribute('aria-expanded', 'true');
+    });
+    navPopup?.querySelector('.nav-close')?.addEventListener('click', closeNav);
+    navPopup?.addEventListener('cancel', event => {
+        event.preventDefault();
+        closeNav();
+    });
+    navPopup?.addEventListener('close', () => {
+        // Do not overwrite the state if the menu was already reopened.
+        if (!navPopup.open) navToggle?.setAttribute('aria-expanded', 'false');
+    });
+
     /* HEADER NAV */
     const navLinks = document.querySelectorAll('.nav-list a');
     const sections = [...navLinks]
@@ -85,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = document.querySelector(link.getAttribute('href'));
             if (!target) return;
             e.preventDefault();
+            closeNav();
             cancelAnimationFrame(heroScrollFrame);
             target.scrollIntoView({
                 behavior: reducedMotion ? 'auto' : 'smooth',
@@ -317,31 +362,4 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
-    /* MOBILE MENU */
-    const header = document.querySelector('.site-header');
-    const navToggle = document.querySelector('.nav-toggle');
-    const mobileNavLinks = document.querySelectorAll('.site-nav a');
-
-    navToggle?.addEventListener('click', () => {
-        const isOpen = header.classList.toggle('is-open');
-        navToggle.setAttribute('aria-expanded', isOpen);
-        navToggle.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
-    });
-
-    mobileNavLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            header.classList.remove('is-open');
-            navToggle?.setAttribute('aria-expanded', 'false');
-            navToggle?.setAttribute('aria-label', '메뉴 열기');
-        });
-    });
-
-    document.addEventListener('click', e => {
-        if (!header?.classList.contains('is-open')) return;
-        if (header.contains(e.target)) return;
-
-        header.classList.remove('is-open');
-        navToggle?.setAttribute('aria-expanded', 'false');
-        navToggle?.setAttribute('aria-label', '메뉴 열기');
-    });
 });

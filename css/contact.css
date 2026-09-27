@@ -65,11 +65,12 @@
 
 .contact-description {
     margin-top: var(--contact-copy-gap);
-    font-size: var(--contact-body-size);
+    font-size: 0.75rem;
     line-height: 1.6;
     color: #cccccc;
     word-break: keep-all;
     overflow-wrap: anywhere;
+    text-wrap: nowrap;
 }
 
 .contact-author {
@@ -78,4 +79,12 @@
     line-height: 1.6;
     color: #dddddd;
     overflow-wrap: anywhere;
+}
+
+/* RESPONSIVE: original rules above are preserved. */
+
+@media (max-width: 1280px) {
+  .contact-section { --contact-title-size: clamp(30px, 6.25vw, 80px); --contact-body-size: clamp(12px, 1.56vw, 20px); --contact-gutter: var(--page-gutter); --contact-copy-gap: clamp(20px, 3.125vw, 40px); --contact-author-gap: clamp(32px, 5vw, 64px); }
+  .contact-content { min-height: 0; padding-block: clamp(64px, 12.5vw, 160px) clamp(72px, 14vw, 180px); }
+  .contact-title { letter-spacing: -.025em; }
 }

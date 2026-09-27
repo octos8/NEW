@@ -105,3 +105,21 @@ button, input, select, textarea {
 section[id] {
     scroll-margin-top: 96px;
 }
+
+/* RESPONSIVE: original rules above are preserved. */
+
+@media (max-width: 1280px) {
+  :root {
+    --page-gutter: clamp(16px, 3.3vw, 42px);
+    --fs-display: clamp(30px, 5vw, 64px);
+    --fs-hero: clamp(38px, 8.2vw, 105px);
+    --fs-h1: clamp(22px, 3vw, 39px);
+    --fs-h2: clamp(19px, 2.5vw, 31px);
+    --fs-h3: clamp(17px, 2vw, 25px);
+    --fs-h4: clamp(14px, 1.6vw, 20px);
+    --fs-body1: clamp(12px, 1.25vw, 16px);
+    --fs-body2: clamp(11px, 1.1vw, 13.6px);
+    --space-x-large: clamp(12px, 2.5vw, 32px);
+    --panel-padding: clamp(10px, 2.5vw, 32px);
+  }
+}

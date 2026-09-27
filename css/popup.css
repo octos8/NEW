@@ -6,12 +6,12 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    min-height: 0;
-    padding: 48px 0;
+    min-height: 800px;
+    padding: 72px 0;
 }
 
 .popup-heading p {
-    margin: 24px 0 0;
+    margin: 12px 0 0;
     color: var(--gray-900);
     word-break: keep-all;
     line-height: 1.4;
@@ -22,13 +22,14 @@
     flex-wrap: nowrap;
     width: 100%;
     display: flex;
-    gap: 0;
-    align-items: center;
+    gap: 24px;
+    margin-top: 20px;
+    align-items: flex-start;
 }
 
 .popup-section .popup-description-viewport.swiper {
     position: relative;
-    flex: 1 1 auto;
+    flex: 0 1 400px;
     min-width: 0;
     margin: 0;
     overflow: hidden;
@@ -162,7 +163,7 @@
     line-height: var(--lh1);
     color: var(--gray-900);
     word-break: keep-all;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
 }
 
 .popup-description-slide p {
@@ -175,15 +176,35 @@
 
 .popup-section .popup-station.swiper {
     position: relative;
-    flex: 0 0 500px;
+    flex: 0 0 min(60%, 800px);
     overflow: hidden;
-    left: -15;
     min-width: 0;
-    width: 75%;
+    width: min(60%, 800px);
     max-width: none;
     height: auto;
     aspect-ratio: auto;
-    margin: -12px 0 -12px auto;
+    margin: 0;
     justify-self: end;
     margin-block: 0;
+}
+
+/* RESPONSIVE: original rules above are preserved. */
+
+@media (max-width: 1280px) {
+  .popup-section { min-height: 0; padding-block: clamp(32px, 3.75vw, 48px); }
+  .popup-section .popup-layout { gap: 24px; }
+  .popup-section .popup-station.swiper { flex: 0 0 52%; width: 52%; }
+  .popup-heading p { margin-top: 12px; }
+}
+@media (max-width: 767px) {
+  .popup-section .popup-heading,
+  .popup-section .popup-description-slide { text-align: center; }
+  .popup-section .popup-heading h2 { margin-inline: auto; }
+  .popup-section .popup-description-slide h3,
+  .popup-section .popup-description-slide p,
+  .popup-section .popup-heading p { overflow-wrap: anywhere; }
+  .popup-section .popup-tool { justify-content: center; }
+  .popup-section .popup-layout { flex-direction: column; align-items: stretch; gap: 16px; margin-top: 20px; }
+  .popup-section .popup-description-viewport.swiper { flex: none; width: 100%; }
+  .popup-section .popup-station.swiper { flex: none; width: min(100%, 400px); margin: 0 auto; }
 }

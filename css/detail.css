@@ -130,3 +130,15 @@
     white-space: normal;
     font-size: 7rem;
 }
+
+/* RESPONSIVE: original rules above are preserved. */
+
+@media (max-width: 1280px) {
+  .detail-heading h2 { font-size: clamp(38px, 8.75vw, 112px); }
+  .detail-section .detail-heading { margin-bottom: clamp(24px, 3.75vw, 48px); }
+  .detail-section .detail-card figure { margin-bottom: 20px; }
+  .detail-section .detail-card h3 { font-size: clamp(16px, 1.56vw, 20px); }
+}
+@media (max-width: 767px) {
+  .detail-section .detail-list { grid-template-columns: minmax(0, 1fr); max-width: 420px; gap: 36px; }
+}

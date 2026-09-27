@@ -120,3 +120,15 @@
     font-size: var(--fs-h4);
     white-space: nowrap;
 }
+
+/* RESPONSIVE: original rules above are preserved. */
+
+@media (max-width: 1280px) {
+  .hero-section { height: clamp(400px, 53vw, 680px); }
+  .hero-inner { margin-inline: var(--page-gutter); padding: clamp(110px, 11vw, 140px) 2vw 0; }
+  .hero-title { letter-spacing: -.045em; white-space: nowrap; }
+  .hero-description { margin-top: clamp(24px, 5vw, 64px); width: 48%; }
+  .hero-profile { gap: clamp(8px, 1.8vw, 24px); width: 62%; font-size: clamp(11px, 1.55vw, 20px); }
+  .hero-visual { right: calc(-1 * var(--page-gutter)); }
+  .hero-line { margin-top: clamp(20px, 2.5vw, 32px); }
+}

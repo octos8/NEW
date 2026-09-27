@@ -184,3 +184,15 @@
     pointer-events: none;
     overflow-wrap: anywhere;
 }
+
+/* RESPONSIVE: original rules above are preserved. */
+
+@media (max-width: 1280px) {
+  .poster-section { padding-block: clamp(48px, 7.5vw, 96px) clamp(56px, 12.5vw, 160px); }
+  .poster-heading { margin-bottom: clamp(40px, 8.75vw, 112px); }
+  .poster-item { min-height: clamp(260px, 58.6vw, 750px); column-gap: clamp(12px, 2vw, 26px); padding-block: 20px; }
+  .poster-content { width: 92%; }
+  .poster-content h3 { font-size: clamp(15px, 2.4vw, 31px); margin-bottom: 12px; }
+  .poster-content > p { font-size: clamp(11px, 1.25vw, 16px); }
+  .poster-decoration > span { font-size: clamp(64px, 20vw, 256px); top: 100px; }
+}

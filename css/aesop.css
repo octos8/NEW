@@ -481,10 +481,13 @@
     font-size: 40px;
 }
 
-.aesop-type-intro > p:last-child {
-    max-width: 546px;
+.aesop-type-intro > .aesop-type-name + p {
     font-size: 12px;
-    line-height: 1.8;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #302a23;
+    word-break: normal;
+    overflow-wrap: normal;
 }
 
 .aesop-type-row {
@@ -847,4 +850,67 @@
 .aesop-responsive-detail {
     width: 62%;
     max-width: 45%;
+}
+
+/* RESPONSIVE: original rules above are preserved. */
+
+@media (max-width: 1280px) {
+  .aesop-case { margin-top: clamp(48px, 9.375vw, 120px); }
+  .aesop-opening { padding: clamp(32px, 3.125vw, 40px) var(--page-gutter) clamp(40px, 5.6vw, 72px); }
+  .aesop-opening-brand .aesop-logo { width: clamp(110px, 15.6vw, 200px); }
+  .aesop-opening .aesop-heading h3 { letter-spacing: clamp(1px, .625vw, 8px); }
+  .aesop-opening-layout { gap: clamp(12px, 5vw, 64px); margin-top: 32px; padding-top: 24px; }
+  .aesop-opening-visual { padding: clamp(16px, 4.375vw, 56px) clamp(8px, 2.5vw, 32px); }
+  .aesop-opening-copy h4 { font-size: clamp(16px, 2vw, 26px); margin-bottom: 16px; }
+  .aesop-opening-copy p, .aesop-opening-copy h5 { font-size: clamp(11px, 1.17vw, 15px); }
+  .aesop-case .aesop-facts { gap: 12px; margin-top: 24px; }
+  .aesop-case .aesop-facts > div { grid-template-columns: minmax(0, .8fr) minmax(0, 1.5fr); gap: 6px; }
+  .aesop-case .aesop-facts dt, .aesop-case .aesop-facts dd { font-size: clamp(10px, 1.25vw, 16px); }
+  .aesop-case .aesop-facts-tools dd { gap: 4px; }
+  .aesop-fact-tag { padding-inline: 4px; white-space: normal; }
+  .aesop-overview { margin-top: clamp(40px, 9.375vw, 120px); padding-inline: var(--page-gutter); gap: clamp(24px, 5.5vw, 70px) clamp(12px, 3.9vw, 50px); }
+  .aesop-overview h3 { font-size: clamp(16px, 1.875vw, 24px); margin-bottom: 16px; }
+  .aesop-overview p, .aesop-responsive p { font-size: clamp(11px, 1.1vw, 14px); }
+  .aesop-devices { padding: 0 5vw 2.5vw 0; }
+  .aesop-colors { margin: clamp(40px, 8.6vw, 110px) var(--page-gutter); }
+  .aesop-color-layout { grid-template-columns: clamp(36px, 7vw, 90px) minmax(0, 1fr); gap: clamp(12px, 2.5vw, 32px); }
+  .aesop-main-color { width: min(64px, 100%); }
+  .aesop-palette li { height: clamp(24px, 4.2vw, 54px); }
+  .aesop-typography { margin-top: clamp(40px, 8.6vw, 110px); padding: 32px var(--page-gutter); }
+  .aesop-type-intro { gap: 16px; }
+  .aesop-type-intro .aesop-type-name { font-size: clamp(20px, 3.125vw, 40px); }
+
+  .aesop-responsive { margin-top: clamp(40px, 7vw, 90px); }
+  .aesop-responsive-body { padding: 32px var(--page-gutter); }
+  .aesop-responsive h3 { font-size: clamp(17px, 2.34vw, 30px); }
+  .aesop-responsive-finale { margin-top: clamp(40px, 7.5vw, 96px); }
+  .aesop-responsive-stage { height: auto; aspect-ratio: 650 / 400; margin-top: clamp(24px, 4.7vw, 60px); }
+  .aesop-device--desktop { border-width: clamp(3px, .78vw, 10px); border-bottom-width: clamp(7px, 2vw, 26px); }
+}
+
+@media (max-width: 1716px) {
+  /* Keep all four typography columns on one line as their container shrinks. */
+  .aesop-type-scale { container-type: inline-size; }
+  .aesop-typography .aesop-type-scale .aesop-type-row {
+    grid-template-columns: minmax(0, 55fr) minmax(0, 29fr) minmax(0, 6fr) minmax(0, 10fr);
+    column-gap: .75cqw;
+    padding-block: clamp(6px, 1cqw, 12px);
+  }
+  .aesop-case .aesop-type-scale .aesop-type-row p {
+    min-width: 0;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: normal;
+    font-size: min(12px, 1.5cqw);
+  }
+  .aesop-case .aesop-type-scale .aesop-type-row .aesop-type-sample {
+    font-size: min(var(--sample-size), var(--sample-fluid, 2.5cqw));
+  }
+  .aesop-type-scale .aesop-type-row:nth-child(2) { --sample-fluid: 2.2cqw; }
+  .aesop-type-scale .aesop-type-row:nth-child(3) { --sample-fluid: 1.95cqw; }
+  .aesop-type-scale .aesop-type-row:nth-child(4) { --sample-fluid: 1.8cqw; }
+  .aesop-type-scale .aesop-type-row:nth-child(5),
+  .aesop-type-scale .aesop-type-row:nth-child(6) { --sample-fluid: 1.65cqw; }
+  .aesop-type-scale .aesop-type-row:nth-child(7) { --sample-fluid: 1.5cqw; }
+  .aesop-type-scale .aesop-type-row:nth-child(8) { --sample-fluid: 1.4cqw; }
 }

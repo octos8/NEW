@@ -62,7 +62,7 @@
 <body>
     <header class="site-header">
         <div class="header-inner">
-            <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false">
+            <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-popup" aria-haspopup="dialog">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -80,6 +80,9 @@
                     <li><a href="#contact">CONTACT</a></li>
                 </ul>
             </nav>
+            <dialog class="nav-popup" id="nav-popup" aria-label="전체 메뉴">
+                <button class="nav-close" type="button" aria-label="메뉴 닫기" autofocus></button>
+            </dialog>
         </div>
     </header>
     <main>
@@ -973,7 +976,7 @@
         <script src="./js/device-mockups.js"></script>
         <script src="./js/project-links.js"></script>
     </main>
-    <a class="top-link" href="#top" aria-label="페이지 맨 위로 이동">↑<span>TOP</span></a>
+    <a class="top-link" href="#top" aria-label="페이지 맨 위로 이동"><span class="up">↑</span><span>TOP</span></a>
 </body>
 
 </html>
