@@ -128,7 +128,7 @@
 }
 
 .aesop-links a {
-    min-height: 44px;
+    min-height: 16px;
     color: var(--aesop-heading-green);
     text-decoration: none;
     font-weight: 700;
@@ -327,7 +327,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 8px 16px;
+    padding: 4px 16px;
     border: 1px solid var(--aesop-main);
     border-radius: 999px;
     background: var(--aesop-tint);

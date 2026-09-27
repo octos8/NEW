@@ -681,13 +681,13 @@
     }
 
     .about-inner .profile-area {
-        gap: 4rem;
+        gap: 6rem;
         min-height: 0;
         padding: 1.5rem var(--page-gutter);
     }
 
     .profile-area .profile-content.profile-timeline {
-        padding: 0;
+        padding-top: 27px;
     }
 
     .profile-area .profile-left {

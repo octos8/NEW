@@ -192,7 +192,7 @@
 
 @media (max-width: 1280px) {
     .popup-section {
-        min-height: 0;
+        min-height: 682px;
         padding-block: 3rem;
     }
 
@@ -200,9 +200,12 @@
         gap: 1.5rem;
         margin-top: -2rem;
     }
+    .popup-section .popup-description-viewport.swiper {
+        flex: 0 1 430px;
+    }
 
     .popup-section .popup-station.swiper {
-        flex: 0 1 60%;
+        flex: 0 1 80%;
         width: 52%;
     }
 
@@ -220,6 +223,7 @@
         flex: 0 1 21.875rem;
         padding-top: 8rem;
     }
+    
 }
 
 @media (max-width: 768px) {

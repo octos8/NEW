@@ -26,7 +26,7 @@
     word-break: keep-all;
 }
 
-.banner-section .banner-heading > p {
+.banner-section .banner-heading>p {
     margin: 0;
     min-width: 0;
     flex: 0 1 auto;
@@ -168,45 +168,88 @@
 /* RESPONSIVE: original rules above are preserved. */
 
 @media (max-width: 1280px) {
-  .banner-section .banner-inner { width: 100%; }
-  .banner-section .banner-heading { gap: 2rem; flex-wrap: nowrap; }
-  .banner-section .banner-caption { padding-top: 1rem; gap: 0.75rem; }
-  .banner-section .banner-caption h3 { font-size: 1.5rem; padding-right: 0; }
-  .banner-section .banner-caption p { font-size: 1rem; }
-  .banner-section .swiper-pagination { top: auto; margin-top: 1rem; }
+    .banner-section .banner-station.swiper {
+        --swiper-pagination-bullet-size: 0.75rem;
+    }
+
+    .banner-section .banner-inner {
+        width: 100%;
+    }
+
+    .banner-section .banner-heading {
+        gap: 2rem;
+        flex-wrap: nowrap;
+    }
+
+    .banner-section .banner-caption {
+        padding-top: 1rem;
+        gap: 0.75rem;
+    }
+
+    .banner-section .banner-caption h3 {
+        font-size: 1.5rem;
+        padding-right: 0;
+    }
+
+    .banner-section .banner-caption p {
+        font-size: 1rem;
+    }
+
+    .banner-section .swiper-pagination {
+        top: -3rem;
+        margin-top: 1rem;
+    }
 }
 
 @media (max-width: 1024px) {
+    .banner-section .banner-station.swiper {
+        --swiper-pagination-bullet-size: 0.6875rem;
+    }
+
     .banner-section .banner-heading {
         gap: 1.625rem;
     }
+
     .banner-section .banner-caption h3 {
         font-size: 1.1875rem;
     }
+
     .banner-section .banner-caption p {
         font-size: 0.8125rem;
     }
 }
 
 @media (max-width: 768px) {
+    .banner-section .banner-station.swiper {
+        --swiper-pagination-bullet-size: 0.625rem;
+    }
+
     .banner-section .banner-heading {
         gap: 1.1875rem;
     }
+
     .banner-section .banner-caption h3 {
         font-size: 0.875rem;
     }
+
     .banner-section .banner-caption p {
         font-size: 0.6875rem;
     }
 }
 
 @media (max-width: 402px) {
+    .banner-section .banner-station.swiper {
+        --swiper-pagination-bullet-size: 0.625rem;
+    }
+
     .banner-section .banner-heading {
         gap: 0.75rem;
     }
+
     .banner-section .banner-caption h3 {
         font-size: 0.875rem;
     }
+
     .banner-section .banner-caption p {
         font-size: 0.6875rem;
     }
@@ -216,9 +259,11 @@
     .banner-section .banner-heading {
         gap: 0.75rem;
     }
+
     .banner-section .banner-caption h3 {
         font-size: 0.875rem;
     }
+
     .banner-section .banner-caption p {
         font-size: 0.6875rem;
     }
