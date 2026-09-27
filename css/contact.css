@@ -78,7 +78,7 @@
     color: #cccccc;
     word-break: keep-all;
     overflow-wrap: anywhere;
-    text-wrap: wrap;
+    text-wrap: nowrap;
 }
 
 .contact-author {

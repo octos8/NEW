@@ -1,3 +1,350 @@
+
+
+/* LUNE styles migrated from project.css. */
+.lune-links.project-links-sticky {
+    position: fixed;
+    z-index: 20;
+    top: var(--project-links-top);
+    left: var(--project-links-left);
+    width: var(--project-links-width);
+    margin: 0;
+}
+
+@media (max-width: 1280px) {
+    #project .lune-case {
+        margin-top: 5.6rem;
+    }
+
+    #project .lune-opening {
+        padding: 3.3625rem var(--page-gutter);
+    }
+
+    #project .lune-system {
+        padding: 3.3625rem var(--page-gutter);
+    }
+
+    #project .lune-finale {
+        padding: 3.3625rem var(--page-gutter);
+    }
+
+    #project .lune-introduction {
+        gap: 2.98125rem;
+    }
+
+    #project .lune-introduction .lune-intro-copy h3 {
+        margin-bottom: 1.11875rem;
+    }
+
+    #project .lune-intro-copy h4 {
+        margin: 1.30625rem 0 0.5625rem;
+        padding-top: 1.11875rem;
+    }
+
+    #project .lune-facts {
+        gap: 0.925rem;
+        margin-top: 1.4875rem;
+    }
+
+    #project .lune-facts > div {
+        gap: 0.5625rem;
+    }
+
+    #project dd.lune-fact-tags {
+        gap: 0.36875rem;
+    }
+
+    #project .lune-fact-tag {
+        padding: 0.05rem 0.36875rem;
+    }
+
+    #project .lune-font-intro {
+        gap: 1.11875rem;
+    }
+
+    #project .lune-type-heading h3 {
+        margin-bottom: 1.8625rem;
+    }
+
+    #project .lune-type-table-scroll {
+        margin-top: 1.68125rem;
+    }
+
+    #project .lune-finale h3 {
+        margin-bottom: 1.11875rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    #project .lune-case {
+        margin-top: 4.48125rem;
+    }
+
+    #project .lune-opening {
+        padding: 2.6875rem var(--page-gutter);
+    }
+
+    #project .lune-system {
+        padding: 2.6875rem var(--page-gutter);
+    }
+
+    #project .lune-finale {
+        padding: 2.6875rem var(--page-gutter);
+    }
+
+    #project .lune-introduction {
+        gap: 2.3875rem;
+    }
+
+    #project .lune-introduction .lune-intro-copy h3 {
+        margin-bottom: 0.89375rem;
+    }
+
+    #project .lune-intro-copy h4 {
+        margin: 1.04375rem 0 0.45rem;
+        padding-top: 0.89375rem;
+    }
+
+    #project .lune-facts {
+        gap: 0.74375rem;
+        margin-top: 1.1875rem;
+    }
+
+    #project .lune-facts > div {
+        gap: 0.45rem;
+    }
+
+    #project dd.lune-fact-tags {
+        gap: 0.29375rem;
+    }
+
+    #project .lune-fact-tag {
+        padding: 0.0375rem 0.29375rem;
+    }
+
+    #project .lune-font-intro {
+        gap: 0.89375rem;
+        margin-top: 2rem;
+    }
+
+    #project .lune-type-heading h3 {
+        margin-bottom: 1.49375rem;
+    }
+
+    #project .lune-type-table-scroll {
+        margin-top: 4.34375rem;
+    }
+
+    #project .lune-finale h3 {
+        margin-bottom: 0.89375rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #project .lune-case {
+        margin-top: 3.3625rem;
+    }
+
+    #project .lune-opening {
+        padding: 2.01875rem var(--page-gutter);
+    }
+
+    #project .lune-system {
+        padding: 2.01875rem var(--page-gutter);
+    }
+
+    #project .lune-finale {
+        padding: 2.01875rem var(--page-gutter);
+    }
+
+    #project .lune-introduction {
+        gap: 1.7875rem;
+    }
+
+    #project .lune-introduction .lune-intro-copy h3 {
+        margin-bottom: 0.675rem;
+        font-size: 18px;
+        word-break: keep-all;
+    }
+
+    #project .lune-intro-copy h4 {
+        margin: 0.78125rem 0 0.3375rem;
+        padding-top: 0.675rem;
+    }
+
+    #project .lune-facts {
+        gap: 0.55625rem;
+        margin-top: 0.89375rem;
+    }
+
+    #project .lune-facts > div {
+        gap: 0.3375rem;
+    }
+
+    #project dd.lune-fact-tags {
+        gap: 0.21875rem;
+    }
+
+    #project .lune-fact-tag {
+        padding: 0.03125rem 0.21875rem;
+    }
+
+    #project .lune-font-typography {
+        padding-block: 1.34375rem;
+    }
+
+    #project .lune-font-intro {
+        gap: 0.675rem;
+    }
+
+    #project .lune-type-heading h3 {
+        margin-bottom: 1.11875rem;
+    }
+
+    #project .lune-type-table-scroll {
+        margin-top: 1.00625rem;
+    }
+
+    #project .lune-finale h3 {
+        margin-bottom: 0.675rem;
+    }
+}
+
+@media (max-width: 402px) {
+    #project .lune-case {
+        margin-top: 1.75625rem;
+    }
+
+    #project .lune-opening {
+        padding: 1.05625rem var(--page-gutter);
+    }
+
+    #project .lune-system {
+        padding: 1.05625rem var(--page-gutter);
+    }
+
+    #project .lune-finale {
+        padding: 1.05625rem var(--page-gutter);
+    }
+
+    #project .lune-introduction {
+        gap: 0.9375rem;
+    }
+
+    #project .lune-introduction .lune-intro-copy h3 {
+        margin-bottom: 0.35rem;
+    }
+
+    #project .lune-intro-copy h4 {
+        margin: 0.4125rem 0 0.175rem;
+        padding-top: 0.35rem;
+    }
+
+    #project .lune-facts {
+        gap: 0.29375rem;
+        margin-top: 0.46875rem;
+    }
+
+    #project .lune-facts > div {
+        gap: 0.175rem;
+    }
+
+    #project dd.lune-fact-tags {
+        gap: 0.1125rem;
+    }
+
+    #project .lune-fact-tag {
+        padding: 0.0125rem 0.1125rem;
+    }
+
+    #project .lune-font-typography {
+        padding-block: 0.70625rem;
+    }
+
+    #project .lune-font-intro {
+        gap: 0.35rem;
+    }
+
+    #project .lune-type-heading h3 {
+        margin-bottom: 0.5875rem;
+    }
+
+    #project .lune-type-table-scroll {
+        margin-top: 0.525rem;
+    }
+
+    #project .lune-finale h3 {
+        margin-bottom: 0.35rem;
+    }
+}
+
+@media (max-width: 280px) {
+    #project .lune-case {
+        margin-top: 1.225rem;
+    }
+
+    #project .lune-opening {
+        padding: 0.7375rem var(--page-gutter);
+    }
+
+    #project .lune-system {
+        padding: 0.7375rem var(--page-gutter);
+    }
+
+    #project .lune-finale {
+        padding: 0.7375rem var(--page-gutter);
+    }
+
+    #project .lune-introduction {
+        gap: 0.65rem;
+    }
+
+    #project .lune-introduction .lune-intro-copy h3 {
+        margin-bottom: 0.24375rem;
+    }
+
+    #project .lune-intro-copy h4 {
+        margin: 0.2875rem 0 0.125rem;
+        padding-top: 0.24375rem;
+    }
+
+    #project .lune-facts {
+        gap: 0.2rem;
+        margin-top: 0.325rem;
+    }
+
+    #project .lune-facts > div {
+        gap: 0.125rem;
+    }
+
+    #project dd.lune-fact-tags {
+        gap: 0.08125rem;
+    }
+
+    #project .lune-fact-tag {
+        padding: 0.0125rem 0.08125rem;
+    }
+
+    #project .lune-font-typography {
+        padding-block: 0.4875rem;
+    }
+
+    #project .lune-font-intro {
+        gap: 0.24375rem;
+    }
+
+    #project .lune-type-heading h3 {
+        margin-bottom: 0.40625rem;
+    }
+
+    #project .lune-type-table-scroll {
+        margin-top: 0.36875rem;
+    }
+
+    #project .lune-finale h3 {
+        margin-bottom: 0.24375rem;
+    }
+}
+
 /* LUNE | 기본 스타일. */
 /* 글자와 간격은 px. 공통 값은 common.css의 :root에서 수정합니다. */
 
@@ -975,11 +1322,7 @@
         height: 6.25rem;
     }
 
-    .lune-hero-mockup {
-        margin-block: 4.375rem 6.25rem;
-    }
-
-    .lune-browser-bar {
+.lune-browser-bar {
         padding: 0.75rem;
         gap: 0.25rem;
     }
@@ -990,26 +1333,16 @@
     }
 
     .lune-introduction {
-        gap: 3.75rem;
         grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
     }
 
-    .lune-introduction .lune-intro-copy h3 {
-        margin-bottom: 1rem;
-    }
-
-    .lune-case .lune-intro-copy p,
+.lune-case .lune-intro-copy p,
     .lune-intro-copy h4 {
         font-size: 1rem;
     }
 
-    .lune-facts {
-        gap: 0.75rem;
-    }
-
-    .lune-facts>div {
+.lune-facts>div {
         grid-template-columns: minmax(0, .8fr) minmax(0, 1.5fr);
-        gap: 0.375rem;
         font-size: 0.8125rem;
     }
 
@@ -1022,20 +1355,7 @@
         white-space: normal;
     }
 
-    .lune-page-gallery {
-        margin-block: 4rem;
-    }
-
-    .lune-system-details>h3 {
-        padding: 1.5rem 0 0.75rem;
-    }
-
-    .lune-system-row {
-        margin: 1rem 0;
-        gap: 3.75rem;
-    }
-
-    .lune-system-row>div {
+.lune-system-row>div {
         flex: 1 1 0;
     }
 
@@ -1062,7 +1382,6 @@
 
     .lune-font-intro {
         flex-wrap: nowrap;
-        gap: 1rem;
     }
 
     .lune-font-intro>div {
@@ -1090,11 +1409,7 @@
         font-size: 1.25rem;
     }
 
-    .lune-finale .lune-device-group {
-        margin-top: 4rem;
-    }
-
-    #project .lune-type-table .lune-type-row {
+#project .lune-type-table .lune-type-row {
         padding-block: 0.625rem;
     }
 }
@@ -1157,19 +1472,11 @@
         height: 5rem;
     }
 
-    .lune-hero-mockup {
-        margin-block: 3.5rem 5rem;
-    }
-
-    .lune-browser-bar {
+.lune-browser-bar {
         padding: 0.625rem;
     }
 
-    .lune-introduction {
-        gap: 3rem;
-    }
-
-    .lune-case .lune-intro-copy p,
+.lune-case .lune-intro-copy p,
     .lune-intro-copy h4 {
         font-size: 0.8125rem;
     }
@@ -1178,15 +1485,7 @@
         font-size: 0.625rem;
     }
 
-    .lune-page-gallery {
-        margin-block: 3.1875rem;
-    }
-
-    .lune-system-row {
-        gap: 3rem;
-    }
-
-    .lune-system-row h3 {
+.lune-system-row h3 {
         font-size: 0.8125rem;
     }
 
@@ -1218,11 +1517,7 @@
         font-size: 1rem;
     }
 
-    .lune-finale .lune-device-group {
-        margin-top: 3.1875rem;
-    }
-
-    #project .lune-type-table .lune-type-row {
+#project .lune-type-table .lune-type-row {
         padding-block: 0.5rem;
     }
 }
@@ -1285,32 +1580,16 @@
         height: 3.75rem;
     }
 
-    .lune-hero-mockup {
-        margin-block: 2.625rem 3.75rem;
-    }
-
-    .lune-browser-bar {
+.lune-browser-bar {
         padding: 0.4375rem;
     }
 
-    .lune-introduction {
-        gap: 2.25rem;
-    }
-
-    .lune-case .lune-intro-copy p,
+.lune-case .lune-intro-copy p,
     .lune-intro-copy h4 {
         font-size: 0.6875rem;
     }
 
-    .lune-page-gallery {
-        margin-block: 2.375rem;
-    }
-
-    .lune-system-row {
-        gap: 2.25rem;
-    }
-
-    .lune-system-row h3 {
+.lune-system-row h3 {
         font-size: 0.75rem;
     }
 
@@ -1342,11 +1621,7 @@
         font-size: 0.875rem;
     }
 
-    .lune-finale .lune-device-group {
-        margin-top: 2.375rem;
-    }
-
-    #project .lune-type-table .lune-type-row {
+#project .lune-type-table .lune-type-row {
         padding-block: 0.375rem;
     }
 }
@@ -1403,27 +1678,11 @@
         height: 3rem;
     }
 
-    .lune-hero-mockup {
-        margin-block: 1.75rem 2.5rem;
-    }
-
-    .lune-browser-bar {
+.lune-browser-bar {
         padding: 0.25rem;
     }
 
-    .lune-introduction {
-        gap: 1.1875rem;
-    }
-
-    .lune-page-gallery {
-        margin-block: 1.75rem;
-    }
-
-    .lune-system-row {
-        gap: 1.1875rem;
-    }
-
-    .lune-palette span {
+.lune-palette span {
         height: 1.5rem;
     }
 
@@ -1435,9 +1694,6 @@
         font-size: 1.25rem;
     }
 
-    .lune-finale .lune-device-group {
-        margin-top: 1.75rem;
-    }
 }
 
 @media (max-width: 280px) {
@@ -1480,11 +1736,4 @@
         padding-right: 0.4375rem;
     }
 
-    .lune-introduction {
-        gap: 0.8125rem;
-    }
-
-    .lune-system-row {
-        gap: 0.8125rem;
-    }
 }

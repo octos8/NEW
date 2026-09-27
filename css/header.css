@@ -162,10 +162,10 @@
     }
 
     .nav-toggle span {
-        width: 0.75rem;
         height: 0.125rem;
         border-radius: 0.0625rem;
         background: currentColor;
+        width: 0.625rem;
     }
 
     .nav-popup {
@@ -233,6 +233,8 @@
         margin: 0;
         padding: 0;
         list-style: none;
+        align-items: stretch;
+        height: auto;
     }
 
     .nav-list a {
@@ -247,6 +249,7 @@
         font-weight: var(--fw2, 500);
         line-height: 1.3;
         text-decoration: none;
+        height: auto;
     }
 
     .nav-list a:hover,
@@ -272,27 +275,15 @@
         box-shadow: none;
     }
 
-    .nav-list {
-        align-items: stretch;
-        height: auto;
-    }
-
-    .nav-list li {
+.nav-list li {
         display: block;
         height: auto;
     }
 
-    .nav-list a {
-        height: auto;
-    }
-
-    .nav-list a::after {
+.nav-list a::after {
         display: none;
     }
 
-    .nav-toggle span {
-        width: 0.625rem;
-    }
 }
 
 @media (max-width: 402px) {

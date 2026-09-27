@@ -37,7 +37,7 @@
 .hero-line {
     position: relative;
     z-index: 3;
-    width: 30%;
+    width: 39%;
     height: 1px;
     margin-top: 32px;
     background: rgba(255, 255, 255, .8);
@@ -158,18 +158,14 @@
 
 @media (max-width: 1024px) {
     .hero-inner {
-        padding: 8.75rem 1.28125rem 0;
+        padding: 7.0625rem 1.28125rem 0;
     }
 
     .hero-section {
         height: 40.0625rem;
     }
 
-    .hero-inner {
-        padding: 7.0625rem 1.28125rem 0;
-    }
-
-    .hero-description {
+.hero-description {
         margin-top: 3.1875rem;
     }
 
@@ -185,22 +181,14 @@
 
 @media (max-width: 768px) {
     .hero-inner {
-        padding: 8.75rem 0.9625rem 0;
-    }
-
-    .hero-inner {
-        padding: 7.0625rem 0.9625rem 0;
-    }
-
-    .hero-section {
-        height: 25.4375rem;
-    }
-
-    .hero-inner {
         padding: 3.875rem 0;
     }
 
-    .hero-description {
+.hero-section {
+        height: 25.4375rem;
+    }
+
+.hero-description {
         margin-top: 2.375rem;
     }
 
@@ -218,26 +206,14 @@
 
 @media (max-width: 402px) {
     .hero-inner {
-        padding: 8.75rem 0.5rem 0;
-    }
-
-    .hero-inner {
-        padding: 7.0625rem 0.5rem 0;
-    }
-
-    .hero-inner {
         padding: 6.875rem 0.5rem 0;
     }
 
-    .hero-section {
+.hero-section {
         height: 25rem;
     }
 
-    .hero-inner {
-        padding: 6.875rem 0.5rem 0;
-    }
-
-    .hero-description {
+.hero-description {
         margin-top: 1.5rem;
     }
 
@@ -253,30 +229,14 @@
 
 @media (max-width: 280px) {
     .hero-inner {
-        padding: 8.75rem 0.35rem 0;
-    }
-
-    .hero-inner {
-        padding: 7.0625rem 0.35rem 0;
-    }
-
-    .hero-inner {
         padding: 6.875rem 0.35rem 0;
     }
 
-    .hero-inner {
-        padding: 6.875rem 0.35rem 0;
-    }
-
-    .hero-section {
+.hero-section {
         height: 25rem;
     }
 
-    .hero-inner {
-        padding: 6.875rem 0.35rem 0;
-    }
-
-    .hero-description {
+.hero-description {
         margin-top: 1.5rem;
     }
 
