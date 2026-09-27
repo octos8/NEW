@@ -660,10 +660,217 @@
     flex: 1 1 280px;
 }
 
-/* RESPONSIVE: original rules above are preserved. */
+/* LUNE responsive styles. */
 
 /* Match the Aesop typography scale, including the table header. */
+
 @media (max-width: 1716px) {
+    #project .lune-hero-mockup {
+        margin-block: 4.375rem 6.25rem;
+    }
+
+    #project .lune-page-gallery {
+        margin-block: 4.0625rem;
+    }
+
+    #project .lune-system-details>h3 {
+        padding: 3rem 0 1rem;
+    }
+
+    #project .lune-system-row {
+        gap: 3.75625rem;
+        margin: 1rem 0;
+    }
+
+    #project .lune-system-row>div {
+        flex: 1 1 0;
+    }
+
+    #project .lune-font-intro>div {
+        flex: 1 1 0;
+    }
+
+    #project .lune-type-table .lune-type-caption {
+        margin-top: 1.99375rem;
+        padding-bottom: 0.75rem;
+    }
+
+    #project .lune-finale .lune-device-group {
+        margin-top: 4.0625rem;
+    }
+
+    #project :is(#lune-title, #lune-system-title) {
+        padding-right: 1.99375rem;
+    }
+
+    #project :is(#lune-title, #lune-system-title) img {
+        height: 7.50625rem;
+    }
+
+    #project p.lune-eyebrow {
+        font-size: 0.75rem;
+    }
+
+    #lune-title {
+        font-size: 2.125rem;
+    }
+
+    #project p.lune-word {
+        font-size: 1rem;
+    }
+
+    #project nav.lune-links>a {
+        font-size: 0.8125rem;
+    }
+
+    #project div.lune-browser-bar>span {
+        font-size: 0.625rem;
+    }
+
+    #project div.lune-intro-copy>h3 {
+        font-size: 1.9375rem;
+    }
+
+    #project div.lune-intro-copy>h4 {
+        font-size: 1rem;
+    }
+
+    #project dl.lune-facts>div:nth-of-type(1)>dt {
+        font-size: 0.8125rem;
+    }
+
+    #project dl.lune-facts>div:nth-of-type(1)>dd {
+        font-size: 0.8125rem;
+    }
+
+    #project dl.lune-facts>div:nth-of-type(2)>dt {
+        font-size: 0.8125rem;
+    }
+
+    #project dl.lune-facts>div:nth-of-type(2)>dd {
+        font-size: 0.8125rem;
+    }
+
+    #project dl.lune-facts>div:nth-of-type(3)>dt {
+        font-size: 0.8125rem;
+    }
+
+    #project dl.lune-facts>div:nth-of-type(3)>dd {
+        font-size: 0.8125rem;
+    }
+
+    #project dl.lune-facts>div:nth-of-type(4)>dt {
+        font-size: 0.8125rem;
+    }
+
+    #project dl.lune-facts>div:nth-of-type(4)>dd.lune-fact-tags>span.lune-fact-tag {
+        font-size: 0.8125rem;
+    }
+
+    #project dl.lune-facts>div:nth-of-type(5)>dt {
+        font-size: 0.8125rem;
+    }
+
+    #project dl.lune-facts>div:nth-of-type(5)>dd.lune-fact-tags>span.lune-fact-tag:nth-of-type(1) {
+        font-size: 0.8125rem;
+    }
+
+    #project dl.lune-facts>div:nth-of-type(5)>dd.lune-fact-tags>span.lune-fact-tag:nth-of-type(2) {
+        font-size: 0.8125rem;
+    }
+
+    #project dl.lune-facts>div:nth-of-type(5)>dd.lune-fact-tags>span.lune-fact-tag:nth-of-type(3) {
+        font-size: 0.8125rem;
+    }
+
+    #lune-system-title {
+        font-size: 2rem;
+    }
+
+    #project header.lune-section-heading>p {
+        font-size: 1rem;
+    }
+
+    #project div.lune-system-details>h3 {
+        font-size: 1.25rem;
+    }
+
+    #project div.lune-system-row>div:nth-of-type(1)>h3 {
+        font-size: 1rem;
+    }
+
+    #project div.lune-system-row>div:nth-of-type(1)>p {
+        font-size: 1rem;
+    }
+
+    #project ul.lune-palette>li:nth-of-type(1) {
+        font-size: 0.75rem;
+    }
+
+    #project ul.lune-palette>li:nth-of-type(1)>small {
+        font-size: 0.625rem;
+    }
+
+    #project ul.lune-palette>li:nth-of-type(2) {
+        font-size: 0.75rem;
+    }
+
+    #project ul.lune-palette>li:nth-of-type(2)>small {
+        font-size: 0.625rem;
+    }
+
+    #project ul.lune-palette>li:nth-of-type(3) {
+        font-size: 0.75rem;
+    }
+
+    #project ul.lune-palette>li:nth-of-type(3)>small {
+        font-size: 0.625rem;
+    }
+
+    #project ul.lune-palette>li:nth-of-type(4) {
+        font-size: 0.75rem;
+    }
+
+    #project ul.lune-palette>li:nth-of-type(4)>small {
+        font-size: 0.625rem;
+    }
+
+    #project div.lune-system-row>div:nth-of-type(2)>h3 {
+        font-size: 1rem;
+    }
+
+    #lune-type-title {
+        font-size: 1.25rem;
+    }
+
+    #project div.lune-font-overview>h3 {
+        font-size: 1rem;
+    }
+
+    #project p.lune-font-name {
+        font-size: 1.9375rem;
+    }
+
+    #project div.lune-font-why>h3 {
+        font-size: 1rem;
+    }
+
+    #project div.lune-font-why>p {
+        font-size: 0.75rem;
+    }
+
+    #lune-type-caption {
+        font-size: 1.25rem;
+    }
+
+    #lune-finale-title {
+        font-size: 2.125rem;
+    }
+
+    #project section.lune-finale>p {
+        font-size: 1rem;
+    }
+
     #project .lune-type-table {
         container-type: inline-size;
     }
@@ -711,6 +918,40 @@
 }
 
 @media (max-width: 1280px) {
+    #project .lune-hero-mockup {
+        margin-block: 3.2625rem 4.6625rem;
+    }
+
+    #project .lune-page-gallery {
+        margin-block: 3.03125rem;
+    }
+
+    #project .lune-system-details>h3 {
+        padding: 2.2375rem 0 0.74375rem;
+    }
+
+    #project .lune-system-row {
+        gap: 2.8rem;
+        margin: 0.74375rem 0;
+    }
+
+    #project .lune-type-table .lune-type-caption {
+        margin-top: 1.4875rem;
+        padding-bottom: 0.5625rem;
+    }
+
+    #project .lune-finale .lune-device-group {
+        margin-top: 3.03125rem;
+    }
+
+    #project :is(#lune-title, #lune-system-title) {
+        padding-right: 1.4875rem;
+    }
+
+    #project :is(#lune-title, #lune-system-title) img {
+        height: 5.6rem;
+    }
+
     .lune-opening,
     .lune-system,
     .lune-typography,
@@ -761,7 +1002,6 @@
     .lune-intro-copy h4 {
         font-size: 1rem;
     }
-
 
     .lune-facts {
         gap: 0.75rem;
@@ -860,6 +1100,40 @@
 }
 
 @media (max-width: 1024px) {
+    #project .lune-hero-mockup {
+        margin-block: 2.6125rem 3.73125rem;
+    }
+
+    #project .lune-page-gallery {
+        margin-block: 2.425rem;
+    }
+
+    #project .lune-system-details>h3 {
+        padding: 1.79375rem 0 0.59375rem;
+    }
+
+    #project .lune-system-row {
+        gap: 2.2375rem;
+        margin: 0.59375rem 0;
+    }
+
+    #project .lune-type-table .lune-type-caption {
+        margin-top: 1.1875rem;
+        padding-bottom: 0.45rem;
+    }
+
+    #project .lune-finale .lune-device-group {
+        margin-top: 2.425rem;
+    }
+
+    #project :is(#lune-title, #lune-system-title) {
+        padding-right: 1.1875rem;
+    }
+
+    #project :is(#lune-title, #lune-system-title) img {
+        height: 4.48125rem;
+    }
+
     #lune-title,
     #lune-system-title {
         padding-right: 1.6rem;
@@ -954,6 +1228,40 @@
 }
 
 @media (max-width: 768px) {
+    #project .lune-hero-mockup {
+        margin-block: 1.95625rem 2.8rem;
+    }
+
+    #project .lune-page-gallery {
+        margin-block: 1.81875rem;
+    }
+
+    #project .lune-system-details>h3 {
+        padding: 1.34375rem 0 0.44375rem;
+    }
+
+    #project .lune-system-row {
+        gap: 1.68125rem;
+        margin: 0.44375rem 0;
+    }
+
+    #project .lune-type-table .lune-type-caption {
+        margin-top: 0.89375rem;
+        padding-bottom: 0.3375rem;
+    }
+
+    #project .lune-finale .lune-device-group {
+        margin-top: 1.81875rem;
+    }
+
+    #project :is(#lune-title, #lune-system-title) {
+        padding-right: 0.89375rem;
+    }
+
+    #project :is(#lune-title, #lune-system-title) img {
+        height: 3.3625rem;
+    }
+
     #lune-title,
     #lune-system-title {
         padding-right: 1.2rem;
@@ -992,10 +1300,6 @@
     .lune-case .lune-intro-copy p,
     .lune-intro-copy h4 {
         font-size: 0.6875rem;
-    }
-
-    .lune-facts>div {
-        font-size: 0.625rem;
     }
 
     .lune-page-gallery {
@@ -1048,6 +1352,40 @@
 }
 
 @media (max-width: 402px) {
+    #project .lune-hero-mockup {
+        margin-block: 1.025rem 1.4625rem;
+    }
+
+    #project .lune-page-gallery {
+        margin-block: 0.95rem;
+    }
+
+    #project .lune-system-details>h3 {
+        padding: 0.70625rem 0 0.23125rem;
+    }
+
+    #project .lune-system-row {
+        gap: 0.88125rem;
+        margin: 0.23125rem 0;
+    }
+
+    #project .lune-type-table .lune-type-caption {
+        margin-top: 0.46875rem;
+        padding-bottom: 0.175rem;
+    }
+
+    #project .lune-finale .lune-device-group {
+        margin-top: 0.95rem;
+    }
+
+    #project :is(#lune-title, #lune-system-title) {
+        padding-right: 0.46875rem;
+    }
+
+    #project :is(#lune-title, #lune-system-title) img {
+        height: 1.75625rem;
+    }
+
     #lune-title,
     #lune-system-title {
         padding-right: 0.625rem;
@@ -1060,12 +1398,6 @@
         padding: 2.5rem var(--page-gutter);
     }
 
-    .lune-heading h3,
-    .lune-section-heading h3,
-    .lune-finale h3 {
-        font-size: 1.25rem;
-    }
-
     #lune-title img,
     #lune-system-title img {
         height: 3rem;
@@ -1083,29 +1415,12 @@
         gap: 1.1875rem;
     }
 
-    .lune-case .lune-intro-copy p,
-    .lune-intro-copy h4 {
-        font-size: 0.6875rem;
-    }
-
-    .lune-facts>div {
-        font-size: 0.625rem;
-    }
-
     .lune-page-gallery {
         margin-block: 1.75rem;
     }
 
     .lune-system-row {
         gap: 1.1875rem;
-    }
-
-    .lune-system-row h3 {
-        font-size: 0.75rem;
-    }
-
-    .lune-palette li {
-        font-size: 0.5625rem;
     }
 
     .lune-palette span {
@@ -1120,117 +1435,56 @@
         font-size: 1.25rem;
     }
 
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(2) .lune-type-sample {
-        font-size: 1.125rem;
-    }
-
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(3) .lune-type-sample {
-        font-size: 1rem;
-    }
-
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(4) .lune-type-sample {
-        font-size: 0.875rem;
-    }
-
     .lune-finale .lune-device-group {
         margin-top: 1.75rem;
-    }
-
-    #project .lune-type-table .lune-type-row {
-        padding-block: 0.375rem;
     }
 }
 
 @media (max-width: 280px) {
+    #project .lune-hero-mockup {
+        margin-block: 0.7125rem 1.01875rem;
+    }
+
+    #project .lune-page-gallery {
+        margin-block: 0.6625rem;
+    }
+
+    #project .lune-system-details>h3 {
+        padding: 0.4875rem 0 0.1625rem;
+    }
+
+    #project .lune-system-row {
+        gap: 0.6125rem;
+        margin: 0.1625rem 0;
+    }
+
+    #project .lune-type-table .lune-type-caption {
+        margin-top: 0.325rem;
+        padding-bottom: 0.125rem;
+    }
+
+    #project .lune-finale .lune-device-group {
+        margin-top: 0.6625rem;
+    }
+
+    #project :is(#lune-title, #lune-system-title) {
+        padding-right: 0.325rem;
+    }
+
+    #project :is(#lune-title, #lune-system-title) img {
+        height: 1.225rem;
+    }
+
     #lune-title,
     #lune-system-title {
         padding-right: 0.4375rem;
     }
 
-    .lune-opening,
-    .lune-system,
-    .lune-typography,
-    .lune-finale {
-        padding: 2.5rem var(--page-gutter);
-    }
-
-    .lune-heading h3,
-    .lune-section-heading h3,
-    .lune-finale h3 {
-        font-size: 1.25rem;
-    }
-
-    #lune-title img,
-    #lune-system-title img {
-        height: 3rem;
-    }
-
-    .lune-hero-mockup {
-        margin-block: 1.75rem 2.5rem;
-    }
-
-    .lune-browser-bar {
-        padding: 0.25rem;
-    }
-
     .lune-introduction {
         gap: 0.8125rem;
     }
 
-    .lune-case .lune-intro-copy p,
-    .lune-intro-copy h4 {
-        font-size: 0.6875rem;
-    }
-
-    .lune-facts>div {
-        font-size: 0.625rem;
-    }
-
-    .lune-page-gallery {
-        margin-block: 1.75rem;
-    }
-
     .lune-system-row {
         gap: 0.8125rem;
-    }
-
-    .lune-system-row h3 {
-        font-size: 0.75rem;
-    }
-
-    .lune-palette li {
-        font-size: 0.5625rem;
-    }
-
-    .lune-palette span {
-        height: 1.5rem;
-    }
-
-    .lune-type-table .lune-type-row {
-        column-gap: 0.25rem;
-    }
-
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(1) .lune-type-sample {
-        font-size: 1.25rem;
-    }
-
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(2) .lune-type-sample {
-        font-size: 1.125rem;
-    }
-
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(3) .lune-type-sample {
-        font-size: 1rem;
-    }
-
-    .lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(4) .lune-type-sample {
-        font-size: 0.875rem;
-    }
-
-    .lune-finale .lune-device-group {
-        margin-top: 1.75rem;
-    }
-
-    #project .lune-type-table .lune-type-row {
-        padding-block: 0.375rem;
     }
 }

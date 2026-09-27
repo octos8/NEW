@@ -236,8 +236,11 @@
     .poster-content > p {
         font-size: 0.6875rem;
     }
+    .poster-decoration {
+        top: 10rem;
+    }
     .poster-decoration > span {
-        font-size: 9.625rem;
+        font-size: 5.625rem;
     }
 }
 

@@ -261,7 +261,6 @@
 }
 
 .profile-area .profile-left>.profile-section-label {
-    position: static;
     max-width: 100%;
     margin-bottom: 8px;
     color: var(--gray-800);
@@ -901,7 +900,7 @@
 
 @media (max-width: 768px) {
     .skills-orbit {
-        width: 27.8375rem;
+        width: 14.8375rem;
     }
 
     .about-section {
@@ -910,6 +909,14 @@
 
     .about-heading {
         min-height: 16.25rem;
+    }
+    .about-title h2{
+        font-size: 3rem;
+        text-wrap: nowrap;
+    }
+    .about-title {
+        font-size: 31px;
+        text-wrap: nowrap;
     }
 
     .about-heading .about-intro {
@@ -977,13 +984,20 @@
     .profile-area .profile-timeline .education-info p,
     .profile-area .profile-timeline .education-info h3,
     .profile-timeline .certification-info h4 {
-        font-size: 0.6875rem;
+        font-size: 0.875rem;
     }
 
     .skills-section {
         padding-block: 3.6rem 5.7625rem;
     }
-
+    .skill-summary {
+        font-size: 0.4375rem;
+        margin-bottom: 8px;
+    }
+    .skills-dot {
+        width: 14px;
+        height: 14px;
+    }
     .skills-heading {
         margin-bottom: 4.5rem;
     }
@@ -993,11 +1007,11 @@
     }
 
     .skill-menu {
-        font-size: 0.9375rem;
+        font-size: 0.6375rem;
     }
 
     .skill-summary {
-        font-size: 0.9375rem;
+        font-size: 0.4375rem;
     }
 
     .skill-program-list li {
@@ -1005,11 +1019,11 @@
     }
 
     .skill-program-list strong {
-        font-size: 0.9375rem;
+        font-size: 0.6375rem;
     }
 
     .skill-program-list p {
-        font-size: 0.5375rem;
+        font-size: 0.3375rem;
     }
 }
 
@@ -1017,15 +1031,15 @@
     .skills-orbit {
         width: 14.575rem;
     }
-
+    
     .about-section {
         padding-top: 3rem;
     }
-
+    
     .about-heading .about-intro {
         top: 5rem;
     }
-
+    
     .about-intro h3 {
         font-size: 1.0625rem;
     }

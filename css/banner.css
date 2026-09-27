@@ -229,11 +229,14 @@
     }
 
     .banner-section .banner-caption h3 {
-        font-size: 0.875rem;
+        font-size: 0.775rem;
     }
 
     .banner-section .banner-caption p {
-        font-size: 0.6875rem;
+        font-size: 0.4875rem;
+    }
+    .banner-heading p {
+        font-size: 10px;
     }
 }
 

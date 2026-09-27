@@ -134,7 +134,7 @@
 /* RESPONSIVE: original rules above are preserved. */
 
 @media (max-width: 1280px) {
-  .detail-heading h2 { font-size: 7rem; }
+    .detail-heading h2 { font-size: 7rem; }
   .detail-section .detail-heading { margin-bottom: 3rem; }
   .detail-section .detail-card figure { margin-bottom: 1.25rem; }
   .detail-section .detail-card h3 { font-size: 1.25rem; }
@@ -160,7 +160,16 @@
         margin-bottom: 1.8125rem;
     }
     .detail-section .detail-card h3 {
-        font-size: 1rem;
+        font-size: 0.75rem;
+    }
+    .detail-card p {
+        font-size: 10px;
+    }
+    .detail-section {
+        padding: 0;
+    }
+    .detail-section .detail-list { 
+        grid-template-columns: minmax(0, 1fr); max-width: 26.25rem; gap: 2.25rem; 
     }
 }
 
@@ -186,7 +195,4 @@
     .detail-section .detail-card h3 {
         font-size: 1rem;
     }
-}
-@media (max-width: 767px) {
-  .detail-section .detail-list { grid-template-columns: minmax(0, 1fr); max-width: 26.25rem; gap: 2.25rem; }
 }

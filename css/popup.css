@@ -23,7 +23,7 @@
     width: 100%;
     display: flex;
     gap: 24px;
-    margin-top: 20px;
+    margin-top: -6rem;
     align-items: flex-start;
 }
 
@@ -39,6 +39,7 @@
 
 .popup-description-track.swiper-wrapper {
     width: 100%;
+    margin-top: 13rem;
 }
 
 .popup-section .popup-description-slide.swiper-slide {
@@ -227,7 +228,9 @@
 }
 
 @media (max-width: 768px) {
-
+    .popup-tool>span {
+        padding: 2px 12.8px;
+    }
     .popup-section .popup-heading,
     .popup-section .popup-description-slide {
         text-align: center;
@@ -237,34 +240,35 @@
         margin-inline: auto;
     }
 
-    .popup-section .popup-description-slide h3,
-    .popup-section .popup-description-slide p,
-    .popup-section .popup-heading p {
-        overflow-wrap: anywhere;
-    }
-
     .popup-section .popup-tool {
         justify-content: center;
     }
 
     .popup-section .popup-layout {
+        display: flex;
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
         gap: 1rem;
         margin-top: 1.25rem;
     }
 
+    .popup-section .popup-station.swiper {
+        order: 1;
+        flex: none;
+        width: 100%;
+        margin-inline: auto;
+    }
+
     .popup-section .popup-description-viewport.swiper {
+        order: 2;
         flex: none;
         width: 100%;
         padding-top: 0;
         margin-inline: auto;
     }
 
-    .popup-section .popup-station.swiper {
-        flex: none;
-        width: 100%; max-width: 25rem;
-        margin: 0 auto;
+    .popup-section .popup-description-track.swiper-wrapper {
+        margin-top: 0;
     }
 
     .popup-section {
