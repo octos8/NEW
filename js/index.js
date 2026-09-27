@@ -1,6 +1,54 @@
 document.addEventListener('DOMContentLoaded', () => {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
+    /* AESOP: 화면에 보이는 동안 아래로 스크롤하면 가볍게 흔들림 */
+    (() => {
+        const visual = document.querySelector('.aesop-opening-visual');
+        if (!visual || !visual.animate) return;
+
+        const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const shakeAngle = 1.2; // 흔들림 각도(deg)
+        const shakeDuration = 800; // 한 번 흔들리는 시간(ms)
+        let visible = false;
+        let lastScrollY = window.scrollY;
+        let shakeAnimation = null;
+
+        const visibilityObserver = new IntersectionObserver(entries => {
+            visible = entries[0].isIntersecting;
+            if (!visible) {
+                shakeAnimation?.cancel();
+                shakeAnimation = null;
+            }
+        });
+        visibilityObserver.observe(visual);
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            const scrollingDown = currentScrollY > lastScrollY;
+            lastScrollY = currentScrollY;
+            if (!visible || !scrollingDown || motionPreference.matches || shakeAnimation) return;
+
+            shakeAnimation = visual.animate([
+                { rotate: '0deg' },
+                { rotate: `${shakeAngle}deg` },
+                { rotate: `${-shakeAngle}deg` },
+                { rotate: `${shakeAngle * 0.5}deg` },
+                { rotate: '0deg' }
+            ], {
+                duration: shakeDuration,
+                easing: 'ease-in-out'
+            });
+            shakeAnimation.onfinish = () => { shakeAnimation = null; };
+        }, { passive: true });
+
+        motionPreference.addEventListener('change', () => {
+            if (motionPreference.matches) {
+                shakeAnimation?.cancel();
+                shakeAnimation = null;
+            }
+        });
+    })();
+
     const heroName = document.querySelector('.hero-name');
     const playHeroName = () => {
         if (!heroName || reducedMotion) return;
@@ -178,6 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
         skillPanels.forEach(panel => panel.classList.remove('is-active'));
 
         menu.classList.add('is-active');
+        skillMenus.forEach(item => item.setAttribute('aria-pressed', String(item === menu)));
 
         document
             .querySelector(`.skill-detail[data-panel="${target}"]`)
@@ -224,11 +273,13 @@ document.addEventListener('DOMContentLoaded', () => {
         initialSlide: 1,
         centeredSlides: true,
         speed: reducedMotion ? 0 : 700,
-        slidesPerView: 1.35,
-        spaceBetween: 20,
+        slidesPerView: 1,
+        spaceBetween: 8,
         breakpoints: {
-            769: { slidesPerView: 1.8, spaceBetween: 28 },
-            1025: { slidesPerView: 2, spaceBetween: 48 }
+            280: { slidesPerView: 1.15, spaceBetween: 12 },
+            402: { slidesPerView: 1.35, spaceBetween: 16 },
+            768: { slidesPerView: 1.8, spaceBetween: 20 },
+            1024: { slidesPerView: 2, spaceBetween: 48 }
         },
         grabCursor: true,
         autoplay: {

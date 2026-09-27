@@ -1,9 +1,10 @@
-/* DETAIL */
+/* DETAIL | 기본 스타일. */
+/* 글자와 간격은 px. 공통 값은 common.css의 :root에서 수정합니다. */
 
 .detail-section {
     position: relative;
     width: 100%;
-    padding: 3rem 0;
+    padding: 48px 0;
     overflow: hidden;
     height: auto;
     min-height: 0;
@@ -14,28 +15,15 @@
     height: 100%;
 }
 
-/* TITLE */
-
 .detail-section .detail-heading {
     text-align: center;
-    margin-bottom: 3rem;
-}
-
-.detail-heading h2 {
-    margin: 0;
-    font-weight: var(--fw2);
-    line-height: 1;
-    letter-spacing: -.04em;
-    color: var(--gray-900);
-    white-space: nowrap;
+    margin-bottom: 48px;
 }
 
 .detail-heading p {
-    margin: 1rem 0 0;
+    margin: 16px 0 0;
     color: var(--gray-800);
 }
-
-/* LIST */
 
 .detail-section .detail-list {
     display: grid;
@@ -43,7 +31,7 @@
     margin: 0 auto;
     width: 100%;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
+    gap: 16px;
 }
 
 .detail-section .detail-card {
@@ -53,12 +41,10 @@
     text-align: left;
 }
 
-/* IMAGE */
-
 .detail-section .detail-card figure {
     width: 100%;
     height: auto;
-    margin: 0 0 2rem;
+    margin: 0 0 32px;
     overflow: hidden;
     background: transparent;
     line-height: 0;
@@ -81,8 +67,6 @@
     height: auto;
 }
 
-/* OVERLAY */
-
 .detail-preview-overlay {
     position: absolute;
     inset: 0;
@@ -97,18 +81,18 @@
 .detail-preview-overlay strong {
     position: relative;
     color: var(--white);
-    font-size: 1.25rem;
+    font-size: 20px;
     font-weight: var(--fw2);
-    letter-spacing: .08em;
+    letter-spacing: 1.28px;
 }
 
 .detail-preview-overlay strong::after {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: -.75rem;
-    width: 2rem;
-    height: .125rem;
+    bottom: -12px;
+    width: 32px;
+    height: 2px;
     background: var(--ivory-500);
     transform: translateX(-50%);
 }
@@ -117,19 +101,16 @@
     transform: none;
 }
 
-.detail-preview:hover .detail-preview-overlay,
-.detail-preview:focus-visible .detail-preview-overlay {
+.detail-preview:hover .detail-preview-overlay, .detail-preview:focus-visible .detail-preview-overlay {
     opacity: 1;
 }
 
-/* TEXT */
-
 .detail-section .detail-card h3 {
-    font-size: 1.25rem;
+    font-size: 20px;
     font-weight: var(--fw2);
     line-height: var(--lh1);
     color: var(--gray-900);
-    margin-bottom: .5rem;
+    margin-bottom: 8px;
 }
 
 .detail-card p {
@@ -140,56 +121,12 @@
     word-break: keep-all;
 }
 
-/* 1024px 이하 */
-@media (max-width: 1024px) {
-    .detail-section {
-        overflow: visible;
-        padding: 4rem 0;
-    }
-
-    .detail-inner {
-        height: auto;
-    }
-
-    .detail-section .detail-card {
-        margin: 0 auto;
-    }
-
-    .detail-preview {
-        width: 100%;
-        height: auto;
-    }
-
-    .detail-section .detail-card figure {
-        margin-bottom: 1.5rem;
-    }
-}
-
-/* 768px 이하 */
-@media (max-width: 768px) {
-    .detail-heading p {
-        margin-top: 1.25rem;
-    }
-
-    .detail-section .detail-card h3 {
-        font-size: 1.4rem;
-    }
-
-    .detail-section .detail-heading {
-        margin-bottom: 2.5rem;
-    }
-
-    .detail-section .detail-list {
-        grid-template-columns: 1fr;
-        max-width: 31.25rem;
-        gap: 3rem;
-    }
-}
-
-/* 접근성: 동작 줄이기 */
-@media (prefers-reduced-motion: reduce) {
-    .detail-section .detail-preview img,
-    .detail-preview-overlay {
-        transition: none;
-    }
+.detail-heading h2 {
+    margin: 0;
+    font-weight: var(--fw2);
+    line-height: 1;
+    letter-spacing: -0.64px;
+    color: var(--gray-900);
+    white-space: normal;
+    font-size: 7rem;
 }

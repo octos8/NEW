@@ -56,6 +56,7 @@
     <link rel="stylesheet" href="./css/project.css">
     <link rel="stylesheet" href="./css/lune.css">
     <link rel="stylesheet" href="./css/device-mockups.css">
+    <link rel="stylesheet" href="./css/contact.css">
 </head>
 
 <body>
@@ -187,102 +188,104 @@
                     <div class="skills-orbit">
                         <span class="skills-dot" aria-hidden="true"></span>
 
-                        <a class="skill-menu skill-menu-publishing" type="button" data-skill="publishing" data-x="50"
+                        <button class="skill-menu skill-menu-publishing" type="button" aria-pressed="false" data-skill="publishing" data-x="50"
                             data-y="0">
                             PUBLISHING
-                        </a>
+                        </button>
 
-                        <a class="skill-menu skill-menu-design" type="button" data-skill="design" data-x="0"
+                        <button class="skill-menu skill-menu-design" type="button" aria-pressed="false" data-skill="design" data-x="0"
                             data-y="50">
                             DESIGN
-                        </a>
+                        </button>
 
-                        <a class="skill-menu skill-menu-development" type="button" data-skill="development" data-x="100"
+                        <button class="skill-menu skill-menu-development" type="button" aria-pressed="false" data-skill="development" data-x="100"
                             data-y="50">
                             DEVELOPMENT<br> &amp;<br> WORKFLOW
-                        </a>
+                        </button>
 
-                        <div class="skill-detail" data-panel="publishing">
-                            <p class="skill-summary">디자인을 실제 경험할 수 있는 웹 화면으로 구현합니다.</p>
-                            <ul class="skill-program-list">
-                                <li>
-                                    <img src="./img/html5.svg" alt="HTML5">
-                                    <div>
-                                        <strong>HTML5</strong>
-                                        <p>시맨틱 태그를 활용해 웹페이지의 정보 구조와 콘텐츠 흐름을 체계적으로 구성할 수 있습니다.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="./img/css3.svg" alt="CSS3">
-                                    <div>
-                                        <strong>CSS3</strong>
-                                        <p>Grid, Flexbox, Media Query를 활용해 디자인을 구현하고 다양한 화면에 대응하는 반응형 레이아웃을 제작할 수 있습니다.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="./img/javascript.svg" alt="JavaScript">
-                                    <div>
-                                        <strong>JavaScript</strong>
-                                        <p>슬라이드, 메뉴, 스크롤 애니메이션 등 사용자와 상호작용하는 웹 인터페이스를 구현할 수 있습니다.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="./img/responsive.svg" alt="Responsive Web">
-                                    <div>
-                                        <strong>Responsive Web</strong>
-                                        <p>PC, Tablet, Mobile 환경에 맞춰 콘텐츠 구조와 레이아웃이 자연스럽게 변화하도록 구현할 수 있습니다.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                        <div class="skills-detail-clip">
+                            <div class="skill-detail" data-panel="publishing" tabindex="0" role="region" aria-label="publishing skills">
+                                <p class="skill-summary">디자인을 실제 경험할 수 있는 웹 화면으로 구현합니다.</p>
+                                <ul class="skill-program-list">
+                                    <li>
+                                        <img src="./img/html5.svg" alt="HTML5">
+                                        <div>
+                                            <strong>HTML5</strong>
+                                            <p>시맨틱 태그를 활용해 웹페이지의 정보 구조와 콘텐츠 흐름을 체계적으로 구성할 수 있습니다.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="./img/css3.svg" alt="CSS3">
+                                        <div>
+                                            <strong>CSS3</strong>
+                                            <p>Grid, Flexbox, Media Query를 활용해 디자인을 구현하고 다양한 화면에 대응하는 반응형 레이아웃을 제작할 수 있습니다.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="./img/javascript.svg" alt="JavaScript">
+                                        <div>
+                                            <strong>JavaScript</strong>
+                                            <p>슬라이드, 메뉴, 스크롤 애니메이션 등 사용자와 상호작용하는 웹 인터페이스를 구현할 수 있습니다.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="./img/responsive.svg" alt="Responsive Web">
+                                        <div>
+                                            <strong>Responsive Web</strong>
+                                            <p>PC, Tablet, Mobile 환경에 맞춰 콘텐츠 구조와 레이아웃이 자연스럽게 변화하도록 구현할 수 있습니다.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
 
-                        <div class="skill-detail" data-panel="design">
-                            <p class="skill-summary">브랜드와 사용자를 연결하는 시각적 경험을 만듭니다.</p>
-                            <ul class="skill-program-list">
-                                <li>
-                                    <img src="./img/illustrator.svg" alt="Illustrator">
-                                    <div><strong>Illustrator</strong>
-                                        <p>로고, 아이콘, 벡터 그래픽과 다양한 시각 디자인 요소를 제작할 수 있습니다.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="./img/photoshop.svg" alt="Photoshop">
-                                    <div><strong>Photoshop</strong>
-                                        <p>이미지 보정과 합성, 배너·팝업·상세페이지 등 웹 그래픽을 제작할 수 있습니다.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="./img/figma.svg" alt="Figma">
-                                    <div><strong>Figma</strong>
-                                        <p>웹 UI 설계부터 컴포넌트, 프로토타입과 반응형 인터페이스 디자인까지 제작할 수 있습니다.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                            <div class="skill-detail" data-panel="design" tabindex="0" role="region" aria-label="design skills">
+                                <p class="skill-summary">브랜드와 사용자를 연결하는 시각적 경험을 만듭니다.</p>
+                                <ul class="skill-program-list">
+                                    <li>
+                                        <img src="./img/illustrator.svg" alt="Illustrator">
+                                        <div><strong>Illustrator</strong>
+                                            <p>로고, 아이콘, 벡터 그래픽과 다양한 시각 디자인 요소를 제작할 수 있습니다.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="./img/photoshop.svg" alt="Photoshop">
+                                        <div><strong>Photoshop</strong>
+                                            <p>이미지 보정과 합성, 배너·팝업·상세페이지 등 웹 그래픽을 제작할 수 있습니다.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="./img/figma.svg" alt="Figma">
+                                        <div><strong>Figma</strong>
+                                            <p>웹 UI 설계부터 컴포넌트, 프로토타입과 반응형 인터페이스 디자인까지 제작할 수 있습니다.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
 
-                        <div class="skill-detail" data-panel="development">
-                            <p class="skill-summary">더 나은 결과를 위해 효율적인 협업과 개발 환경을 구축합니다.</p>
-                            <ul class="skill-program-list">
-                                <li>
-                                    <img src="./img/git.svg" alt="Git">
-                                    <div><strong>Git</strong>
-                                        <p>작업 내용을 버전별로 관리하고 변경 사항을 체계적으로 기록할 수 있습니다.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="./img/github.svg" alt="GitHub">
-                                    <div><strong>GitHub</strong>
-                                        <p>프로젝트 소스를 관리하고 GitHub Pages를 활용한 웹사이트 배포가 가능합니다.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="./img/notion.svg" alt="Notion">
-                                    <div><strong>Notion</strong>
-                                        <p>기획 자료와 프로젝트 일정을 정리하고 작업 내용을 문서화하여 관리할 수 있습니다.</p>
-                                    </div>
-                                </li>
-                            </ul>
+                            <div class="skill-detail" data-panel="development" tabindex="0" role="region" aria-label="development skills">
+                                <p class="skill-summary">더 나은 결과를 위해 효율적인 협업과 개발 환경을 구축합니다.</p>
+                                <ul class="skill-program-list">
+                                    <li>
+                                        <img src="./img/git.svg" alt="Git">
+                                        <div><strong>Git</strong>
+                                            <p>작업 내용을 버전별로 관리하고 변경 사항을 체계적으로 기록할 수 있습니다.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="./img/github.svg" alt="GitHub">
+                                        <div><strong>GitHub</strong>
+                                            <p>프로젝트 소스를 관리하고 GitHub Pages를 활용한 웹사이트 배포가 가능합니다.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="./img/notion.svg" alt="Notion">
+                                        <div><strong>Notion</strong>
+                                            <p>기획 자료와 프로젝트 일정을 정리하고 작업 내용을 문서화하여 관리할 수 있습니다.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -615,49 +618,49 @@
                             분위기와 잘 어울립니다.<br> 또한 PC, 태블릿, 모바일 등 다양한 반응형 환경에서도 일관된 가독성과 사용자 경험을 유지할 수 있어 기본 서체로 선택했습니다.</p>
                     </div>
                     <div class="aesop-type-scale">
-                        <div class="aesop-type-row" style="--sample-size:39; --sample-weight:700">
+                        <div class="aesop-type-row" style="--sample-size: 39px; --sample-weight:700">
                             <p class="aesop-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</p>
                             <p>메인 제목, 큰 제목</p>
                             <p>39px</p>
                             <p>2.4375rem</p>
                         </div>
-                        <div class="aesop-type-row" style="--sample-size:31; --sample-weight:700">
+                        <div class="aesop-type-row" style="--sample-size: 31px; --sample-weight:700">
                             <p class="aesop-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</p>
                             <p>작은 제목</p>
                             <p>31px</p>
                             <p>1.9375rem</p>
                         </div>
-                        <div class="aesop-type-row" style="--sample-size:25; --sample-weight:700">
+                        <div class="aesop-type-row" style="--sample-size: 25px; --sample-weight:700">
                             <p class="aesop-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</p>
                             <p>컨텐츠 소제목1</p>
                             <p>25px</p>
                             <p>1.5625rem</p>
                         </div>
-                        <div class="aesop-type-row" style="--sample-size:20; --sample-weight:700">
+                        <div class="aesop-type-row" style="--sample-size: 20px; --sample-weight:700">
                             <p class="aesop-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</p>
                             <p>컨텐츠 소제목2</p>
                             <p>20px</p>
                             <p>1.25rem</p>
                         </div>
-                        <div class="aesop-type-row" style="--sample-size:16; --sample-weight:700">
+                        <div class="aesop-type-row" style="--sample-size: 16px; --sample-weight:700">
                             <p class="aesop-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</p>
                             <p>본문, 강조 텍스트</p>
                             <p>16px</p>
                             <p>1rem</p>
                         </div>
-                        <div class="aesop-type-row" style="--sample-size:16; --sample-weight:400">
+                        <div class="aesop-type-row" style="--sample-size: 16px; --sample-weight:400">
                             <p class="aesop-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</p>
                             <p>본문, 기본 텍스트</p>
                             <p>16px</p>
                             <p>1rem</p>
                         </div>
-                        <div class="aesop-type-row" style="--sample-size:13; --sample-weight:400">
+                        <div class="aesop-type-row" style="--sample-size: 13px; --sample-weight:400">
                             <p class="aesop-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</p>
                             <p>세부 설명 컨텐츠</p>
                             <p>13px</p>
                             <p>0.812rem</p>
                         </div>
-                        <div class="aesop-type-row" style="--sample-size:10; --sample-weight:400">
+                        <div class="aesop-type-row" style="--sample-size: 10px; --sample-weight:400">
                             <p class="aesop-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</p>
                             <p>각종 버튼, 푸터 등 소형 컨텐츠</p>
                             <p>10px</p>
@@ -867,76 +870,67 @@
                                 </div>
                             </div>
                             <div class="lune-type-table-scroll">
-                                <table class="lune-type-table">
-                                    <caption>Pretendard 서체 구성</caption>
-                                    <thead>
-                                        <tr>
-                                            <th>예시</th>
-                                            <th>활용</th>
-                                            <th>크기</th>
-                                            <th>rem</th>
-                                            <th>굵기</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">여백과 글자의 균형으로 완성한 절제된 감성</th>
-                                            <td>메인 제목, 큰 제목</td>
-                                            <td>39px</td>
-                                            <td>2.4375rem</td>
-                                            <td>Bold</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">여백과 글자의 균형으로 완성한 절제된 감성</th>
-                                            <td>작은 제목</td>
-                                            <td>31px</td>
-                                            <td>1.9375rem</td>
-                                            <td>Bold</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">여백과 글자의 균형으로 완성한 절제된 감성</th>
-                                            <td>컨텐츠 소제목1</td>
-                                            <td>25px</td>
-                                            <td>1.5625rem</td>
-                                            <td>Bold</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">여백과 글자의 균형으로 완성한 절제된 감성</th>
-                                            <td>컨텐츠 소제목2</td>
-                                            <td>20px</td>
-                                            <td>1.25rem</td>
-                                            <td>Bold</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">여백과 글자의 균형으로 완성한 절제된 감성</th>
-                                            <td>본문, 강조 텍스트</td>
-                                            <td>16px</td>
-                                            <td>1rem</td>
-                                            <td>Bold</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">여백과 글자의 균형으로 완성한 절제된 감성</th>
-                                            <td>본문, 기본 텍스트</td>
-                                            <td>16px</td>
-                                            <td>1rem</td>
-                                            <td>Regular</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">여백과 글자의 균형으로 완성한 절제된 감성</th>
-                                            <td>세부 설명 컨텐츠</td>
-                                            <td>13px</td>
-                                            <td>0.812rem</td>
-                                            <td>Regular</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">여백과 글자의 균형으로 완성한 절제된 감성</th>
-                                            <td>각종 버튼, 푸터 등 소형 컨텐츠</td>
-                                            <td>10px</td>
-                                            <td>0.625rem</td>
-                                            <td>Regular</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <div class="lune-type-table" aria-labelledby="lune-type-caption">
+                                    <div class="lune-type-caption" id="lune-type-caption">Pretendard 서체 구성</div>
+                                    <div class="lune-type-head">
+                                        <div class="lune-type-row">
+                                            <div class="lune-type-cell">예시</div>
+                                            <div class="lune-type-cell">활용</div>
+                                            <div class="lune-type-cell">크기</div>
+                                            <div class="lune-type-cell">rem</div>
+                                        </div>
+                                    </div>
+                                    <div class="lune-type-body">
+                                        <div class="lune-type-row">
+                                            <div class="lune-type-cell lune-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</div>
+                                            <div class="lune-type-cell lune-type-value">메인 제목, 큰 제목</div>
+                                            <div class="lune-type-cell lune-type-value">39px</div>
+                                            <div class="lune-type-cell lune-type-value">2.4375rem</div>
+                                        </div>
+                                        <div class="lune-type-row">
+                                            <div class="lune-type-cell lune-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</div>
+                                            <div class="lune-type-cell lune-type-value">작은 제목</div>
+                                            <div class="lune-type-cell lune-type-value">31px</div>
+                                            <div class="lune-type-cell lune-type-value">1.9375rem</div>
+                                        </div>
+                                        <div class="lune-type-row">
+                                            <div class="lune-type-cell lune-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</div>
+                                            <div class="lune-type-cell lune-type-value">컨텐츠 소제목1</div>
+                                            <div class="lune-type-cell lune-type-value">25px</div>
+                                            <div class="lune-type-cell lune-type-value">1.5625rem</div>
+                                        </div>
+                                        <div class="lune-type-row">
+                                            <div class="lune-type-cell lune-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</div>
+                                            <div class="lune-type-cell lune-type-value">컨텐츠 소제목2</div>
+                                            <div class="lune-type-cell lune-type-value">20px</div>
+                                            <div class="lune-type-cell lune-type-value">1.25rem</div>
+                                        </div>
+                                        <div class="lune-type-row">
+                                            <div class="lune-type-cell lune-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</div>
+                                            <div class="lune-type-cell lune-type-value">본문, 강조 텍스트</div>
+                                            <div class="lune-type-cell lune-type-value">16px</div>
+                                            <div class="lune-type-cell lune-type-value">1rem</div>
+                                        </div>
+                                        <div class="lune-type-row">
+                                            <div class="lune-type-cell lune-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</div>
+                                            <div class="lune-type-cell lune-type-value">본문, 기본 텍스트</div>
+                                            <div class="lune-type-cell lune-type-value">16px</div>
+                                            <div class="lune-type-cell lune-type-value">1rem</div>
+                                        </div>
+                                        <div class="lune-type-row">
+                                            <div class="lune-type-cell lune-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</div>
+                                            <div class="lune-type-cell lune-type-value">세부 설명 컨텐츠</div>
+                                            <div class="lune-type-cell lune-type-value">13px</div>
+                                            <div class="lune-type-cell lune-type-value">0.812rem</div>
+                                        </div>
+                                        <div class="lune-type-row">
+                                            <div class="lune-type-cell lune-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</div>
+                                            <div class="lune-type-cell lune-type-value">각종 버튼, 푸터 등 소형 컨텐츠</div>
+                                            <div class="lune-type-cell lune-type-value">10px</div>
+                                            <div class="lune-type-cell lune-type-value">0.625rem</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </section>
                     </div>
@@ -961,7 +955,19 @@
                 </section>
             </article>
         </section>
-        <section id="contact" class="contact-section"></section>
+        <section id="contact" class="contact-section" aria-labelledby="contact-title">
+            <div class="contact-inner">
+                <div class="contact-content">
+                    <h2 id="contact-title" class="contact-title">
+                        <span>Structure First.</span>
+                        <span>Clarity Follows.</span>
+                    </h2>
+                    <p class="contact-description">정보의 순서와 요소의 관계를 설계해, 자연스럽게 읽히고 쉽게 이해되는 화면을 만들겠습니다.</p>
+                    <a class="contact-number" href="tell:01062785134" aria-label="웹 퍼블리셔 함국주에게 전화하기">010-6278-5134</a>
+                    <a class="contact-author" href="mailto:gukjuham34@gmail.com" aria-label="웹 퍼블리셔 함국주에게 이메일 보내기">Web Publisher 함국주</a>
+                </div>
+            </div>
+        </section>
         <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
         <script src="./js/index.js"></script>
         <script src="./js/device-mockups.js"></script>

@@ -1,0 +1,81 @@
+/* CONTACT | 기본 스타일. */
+/* 글자와 간격은 px. 공통 값은 common.css의 :root에서 수정합니다. */
+
+.contact-section {
+    --contact-title-size: 80px;
+    --contact-body-size: 20px;
+    --contact-menu-size: 16px;
+    --contact-gutter: 48px;
+    --contact-copy-gap: 40px;
+    --contact-author-gap: 64px;
+    background: #333333;
+    color: #ffffff;
+}
+
+.contact-inner {
+    width: 100%;
+    max-width: 1720px;
+    margin: 0 auto;
+    padding: 24px var(--contact-gutter) 0;
+}
+
+.contact-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 56px;
+    font-size: var(--contact-menu-size);
+    color: #cccccc;
+}
+
+.contact-nav a, .contact-author {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+}
+
+.contact-section a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+.contact-section a:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 4px;
+}
+
+.contact-content {
+    min-height: 800px;
+    padding: 160px 0 180px;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: var(--contact-title-size);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -2px;
+    overflow-wrap: anywhere;
+}
+
+.contact-title span {
+    display: block;
+}
+
+.contact-description {
+    margin-top: var(--contact-copy-gap);
+    font-size: var(--contact-body-size);
+    line-height: 1.6;
+    color: #cccccc;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.contact-author {
+    margin-top: var(--contact-author-gap);
+    font-size: var(--contact-body-size);
+    line-height: 1.6;
+    color: #dddddd;
+    overflow-wrap: anywhere;
+}

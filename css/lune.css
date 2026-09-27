@@ -1,4 +1,5 @@
-/* LUNE 개인 프로젝트 — 크림과 살구색의 반응형 케이스 스터디 */
+/* LUNE | 기본 스타일. */
+/* 글자와 간격은 px. 공통 값은 common.css의 :root에서 수정합니다. */
 
 .lune-case {
     margin-top: 150px;
@@ -7,8 +8,7 @@
     text-align: left;
 }
 
-.lune-case *::before,
-.lune-case *::after {
+.lune-case *::before, .lune-case *::after {
     box-sizing: border-box;
 }
 
@@ -16,12 +16,11 @@
     display: block;
     width: 100%;
 }
-/* 도입부 */
 
 .lune-opening {
     position: relative;
     z-index: 20;
-    padding: 90px 10% 80px;
+    padding: 90px 96px 80px;
     background: linear-gradient(#fff 0%, #fff2d7 50%, #ffe0b5 100%);
 }
 
@@ -39,20 +38,20 @@
     font-size: 34px;
     line-height: 1.3;
 }
-.lune-heading .lune-word{
+
+.lune-heading .lune-word {
     font-weight: var(--fw2);
 }
-#lune-title,
-#lune-system-title {
+
+#lune-title, #lune-system-title {
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: var(--fw2);
-    padding-right: 2rem;
+    padding-right: 32px;
 }
 
-#lune-title img,
-#lune-system-title img {
+#lune-title img, #lune-system-title img {
     flex-shrink: 0;
     width: auto;
     height: 100px;
@@ -64,10 +63,11 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 12px;
-    margin-top: 2rem;
+    margin-top: 32px;
 }
 
 .lune-links a {
+    min-height: 44px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -83,8 +83,7 @@
     transition: background-color .2s ease;
 }
 
-.lune-links a:hover,
-.lune-links a:focus-visible {
+.lune-links a:hover, .lune-links a:focus-visible {
     background: #ffe0b5;
     color: #725236;
 }
@@ -94,16 +93,12 @@
     outline-offset: 4px;
 }
 
-/* 첫 화면 목업 */
-
 .lune-hero-mockup {
     position: relative;
     width: 90%;
     margin: 70px auto 100px;
-    padding: 0 0 7% 12%;
+    padding: 0 0 var(--panel-padding) var(--panel-padding);
 }
-
-/* 브라우저와 기기 프레임 */
 
 .lune-browser {
     border-radius: 10px;
@@ -168,8 +163,7 @@
     aspect-ratio: 1024 / 1366;
 }
 
-.lune-phone,
-.lune-tablet {
+.lune-phone, .lune-tablet {
     background: #252321;
     padding: 6px;
     border-radius: 22px;
@@ -196,8 +190,6 @@
     bottom: 0;
 }
 
-/* 프로젝트 소개 */
-
 .lune-introduction {
     display: grid;
     grid-template-columns: 1fr 1.15fr;
@@ -219,41 +211,41 @@
 }
 
 .lune-introduction .lune-intro-copy h3 {
-    margin: 0 0 1.75rem;
+    margin: 0 0 28px;
     font-size: var(--fs-h2);
     line-height: 1.4;
-    letter-spacing: -.035em;
+    letter-spacing: -0.56px;
     word-break: keep-all;
     font-weight: var(--fw2);
 }
 
 .lune-case .lune-intro-copy p {
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: var(--fw1);
     line-height: 1.85;
     overflow-wrap: break-word;
 }
 
 .lune-intro-copy h4 {
-    margin: 2rem 0 1rem;
-    padding-top: 1.5rem;
+    margin: 32px 0 16px;
+    padding-top: 24px;
     border-top: 1px solid #d8c6ae;
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 1.5;
     font-weight: var(--fw2);
 }
 
 .lune-facts {
-    margin: 1.5rem 0 0;
+    margin: 24px 0 0;
     display: grid;
-    gap: 1.25rem;
+    gap: 20px;
 }
 
 .lune-facts > div {
     display: grid;
-    grid-template-columns: 6.5rem minmax(0, 1fr);
+    grid-template-columns: 104px minmax(0, 1fr);
     align-items: baseline;
-    gap: 1rem;
+    gap: 16px;
     font-size: 13px;
 }
 
@@ -269,7 +261,7 @@
 .lune-fact-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: .75rem;
+    gap: 12px;
 }
 
 .lune-facts .lune-fact-tag {
@@ -283,11 +275,12 @@
     white-space: nowrap;
 }
 
-/* 모바일 화면 구성 */
-
 .lune-phone-fan {
     position: relative;
     aspect-ratio: 1.25;
+    width: 80%;
+    max-width: 600px;
+    justify-self: center;
 }
 
 .lune-phone-fan .lune-phone {
@@ -314,10 +307,8 @@
 }
 
 .lune-typography {
-    padding: 70px 10% 90px;
+    padding: 70px 96px 90px;
 }
-
-/* 기기 조합 */
 
 .lune-device-group {
     position: relative;
@@ -364,10 +355,8 @@
     bottom: 2%;
 }
 
-/* 디자인 시스템 */
-
 .lune-system {
-    padding: 6rem;
+    padding: 96px;
     background: linear-gradient(#fff 0%, #fff 18%, #ffe0b5 18%, #fff2d7 100%);
 }
 
@@ -415,7 +404,7 @@
 }
 
 .lune-system-details > h3 {
-    padding: 3rem 3rem 1rem 3rem;
+    padding: 48px 48px 16px 48px;
     font-weight: var(--fw2);
     font-size: 20px;
     color: #785332;
@@ -424,7 +413,7 @@
 .lune-system-row {
     display: flex;
     gap: 60px;
-    margin: 1rem 3rem;
+    margin: 16px 48px;
     align-items: center;
 }
 
@@ -432,14 +421,17 @@
     font-size: 16px;
     color: #b29270;
     font-weight: var(--fw2);
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
 }
-.desc{
+
+.desc {
     font-size: 14px;
 }
-.lune-system-row .left{
+
+.lune-system-row .left {
     max-width: 100%;
 }
+
 .lune-palette {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -484,7 +476,7 @@
 
 .lune-font-overview {
     align-items: baseline;
-    gap: 1rem 1.5rem;
+    gap: 16px 24px;
     grid-column: 1 / -1;
     min-width: 0;
 }
@@ -495,22 +487,20 @@
     font-size: 16px;
     color: #b29270;
     font-weight: var(--fw2);
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
 }
-.lune-font-name{
+
+.lune-font-name {
     font-size: var(--fs-h2);
     font-weight: var(--fw2);
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
 }
-.lune-font-intro {
-    display: flex;
-    justify-content: space-between;
-}
-.lune-font-why h3{
+
+.lune-font-why h3 {
     font-size: 16px;
     color: #b29270;
     font-weight: var(--fw2);
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
 }
 
 .lune-system-row .lune-font-sample {
@@ -519,21 +509,19 @@
     margin-top: 0;
 }
 
-/* 타이포그래피 표 */
-
 .lune-font-typography {
-    padding: 3rem 3rem;
+    padding: 48px 48px;
 }
 
 .lune-type-heading h3 {
     font-size: 20px;
     color: #785332;
     font-weight: var(--fw2);
-    margin-bottom: 2rem;
+    margin-bottom: 32px;
 }
 
 .lune-case .lune-font-intro p:not(.lune-font-name):not(.lune-font-sample) {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     line-height: 1.7;
 }
@@ -541,104 +529,96 @@
 .lune-type-table-scroll {
     width: 100%;
     min-width: 0;
+    margin-top: 36px;
 }
 
-.lune-case .lune-type-table {
-    table-layout: fixed;
-    border-collapse: collapse;
-    margin: 0;
-    color: #171717;
-    text-align: left;
-}
-
-.lune-type-table caption {
+.lune-type-table .lune-type-caption {
+    display: block;
     padding-bottom: 12px;
     text-align: left;
     font-size: 20px;
     color: #785332;
     font-weight: var(--fw2);
-    margin-top: 2rem;
+    margin-top: 32px;
 }
 
-.lune-type-table thead {
+.lune-type-table .lune-type-head {
+    font-weight: 700;
+    display: block;
     color: #786b5b;
 }
 
-.lune-case .lune-type-table th,
-.lune-case .lune-type-table td {
-    padding: 20px 6px;
+/* Aesop 서체 목록과 동일한 열 너비·행 간격 */
+.lune-type-table .lune-type-body {
+    display: block;
+}
+
+.lune-type-table .lune-type-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 140px 60px 88px;
+    align-items: baseline;
+    column-gap: 12px;
+    padding: 12px 0;
     border-bottom: 1px dashed #999;
+}
+
+.lune-case .lune-type-table .lune-type-cell {
+    min-width: 0;
+    padding: 0;
+    border: 0;
     vertical-align: baseline;
     font-size: 12px;
-    font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.4;
     white-space: normal;
     overflow-wrap: anywhere;
 }
 
-.lune-case .lune-type-table tbody th {
-    width: 56%;
-    padding-left: 0;
-    font-family: var(--font-main);
-    font-weight: 700;
-    line-height: 1.2;
+.lune-type-table .lune-type-value {
+    font-weight: 400;
 }
 
-.lune-type-table td:nth-child(2) {
-    width: 15%;
-}
-
-.lune-type-table td:nth-child(3) {
-    width: 8%;
-}
-
-.lune-type-table td:nth-child(4) {
-    width: 9%;
-}
-
-.lune-type-table td:nth-child(5) {
-    width: 5%;
-}
-
-.lune-case .lune-type-table tbody tr:nth-child(1) th {
+.lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(1) .lune-type-sample {
     font-size: 39px;
+    font-weight: 700;
 }
 
-.lune-case .lune-type-table tbody tr:nth-child(2) th {
+.lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(2) .lune-type-sample {
     font-size: 31px;
+    font-weight: 700;
 }
 
-.lune-case .lune-type-table tbody tr:nth-child(3) th {
+.lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(3) .lune-type-sample {
     font-size: 25px;
+    font-weight: 700;
 }
 
-.lune-case .lune-type-table tbody tr:nth-child(4) th {
+.lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(4) .lune-type-sample {
     font-size: 20px;
+    font-weight: 700;
 }
 
-.lune-case .lune-type-table tbody tr:nth-child(5) th {
+.lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(5) .lune-type-sample {
     font-size: 16px;
     font-weight: 700;
 }
 
-.lune-case .lune-type-table tbody tr:nth-child(6) th {
+.lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(6) .lune-type-sample {
     font-size: 16px;
+    font-weight: 400;
 }
 
-.lune-case .lune-type-table tbody tr:nth-child(7) th {
+.lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(7) .lune-type-sample {
     font-size: 13px;
     font-weight: 400;
 }
 
-.lune-case .lune-type-table tbody tr:nth-child(8) th {
+.lune-case .lune-type-table .lune-type-body .lune-type-row:nth-child(8) .lune-type-sample {
     font-size: 10px;
     font-weight: 400;
 }
 
-/* 마무리 */
-
 .lune-finale {
-    padding: 80px 10% 35px;
+    padding: 80px 96px 35px;
     text-align: center;
     background: linear-gradient(#fff2d7,#ffe0b5);
 }
@@ -647,7 +627,7 @@
     font-size: 34px;
     line-height: 1.4;
     font-weight: var(--fw2);
-    margin-bottom: 2rem;
+    margin-bottom: 32px;
 }
 
 .lune-finale .lune-device-group {
@@ -656,195 +636,21 @@
     text-align: left;
 }
 
-/* 1024px 이하 */
-@media (max-width: 1024px) {
-    .lune-introduction,
-    .lune-system-row {
-        gap: 30px;
-    }
-
-    .lune-heading h3 {
-        font-size: 26px;
-    }
-
-    .lune-system-row .lune-font-name {
-        font-size: 32px;
-    }
-
-    .lune-system-row.lune-font-intro {
-        padding: 0;
-        gap: 24px;
-    }
-
-    .lune-font-typography {
-        padding: 40px 24px 32px;
-    }
-
-    .lune-type-heading {
-        gap: 24px;
-        margin-bottom: 36px;
-    }
-
-    .lune-type-table-scroll {
-        border-width: 20px;
-        padding: 16px;
-    }
-
-    .lune-case p,
-    .lune-case .lune-font-intro p:not(.lune-font-name):not(.lune-font-sample) {
-        font-size: 12px;
-    }
+.lune-case .lune-type-table {
+    display: block;
+    margin: 0;
+    color: #171717;
+    text-align: left;
+    width: 100%;
 }
 
-/* 768px 이하 */
-@media (max-width: 768px) {
-    .lune-case {
-        margin-top: 70px;
-    }
+.lune-font-intro {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
 
-    .lune-opening,
-    .lune-system,
-    .lune-typography,
-    .lune-finale {
-        padding: 45px 6%;
-    }
-
-    .lune-heading h3 {
-        font-size: 22px;
-    }
-
-    .lune-hero-mockup {
-        width: 100%;
-        margin: 40px auto 60px;
-    }
-
-    .lune-browser-bar {
-        padding: 7px;
-        gap: 3px;
-    }
-
-    .lune-browser-bar span {
-        font-size: 7px;
-    }
-
-    .lune-browser-bar i {
-        width: 4px;
-        height: 4px;
-    }
-
-    .lune-phone {
-        padding: 3px;
-        border-radius: 12px;
-    }
-
-    .lune-phone .lune-screen {
-        border-radius: 9px;
-    }
-
-    .lune-tablet {
-        padding: 4px;
-        border-radius: 9px;
-    }
-
-    .lune-introduction,
-    .lune-system-row {
-        grid-template-columns: 1fr;
-    }
-
-    .lune-phone-fan {
-        width: 90%;
-        max-width: 380px;
-        margin: auto;
-    }
-
-    .lune-section-heading h3 {
-        font-size: 25px;
-    }
-
-    .lune-page-gallery {
-        margin: 40px 0 60px;
-    }
-
-    .lune-system-row {
-        margin-top: 35px;
-    }
-
-    .lune-system-row .lune-font-sample {
-        font-size: 18px;
-    }
-
-    .lune-device-group {
-        margin-bottom: 45px;
-    }
-
-    .lune-monitor {
-        padding: 4px 4px 12px;
-        border-radius: 6px;
-    }
-
-    .lune-finale h3 {
-        font-size: 25px;
-    }
-
-    .lune-finale p br {
-        display: none;
-    }
-
-    .lune-system-row.lune-font-intro,
-    .lune-type-heading {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .lune-system-row.lune-font-intro {
-        padding: 0;
-    }
-
-    .lune-font-typography {
-        padding: 32px 16px;
-    }
-
-    .lune-type-table-scroll {
-        border-width: 12px;
-        border-radius: 18px;
-        padding: 8px 12px;
-    }
-
-    .lune-type-table tbody,
-    .lune-type-table tr {
-        display: block;
-    }
-
-    .lune-type-table tbody tr {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 8px;
-        padding: 20px 0;
-        border-bottom: 1px dashed #999;
-    }
-
-    .lune-case .lune-type-table tbody th,
-    .lune-case .lune-type-table tbody td {
-        width: auto;
-        padding: 0;
-        border: 0;
-    }
-
-    .lune-case .lune-type-table tbody th,
-    .lune-case .lune-type-table td:nth-child(2) {
-        grid-column: 1 / -1;
-    }
-
-    .lune-case .lune-type-table tbody tr:nth-child(1) th {
-        font-size: 30px;
-    }
-
-    .lune-case .lune-type-table tbody tr:nth-child(2) th {
-        font-size: 26px;
-    }
-
-    .lune-case p,
-    .lune-case .lune-font-intro p:not(.lune-font-name):not(.lune-font-sample) {
-        font-size: 10px;
-    }
+.lune-font-intro > div {
+    flex: 1 1 280px;
 }

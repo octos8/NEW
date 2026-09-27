@@ -1,4 +1,5 @@
-/* HERO */
+/* HERO | 기본 스타일. */
+/* 글자와 간격은 px. 공통 값은 common.css의 :root에서 수정합니다. */
 
 .hero-section {
     position: relative;
@@ -6,8 +7,6 @@
     height: 730px;
     overflow: hidden;
 }
-
-/* BACKGROUND */
 
 .hero-bg {
     position: absolute;
@@ -20,42 +19,13 @@
     transform: none;
 }
 
-/* INNER */
-
 .hero-inner {
     position: relative;
-    width: calc(100% - var(--frame-pc));
+    width: auto;
     max-width: var(--content-width);
     height: 100%;
-    margin: 0 auto;
-    padding: 9rem 2.3125rem 0;
-}
-
-/* TITLE */
-
-.hero-title {
-    position: relative;
-    z-index: 3;
-    margin: 0;
-    color: var(--white);
-    font-family: var(--font-main);
-    font-size: 10.5vw;
-    font-weight: 900;
-    line-height: .9;
-    letter-spacing: -.05em;
-    white-space: nowrap;
-}
-
-/* DESCRIPTION */
-
-.hero-description {
-    position: relative;
-    z-index: 3;
-    width: 45%;
-    margin-top: 4rem;
-    color: var(--white);
-    font-size: 1.25rem;
-    font-weight: var(--fw1);
+    margin: 0 48px;
+    padding: 144px 37px 0;
 }
 
 .hero-description p {
@@ -64,31 +34,13 @@
     word-break: keep-all;
 }
 
-/* LINE 화면 크기에 맞춰 같이 축소 */
-
 .hero-line {
     position: relative;
     z-index: 3;
-    width: 38%;
-    height: .0625rem;
-    margin-top: 2rem;
+    width: 30%;
+    height: 1px;
+    margin-top: 32px;
     background: rgba(255,255,255,.8);
-}
-
-/* PROFILE LINE과 같은 부모 기준으로 계산 */
-
-.hero-profile {
-    position: relative;
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 58%;
-    margin-top: -.8rem;
-    gap: 1.5rem;
-    color: var(--white);
-    font-size: 1.25rem;
-    white-space: nowrap;
 }
 
 .hero-job {
@@ -106,20 +58,19 @@
 @keyframes hero-name-enter {
     from {
         opacity: 0;
-        transform: translateX(min(18rem, 35vw));
+        transform: translateX(160px);
     }
 
     to {
         opacity: 1;
         transform: translateX(0);
     }
-}
 
-/* IMAGE */
+}
 
 .hero-visual {
     position: absolute;
-    right: calc((100% - 100vw) / 2);
+    right: -48px;
     bottom: 0;
     z-index: 1;
     width: 66%;
@@ -133,141 +84,39 @@
     height: auto;
 }
 
-/* 1024px 이하 */
-@media (max-width: 1024px) {
-    .hero-section {
-        height: 500px;
-    }
-
-    .hero-inner {
-        width: calc(100% - var(--frame-pad));
-        max-width: none;
-        padding: 8rem 2rem 0;
-    }
-
-    /* TITLE */
-
-    /* DESCRIPTION */
-
-    .hero-description {
-        width: 52%;
-        font-size: 1.1rem;
-    }
-
-    /* LINE */
-
-    /* PROFILE */
-
-    .hero-profile {
-        margin-top: -.7rem;
-        gap: 1rem;
-        font-size: 1rem;
-    }
-
-    /* IMAGE */
-
-    .hero-visual {
-        width: 58%;
-    }
+.hero-title {
+    position: relative;
+    z-index: 3;
+    margin: 0;
+    color: var(--white);
+    font-family: var(--font-main);
+    font-size: var(--fs-hero);
+    font-weight: 900;
+    line-height: .9;
+    letter-spacing: -5px;
+    white-space: normal;
 }
 
-/* 768px 이하 */
-@media (max-width: 768px) {
-    .hero-inner {
-        width: calc(100% - var(--frame-mo));
-        padding: 9rem 1rem 0;
-    }
-
-    /* TITLE */
-
-    .hero-title {
-        font-size: 12vw;
-    }
-
-    /* DESCRIPTION */
-
-    .hero-description {
-        width: 100%;
-        margin-top: 2.5rem;
-        font-size: 1rem;
-    }
-
-    /* LINE */
-
-    .hero-line {
-        width: 52%;
-        margin-top: 3rem;
-    }
-
-    /* PROFILE */
-
-    .hero-profile {
-        width: 72%;
-        margin-top: -.5rem;
-        gap: .7rem;
-        font-size: .75rem;
-    }
-
-    /* IMAGE */
-
-    .hero-visual {
-        bottom: -1rem;
-        width: 74%;
-    }
+.hero-description {
+    position: relative;
+    z-index: 3;
+    width: 45%;
+    margin-top: 64px;
+    color: var(--white);
+    font-size: var(--fs-body1);
+    font-weight: var(--fw1);
 }
 
-/* 402px 이하 */
-@media (max-width: 402px) {
-    .hero-section {
-        height: 420px;
-    }
-
-    .hero-inner {
-        padding: 7rem .75rem 0;
-    }
-
-    /* TITLE */
-
-    /* DESCRIPTION */
-
-    .hero-description {
-        margin-top: 2rem;
-        font-size: .75rem;
-    }
-
-    /* LINE */
-
-    .hero-line {
-        width: 48%;
-        margin-top: 2rem;
-    }
-
-    /* PROFILE */
-
-    .hero-profile {
-        margin-top: -.4rem;
-        gap: .4rem;
-        font-size: .55rem;
-    }
-
-    /* IMAGE */
-
-    .hero-visual {
-        bottom: 0;
-        width: 78%;
-    }
-}
-
-/* 280px 이하 */
-@media (max-width: 280px) {
-    .hero-section {
-        height: 360px;
-    }
-}
-
-/* 접근성: 동작 줄이기 */
-@media (prefers-reduced-motion: reduce) {
-    .hero-name.is-entering {
-        animation: none;
-    }
+.hero-profile {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 58%;
+    margin-top: -12.8px;
+    gap: 24px;
+    color: var(--white);
+    font-size: var(--fs-h4);
+    white-space: nowrap;
 }

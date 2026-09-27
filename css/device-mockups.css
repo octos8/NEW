@@ -1,7 +1,7 @@
-/* Generated device shells; the original website images remain separate layers. */
+/* DEVICE-MOCKUPS | 기본 스타일. */
+/* 글자와 간격은 px. 공통 값은 common.css의 :root에서 수정합니다. */
 
-.aesop-case .aesop-device--tablet,
-.lune-case .lune-tablet {
+.aesop-case .aesop-device--tablet, .lune-case .lune-tablet {
     aspect-ratio: 3 / 4;
     padding: 0;
     border: 0;
@@ -11,8 +11,7 @@
     box-shadow: none;
 }
 
-.aesop-case .aesop-device--tablet > .aesop-device-screen,
-.lune-case .lune-tablet > .lune-screen {
+.aesop-case .aesop-device--tablet > .aesop-device-screen, .lune-case .lune-tablet > .lune-screen {
     position: absolute;
     left: 12%;
     top: 10.45%;
@@ -23,10 +22,7 @@
     overflow: hidden;
 }
 
-/* The final device groups show the landscape variant. */
-
-.aesop-case .responsive-stage-tablet,
-.lune-finale .lune-device-group > .lune-tablet {
+.aesop-case .responsive-stage-tablet, .lune-finale .lune-device-group > .lune-tablet {
     aspect-ratio: 4 / 3;
     background-image: url('../img/tablet-premium-landscape.png');
 }
@@ -44,8 +40,7 @@
     bottom: 3%;
 }
 
-.aesop-case .responsive-stage-tablet > .aesop-device-screen,
-.lune-finale .lune-tablet > .lune-screen {
+.aesop-case .responsive-stage-tablet > .aesop-device-screen, .lune-finale .lune-tablet > .lune-screen {
     left: 13.7%;
     top: 15.4%;
     width: 76.1%;
@@ -54,10 +49,7 @@
     clip-path: polygon(0 0, 100% 2%, 100% 98.5%, 0 100%);
 }
 
-/* Front-facing phones. Positions and rotations remain controlled by each scene. */
-
-.aesop-case .aesop-device--phone,
-.lune-case .lune-phone {
+.aesop-case .aesop-device--phone, .lune-case .lune-phone {
     aspect-ratio: 850 / 1850;
     padding: 0;
     border: 0;
@@ -67,8 +59,7 @@
     box-shadow: none;
 }
 
-.aesop-case .aesop-device--phone > .aesop-device-screen,
-.lune-case .lune-phone > .lune-screen {
+.aesop-case .aesop-device--phone > .aesop-device-screen, .lune-case .lune-phone > .lune-screen {
     position: absolute;
     left: 11.05%;
     top: 7.9%;
@@ -79,8 +70,7 @@
     overflow: hidden;
 }
 
-.aesop-case .aesop-device--phone::after,
-.lune-case .lune-phone::after {
+.aesop-case .aesop-device--phone::after, .lune-case .lune-phone::after {
     content: '';
     position: absolute;
     z-index: 2;
@@ -108,10 +98,7 @@
     height: auto;
 }
 
-/* Gentle perspective for the overlapping phone compositions. */
-
-.aesop-case .aesop-responsive-phones > .aesop-device--phone,
-.lune-case .lune-phone-fan > .lune-phone {
+.aesop-case .aesop-responsive-phones > .aesop-device--phone, .lune-case .lune-phone-fan > .lune-phone {
     aspect-ratio: 2 / 3;
     background-image: url('../img/phone-premium-angle.png');
 }
@@ -144,8 +131,7 @@
     right: -8%;
 }
 
-.aesop-case .aesop-responsive-phones > .aesop-device--phone > .aesop-device-screen,
-.lune-case .lune-phone-fan > .lune-phone > .lune-screen {
+.aesop-case .aesop-responsive-phones > .aesop-device--phone > .aesop-device-screen, .lune-case .lune-phone-fan > .lune-phone > .lune-screen {
     left: 24.1%;
     top: 4.65%;
     width: 50.1%;
@@ -154,8 +140,7 @@
     clip-path: polygon(0 9%, 1% 6.8%, 3% 5.2%, 7% 3.9%, 13% 3%, 85% 0, 92% .5%, 97% 2%, 99% 4%, 100% 6%, 100% 94%, 99% 97%, 95% 99%, 89% 100%, 13% 97.5%, 7% 96.9%, 3% 95.4%, 1% 93.5%, 0 91%);
 }
 
-.aesop-case .aesop-responsive-phones > .aesop-device--phone::after,
-.lune-case .lune-phone-fan > .lune-phone::after {
+.aesop-case .aesop-responsive-phones > .aesop-device--phone::after, .lune-case .lune-phone-fan > .lune-phone::after {
     left: 41.2%;
     top: 7.1%;
     width: 14.7%;

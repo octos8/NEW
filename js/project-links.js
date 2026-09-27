@@ -13,6 +13,14 @@
 
         links.forEach(item => {
             const { nav, project } = item;
+            // Pad / mobile: avoid covering the narrower content with fixed links.
+            if (window.innerWidth < 1024) {
+                nav.classList.remove('project-links-sticky');
+                ['top', 'left', 'width'].forEach(key => nav.style.removeProperty(`--project-links-${key}`));
+                item.placeholder?.remove();
+                item.placeholder = null;
+                return;
+            }
             const anchor = (item.placeholder ?? nav).getBoundingClientRect();
 
             if (anchor.top >= top) {

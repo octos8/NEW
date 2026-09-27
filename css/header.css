@@ -1,27 +1,29 @@
-/* HEADER */
+/* HEADER | 기본 스타일. */
+/* 글자와 간격은 px. 공통 값은 common.css의 :root에서 수정합니다. */
 
 .site-header {
     position: fixed;
-    top: 1.375rem;
-    left: 1.9375rem;
+    top: 22px;
+    left: 31px;
+    right: 31px;
     z-index: 9999;
 }
 
 .header-inner {
     position: relative;
-    width: 55.4375rem;
-    max-width: calc(100vw - 3.875rem);
+    width: 887px;
+    max-width: 100%;
 }
 
 .site-nav {
     width: 100%;
-    height: 3.125rem;
+    height: 50px;
     padding: 0 var(--space-x-large);
     background: rgba(255,255,255,.65);
-    border-radius: 8.625rem;
-    backdrop-filter: blur(.75rem);
-    -webkit-backdrop-filter: blur(.75rem);
-    box-shadow: 0 .25rem 1.5rem rgba(0,0,0,.06);
+    border-radius: 138px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 24px rgba(0,0,0,.06);
 }
 
 .nav-list {
@@ -59,21 +61,19 @@
     content: "";
     position: absolute;
     left: 50%;
-    bottom: .5rem;
+    bottom: 8px;
     width: 0;
-    height: .0625rem;
+    height: 1px;
     background: var(--point);
     transform: translateX(-50%);
     transition: width .25s ease;
 }
 
-.nav-list a:hover,
-.nav-list a.active {
+.nav-list a:hover, .nav-list a.active {
     color: var(--point);
 }
 
-.nav-list a:hover::after,
-.nav-list a.active::after {
+.nav-list a:hover::after, .nav-list a.active::after {
     width: 100%;
 }
 
@@ -81,208 +81,25 @@
     display: none;
 }
 
-/* top 버튼 */
-
 .top-link {
     position: fixed;
-    right: 1.5rem;
-    bottom: 1.5rem;
+    right: 24px;
+    bottom: 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 56px;
+    height: 56px;
     border: 1px solid #d1d1d1;
     border-radius: 50%;
     background: #fff;
     color: #1a1a1a;
-    font-size: 1.5rem;
-    box-shadow: 0 .25rem 1rem #0001;
+    font-size: 24px;
+    box-shadow: 0 4px 16px #0001;
     cursor: pointer;
 }
 
 .top-link span {
-    font-size: .625rem;
-}
-
-/* 1024px 이하 */
-@media (max-width: 1024px) {
-    .site-header {
-        top: 1.25rem;
-        left: calc(var(--frame-pad) / 2);
-        right: auto;
-        width: auto;
-    }
-
-    .header-inner {
-        width: fit-content;
-        max-width: calc(100vw - var(--frame-pad));
-        margin: 0;
-        padding: 0;
-    }
-
-    .site-nav {
-        width: auto;
-        height: 3rem;
-        padding: 0 var(--space-normal);
-    }
-
-    .nav-list {
-        width: auto;
-        justify-content: flex-start;
-        gap: 1.5rem;
-        white-space: nowrap;
-    }
-
-    .nav-list a {
-        font-size: var(--fs-body2);
-    }
-}
-
-/* 768px 이하 */
-@media (max-width: 768px) {
-    .site-header {
-        top: 1rem;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .header-inner {
-        width: auto;
-    }
-
-    .nav-toggle {
-        position: relative;
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: .35rem;
-        width: 3.75rem;
-        height: 3.75rem;
-        margin: 0 auto;
-        padding: 0;
-        border: 0;
-        border-radius: 50%;
-        background: rgba(255,255,255,.88);
-        box-shadow: 0 .25rem 1.5rem rgba(0,0,0,.1);
-        backdrop-filter: blur(.75rem);
-        -webkit-backdrop-filter: blur(.75rem);
-        cursor: pointer;
-    }
-
-    .nav-toggle span {
-        display: block;
-        width: 1.5rem;
-        height: .125rem;
-        background: var(--gray-900);
-        border-radius: 1rem;
-        transition: transform .3s ease,opacity .3s ease;
-    }
-
-    .site-nav {
-        position: absolute;
-        top: 4.5rem;
-        left: 50%;
-        width: 15rem;
-        max-width: calc(100vw - 2rem);
-        height: auto;
-        max-height: 0;
-        padding: 0;
-        overflow: hidden;
-        border-radius: 1.5rem;
-        background: rgba(255,255,255,.94);
-        box-shadow: 0 .5rem 2rem rgba(0,0,0,.12);
-        backdrop-filter: blur(1rem);
-        -webkit-backdrop-filter: blur(1rem);
-        opacity: 0;
-        visibility: hidden;
-        transform: translateX(-50%) translateY(-.75rem);
-        transition: max-height .4s ease,opacity .3s ease,transform .3s ease;
-    }
-
-    .nav-list {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        height: auto;
-        padding: 1rem;
-    }
-
-    .nav-list li {
-        width: 100%;
-        height: auto;
-    }
-
-    .nav-list a {
-        justify-content: center;
-        width: 100%;
-        height: auto;
-        padding: 1rem;
-        font-size: 1.15rem;
-        border-radius: 1rem;
-    }
-
-    .nav-list a::after {
-        display: none;
-    }
-
-    .nav-list a:hover,
-    .nav-list a.active {
-        background: var(--ivory-0);
-    }
-
-    .site-header.is-open .site-nav {
-        max-height: 40rem;
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(-50%) translateY(0);
-    }
-
-    .site-header.is-open .nav-toggle span:nth-child(1) {
-        transform: translateY(.475rem) rotate(45deg);
-    }
-
-    .site-header.is-open .nav-toggle span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .site-header.is-open .nav-toggle span:nth-child(3) {
-        transform: translateY(-.475rem) rotate(-45deg);
-    }
-
-    .top-link {
-        right: 1rem;
-        bottom: 1rem;
-    }
-}
-
-/* 320px 이하 */
-@media (max-width: 320px) {
-    .site-header {
-        top: .75rem;
-    }
-
-    .nav-toggle {
-        width: 3.5rem;
-        height: 3.5rem;
-    }
-
-    .site-nav {
-        top: 4.25rem;
-        width: calc(100vw - 1rem);
-        max-width: none;
-        border-radius: 1.25rem;
-    }
-
-    .nav-list {
-        padding: .75rem;
-    }
-
-    .nav-list a {
-        padding: .85rem .5rem;
-        font-size: 1rem;
-    }
+    font-size: 10px;
 }

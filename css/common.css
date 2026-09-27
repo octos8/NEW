@@ -1,34 +1,35 @@
-/* DESIGN SYSTEM */
+/* COMMON | 기본 스타일. */
+/* 글자와 간격은 px. 공통 값은 common.css의 :root에서 수정합니다. */
+
+.common-frame {
+    width: 100%;
+    max-width: 1716px;
+    margin: 0 auto;
+    padding-inline: var(--page-gutter);
+}
 
 :root {
-    /* Font Family */
     --font-main: 'Pretendard',sans-serif;
-    /* 디바이스별 기준 글씨 크기 */
     --fs-pc: 16px;
     --fs-pad: 14px;
     --fs-mo: 12px;
-    /* 행간 */
     --lh1: 1.2;
     --lh2: 1.45;
-    /* 태그 글씨 크기 */
-    --fs-h1: 2.4414rem;
-    --fs-h2: 1.9531rem;
-    --fs-h3: 1.5625rem;
-    --fs-h4: 1.25rem;
-    --fs-body1: 1rem;
-    --fs-body2: .85rem;
-    --fs-detail: .7225rem;
-    /* 글씨 두께 */
+    --fs-h1: 39px;
+    --fs-h2: 31px;
+    --fs-h3: 25px;
+    --fs-h4: 20px;
+    --fs-body1: 16px;
+    --fs-body2: 13.6px;
+    --fs-detail: 11.56px;
     --fw1: 400;
     --fw2: 700;
-    /* 여백 */
-    --space-3x-large: 6rem;
-    --space-2x-large: 3rem;
-    --space-x-large: 2rem;
-    --space-normal: 1rem;
-    --space-x-small: .5rem;
-    --space-2x-small: .25rem;
-    /* Skin Ivory */
+    --space-3x-large: 96px;
+    --space-2x-large: 48px;
+    --space-x-large: 32px;
+    --space-normal: 16px;
+    --space-x-small: 8px;
+    --space-2x-small: 4px;
     --ivory-0: #FFF4D1;
     --ivory-100: #FEEAAA;
     --ivory-200: #FCE085;
@@ -39,7 +40,6 @@
     --ivory-700: #E1B41F;
     --ivory-800: #D7AA18;
     --ivory-900: #CCA114;
-    /* Gray */
     --gray-0: #FAFAFA;
     --gray-100: #F6F6F6;
     --gray-200: #EEEEEE;
@@ -50,88 +50,58 @@
     --gray-700: #757575;
     --gray-800: #484848;
     --gray-900: #1A1A1A;
-    /* Semantic */
     --success: #00FF6A;
     --warning: #FF9500;
     --error: #FF0000;
     --info: #30BDD5;
-    /* Base */
     --white: #FFFFFF;
     --black: #000000;
     --point: #A31E1E;
-    /* Layout */
-    --content-width: 101.25rem;
-    --frame-pc: 6rem;
-    --frame-pad: 4rem;
-    --frame-mo: 2rem;
+    --content-width: 1620px;
+    --frame-pc: 96px;
+    --frame-pad: 64px;
+    --frame-mo: 32px;
+    --page-gutter: 48px;
+    --section-space: 80px;
+    --layout-gap: 24px;
+    --panel-padding: 32px;
+    --fs-display: 64px;
+    --fs-hero: 112px;
 }
 
-/* BASE */
-
 html {
-    font-size: var(--fs-pc);
+    font-size: 16px;
     font-family: var(--font-main);
     font-weight: var(--fw1);
     color: var(--gray-900);
     scroll-behavior: smooth;
 }
 
-/* COMMON */
-
-.common-frame {
-    width: calc(100% - var(--frame-pc));
-    max-width: var(--content-width);
-    margin: 0 auto;
+body {
+    font-size: var(--fs-body1);
+    line-height: 1.6;
 }
 
-/* 1024px 이하 */
-@media (max-width: 1024px) {
-    :root {
-        --section-summary-size: 13px;
-    }
-
-    html {
-        font-size: var(--fs-pad);
-    }
-
-    .common-frame {
-        width: calc(100% - var(--frame-pad));
-        max-width: none;
-    }
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
-/* 768px 이하 */
-@media (max-width: 768px) {
-    :root {
-        --section-summary-size: 11px;
-    }
-
-    html {
-        font-size: var(--fs-mo);
-    }
-
-    .common-frame {
-        width: calc(100% - var(--frame-mo));
-    }
+main, section, article, figure, div {
+    min-width: 0;
 }
 
-/* 402px 이하 */
-@media (max-width: 402px) {
-    :root {
-        --section-summary-size: 9px;
-    }
+h1, h2, h3, h4, p, li, dd, a {
+    overflow-wrap: anywhere;
 }
 
-/* 320px 이하 */
-@media (max-width: 320px) {
-    .common-frame {
-        width: calc(100% - 1.5rem);
-    }
+img, video {
+    max-width: 100%;
 }
 
-/* 280px 이하 */
-@media (max-width: 280px) {
-    :root {
-        --section-summary-size: 7px;
-    }
+button, input, select, textarea {
+    font: inherit;
+}
+
+section[id] {
+    scroll-margin-top: 96px;
 }
