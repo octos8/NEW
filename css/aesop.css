@@ -719,6 +719,28 @@
     aspect-ratio: 1.6;
 }
 
+.aesop-responsive-phones > .aesop-device--phone {
+    animation: aesop-phone-sway 5.5s ease-in-out infinite;
+    transform-origin: 50% 65%;
+}
+
+@keyframes aesop-phone-sway {
+    0%, 100% {
+        rotate: -2deg;
+        translate: 0 0;
+    }
+    50% {
+        rotate: 2deg;
+        translate: 0 -6px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .aesop-responsive-phones > .aesop-device--phone {
+        animation: none;
+    }
+}
+
 .aesop-responsive-phones > .aesop-device:first-child {
     position: absolute;
     width: 46%;
@@ -729,6 +751,8 @@
 }
 
 .aesop-responsive-phones > .aesop-device:last-child {
+    animation-duration: 6.5s;
+    animation-delay: -2.5s;
     position: absolute;
     width: 46%;
     left: 6%;
