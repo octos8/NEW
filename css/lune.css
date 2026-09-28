@@ -222,13 +222,13 @@
     }
 
     #project .lune-intro-copy h4 {
-        margin: 0.4125rem 0 0.175rem;
-        padding-top: 0.35rem;
+        margin: 20px 0 10px;
+        padding-top: 14px;
     }
 
     #project .lune-facts {
-        gap: 0.29375rem;
-        margin-top: 0.46875rem;
+        gap: 10px;
+        margin-top: 24px;
     }
 
     #project .lune-facts > div {
@@ -248,7 +248,9 @@
     }
 
     #project .lune-font-intro {
-        gap: 0.35rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
     }
 
     #project .lune-type-heading h3 {
@@ -796,6 +798,8 @@
 
 .lune-font-name {
     font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
     margin-bottom: 1rem;
 }
 
@@ -877,6 +881,7 @@
 
 .lune-case .lune-type-table .lune-type-cell:not(.lune-type-sample) {
     font-size: var(--lune-type-label-size, 12px);
+    text-wrap: nowrap;
 }
 
 .lune-case .lune-type-table .lune-type-sample {
@@ -1154,7 +1159,7 @@
     }
 
     #project p.lune-font-name {
-        font-size: 1.9375rem;
+        font-size: 2.5rem;
     }
 
     #project div.lune-font-why>h3 {
@@ -1450,6 +1455,10 @@
 }
 
 @media (max-width: 768px) {
+    #project p.lune-font-name {
+        font-size: 1.5rem;
+    }
+
     #project .lune-hero-mockup {
         margin-block: 1.95625rem 2.8rem;
     }
@@ -1551,7 +1560,7 @@
 
 @media (max-width: 402px) {
     #project .lune-hero-mockup {
-        margin-block: 1.025rem 1.4625rem;
+        margin-block: 1.025rem 36px;
     }
 
     #project div.lune-font-overview > h3 {
@@ -1559,7 +1568,7 @@
     }
 
     #project p.lune-font-name {
-        font-size: 1.625rem;
+        font-size: 1.5rem;
     }
 
     #project div.lune-font-why > h3 {
@@ -1590,6 +1599,7 @@
 
     #project div.lune-system-row > div:nth-of-type(2) > h3 {
         font-size: 13px;
+        margin-bottom: 8px;
     }
 
     #project .lune-color-copy > p {
@@ -1603,7 +1613,7 @@
     }
 
     #project .lune-introduction .lune-intro-copy h3 {
-        margin-bottom: 0.35rem;
+        margin-bottom: 12px;
         font-size: 1rem;
     }
 
@@ -1634,7 +1644,7 @@
     #project .lune-system-row {
         flex-direction: column;
         align-items: stretch;
-        gap: 0.88125rem;
+        gap: 10px;
         margin: 0.23125rem 0;
     }
 

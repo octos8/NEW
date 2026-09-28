@@ -20,7 +20,7 @@
 
     register('.aesop-opening-copy > *, .lune-intro-copy > *', 'left', 110);
     register('.aesop-facts > div, .lune-facts > div', 'up', 110);
-    register('.aesop-typography > h3, .aesop-colors > h3, .lune-system-details > h3', 'down');
+    register('.aesop-typography > h3, .aesop-colors > h3, .lune-system-details > h3, .lune-type-heading > h3', 'down');
     register('.aesop-type-intro', 'left');
     register('.aesop-color-description', 'right');
     register('.aesop-main-color', 'left');
