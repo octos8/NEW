@@ -308,11 +308,6 @@
     text-align: left;
 }
 
-.lune-case *::before,
-.lune-case *::after {
-    box-sizing: border-box;
-}
-
 .lune-case img {
     display: block;
     width: 100%;
@@ -382,7 +377,6 @@
     font-size: 13px;
     font-weight: 700;
     line-height: 1.2;
-    text-decoration: none;
     transition: background-color .2s ease;
 }
 
@@ -746,7 +740,6 @@
 .lune-palette {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    list-style: none;
     padding: 0;
     margin: 20px 0 0;
 }
@@ -802,9 +795,8 @@
 }
 
 .lune-font-name {
-    font-size: var(--fs-h2);
-    font-weight: var(--fw2);
-    margin-bottom: 16px;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 .lune-font-why h3 {

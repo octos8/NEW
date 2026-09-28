@@ -46,12 +46,6 @@
     overflow: hidden;
 }
 
-.profile-area *,
-.profile-area *::before,
-.profile-area *::after {
-    box-sizing: border-box;
-}
-
 .profile-photo {
     position: relative;
     flex: none;
@@ -121,7 +115,6 @@
     max-width: 100%;
     margin: 0;
     padding: 0;
-    list-style: none;
 }
 
 .certification-info li,
@@ -559,7 +552,6 @@
 }
 
 .about-inner .profile-area {
-    box-sizing: border-box;
     --profile-list-size: 16px;
     position: relative;
     display: flex;
@@ -609,7 +601,6 @@
     border: 0;
     background: transparent;
     color: inherit;
-    font-family: inherit;
     font-size: 25px;
     font-weight: var(--fw2);
     line-height: 1.2;

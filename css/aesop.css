@@ -13,10 +13,6 @@
     font-weight: 700;
 }
 
-.aesop-case *, .aesop-case *::before, .aesop-case *::after {
-    box-sizing: border-box;
-}
-
 .aesop-case p:not(:where(.aesop-type-row p)) {
     margin: 0;
     line-height: 1.4;
@@ -26,7 +22,6 @@
 
 .aesop-case img {
     display: block;
-    max-width: 100%;
 }
 
 .aesop-sr-only {
@@ -130,7 +125,6 @@
 .aesop-links a {
     min-height: 16px;
     color: var(--aesop-heading-green);
-    text-decoration: none;
     font-weight: 700;
     line-height: 1.2;
     padding: 8px 0;
@@ -203,7 +197,6 @@
 .aesop-opening-brand .aesop-logo {
     order: 0;
     width: 200px;
-    max-width: 100%;
     height: auto;
     margin: 0;
 }
@@ -333,7 +326,6 @@
     background: var(--aesop-tint);
     color: var(--aesop-main);
     font-size: 13px;
-    text-decoration: none;
     transition: background-color .2s ease;
 }
 
@@ -472,9 +464,8 @@
 }
 
 .aesop-type-intro .aesop-type-name {
-    font-weight: 700;
     line-height: 1.2;
-    font-size: 40px;
+    font-size: 2rem;
 }
 
 .aesop-type-intro > .aesop-type-name + p {
@@ -513,7 +504,6 @@
 
 .aesop-case .aesop-type-row .aesop-type-sample {
     grid-column: auto;
-    font-family: var(--font-main);
     font-size: var(--sample-mobile-size, var(--sample-size-rem, var(--sample-size)));
     font-weight: var(--sample-weight);
 }
@@ -555,7 +545,6 @@
     grid-template-columns: repeat(10, minmax(0, 1fr));
     margin: 0;
     padding: 0;
-    list-style: none;
     max-width: none;
 }
 
@@ -1635,7 +1624,6 @@
     max-width: 546px;
     padding: 0;
     margin: 57px auto 0;
-    list-style: none;
 }
 
 .project-section .project-device-list>li {
