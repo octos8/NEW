@@ -1,9 +1,17 @@
 /* CONTACT | Closing statement and direct contact links. */
+#contact {
+    scroll-margin-top: 0;
+}
+
 .contact-section {
     --contact-title-size: 56px;
     --contact-body-size: 16px;
     --contact-padding: 96px;
     width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
     background: #333333;
     color: #ffffff;
 }
@@ -19,14 +27,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-block: var(--contact-padding);
+    padding-block: min(var(--contact-padding), 6vh);
     text-align: center;
     text-wrap: nowrap;
 }
 
 .contact-eyebrow {
     margin-bottom: 24px;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: 3px;
     color: #bbbbbb;
@@ -52,21 +60,40 @@
 
 .contact-links {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 16px;
     margin-top: 2rem;
     text-align: center;
 }
 
 .contact-links a {
-    padding: 4px 16px;
-    border: 1px solid #686868;
-    border-radius: 999px;
+    padding: 4px 0;
+}
+
+.contact-links a,
+.contact-author {
     font-size: 1rem;
+    font-weight: var(--fw1);
+    color: #ffffff;
 }
 
 .contact-links a:hover {
-    background: #404040;
-    border-color: #dddddd;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.contact-icon {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: .4em;
+    vertical-align: -.2em;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .contact-links a:focus-visible {
@@ -76,8 +103,6 @@
 
 .contact-author {
     margin-top: 1rem;
-    font-size: 0.75rem;
-    color: #bbbbbb;
 }
 
 @media (max-width: 1024px) {
@@ -86,7 +111,8 @@
         --contact-body-size: 14px;
         --contact-padding: 72px;
     }
-    .contact-links a {
+    .contact-links a,
+    .contact-author {
         font-size: 0.875rem;
     }
 }
@@ -98,12 +124,12 @@
     }
 
     .contact-links {
-        grid-template-columns: minmax(0, 1fr);
         max-width: 400px;
         gap: 12px;
         margin-top: 28px;
     }
-    .contact-links a {
+    .contact-links a,
+    .contact-author {
         font-size: 0.75rem;
     }
     .contact-description {
@@ -117,7 +143,8 @@
         --contact-body-size: 12px;
         --contact-padding: 48px;
     }
-    .contact-links a {
+    .contact-links a,
+    .contact-author {
         font-size: 0.625rem;
     }
     .contact-description {
@@ -138,7 +165,8 @@
         font-size: 0.425rem;
         margin-top: 0.25rem;
     }
-    .contact-links a {
+    .contact-links a,
+    .contact-author {
         font-size: 0.425rem;
     }
 }

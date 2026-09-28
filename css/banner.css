@@ -11,6 +11,10 @@
     padding: 32px 0;
 }
 
+.poster-section + .banner-section {
+    margin-top: clamp(60px, 7vw, 110px);
+}
+
 .banner-section .banner-inner {
     position: relative;
     height: auto;
@@ -47,8 +51,17 @@
 }
 
 .banner-section .banner-train {
+    position: relative;
+    z-index: 3;
+    pointer-events: none;
     width: 100%;
     height: auto;
+}
+
+.banner-section .banner-train img,
+.banner-section .banner-caption h3,
+.banner-section .banner-caption p {
+    pointer-events: auto;
 }
 
 .banner-section .banner-train .swiper-slide {
@@ -132,7 +145,7 @@
 .banner-section .banner-heading h2 {
     width: fit-content;
     max-width: 100%;
-    font-size: var(--fs-display);
+    font-size: clamp(60.22px, 11.2908vw, 173.13px);
     font-weight: var(--fw2);
     line-height: 1;
     letter-spacing: -0.64px;
@@ -316,5 +329,30 @@
 
     .banner-section .swiper-pagination {
         bottom: 19.5px;
+    }
+}
+
+/* Center the section title above its one-line introduction. */
+.banner-section .banner-heading {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+}
+
+.banner-section .banner-heading > p {
+    font-family: var(--font-main);
+    font-size: var(--fs-body1);
+    font-weight: var(--fw2);
+    line-height: 1.6;
+    color: var(--gray-800);
+    text-align: center;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .banner-section .banner-heading h2 {
+        font-size: clamp(37.64px, 11.2908vw, 86.56px);
     }
 }

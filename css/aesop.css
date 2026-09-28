@@ -794,9 +794,10 @@
 
 .responsive-stage-phone {
     width: 24%;
-    right: 12%;
-    bottom: 8%;
-    transform: rotate(7deg);
+    right: 19%;
+    bottom: 13%;
+    transform: rotate(14deg);
+    z-index: 2;
 }
 
 .aesop-responsive-hero {

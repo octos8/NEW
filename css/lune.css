@@ -339,6 +339,7 @@
 
 .lune-heading .lune-word {
     font-weight: var(--fw2);
+    transform: translateX(clamp(8px, 3vw, 40px));
 }
 
 #lune-title,
@@ -491,6 +492,23 @@
     width: 23%;
     left: 0;
     bottom: 0;
+    transform-origin: 50% 65%;
+}
+
+.lune-hero-phone.is-ringing {
+    animation: lune-phone-ring 1.3s ease-in-out;
+}
+
+@keyframes lune-phone-ring {
+    0%, 40%, 50%, 90%, 100% { rotate: 0deg; }
+    8%, 58% { rotate: -.8deg; }
+    16%, 66% { rotate: .8deg; }
+    24%, 74% { rotate: -.6deg; }
+    32%, 82% { rotate: .4deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lune-hero-phone.is-ringing { animation: none; }
 }
 
 .lune-introduction {
@@ -607,6 +625,34 @@
 .lune-phone-fan .lune-phone:nth-child(3) {
     right: 0;
     transform: rotate(12deg);
+}
+
+.lune-phone-fan.phone-fan-ready > .lune-phone {
+    opacity: 0;
+    translate: 0 90px;
+    transition: none;
+}
+
+.lune-phone-fan.phone-fan-visible > .lune-phone {
+    opacity: 1;
+    translate: 0 0;
+    transition: opacity 1.2s ease, translate 2.4s cubic-bezier(.45, 0, .25, 1);
+}
+
+.lune-phone-fan.phone-fan-visible > .lune-phone:nth-child(2) {
+    transition-delay: .45s;
+}
+
+.lune-phone-fan.phone-fan-visible > .lune-phone:nth-child(3) {
+    transition-delay: .9s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lune-phone-fan.phone-fan-ready > .lune-phone {
+        opacity: 1;
+        translate: none;
+        transition: none;
+    }
 }
 
 .lune-typography {
@@ -783,7 +829,7 @@
 .lune-font-overview {
     align-items: baseline;
     gap: 16px 24px;
-    grid-column: 1 / -1;
+    grid-column: auto;
     min-width: 0;
 }
 
@@ -886,11 +932,13 @@
 }
 
 .lune-case .lune-type-table .lune-type-sample {
+    color: #785332;
     font-size: var(--lune-sample-size);
     font-weight: var(--lune-sample-weight);
 }
 
 .lune-type-table .lune-type-value {
+    color: #785332;
     font-weight: 400;
 }
 
@@ -1948,5 +1996,58 @@
     }
     #project section.lune-finale > p {
     font-size: 10px;
+    }
+}
+
+/* Align the color and typography descriptions on the same column. */
+#project .lune-system-details {
+    --lune-copy-gap: 60px;
+    --lune-copy-size: 14px;
+}
+
+#project .lune-system-row,
+#project .lune-font-intro {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--lune-copy-gap);
+}
+
+#project .lune-system-row > div,
+#project .lune-font-intro > div {
+    min-width: 0;
+}
+
+#project .lune-case .lune-color-copy > p,
+#project .lune-case .lune-font-why > p {
+    font-size: var(--lune-copy-size);
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+}
+
+@media (max-width: 1716px) {
+    #project .lune-font-typography { padding-inline: 0; }
+}
+
+@media (max-width: 1280px) {
+    #project .lune-system-details { --lune-copy-gap: 2.8rem; }
+}
+
+@media (max-width: 1024px) {
+    #project .lune-system-details { --lune-copy-gap: 2.2375rem; }
+}
+
+@media (max-width: 768px) {
+    #project .lune-system-details { --lune-copy-gap: 1.68125rem; }
+}
+
+@media (max-width: 402px) {
+    #project .lune-system-details {
+        --lune-copy-gap: 10px;
+        --lune-copy-size: 11px;
+    }
+    #project .lune-system-row,
+    #project .lune-font-intro {
+        grid-template-columns: minmax(0, 1fr);
     }
 }

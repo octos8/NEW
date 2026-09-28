@@ -8,6 +8,26 @@
     const animations = new Map();
     const visible = new Set();
 
+    const phoneFan = project.querySelector('.lune-phone-fan');
+    if (phoneFan) {
+        phoneFan.classList.add('phone-fan-ready');
+        const fanObserver = new IntersectionObserver(([entry]) => {
+            phoneFan.classList.toggle('phone-fan-visible', entry.isIntersecting);
+        }, { threshold: 0, rootMargin: '0px 0px -32px 0px' });
+        fanObserver.observe(phoneFan);
+    }
+
+    const heroPhone = project.querySelector('.lune-hero-phone');
+    if (heroPhone) {
+        const phoneObserver = new IntersectionObserver(([entry]) => {
+            heroPhone.classList.toggle('is-ringing', entry.isIntersecting && entry.intersectionRatio >= 0.25 && !reducedMotion.matches);
+        }, { threshold: [0, 0.25] });
+        phoneObserver.observe(heroPhone);
+        reducedMotion.addEventListener('change', () => {
+            if (reducedMotion.matches) heroPhone.classList.remove('is-ringing');
+        });
+    }
+
     const register = (selector, direction, stagger = 0) => {
         const groupIndexes = new Map();
         project.querySelectorAll(selector).forEach(element => {
@@ -23,7 +43,6 @@
     register('.aesop-typography > h3, .aesop-colors > h3, .lune-system-details > h3, .lune-type-heading > h3', 'down');
     register('.aesop-type-intro', 'left');
     register('.aesop-color-description', 'right');
-    register('.aesop-main-color', 'left');
     register('.aesop-palette-content', 'up');
     register('.aesop-responsive-copy > *, .aesop-responsive-detail > *', 'up', 130);
     register('.aesop-responsive-finale > h3, .lune-finale > h3', 'down');

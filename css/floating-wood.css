@@ -1,0 +1,98 @@
+/* Decorative blocks follow the viewport without intercepting page controls. */
+.floating-wood {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    overflow: clip;
+    pointer-events: none;
+    user-select: none;
+}
+
+.floating-wood-piece {
+    --wood-size: 36px;
+    --travel-x: calc(100vw - 48px - var(--wood-size));
+    --travel-y: calc(100vh - 48px - var(--wood-size));
+    --travel-y: calc(100dvh - 48px - var(--wood-size));
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    width: var(--wood-size);
+    height: var(--wood-size);
+    border-radius: 3px;
+    background: #d6c99b url('../img/hero-main.jpg') 53% 79% / 1300% 900% no-repeat;
+    box-shadow: inset 1px 2px 1px #fff9,
+        inset -4px -3px 2px #8d78454d, 3px 5px 8px #4c3c2426;
+    opacity: .85;
+    animation: floating-wood-roll 42s linear infinite;
+    animation-delay: -8s;
+    animation-play-state: var(--wood-play-state, running);
+    will-change: transform;
+}
+
+.floating-wood-piece:nth-child(2) {
+    --wood-size: 30px;
+    background-position: 62% 80%;
+    animation-duration: 53s;
+    animation-delay: -29s;
+    animation-direction: reverse;
+}
+
+.floating-wood-piece:nth-child(3) {
+    --wood-size: 42px;
+    background-position: 45% 81%;
+    animation-duration: 61s;
+    animation-delay: -47s;
+}
+
+@keyframes floating-wood-roll {
+    0% {
+        transform: translate(calc(var(--travel-x) * .06), calc(var(--travel-y) * .18)) rotate(0deg);
+    }
+    20% {
+        transform: translate(calc(var(--travel-x) * .65), calc(var(--travel-y) * .04)) rotate(90deg);
+    }
+    40% {
+        transform: translate(calc(var(--travel-x) * .96), calc(var(--travel-y) * .55)) rotate(160deg);
+    }
+    60% {
+        transform: translate(calc(var(--travel-x) * .58), calc(var(--travel-y) * .96)) rotate(235deg);
+    }
+    80% {
+        transform: translate(calc(var(--travel-x) * .04), calc(var(--travel-y) * .72)) rotate(300deg);
+    }
+    100% {
+        transform: translate(calc(var(--travel-x) * .06), calc(var(--travel-y) * .18)) rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-wood-piece {
+        --wood-size: 26px;
+        opacity: .75;
+    }
+
+    .floating-wood-piece:nth-child(2) {
+        --wood-size: 22px;
+    }
+
+    .floating-wood-piece:nth-child(3) {
+        --wood-size: 30px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .floating-wood {
+        display: none;
+    }
+
+    .floating-wood-piece {
+        animation: none;
+        will-change: auto;
+    }
+}
+
+@media print {
+    .floating-wood {
+        display: none;
+    }
+}

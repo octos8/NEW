@@ -70,7 +70,7 @@
 
 .hero-visual {
     position: absolute;
-    left: 49%;
+    right: calc(100% + 48px - 100vw);
     bottom: 0;
     z-index: 1;
     width: 66%;
@@ -147,7 +147,7 @@
     }
 
     .hero-visual {
-        right: calc(-1 * var(--page-gutter));
+        right: calc(100% + var(--page-gutter) - 100vw);
     }
 
     .hero-line {
@@ -249,5 +249,34 @@
 
     .hero-line {
         margin-top: 1.25rem;
+    }
+}
+
+/* Keep the divider and publisher identity on one horizontal center line. */
+.hero-meta {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: clamp(12px, 2vw, 24px);
+    margin-top: clamp(20px, 2.5vw, 32px);
+}
+
+.hero-meta .hero-line {
+    flex: 0 1 39%;
+    width: auto;
+    margin-top: 0;
+}
+
+.hero-meta .hero-profile {
+    flex: 0 0 auto;
+    width: auto;
+    margin-top: 0;
+    justify-content: flex-start;
+}
+
+@media (max-width: 1024px) {
+    .hero-meta .hero-line {
+        flex-basis: 29%;
     }
 }

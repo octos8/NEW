@@ -196,18 +196,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
-                    if (!entry.target.matches('.skills-heading')) {
-                        entry.target.classList.toggle('about-revealed', entry.isIntersecting);
-                        return;
-                    }
-
-                    if (!entry.isIntersecting) return;
-                    entry.target.classList.add('about-revealed');
-                    observer.unobserve(entry.target);
+                    entry.target.classList.toggle('about-revealed', entry.isIntersecting);
                 });
             }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
 
-            document.querySelectorAll('.profile-left, .profile-info, .profile-identity > h3, .profile-details, .education-info, .certification-info, .skills-heading, .skill-menu').forEach(target => {
+            document.querySelectorAll('.profile-side-label, .profile-left, .profile-info, .profile-identity > h3, .profile-details, .education-info, .certification-info, .skills-heading, .skill-menu, .poster-heading').forEach(target => {
                 if (target.classList.contains('about-reveal-ready')) return;
                 if (target.matches('.profile-details')) {
                     target.querySelectorAll(':scope > div').forEach((item, index) => {
@@ -305,49 +298,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* POPUP TEXT SWIPER */
-    const popupTextSwiper = new Swiper('.popup-text-swiper', {
-        loop: true,
-        initialSlide: 1,
-        speed: reducedMotion ? 0 : 700,
-        allowTouchMove: false,
-        effect: 'fade',
-        fadeEffect: {
-            crossFade: true
-        }
-    });
-
     /* POPUP IMAGE SWIPER */
     const popupImageSwiper = new Swiper('.popup-image-swiper', {
         loop: true,
-        initialSlide: 1,
-        centeredSlides: true,
-        speed: reducedMotion ? 0 : 700,
-        slidesPerView: 1,
-        spaceBetween: 8,
+        initialSlide: 0,
+        centeredSlides: false,
+        speed: reducedMotion ? 0 : 4500,
+        slidesPerView: 1.15,
+        spaceBetween: 24,
         breakpoints: {
-            280: { slidesPerView: 1.15, spaceBetween: 12 },
-            402: { slidesPerView: 1.35, spaceBetween: 16 },
-            768: { slidesPerView: 1.8, spaceBetween: 20 },
-            1024: { slidesPerView: 2, spaceBetween: 48 }
+            402: { slidesPerView: 1.4, spaceBetween: 28 },
+            768: { slidesPerView: 2.2, spaceBetween: 36 },
+            1024: { slidesPerView: 3, spaceBetween: 48 }
         },
         grabCursor: true,
-        autoplay: {
-            delay: 2500,
+        slideToClickedSlide: false,
+        autoplay: reducedMotion ? false : {
+            delay: 0,
             disableOnInteraction: false,
-            pauseOnMouseEnter: false
-        },
-        on: {
-            slideChange() {
-                popupTextSwiper.slideToLoop(this.realIndex, reducedMotion ? 0 : 700);
-            },
-            click(swiper) {
-                if (swiper.clickedSlide?.classList.contains('swiper-slide-next')) {
-                    swiper.slideNext();
-                } else if (swiper.clickedSlide?.classList.contains('swiper-slide-prev')) {
-                    swiper.slidePrev();
-                }
-            }
+            pauseOnMouseEnter: true
         }
     });
     const bannerSwiper = new Swiper('.banner-swiper', {
@@ -366,5 +335,15 @@ document.addEventListener('DOMContentLoaded', () => {
             clickable: true,
         },
     });
+
+    // Keep the first banner in place until the carousel enters the viewport.
+    if (!reducedMotion && 'IntersectionObserver' in window) {
+        bannerSwiper.autoplay.stop();
+        const bannerObserver = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) bannerSwiper.autoplay.start();
+            else bannerSwiper.autoplay.stop();
+        }, { threshold: 0.15 });
+        bannerObserver.observe(document.querySelector('.banner-swiper'));
+    }
 
 });

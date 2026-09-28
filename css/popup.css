@@ -2,7 +2,7 @@
 /* 글자와 간격은 px. 공통 값은 common.css의 :root에서 수정합니다. */
 
 .popup-section {
-    background: #f5f0e6;
+    background: transparent;
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -11,7 +11,9 @@
 }
 
 .popup-heading p {
-    margin: 12px 0 0;
+    margin: 1.4em 0 0;
+    font-size: clamp(16px, 1.4vw, 20px);
+    font-weight: 700;
     color: var(--gray-900);
     word-break: keep-all;
     line-height: 1.4;
@@ -23,7 +25,7 @@
     width: 100%;
     display: flex;
     gap: 24px;
-    margin-top: -6rem;
+    margin-top: 48px;
     align-items: flex-start;
 }
 
@@ -54,25 +56,45 @@
 }
 
 .popup-section .popup-slide.swiper-slide {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     margin: 0;
     overflow: hidden;
-    line-height: 0;
+    line-height: 1.6;
     height: auto;
-    aspect-ratio: 2 / 3;
-    opacity: .45;
-    filter: blur(7px);
-    transform: perspective(1200px) translateZ(-100px) scale(.5);
-    transform-origin: center;
+    aspect-ratio: auto;
+    opacity: 1;
+    filter: none;
+    transform: none;
     z-index: 1;
-    transition: transform 700ms ease, filter 700ms ease, opacity 700ms ease;
+}
+
+.popup-slide img,
+.popup-slide > .popup-description-slide {
+    width: 100%;
+    margin-inline: auto;
 }
 
 .popup-slide img {
     display: block;
-    width: 100%;
-    height: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3;
     object-fit: cover;
+}
+
+.popup-slide > .popup-description-slide {
+    padding-top: 20px;
+}
+
+.popup-slide .popup-description-slide h3 {
+    font-size: clamp(18px, 1.6vw, 24px);
+    line-height: 1.35;
+}
+
+.popup-slide .popup-description-slide p {
+    font-size: clamp(13px, 1.05vw, 16px);
+    line-height: 1.6;
 }
 
 .popup-tool {
@@ -83,7 +105,7 @@
     line-height: var(--lh2);
 }
 
-.popup-description-slide.swiper-slide>p+.popup-tool {
+.popup-description-slide>p+.popup-tool {
     margin-top: 16px;
 }
 
@@ -120,35 +142,18 @@
     display: none;
 }
 
-.popup-section .popup-slide.swiper-slide-active {
-    opacity: 1;
-    filter: none;
-    transform: perspective(1200px) translateZ(0) rotateY(0) scale(1);
-    z-index: 3;
-}
-
-.popup-section .popup-slide.swiper-slide-prev {
-    cursor: pointer;
-    z-index: 2;
-    transform: perspective(1200px) translateX(25%) translateZ(-100px) rotateY(25deg) scale(.5);
-}
-
-.popup-section .popup-slide.swiper-slide-next {
-    cursor: pointer;
-    z-index: 2;
-    transform: perspective(1200px) translateX(-25%) translateZ(-100px) rotateY(-25deg) scale(.5);
-}
-
 .popup-section .popup-heading {
     position: relative;
     z-index: 2;
 }
 
 .popup-heading h2 {
+    position: relative;
+    isolation: isolate;
     width: fit-content;
     max-width: 100%;
     margin: 0;
-    font-size: var(--fs-display);
+    font-size: clamp(60.22px, 11.2908vw, 173.13px);
     font-weight: var(--fw2);
     line-height: 1;
     letter-spacing: -0.64px;
@@ -156,6 +161,7 @@
     white-space: normal;
     word-break: keep-all;
 }
+
 
 .popup-description-slide h3 {
     font-size: var(--fs-h3);
@@ -199,7 +205,7 @@
 
     .popup-section .popup-layout {
         gap: 1.5rem;
-        margin-top: -2rem;
+        margin-top: 32px;
     }
     .popup-section .popup-description-viewport.swiper {
         flex: 0 1 430px;
@@ -211,7 +217,7 @@
     }
 
     .popup-heading p {
-        margin-top: 0.75rem;
+        margin-top: 1.4em;
     }
 }
 
@@ -241,6 +247,7 @@
 
     .popup-section .popup-heading h2 {
         margin-inline: auto;
+        font-size: clamp(37.64px, 11.2908vw, 86.56px);
     }
 
     .popup-section .popup-tool {
@@ -288,5 +295,221 @@
 @media (max-width: 280px) {
     .popup-section {
         padding-block: 2rem;
+    }
+}
+
+/* A flat, full-width strip with equally sized images. */
+.popup-section .popup-layout {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+}
+
+.popup-section .popup-station.swiper {
+    order: 0;
+    flex: none;
+    width: 100%;
+    max-width: none;
+}
+
+.popup-section .popup-description-viewport.swiper {
+    order: 1;
+    flex: none;
+    width: 100%;
+    padding-top: 0;
+}
+
+.popup-section .popup-description-track.swiper-wrapper {
+    margin-top: 0;
+}
+
+.popup-section .popup-train.swiper-wrapper {
+    align-items: stretch;
+    transition-timing-function: linear;
+}
+
+.popup-image-button {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    background: transparent;
+    cursor: pointer;
+}
+
+.popup-image-button img {
+    transition: filter .45s ease, transform .6s ease;
+}
+
+.popup-view-more {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    place-items: center;
+    width: clamp(96px, 9vw, 140px);
+    aspect-ratio: 1;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background: rgb(0 0 0 / 20%);
+    color: #fff;
+    font-size: clamp(12px, 1.1vw, 16px);
+    letter-spacing: .08em;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.9);
+    transition: opacity .35s ease, transform .45s ease;
+    pointer-events: none;
+}
+
+.popup-image-button:hover img,
+.popup-image-button:focus-visible img {
+    filter: blur(6px) brightness(.65);
+    transform: scale(1.035);
+}
+
+.popup-image-button:hover .popup-view-more,
+.popup-image-button:focus-visible .popup-view-more {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-image-button:focus-visible {
+    outline: 3px solid var(--point);
+    outline-offset: -3px;
+}
+
+.popup-project-dialog {
+    position: fixed;
+    inset: 0;
+    width: min(620px, calc(100% - 32px));
+    max-height: calc(100dvh - 48px);
+    margin: auto;
+    padding: 64px 40px 40px;
+    border: 0;
+    border-radius: 16px;
+    background: transparent;
+    color: var(--white);
+    text-align: center;
+    overflow-y: auto;
+    box-shadow: none;
+}
+
+.popup-project-dialog::backdrop {
+    background: rgb(0 0 0 / 55%);
+    backdrop-filter: blur(4px);
+}
+
+.popup-project-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--gray-100);
+    color: var(--gray-900);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.popup-project-content h3 {
+    margin-bottom: 24px;
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: var(--fw2);
+    line-height: 1.35;
+    word-break: keep-all;
+}
+
+.popup-project-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    word-break: keep-all;
+}
+
+.popup-project-content .popup-tool {
+    margin-top: 24px;
+    justify-content: center;
+}
+
+.popup-project-content .popup-tool > span {
+    color: inherit;
+    border-color: currentColor;
+}
+
+body:has(.popup-project-dialog[open]) {
+    overflow: hidden;
+}
+
+@media (hover: none) {
+    .popup-view-more {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@media (max-width: 480px) {
+    .popup-project-dialog {
+        padding: 64px 24px 32px;
+    }
+}
+
+.popup-animated-title > span {
+    display: inline-block;
+    --letter-delay: 0s;
+}
+
+.popup-animated-title > span:nth-child(2) { --letter-delay: .09s; }
+.popup-animated-title > span:nth-child(3) { --letter-delay: .18s; }
+.popup-animated-title > span:nth-child(4) { --letter-delay: .27s; }
+.popup-animated-title > span:nth-child(5) { --letter-delay: .36s; }
+
+.popup-animated-title.is-bounce-ready > span {
+    opacity: 0;
+    transform: translateY(.16em);
+}
+
+.popup-animated-title.is-bouncing > span {
+    animation: popup-soft-bounce 1.15s cubic-bezier(.25, .6, .3, 1) both;
+    animation-delay: var(--letter-delay);
+}
+
+@keyframes popup-soft-bounce {
+    0% { opacity: 0; transform: translateY(.16em); }
+    60% { opacity: 1; transform: translateY(-.025em); }
+    80% { opacity: 1; transform: translateY(.008em); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.popup-heading .popup-summary-ready {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: none;
+}
+
+.popup-heading .popup-summary-ready.popup-summary-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease, transform 1.8s cubic-bezier(.25, .6, .3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .popup-heading .popup-summary-ready {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .popup-animated-title.is-bounce-ready > span {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .popup-image-button img,
+    .popup-view-more {
+        transition: none;
     }
 }
