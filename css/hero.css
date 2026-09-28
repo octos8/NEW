@@ -70,7 +70,7 @@
 
 .hero-visual {
     position: absolute;
-    right: -48px;
+    left: 49%;
     bottom: 0;
     z-index: 1;
     width: 66%;
@@ -176,7 +176,9 @@
 
     .hero-line {
         margin-top: 1.625rem;
+        width: 29%;
     }
+    
 }
 
 @media (max-width: 768px) {
@@ -238,6 +240,7 @@
 
 .hero-description {
         margin-top: 1.5rem;
+        font-size: 10px;
     }
 
     .hero-profile {

@@ -22,19 +22,18 @@
     overflow: hidden;
 }
 
-.aesop-case .responsive-stage-tablet, .lune-finale .lune-device-group > .lune-tablet {
+.aesop-case .responsive-stage-tablet {
     aspect-ratio: 4 / 3;
     background-image: url('../img/tablet-premium-landscape.png');
-}
-
-.aesop-case .responsive-stage-tablet {
     width: 68%;
     left: 5%;
     bottom: 14%;
     transform: none;
 }
 
-.lune-finale .lune-device-group > .lune-tablet {
+.lune-finale .lune-device-group>.lune-tablet {
+    aspect-ratio: 4 / 3;
+    background-image: url('../img/tablet-premium-landscape.png');
     width: 43%;
     right: 5%;
     bottom: 3%;
@@ -98,12 +97,9 @@
     height: auto;
 }
 
-.aesop-case .aesop-responsive-phones > .aesop-device--phone, .lune-case .lune-phone-fan > .lune-phone {
+.aesop-case .aesop-responsive-phones>.aesop-device--phone {
     aspect-ratio: 2 / 3;
     background-image: url('../img/phone-premium-angle.png');
-}
-
-.aesop-case .aesop-responsive-phones > .aesop-device--phone {
     width: 65%;
 }
 
@@ -115,7 +111,9 @@
     left: -6%;
 }
 
-.lune-case .lune-phone-fan > .lune-phone {
+.lune-case .lune-phone-fan>.lune-phone {
+    aspect-ratio: 2 / 3;
+    background-image: url('../img/phone-premium-angle.png');
     width: 46%;
 }
 
@@ -164,46 +162,6 @@
 }
 @media (max-width: 768px){
     .aesop-case .aesop-opening-phone {
-        width: 38%;
+        width: 22%;
     }
-    #project dl.aesop-facts>div:nth-of-type(1)>dt {
-        font-size: 0.85rem;
-    }
-
-    #project dl.aesop-facts>div:nth-of-type(1)>dd {
-        font-size: 0.85rem;
-    }
-
-    #project dl.aesop-facts>div:nth-of-type(2)>dt {
-        font-size: 0.85rem;
-    }
-
-    #project dl.aesop-facts>div:nth-of-type(2)>dd {
-        font-size: 0.85rem;
-    }
-
-    #project dl.aesop-facts>div.aesop-facts-tools:nth-of-type(3)>dt {
-        font-size: 0.85rem;
-    }
-
-    #project dl.aesop-facts>div.aesop-facts-tools:nth-of-type(3)>dd>span.aesop-fact-tag {
-        font-size: 0.85rem;
-    }
-
-    #project dl.aesop-facts>div.aesop-facts-tools:nth-of-type(4)>dt {
-        font-size: 0.85rem
-    }
-
-    #project dl.aesop-facts>div.aesop-facts-tools:nth-of-type(4)>dd>span.aesop-fact-tag:nth-of-type(1) {
-        font-size: 0.85rem;
-    }
-
-    #project dl.aesop-facts>div.aesop-facts-tools:nth-of-type(4)>dd>span.aesop-fact-tag:nth-of-type(2) {
-        font-size: 0.85rem;
-    }
-
-    #project dl.aesop-facts>div.aesop-facts-tools:nth-of-type(4)>dd>span.aesop-fact-tag:nth-of-type(3) {
-        font-size: 0.85rem;
-    }
-
 }

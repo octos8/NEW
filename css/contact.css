@@ -1,147 +1,144 @@
-/* CONTACT | 기본 스타일. */
-/* 글자와 간격은 px. 공통 값은 common.css의 :root에서 수정합니다. */
-
+/* CONTACT | Closing statement and direct contact links. */
 .contact-section {
-    --contact-title-size: 80px;
-    --contact-body-size: 20px;
-    --contact-menu-size: 16px;
-    --contact-gutter: 48px;
-    --contact-copy-gap: 40px;
-    --contact-author-gap: 64px;
+    --contact-title-size: 56px;
+    --contact-body-size: 16px;
+    --contact-padding: 96px;
     width: 100%;
-    min-height: 100svh;
-    scroll-margin-top: 0;
     background: #333333;
     color: #ffffff;
 }
 
 .contact-inner {
     width: 100%;
-    max-width: none;
-    margin: 0 auto;
-    padding: 0 var(--contact-gutter);
-}
-
-.contact-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px 56px;
-    font-size: var(--contact-menu-size);
-    color: #cccccc;
-}
-
-.contact-nav a,
-.contact-author {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 44px;
-}
-
-.contact-section a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-    text-underline-offset: 6px;
-}
-
-.contact-section a:focus-visible {
-    outline: 2px solid #ffffff;
-    outline-offset: 4px;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: var(--page-gutter);
 }
 
 .contact-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-height: 100svh;
-    padding: 4rem 0;
+    padding-block: var(--contact-padding);
     text-align: center;
+    text-wrap: nowrap;
+}
+
+.contact-eyebrow {
+    margin-bottom: 24px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #bbbbbb;
 }
 
 .contact-title {
     font-size: var(--contact-title-size);
     font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -2px;
-    overflow-wrap: anywhere;
-}
-
-.contact-title span {
-    display: block;
+    line-height: 1.3;
+    letter-spacing: -1px;
+    word-break: keep-all;
+    word-wrap: nowrap;
 }
 
 .contact-description {
-    margin-top: var(--contact-copy-gap);
-    font-size: 0.75rem;
-    line-height: 1.6;
+    max-width: 560px;
+    margin-top: 24px;
+    font-size: var(--contact-body-size);
+    line-height: 1.8;
     color: #cccccc;
     word-break: keep-all;
-    overflow-wrap: anywhere;
-    text-wrap: nowrap;
+}
+
+.contact-links {
+    display: flex;
+    gap: 16px;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.contact-links a {
+    padding: 4px 16px;
+    border: 1px solid #686868;
+    border-radius: 999px;
+    font-size: 1rem;
+}
+
+.contact-links a:hover {
+    background: #404040;
+    border-color: #dddddd;
+}
+
+.contact-links a:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 4px;
 }
 
 .contact-author {
-    margin-top: var(--contact-author-gap);
-    font-size: var(--contact-body-size);
-    line-height: 1.6;
-    color: #dddddd;
-    overflow-wrap: anywhere;
-}
-
-/* RESPONSIVE: original rules above are preserved. */
-
-@media (max-width: 1280px) {
-    .contact-section {
-        --contact-title-size: 5rem;
-        --contact-body-size: 1.25rem;
-        --contact-gutter: var(--page-gutter);
-        --contact-copy-gap: 2.5rem;
-        --contact-author-gap: 4rem;
-    }
-
-
-    .contact-title {
-        letter-spacing: -0.125rem;
-    }
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: #bbbbbb;
 }
 
 @media (max-width: 1024px) {
     .contact-section {
-        --contact-title-size: 4rem;
-        --contact-body-size: 1rem;
-        --contact-copy-gap: 2rem;
-        --contact-author-gap: 3.1875rem;
+        --contact-title-size: 44px;
+        --contact-body-size: 14px;
+        --contact-padding: 72px;
     }
-
+    .contact-links a {
+        font-size: 0.875rem;
+    }
 }
 
 @media (max-width: 768px) {
     .contact-section {
-        --contact-title-size: 3rem;
-        --contact-body-size: 0.75rem;
-        --contact-copy-gap: 1.5rem;
-        --contact-author-gap: 2.375rem;
+        --contact-title-size: 32px;
+        --contact-padding: 56px;
     }
 
+    .contact-links {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 400px;
+        gap: 12px;
+        margin-top: 28px;
+    }
+    .contact-links a {
+        font-size: 0.75rem;
+    }
+    .contact-description {
+        font-size: 0.75rem;
+    }
 }
 
 @media (max-width: 402px) {
     .contact-section {
-        --contact-title-size: 1.875rem;
-        --contact-body-size: 0.75rem;
-        --contact-copy-gap: 1.25rem;
-        --contact-author-gap: 2rem;
+        --contact-title-size: 26px;
+        --contact-body-size: 12px;
+        --contact-padding: 48px;
     }
-
+    .contact-links a {
+        font-size: 0.625rem;
+    }
+    .contact-description {
+        font-size: 0.625rem;
+    }
 }
 
 @media (max-width: 280px) {
     .contact-section {
-        --contact-title-size: 1.875rem;
-        --contact-body-size: 0.75rem;
-        --contact-copy-gap: 1.25rem;
-        --contact-author-gap: 2rem;
+        --contact-title-size: 22px;
+        --contact-padding: 40px;
     }
-
+    
+    .contact-title {
+        font-size: 1.1875rem;
+    }
+    .contact-description {
+        font-size: 0.425rem;
+        margin-top: 0.25rem;
+    }
+    .contact-links a {
+        font-size: 0.425rem;
+    }
 }

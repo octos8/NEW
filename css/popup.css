@@ -224,6 +224,9 @@
         flex: 0 1 21.875rem;
         padding-top: 8rem;
     }
+    .popup-description-track.swiper-wrapper {
+        margin-top: 0rem;
+    }
     
 }
 

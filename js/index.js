@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
 
-            document.querySelectorAll('.profile-left, .profile-info, .education-info, .certification-info, .skills-heading, .skill-menu').forEach(target => {
+            document.querySelectorAll('.profile-left, .profile-info, .profile-identity > h3, .education-info, .certification-info, .skills-heading, .skill-menu').forEach(target => {
                 if (target.classList.contains('about-reveal-ready')) return;
                 if (target.matches('.certification-info')) {
                     target.querySelectorAll(':scope > ul > li').forEach((item, index) => {
