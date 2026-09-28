@@ -297,6 +297,29 @@
     margin-top: 3.2px;
 }
 
+.profile-details.about-reveal-ready > div {
+    opacity: 0;
+    translate: var(--profile-detail-offset, -24px) 0;
+    transition: none;
+}
+
+.profile-details > div:nth-child(2) {
+    --profile-detail-offset: 24px;
+}
+
+.profile-details.about-reveal-ready.about-revealed > div {
+    opacity: 1;
+    translate: 0 0;
+    transition: opacity 1.4s ease, translate 1.4s cubic-bezier(.25, .46, .45, .94);
+    transition-delay: var(--profile-detail-delay, 0s);
+}
+
+.profile-details.about-reveal-ready > div:focus-within {
+    opacity: 1;
+    translate: 0 0;
+    transition: none;
+}
+
 .profile-details dt {
     position: absolute;
     width: 1px;
