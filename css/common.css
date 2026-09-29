@@ -260,6 +260,13 @@ section[id] {
     order: 2;
 }
 
+/* Shared display typography across the portfolio sections. */
+main h2,
+.skills-heading > h3,
+.profile-area .profile-timeline > article > h3 {
+    font-family: 'Paperlogy', var(--font-main);
+}
+
 .section-summary strong {
     color: var(--point);
     font-weight: 700;

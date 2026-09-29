@@ -89,6 +89,7 @@
     <main>
         <!-- HERO -->
         <section id="home" class="hero-section">
+          <div class="hero-stage">
             <div class="hero-bg"></div>
 
             <div class="hero-inner common-frame">
@@ -113,6 +114,7 @@
                     <img src="./img/hero-main.jpg" alt="웹 퍼블리셔 포트폴리오 메인 비주얼">
                 </figure>
             </div>
+          </div>
         </section>
 
         <!-- ABOUT -->
@@ -131,19 +133,35 @@
                     </div>
                 </header>
                 <section id="about-me" class="profile-chapter" aria-labelledby="profile-page-title">
+                  <div class="profile-story">
+                    <div class="profile-story-stage">
                     <header class="profile-page-heading">
                         <div class="visual-works-label profile-chapter-label"><span>01.</span><span>ABOUT ME</span></div>
                         <h2 id="profile-page-title" class="profile-side-label">About Me</h2>
+                        <p class="section-summary"><strong>함께 더 나은 화면을 만드는 디자이너</strong></p>
+                        <p class="profile-story-intro">디자인은 혼자 완성하는 결과물이 아니라,<br>서로 다른 역할이 함께 만들어가는 과정이라고 생각합니다.</p>
                     </header>
                     <div class="profile-collaboration">
-                        <p class="profile-collaboration-lead"><span>함께 만드는</span> 더 나은 화면</p>
-                        <p>디자인은 혼자 완성하는 결과물이 아니라, 서로 다른 역할이 함께 만들어가는 과정이라고 생각합니다.</p>
                         <div class="profile-collaboration-cards">
-                            <article><h3>공감하는 디자이너</h3><p>개발자가 구현하기 좋은 구조를 고민하고, 기획의 의도를 화면에 담기 위해 소통합니다.</p></article>
-                            <article><h3>시스템 중심의 사고</h3><p>Figma 컴포넌트와 일관된 디자인 규칙으로 화면마다 이어지는 사용자 경험을 설계합니다.</p></article>
-                            <article><h3>열린 피드백</h3><p>다른 관점을 배우고 피드백을 반영하며, 더 나은 결과를 함께 찾아갑니다.</p></article>
+                            <article>
+                                <h3>공감하는 디자이너</h3>
+                                <p>개발자가 구현하기 좋은 구조를 고민하고,<br>기획의 의도를 화면에 담기 위해 소통합니다.</p>
+                                <p class="profile-story-detail">사용자가 필요한 정보를 자연스럽게 찾을 수 있도록 흐름을 정리합니다.<br>화면의 크기와 요소의 상태가 달라져도 의도가 이어지는 디자인을 지향합니다.</p>
+                            </article>
+                            <article>
+                                <h3>시스템 중심의 사고</h3>
+                                <p>Figma 컴포넌트와 일관된 디자인 규칙으로<br>화면마다 이어지는 사용자 경험을 설계합니다.</p>
+                                <p class="profile-story-detail">타이포그래피와 간격, 색상에 공통 기준을 세우고 반복되는 요소를 정리합니다.<br>새로운 화면을 더할 때도 쉽게 이해하고 확장할 수 있는 구조를 고민합니다.</p>
+                            </article>
+                            <article>
+                                <h3>열린 피드백</h3>
+                                <p>다른 관점을 배우고 피드백을 반영하며,<br>더 나은 결과를 함께 찾아갑니다.</p>
+                                <p class="profile-story-detail">의견이 다를 때는 그 이유와 사용자의 필요를 먼저 살펴봅니다.<br>작은 수정도 실제 화면에서 확인하며, 함께 납득할 수 있는 방향으로 다듬어갑니다.</p>
+                            </article>
                         </div>
                     </div>
+                    </div>
+                  </div>
                     <div class="profile-area">
                         <!-- 왼쪽: 스크롤 시 고정되는 프로필 -->
                         <div class="profile-left">
@@ -160,7 +178,6 @@
                                 <dl class="profile-details">
                                     <div><dt>생년월일</dt><dd><time datetime="1996-11-20">1996.11.20</time></dd></div>
                                     <div><dt>주소</dt><dd>경기도 광주시</dd></div>
-                                    <div><dt>이메일</dt><dd><a href="mailto:gukjuham34@gmail.com">gukjuham34@gmail.com</a></dd></div>
                                 </dl>
                             </div>
                         </div>
@@ -168,7 +185,7 @@
                         <!-- 오른쪽: CERTIFICATIONS + EDUCATION -->
                         <div class="profile-content profile-timeline">
                             <article class="certification-info">
-                                <h3><span class="timeline-heading-text">CERTIFICATIONS</span></h3>
+                                <h3><span class="timeline-heading-text">Certifications</span></h3>
                                 <ul>
                                     <li>
                                         <div><span>웹디자인개발기능사</span><small>2026.10.02</small><span>GTQI 그래픽기술자격 일러스트 1급</span><small>2026.04.17</small></div>
@@ -189,7 +206,7 @@
                                 </ul>
                             </article>
                             <article class="education-info">
-                                <h3><span class="timeline-heading-text">EDUCATION</span></h3>
+                                <h3><span class="timeline-heading-text">Education</span></h3>
                                 <div>
                                     <p>웹디자인, 프론트엔드 with Ai - 취업 실전 트랙_디지털 디자인</p>
                                     <small>2026.05.26 ~ 2026.10.20</small>
@@ -330,7 +347,7 @@
                     <div class="popup-station swiper popup-image-swiper">
                         <div class="popup-train swiper-wrapper">
                             <figure class="popup-slide swiper-slide">
-                                <button class="popup-image-button" type="button" aria-haspopup="dialog" aria-controls="popup-project-dialog" aria-label="NETFLIX 콘텐츠 프로모션 설명 보기">
+                                <button class="popup-image-button" type="button" aria-label="NETFLIX 콘텐츠 프로모션 설명 보기">
                                     <img src="./img/netflix-po.jpg" alt="Netflix Popup">
                                     <span class="popup-view-more" aria-hidden="true">VIEW MORE</span>
                                 </button>
@@ -347,7 +364,7 @@
                                 </figcaption>
                             </figure>
                             <figure class="popup-slide swiper-slide">
-                                <button class="popup-image-button" type="button" aria-haspopup="dialog" aria-controls="popup-project-dialog" aria-label="NIKE 시즌 세일 설명 보기">
+                                <button class="popup-image-button" type="button" aria-label="NIKE 시즌 세일 설명 보기">
                                     <img src="./img/nike-po.jpg" alt="Nike Popup">
                                     <span class="popup-view-more" aria-hidden="true">VIEW MORE</span>
                                 </button>
@@ -364,7 +381,7 @@
                                 </figcaption>
                             </figure>
                             <figure class="popup-slide swiper-slide">
-                                <button class="popup-image-button" type="button" aria-haspopup="dialog" aria-controls="popup-project-dialog" aria-label="OLIVE YOUNG 뷰티 프로모션 설명 보기">
+                                <button class="popup-image-button" type="button" aria-label="OLIVE YOUNG 뷰티 프로모션 설명 보기">
                                     <img src="./img/oliveyoung-po.jpg" alt="Olive Young Popup">
                                     <span class="popup-view-more" aria-hidden="true">VIEW MORE</span>
                                 </button>
@@ -381,7 +398,7 @@
                                 </figcaption>
                             </figure>
                             <figure class="popup-slide swiper-slide">
-                                <button class="popup-image-button" type="button" aria-haspopup="dialog" aria-controls="popup-project-dialog" aria-label="KFC 프로모션 설명 보기">
+                                <button class="popup-image-button" type="button" aria-label="KFC 프로모션 설명 보기">
                                     <img src="./img/kfc-po.jpg" alt="KFC Popup">
                                     <span class="popup-view-more" aria-hidden="true">VIEW MORE</span>
                                 </button>
@@ -398,7 +415,7 @@
                                 </figcaption>
                             </figure>
                             <figure class="popup-slide swiper-slide">
-                                <button class="popup-image-button" type="button" aria-haspopup="dialog" aria-controls="popup-project-dialog" aria-label="TWOSOME PLACE 시즌 프로모션 설명 보기">
+                                <button class="popup-image-button" type="button" aria-label="TWOSOME PLACE 시즌 프로모션 설명 보기">
                                     <img src="./img/TWOSOME PLACE-po.jpg" alt="Twosome Popup">
                                     <span class="popup-view-more" aria-hidden="true">VIEW MORE</span>
                                 </button>
@@ -504,28 +521,28 @@
                             <img src="./img/bulgari-be-2.jpg" alt="Bulgari 이미지">
                             <figcaption class="banner-caption">
                                 <h3>불가리 AURA VELOCÉ 향수</h3>
-                                <p>햇빛과 보랏빛 패브릭이 감싸는 향수<br>빛과 여백으로 우아한 분위기를 표현했습니다.</p>
+                                <p>햇빛과 보랏빛 패브릭으로 향수를 감싸고,<br>부드러운 빛으로 제품의 윤곽을 살렸습니다.<br>여백을 두어 시선이 향수에 머물도록 하고,<br>차분한 색감으로 우아한 분위기를 담았습니다.</p>
                             </figcaption>
                         </figure>
                         <figure class="swiper-slide banner-slide-medicube">
                             <img src="./img/medicube-be-2.jpg" alt="Medicube 이미지">
                             <figcaption class="banner-caption">
                                 <h3>메디큐브 뷰티 디바이스 프로모션</h3>
-                                <p>선명한 블루와 빛으로 강조한 뷰티 디바이스<br>제품의 특징과 할인 혜택을 한눈에 담았습니다.</p>
+                                <p>선명한 블루와 빛으로 디바이스를 강조하고,<br>제품의 형태가 돋보이도록 대비를 주었습니다.<br>주요 특징과 할인 혜택을 구분해 배치하고,<br>핵심 정보를 빠르게 읽을 수 있게 정리했습니다.</p>
                             </figcaption>
                         </figure>
                         <figure class="swiper-slide banner-slide-johnnie-walker">
                             <img src="./img/Johnnie-Walker-be-2.jpg" alt="Johnnie Walker 이미지">
                             <figcaption class="banner-caption">
                                 <h3>조니워커 EMBER CASK</h3>
-                                <p>어둠 속 황금빛 불씨로 드러나는 위스키<br>빛의 대비로 깊이감과 묵직한 인상을 담았습니다.</p>
+                                <p>어두운 배경에 황금빛 불씨를 더하고,<br>빛의 대비로 위스키의 존재감을 살렸습니다.<br>따뜻한 색감으로 깊이 있는 분위기를 만들고,<br>제품에 집중되는 묵직한 인상을 담았습니다.</p>
                             </figcaption>
                         </figure>
                         <figure class="swiper-slide banner-slide-musinsa">
                             <img src="./img/musinsa-be-2.jpg" alt="Musinsa 이미지">
                             <figcaption class="banner-caption">
                                 <h3>무신사 NEW RELEASE 패션</h3>
-                                <p>사선 구도로 역동적으로 연결한 새로운 스타일<br>간결한 타이포그래피로 신상품 소식을 전합니다.</p>
+                                <p>사선 구도로 새로운 스타일을 연결하고,<br>이미지에 리듬을 주어 역동성을 살렸습니다.<br>간결한 타이포그래피로 신상품을 강조하고,<br>패션 이미지와 메시지가 함께 읽히게 했습니다.</p>
                             </figcaption>
                         </figure>
                     </div>
@@ -778,6 +795,10 @@
                                 <h3>RESPONSIVE WEBSITE DESIGN</h3>
                                 <p>화면의 크기가 달라져도 이솝의 차분한 분위기와 제품 중심의 경험이 자연스럽게 이어지도록 디자인했습니다.</p>
                             </div>
+                        </div>
+                        <div class="aesop-responsive-finale">
+                            <h3>어떤 화면에서도, 변함없는 브랜드 경험</h3>
+                            <p>각기 다른 화면 속에서도 자연스럽게 이어지는 경험.<br>PC부터 태블릿, 모바일까지 이솝의 디자인을 일관되게 전달합니다.</p>
                             <div class="aesop-responsive-phones">
                                 <div class="aesop-device aesop-device--phone">
                                     <div class="aesop-device-screen"><img src="./img/aesop-purchase-mobile.jpg"
@@ -788,10 +809,6 @@
                                             alt="모바일에서 보는 이솝 프로모션 페이지" width="402" height="1517" loading="lazy"></div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="aesop-responsive-finale">
-                            <h3>어떤 화면에서도, 변함없는 브랜드 경험</h3>
-                            <p>각기 다른 화면 속에서도 자연스럽게 이어지는 경험.<br>PC부터 태블릿, 모바일까지 이솝의 디자인을 일관되게 전달합니다.</p>
                             <div class="aesop-responsive-stage">
                                 <div class="aesop-device aesop-device--tablet responsive-stage-tablet">
                                     <div class="aesop-device-screen"><img src="./img/aesop-purchase-tablet.jpg"
@@ -1039,15 +1056,12 @@
         <span class="floating-wood-piece"></span>
     </div>
     <a class="top-link" href="#top" aria-label="페이지 맨 위로 이동"><span class="up">↑</span><span>TOP</span></a>
-    <dialog id="popup-project-dialog" class="popup-project-dialog" aria-labelledby="popup-project-title">
-        <img class="popup-project-image" alt="" aria-hidden="true">
-        <button class="popup-project-close" type="button" aria-label="설명 닫기" autofocus>×</button>
-        <div class="popup-project-content"></div>
-    </dialog>
     <script src="./js/popup-details.js"></script>
     <script src="./js/popup-title.js"></script>
     <script src="./js/poster-orbit.js"></script>
     <script src="./js/floating-wood.js"></script>
+    <script src="./js/hero-scatter.js"></script>
+    <script src="./js/profile-story.js"></script>
 </body>
 
 </html>

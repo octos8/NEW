@@ -264,18 +264,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     })();
 
-    /* Mask scrolled history only after its heading reaches the sticky edge. */
+    /* Fade history content before it scrolls into its pinned heading. */
     (() => {
         const headings = [...document.querySelectorAll('.profile-timeline > article > h3')];
         if (!headings.length) return;
+        const entries = headings.map(heading => ({
+            heading,
+            items: [...heading.parentElement.querySelectorAll(
+                ':scope > ul > li > div > *, :scope > ul > li > span, :scope > div > *, :scope > span'
+            )],
+            dividers: [...heading.parentElement.querySelectorAll(':scope > ul > li')]
+        }));
         let frame = 0;
         const update = () => {
             frame = 0;
-            headings.forEach(heading => {
-                const stickyTop = parseFloat(getComputedStyle(heading).top);
+            entries.forEach(({ heading, items, dividers }) => {
+                const headingStyle = getComputedStyle(heading);
+                const stickyTop = parseFloat(headingStyle.top);
                 const rect = heading.getBoundingClientRect();
+                const pinned = Number.isFinite(stickyTop) && rect.top <= stickyTop + 1;
                 heading.classList.toggle('is-timeline-pinned',
-                    Number.isFinite(stickyTop) && rect.top <= stickyTop + 1 && rect.bottom > 0);
+                    pinned && rect.bottom > 0);
+                // Exclude heading padding: readable rows should not fade in the normal gap.
+                const edge = rect.bottom - (parseFloat(headingStyle.paddingBottom) || 0) + 4;
+                items.forEach(item => {
+                    const progress = pinned ? Math.max(0, Math.min(1,
+                        (item.getBoundingClientRect().top - edge) / 32)) : 1;
+                    const opacity = progress * progress * (3 - 2 * progress);
+                    item.style.filter = `opacity(${opacity})`;
+                });
+                dividers.forEach(item => {
+                    const progress = pinned ? Math.max(0, Math.min(1,
+                        (item.getBoundingClientRect().bottom - edge) / 32)) : 1;
+                    const opacity = progress * progress * (3 - 2 * progress);
+                    item.style.setProperty('--divider-opacity', `${opacity * 100}%`);
+                });
             });
         };
         const schedule = () => {
@@ -283,6 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         window.addEventListener('scroll', schedule, { passive: true });
         window.addEventListener('resize', schedule, { passive: true });
+        window.addEventListener('pageshow', schedule);
         window.addEventListener('load', schedule, { once: true });
         document.fonts?.ready.then(schedule);
         update();
@@ -483,30 +507,6 @@ document.addEventListener('DOMContentLoaded', () => {
             clickable: true,
         },
     });
-
-    // Preserve both description sentences; fit them to two lines at each width.
-    const fitBannerDescriptions = () => {
-        document.querySelectorAll('.banner-caption p').forEach(copy => {
-            copy.style.removeProperty('font-size');
-            if (!copy.clientWidth || window.innerWidth === 402) return;
-            const baseSize = parseFloat(getComputedStyle(copy).fontSize);
-            let low = 1;
-            let high = baseSize;
-            const fits = () => copy.scrollHeight <= parseFloat(getComputedStyle(copy).lineHeight) * 2 + 1;
-            if (fits()) return;
-            for (let step = 0; step < 10; step++) {
-                const size = (low + high) / 2;
-                copy.style.fontSize = `${size}px`;
-                if (fits()) low = size;
-                else high = size;
-            }
-            copy.style.fontSize = `${low}px`;
-        });
-    };
-    bannerSwiper.on('resize', fitBannerDescriptions);
-    document.fonts?.ready.then(fitBannerDescriptions);
-    window.addEventListener('load', fitBannerDescriptions, { once: true });
-    fitBannerDescriptions();
 
     // Keep the first banner in place until the carousel enters the viewport.
     if (!reducedMotion && 'IntersectionObserver' in window) {

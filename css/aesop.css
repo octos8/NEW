@@ -1,6 +1,11 @@
 /* AESOP | 기본 스타일. */
 /* 글자와 간격은 px. 공통 값은 common.css의 :root에서 수정합니다. */
 
+/* Join the opening and typography backgrounds without a white spacer. */
+#project .aesop-opening + .aesop-typography {
+    margin-top: 0;
+}
+
 .aesop-case {
     --aesop-main: #354437;
     --aesop-surface: #f8f9f5;
@@ -2407,12 +2412,59 @@
 
 /* Keep breathing room around the shortened responsive introduction. */
 #project .aesop-responsive-copy {
-    padding-block: clamp(24px, 4vw, 64px);
+    grid-column: 1 / -1;
+    width: 100%;
+    min-width: 0;
+    padding-top: clamp(24px, 4vw, 64px);
+    padding-bottom: 0;
+    text-align: center;
 }
 
-@media (min-width: 1025px) {
-    #project .aesop-responsive-copy {
-        text-align: center;
+#project .aesop-case .aesop-responsive-copy > h3,
+#project .aesop-case .aesop-responsive-copy > p {
+    width: 100%;
+    box-sizing: border-box;
+    margin-inline: auto;
+    text-align: center;
+}
+
+#project .aesop-case .aesop-responsive-copy > h3 {
+    position: static;
+    left: auto;
+}
+
+#project .aesop-responsive-finale > .aesop-responsive-phones {
+    position: absolute;
+    top: -80px;
+    right: 0;
+    width: 20%;
+    margin: 0;
+    aspect-ratio: 1;
+}
+
+#project .aesop-responsive-finale > .aesop-responsive-phones > .aesop-device--phone:first-child {
+    top: 0;
+    bottom: auto;
+}
+
+#project .aesop-responsive-finale > .aesop-responsive-phones > .aesop-device--phone:last-child {
+    top: auto;
+    bottom: 0;
+}
+
+@media (min-width: 1024px) {
+    #project .aesop-case .aesop-responsive-copy > p,
+    #project .aesop-case .aesop-responsive-finale > h3,
+    #project .aesop-case .aesop-responsive-finale > p {
+        max-width: 60%;
+        margin-inline: auto;
+    }
+}
+
+@media (max-width: 1023px) {
+    #project .aesop-responsive-finale > .aesop-responsive-phones {
+        top: 104px;
+        width: 22%;
     }
 }
 
@@ -2421,7 +2473,11 @@
 }
 
 #project .aesop-responsive-finale {
-    margin-top: clamp(40px, 6vw, 96px);
+    margin-top: 36px;
+}
+
+#project .aesop-case .aesop-responsive-copy > p {
+    margin-bottom: 0;
 }
 
 /* Aesop introduction: shared hierarchy across desktop, tablet and mobile. */
@@ -2739,7 +2795,7 @@
     max-width: 960px;
     height: auto;
     aspect-ratio: 900 / 550;
-    margin: 48px auto 0;
+    margin: 16px auto 0;
 }
 
 #project .aesop-case .responsive-stage-tablet {

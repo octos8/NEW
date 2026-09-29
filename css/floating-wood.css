@@ -2,89 +2,105 @@
 .floating-wood {
     position: fixed;
     inset: 0;
-    z-index: 50;
+    z-index: 0;
     overflow: clip;
     pointer-events: none;
     user-select: none;
 }
 
+/* Put readable content above the wood, keeping empty space draggable. */
+.about-section .about-inner,
+.contact-section .contact-inner {
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.about-section .about-inner :is(h2, h3, h4, p, li, dl, a, button, img),
+.contact-section .contact-inner :is(h2, p, a, button) {
+    pointer-events: auto;
+}
+
 .floating-wood-piece {
-    --wood-size: 54px;
-    --travel-x: calc(100vw - 48px - var(--wood-size));
-    --travel-y: calc(100vh - 48px - var(--wood-size));
-    --travel-y: calc(100dvh - 48px - var(--wood-size));
+    --wood-size: 162px;
+    --wood-rest-transform: rotate(-18deg);
+    --wood-drift-x: -12px;
+    --wood-drift-y: -18px;
     position: absolute;
-    top: 24px;
-    left: 24px;
+    top: calc(30% - var(--wood-size) * .5);
+    left: calc(100% - 24px - var(--wood-size));
     width: var(--wood-size);
     height: var(--wood-size);
-    border-radius: 3px;
-    background: #d6c99b url('../img/hero-main.jpg') 53% 79% / 1300% 900% no-repeat;
-    box-shadow: inset 1px 2px 1px #fff9,
-        inset -4px -3px 2px #8d78454d, 3px 5px 8px #4c3c2426;
-    opacity: .85;
-    animation: floating-wood-roll 420s linear infinite;
-    animation-delay: -80s;
+    background: url('../img/floating-wood.svg') center / contain no-repeat;
+    filter: drop-shadow(5px 10px 5px #8d784520)
+        drop-shadow(12px 22px 16px #8d784518);
+    opacity: 1;
+    animation: floating-wood-drift 24s ease-in-out infinite;
+    animation-delay: -4s;
     animation-play-state: var(--wood-play-state, running);
     will-change: transform;
     pointer-events: auto;
-    transition: scale .5s ease, rotate .5s ease, translate .5s ease;
+    cursor: grab;
+    touch-action: none;
 }
 
-.floating-wood-piece:hover {
-    scale: 1.05;
-    rotate: 6deg;
-    translate: 4px -5px;
+.floating-wood-piece.is-dragging {
+    cursor: grabbing;
+    z-index: 1;
 }
 
 .floating-wood-piece:nth-child(2) {
-    --wood-size: 45px;
-    background-position: 62% 80%;
-    animation-duration: 530s;
-    animation-delay: -290s;
-    animation-direction: reverse;
+    --wood-size: 135px;
+    --wood-rest-transform: rotate(12deg);
+    --wood-drift-x: 12px;
+    top: calc(50% - var(--wood-size) * .5);
+    left: calc(100% - clamp(100px, 9vw, 170px) - var(--wood-size));
+    animation-duration: 28s;
+    animation-delay: -10s;
 }
 
 .floating-wood-piece:nth-child(3) {
-    --wood-size: 63px;
-    background-position: 45% 81%;
-    animation-duration: 610s;
-    animation-delay: -470s;
+    --wood-size: 189px;
+    --wood-rest-transform: rotate(165deg);
+    --wood-drift-y: 18px;
+    top: calc(73% - var(--wood-size) * .5);
+    animation-duration: 32s;
+    animation-delay: -18s;
 }
 
-@keyframes floating-wood-roll {
-    0% {
-        transform: translate(calc(var(--travel-x) * .06), calc(var(--travel-y) * .18)) rotate(0deg);
+.floating-wood-piece.is-floating-placed {
+    animation-name: floating-wood-drift;
+    animation-duration: 24s;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating-wood-drift {
+    0%, 100% {
+        transform: translate(0, 0) var(--wood-rest-transform) rotate(0deg);
     }
-    20% {
-        transform: translate(calc(var(--travel-x) * .65), calc(var(--travel-y) * .04)) rotate(90deg);
+    35% {
+        transform: translate(var(--wood-drift-x), var(--wood-drift-y))
+            var(--wood-rest-transform) rotate(14deg);
     }
-    40% {
-        transform: translate(calc(var(--travel-x) * .96), calc(var(--travel-y) * .55)) rotate(160deg);
-    }
-    60% {
-        transform: translate(calc(var(--travel-x) * .58), calc(var(--travel-y) * .96)) rotate(235deg);
-    }
-    80% {
-        transform: translate(calc(var(--travel-x) * .04), calc(var(--travel-y) * .72)) rotate(300deg);
-    }
-    100% {
-        transform: translate(calc(var(--travel-x) * .06), calc(var(--travel-y) * .18)) rotate(360deg);
+    70% {
+        transform: translate(calc(var(--wood-drift-x) * .35), calc(var(--wood-drift-y) * .8))
+            var(--wood-rest-transform) rotate(-10deg);
     }
 }
 
 @media (max-width: 768px) {
     .floating-wood-piece {
-        --wood-size: 39px;
-        opacity: .75;
+        --wood-size: 117px;
     }
 
     .floating-wood-piece:nth-child(2) {
-        --wood-size: 33px;
+        --wood-size: 99px;
     }
 
     .floating-wood-piece:nth-child(3) {
-        --wood-size: 45px;
+        --wood-size: 135px;
     }
 }
 

@@ -71,6 +71,18 @@
     z-index: 1;
 }
 
+/* Keep the wider spacing in the static/reduced-motion layout as well. */
+.poster-section:not(.poster-orbit-active) .poster-list {
+    display: grid;
+    row-gap: 100px;
+}
+
+@media (max-width: 1023px) {
+    .poster-section:not(.poster-orbit-active) .poster-list {
+        row-gap: 56px;
+    }
+}
+
 .poster-item {
     position: relative;
     display: grid;
@@ -558,6 +570,20 @@
 .poster-image-button:focus-visible {
     outline: 3px solid var(--point);
     outline-offset: -3px;
+}
+
+/* Match the description frame to the actual contained image, without side bars. */
+@media (min-width: 1024px) {
+    #poster.poster-orbit-active .project-photo {
+        width: min(100%, calc(76vh * var(--poster-image-ratio, .666667)));
+        margin-inline: auto;
+    }
+
+    #poster.poster-orbit-active .project-photo img {
+        width: 100%;
+        height: auto;
+        max-height: none;
+    }
 }
 
 @media (max-width: 1023px) {

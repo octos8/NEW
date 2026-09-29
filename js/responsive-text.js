@@ -1,7 +1,7 @@
 /* Fit text to its available width while preserving explicit <br> breaks. */
 (() => {
     const start = () => {
-        const excluded = 'script, style, noscript, svg, textarea, input, [aria-hidden="true"], .lune-color-copy > p, .lune-font-why > p, .poster-heading > p, .poster-content > p, .popup-description-slide, .about-intro, .skill-detail, .profile-timeline .education-info p, .profile-timeline .certification-info li > div > span';
+        const excluded = 'script, style, noscript, svg, textarea, input, [aria-hidden="true"], .lune-color-copy > p, .lune-font-why > p, .poster-heading > p, .poster-content > p, .popup-description-slide, .about-intro, .banner-caption p, .skill-detail, .profile-timeline .education-info p, .profile-timeline .certification-info li > div > span';
         const elements = [...document.body.querySelectorAll('*')].filter(element =>
             !element.closest(excluded) &&
             [...element.childNodes].some(node => node.nodeType === Node.TEXT_NODE && node.textContent.trim())

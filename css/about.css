@@ -1268,27 +1268,27 @@
     min-height: 0;
     margin: 0;
     padding: 0 0 32px;
-    background: var(--white);
+    background: transparent;
     font-size: clamp(24px, 4.6vw, 112px);
     font-size: min(10.5cqw, 112px);
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: 'Pretendard', sans-serif;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1;
-    letter-spacing: -0.055em;
+    letter-spacing: 0.015em;
     white-space: nowrap;
     overflow-wrap: normal;
 }
 
-/* Cover scrolled history above the pinned heading, up to the viewport edge. */
+/* Keep the area above the pinned headings transparent. */
 .profile-area .profile-timeline .education-info > h3::before,
 .profile-area .profile-timeline .certification-info > h3::before {
-    content: "";
+    content: none;
     position: absolute;
     inset-inline: 0;
     bottom: 100%;
     height: var(--timeline-sticky-top);
-    background: var(--white);
+    background: transparent;
     pointer-events: none;
 }
 
@@ -1311,8 +1311,33 @@
 }
 
 .profile-area .profile-timeline .certification-info ul > li {
+    position: relative;
     gap: 24px;
     padding-block: 48px;
+    border-bottom: 0;
+}
+
+.profile-area .profile-timeline .certification-info ul > li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: .5px;
+    background: color-mix(in srgb, var(--gray-900) var(--divider-opacity, 100%), transparent);
+    pointer-events: none;
+}
+
+.profile-area .profile-timeline .certification-info.about-reveal-ready ul > li::after {
+    opacity: 0;
+    transform: translateY(56px);
+    transition: none;
+}
+
+.profile-area .profile-timeline .certification-info.about-reveal-ready.about-revealed ul > li::after {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .9s ease, transform .9s cubic-bezier(.22, 1, .36, 1);
+    transition-delay: var(--reveal-delay, 0s);
 }
 
 .profile-area .profile-timeline .certification-info li > div > span {
@@ -1916,8 +1941,8 @@
 
 .about-workspace img {
     display: block;
-    width: 65%;
-    max-width: 420px;
+    width: 100%;
+    max-width: 680px;
     height: auto;
     margin-inline: auto;
     border-radius: 24px;
@@ -1925,7 +1950,20 @@
 
 .about-intro .about-intro-korean {
     width: 100%;
+    font-family: 'Paperlogy', var(--font-main);
     text-align: left;
+}
+
+.about-intro .about-intro-korean h3 {
+    font-size: clamp(28px, 3vw, 48px);
+    line-height: 1.35;
+    letter-spacing: -0.035em;
+}
+
+.about-intro .about-intro-korean p {
+    font-size: clamp(19px, 1.8vw, 30px);
+    line-height: 1.7;
+    letter-spacing: -0.02em;
 }
 
 .profile-page-heading {
@@ -1964,21 +2002,21 @@
     background: var(--point);
 }
 
-.profile-collaboration-lead {
-    margin-bottom: 16px;
-    font-size: clamp(20px, calc(2vw - 2px), 28px);
-    font-weight: 700;
-}
-
-.profile-collaboration-lead span {
-    color: var(--point);
+.profile-page-heading > .section-summary {
+    max-width: 100%;
+    margin: 1.4em 0 0 clamp(12px, 1.5vw, 28px);
+    font-size: clamp(10px, 1.2vw, 18px);
+    font-weight: 400;
+    line-height: 1.8;
+    text-align: left;
+    word-break: keep-all;
 }
 
 .profile-collaboration > p {
     line-height: 1.7;
 }
 
-.profile-collaboration > p:not(.profile-collaboration-lead) {
+.profile-collaboration > p {
     font-size: calc(var(--fs-body1) - 2px);
 }
 
@@ -2034,7 +2072,7 @@
 }
 
 .profile-area .profile-timeline .certification-info ul > li:first-child {
-    padding-top: 12px;
+    padding-top: 24px;
 }
 
 .profile-area .profile-timeline .education-info {
@@ -2042,7 +2080,7 @@
 }
 
 .profile-area .profile-timeline .education-info p {
-    font-size: 16px;
+    font-size: 26px;
 }
 
 .skills-heading {
@@ -2323,5 +2361,188 @@
 
     .skills-section .skill-menu-development br {
         display: none;
+    }
+}
+
+/* Pinned About Me title with one scroll-driven story at a time. */
+.profile-story-stage {
+    display: grid;
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+    align-items: center;
+    gap: clamp(24px, 4vw, 72px);
+    padding-right: var(--page-gutter);
+}
+
+.profile-story .profile-page-heading {
+    min-height: 0;
+    margin: 0;
+    padding-block: 80px;
+    padding-right: 0;
+}
+
+.profile-story .profile-page-heading > .profile-side-label {
+    font-size: clamp(48px, 7vw, 128px);
+    white-space: nowrap;
+    opacity: 1;
+    translate: none;
+    transition: none;
+}
+
+.profile-story .profile-page-heading > .profile-side-label.about-reveal-ready {
+    opacity: 0;
+    translate: clamp(-90px, -6vw, -36px) 0;
+    transition: opacity 1.2s ease, translate 1.8s cubic-bezier(.22, 1, .36, 1);
+}
+
+.profile-story .profile-page-heading > .profile-side-label.about-reveal-ready.about-revealed {
+    opacity: 1;
+    translate: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .profile-story .profile-page-heading > .profile-side-label.about-reveal-ready {
+        opacity: 1;
+        translate: none;
+        transition: none;
+    }
+}
+
+.profile-story .profile-chapter-label {
+    position: static;
+    margin-bottom: 32px;
+}
+
+.profile-story-intro {
+    max-width: 380px;
+    margin: 24px 0 0 clamp(12px, 1.5vw, 28px);
+    font-size: clamp(12px, 1vw, 16px);
+    line-height: 1.8;
+    color: var(--gray-700);
+    word-break: keep-all;
+}
+
+.profile-story .profile-collaboration {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.profile-story .profile-collaboration::before {
+    display: none;
+}
+
+.profile-story .profile-collaboration-cards {
+    margin: 0;
+    gap: 64px;
+}
+
+.profile-story .profile-collaboration-cards article {
+    font-family: 'Paperlogy', var(--font-main);
+    padding: 24px 0;
+    background: transparent;
+    border-radius: 0;
+}
+
+.profile-story .profile-collaboration-cards h3 {
+    margin-bottom: 28px;
+    font-size: clamp(30px, 3.3vw, 60px);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -.045em;
+    word-break: keep-all;
+    color: var(--black);
+}
+
+.profile-story .profile-collaboration-cards p {
+    max-width: 640px;
+    font-size: clamp(19px, 1.8vw, 30px);
+    line-height: 1.7;
+    letter-spacing: -.025em;
+    word-break: keep-all;
+}
+
+.profile-story .profile-collaboration-cards .profile-story-detail {
+    margin-top: 24px;
+    font-size: clamp(14px, 1.15vw, 18px);
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--gray-700);
+}
+
+.profile-story.is-scroll-story {
+    /* Three 360px reading steps. */
+    height: calc(100vh + 1080px);
+    height: calc(100svh + 1080px);
+}
+
+.is-scroll-story .profile-story-stage {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    height: 100svh;
+}
+
+.is-scroll-story .profile-collaboration {
+    overflow: clip;
+}
+
+.is-scroll-story .profile-collaboration-cards {
+    gap: 0;
+}
+
+.is-scroll-story .profile-collaboration-cards article {
+    grid-area: 1 / 1;
+    align-self: center;
+    will-change: transform, opacity;
+}
+
+@media (max-width: 768px) {
+    .profile-story-stage {
+        grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+        gap: 16px;
+    }
+
+    .profile-story .profile-page-heading > .profile-side-label {
+        font-size: clamp(26px, 6vw, 46px);
+    }
+
+    .profile-story .profile-chapter-label {
+        font-size: 10px;
+        margin-bottom: 24px;
+    }
+
+    .profile-story .profile-page-heading > .section-summary {
+        margin-left: 0;
+        font-size: 12px;
+    }
+
+    .profile-story-intro {
+        margin-left: 0;
+        font-size: 11px;
+    }
+
+    .profile-story .profile-collaboration-cards h3 {
+        font-size: clamp(23px, 4vw, 32px);
+        margin-bottom: 20px;
+    }
+
+    .about-intro .about-intro-korean p,
+    .profile-story .profile-collaboration-cards p {
+        font-size: clamp(15px, 2.4vw, 19px);
+        line-height: 1.65;
+    }
+}
+
+@media (prefers-reduced-motion: reduce), (max-height: 559px) {
+    .profile-story-stage {
+        display: block;
+        padding-inline: var(--page-gutter);
+    }
+
+    .profile-story .profile-page-heading {
+        padding-inline: 0;
     }
 }

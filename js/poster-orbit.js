@@ -14,7 +14,7 @@
 
     const draw = () => {
         frame = 0;
-        if (!enabled || !geometry) return;
+        if (!enabled || !geometry || document.querySelector('.project-photo.is-open')) return;
         const { width, height, travel, sizes, centers, radiusY, gutter } = geometry;
         const progress = clamp(-section.getBoundingClientRect().top / travel, 0, 1);
         cards.forEach((card, index) => {
@@ -23,8 +23,7 @@
             const y = height * 0.54 + offset - size.height / 2;
             const visible = y < height && y + size.height > 0;
             card.style.visibility = visible ? 'visible' : 'hidden';
-            // Adjacent images stay one image-height apart, without a pause or
-            // a separate visibility window for each poster.
+            // Follow the measured image heights and spacing along the arc.
             const arc = clamp(offset / radiusY, -1, 1);
             const radiusX = Math.max(0, width - size.width / 2 - gutter);
             const x = gutter + radiusX * (1 - Math.sqrt(1 - arc * arc));
@@ -50,7 +49,7 @@
         }
         const height = stage.clientHeight;
         const sizes = cards.map(card => ({ width: card.offsetWidth, height: card.offsetHeight }));
-        const gap = compact.matches ? 24 : 40;
+        const gap = compact.matches ? 56 : 100;
         // Start with the first poster just below the stage; scrolling brings
         // it into view before the rest of the continuous stream follows.
         const centers = [height * 0.46 + sizes[0].height / 2 + gap];
@@ -72,6 +71,7 @@
     };
 
     window.addEventListener('scroll', schedule, { passive: true });
+    document.addEventListener('project-description-change', schedule);
     window.addEventListener('resize', measure, { passive: true });
     window.addEventListener('load', measure, { once: true });
     compact.addEventListener('change', measure);

@@ -370,7 +370,7 @@
         grid-template-columns: minmax(0, 1fr);
         align-content: center;
         gap: 20px;
-        padding: clamp(24px, 3vw, 56px);
+        padding: clamp(24px, 3vw, 56px) clamp(20px, 1.8vw, 32px);
         text-align: left;
     }
 
@@ -482,7 +482,7 @@
     }
 }
 
-/* Keep the two sentences on separate lines without truncating the copy. */
+/* Preserve the four editorial lines and allow wrapping on narrow screens. */
 .banner-section .banner-caption p br {
     display: initial;
 }
@@ -530,4 +530,23 @@
 
 .banner-section .banner-caption:active {
     cursor: grabbing;
+}
+
+/* Keep the complete caption title on one line at each panel width. */
+.banner-section .banner-caption {
+    container-type: inline-size;
+}
+
+.banner-section .banner-caption h3 {
+    font-size: min(20px, 6.2cqw);
+    white-space: nowrap;
+    overflow-wrap: normal;
+    padding-right: 0;
+    text-overflow: clip;
+}
+
+@media (max-width: 1023px) {
+    .banner-section .banner-caption h3 {
+        font-size: min(14px, 6.2cqw);
+    }
 }

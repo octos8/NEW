@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+  <defs>
+    <linearGradient id="top" x2=".8" y2="1">
+      <stop stop-color="#f0e6c9"/><stop offset=".5" stop-color="#e2d5af"/><stop offset="1" stop-color="#d6c99b"/>
+    </linearGradient>
+    <linearGradient id="front" x2=".2" y2="1">
+      <stop stop-color="#e0d3b0"/><stop offset=".5" stop-color="#d6c99b"/><stop offset="1" stop-color="#c4b589"/>
+    </linearGradient>
+    <linearGradient id="side" x2="1" y2=".6">
+      <stop stop-color="#cdbf98"/><stop offset=".6" stop-color="#bdad83"/><stop offset="1" stop-color="#ad9b71"/>
+    </linearGradient>
+    <pattern id="grain" width="120" height="120" patternUnits="userSpaceOnUse">
+      <rect width="120" height="120" fill="none"/>
+      <g fill="none" stroke="#968255" stroke-width=".8" opacity=".43">
+        <path d="M-10 6Q30 1 60 7T130 5M-10 13Q35 9 65 16T130 12M-10 21Q30 18 60 25T130 20M-10 31Q25 26 55 34T130 30M-10 41Q30 36 64 44T130 40M-10 51Q20 46 50 53T130 51M-10 61Q20 53 51 63T130 62M-10 73Q24 65 54 74T130 72M-10 81Q30 76 65 85T130 80M-10 93Q25 88 55 94T130 91M-10 102Q30 99 60 106T130 102M-10 113Q30 109 65 115T130 111"/>
+      </g>
+      <g fill="none" stroke="#fff3d7" stroke-width=".6" opacity=".5">
+        <path d="M-10 8Q30 3 60 9T130 7M-10 33Q25 28 55 36T130 32M-10 53Q20 48 50 55T130 53M-10 83Q30 78 65 87T130 82M-10 104Q30 101 60 108T130 104"/>
+      </g>
+    </pattern>
+    <filter id="pores" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".16 .65" numOctaves="3" seed="12"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="soft-light"/>
+    </filter>
+    <clipPath id="end"><path d="M20 0H120V120H0V0Z"/></clipPath>
+  </defs>
+  <!-- Each face shares the same grain direction along the solid timber. -->
+  <g stroke-linejoin="round">
+    <path d="M13 65L127 14L226 65L225 174L113 227L14 174Z" fill="#c4b58b" stroke="#ab986b" stroke-width="2"/>
+    <g transform="matrix(.95 -.425 .825 .425 13 65)">
+      <rect width="120" height="120" fill="url(#top)"/>
+      <rect width="120" height="120" fill="url(#grain)"/>
+      <g fill="none" stroke="#a18b5e" opacity=".6">
+        <path d="M0 59C29 58 37 36 68 37S100 57 120 56M0 66C30 65 38 43 67 43S99 63 120 64M0 73C30 73 42 51 68 51S97 70 120 72"/>
+        <ellipse cx="66" cy="58" rx="16" ry="5"/><ellipse cx="66" cy="58" rx="8" ry="2" fill="#ae9768"/>
+      </g>
+      <rect width="120" height="120" fill="#d6c99b" opacity=".14" filter="url(#pores)"/>
+    </g>
+    <g transform="matrix(.825 .425 0 .9 13 65)">
+      <rect width="120" height="120" fill="url(#front)"/>
+      <g clip-path="url(#end)" fill="none" stroke="#a08b5c" opacity=".45">
+        <ellipse cx="-28" cy="46" rx="43" ry="23"/>
+        <ellipse cx="-28" cy="46" rx="52" ry="30"/>
+        <ellipse cx="-28" cy="46" rx="63" ry="38"/>
+        <ellipse cx="-28" cy="46" rx="73" ry="46"/>
+        <ellipse cx="-28" cy="46" rx="84" ry="54"/>
+        <ellipse cx="-28" cy="46" rx="95" ry="62"/>
+        <ellipse cx="-28" cy="46" rx="106" ry="70"/>
+        <ellipse cx="-28" cy="46" rx="117" ry="78"/>
+        <ellipse cx="-28" cy="46" rx="130" ry="87"/>
+        <ellipse cx="-28" cy="46" rx="143" ry="96"/>
+        <ellipse cx="-28" cy="46" rx="156" ry="106"/>
+      </g>
+      <path d="M0 95L25 87L40 88M92 120L87 105L90 98" fill="none" stroke="#9b8659" opacity=".55"/>
+      <rect width="120" height="120" fill="#d6c99b" opacity=".2" filter="url(#pores)"/>
+    </g>
+    <g transform="matrix(.95 -.425 0 .9 112 116)">
+      <rect width="120" height="120" fill="url(#side)"/>
+      <rect width="120" height="120" fill="url(#grain)" opacity=".8"/>
+      <rect width="120" height="120" fill="#cbbd94" opacity=".17" filter="url(#pores)"/>
+    </g>
+    <!-- Narrow bevels catch the light without a glossy plastic finish. -->
+    <path d="M14 66L127 15L225 65M14 66L112 116L225 66" fill="none" stroke="#fff2d6" stroke-width="2.2" opacity=".65"/>
+    <path d="M15 69L15 172L111 222" fill="none" stroke="#ecdfbd" stroke-width="1.5" opacity=".45"/>
+    <path d="M112 117V222" fill="none" stroke="#f3e7c7" stroke-width="1.8" opacity=".55"/>
+    <path d="M115 224L224 173V69" fill="none" stroke="#a18e61" stroke-width="1.6" opacity=".6"/>
+  </g>
+</svg>
