@@ -496,3 +496,38 @@
         font-size: 10px;
     }
 }
+
+#banner .banner-heading h2 {
+    color: var(--black);
+}
+
+#banner .banner-heading .visual-works-label {
+    margin-bottom: 12px;
+}
+
+#banner .banner-heading .section-summary {
+    font-size: clamp(10px, 1.2vw, 18px);
+    font-weight: 400;
+    line-height: 1.8;
+    white-space: normal;
+}
+
+.banner-section .banner-train {
+    pointer-events: auto;
+}
+
+.banner-section .banner-train .swiper-slide {
+    flex-shrink: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.banner-section .banner-caption {
+    pointer-events: auto;
+    cursor: grab;
+    touch-action: pan-y;
+}
+
+.banner-section .banner-caption:active {
+    cursor: grabbing;
+}

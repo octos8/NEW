@@ -51,11 +51,26 @@ document.addEventListener('DOMContentLoaded', () => {
     })();
 
     const heroName = document.querySelector('.hero-name');
+    const heroTitle = document.querySelector('.hero-title');
+    if (heroTitle) {
+        const title = heroTitle.textContent.trim();
+        heroTitle.setAttribute('aria-label', title);
+        heroTitle.replaceChildren(...Array.from(title, (letter, index) => {
+            const block = document.createElement('span');
+            block.className = 'structure-letter';
+            block.textContent = letter;
+            block.setAttribute('aria-hidden', 'true');
+            block.style.setProperty('--letter-index', index);
+            return block;
+        }));
+    }
     const playHeroName = () => {
         if (!heroName || reducedMotion) return;
         heroName.classList.remove('is-entering');
+        heroTitle?.classList.remove('is-entering');
         void heroName.offsetWidth;
         heroName.classList.add('is-entering');
+        heroTitle?.classList.add('is-entering');
     };
     playHeroName();
 
@@ -279,12 +294,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const skillDot = document.querySelector('.skills-dot');
     const skillOrbit = document.querySelector('.skills-orbit');
     const compactSkills = window.matchMedia('(max-width: 768px)');
+    const tabSkills = window.matchMedia('(max-width: 402px)');
 
     // Fit the complete panel into a rectangle inscribed inside the circle.
     const fitSkillPanels = () => {
         if (!skillOrbit) return;
         const safeSize = skillOrbit.clientWidth * 0.68;
         skillPanels.forEach(panel => {
+            if (tabSkills.matches) {
+                panel.style.setProperty('--skill-copy-size', '1');
+                panel.style.setProperty('--skill-panel-scale', '1');
+                return;
+            }
             if (compactSkills.matches) {
                 // Resize type at the available width, instead of shrinking the whole layout.
                 let low = 0.3;
@@ -319,6 +340,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let activeSkill = null;
 
+    const syncSkillTabs = () => {
+        const menuList = document.querySelector('.skill-menu-list');
+        if (tabSkills.matches) menuList?.setAttribute('role', 'tablist');
+        else menuList?.removeAttribute('role');
+        skillMenus.forEach(menu => {
+            const selected = menu === activeSkill;
+            menu.id = `skill-tab-${menu.dataset.skill}`;
+            menu.setAttribute('aria-controls', `skill-panel-${menu.dataset.skill}`);
+            if (tabSkills.matches) {
+                menu.setAttribute('role', 'tab');
+                menu.setAttribute('aria-selected', String(selected));
+                menu.removeAttribute('aria-pressed');
+                menu.tabIndex = selected ? 0 : -1;
+            } else {
+                menu.removeAttribute('role');
+                menu.removeAttribute('aria-selected');
+                menu.setAttribute('aria-pressed', String(selected));
+                menu.tabIndex = 0;
+            }
+        });
+        skillPanels.forEach(panel => {
+            panel.id = `skill-panel-${panel.dataset.panel}`;
+            panel.setAttribute('role', tabSkills.matches ? 'tabpanel' : 'region');
+            panel.setAttribute('aria-labelledby', `skill-tab-${panel.dataset.panel}`);
+        });
+    };
+
     const moveSkillDot = menu => {
         if (!skillDot || !menu) return;
         skillDot.style.left = `${menu.dataset.x}%`;
@@ -338,11 +386,25 @@ document.addEventListener('DOMContentLoaded', () => {
         selectedPanel?.classList.add('is-active');
 
         activeSkill = menu;
+        syncSkillTabs();
         moveSkillDot(menu);
         fitSkillPanels();
     };
 
     skillMenus.forEach(menu => {
+        menu.addEventListener('keydown', event => {
+            if (!tabSkills.matches) return;
+            const menus = [...skillMenus];
+            let index = menus.indexOf(menu);
+            if (event.key === 'ArrowRight') index = (index + 1) % menus.length;
+            else if (event.key === 'ArrowLeft') index = (index + menus.length - 1) % menus.length;
+            else if (event.key === 'Home') index = 0;
+            else if (event.key === 'End') index = menus.length - 1;
+            else return;
+            event.preventDefault();
+            showSkill(menus[index]);
+            menus[index].focus();
+        });
         menu.addEventListener('mouseenter', () => {
             moveSkillDot(menu);
         });
@@ -366,6 +428,20 @@ document.addEventListener('DOMContentLoaded', () => {
         if (compactSkills.matches && !activeSkill && skillMenus.length) showSkill(skillMenus[0]);
         fitSkillPanels();
     });
+    tabSkills.addEventListener('change', () => {
+        if (!activeSkill && skillMenus.length) showSkill(skillMenus[0]);
+        syncSkillTabs();
+        fitSkillPanels();
+    });
+    syncSkillTabs();
+    if ('IntersectionObserver' in window && skillOrbit) {
+        const skillRevealObserver = new IntersectionObserver(entries => {
+            if (!entries.some(entry => entry.isIntersecting)) return;
+            if (!activeSkill && skillMenus.length) showSkill(skillMenus[0]);
+            skillRevealObserver.disconnect();
+        }, { threshold: 0.15 });
+        skillRevealObserver.observe(skillOrbit);
+    } else if (!activeSkill && skillMenus.length) showSkill(skillMenus[0]);
 
     /* POPUP IMAGE SWIPER */
     const popupImageSwiper = new Swiper('.popup-image-swiper', {
@@ -390,12 +466,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     const bannerSwiper = new Swiper('.banner-swiper', {
         slidesPerView: 1,
-        spaceBetween: 0,
+        slidesPerGroup: 1,
+        spaceBetween: 24,
+        roundLengths: true,
         loop: true,
         speed: reducedMotion ? 0 : 900,
         grabCursor: true,
-        noSwiping: true,
-        noSwipingSelector: '.banner-caption',
+        noSwiping: false,
         autoplay: reducedMotion ? false : {
             delay: 2500,
             disableOnInteraction: false,

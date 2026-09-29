@@ -228,3 +228,112 @@ section[id] {
         --panel-padding: 0.625rem;
     }
 }
+
+/* Shared visual-work chapter marker. */
+.visual-works-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    color: var(--gray-800);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 2px;
+}
+
+.visual-works-label::after {
+    content: '';
+    order: 1;
+    width: 1px;
+    height: 24px;
+    background: var(--point);
+}
+
+.visual-works-label > span:first-child {
+    order: 0;
+    color: var(--point);
+}
+
+.visual-works-label > span:last-child {
+    order: 2;
+}
+
+.section-summary strong {
+    color: var(--point);
+    font-weight: 700;
+}
+
+.section-summary .summary-compact {
+    display: none;
+}
+
+#popup .section-heading.popup-heading .section-summary {
+    max-width: 100%;
+    white-space: nowrap;
+    font-size: clamp(10px, 1.2vw, 18px);
+}
+
+#poster .section-heading.poster-heading .section-summary {
+    white-space: nowrap;
+    font-size: clamp(8px, .85vw, 16px) !important;
+}
+
+#banner .section-heading.banner-heading .section-summary {
+    white-space: nowrap;
+    font-size: clamp(10px, 1.2vw, 18px);
+}
+
+#detail .section-heading.detail-heading .section-summary {
+    white-space: nowrap;
+    font-size: clamp(10px, 1.2vw, 18px);
+}
+
+@media (max-width: 768px) {
+    .section-summary .summary-wide {
+        display: none;
+    }
+
+    .section-summary .summary-compact {
+        display: inline;
+    }
+}
+
+@media (max-width: 402px) {
+    #banner .section-summary .summary-wide {
+        display: inline;
+    }
+
+    #banner .section-summary .summary-compact {
+        display: none;
+    }
+
+    #detail .section-summary .summary-wide {
+        display: inline;
+    }
+
+    #detail .section-summary .summary-compact {
+        display: none;
+    }
+
+    #banner .section-heading.banner-heading .section-summary {
+        max-width: 100%;
+        white-space: normal;
+        word-break: keep-all;
+        overflow-wrap: normal;
+        font-size: 10px;
+    }
+
+    #detail .section-heading.detail-heading .section-summary {
+        max-width: 100%;
+        white-space: normal;
+        word-break: keep-all;
+        overflow-wrap: normal;
+        font-size: 10px;
+    }
+
+    .section-heading .visual-works-label > span:last-child {
+        font-size: calc(1em - 2px);
+    }
+}

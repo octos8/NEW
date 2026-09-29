@@ -2,7 +2,7 @@
 (() => {
     const layouts = [
         {
-            selector: '.lune-monitor',
+            selector: '.lune-monitor, .lune-hero-monitor .lune-monitor-body',
             size: [1536, 1024],
             corners: [[170, 99], [1382, 65], [1383, 744], [174, 728]],
             radius: '0'

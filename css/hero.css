@@ -217,8 +217,8 @@
         padding: 6.875rem 0.5rem 0;
     }
 
-.hero-section {
-        height: 25rem;
+    .hero-section {
+        height: 800px;
     }
 
 .hero-description {
@@ -238,10 +238,6 @@
 @media (max-width: 280px) {
     .hero-inner {
         padding: 6.875rem 0.35rem 0;
-    }
-
-.hero-section {
-        height: 25rem;
     }
 
 .hero-description {
@@ -285,5 +281,73 @@
 @media (max-width: 1024px) {
     .hero-meta .hero-line {
         flex-basis: 29%;
+    }
+}
+
+/* Assemble individual letters along a shared construction baseline. */
+.hero-title {
+    width: fit-content;
+    max-width: 100%;
+}
+
+.hero-title .structure-letter {
+    display: inline-block;
+}
+
+.hero-title.is-entering .structure-letter {
+    animation: structure-assemble .9s cubic-bezier(.22, 1, .36, 1) both;
+    animation-delay: calc(var(--letter-index) * 85ms);
+}
+
+.hero-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -.14em;
+    height: 1px;
+    background: currentColor;
+    opacity: 0;
+    transform-origin: left;
+}
+
+.hero-title.is-entering::after {
+    animation: structure-baseline 1.9s ease both;
+}
+
+@keyframes structure-assemble {
+    from { opacity: 0; transform: translate(.12em, -.45em); }
+    to { opacity: 1; transform: translate(0, 0); }
+}
+
+@keyframes structure-baseline {
+    0% { opacity: 0; transform: scaleX(0); }
+    20% { opacity: .45; transform: scaleX(1); }
+    75% { opacity: .45; transform: scaleX(1); }
+    100% { opacity: 0; transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-title.is-entering .structure-letter {
+        animation: none;
+    }
+
+    .hero-title.is-entering::after {
+        animation: none;
+    }
+}
+
+.hero-meta {
+    width: min(100%, 1380px);
+}
+
+.hero-meta .hero-line {
+    flex: 1 1 auto;
+}
+
+@media (max-width: 768px) {
+    .hero-meta {
+        width: 100%;
+        gap: 12px;
     }
 }

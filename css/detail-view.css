@@ -212,3 +212,67 @@ footer {
         font-size: 1.1875rem;
     }
 }
+
+/* Close and TOP share a viewport-aligned action column. */
+body:has(.detail-view) {
+    --detail-action-right: 24px;
+    --detail-action-size: 56px;
+}
+
+.detail-view > .back-link {
+    position: fixed;
+    z-index: 40;
+    top: 24px;
+    right: var(--detail-action-right);
+    width: var(--detail-action-size);
+    height: var(--detail-action-size);
+    justify-content: center;
+    border: 1px solid var(--gray-400);
+    border-radius: 50%;
+    background: var(--white);
+}
+
+.detail-view > .back-link span {
+    display: none;
+}
+
+.detail-view > .back-link::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    border-radius: 1px;
+    background: currentColor;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.detail-view > .back-link::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    border-radius: 1px;
+    background: currentColor;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+body:has(.detail-view) > .top-link {
+    right: var(--detail-action-right);
+    width: var(--detail-action-size);
+    height: var(--detail-action-size);
+}
+
+@media (max-width: 768px) {
+    body:has(.detail-view) {
+        --detail-action-right: 12px;
+        --detail-action-size: 44px;
+    }
+
+    .detail-view > .back-link {
+        top: 12px;
+    }
+}

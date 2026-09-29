@@ -195,3 +195,20 @@
         font-size: 1rem;
     }
 }
+
+#detail .detail-heading h2 {
+    color: var(--black);
+    font-size: clamp(60.22px, 11.2908vw, 173.13px);
+}
+
+@media (max-width: 768px) {
+    #detail .detail-heading h2 {
+        font-size: clamp(37.64px, 11.2908vw, 86.56px);
+    }
+}
+
+#detail .detail-heading .section-summary {
+    font-size: clamp(12px, 1.2vw, 18px);
+    font-weight: 400;
+    line-height: 1.8;
+}

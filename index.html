@@ -12,15 +12,15 @@
 
     <meta name="description" content="웹 디자인과 퍼블리싱을 기반으로 사용자 경험을 구현하는 웹 디자이너·웹 퍼블리셔 포트폴리오입니다. UI/UX 디자인, 반응형 웹, 상세페이지, 배너, 포스터 등 다양한 프로젝트를 확인해보세요.">
     <meta name="keywords"content="웹퍼블리셔, 웹디자이너, 포트폴리오, 웹퍼블리셔 포트폴리오, 웹디자이너 포트폴리오, UIUX, UI디자인, UX디자인, 웹디자인, 반응형웹, HTML, CSS, JavaScript, Figma, 상세페이지, 배너디자인, 포스터디자인">
-    <meta name="author" content="웹 디자이너 · 웹 퍼블리셔 포트폴리오">
+    <meta name="author" content="웹 디자이너 · 웹 퍼블리셔 함국주 포트폴리오">
     <meta name="robots" content="index, follow">
 
     <!-- ========================= Canonical 실제 배포 주소로 변경 ========================= -->
-    <link rel="canonical" href="https://your-domain.com/">
+    <link rel="canonical" href="https://portfolio-gukju.vercel.app/">
 
     <!-- ========================= Open Graph  카카오톡 / 페이스북 / 디스코드 등 ========================= -->
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="웹 디자이너 · 웹 퍼블리셔 포트폴리오">
+    <meta property="og:site_name" content="웹 디자이너 · 웹 퍼블리셔 함국주 포트폴리오">
     <meta property="og:title" content="웹 디자이너 · 웹 퍼블리셔 포트폴리오 | Portfolio">
     <meta property="og:description" content="디자인을 이해하고 코드로 구현하는 웹 디자이너·웹 퍼블리셔의 포트폴리오입니다. UI/UX 디자인부터 반응형 웹 퍼블리싱까지 다양한 프로젝트를 소개합니다.">
     <meta property="og:url" content="https://your-domain.com/">
@@ -118,10 +118,9 @@
                 <header id="about-header" class="about-heading about-heading-bilingual">
                     <h2 class="about-title">Structure-first design</h2>
                     <div class="about-intro">
-                        <div class="about-intro-english" lang="en">
-                            <h3>I started designing by thinking about structure.</h3>
-                            <p>Before simply making a screen look beautiful,<br>I first consider why each element belongs where it is.</p>
-                        </div>
+                        <figure class="about-workspace">
+                            <img src="./img/profile-workspace.jpg" alt="레이아웃과 타이포그래피를 살펴보는 디자인 작업 공간" width="635" height="500" loading="lazy">
+                        </figure>
                         <div class="about-intro-korean">
                             <h3>구조를 생각하는 것에서 디자인을 시작했습니다.</h3>
                             <p>저는 단순히 ‘예쁜 화면’을 만드는 것보다<br>왜? 이 요소가 여기에 있어야 하는지를 먼저 고민합니다.</p>
@@ -130,8 +129,18 @@
                 </header>
                 <section id="about-me" class="profile-chapter" aria-labelledby="profile-page-title">
                     <header class="profile-page-heading">
+                        <div class="visual-works-label profile-chapter-label"><span>01.</span><span>ABOUT ME</span></div>
                         <h2 id="profile-page-title" class="profile-side-label">About Me</h2>
                     </header>
+                    <div class="profile-collaboration">
+                        <p class="profile-collaboration-lead"><span>함께 만드는</span> 더 나은 화면</p>
+                        <p>디자인은 혼자 완성하는 결과물이 아니라, 서로 다른 역할이 함께 만들어가는 과정이라고 생각합니다.</p>
+                        <div class="profile-collaboration-cards">
+                            <article><h3>공감하는 디자이너</h3><p>개발자가 구현하기 좋은 구조를 고민하고, 기획의 의도를 화면에 담기 위해 소통합니다.</p></article>
+                            <article><h3>시스템 중심의 사고</h3><p>Figma 컴포넌트와 일관된 디자인 규칙으로 화면마다 이어지는 사용자 경험을 설계합니다.</p></article>
+                            <article><h3>열린 피드백</h3><p>다른 관점을 배우고 피드백을 반영하며, 더 나은 결과를 함께 찾아갑니다.</p></article>
+                        </div>
+                    </div>
                     <div class="profile-area">
                         <!-- 왼쪽: 스크롤 시 고정되는 프로필 -->
                         <div class="profile-left">
@@ -192,12 +201,14 @@
                 <section class="skills-section">
                     <header class="skills-heading">
                         <h3>TOOLS &amp; SKILLS</h3>
+                        <p class="skills-guide">각 항목을 선택해 사용 도구와 작업 역량을 확인할 수 있습니다.</p>
                         <span class="skills-heading-line"></span>
                     </header>
 
                     <div class="skills-orbit">
                         <span class="skills-dot" aria-hidden="true"></span>
 
+                        <div class="skill-menu-list" aria-label="스킬 분야">
                         <button class="skill-menu skill-menu-publishing" type="button" aria-pressed="false" data-skill="publishing" data-x="50"
                             data-y="0">
                             PUBLISHING
@@ -212,6 +223,7 @@
                             data-y="50">
                             DEVELOPMENT<br> &amp;<br> WORKFLOW
                         </button>
+                        </div>
 
                         <div class="skills-detail-clip">
                             <div class="skill-detail" data-panel="publishing" tabindex="0" role="region" aria-label="publishing skills">
@@ -306,8 +318,9 @@
         <section id="popup" class="popup-section">
             <div class="popup-inner common-frame">
                 <header class="section-heading popup-heading">
+                    <div class="visual-works-label"><span>02.</span><span>VISUAL WORKS</span></div>
                     <h2 class="popup-animated-title" aria-label="Popup"><span aria-hidden="true">P</span><span aria-hidden="true">o</span><span aria-hidden="true">p</span><span aria-hidden="true">u</span><span aria-hidden="true">p</span></h2>
-                    <p class="section-summary">시선을 사로잡는 비주얼로 핵심 메시지를 명확하게 전달하는 팝업 디자인입니다.</p>
+                    <p class="section-summary"><span class="summary-wide">500x750px 사이즈에 강렬한 색상과 제품 이미지를 담아, <strong>짧은 순간 시선을 사로잡는</strong> 프로모션 팝업을 제작했습니다.</span><span class="summary-compact">500x750px · 시선을 사로잡는 팝업</span></p>
                 </header>
 
                 <div class="popup-layout">
@@ -408,8 +421,9 @@
         <section id="poster" class="poster-section">
             <div class="poster-inner common-frame">
                 <header class="section-heading poster-heading">
+                    <div class="visual-works-label"><span>02.</span><span>VISUAL WORKS</span></div>
                     <h2>Poster</h2>
-                    <p class="section-summary">색과 형태로 메시지를 전하는 포스터입니다.</p>
+                    <p class="section-summary"><span class="summary-wide">500x750px 사이즈에 색감과 타이포그래피의 대비를 살려, <strong>브랜드의 개성을 한 장에 담은</strong> 포스터를 제작했습니다.</span><span class="summary-compact">500x750px · 브랜드의 개성</span></p>
                 </header>
 
                 <div class="poster-body">
@@ -418,7 +432,7 @@
                     </div>
                     <div class="poster-list">
                         <article class="poster-item">
-                            <figure><img src="./img/ikea-ps.jpg" alt="IKEA 욕실 수납 포스터"></figure>
+                            <figure><button class="poster-image-button" type="button" aria-label="IKEA 욕실 수납 포스터 설명 보기"><img src="./img/ikea-ps.jpg" alt="IKEA 욕실 수납 포스터"><span class="poster-view-more" aria-hidden="true">VIEW MORE</span></button></figure>
                             <div class="poster-content">
                                 <h3>IKEA 욕실 수납</h3>
                                 <p>붉은 타일과 체크 패턴 바닥이 어우러진 공간을 배경으로<br>
@@ -441,11 +455,11 @@
                                     시원한 계절감과 브랜드의 선명한 인상을<br>
                                     하나의 화면에 담았습니다.</p>
                             </div>
-                            <figure><img src="./img/sony-ps.jpg" alt="SONY 여름 프로모션 포스터"></figure>
+                            <figure><button class="poster-image-button" type="button" aria-label="SONY 여름 프로모션 포스터 설명 보기"><img src="./img/sony-ps.jpg" alt="SONY 여름 프로모션 포스터"><span class="poster-view-more" aria-hidden="true">VIEW MORE</span></button></figure>
                         </article>
 
                         <article class="poster-item">
-                            <figure><img src="./img/vans-ps.jpg" alt="VANS 스트리트 무드 포스터"></figure>
+                            <figure><button class="poster-image-button" type="button" aria-label="VANS 스트리트 무드 포스터 설명 보기"><img src="./img/vans-ps.jpg" alt="VANS 스트리트 무드 포스터"><span class="poster-view-more" aria-hidden="true">VIEW MORE</span></button></figure>
                             <div class="poster-content">
                                 <h3>VANS 스트리트 무드</h3>
                                 <p>도심 배경과 빈티지한 질감을 활용해<br>
@@ -467,7 +481,7 @@
                                     제품의 형태와 브랜드의 감성이 조화롭게 드러나도록<br>
                                     화면의 밀도를 조절하였습니다.</p>
                             </div>
-                            <figure><img src="./img/wepink-ps.jpg" alt="WEPINK 뷰티 제품 포스터"></figure>
+                            <figure><button class="poster-image-button" type="button" aria-label="WEPINK 뷰티 제품 포스터 설명 보기"><img src="./img/wepink-ps.jpg" alt="WEPINK 뷰티 제품 포스터"><span class="poster-view-more" aria-hidden="true">VIEW MORE</span></button></figure>
                         </article>
                     </div>
                 </div>
@@ -477,8 +491,9 @@
         <section id="banner" class="banner-section">
             <div class="banner-inner common-frame">
                 <header class="section-heading banner-heading">
+                    <div class="visual-works-label"><span>02.</span><span>VISUAL WORKS</span></div>
                     <h2>Banner</h2>
-                    <p class="section-summary">핵심 메시지를 간결하게 전하는 배너입니다.</p>
+                    <p class="section-summary"><span class="summary-wide">1920x970px 사이즈에 빛과 색의 대비로 제품을 강조하고, <strong>브랜드의 분위기와 핵심 메시지를 전하는</strong> 배너를 제작했습니다.</span><span class="summary-compact">1920x970px · 제품을 돋보이게 하는 배너</span></p>
                 </header>
                 <div class="banner-station swiper banner-swiper">
                     <div class="banner-train swiper-wrapper">
@@ -520,8 +535,9 @@
         <section id="detail" class="detail-section">
             <div class="detail-inner common-frame">
                 <header class="section-heading detail-heading">
+                    <div class="visual-works-label"><span>02.</span><span>VISUAL WORKS</span></div>
                     <h2>Detail</h2>
-                    <p class="section-summary">제품의 매력에서 선택의 이유까지<br>특징과 정보를 순서대로 전하는 상세페이지입니다.</p>
+                    <p class="section-summary"><span class="summary-wide">제품의 특징과 정보를 흐름에 맞춰 배치해, <strong>구매의 이유를 설득력 있게 전하는</strong> 상세페이지를 제작했습니다.</span><span class="summary-compact">구매의 이유를 전하는 상세페이지</span></p>
                 </header>
 
                 <div class="detail-list">
@@ -567,6 +583,7 @@
         <section id="project" class="project-section" aria-labelledby="project-title">
             <div class="project-inner common-frame">
                 <header class="project-heading">
+                    <div class="visual-works-label"><span>03.</span><span>PROJECT</span></div>
                     <h2 id="project-title">Responsive web project</h2>
                     <p>다양한 디바이스 환경에 맞춰 레이아웃을 유연하게 설계하고,<br>
                         어디서나 자연스럽고 일관된 사용자 경험을 제공할 수 있도록 디자인하였습니다.</p>
@@ -605,7 +622,7 @@
                                 loading="lazy">
                         </div>
                         <nav class="aesop-links" aria-label="이솝 프로젝트 사이트">
-                            <a href="https://kr.aesop.com/" target="_blank" rel="noopener noreferrer">Original<span
+                            <a href="https://kr.aesop.com/" target="_blank" rel="noopener noreferrer">Before<span
                                     class="aesop-sr-only"> (새 탭)</span></a>
                             <a href="https://octos8.github.io/Aesop-projects/" target="_blank"
                                 rel="noopener noreferrer">Re-Design<span class="aesop-sr-only"> (새 탭)</span></a>
@@ -790,7 +807,7 @@
                 <div class="lune-opening">
                     <header class="lune-heading">
                         <p class="lune-eyebrow">PERSONAL PROJECT</p>
-                        <h3 id="lune-title"><img src="./img/logo-white.svg" alt="LUNE 쇼핑몰 로고"> 가구 쇼핑몰 웹사이트</h3>
+                        <h3 id="lune-title"><img src="./img/logo-white.svg" alt="LUNE 쇼핑몰 로고"><span>가구 쇼핑몰 웹사이트</span></h3>
                         <p class="lune-word">일상의 공간을 더 단순하고 편안하게</p>
                         <nav class="lune-links" aria-label="LUNE 프로젝트 링크">
                             <a href="https://octos8.github.io/LUNE-shoppingmall/" target="_blank"
@@ -798,11 +815,11 @@
                         </nav>
                     </header>
                     <div class="lune-hero-mockup">
-                        <div class="lune-browser">
-                            <div class="lune-browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>LUNE · Designed
-                                    for Quiet Living</span></div>
-                            <div class="lune-screen lune-screen-pc"><img src="./img/lune-home-desktop.jpg"
-                                    alt="LUNE PC 메인 홈페이지" loading="lazy"></div>
+                        <div class="lune-hero-monitor">
+                            <div class="lune-monitor-body">
+                                <div class="lune-screen lune-screen-pc"><img src="./img/lune-home-desktop.jpg"
+                                        alt="데스크탑 모니터에 표시한 LUNE PC 메인 홈페이지" loading="lazy"></div>
+                            </div>
                         </div>
                         <div class="lune-phone lune-hero-phone">
                             <div class="lune-screen lune-screen-mobile"><img src="./img/lune-home-mobile.jpg"
@@ -859,13 +876,19 @@
                 </div>
                 <section class="lune-system" aria-labelledby="lune-system-title">
                     <header class="lune-section-heading">
-                        <h3 id="lune-system-title"><img src="./img/logo-white.svg" alt="LUNE 쇼핑몰 로고"> 디자인 시스템</h3>
+                        <h3 id="lune-system-title">RESPONSIVE WEBSITE DESIGN</h3>
                         <p>따뜻한 색감과 일관된 화면으로 이어지는 브랜드 경험</p>
                     </header>
                     <div class="lune-page-gallery">
-                        <img src="./img/lune-list-desktop.jpg" alt="LUNE 신상품 목록 PC 디자인" loading="lazy">
-                        <img src="./img/lune-home-tablet.jpg" alt="LUNE 태블릿 메인 디자인" loading="lazy">
-                        <img src="./img/lune-product-desktop.jpg" alt="LUNE 상품 구매 PC 디자인" loading="lazy">
+                        <figure class="lune-static-mockup lune-static-macbook">
+                            <div class="lune-static-device"><div class="lune-static-screen"><img src="./img/lune-list-desktop.jpg" alt="맥북 화면에 배치한 LUNE PC 신상품 목록" loading="lazy"></div></div>
+                        </figure>
+                        <figure class="lune-static-mockup lune-static-ipad">
+                            <div class="lune-static-device"><div class="lune-static-screen"><img src="./img/lune-home-tablet.jpg" alt="아이패드 화면에 배치한 LUNE 태블릿 메인" loading="lazy"></div></div>
+                        </figure>
+                        <figure class="lune-static-mockup lune-static-iphone">
+                            <div class="lune-static-device"><div class="lune-static-screen"><img src="./img/lune-product-mobile.jpg" alt="아이폰 화면에 배치한 LUNE 모바일 상품 구매" loading="lazy"></div></div>
+                        </figure>
                     </div>
                     <div class="lune-system-details">
                         <h3>DESIGN SYSTEM</h3>
@@ -1014,6 +1037,7 @@
     </div>
     <a class="top-link" href="#top" aria-label="페이지 맨 위로 이동"><span class="up">↑</span><span>TOP</span></a>
     <dialog id="popup-project-dialog" class="popup-project-dialog" aria-labelledby="popup-project-title">
+        <img class="popup-project-image" alt="" aria-hidden="true">
         <button class="popup-project-close" type="button" aria-label="설명 닫기" autofocus>×</button>
         <div class="popup-project-content"></div>
     </dialog>

@@ -9,7 +9,7 @@
 }
 
 .floating-wood-piece {
-    --wood-size: 36px;
+    --wood-size: 54px;
     --travel-x: calc(100vw - 48px - var(--wood-size));
     --travel-y: calc(100vh - 48px - var(--wood-size));
     --travel-y: calc(100dvh - 48px - var(--wood-size));
@@ -23,25 +23,33 @@
     box-shadow: inset 1px 2px 1px #fff9,
         inset -4px -3px 2px #8d78454d, 3px 5px 8px #4c3c2426;
     opacity: .85;
-    animation: floating-wood-roll 42s linear infinite;
-    animation-delay: -8s;
+    animation: floating-wood-roll 420s linear infinite;
+    animation-delay: -80s;
     animation-play-state: var(--wood-play-state, running);
     will-change: transform;
+    pointer-events: auto;
+    transition: scale .5s ease, rotate .5s ease, translate .5s ease;
+}
+
+.floating-wood-piece:hover {
+    scale: 1.05;
+    rotate: 6deg;
+    translate: 4px -5px;
 }
 
 .floating-wood-piece:nth-child(2) {
-    --wood-size: 30px;
+    --wood-size: 45px;
     background-position: 62% 80%;
-    animation-duration: 53s;
-    animation-delay: -29s;
+    animation-duration: 530s;
+    animation-delay: -290s;
     animation-direction: reverse;
 }
 
 .floating-wood-piece:nth-child(3) {
-    --wood-size: 42px;
+    --wood-size: 63px;
     background-position: 45% 81%;
-    animation-duration: 61s;
-    animation-delay: -47s;
+    animation-duration: 610s;
+    animation-delay: -470s;
 }
 
 @keyframes floating-wood-roll {
@@ -67,16 +75,16 @@
 
 @media (max-width: 768px) {
     .floating-wood-piece {
-        --wood-size: 26px;
+        --wood-size: 39px;
         opacity: .75;
     }
 
     .floating-wood-piece:nth-child(2) {
-        --wood-size: 22px;
+        --wood-size: 33px;
     }
 
     .floating-wood-piece:nth-child(3) {
-        --wood-size: 30px;
+        --wood-size: 45px;
     }
 }
 
