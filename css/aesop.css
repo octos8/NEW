@@ -2063,11 +2063,12 @@
     }
 
     #project .aesop-facts {
-        gap: 0.29375rem;
-        margin-top: 0.46875rem;
+        gap: 10px;
+        margin-top: 24px;
     }
 
     #project .aesop-facts > div {
+        grid-template-columns: minmax(0, .8fr) minmax(0, 1.5fr);
         gap: 0.175rem;
     }
 
@@ -2132,10 +2133,19 @@
         margin-bottom: 1rem;
     }
 
-    #project dl.aesop-facts > div:nth-of-type(n) > dt,
-    #project dl.aesop-facts > div:nth-of-type(n) > dd,
+    #project .aesop-case dl.aesop-facts > div:nth-of-type(n) > dt {
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    #project dl.aesop-facts > div:nth-of-type(n) > dd {
+        font-size: 11px;
+        font-weight: 400;
+        word-break: keep-all;
+    }
+
     #project dl.aesop-facts > div.aesop-facts-tools:nth-of-type(n) > dd > span.aesop-fact-tag:nth-of-type(n) {
-        font-size: 0.75rem;
+        font-size: 10px;
     }
 
     #project div.aesop-responsive-copy > h3 {
@@ -2393,4 +2403,17 @@
         font-size: 14px;
         white-space: nowrap;
     }
+}
+
+/* Keep breathing room around the shortened responsive introduction. */
+#project .aesop-responsive-copy {
+    padding-block: clamp(24px, 4vw, 64px);
+}
+
+#project .aesop-responsive-intro {
+    column-gap: clamp(16px, 3vw, 48px);
+}
+
+#project .aesop-responsive-finale {
+    margin-top: clamp(40px, 6vw, 96px);
 }

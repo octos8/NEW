@@ -1,6 +1,10 @@
 /* POSTER | 기본 스타일. */
 /* 글자와 간격은 px. 공통 값은 common.css의 :root에서 수정합니다. */
 
+#poster {
+    scroll-margin-top: 0;
+}
+
 .poster-section {
     position: relative;
     width: 100%;
@@ -429,4 +433,82 @@
 .poster-orbit-active .poster-content > p {
     font-size: clamp(12.5px, .95vw, 15px);
     line-height: 1.7;
+}
+
+/* Compact scroll stage: image and copy rise together beside the heading. */
+@media (max-width: 1023px) {
+    .poster-orbit-active .poster-heading {
+        --poster-circle-size: min(70svh, clamp(240px, 52vw, 400px));
+        top: 54%;
+        min-height: var(--poster-circle-size);
+        width: calc(48% - 16px);
+        right: 16px;
+        transform: translateY(-50%);
+    }
+
+    .poster-orbit-active .poster-heading::before {
+        right: -16px;
+    }
+
+    .poster-orbit-active .poster-heading h2 {
+        font-size: clamp(30px, 8vw, 72px);
+    }
+
+    .poster-orbit-active .poster-heading p {
+        white-space: normal;
+        font-size: 12px !important;
+        margin-top: 12px;
+    }
+
+    .poster-orbit-active .poster-item {
+        width: calc(48% - 16px);
+        gap: 12px;
+        grid-template-columns: minmax(0, 1fr);
+        align-items: start;
+    }
+
+    .poster-orbit-active .poster-item figure img {
+        max-height: none;
+    }
+
+    .poster-orbit-active .poster-item .poster-content {
+        grid-column: 1;
+        grid-row: 2;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .poster-orbit-active .poster-content h3 {
+        font-size: clamp(14px, 2.8vw, 22px) !important;
+    }
+
+    .poster-orbit-active .poster-content > p {
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+    .poster-orbit-active .poster-content > p br {
+        display: none;
+    }
+}
+
+/* Small-screen poster copy; separate selectors for individual adjustments. */
+@media (max-width: 402px) {
+    .poster-section .poster-content h3 {
+        font-size: 10px !important;
+        line-height: 1.5;
+        margin-bottom: 8px;
+        white-space: normal;
+    }
+
+    .poster-section .poster-content > p {
+        font-size: 10px;
+        line-height: 1.7;
+    }
+
+    .poster-section .poster-heading p {
+        font-size: 10px !important;
+        line-height: 1.7;
+        white-space: normal;
+    }
 }

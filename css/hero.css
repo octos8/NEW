@@ -122,6 +122,13 @@
 
 /* RESPONSIVE: original rules above are preserved. */
 
+@media (min-width: 1281px) {
+    .hero-section {
+        height: 100vh;
+        height: 100dvh;
+    }
+}
+
 @media (max-width: 1280px) {
     .hero-section {
         height: 42.375rem;
