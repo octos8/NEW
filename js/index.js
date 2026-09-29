@@ -394,10 +394,12 @@ document.addEventListener('DOMContentLoaded', () => {
         loop: true,
         speed: reducedMotion ? 0 : 900,
         grabCursor: true,
+        noSwiping: true,
+        noSwipingSelector: '.banner-caption',
         autoplay: reducedMotion ? false : {
             delay: 2500,
             disableOnInteraction: false,
-            pauseOnMouseEnter: true
+            pauseOnMouseEnter: false
         },
         pagination: {
             el: '.banner-swiper .swiper-pagination',
