@@ -700,7 +700,7 @@
 }
 
 .aesop-case .aesop-responsive-copy > h3 {
-    margin-bottom: 32px;
+    margin-bottom: 16px;
 }
 
 .aesop-responsive-phones {
@@ -2416,4 +2416,273 @@
 
 #project .aesop-responsive-finale {
     margin-top: clamp(40px, 6vw, 96px);
+}
+
+/* Aesop introduction: shared hierarchy across desktop, tablet and mobile. */
+#project .aesop-case .aesop-opening {
+    padding: 56px 64px 80px;
+}
+
+#project .aesop-case .aesop-heading {
+    max-width: 1600px;
+    margin-inline: auto;
+}
+
+#project .aesop-case .aesop-opening-brand {
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+#project .aesop-case .aesop-eyebrow {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+#project .aesop-case #aesop-title {
+    font-size: 18px;
+    letter-spacing: 4px;
+}
+
+#project .aesop-case .aesop-logo {
+    width: 300px;
+    height: auto;
+    margin-top: 12px;
+}
+
+#project .aesop-case nav.aesop-links > a:nth-of-type(1) {
+    min-height: 40px;
+    padding: 8px 24px;
+    font-size: 14px;
+}
+
+#project .aesop-case nav.aesop-links > a:nth-of-type(2) {
+    min-height: 40px;
+    padding: 8px 24px;
+    font-size: 14px;
+}
+
+#project .aesop-case .aesop-opening-layout {
+    max-width: 1600px;
+    margin: 48px auto 0;
+    padding-top: 48px;
+    grid-template-columns: minmax(0, 45fr) minmax(0, 55fr);
+    gap: 64px;
+}
+
+#project .aesop-case .aesop-opening-visual {
+    padding: 48px 32px;
+    border-radius: 64px 64px 16px 16px;
+}
+
+#project .aesop-case .aesop-opening-phone {
+    width: 78%;
+    max-width: 310px;
+}
+
+#project .aesop-case .aesop-opening-copy-wrap {
+    width: 100%;
+    max-width: 640px;
+}
+
+#project .aesop-case .aesop-opening-copy {
+    padding: 0;
+}
+
+#project .aesop-case .aesop-opening-copy > h4 {
+    max-width: none;
+    margin-bottom: 24px;
+    font-size: clamp(28px, 1.67vw, 32px);
+    line-height: 1.4;
+    text-wrap: balance;
+}
+
+#project .aesop-case .aesop-opening-copy > p {
+    font-size: 16px;
+    line-height: 1.8;
+    word-break: keep-all;
+}
+
+#project .aesop-case .aesop-opening-copy br {
+    display: none;
+}
+
+#project .aesop-case .aesop-opening-copy > h5 {
+    margin: 32px 0 16px;
+    padding-top: 24px;
+    font-size: 18px;
+}
+
+#project .aesop-case .aesop-facts {
+    margin-top: 32px;
+    gap: 16px;
+}
+
+#project .aesop-case dl.aesop-facts > div {
+    grid-template-columns: 104px minmax(0, 1fr);
+    gap: 16px;
+    align-items: center;
+}
+
+#project .aesop-case dl.aesop-facts > div:nth-of-type(n) > dt {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#project .aesop-case dl.aesop-facts > div:nth-of-type(n) > dd {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#project .aesop-case dl.aesop-facts > div.aesop-facts-tools:nth-of-type(n) > dd > span.aesop-fact-tag:nth-of-type(n) {
+    padding: 3px 10px;
+    font-size: 14px;
+}
+
+@media (max-width: 1280px) {
+    #project .aesop-case .aesop-opening {
+        padding: 40px var(--page-gutter) 56px;
+    }
+
+    #project .aesop-case .aesop-logo {
+        width: 240px;
+    }
+
+    #project .aesop-case .aesop-opening-layout {
+        display: grid;
+        gap: 32px;
+        margin-top: 36px;
+        padding-top: 36px;
+    }
+
+    #project .aesop-case .aesop-opening-visual {
+        padding: 40px 24px;
+        border-radius: 48px 48px 16px 16px;
+    }
+
+    #project .aesop-case .aesop-opening-phone {
+        max-width: 270px;
+    }
+
+    #project .aesop-case .aesop-opening-copy > h4 {
+        font-size: 26px;
+    }
+
+    #project .aesop-case .aesop-opening-copy > p {
+        font-size: 14px;
+    }
+
+    #project .aesop-case .aesop-opening-copy > h5 {
+        font-size: 16px;
+    }
+
+    #project .aesop-case dl.aesop-facts > div {
+        grid-template-columns: 88px minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    #project .aesop-case .aesop-facts-tools dd {
+        gap: 6px;
+    }
+}
+
+@media (max-width: 768px) {
+    #project .aesop-case .aesop-opening {
+        padding: 32px var(--page-gutter) 40px;
+    }
+
+    #project .aesop-case .aesop-logo {
+        width: 200px;
+        max-width: 100%;
+    }
+
+    #project .aesop-case #aesop-title {
+        font-size: 16px;
+    }
+
+    #project .aesop-case .aesop-opening-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+        margin-top: 28px;
+        padding-top: 28px;
+    }
+
+    #project .aesop-case .aesop-opening-visual {
+        padding: 36px 24px;
+        border-radius: 36px 36px 12px 12px;
+    }
+
+    #project .aesop-case .aesop-opening-phone {
+        width: 64%;
+        max-width: 250px;
+    }
+
+    #project .aesop-case .aesop-opening-copy-wrap {
+        margin-inline: auto;
+    }
+
+    #project .aesop-case .aesop-opening-copy > h4 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    #project .aesop-case .aesop-opening-copy > h5 {
+        margin-top: 24px;
+        padding-top: 20px;
+    }
+
+    #project .aesop-case .aesop-facts {
+        margin-top: 24px;
+        gap: 14px;
+    }
+}
+
+@media (max-width: 402px) {
+    #project .aesop-case .aesop-logo {
+        width: 180px;
+    }
+
+    #project .aesop-case .aesop-opening-copy > h4 {
+        font-size: 22px;
+    }
+
+    #project .aesop-case .aesop-opening-copy > p {
+        font-size: 13px;
+    }
+
+    #project .aesop-case dl.aesop-facts > div {
+        grid-template-columns: 76px minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    #project .aesop-case dl.aesop-facts > div:nth-of-type(n) > dt {
+        font-size: 12px;
+    }
+
+    #project .aesop-case dl.aesop-facts > div:nth-of-type(n) > dd {
+        font-size: 12px;
+    }
+
+    #project .aesop-case dl.aesop-facts > div.aesop-facts-tools:nth-of-type(n) > dd > span.aesop-fact-tag:nth-of-type(n) {
+        padding: 3px 7px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 280px) {
+    #project .aesop-case .aesop-logo {
+        width: 160px;
+    }
+
+    #project .aesop-case .aesop-opening-visual {
+        padding: 28px 16px;
+    }
+
+    #project .aesop-case .aesop-opening-copy > h4 {
+        font-size: 20px;
+    }
+
+    #project .aesop-case dl.aesop-facts > div {
+        grid-template-columns: 68px minmax(0, 1fr);
+        gap: 8px;
+    }
 }

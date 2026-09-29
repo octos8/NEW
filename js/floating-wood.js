@@ -4,6 +4,7 @@
     const boundary = document.querySelector('#popup');
     const home = document.querySelector('#home');
     const contact = document.querySelector('#contact');
+    const skills = document.querySelector('.skills-section');
     if (!layer || !boundary || !home) return;
 
     let frame = 0;
@@ -19,7 +20,10 @@
                 bottom = Math.min(height, rect.bottom);
             }
         }
-        const visible = bottom > top;
+        const skillsRect = skills?.getBoundingClientRect();
+        const mobileSkillsVisible = window.innerWidth <= 768 && skillsRect &&
+            skillsRect.top < height && skillsRect.bottom > 0;
+        const visible = bottom > top && !mobileSkillsVisible;
         layer.style.clipPath = `inset(${top}px 0 ${height - bottom}px 0)`;
         layer.style.visibility = visible ? 'visible' : 'hidden';
         layer.style.setProperty('--wood-play-state', visible ? 'running' : 'paused');

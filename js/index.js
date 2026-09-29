@@ -249,10 +249,73 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     })();
 
+    /* Mask scrolled history only after its heading reaches the sticky edge. */
+    (() => {
+        const headings = [...document.querySelectorAll('.profile-timeline > article > h3')];
+        if (!headings.length) return;
+        let frame = 0;
+        const update = () => {
+            frame = 0;
+            headings.forEach(heading => {
+                const stickyTop = parseFloat(getComputedStyle(heading).top);
+                const rect = heading.getBoundingClientRect();
+                heading.classList.toggle('is-timeline-pinned',
+                    Number.isFinite(stickyTop) && rect.top <= stickyTop + 1 && rect.bottom > 0);
+            });
+        };
+        const schedule = () => {
+            if (!frame) frame = requestAnimationFrame(update);
+        };
+        window.addEventListener('scroll', schedule, { passive: true });
+        window.addEventListener('resize', schedule, { passive: true });
+        window.addEventListener('load', schedule, { once: true });
+        document.fonts?.ready.then(schedule);
+        update();
+    })();
+
     /* TOOLS & SKILLS */
     const skillMenus = document.querySelectorAll('.skill-menu');
     const skillPanels = document.querySelectorAll('.skill-detail');
     const skillDot = document.querySelector('.skills-dot');
+    const skillOrbit = document.querySelector('.skills-orbit');
+    const compactSkills = window.matchMedia('(max-width: 768px)');
+
+    // Fit the complete panel into a rectangle inscribed inside the circle.
+    const fitSkillPanels = () => {
+        if (!skillOrbit) return;
+        const safeSize = skillOrbit.clientWidth * 0.68;
+        skillPanels.forEach(panel => {
+            if (compactSkills.matches) {
+                // Resize type at the available width, instead of shrinking the whole layout.
+                let low = 0.3;
+                let high = 1;
+                panel.style.setProperty('--skill-copy-size', '1');
+                const safeHeight = skillOrbit.clientWidth * 0.62;
+                if (panel.scrollHeight > safeHeight) {
+                    for (let step = 0; step < 8; step++) {
+                        const factor = (low + high) / 2;
+                        panel.style.setProperty('--skill-copy-size', String(factor));
+                        if (panel.scrollHeight <= safeHeight) low = factor;
+                        else high = factor;
+                    }
+                    panel.style.setProperty('--skill-copy-size', String(low));
+                }
+                panel.style.setProperty('--skill-panel-scale', '1');
+                return;
+            }
+            const scale = compactSkills.matches ? 1 : Math.min(1, safeSize / Math.max(1, panel.scrollWidth),
+                safeSize / Math.max(1, panel.scrollHeight));
+            panel.style.setProperty('--skill-panel-scale', String(scale));
+        });
+    };
+    if (skillOrbit && 'ResizeObserver' in window) {
+        const skillResizeObserver = new ResizeObserver(fitSkillPanels);
+        skillResizeObserver.observe(skillOrbit);
+    }
+    document.fonts?.ready.then(fitSkillPanels);
+    window.addEventListener('load', fitSkillPanels, { once: true });
+    window.addEventListener('resize', fitSkillPanels, { passive: true });
+    fitSkillPanels();
 
     let activeSkill = null;
 
@@ -271,12 +334,12 @@ document.addEventListener('DOMContentLoaded', () => {
         menu.classList.add('is-active');
         skillMenus.forEach(item => item.setAttribute('aria-pressed', String(item === menu)));
 
-        document
-            .querySelector(`.skill-detail[data-panel="${target}"]`)
-            ?.classList.add('is-active');
+        const selectedPanel = document.querySelector(`.skill-detail[data-panel="${target}"]`);
+        selectedPanel?.classList.add('is-active');
 
         activeSkill = menu;
         moveSkillDot(menu);
+        fitSkillPanels();
     };
 
     skillMenus.forEach(menu => {
@@ -296,6 +359,12 @@ document.addEventListener('DOMContentLoaded', () => {
         menu.addEventListener('click', () => {
             showSkill(menu);
         });
+    });
+
+    if (compactSkills.matches && skillMenus.length) showSkill(skillMenus[0]);
+    compactSkills.addEventListener('change', () => {
+        if (compactSkills.matches && !activeSkill && skillMenus.length) showSkill(skillMenus[0]);
+        fitSkillPanels();
     });
 
     /* POPUP IMAGE SWIPER */
@@ -335,6 +404,30 @@ document.addEventListener('DOMContentLoaded', () => {
             clickable: true,
         },
     });
+
+    // Preserve both description sentences; fit them to two lines at each width.
+    const fitBannerDescriptions = () => {
+        document.querySelectorAll('.banner-caption p').forEach(copy => {
+            copy.style.removeProperty('font-size');
+            if (!copy.clientWidth || window.innerWidth === 402) return;
+            const baseSize = parseFloat(getComputedStyle(copy).fontSize);
+            let low = 1;
+            let high = baseSize;
+            const fits = () => copy.scrollHeight <= parseFloat(getComputedStyle(copy).lineHeight) * 2 + 1;
+            if (fits()) return;
+            for (let step = 0; step < 10; step++) {
+                const size = (low + high) / 2;
+                copy.style.fontSize = `${size}px`;
+                if (fits()) low = size;
+                else high = size;
+            }
+            copy.style.fontSize = `${low}px`;
+        });
+    };
+    bannerSwiper.on('resize', fitBannerDescriptions);
+    document.fonts?.ready.then(fitBannerDescriptions);
+    window.addEventListener('load', fitBannerDescriptions, { once: true });
+    fitBannerDescriptions();
 
     // Keep the first banner in place until the carousel enters the viewport.
     if (!reducedMotion && 'IntersectionObserver' in window) {

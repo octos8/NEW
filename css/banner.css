@@ -356,3 +356,143 @@
         font-size: clamp(37.64px, 11.2908vw, 86.56px);
     }
 }
+
+/* Desktop: pair each banner with its own caption on the right. */
+@media (min-width: 1024px) {
+    .banner-section .banner-train .swiper-slide {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+        grid-template-rows: auto;
+        align-items: stretch;
+        column-gap: 0;
+    }
+
+    .banner-section .banner-caption {
+        grid-template-columns: minmax(0, 1fr);
+        align-content: center;
+        gap: 20px;
+        padding: clamp(24px, 3vw, 56px);
+        text-align: left;
+    }
+
+    .banner-section .banner-caption h3 {
+        margin: 0;
+        padding: 0;
+        font-size: clamp(18px, 1.4vw, 24px);
+        line-height: 1.4;
+    }
+
+    .banner-section .banner-caption p {
+        font-size: clamp(12px, 1vw, 16px);
+        line-height: 1.8;
+        text-align: left;
+    }
+
+    .banner-section .banner-caption p br {
+        display: none;
+    }
+
+    .banner-section .swiper-pagination {
+        top: auto;
+        margin-top: 24px;
+        width: 100%;
+    }
+}
+
+/* Color panels stay attached to their matching banner slide. */
+.banner-section .banner-train .banner-slide-bulgari {
+    --banner-caption-color: #f3eff7;
+}
+
+.banner-section .banner-train .banner-slide-medicube {
+    --banner-caption-color: #edf4fa;
+}
+
+.banner-section .banner-train .banner-slide-johnnie-walker {
+    --banner-caption-color: #f4eee5;
+}
+
+.banner-section .banner-train .banner-slide-musinsa {
+    --banner-caption-color: #f0f2ed;
+}
+
+.banner-section .banner-caption {
+    background: var(--banner-caption-color, #f6f3ef);
+}
+
+.banner-section .banner-station .swiper-pagination {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin: 24px 0 0;
+    transform: none;
+    text-align: center;
+    line-height: 1;
+}
+
+@media (max-width: 1023px) {
+    .banner-section .banner-caption {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 20px;
+        gap: 12px;
+    }
+
+    .banner-section .banner-caption h3 {
+        grid-column: 1;
+        grid-row: auto;
+        font-size: 14px;
+        white-space: normal;
+        overflow: visible;
+    }
+
+    .banner-section .banner-caption p {
+        grid-column: 1;
+        grid-row: auto;
+        display: block;
+        font-size: 12px;
+        line-height: 1.7;
+        text-align: left;
+        overflow: visible;
+        -webkit-line-clamp: unset;
+    }
+}
+
+@media (max-width: 1023px) {
+    .banner-section .banner-train .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .banner-section .banner-caption {
+        flex: 1;
+        align-content: start;
+        padding: 18px 16px;
+        line-height: 1.7;
+    }
+
+    .banner-section .banner-caption h3 {
+        line-height: 1.5;
+    }
+
+    .banner-section .banner-caption p {
+        color: var(--gray-800);
+    }
+}
+
+/* Keep the two sentences on separate lines without truncating the copy. */
+.banner-section .banner-caption p br {
+    display: initial;
+}
+
+@media (max-width: 402px) {
+    .banner-section .banner-heading > p {
+        font-size: 10px;
+    }
+
+    .banner-section .banner-caption p {
+        font-size: 10px;
+    }
+}

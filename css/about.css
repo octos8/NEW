@@ -1624,8 +1624,8 @@
 /* Mobile profile: keep the complete identity above the history. */
 @media (max-width: 768px) {
     .profile-area .profile-timeline .certification-info > h3 {
-        position: relative;
-        top: auto;
+        position: sticky;
+        top: var(--timeline-sticky-top);
     }
 
     .profile-area .profile-timeline .certification-info > h3::before {
@@ -1633,8 +1633,8 @@
     }
 
     .profile-area .profile-timeline .education-info > h3 {
-        position: relative;
-        top: auto;
+        position: sticky;
+        top: var(--timeline-sticky-top);
     }
 
     .profile-area .profile-timeline .education-info > h3::before {
@@ -1673,28 +1673,231 @@
         bottom: auto;
         left: 100%;
         right: auto;
-        width: clamp(48px, 13vw, 90px);
+        width: auto;
         display: block;
         margin-left: 4px;
-        white-space: normal;
-        overflow-wrap: anywhere;
+        font-size: clamp(7px, 1.8vw, 12px);
+        white-space: nowrap;
+        overflow-wrap: normal;
         transform: translateY(-50%);
     }
 
     .skills-section .skill-detail {
         max-height: 64%;
+        min-width: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 
     .skills-section .skill-detail .skill-summary {
-        font-size: 12px;
+        font-size: 10px;
+        line-height: 1.5;
         margin-bottom: 12px;
     }
 
     .skills-section .skill-detail .skill-program-list strong {
-        font-size: 13px;
+        font-size: 11px;
     }
 
     .skills-section .skill-detail .skill-program-list p {
-        font-size: 12px;
+        font-size: 10px;
+        line-height: 1.5;
+    }
+}
+
+/* Keep small-screen skill copy inside the circular reading area. */
+@media (max-width: 402px) {
+    .skills-section .skill-detail {
+        width: 70%;
+        max-width: 70%;
+        max-height: 62%;
+        padding-inline: 3px;
+        scrollbar-width: thin;
+    }
+
+    .skills-section .skill-detail .skill-summary {
+        font-size: 10px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+
+    .skills-section .skill-detail .skill-program-list strong {
+        font-size: 10px;
+        line-height: 1.4;
+    }
+
+    .skills-section .skill-detail .skill-program-list p {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .skills-section .skill-program-list {
+        gap: 10px;
+    }
+
+    .skills-section .skill-program-list li {
+        grid-template-columns: 18px minmax(0, 1fr);
+        gap: 6px;
+    }
+
+    .skills-section .skill-program-list img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .skills-section .skill-menu-development {
+        width: auto;
+        font-size: clamp(7px, 2vw, 9px);
+        white-space: nowrap;
+        overflow-wrap: normal;
+    }
+}
+
+/* Keep timeline headings pinned without covering the preceding profile. */
+@media (max-width: 1024px) {
+    .profile-area .profile-content.profile-timeline {
+        --timeline-sticky-top: 88px;
+    }
+
+    .profile-area .profile-timeline .certification-info > h3 {
+        position: sticky;
+        top: var(--timeline-sticky-top);
+    }
+
+    .profile-area .profile-timeline .education-info > h3 {
+        position: sticky;
+        top: var(--timeline-sticky-top);
+    }
+
+    .profile-area .profile-timeline .certification-info > h3::before {
+        display: none;
+    }
+
+    .profile-area .profile-timeline .education-info > h3::before {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-area .profile-content.profile-timeline {
+        --timeline-sticky-top: 64px;
+    }
+
+    .skills-section .skill-detail .skill-program-list {
+        min-width: 0;
+        gap: 10px;
+    }
+
+    .skills-section .skill-detail .skill-program-list li {
+        min-width: 0;
+        grid-template-columns: 18px minmax(0, 1fr);
+        gap: 6px;
+    }
+
+    .skills-section .skill-detail .skill-program-list img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Show complete skill panels without a clipped circular scroll window. */
+.skills-section .skills-detail-clip {
+    overflow: visible;
+}
+
+.skills-section .skills-orbit .skill-detail {
+    width: 70%;
+    max-width: 70%;
+    max-height: none;
+    height: auto;
+    overflow: visible;
+    transform: translate(-50%, -50%) scale(var(--skill-panel-scale, 1));
+    transform-origin: center;
+}
+
+@media (min-width: 1024px) and (max-width: 1100px) {
+    .skills-section .skills-orbit {
+        width: calc(100% - 360px);
+    }
+
+    .skills-section .skill-menu {
+        font-size: 18px;
+    }
+
+    .skills-section .skill-menu-design {
+        top: 50%;
+        bottom: auto;
+        right: 100%;
+        left: auto;
+        margin-right: 16px;
+        transform: translateY(-50%);
+    }
+
+    .skills-section .skill-menu-development {
+        top: 50%;
+        bottom: auto;
+        left: 100%;
+        right: auto;
+        margin-left: 16px;
+        transform: translateY(-50%);
+    }
+}
+
+/* Match desktop history masking once the tablet/mobile heading is pinned. */
+@media (max-width: 1024px) {
+    .profile-area .profile-timeline .certification-info > h3.is-timeline-pinned::before {
+        display: block;
+    }
+
+    .profile-area .profile-timeline .education-info > h3.is-timeline-pinned::before {
+        display: block;
+    }
+}
+
+/* Preserve the desktop contents and circular layout at smaller widths. */
+@media (max-width: 768px) {
+    .skills-section .skills-orbit {
+        width: min(440px, 76%);
+    }
+
+    .skills-section .skills-orbit .skill-detail {
+        width: 76%;
+        max-width: 76%;
+        padding: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    .skills-section .skill-detail .skill-summary {
+        display: block;
+        font-size: calc(10px * var(--skill-copy-size, 1));
+        line-height: 1.4;
+        margin-bottom: calc(12px * var(--skill-copy-size, 1));
+    }
+
+    .skills-section .skill-detail .skill-program-list {
+        gap: calc(10px * var(--skill-copy-size, 1));
+    }
+
+    .skills-section .skill-detail .skill-program-list li {
+        grid-template-columns: calc(20px * var(--skill-copy-size, 1)) minmax(0, 1fr);
+        gap: calc(6px * var(--skill-copy-size, 1));
+        align-items: start;
+    }
+
+    .skills-section .skill-detail .skill-program-list img {
+        width: calc(20px * var(--skill-copy-size, 1));
+        height: calc(20px * var(--skill-copy-size, 1));
+    }
+
+    .skills-section .skill-detail .skill-program-list strong {
+        font-size: calc(11px * var(--skill-copy-size, 1));
+        line-height: 1.3;
+        margin-bottom: calc(3px * var(--skill-copy-size, 1));
+    }
+
+    .skills-section .skill-detail .skill-program-list p {
+        display: block;
+        font-size: calc(10px * var(--skill-copy-size, 1));
+        line-height: 1.4;
     }
 }
