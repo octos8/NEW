@@ -278,6 +278,10 @@
 }
 
 @media (max-width: 402px) {
+    .hero-visual {
+        width: 90%;
+    }
+
     .hero-inner {
         padding: 6.875rem 0.5rem 0;
     }

@@ -2771,8 +2771,9 @@
 }
 
 @media (max-width: 402px) {
-    #project .aesop-case p.aesop-color-description {
-        font-size: 16px;
+    #project .aesop-case p.aesop-color-description,
+    #project .aesop-case div.aesop-palette-content > p {
+        font-size: 13px;
     }
 }
 

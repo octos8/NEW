@@ -987,8 +987,10 @@
     }
 
     .about-title {
-        font-size: 35px;
+        font-size: min(35px, 8vw);
         text-wrap: nowrap;
+        margin-inline: 0;
+        text-align: center;
     }
 
     .about-heading .about-intro {
@@ -2299,6 +2301,22 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
+    .about-intro .about-intro-korean {
+        text-align: center;
+    }
+
+    .profile-area .profile-timeline .certification-info > h3,
+    .profile-area .profile-timeline .education-info > h3 {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .profile-area .profile-timeline .certification-info li > div > span,
+    .profile-area .profile-timeline .education-info p {
+        font-size: 16px;
+    }
+
     .profile-area .profile-content.profile-timeline {
         min-height: 0;
         padding-bottom: 0;
@@ -2533,6 +2551,39 @@
     .profile-story .profile-collaboration-cards p {
         font-size: clamp(15px, 2.4vw, 19px);
         line-height: 1.65;
+    }
+}
+
+.profile-collaboration-cards .profile-mobile-break {
+    display: none;
+}
+
+@media (max-width: 402px) {
+    .profile-collaboration-cards .profile-mobile-break {
+        display: inline;
+    }
+
+    .profile-collaboration-cards .profile-desktop-break {
+        display: none;
+    }
+
+    .profile-story .profile-collaboration-cards h3 {
+        text-align: right;
+    }
+
+    .profile-story .profile-collaboration-cards p {
+        font-size: 14px;
+        line-height: 1.7;
+        text-align: right;
+        text-wrap: pretty;
+        word-break: keep-all;
+        overflow-wrap: anywhere;
+    }
+
+    .profile-story .profile-collaboration-cards .profile-story-detail {
+        font-size: 13px;
+        line-height: 1.75;
+        margin-top: 18px;
     }
 }
 

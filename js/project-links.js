@@ -13,14 +13,7 @@
 
         links.forEach(item => {
             const { nav, project } = item;
-            // Pad / mobile: avoid covering the narrower content with fixed links.
-            if (window.innerWidth < 1024) {
-                nav.classList.remove('project-links-sticky');
-                ['top', 'left', 'width'].forEach(key => nav.style.removeProperty(`--project-links-${key}`));
-                item.placeholder?.remove();
-                item.placeholder = null;
-                return;
-            }
+            // Keep project links available at every viewport size.
             const anchor = (item.placeholder ?? nav).getBoundingClientRect();
 
             if (anchor.top >= top) {
@@ -61,6 +54,7 @@
     window.addEventListener('scroll', schedule, { passive: true });
     window.addEventListener('resize', schedule);
     window.addEventListener('load', schedule);
+    window.addEventListener('pageshow', schedule);
     const observer = new ResizeObserver(schedule);
     links.forEach(({ project }) => observer.observe(project));
     if (header) observer.observe(header);

@@ -2130,6 +2130,13 @@
     word-break: keep-all;
 }
 
+@media (max-width: 402px) {
+    #project .lune-case #lune-title > img {
+        height: 56px;
+        max-width: 100%;
+    }
+}
+
 #project .lune-case #lune-system-title {
     padding-right: 0;
     transform: none;
