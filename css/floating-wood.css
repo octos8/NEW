@@ -8,7 +8,7 @@
     user-select: none;
 }
 
-/* Put readable content above the wood, keeping empty space draggable. */
+/* Keep readable content above the decorative wood. */
 .about-section .about-inner,
 .contact-section .contact-inner {
     position: relative;
@@ -27,16 +27,16 @@
     --wood-drift-x: -12px;
     --wood-drift-y: -18px;
     position: absolute;
-    top: calc(30% - var(--wood-size) * .5);
-    left: calc(100% - 24px - var(--wood-size));
+    top: calc(22% - var(--wood-size) * .5);
+    left: calc(9.5% - var(--wood-size) * .5);
     width: var(--wood-size);
     height: var(--wood-size);
     background: url('../img/floating-wood.svg') center / contain no-repeat;
     filter: drop-shadow(5px 10px 5px #8d784520)
         drop-shadow(12px 22px 16px #8d784518);
     opacity: 1;
-    animation: floating-wood-drift 24s ease-in-out infinite;
-    animation-delay: -4s;
+    transform: var(--wood-rest-transform);
+    animation: floating-wood-drift 28s ease-in-out infinite;
     animation-play-state: var(--wood-play-state, running);
     will-change: transform;
     pointer-events: auto;
@@ -53,27 +53,18 @@
     --wood-size: 135px;
     --wood-rest-transform: rotate(12deg);
     --wood-drift-x: 12px;
-    top: calc(50% - var(--wood-size) * .5);
-    left: calc(100% - clamp(100px, 9vw, 170px) - var(--wood-size));
-    animation-duration: 28s;
-    animation-delay: -10s;
+    animation-duration: 32s;
+    top: calc(84.5% - var(--wood-size) * .5);
+    left: calc(30.5% - var(--wood-size) * .5);
 }
 
 .floating-wood-piece:nth-child(3) {
     --wood-size: 189px;
     --wood-rest-transform: rotate(165deg);
     --wood-drift-y: 18px;
-    top: calc(73% - var(--wood-size) * .5);
-    animation-duration: 32s;
-    animation-delay: -18s;
-}
-
-.floating-wood-piece.is-floating-placed {
-    animation-name: floating-wood-drift;
-    animation-duration: 24s;
-    animation-delay: 0s;
-    animation-direction: normal;
-    animation-timing-function: ease-in-out;
+    animation-duration: 36s;
+    top: calc(45.7% - var(--wood-size) * .5);
+    left: calc(92.5% - var(--wood-size) * .5);
 }
 
 @keyframes floating-wood-drift {
@@ -82,11 +73,11 @@
     }
     35% {
         transform: translate(var(--wood-drift-x), var(--wood-drift-y))
-            var(--wood-rest-transform) rotate(14deg);
+            var(--wood-rest-transform) rotate(8deg);
     }
     70% {
         transform: translate(calc(var(--wood-drift-x) * .35), calc(var(--wood-drift-y) * .8))
-            var(--wood-rest-transform) rotate(-10deg);
+            var(--wood-rest-transform) rotate(-6deg);
     }
 }
 

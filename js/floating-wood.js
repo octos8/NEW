@@ -46,8 +46,8 @@
             piece.classList.remove('is-dragging');
             // Start a fresh float at the drop position, retaining its rotation.
             const rect = piece.getBoundingClientRect();
-            const driftX = rect.left + rect.width / 2 < layer.clientWidth / 2 ? 48 : -48;
-            const driftY = rect.top + rect.height / 2 < layer.clientHeight / 2 ? 36 : -36;
+            const driftX = rect.left + rect.width / 2 < layer.clientWidth / 2 ? 12 : -12;
+            const driftY = rect.top + rect.height / 2 < layer.clientHeight / 2 ? 18 : -18;
             piece.style.setProperty('--wood-rest-transform', piece.style.transform);
             piece.style.setProperty('--wood-drift-x', `${driftX}px`);
             piece.style.setProperty('--wood-drift-y', `${driftY}px`);

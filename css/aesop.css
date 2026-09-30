@@ -2807,3 +2807,47 @@
     width: 23%;
     right: 6%;
 }
+
+/* Fit single-line typography to the available width without horizontal scrolling. */
+#project .aesop-type-scale {
+    display: block;
+    container-type: inline-size;
+    --type-label-size: min(12px, 1.15cqw);
+}
+
+#project .aesop-typography .aesop-type-scale .aesop-type-row {
+    grid-template-columns: minmax(0, 1fr) min(168px, 22cqw) min(60px, 5cqw) min(88px, 9cqw);
+    column-gap: min(12px, .75cqw);
+}
+
+#project .aesop-type-caption {
+    padding-bottom: 12px;
+    margin-top: 32px;
+    font-size: clamp(14px, 2cqw, 20px);
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: left;
+}
+
+#project .aesop-case .aesop-type-head p {
+    font-weight: 700;
+}
+
+#project .aesop-case .aesop-type-row p {
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+#project .aesop-case .aesop-type-row .aesop-type-sample {
+    font-size: min(var(--sample-size), var(--sample-fit-size));
+}
+
+#project .aesop-type-row:nth-child(1) { --sample-fit-size: 2.5cqw; }
+#project .aesop-type-row:nth-child(2) { --sample-fit-size: 1.987cqw; }
+#project .aesop-type-row:nth-child(3) { --sample-fit-size: 1.603cqw; }
+#project .aesop-type-row:nth-child(4) { --sample-fit-size: 1.282cqw; }
+#project .aesop-type-row:nth-child(5),
+#project .aesop-type-row:nth-child(6) { --sample-fit-size: 1.026cqw; }
+#project .aesop-type-row:nth-child(7) { --sample-fit-size: .833cqw; }
+#project .aesop-type-row:nth-child(8) { --sample-fit-size: .641cqw; }
