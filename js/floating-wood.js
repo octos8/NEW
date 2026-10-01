@@ -1,10 +1,9 @@
 /* Show the viewport decoration between HOME and POPUP, and within CONTACT. */
 (() => {
     const layer = document.querySelector('.floating-wood');
-    const boundary = document.querySelector('#popup');
+    const boundary = document.querySelector('#detail');
     const home = document.querySelector('#home');
     const contact = document.querySelector('#contact');
-    const skills = document.querySelector('.skills-section');
     if (!layer || !boundary || !home) return;
 
     const pieces = [...layer.querySelectorAll('.floating-wood-piece')];
@@ -70,6 +69,13 @@
         });
     }, { passive: true });
 
+    // Each overlapping page needs decorations inside its own stacking context.
+    const panelLayers = [...document.querySelectorAll('#about-me > .profile-story, #about-me > .skills-section')].map(panel => {
+        const decoration = layer.cloneNode(true);
+        decoration.classList.add('floating-wood-panel');
+        panel.prepend(decoration);
+        return { panel, decoration, copies: [...decoration.querySelectorAll('.floating-wood-piece')] };
+    });
     let frame = 0;
     const update = () => {
         frame = 0;
@@ -83,10 +89,7 @@
                 bottom = Math.min(height, rect.bottom);
             }
         }
-        const skillsRect = skills?.getBoundingClientRect();
-        const mobileSkillsVisible = window.innerWidth <= 768 && skillsRect &&
-            skillsRect.top < height && skillsRect.bottom > 0;
-        const visible = bottom > top && !mobileSkillsVisible;
+        const visible = bottom > top;
         // Feather section boundaries so a block never ends at a hard horizontal cut.
         const feather = Math.min(160, height * .2, Math.max(0, bottom - top) / 2);
         const fadeTop = top > 0 ? top + feather : 0;
@@ -97,6 +100,21 @@
         layer.style.clipPath = `inset(${top}px 0 ${height - bottom}px 0)`;
         layer.style.visibility = visible ? 'visible' : 'hidden';
         layer.style.setProperty('--wood-play-state', visible ? 'running' : 'paused');
+        panelLayers.forEach(({ panel, decoration, copies }) => {
+            const rect = panel.getBoundingClientRect();
+            const panelTop = clamp(Math.max(top, rect.top), 0, height);
+            const panelBottom = clamp(Math.min(bottom, rect.bottom), 0, height);
+            const shown = visible && panelBottom > panelTop;
+            decoration.style.clipPath = `inset(${panelTop}px 0 ${height - panelBottom}px 0)`;
+            decoration.style.visibility = shown ? 'visible' : 'hidden';
+            decoration.style.setProperty('--wood-play-state', shown ? 'running' : 'paused');
+            copies.forEach((copy, index) => {
+                copy.style.cssText = pieces[index].style.cssText;
+                const originalAnimation = pieces[index].getAnimations()[0];
+                const copyAnimation = copy.getAnimations()[0];
+                if (originalAnimation && copyAnimation) copyAnimation.currentTime = originalAnimation.currentTime;
+            });
+        });
     };
     const schedule = () => {
         if (!frame) frame = requestAnimationFrame(update);

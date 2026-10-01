@@ -90,48 +90,70 @@ document.addEventListener('DOMContentLoaded', () => {
         heroScrollFrame = requestAnimationFrame(waitForHome);
     };
 
-    /* HEADER MENU POPUP */
+    /* Collapse the header after HOME; expand the same navigation sideways. */
+    const header = document.querySelector('.site-header');
     const navToggle = document.querySelector('.nav-toggle');
-    const navPopup = document.querySelector('#nav-popup');
     const siteNav = document.querySelector('.site-nav');
+    const homeSection = document.querySelector('#home');
     const mobileMenu = window.matchMedia('(max-width: 768px)');
+    let navOpen = false;
+    let navCompact = false;
+    let navFrame = 0;
 
-    const closeNav = () => {
-        if (!navPopup?.open) return;
-        navPopup.close();
-        navToggle?.setAttribute('aria-expanded', 'false');
+    const renderNav = () => {
+        header?.classList.toggle('is-compact', navCompact);
+        header?.classList.toggle('is-menu-open', navOpen);
+        const visible = !navCompact || navOpen;
+        if (siteNav) {
+            siteNav.inert = !visible;
+            siteNav.setAttribute('aria-hidden', String(!visible));
+        }
+        navToggle?.setAttribute('aria-expanded', String(visible));
+        navToggle?.setAttribute('aria-label', navOpen ? '메뉴 닫기' : '메뉴 열기');
     };
-
-    // Keep one navigation list and move it into the dialog only on mobile.
+    const closeNav = () => {
+        if (navCompact && siteNav?.contains(document.activeElement)) {
+            navToggle?.focus({ preventScroll: true });
+        }
+        navOpen = false;
+        renderNav();
+    };
     const syncNavLayout = () => {
-        if (!navPopup || !siteNav) return;
-        closeNav();
-        if (mobileMenu.matches) {
-            navPopup.append(siteNav);
-        } else {
-            navPopup.before(siteNav);
-            if (document.activeElement === navToggle) {
-                siteNav.querySelector('a')?.focus({ preventScroll: true });
+        navFrame = 0;
+        const nextCompact = mobileMenu.matches || (homeSection?.getBoundingClientRect().bottom ?? 0) <= 72;
+        if (nextCompact !== navCompact) {
+            navCompact = nextCompact;
+            closeNav();
+            if (!navCompact && document.activeElement === navToggle) {
+                siteNav?.querySelector('a')?.focus({ preventScroll: true });
             }
         }
+        renderNav();
     };
-    syncNavLayout();
-    mobileMenu.addEventListener('change', syncNavLayout);
-
+    const scheduleNav = () => {
+        if (!navFrame) navFrame = requestAnimationFrame(syncNavLayout);
+    };
     navToggle?.addEventListener('click', () => {
-        if (!mobileMenu.matches || !navPopup || navPopup.open) return;
-        navPopup.showModal();
-        navToggle.setAttribute('aria-expanded', 'true');
+        navOpen = !navOpen;
+        renderNav();
     });
-    navPopup?.querySelector('.nav-close')?.addEventListener('click', closeNav);
-    navPopup?.addEventListener('cancel', event => {
-        event.preventDefault();
-        closeNav();
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && navOpen) {
+            closeNav();
+            navToggle?.focus({ preventScroll: true });
+        }
     });
-    navPopup?.addEventListener('close', () => {
-        // Do not overwrite the state if the menu was already reopened.
-        if (!navPopup.open) navToggle?.setAttribute('aria-expanded', 'false');
+    document.addEventListener('pointerdown', event => {
+        if (navOpen && !header?.contains(event.target)) closeNav();
     });
+    header?.addEventListener('focusout', event => {
+        if (navOpen && !header.contains(event.relatedTarget)) closeNav();
+    });
+    window.addEventListener('scroll', scheduleNav, { passive: true });
+    window.addEventListener('resize', scheduleNav);
+    window.addEventListener('pageshow', scheduleNav);
+    mobileMenu.addEventListener('change', syncNavLayout);
+    syncNavLayout();
 
     /* HEADER NAV */
     const navLinks = document.querySelectorAll('.nav-list a');
@@ -215,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
 
-            document.querySelectorAll('.profile-side-label, .profile-left, .profile-info, .profile-identity > h3, .profile-details, .education-info, .certification-info, .skills-heading, .skill-menu, .poster-heading').forEach(target => {
+            document.querySelectorAll('.profile-left, .profile-info, .profile-identity > h3, .profile-details, .education-info, .certification-info, .skills-heading, .skill-menu, .poster-heading, .banner-heading').forEach(target => {
                 if (target.classList.contains('about-reveal-ready')) return;
                 if (target.matches('.profile-details')) {
                     target.querySelectorAll(':scope > div').forEach((item, index) => {
@@ -489,16 +511,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     const bannerSwiper = new Swiper('.banner-swiper', {
+        direction: 'horizontal',
+        effect: 'slide',
         slidesPerView: 1,
         slidesPerGroup: 1,
         spaceBetween: 24,
         roundLengths: true,
         loop: true,
-        speed: reducedMotion ? 0 : 900,
+        speed: reducedMotion ? 0 : 1100,
         grabCursor: true,
         noSwiping: false,
         autoplay: reducedMotion ? false : {
             delay: 2500,
+            reverseDirection: false,
             disableOnInteraction: false,
             pauseOnMouseEnter: false
         },
@@ -507,6 +532,22 @@ document.addEventListener('DOMContentLoaded', () => {
             clickable: true,
         },
     });
+
+    // Anchor pagination below the image, above the two-column caption.
+    const bannerStation = document.querySelector('.banner-swiper');
+    const positionBannerPagination = () => {
+        const image = bannerSwiper.slides[bannerSwiper.activeIndex]?.querySelector('img');
+        if (image && bannerStation) {
+            bannerStation.style.setProperty('--banner-photo-height', `${image.getBoundingClientRect().height}px`);
+        }
+    };
+    bannerSwiper.on('slideChange', positionBannerPagination);
+    bannerSwiper.on('resize', positionBannerPagination);
+    bannerStation?.querySelectorAll('img').forEach(image => {
+        image.addEventListener('load', positionBannerPagination);
+        if ('ResizeObserver' in window) new ResizeObserver(positionBannerPagination).observe(image);
+    });
+    positionBannerPagination();
 
     // Keep the first banner in place until the carousel enters the viewport.
     if (!reducedMotion && 'IntersectionObserver' in window) {

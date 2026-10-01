@@ -23,11 +23,8 @@
                 panel.removeAttribute('aria-hidden');
                 return;
             }
-            const local = position - index;
-            const enter = index === 0 ? 1 : clamp(local / .22);
-            const leave = index === panels.length - 1 ? 0 : clamp((local - .78) / .22);
-            panel.style.transform = `translateX(${(1 - enter) * 100 - leave * 100}%)`;
-            panel.style.opacity = index === active ? Math.min(enter, 1 - leave) : 0;
+            panel.style.transform = 'none';
+            panel.style.opacity = index === active ? '1' : '0';
             panel.style.visibility = index === active ? 'visible' : 'hidden';
             panel.setAttribute('aria-hidden', String(index !== active));
         });

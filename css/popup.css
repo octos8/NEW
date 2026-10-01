@@ -2,6 +2,7 @@
 /* 글자와 간격은 px. 공통 값은 common.css의 :root에서 수정합니다. */
 
 .popup-section {
+    --popup-circle-color: #f3eee7;
     background: transparent;
     position: relative;
     width: 100%;
@@ -163,7 +164,7 @@
     width: var(--popup-circle-size);
     height: var(--popup-circle-size);
     border-radius: 50%;
-    background: #f3eee7;
+    background: var(--popup-circle-color);
     transform: translate(50%, -50%);
     pointer-events: none;
 }
@@ -401,7 +402,7 @@
     left: 50%;
     display: grid;
     place-items: center;
-    width: clamp(96px, 9vw, 140px);
+    width: clamp(84px, 8vw, 124px);
     aspect-ratio: 1;
     border: 1px solid #fff;
     border-radius: 50%;
@@ -540,6 +541,7 @@
 .popup-animated-title > span:nth-child(3) { --letter-delay: .18s; }
 .popup-animated-title > span:nth-child(4) { --letter-delay: .27s; }
 .popup-animated-title > span:nth-child(5) { --letter-delay: .36s; }
+.popup-animated-title > span:nth-child(6) { --letter-delay: .45s; }
 
 .popup-animated-title.is-bounce-ready > span {
     opacity: 0;
@@ -591,6 +593,7 @@
 
 #popup .popup-heading h2 {
     color: var(--black);
+    letter-spacing: 0.02em;
 }
 
 #popup .popup-heading .section-summary {
@@ -621,4 +624,114 @@
         display: none;
     }
 
+}
+
+/* Full-screen centered opening, matching the About Me background. */
+#popup.popup-section {
+    padding-top: 0;
+    background: #fcfaf7;
+}
+
+#popup .section-heading.popup-heading {
+    --popup-circle-size: min(420px, 42svh, calc(100vw - 32px));
+    --popup-title-size: clamp(48px, 7vw, 128px);
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    min-height: 100svh;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#popup .popup-heading::before {
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%);
+}
+
+#popup .popup-heading h2 {
+    grid-area: 1 / 1;
+    margin: 0;
+    font-size: var(--popup-title-size);
+    line-height: 1;
+    text-align: center;
+}
+
+#popup .popup-heading .visual-works-label {
+    position: absolute;
+    top: auto;
+    bottom: calc(50% + var(--popup-title-size) / 2 + 32px);
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    margin: 0;
+    align-self: auto;
+}
+
+#popup .section-heading.popup-heading .section-summary {
+    position: absolute;
+    top: calc(50% + var(--popup-title-size) / 2 + 24px);
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    align-self: auto;
+    text-align: center;
+    white-space: normal;
+}
+
+/* Seamless brand strip travelling from left to right. */
+.popup-brand-band {
+    position: relative;
+    margin-top: 42px;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    overflow: hidden;
+    border-block: 2px solid var(--popup-circle-color);
+    padding-block: clamp(14px, 1.85vw, 24px);
+}
+.popup-brand-track {
+    display: flex;
+    width: max-content;
+    animation: popup-brands-right 26s linear infinite;
+}
+.popup-brand-group {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 100vw;
+    gap: clamp(24px, 4vw, 72px);
+    padding-left: clamp(24px, 4vw, 72px);
+    font-size: clamp(16px, 1.8vw, 28px);
+    font-weight: 500;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+.popup-brand-group > span {
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(24px, 4vw, 72px);
+}
+.popup-brand-group > span::after { content: '·'; }
+@keyframes popup-brands-right {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .popup-brand-track { animation: none; }
+}
+
+/* Leave room for the brand strip and the complete popup images together. */
+#popup .popup-layout {
+    margin-top: 24px;
+}
+
+#popup .popup-slide > .project-photo,
+#popup .popup-slide > .popup-image-button {
+    width: min(94%, calc((100svh - 184px) * .666667));
+    margin-inline: auto;
 }

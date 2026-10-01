@@ -126,6 +126,7 @@
 
 #about-me {
     scroll-margin-top: 0;
+    background-color: #fcfaf7;
 }
 
 .profile-chapter {
@@ -376,6 +377,7 @@
 
 .skills-section {
     max-width: 1716px;
+    background-color: #fff;
     margin-inline: auto;
     padding-inline: var(--page-gutter);
     width: 100%;
@@ -522,6 +524,7 @@
 .profile-area .profile-timeline h3 > .timeline-heading-text {
     display: block;
     font-size: inherit;
+    word-spacing: 0.2em;
 }
 
 .profile-timeline article.about-reveal-ready > h3 > .timeline-heading-text {
@@ -578,9 +581,11 @@
 
 .about-title {
     margin: 0;
+    position: relative;
+    left: 12px;
     font-weight: var(--fw2);
     line-height: 1;
-    letter-spacing: -0.64px;
+    letter-spacing: 0.03em;
     color: var(--gray-900);
     white-space: normal;
     font-size: calc(var(--fs-display) * 1.125);
@@ -1271,8 +1276,8 @@
     margin: 0;
     padding: 0 0 32px;
     background: transparent;
-    font-size: clamp(24px, 4.6vw, 112px);
-    font-size: min(10.5cqw, 112px);
+    font-size: clamp(20px, 3vw, 64px);
+    font-size: min(6.8cqw, 64px);
     font-family: 'Pretendard', sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -2342,7 +2347,7 @@
         padding-bottom: 0;
     }
 
-    .about-inner > .skills-section {
+    #about-me > .skills-section {
         margin-top: 0;
         padding-top: 2rem;
     }
@@ -2378,7 +2383,7 @@
     }
 }
 
-/* Pinned About Me title with one scroll-driven story at a time. */
+/* Centered About Me title with one scroll-driven story at a time. */
 .profile-story-stage {
     display: grid;
     grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
@@ -2387,14 +2392,14 @@
     padding-right: var(--page-gutter);
 }
 
-.profile-story .profile-page-heading {
+#about-me .profile-page-heading {
     min-height: 0;
     margin: 0;
     padding-block: 80px;
     padding-right: 0;
 }
 
-.profile-story .profile-page-heading > .profile-side-label {
+#about-me .profile-page-heading > .profile-side-label {
     font-size: clamp(48px, 7vw, 128px);
     white-space: nowrap;
     opacity: 1;
@@ -2402,26 +2407,26 @@
     transition: none;
 }
 
-.profile-story .profile-page-heading > .profile-side-label.about-reveal-ready {
-    opacity: 0;
-    translate: clamp(-90px, -6vw, -36px) 0;
-    transition: opacity 1.2s ease, translate 1.8s cubic-bezier(.22, 1, .36, 1);
+#about-me .profile-page-heading > .profile-side-label.about-reveal-ready {
+    opacity: 1;
+    translate: none;
+    transition: none;
 }
 
-.profile-story .profile-page-heading > .profile-side-label.about-reveal-ready.about-revealed {
+#about-me .profile-page-heading > .profile-side-label.about-reveal-ready.about-revealed {
     opacity: 1;
     translate: 0 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .profile-story .profile-page-heading > .profile-side-label.about-reveal-ready {
+    #about-me .profile-page-heading > .profile-side-label.about-reveal-ready {
         opacity: 1;
         translate: none;
         transition: none;
     }
 }
 
-.profile-story .profile-chapter-label {
+#about-me .profile-chapter-label {
     position: static;
     margin-bottom: 32px;
 }
@@ -2519,16 +2524,16 @@
         gap: 16px;
     }
 
-    .profile-story .profile-page-heading > .profile-side-label {
+    #about-me .profile-page-heading > .profile-side-label {
         font-size: clamp(26px, 6vw, 46px);
     }
 
-    .profile-story .profile-chapter-label {
+    #about-me .profile-chapter-label {
         font-size: 10px;
         margin-bottom: 24px;
     }
 
-    .profile-story .profile-page-heading > .section-summary {
+    #about-me .profile-page-heading > .section-summary {
         margin-left: 0;
         font-size: 12px;
     }
@@ -2589,7 +2594,311 @@
         padding-inline: var(--page-gutter);
     }
 
-    .profile-story .profile-page-heading {
+    #about-me .profile-page-heading {
         padding-inline: 0;
+    }
+}
+
+/* Center the About Me heading and its complete circular backdrop. */
+#about-me.profile-chapter {
+    padding-top: 0;
+}
+
+#about-me .profile-story-stage {
+    grid-template-columns: minmax(0, 1fr);
+    align-content: center;
+    gap: clamp(24px, 4vh, 48px);
+    padding: 32px var(--page-gutter);
+}
+
+#about-me .profile-page-heading {
+    --profile-circle-size: min(420px, 42svh, calc(100vw - 32px));
+    --about-title-size: clamp(48px, 7vw, 128px);
+    min-height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#about-me .profile-page-heading > .profile-side-label {
+    grid-area: 1 / 1;
+    font-size: var(--about-title-size);
+    letter-spacing: 0.02em;
+    line-height: 1;
+}
+
+#about-me .profile-page-heading > .profile-chapter-label {
+    position: absolute;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: calc(50% + var(--about-title-size) / 2 + 32px);
+    margin: 0;
+}
+
+#about-me .profile-page-heading > .section-summary {
+    position: absolute;
+    text-align: center;
+    top: calc(50% + var(--about-title-size) / 2 + 24px);
+    margin: 0;
+}
+
+#about-me .profile-page-heading > .profile-story-intro {
+    position: absolute;
+    top: calc(50% + var(--about-title-size) / 2 + 72px);
+    margin: 0;
+    padding-inline: 16px;
+}
+
+#about-me .profile-page-heading::before {
+    left: 50%;
+    transform-origin: center bottom;
+    animation: about-circle-bounce 1.4s linear infinite;
+}
+
+@keyframes about-circle-bounce {
+    0%, 100% {
+        transform: translate(-50%, -50%);
+        animation-timing-function: cubic-bezier(0, 0, .35, 1);
+    }
+    50% {
+        transform: translate(-50%, calc(-50% - 32px));
+        animation-timing-function: cubic-bezier(.65, 0, 1, 1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #about-me .profile-page-heading::before {
+        animation: none;
+    }
+}
+
+#about-me .profile-page-heading > .section-summary,
+#about-me .profile-story-intro {
+    margin-inline: auto;
+}
+
+#about-me .profile-collaboration {
+    max-width: 900px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+#about-me .profile-collaboration-cards :is(h3, p) {
+    margin-inline: auto;
+    text-align: center;
+}
+
+#about-me > .profile-area {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+#about-me .profile-left {
+    position: relative;
+    top: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 500px) max-content;
+    align-items: end;
+    gap: clamp(16px, 3vw, 48px);
+    width: 100%;
+    max-width: 820px;
+    margin-inline: auto;
+}
+
+#about-me .profile-typewriter {
+    width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 0 0 4px;
+    font-family: var(--font-main);
+    font-size: 14px;
+    line-height: 1.9;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.profile-typewriter p { margin: 0; }
+.profile-typewriter .typing-accessible {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+.profile-typewriter .typing-character { opacity: 0; }
+
+@media (max-width: 600px) {
+    #about-me .profile-left { gap: 12px; }
+    #about-me .profile-typewriter { font-size: 11px; }
+    #about-me .profile-left .profile-photo {
+        height: auto;
+        aspect-ratio: 3 / 4;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .profile-typewriter .typing-character,
+    .profile-typewriter.is-typing .typing-character {
+        opacity: 1;
+        animation: none;
+    }
+}
+
+/* Portrait and typing on the left, three static introductions on the right. */
+#about-me .profile-story-stage {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(32px, 5vw, 88px);
+    padding: 76px var(--page-gutter) 96px;
+}
+#about-me .profile-story-stage .profile-area {
+    display: block;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    transform: translateY(-24px);
+}
+#about-me .profile-story-stage .profile-left {
+    width: 85%;
+    max-width: none;
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(12px, 1.5vw, 24px);
+    margin: 0;
+}
+#about-me .profile-story-stage .profile-photo {
+    height: clamp(260px, 34vw, 480px);
+    margin: 0;
+}
+#about-me .profile-story-stage .profile-typewriter {
+    font-size: 16px;
+    grid-column: 1;
+    grid-row: 2;
+    align-self: end;
+    justify-self: start;
+    margin: 0;
+    padding: 0;
+}
+#about-me .profile-story-stage .profile-collaboration {
+    min-width: 0;
+    margin: 0;
+    text-align: left;
+    overflow: visible;
+}
+#about-me .profile-story-stage .profile-collaboration-cards {
+    display: grid;
+    gap: clamp(28px, 3vw, 48px);
+}
+#about-me .profile-story-stage .profile-collaboration-cards article {
+    grid-area: auto;
+    padding: 0;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    will-change: auto;
+}
+#about-me .profile-story-stage .profile-collaboration-cards h3 {
+    font-size: clamp(20px, 1.7vw, 28px);
+    margin: 0 0 12px;
+    text-align: left;
+    word-spacing: .12em;
+}
+#about-me .profile-story-stage .profile-collaboration-cards p {
+    font-size: clamp(14px, 1.15vw, 18px);
+    line-height: 1.7;
+    margin-inline: 0;
+    text-align: left;
+}
+#about-me .profile-story-stage .profile-collaboration-cards .profile-story-detail {
+    font-size: clamp(13px, .95vw, 16px);
+    margin-top: 10px;
+}
+@media (max-width: 900px) {
+    #about-me .profile-story-stage {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 48px;
+    }
+    #about-me .profile-story-stage .profile-left { max-width: 600px; }
+    #about-me .profile-story-stage .profile-photo { height: clamp(220px, 45vw, 380px); }
+}
+@media (max-width: 600px) {
+    #about-me .profile-story-stage { padding: 48px 16px 64px; }
+    #about-me .profile-story-stage .profile-photo { height: clamp(180px, 48vw, 280px); aspect-ratio: auto; }
+}
+
+/* The profile page scrolls over the pinned About Me opening screen. */
+#about-me.profile-chapter > .profile-page-heading {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+#about-me.profile-chapter > .profile-story {
+    position: sticky;
+    top: var(--profile-pin-top, 0px);
+    z-index: 2;
+    min-height: 100vh;
+    min-height: 100svh;
+    background: #fcfaf7;
+    box-shadow: 0 -18px 48px -28px rgb(66 49 31 / 20%);
+}
+
+#about-me.profile-chapter > .profile-story > .profile-story-stage {
+    min-height: 100vh;
+    min-height: 100svh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #about-me.profile-chapter > .profile-page-heading,
+    #about-me.profile-chapter > .profile-story {
+        position: relative;
+        top: auto;
+    }
+}
+
+#about-me.profile-chapter > .skills-section {
+    position: relative;
+    z-index: 3;
+    min-height: 100vh;
+    min-height: 100svh;
+    max-width: none;
+    background: #fff;
+    box-shadow: 0 -18px 48px -28px rgb(66 49 31 / 20%);
+}
+
+/* Align the introduction title with the centered workspace image's left edge. */
+.about-heading.about-heading-bilingual > .about-title {
+    left: 64px;
+    padding-left: max(0px, calc((100% - clamp(24px, 5vw, 80px)) / 4 - 340px));
+    text-align: left;
+}
+@media (max-width: 768px) {
+    .about-heading.about-heading-bilingual > .about-title {
+        padding-left: max(0px, calc((100% - 680px) / 2));
+    }
+}
+
+.about-title .about-title-word {
+    display: inline-block;
+}
+.about-title.words-ready .about-title-word {
+    opacity: 0;
+    transform: translateX(56px);
+}
+.about-title.words-visible .about-title-word {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity .85s ease, transform .85s cubic-bezier(.22, 1, .36, 1);
+    transition-delay: var(--word-delay, 0s);
+}
+@media (prefers-reduced-motion: reduce) {
+    .about-title.words-ready .about-title-word {
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
 }

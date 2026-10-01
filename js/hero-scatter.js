@@ -86,14 +86,14 @@
         }
         const scroll = -home.getBoundingClientRect().top;
         const progress = clamp(scroll / geometry.distance);
-        // Blend the wooden tint into ABOUT's white background as HOME releases.
+        // Finish on a full white screen before releasing HOME to the introduction.
         const active = scroll > 0 && home.getBoundingClientRect().bottom > 0;
         layer.hidden = !active;
         photo.style.opacity = String(1 - smooth(progress / .18));
         if (!active) return;
         layer.style.opacity = String(smooth(progress / .055));
         fill.style.opacity = String(smooth((progress - .22) / .76));
-        fill.style.setProperty('--hero-about-blend', String(smooth((scroll - geometry.release) / (geometry.height * 1.1))));
+        fill.style.setProperty('--hero-about-blend', String(smooth((scroll - geometry.release * .48) / (geometry.release * .3))));
         blocks.forEach(block => {
             const p = driftEase((progress - .025 - block.delay) / block.duration);
             const startX = geometry.left + block.x * geometry.scale;
@@ -121,7 +121,7 @@
             schedule();
             return;
         }
-        home.style.setProperty('--hero-scatter-distance', `${Math.round(Math.max(380, Math.min(680, window.innerHeight * .72)))}px`);
+        home.style.setProperty('--hero-scatter-distance', `${Math.round(Math.max(380, Math.min(680, window.innerHeight * .72)) * 1.9)}px`);
         const rect = photo.getBoundingClientRect();
         const stageRect = stage.getBoundingClientRect();
         const scale = rect.width / 1066;
@@ -129,8 +129,8 @@
             left: rect.left - stageRect.left, top: rect.top - stageRect.top, scale,
             width: stage.clientWidth, height: stage.clientHeight,
             release: Math.max(1, home.offsetHeight - stage.offsetHeight),
-            // Complete the scatter before the sticky stage is released.
-            distance: Math.max(1, (home.offsetHeight - stage.offsetHeight) * .9)
+            // Reserve the final stretch for a completely white viewport.
+            distance: Math.max(1, (home.offsetHeight - stage.offsetHeight) * .65)
         };
         blocks.forEach(block => {
             block.element.style.width = `${block.width * scale}px`;

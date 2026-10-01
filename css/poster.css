@@ -8,6 +8,11 @@
 .poster-section {
     position: relative;
     width: 100%;
+    background-color: #fff;
+    background-image:
+        linear-gradient(to right, #fcfaf7 1.5px, transparent 1.5px),
+        linear-gradient(to bottom, #fcfaf7 1.5px, transparent 1.5px);
+    background-size: 48px 48px;
     padding: 96px 0 160px;
     overflow: clip;
 }
@@ -527,10 +532,13 @@
 
 #poster .poster-heading h2 {
     color: var(--black);
+    font-size: clamp(48px, 7vw, 128px);
+    white-space: nowrap;
+    letter-spacing: 0.02em;
 }
 
-#poster .poster-heading .section-summary {
-    font-size: clamp(10px, 1.1vw, 16px) !important;
+#poster .section-heading.poster-heading .section-summary {
+    font-size: clamp(12px, 1.2vw, 18px) !important;
     font-weight: 400;
     line-height: 1.8;
     white-space: normal;
@@ -612,7 +620,7 @@
     left: 50%;
     display: grid;
     place-items: center;
-    width: clamp(96px, 9vw, 140px);
+    width: clamp(84px, 8vw, 124px);
     aspect-ratio: 1;
     border: 1px solid #fff;
     border-radius: 50%;
@@ -664,7 +672,7 @@
         max-width: 100%;
         margin-left: 0;
         margin-right: clamp(12px, 1.5vw, 28px);
-        font-size: clamp(10px, 1.2vw, 18px) !important;
+        font-size: clamp(12px, 1.2vw, 18px) !important;
         font-weight: 400;
         line-height: 1.8;
         white-space: nowrap;

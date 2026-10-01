@@ -63,27 +63,24 @@
 <body>
     <header class="site-header">
         <div class="header-inner">
-            <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-popup" aria-haspopup="dialog">
+            <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
-            <nav class="site-nav" aria-label="주요 메뉴">
+            <nav class="site-nav" id="site-menu" aria-label="주요 메뉴">
                 <ul class="nav-list">
                     <li><a href="#home">HOME</a></li>
                     <li><a href="#about-me">ABOUT ME</a></li>
+                    <li><a href="#detail">DETAIL</a></li>
                     <li><a href="#popup">POPUP</a></li>
                     <li><a href="#poster">POSTER</a></li>
                     <li><a href="#banner">BANNER</a></li>
-                    <li><a href="#detail">DETAIL</a></li>
                     <li><a href="#project">PROJECT</a></li>
                     <li><a href="#contact">CONTACT</a></li>
                 </ul>
             </nav>
-            <dialog class="nav-popup" id="nav-popup" aria-label="전체 메뉴">
-                <button class="nav-close" type="button" aria-label="메뉴 닫기" autofocus></button>
-            </dialog>
         </div>
     </header>
     <main>
@@ -121,40 +118,56 @@
         <section id="about" class="about-section">
             <div class="about-inner common-frame">
                 <header id="about-header" class="about-heading about-heading-bilingual">
-                    <h2 class="about-title">Structure-first design</h2>
+                    <h2 class="about-title">STRUCTURE FIRST DESIGN</h2>
                     <div class="about-intro">
                         <figure class="about-workspace">
                             <img src="./img/profile-workspace.jpg" alt="레이아웃과 타이포그래피를 살펴보는 디자인 작업 공간" width="635" height="500" loading="lazy">
                         </figure>
                         <div class="about-intro-korean">
-                            <h3>구조를 생각하는 것에서 디자인을 시작했습니다.</h3>
+                            <h3>구조를 생각하는 것에서<br>디자인을 시작했습니다.</h3>
                             <p>저는 단순히 ‘예쁜 화면’을 만드는 것보다<br>왜? 이 요소가 여기에 있어야 하는지를 먼저 고민합니다.</p>
                         </div>
                     </div>
                 </header>
                 <section id="about-me" class="profile-chapter" aria-labelledby="profile-page-title">
-                  <div class="profile-story">
-                    <div class="profile-story-stage">
                     <header class="profile-page-heading">
                         <div class="visual-works-label profile-chapter-label"><span>01.</span><span>ABOUT ME</span></div>
-                        <h2 id="profile-page-title" class="profile-side-label">About Me</h2>
+                        <h2 id="profile-page-title" class="profile-side-label">ABOUT ME</h2>
                         <p class="section-summary"><strong>함께 더 나은 화면을 만드는 디자이너</strong></p>
                         <p class="profile-story-intro">디자인은 혼자 완성하는 결과물이 아니라,<br>서로 다른 역할이 함께 만들어가는 과정이라고 생각합니다.</p>
                     </header>
+                  <div class="profile-story">
+                    <div class="profile-story-stage">
+                    <div class="profile-area">
+                        <!-- 프로필 사진과 기본 정보 -->
+                        <div class="profile-left">
+                            <div class="profile-portrait">
+                                <figure class="profile-photo">
+                                    <img src="./img/hm3.jpg" alt="웹 퍼블리셔 함국주 프로필">
+                                </figure>
+                            </div>
+                            <div class="profile-summary profile-typewriter">
+                                <p>web publisher · 함 국 주</p>
+                                <p>1996.11.20 / 경기도 광주시</p>
+                            </div>
+                        </div>
+
+                    </div>
+
                     <div class="profile-collaboration">
                         <div class="profile-collaboration-cards">
                             <article>
-                                <h3>공감하는 디자이너</h3>
+                                <h3>01 공감하는 디자이너</h3>
                                 <p>개발자가 구현하기 좋은 구조를 고민하고,<br>기획의 의도를 화면에 담기 위해 소통합니다.</p>
                                 <p class="profile-story-detail">사용자가 필요한 정보를 자연스럽게 찾을 수 있도록 흐름을 정리합니다.<br>화면의 크기와 요소의 상태가 달라져도 의도가 이어지는 디자인을 지향합니다.</p>
                             </article>
                             <article>
-                                <h3>시스템 중심의 사고</h3>
+                                <h3>02 시스템 중심의 사고</h3>
                                 <p>Figma 컴포넌트와 일관된 디자인<br class="profile-mobile-break"> 규칙으로<br class="profile-desktop-break"> 화면마다 이어지는<br class="profile-mobile-break"> 사용자 경험을 설계합니다.</p>
                                 <p class="profile-story-detail">타이포그래피와 간격, 색상에 공통 기준을 세우고 반복되는 요소를 정리합니다.<br>새로운 화면을 더할 때도 쉽게 이해하고 확장할 수 있는 구조를 고민합니다.</p>
                             </article>
                             <article>
-                                <h3>열린 피드백</h3>
+                                <h3>03 열린 피드백</h3>
                                 <p>다른 관점을 배우고 피드백을 반영하며,<br>더 나은 결과를 함께 찾아갑니다.</p>
                                 <p class="profile-story-detail">의견이 다를 때는 그 이유와 사용자의 필요를 먼저 살펴봅니다.<br>작은 수정도 실제 화면에서 확인하며, 함께 납득할 수 있는 방향으로 다듬어갑니다.</p>
                             </article>
@@ -162,60 +175,6 @@
                     </div>
                     </div>
                   </div>
-                    <div class="profile-area">
-                        <!-- 왼쪽: 스크롤 시 고정되는 프로필 -->
-                        <div class="profile-left">
-                            <div class="profile-portrait">
-                                <figure class="profile-photo">
-                                    <img src="./img/hm3.jpg" alt="웹 퍼블리셔 함국주 프로필">
-                                </figure>
-                            </div>
-                            <div class="profile-summary">
-                                <div class="profile-identity">
-                                    <h3>함국주</h3>
-                                    <p lang="en">WEB PUBLISHER</p>
-                                </div>
-                                <dl class="profile-details">
-                                    <div><dt>생년월일</dt><dd><time datetime="1996-11-20">1996.11.20</time></dd></div>
-                                    <div><dt>주소</dt><dd>경기도 광주시</dd></div>
-                                </dl>
-                            </div>
-                        </div>
-
-                        <!-- 오른쪽: CERTIFICATIONS + EDUCATION -->
-                        <div class="profile-content profile-timeline">
-                            <article class="certification-info">
-                                <h3><span class="timeline-heading-text">Certifications</span></h3>
-                                <ul>
-                                    <li>
-                                        <div><span>웹디자인개발기능사</span><small>2026.10.02</small><span>GTQI 그래픽기술자격 일러스트 1급</span><small>2026.04.17</small></div>
-                                        <span>2026</span>
-                                    </li>
-                                    <li>
-                                        <div><span>GTQ 그래픽기술자격 1급</span><small>2025.11.14</small></div>
-                                        <span>2025</span>
-                                    </li>
-                                    <li>
-                                        <div><span>컴퓨터활용능력 2급</span><small>2018.06.22</small></div>
-                                        <span>2018</span>
-                                    </li>
-                                    <li>
-                                        <div><span>국가공인 한자자격시험 2급</span><small>2017.06.22</small><span>워드프로세서</span><small>2017.03.17</small></div>
-                                        <span>2017</span>
-                                    </li>
-                                </ul>
-                            </article>
-                            <article class="education-info">
-                                <h3><span class="timeline-heading-text">Education</span></h3>
-                                <div>
-                                    <p>웹디자인, 프론트엔드<br>with AI - 취업 실전 트랙_디지털 디자인</p>
-                                    <small>2026.05.26 ~ 2026.10.20</small>
-                                </div>
-                                <span>2026</span>
-                            </article>
-                        </div>
-                    </div>
-                </section>
 
                 <!-- TOOLS & SKILLS -->
                 <section class="skills-section">
@@ -331,6 +290,59 @@
                         </div>
                     </div>
                 </section>
+                </section>
+            </div>
+        </section>
+
+        <div class="detail-popup-transition">
+        <!-- DETAIL -->
+        <section id="detail" class="detail-section">
+            <div class="detail-inner common-frame">
+                <header class="section-heading detail-heading">
+                    <div class="visual-works-label"><span>02.</span><span>VISUAL WORKS</span></div>
+                    <h2>DETAIL</h2>
+                    <p class="section-summary"><span class="summary-wide">제품의 특징과 정보를 흐름에 맞춰 배치해,<br>
+                        <strong>구매의 이유를 설득력 있게 전하는</strong> 상세페이지를 제작했습니다.</span><span class="summary-compact">구매의 이유를 전하는<br>
+                        상세페이지</span></p>
+                </header>
+
+                <div class="detail-list">
+                    <article class="detail-card">
+                        <figure>
+                            <a class="detail-preview" href="./detail-novera.html" target="_blank"
+                                rel="noopener noreferrer" aria-label="NOVERA 전체 상세페이지 보기 (새 탭)">
+                                <img src="./img/novera-detail2.png" alt="NOVERA 상세페이지">
+                                <span class="detail-preview-overlay" aria-hidden="true"><strong>CLICK</strong></span>
+                            </a>
+                        </figure>
+                        <h3>NOVERA</h3>
+                        <p>빛과 사운드의 에너지를 미래적인 비주얼로 구현한 ARC H1 프리미엄 헤드셋 상세페이지</p>
+                    </article>
+
+                    <article class="detail-card">
+                        <figure>
+                            <a class="detail-preview" href="./detail-lune.html" target="_blank"
+                                rel="noopener noreferrer" aria-label="LUNE 전체 상세페이지 보기 (새 탭)">
+                                <img src="./img/lotion-detail1.png" alt="LUNE 상세페이지">
+                                <span class="detail-preview-overlay" aria-hidden="true"><strong>CLICK</strong></span>
+                            </a>
+                        </figure>
+                        <h3>LUNE</h3>
+                        <p>부드러운 빛과 미니멀한 여백으로 표현한 데일리 보습 케어 상세페이지</p>
+                    </article>
+
+                    <article class="detail-card">
+                        <figure>
+                            <a class="detail-preview" href="./detail-meltroom.html" target="_blank"
+                                rel="noopener noreferrer" aria-label="MELTROOM 전체 상세페이지 보기 (새 탭)">
+                                <img src="./img/meltroom-detail1.png" alt="MELTROOM 상세페이지">
+                                <span class="detail-preview-overlay" aria-hidden="true"><strong>CLICK</strong></span>
+                            </a>
+                        </figure>
+                        <h3>MELTROOM</h3>
+                        <p>따뜻한 크림·브라운 색감과 쿠키의 질감으로 한 입의 달콤함을 전하는 상세페이지</p>
+                    </article>
+                </div>
             </div>
         </section>
 
@@ -339,10 +351,21 @@
             <div class="popup-inner common-frame">
                 <header class="section-heading popup-heading">
                     <div class="visual-works-label"><span>02.</span><span>VISUAL WORKS</span></div>
-                    <h2 class="popup-animated-title" aria-label="Popup"><span aria-hidden="true">P</span><span aria-hidden="true">o</span><span aria-hidden="true">p</span><span aria-hidden="true">u</span><span aria-hidden="true">p</span></h2>
+                    <h2 class="popup-animated-title" aria-label="POP-UP"><span aria-hidden="true">P</span><span aria-hidden="true">O</span><span aria-hidden="true">P</span><span aria-hidden="true">-</span><span aria-hidden="true">U</span><span aria-hidden="true">P</span></h2>
                     <p class="section-summary"><span class="summary-wide">500x750px 사이즈에 강렬한 색상과 제품 이미지를 담아,<br>
                         <strong>짧은 순간 시선을 사로잡는</strong> 프로모션 팝업을 제작했습니다.</span></p>
                 </header>
+
+                <div class="popup-brand-band" role="region" aria-label="KFC · Twosome place · Netflix · Olive young · NIKE">
+                    <div class="popup-brand-track" aria-hidden="true">
+                        <div class="popup-brand-group">
+                            <span>KFC</span><span>Twosome place</span><span>Netflix</span><span>Olive young</span><span>NIKE</span>
+                        </div>
+                        <div class="popup-brand-group">
+                            <span>KFC</span><span>Twosome place</span><span>Netflix</span><span>Olive young</span><span>NIKE</span>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="popup-layout">
                     <div class="popup-station swiper popup-image-swiper">
@@ -438,12 +461,14 @@
             </div>
         </section>
 
+        </div>
+
         <!-- POSTER -->
         <section id="poster" class="poster-section">
             <div class="poster-inner common-frame">
                 <header class="section-heading poster-heading">
                     <div class="visual-works-label"><span>02.</span><span>VISUAL WORKS</span></div>
-                    <h2>Poster</h2>
+                    <h2>POSTER</h2>
                     <p class="section-summary"><span class="summary-wide">500x750px 사이즈에 색감과 타이포그래피의 대비를 살려,<br>
                         <strong>브랜드의 개성을 한 장에 담은</strong> 포스터를 제작했습니다.</span></p>
                 </header>
@@ -514,7 +539,7 @@
             <div class="banner-inner common-frame">
                 <header class="section-heading banner-heading">
                     <div class="visual-works-label"><span>02.</span><span>VISUAL WORKS</span></div>
-                    <h2>Banner</h2>
+                    <h2>BANNER</h2>
                     <p class="section-summary"><span class="summary-wide">1920x970px 사이즈에 빛과 색의 대비로 제품을 강조하고,<br>
                         <strong>브랜드의 분위기와 핵심 메시지를 전하는</strong> 배너를 제작했습니다.</span><span class="summary-compact">1920x970px<br>
                         제품을 돋보이게 하는 배너</span></p>
@@ -525,83 +550,32 @@
                             <img src="./img/bulgari-be-2.jpg" alt="Bulgari 이미지">
                             <figcaption class="banner-caption">
                                 <h3>불가리 AURA VELOCÉ 향수</h3>
-                                <p>햇빛과 보랏빛 패브릭으로 향수를 감싸고,<br>부드러운 빛으로 제품의 윤곽을 살렸습니다.<br>여백을 두어 시선이 향수에 머물도록 하고,<br>차분한 색감으로 우아한 분위기를 담았습니다.</p>
+                                <p>부드러운 빛과 보랏빛 패브릭으로<br>향수의 우아하고 차분한 분위기를 담았습니다.</p>
                             </figcaption>
                         </figure>
                         <figure class="swiper-slide banner-slide-medicube">
                             <img src="./img/medicube-be-2.jpg" alt="Medicube 이미지">
                             <figcaption class="banner-caption">
                                 <h3>메디큐브 뷰티 디바이스 프로모션</h3>
-                                <p>선명한 블루와 빛으로 디바이스를 강조하고,<br>제품의 형태가 돋보이도록 대비를 주었습니다.<br>주요 특징과 할인 혜택을 구분해 배치하고,<br>핵심 정보를 빠르게 읽을 수 있게 정리했습니다.</p>
+                                <p>선명한 블루로 디바이스를 강조하고,<br>제품 특징과 할인 혜택을 간결하게 전달했습니다.</p>
                             </figcaption>
                         </figure>
                         <figure class="swiper-slide banner-slide-johnnie-walker">
                             <img src="./img/Johnnie-Walker-be-2.jpg" alt="Johnnie Walker 이미지">
                             <figcaption class="banner-caption">
                                 <h3>조니워커 EMBER CASK</h3>
-                                <p>어두운 배경에 황금빛 불씨를 더하고,<br>빛의 대비로 위스키의 존재감을 살렸습니다.<br>따뜻한 색감으로 깊이 있는 분위기를 만들고,<br>제품에 집중되는 묵직한 인상을 담았습니다.</p>
+                                <p>어두운 배경과 황금빛 불씨의 대비로<br>위스키의 깊이 있고 묵직한 인상을 담았습니다.</p>
                             </figcaption>
                         </figure>
                         <figure class="swiper-slide banner-slide-musinsa">
                             <img src="./img/musinsa-be-2.jpg" alt="Musinsa 이미지">
                             <figcaption class="banner-caption">
                                 <h3>무신사 NEW RELEASE 패션</h3>
-                                <p>사선 구도로 새로운 스타일을 연결하고,<br>이미지에 리듬을 주어 역동성을 살렸습니다.<br>간결한 타이포그래피로 신상품을 강조하고,<br>패션 이미지와 메시지가 함께 읽히게 했습니다.</p>
+                                <p>사선 구도로 스타일의 역동성을 살리고,<br>간결한 타이포그래피로 신상품을 강조했습니다.</p>
                             </figcaption>
                         </figure>
                     </div>
                     <div class="swiper-pagination"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- DETAIL -->
-        <section id="detail" class="detail-section">
-            <div class="detail-inner common-frame">
-                <header class="section-heading detail-heading">
-                    <div class="visual-works-label"><span>02.</span><span>VISUAL WORKS</span></div>
-                    <h2>Detail</h2>
-                    <p class="section-summary"><span class="summary-wide">제품의 특징과 정보를 흐름에 맞춰 배치해,<br>
-                        <strong>구매의 이유를 설득력 있게 전하는</strong> 상세페이지를 제작했습니다.</span><span class="summary-compact">구매의 이유를 전하는<br>
-                        상세페이지</span></p>
-                </header>
-
-                <div class="detail-list">
-                    <article class="detail-card">
-                        <figure>
-                            <a class="detail-preview" href="./detail-novera.html" target="_blank"
-                                rel="noopener noreferrer" aria-label="NOVERA 전체 상세페이지 보기 (새 탭)">
-                                <img src="./img/novera-detail2.png" alt="NOVERA 상세페이지">
-                                <span class="detail-preview-overlay" aria-hidden="true"><strong>CLICK</strong></span>
-                            </a>
-                        </figure>
-                        <h3>NOVERA</h3>
-                        <p>빛과 사운드의 에너지를 미래적인 비주얼로 구현한 ARC H1 프리미엄 헤드셋 상세페이지</p>
-                    </article>
-
-                    <article class="detail-card">
-                        <figure>
-                            <a class="detail-preview" href="./detail-lune.html" target="_blank"
-                                rel="noopener noreferrer" aria-label="LUNE 전체 상세페이지 보기 (새 탭)">
-                                <img src="./img/lotion-detail1.png" alt="LUNE 상세페이지">
-                                <span class="detail-preview-overlay" aria-hidden="true"><strong>CLICK</strong></span>
-                            </a>
-                        </figure>
-                        <h3>LUNE</h3>
-                        <p>부드러운 빛과 미니멀한 여백으로 표현한 데일리 보습 케어 상세페이지</p>
-                    </article>
-
-                    <article class="detail-card">
-                        <figure>
-                            <a class="detail-preview" href="./detail-meltroom.html" target="_blank"
-                                rel="noopener noreferrer" aria-label="MELTROOM 전체 상세페이지 보기 (새 탭)">
-                                <img src="./img/meltroom-detail1.png" alt="MELTROOM 상세페이지">
-                                <span class="detail-preview-overlay" aria-hidden="true"><strong>CLICK</strong></span>
-                            </a>
-                        </figure>
-                        <h3>MELTROOM</h3>
-                        <p>따뜻한 크림·브라운 색감과 쿠키의 질감으로 한 입의 달콤함을 전하는 상세페이지</p>
-                    </article>
                 </div>
             </div>
         </section>
@@ -696,7 +670,7 @@
                     <h3 id="aesop-type-title">Typography</h3>
                     <div class="aesop-type-intro">
                         <p class="aesop-type-name">Pretendard</p>
-                        <p>Pretendard는 안정적이고 균형감 있는 형태로 가독성이 높으며, 단정한 인상이 제품 이미지와 여백 중심의 레이아웃을 방해하지 않아 Aesop의 절제되고 차분한
+                        <p>Pretendard는 안정적이고 균형감 있는 형태로 가독성이 높으며, 단정한 인상이 제품 이미지와 여백 중심의 레이아웃을 방해하지 않아<br>Aesop의 절제되고 차분한
                             분위기와 잘 어울립니다.<br> 또한 PC, 태블릿, 모바일 등 다양한 반응형 환경에서도 일관된 가독성과 사용자 경험을 유지할 수 있어 기본 서체로 선택했습니다.</p>
                     </div>
                     <div class="aesop-type-scale" aria-labelledby="aesop-type-caption">
@@ -868,9 +842,9 @@
                             <div class="lune-intro-copy">
                                 <h3>일상에 스며드는 편안한 공간</h3>
                                 <p>LUNE는 편안한 일상과 자연스러운 공간을 제안하는 가구 쇼핑몰입니다.</p>
-                                <p>따뜻한 색감과 넉넉한 여백으로 가구의 소재와 분위기를 전달하고, 상품 탐색부터 구매까지 이어지는 화면을 디자인했습니다.</p>
+                                <p>따뜻한 색감과 넉넉한 여백으로 가구의 소재와 분위기를 전달하고,<br>상품 탐색부터 구매까지 이어지는 화면을 디자인했습니다.</p>
                                 <h4>브랜드 경험을 담은 디자인 방향</h4>
-                                <p>크림색과 부드러운 살구색을 중심으로 가구가 놓인 공간의 온기를 표현했습니다.<br>제품 이미지와 정보를 여유 있게 배치하고, 화면 크기에 맞춰 자연스럽게 이어지는 구성으로 편안한 쇼핑 경험을 제안합니다.</p>
+                                <p>크림색과 부드러운 살구색을 중심으로 가구가 놓인 공간의 온기를 표현했습니다.<br>제품 이미지와 정보를 여유 있게 배치하고,<br>화면 크기에 맞춰 자연스럽게 이어지는 구성으로 편안한 쇼핑 경험을 제안합니다.</p>
                             </div>
                             <dl class="lune-facts">
                                 <div>
@@ -942,7 +916,7 @@
                             </div>
                             <div class="lune-color-copy">
                                 <h3>따뜻하고 편안한 공간의 색</h3>
-                                <p class="desc">크림색 배경과 부드러운 살구색을 중심으로 공간의 따뜻함을 표현했습니다.<br> 가구의 우드 소재와 자연광이 담긴 이미지에 어울리는 색상으로, 편안하게 상품을 살펴볼 수 있는 분위기를 구성했습니다.</p>
+                                <p class="desc">크림색 배경과 부드러운 살구색을 중심으로 공간의 따뜻함을 표현했습니다.<br> 가구의 우드 소재와 자연광이 담긴 이미지에 어울리는 색상으로,<br>편안하게 상품을 살펴볼 수 있는 분위기를 구성했습니다.</p>
                             </div>
                         </div>
                         <section class="lune-font-typography" aria-labelledby="lune-type-title">
@@ -1078,7 +1052,11 @@
     <script src="./js/poster-orbit.js"></script>
     <script src="./js/floating-wood.js"></script>
     <script src="./js/hero-scatter.js"></script>
-    <script src="./js/profile-story.js"></script>
+    <script src="./js/profile-typewriter.js"></script>
+    <script src="./js/profile-overlap.js"></script>
+    <script src="./js/detail-typewriter.js"></script>
+    <script src="./js/about-title.js"></script>
+    <script src="./js/detail-popup-transition.js"></script>
 </body>
 
 </html>

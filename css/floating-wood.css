@@ -16,6 +16,21 @@
     pointer-events: none;
 }
 
+/* Leave section backgrounds below the wood; lift only their content. */
+.about-section .about-inner,
+.about-inner > .skills-section {
+    z-index: auto;
+}
+
+.about-inner > .about-heading,
+.skills-section > *,
+#about-me > .profile-page-heading,
+#about-me > .profile-story,
+#about-me > .profile-area {
+    position: relative;
+    z-index: 1;
+}
+
 .about-section .about-inner :is(h2, h3, h4, p, li, dl, a, button, img),
 .contact-section .contact-inner :is(h2, p, a, button) {
     pointer-events: auto;
@@ -110,4 +125,21 @@
     .floating-wood {
         display: none;
     }
+}
+
+/* Put decorative blocks over each page background and under its content. */
+#about-me .floating-wood-panel {
+    z-index: 0;
+    pointer-events: none;
+}
+#about-me .floating-wood-panel .floating-wood-piece {
+    pointer-events: none;
+}
+#about-me > .profile-story > .profile-story-stage {
+    position: relative;
+    z-index: 1;
+}
+#about-me > .skills-section > .floating-wood-panel {
+    position: fixed;
+    z-index: 0;
 }

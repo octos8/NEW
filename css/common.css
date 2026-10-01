@@ -284,7 +284,6 @@ main h2,
 
 #poster .section-heading.poster-heading .section-summary {
     white-space: nowrap;
-    font-size: clamp(8px, .85vw, 16px) !important;
 }
 
 #banner .section-heading.banner-heading .section-summary {
