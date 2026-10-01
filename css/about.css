@@ -1308,7 +1308,7 @@
 .profile-area .profile-timeline .education-info p,
 .profile-area .profile-timeline .certification-info ul > li {
     font-size: clamp(18px, 1.6vw, 26px);
-    font-weight: var(--fw1);
+    font-weight: 400;
     line-height: 1.65;
 }
 
@@ -2079,10 +2079,6 @@
 
 .profile-area .profile-timeline .education-info {
     row-gap: 24px;
-}
-
-.profile-area .profile-timeline .education-info p {
-    font-size: 26px;
 }
 
 .skills-heading {

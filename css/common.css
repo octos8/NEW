@@ -299,11 +299,11 @@ main h2,
 
 @media (max-width: 768px) {
     .section-summary .summary-wide {
-        display: none;
+        display: inline;
     }
 
     .section-summary .summary-compact {
-        display: inline;
+        display: none;
     }
 }
 

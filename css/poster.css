@@ -658,6 +658,20 @@
     }
 }
 
+@media (max-width: 768px) {
+    #poster .section-heading.poster-heading .section-summary {
+        width: auto;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: clamp(12px, 1.5vw, 28px);
+        font-size: clamp(10px, 1.2vw, 18px) !important;
+        font-weight: 400;
+        line-height: 1.8;
+        white-space: nowrap;
+        text-align: right;
+    }
+}
+
 @media (max-width: 402px) {
     #poster .section-heading.poster-heading .section-summary {
         width: 100%;
