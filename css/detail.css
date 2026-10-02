@@ -273,12 +273,19 @@
     align-content: center;
 }
 
+#detail .detail-card {
+    width: min(100%, clamp(133.333px, 43.333svh, 413.333px));
+    margin-inline: auto;
+}
+
 #detail .detail-card figure {
+    width: 100%;
     margin-bottom: 16px;
 }
 
 #detail .detail-preview {
-    height: clamp(200px, 65svh, 620px);
+    height: auto;
+    aspect-ratio: 2 / 3;
 }
 
 #detail .detail-preview img {
@@ -297,8 +304,8 @@
         padding-block: 32px;
     }
 
-    #detail .detail-preview {
-        height: clamp(240px, 50svh, 400px);
+    #detail .detail-card {
+        width: min(100%, clamp(160px, 33.333svh, 266.667px));
     }
 }
 
