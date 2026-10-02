@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="800" viewBox="0 0 1000 800">
+  <defs>
+    <linearGradient id="edge" x2="0" y2="1"><stop stop-color="#73777b"/><stop offset=".12" stop-color="#26282b"/><stop offset=".85" stop-color="#111315"/><stop offset="1" stop-color="#52565a"/></linearGradient>
+    <linearGradient id="bezel" x2="0" y2="1"><stop stop-color="#252729"/><stop offset=".55" stop-color="#121416"/><stop offset="1" stop-color="#202225"/></linearGradient>
+    <linearGradient id="stem" x2="1" y2="0"><stop stop-color="#92979c"/><stop offset=".18" stop-color="#d9dce0"/><stop offset=".5" stop-color="#b8bdc3"/><stop offset=".84" stop-color="#e2e4e7"/><stop offset="1" stop-color="#858b91"/></linearGradient>
+    <linearGradient id="foot" x2="0" y2="1"><stop stop-color="#e2e4e7"/><stop offset=".65" stop-color="#adb2b8"/><stop offset="1" stop-color="#747a81"/></linearGradient>
+    <linearGradient id="neckShade" x2="0" y2="1"><stop stop-color="#000" stop-opacity=".3"/><stop offset=".6" stop-color="#000" stop-opacity="0"/></linearGradient>
+    <radialGradient id="shadow"><stop stop-color="#000" stop-opacity=".16"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+  </defs>
+  <ellipse cx="500" cy="766" rx="245" ry="22" fill="url(#shadow)"/>
+  <path d="M451 574H549L555 711H445Z" fill="url(#stem)" stroke="#969ba1"/>
+  <path d="M451 574H549L555 711H445Z" fill="url(#neckShade)"/>
+  <path d="M363 710H637L691 743Q695 747 689 751H311Q305 747 309 743Z" fill="url(#foot)" stroke="#959aa0"/>
+  <path d="M310 748H690V753Q690 756 684 756H316Q310 756 310 753Z" fill="#878d94"/>
+  <path d="M320 748H680" stroke="#eceef0" stroke-opacity=".75"/>
+  <rect x="15" y="15" width="970" height="570" rx="15" fill="url(#edge)"/>
+  <rect x="18" y="18" width="964" height="564" rx="12" fill="url(#bezel)" stroke="#3e4246"/>
+  <rect x="34" y="34" width="932" height="525" rx="2" fill="#050505"/>
+  <path d="M31 21H969" stroke="#fff" stroke-opacity=".13"/>
+  <circle cx="948" cy="571" r="1.8" fill="#bfc5cc"/>
+</svg>

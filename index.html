@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -118,14 +118,23 @@
         <section id="about" class="about-section">
             <div class="about-inner common-frame">
                 <header id="about-header" class="about-heading about-heading-bilingual">
-                    <h2 class="about-title">STRUCTURE FIRST DESIGN</h2>
                     <div class="about-intro">
-                        <figure class="about-workspace">
-                            <img src="./img/profile-workspace.jpg" alt="레이아웃과 타이포그래피를 살펴보는 디자인 작업 공간" width="635" height="500" loading="lazy">
-                        </figure>
-                        <div class="about-intro-korean">
-                            <h3>구조를 생각하는 것에서<br>디자인을 시작했습니다.</h3>
-                            <p>저는 단순히 ‘예쁜 화면’을 만드는 것보다<br>왜? 이 요소가 여기에 있어야 하는지를 먼저 고민합니다.</p>
+                        <h3 class="about-monitor-title">구조를 생각하는 것에서 디자인을 시작했습니다.</h3>
+                        <div class="about-workspace-scene">
+                            <div class="about-monitor-note">
+                                <p>개인프로젝트를<br>설계화한 화면입니다.</p>
+                                <svg class="about-note-arrow" viewBox="0 0 120 100" fill="none" aria-hidden="true">
+                                    <path class="about-note-arrow-tail" pathLength="1" d="M17 90 C38 84 59 65 68 47 C77 25 55 20 48 35 C38 58 85 60 112 20"/>
+                                    <path class="about-note-arrow-tip" pathLength="1" d="M99 23 L113 19 L111 33"/>
+                                </svg>
+                            </div>
+                            <figure class="about-workspace">
+                                <div class="about-monitor-screen"><img class="about-monitor-shell" src="./img/monitor-mockup.svg" alt="얇은 검정 베젤과 메탈 받침대의 모니터 목업" width="1000" height="800"><div class="about-monitor-viewport"><video class="about-monitor-video" autoplay muted loop playsinline preload="metadata" aria-label="포트폴리오 화면 영상"><source src="./img/portfolio-preview.mp4" type="video/mp4"></video></div></div>
+                            </figure>
+                        </div>
+                        <div class="about-intro-korean about-copy-typewriter">
+                            <p class="about-copy-left">저는 단순히 ‘예쁜 화면’을 만드는 것보다</p>
+                            <p class="about-copy-right"><strong>왜?</strong> 이 요소가 여기에 있어야 하는지를 먼저 고민합니다.</p>
                         </div>
                     </div>
                 </header>
@@ -1057,6 +1066,9 @@
     <script src="./js/detail-typewriter.js"></script>
     <script src="./js/about-title.js"></script>
     <script src="./js/detail-popup-transition.js"></script>
+    <script src="./js/about-copy-typewriter.js"></script>
+    <script src="./js/about-note.js"></script>
+
 </body>
 
 </html>
