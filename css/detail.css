@@ -306,6 +306,20 @@
     clip-path: var(--iris-clip, circle(0px at 50% 50vh));
     opacity: var(--iris-opacity, 0);
 }
+@media (max-width: 768px) {
+    .detail-popup-transition {
+        background: #fcfaf7;
+    }
+    .detail-popup-transition.is-iris-ready > #detail {
+        position: relative;
+        top: auto;
+    }
+    .detail-popup-transition.is-iris-ready > #popup {
+        /* Let the gallery leave the viewport before the circular reveal begins. */
+        margin-top: calc(100vh + clamp(80px, 16vh, 140px));
+        margin-top: calc(100svh + clamp(80px, 16svh, 140px));
+    }
+}
 @media (prefers-reduced-motion: reduce) {
     .detail-popup-transition.is-iris-ready > #detail > .detail-inner { filter: none; }
     .detail-popup-transition.is-iris-ready > #detail { position: relative; top: auto; }
