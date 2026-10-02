@@ -161,6 +161,16 @@ document.addEventListener('DOMContentLoaded', () => {
         .map(link => document.querySelector(link.getAttribute('href')))
         .filter(Boolean);
 
+    // Sticky positioning and reveal transforms change the visible rectangle.
+    // Follow layout offsets so navigation always reaches the section's start.
+    const getSectionTop = target => {
+        let top = 0;
+        for (let element = target; element; element = element.offsetParent) {
+            top += element.offsetTop;
+        }
+        return top;
+    };
+
     navLinks.forEach(link => {
         link.addEventListener('click', e => {
             const target = document.querySelector(link.getAttribute('href'));
@@ -168,9 +178,9 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             closeNav();
             cancelAnimationFrame(heroScrollFrame);
-            target.scrollIntoView({
+            window.scrollTo({
+                top: getSectionTop(target),
                 behavior: reducedMotion ? 'auto' : 'smooth',
-                block: 'start'
             });
             if (target.id === 'home') replayHeroOnHome(target);
         });

@@ -213,18 +213,20 @@
     line-height: 1.8;
 }
 
-/* Match the full-screen Popup opening before showing the detail projects. */
+/* Give the chapter opening and the project gallery separate screen areas. */
 #detail.detail-section {
-    padding-top: 0;
+    padding: 0;
     background: #fcfaf7;
 }
 #detail .section-heading.detail-heading {
     --detail-title-size: clamp(48px, 7vw, 128px);
     position: relative;
     isolation: isolate;
-    display: grid;
-    place-items: center;
-    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
     min-height: 100svh;
     margin: 0;
     padding: 0;
@@ -250,27 +252,54 @@
     line-height: 1;
 }
 #detail .detail-heading .visual-works-label {
-    position: absolute;
-    top: auto;
-    bottom: calc(50% + var(--detail-title-size) / 2 + 32px);
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
+    position: static;
+    transform: none;
+    gap: 12px;
+    font-size: 18px;
     margin: 0;
     align-items: center;
 }
 #detail .detail-heading .section-summary {
-    position: absolute;
-    top: calc(50% + var(--detail-title-size) / 2 + 24px);
-    left: 0;
-    right: 0;
+    position: static;
     max-width: 640px;
     margin: 0 auto;
     text-align: center;
     white-space: normal;
 }
 #detail .detail-list {
-    margin-top: 48px;
+    min-height: 100svh;
+    margin-top: 0;
+    padding-block: 48px;
+    align-content: center;
+}
+
+#detail .detail-card figure {
+    margin-bottom: 16px;
+}
+
+#detail .detail-preview {
+    height: clamp(200px, 65svh, 620px);
+}
+
+#detail .detail-preview img {
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+@media (max-width: 768px) {
+    #detail.detail-section {
+        padding: 0 0 40px;
+    }
+
+    #detail .detail-list {
+        min-height: 0;
+        padding-block: 32px;
+    }
+
+    #detail .detail-preview {
+        height: clamp(240px, 50svh, 400px);
+    }
 }
 
 #detail .detail-heading h2 {
