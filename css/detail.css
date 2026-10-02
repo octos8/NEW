@@ -316,8 +316,8 @@
     }
     .detail-popup-transition.is-iris-ready > #popup {
         /* Let the gallery leave the viewport before the circular reveal begins. */
-        margin-top: calc(100vh + clamp(80px, 16vh, 140px));
-        margin-top: calc(100svh + clamp(80px, 16svh, 140px));
+        margin-top: calc(65vh + clamp(48px, 10vh, 88px));
+        margin-top: calc(65svh + clamp(48px, 10svh, 88px));
     }
 }
 @media (prefers-reduced-motion: reduce) {
