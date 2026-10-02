@@ -2653,6 +2653,16 @@
     padding-inline: 16px;
 }
 
+@media (max-width: 768px) {
+    #about-me .profile-page-heading > .section-summary,
+    #about-me .profile-page-heading > .profile-story-intro {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+    }
+}
+
 #about-me .profile-page-heading::before {
     left: 50%;
     transform-origin: center bottom;
@@ -2878,7 +2888,15 @@
 }
 @media (max-width: 768px) {
     .about-heading.about-heading-bilingual > .about-title {
+        left: 0;
+        width: 100%;
         padding-left: max(0px, calc((100% - 680px) / 2));
+        font-size: clamp(28px, 8vw, 40px);
+        line-height: 1.2;
+        white-space: normal;
+        text-wrap: wrap;
+        overflow-wrap: normal;
+        word-break: normal;
     }
 }
 
@@ -2894,6 +2912,15 @@
     transform: translateX(0);
     transition: opacity .85s ease, transform .85s cubic-bezier(.22, 1, .36, 1);
     transition-delay: var(--word-delay, 0s);
+}
+@media (max-width: 768px) {
+    .about-title.words-ready .about-title-word {
+        transform: translateY(16px);
+    }
+
+    .about-title.words-visible .about-title-word {
+        transform: translateY(0);
+    }
 }
 @media (prefers-reduced-motion: reduce) {
     .about-title.words-ready .about-title-word {
