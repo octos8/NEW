@@ -4,6 +4,7 @@
     const photo = home?.querySelector('.hero-visual img');
     const stage = home?.querySelector('.hero-stage');
     if (!photo || !stage) return;
+    if (photo.closest('.hero-visual-centered')) return;
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
     const layer = document.createElement('div');
     layer.className = 'hero-wood-scatter';

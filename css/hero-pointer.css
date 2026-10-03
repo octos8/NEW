@@ -1,0 +1,23 @@
+.hero-pointer-spread {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none;
+  opacity: calc(1 - var(--hero-white, 0));
+}
+.hero-pointer-wave {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,.65) 0%, rgba(235,245,255,.4) 25%, rgba(255,255,255,.18) 48%, transparent 72%);
+  animation: hero-pointer-expand 1.15s ease-out forwards;
+}
+@keyframes hero-pointer-expand {
+  from { transform: translate(-50%, -50%) scale(.25); opacity: .8; }
+  to { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
+  .hero-pointer-spread { display: none; }
+}

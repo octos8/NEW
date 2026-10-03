@@ -46,22 +46,24 @@
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&amp;display=swap">
     <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/header.css?v=fixed-top-1">
     <link rel="stylesheet" href="./css/hero.css">
+    <link rel="stylesheet" href="./css/hero-photo.css?v=cube-size-9">
     <link rel="stylesheet" href="./css/about.css?v=mobile-history-2">
     <link rel="stylesheet" href="./css/popup.css">
     <link rel="stylesheet" href="./css/poster.css">
     <link rel="stylesheet" href="./css/banner.css">
-    <link rel="stylesheet" href="./css/detail.css">
+    <link rel="stylesheet" href="./css/detail.css?v=popup-gap-3">
     <link rel="stylesheet" href="./css/aesop.css">
     <link rel="stylesheet" href="./css/lune.css">
     <link rel="stylesheet" href="./css/device-mockups.css">
     <link rel="stylesheet" href="./css/contact.css">
-    <link rel="stylesheet" href="./css/floating-wood.css">
+
+    <link rel="stylesheet" href="./css/hero-pointer.css?v=1">
 </head>
 
 <body>
-    <header class="site-header">
+    <header class="site-header is-compact is-home-hidden" inert>
         <div class="header-inner">
             <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-menu">
                 <span></span>
@@ -92,25 +94,18 @@
             <div class="hero-inner common-frame">
                 <h1 class="hero-title">STRUCTURE</h1>
 
-                <div class="hero-description">
-                    <p>화려한 효과보다 먼저 정돈된 레이아웃, 명확한 정보 구조,</p>
-                    <p>읽기 좋은 타이포그래피와 일관된 디자인 규칙을 고민합니다.</p>
-                </div>
+            </div>
 
-                <!-- LINE + PROFILE -->
                 <div class="hero-meta">
-                    <div class="hero-line"></div>
-
                     <div class="hero-profile">
                         <span class="hero-job">WEB PUBLISHER</span>
                         <strong class="hero-name">함국주</strong>
                     </div>
                 </div>
 
-                <figure class="hero-visual">
-                    <img src="./img/hero-main.jpg" alt="웹 퍼블리셔 포트폴리오 메인 비주얼">
-                </figure>
-            </div>
+            <figure class="hero-visual hero-visual-centered hero-photo-rotate">
+                <img src="./img/75ec5898b9a2a5bf1ae5c9feb674acf3.jpg" alt="회색 배경 위에 떠 있는 무지갯빛 유리 큐브">
+            </figure>
           </div>
         </section>
 
@@ -1050,17 +1045,13 @@
         <script src="./js/project-links.js"></script>
         <script src="./js/project-reveal.js"></script>
     </main>
-    <div class="floating-wood" aria-hidden="true">
-        <span class="floating-wood-piece"></span>
-        <span class="floating-wood-piece"></span>
-        <span class="floating-wood-piece"></span>
-    </div>
     <a class="top-link" href="#top" aria-label="페이지 맨 위로 이동"><span class="up">↑</span><span>TOP</span></a>
     <script src="./js/popup-details.js"></script>
     <script src="./js/popup-title.js"></script>
     <script src="./js/poster-orbit.js"></script>
-    <script src="./js/floating-wood.js"></script>
-    <script src="./js/hero-scatter.js"></script>
+
+    
+    <script src="./js/hero-space.js?v=cube-size-9"></script>
     <script src="./js/profile-typewriter.js"></script>
     <script src="./js/profile-overlap.js"></script>
     <script src="./js/detail-typewriter.js"></script>
@@ -1069,6 +1060,8 @@
     <script src="./js/about-copy-typewriter.js"></script>
     <script src="./js/about-note.js"></script>
 
+    <script src="./js/hero-pointer.js?v=1"></script>
+    <script src="./js/top-link.js?v=1"></script>
 </body>
 
 </html>

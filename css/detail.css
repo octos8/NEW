@@ -361,3 +361,14 @@
     .detail-popup-transition.is-iris-ready > #detail { position: relative; top: auto; }
     .detail-popup-transition.is-iris-ready > #popup { transform: none; clip-path: none; opacity: 1; }
 }
+
+/* Let all detail photographs leave before revealing the popup title. */
+.detail-popup-transition {
+  background: #fcfaf7;
+}
+.detail-popup-transition > #detail {
+  padding-bottom: calc(85svh + 48px);
+}
+.detail-popup-transition.is-iris-ready > #popup {
+  margin-top: 0;
+}

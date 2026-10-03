@@ -3816,3 +3816,41 @@
 @media (prefers-reduced-motion: reduce) {
     .about-note-arrow.is-draw-ready path { stroke-dashoffset: 0; animation: none !important; }
 }
+
+/* Mobile monitor heading and full-width explanation lines. */
+@media (max-width: 768px) {
+    #about-me .profile-story-stage .profile-left {
+        margin-inline: auto;
+    }
+
+    #about-me .profile-story-stage .profile-typewriter {
+        justify-self: center;
+        text-align: center;
+    }
+
+    #about-me .profile-story-stage .profile-collaboration,
+    #about-me .profile-story-stage .profile-collaboration-cards h3,
+    #about-me .profile-story-stage .profile-collaboration-cards p {
+        text-align: center;
+    }
+
+    .about-heading .about-intro > .about-monitor-title {
+        font-size: 28px;
+        white-space: normal;
+        word-break: keep-all;
+    }
+
+    .about-heading .about-intro .about-intro-korean.about-copy-typewriter {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 4px;
+        margin-top: 12px;
+    }
+
+    .about-heading .about-intro .about-intro-korean.about-copy-typewriter p {
+        font-size: 12px;
+        line-height: 1.7;
+        letter-spacing: -.04em;
+        white-space: nowrap;
+        text-align: center;
+    }
+}

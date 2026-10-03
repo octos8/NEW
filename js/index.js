@@ -120,7 +120,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     const syncNavLayout = () => {
         navFrame = 0;
-        const nextCompact = mobileMenu.matches || (homeSection?.getBoundingClientRect().bottom ?? 0) <= 72;
+        const onHome = (document.querySelector('#about')?.getBoundingClientRect().top ?? 0) > 80;
+        header?.classList.toggle('is-home-hidden', onHome);
+        if (header) header.inert = onHome;
+        if (onHome && navOpen) closeNav();
+        const nextCompact = true;
         if (nextCompact !== navCompact) {
             navCompact = nextCompact;
             closeNav();

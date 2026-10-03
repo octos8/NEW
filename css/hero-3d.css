@@ -1,0 +1,13 @@
+/* Full-viewport white-cube composition; source photo is the WebGL fallback. */
+#home.hero-3d-ready .hero-visual { visibility: hidden; }
+#home.hero-3d-ready .hero-bg { background: #d9dad8; }
+.hero-3d-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; opacity: calc(1 - var(--hero-exit, 0)); }
+#home.hero-3d-ready .hero-stage { filter: none; }
+#home .hero-title, #home .hero-meta .hero-profile { color: #262a2d; }
+#home.hero-3d-ready .hero-title,
+#home.hero-3d-ready .hero-meta { opacity: calc(1 - var(--hero-ui-exit, 0)); }
+#home.hero-3d-ready.hero-cinematic { height: 240svh; }
+#home .hero-visual-centered img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+@media (prefers-reduced-motion: reduce) {
+  #home.hero-3d-ready.hero-cinematic { height: 100svh; }
+}

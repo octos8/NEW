@@ -1,0 +1,55 @@
+/* Original photo pixels, displayed only inside the cube silhouette. */
+#home .hero-bg { background: #d9dad8; }
+#home .hero-title { color: rgba(255, 255, 255, .72); }
+#home .hero-meta .hero-profile { color: #fff; }
+#home .hero-visual.hero-photo-rotate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+#home .hero-photo-rotate img {
+  flex: none;
+  position: relative;
+  top: calc(clamp(18px, 3svh, 32px) + 28px);
+  width: min(124.74vw, 113.4svh, var(--hero-photo-limit, 835px));
+  height: auto;
+  max-width: none;
+  aspect-ratio: 736 / 1104;
+  object-fit: contain;
+  clip-path: polygon(22% 34.3%, 34.6% 33.6%, 35.3% 33.1%, 48.2% 32%, 59.3% 31.1%, 64.5% 33.2%, 64.8% 33.6%, 71.5% 35.1%, 71.7% 36.4%, 79.5% 38.1%, 79.2% 48.4%, 78.8% 57.7%, 78.5% 65.7%, 66.3% 67.8%, 52.4% 69.7%, 38.4% 70.7%, 32.9% 68.1%, 27.4% 66%, 22.4% 60.2%, 22.4% 52.3%, 22.1% 43.4%);
+  transform-origin: 50.5% 51%;
+  animation: hero-photo-turn 65s linear infinite;
+}
+@keyframes hero-photo-turn {
+  from { transform: scale(var(--hero-zoom, 1)) rotate(0deg); }
+  to { transform: scale(var(--hero-zoom, 1)) rotate(360deg); }
+}
+#home.hero-cinematic > .hero-stage { filter: none; }
+#home.hero-cinematic .hero-bg,
+#home.hero-cinematic .hero-visual-centered { opacity: 1; }
+#home .hero-title,
+#home .hero-meta { opacity: calc(1 - var(--hero-ui-fade, 0)); }
+#home .hero-stage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: #fff;
+  opacity: var(--hero-white, 0);
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  #home .hero-photo-rotate img { animation: none; transform: none; }
+}
+
+/* Position the title closer to the upper-left edge at every screen size. */
+#home .hero-inner {
+  margin: 0;
+  max-width: none;
+  padding: clamp(24px, 4vh, 48px) clamp(24px, 4vw, 64px) 0;
+}
+/* Keep the desktop introduction after HOME, outside its white overlay. */
+#home.hero-cinematic + #about {
+  margin-top: 0;
+}

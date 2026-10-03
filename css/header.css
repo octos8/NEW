@@ -1,10 +1,16 @@
-﻿/* Header expands from a circular disclosure into a horizontal menu. */
+/* Header expands from a circular disclosure into a horizontal menu. */
 .site-header {
+    transition: opacity .35s ease, visibility .35s ease;
     position: fixed;
     top: 22px;
     left: 31px;
     right: 31px;
     z-index: 9999;
+    pointer-events: none;
+}
+.site-header.is-home-hidden {
+    opacity: 0;
+    visibility: hidden;
     pointer-events: none;
 }
 .header-inner {
@@ -139,4 +145,16 @@
 }
 @media (prefers-reduced-motion: reduce) {
     .header-inner, .site-nav, .nav-toggle span, .nav-list a, .nav-list a::after { transition: none; }
+}
+
+/* TOP stays above the stacked profile, skills and project sections. */
+body > .top-link {
+  position: fixed;
+  z-index: 10000;
+  isolation: isolate;
+}
+body > .top-link.is-home-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
