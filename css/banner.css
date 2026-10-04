@@ -588,7 +588,7 @@
     width: var(--banner-circle-size);
     height: var(--banner-circle-size);
     border-radius: 50%;
-    background: #f3eee7;
+    background: #f5f2ec;
     transform: translate(-50%, -50%);
     pointer-events: none;
 }

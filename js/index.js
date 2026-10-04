@@ -6,14 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const visual = document.querySelector('.aesop-opening-visual');
         const phone = visual?.querySelector('.aesop-opening-phone');
         if (!phone || !phone.animate) return;
-
         const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-        const shakeAngle = 1.2; // 흔들림 각도(deg)
-        const shakeDuration = 800; // 한 번 흔들리는 시간(ms)
+        const shakeAngle = 1.2;
+        const shakeDuration = 800;
         let visible = false;
         let lastScrollY = window.scrollY;
         let shakeAnimation = null;
-
         const visibilityObserver = new IntersectionObserver(entries => {
             visible = entries[0].isIntersecting;
             if (!visible) {
@@ -22,26 +20,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         visibilityObserver.observe(visual);
-
         window.addEventListener('scroll', () => {
             const currentScrollY = window.scrollY;
             const scrollingDown = currentScrollY > lastScrollY;
             lastScrollY = currentScrollY;
             if (!visible || !scrollingDown || motionPreference.matches || shakeAnimation) return;
-
             shakeAnimation = phone.animate([
                 { rotate: '0deg' },
                 { rotate: `${shakeAngle}deg` },
                 { rotate: `${-shakeAngle}deg` },
                 { rotate: `${shakeAngle * 0.5}deg` },
                 { rotate: '0deg' }
-            ], {
-                duration: shakeDuration,
-                easing: 'ease-in-out'
-            });
+            ], { duration: shakeDuration, easing: 'ease-in-out' });
             shakeAnimation.onfinish = () => { shakeAnimation = null; };
         }, { passive: true });
-
         motionPreference.addEventListener('change', () => {
             if (motionPreference.matches) {
                 shakeAnimation?.cancel();
@@ -49,20 +41,53 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     })();
-
     const heroName = document.querySelector('.hero-name');
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
         const title = heroTitle.textContent.trim();
         heroTitle.setAttribute('aria-label', title);
-        heroTitle.replaceChildren(...Array.from(title, (letter, index) => {
-            const block = document.createElement('span');
-            block.className = 'structure-letter';
-            block.textContent = letter;
-            block.setAttribute('aria-hidden', 'true');
+        const ns = 'http://www.w3.org/2000/svg';
+        const make = (tag, attributes) => {
+            const node = document.createElementNS(ns, tag);
+            Object.entries(attributes).forEach(([key, value]) => node.setAttribute(key, value));
+            return node;
+        };
+        const drawing = make('svg', {
+            viewBox: '0 0 940 170', class: 'structure-blueprint',
+            'aria-hidden': 'true', focusable: 'false'
+        });
+        const grid = make('g', { class: 'structure-guides' });
+        [14, 32, 136, 156].forEach(y => {
+            grid.append(make('line', { x1: 10, y1: y, x2: 930, y2: y }));
+        });
+        for (let index = 0; index <= title.length; index++) {
+            const x = 20 + index * 100;
+            grid.append(make('line', { x1: x, y1: 0, x2: x, y2: 170 }));
+            [14, 136].forEach(y => grid.append(make('circle', { cx: x, cy: y, r: 1.9 })));
+            if (index < title.length) {
+                grid.append(make('line', { x1: x + 50, y1: 0, x2: x + 50, y2: 170, class: 'structure-guide-minor' }));
+            }
+        }
+        // Geometric letter outlines: broad stems, squared counters, bevelled corners.
+        const glyphs = {
+            S: 'M18 0H88V27H34V38H68L88 55V86L70 104H0V77H54V65H20L0 48V18Z',
+            T: 'M0 0H88V28H61V104H27V28H0Z',
+            R: 'M0 0H66L88 21V49L69 67L90 104H52L34 72V104H0ZM34 27V46H53V27Z',
+            U: 'M0 0H34V73H54V0H88V83L69 104H19L0 83Z',
+            C: 'M20 0H88V31H55V27H34V77H55V73H88V104H20L0 84V20Z',
+            E: 'M0 0H88V27H34V39H80V65H34V77H88V104H0Z'
+        };
+        drawing.append(grid);
+        Array.from(title).forEach((letter, index) => {
+            const placement = make('g', { transform: `translate(${26 + index * 100} 32)` });
+            const block = make('path', {
+                d: glyphs[letter], class: 'structure-letter', 'fill-rule': 'evenodd'
+            });
             block.style.setProperty('--letter-index', index);
-            return block;
-        }));
+            placement.append(block);
+            drawing.append(placement);
+        });
+        heroTitle.replaceChildren(drawing);
     }
     const playHeroName = () => {
         if (!heroName || reducedMotion) return;

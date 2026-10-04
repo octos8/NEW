@@ -48,13 +48,13 @@
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/header.css?v=fixed-top-1">
     <link rel="stylesheet" href="./css/hero.css">
-    <link rel="stylesheet" href="./css/hero-photo.css?v=cube-size-9">
-    <link rel="stylesheet" href="./css/about.css?v=mobile-history-2">
-    <link rel="stylesheet" href="./css/popup.css">
-    <link rel="stylesheet" href="./css/poster.css">
-    <link rel="stylesheet" href="./css/banner.css">
-    <link rel="stylesheet" href="./css/detail.css?v=popup-gap-3">
-    <link rel="stylesheet" href="./css/aesop.css">
+    <link rel="stylesheet" href="./css/hero-photo.css?v=title-size-11">
+    <link rel="stylesheet" href="./css/about.css?v=skills-title-gap-15">
+    <link rel="stylesheet" href="./css/popup.css?v=soft-reveal-4">
+    <link rel="stylesheet" href="./css/poster.css?v=light-warm-circle-2">
+    <link rel="stylesheet" href="./css/banner.css?v=warm-circle-2">
+    <link rel="stylesheet" href="./css/detail.css?v=warm-gray-4">
+    <link rel="stylesheet" href="./css/aesop.css?v=screen-detail-83">
     <link rel="stylesheet" href="./css/lune.css">
     <link rel="stylesheet" href="./css/device-mockups.css">
     <link rel="stylesheet" href="./css/contact.css">
@@ -114,7 +114,7 @@
             <div class="about-inner common-frame">
                 <header id="about-header" class="about-heading about-heading-bilingual">
                     <div class="about-intro">
-                        <h3 class="about-monitor-title">구조를 생각하는 것에서 디자인을 시작했습니다.</h3>
+                        <h3 class="about-monitor-title"><span class="about-monitor-title-line"><span class="about-structure-accent">구조를</span> <span class="about-thought-accent">생각하는 것에서</span></span><span class="about-monitor-title-line">디자인을 시작했습니다.</span></h3>
                         <div class="about-workspace-scene">
                             <div class="about-monitor-note">
                                 <p>개인프로젝트를<br>설계화한 화면입니다.</p>
@@ -140,7 +140,12 @@
                         <p class="section-summary"><strong>함께 더 나은 화면을 만드는 디자이너</strong></p>
                         <p class="profile-story-intro">디자인은 혼자 완성하는 결과물이 아니라,<br>서로 다른 역할이 함께 만들어가는 과정이라고 생각합니다.</p>
                     </header>
-                  <div class="profile-story">
+                  <nav class="profile-ribbon-menu" aria-label="프로필과 툴앤스킬 페이지">
+                    <button class="tools-page-edge" type="button" data-ribbon-target="tools-skills-page" aria-label="툴앤스킬 페이지 열기"></button>
+                    <button class="page-memo-ribbon page-memo-profile" type="button" data-ribbon-target="profile-story-page">PROFILE</button>
+                    <button class="page-memo-ribbon page-memo-tools" type="button" data-ribbon-target="tools-skills-page">TOOLS &amp; SKILLS</button>
+                  </nav>
+                  <div id="profile-story-page" class="profile-story">
                     <div class="profile-story-stage">
                     <div class="profile-area">
                         <!-- 프로필 사진과 기본 정보 -->
@@ -181,9 +186,9 @@
                   </div>
 
                 <!-- TOOLS & SKILLS -->
-                <section class="skills-section">
+                <section id="tools-skills-page" class="skills-section">
                     <header class="skills-heading">
-                        <h3>TOOLS &amp; SKILLS</h3>
+                        <h3>What I Can Do</h3>
                         <p class="skills-guide">각 항목을 선택해 사용 도구와 작업 역량을 확인할 수 있습니다.</p>
                         <span class="skills-heading-line"></span>
                     </header>
@@ -632,6 +637,9 @@
                                 rel="noopener noreferrer">Re-Design<span class="aesop-sr-only"> (새 탭)</span></a>
                         </nav>
                     </header>
+                    <figure class="aesop-aurner-banner">
+                        <img src="./img/aesop-aurner-banner.png" alt="식물과 이끼 사이에 놓인 이솝 Aurner 향수" width="1896" height="910" loading="lazy">
+                    </figure>
                     <div class="aesop-opening-layout">
                         <figure class="aesop-opening-visual">
                             <div class="aesop-opening-phone aesop-device--phone">
@@ -654,10 +662,6 @@
                                     <dt>제작 기간</dt>
                                     <dd>4주</dd>
                                 </div>
-                                <div>
-                                    <dt>기여도</dt>
-                                    <dd>55% · 3인</dd>
-                                </div>
                                 <div class="aesop-facts-tools">
                                     <dt>제작 도구</dt>
                                     <dd><span class="aesop-fact-tag">Figma</span></dd>
@@ -666,104 +670,220 @@
                                     <dt>사용 기술</dt>
                                     <dd><span class="aesop-fact-tag">HTML</span><span class="aesop-fact-tag">CSS3</span><span class="aesop-fact-tag">JavaScript</span></dd>
                                 </div>
+                                <div>
+                                    <dt>기여도</dt>
+                                    <dd>55% · 3인</dd>
+                                </div>
                             </dl>
+                            <div class="aesop-contribution-gauges" aria-label="분야별 기여도">
+                                <div class="aesop-contribution-row">
+                                    <span>Planning</span><strong>30%</strong>
+                                    <div class="aesop-contribution-track" role="meter" aria-label="Planning 기여도" aria-valuemin="0" aria-valuemax="100" aria-valuenow="30"><span style="width: 30%"></span></div>
+                                </div>
+                                <div class="aesop-contribution-row">
+                                    <span>UI / UX Design</span><strong>35%</strong>
+                                    <div class="aesop-contribution-track" role="meter" aria-label="UI / UX Design 기여도" aria-valuemin="0" aria-valuemax="100" aria-valuenow="35"><span style="width: 35%"></span></div>
+                                </div>
+                                <div class="aesop-contribution-row">
+                                    <span>WEB PUBLISHING</span><strong>80%</strong>
+                                    <div class="aesop-contribution-track" role="meter" aria-label="WEB PUBLISHING 기여도" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80"><span style="width: 80%"></span></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="aesop-design-system-surface">
+                <h3 class="aesop-design-system-title">Design System</h3>
+                <section class="aesop-colors" aria-labelledby="aesop-color-title">
+                    <div class="aesop-color-column">
+                        <h3 id="aesop-color-title">Main Color</h3>
+                        <div class="aesop-main-color" role="img" aria-label="메인 컬러 #354437"></div>
+                        <span class="aesop-color-code" style="--palette-color: #354437">#354437</span>
+                        <p class="aesop-color-description">짙고 차분한 그린으로 자연의 안정감과 깊이를 담았습니다.<br>이솝의 절제된 분위기에 어울리는 고급스러운 인상을 전합니다.</p>
+                    </div>
+                    <div class="aesop-color-column aesop-palette-content">
+                        <h3 class="aesop-palette-title">Color Palatte</h3>
+                        <ul class="aesop-circle-palette" aria-label="이솝 보조 컬러 팔레트">
+                            <li style="--palette-color: #F1ECE1"><span class="aesop-palette-circle" aria-hidden="true"></span><span class="aesop-color-code">#F1ECE1</span></li>
+                            <li style="--palette-color: #A4B28E"><span class="aesop-palette-circle" aria-hidden="true"></span><span class="aesop-color-code">#A4B28E</span></li>
+                            <li style="--palette-color: #B8764E"><span class="aesop-palette-circle" aria-hidden="true"></span><span class="aesop-color-code">#B8764E</span></li>
+                            <li style="--palette-color: #D8D5CA"><span class="aesop-palette-circle" aria-hidden="true"></span><span class="aesop-color-code">#D8D5CA</span></li>
+                        </ul>
+                        <p>아이보리와 뉴트럴 톤으로 제품 이미지를 자연스럽게 돋보이게 했습니다.<br>낮은 채도의 색상으로 차분하고 일관된 브랜드 분위기를 이어갑니다.</p>
+                    </div>
+                </section>
                 <section class="aesop-typography" aria-labelledby="aesop-type-title">
                     <h3 id="aesop-type-title">Typography</h3>
                     <div class="aesop-type-intro">
                         <p class="aesop-type-name">Pretendard</p>
-                        <p>Pretendard는 안정적이고 균형감 있는 형태로 가독성이 높으며, 단정한 인상이 제품 이미지와 여백 중심의 레이아웃을 방해하지 않아<br>Aesop의 절제되고 차분한
-                            분위기와 잘 어울립니다.<br> 또한 PC, 태블릿, 모바일 등 다양한 반응형 환경에서도 일관된 가독성과 사용자 경험을 유지할 수 있어 기본 서체로 선택했습니다.</p>
+                        <p>Pretendard의 단정하고 균형 잡힌 형태는 이솝의 차분한 분위기와 잘 어울립니다.<br>다양한 화면에서도 편안한 가독성을 유지하도록 기본 서체로 선택했습니다.</p>
                     </div>
-                    <div class="aesop-type-scale" aria-labelledby="aesop-type-caption">
-                        <div class="aesop-type-caption" id="aesop-type-caption">Pretendard 서체 구성</div>
-                        <div class="aesop-type-head">
-                            <div class="aesop-type-row">
-                                <p>예시</p>
-                                <p>활용</p>
-                                <p>크기</p>
-                                <p>rem</p>
+                </section>
+                </div>
+                <div class="aesop-redesign-surface">
+                <section class="aesop-improvements" aria-labelledby="aesop-improvements-title">
+                    <h3 id="aesop-improvements-title">Re-Design Points</h3>
+                </section>
+                <section class="aesop-bestseller-demo" aria-label="이솝 베스트셀러 슬라이드">
+                    <div class="aesop-demo-copy"><div class="aesop-demo-copy-content">
+                        <span class="aesop-improvement-number">01</span>
+                        <h4>간결한 제품 탐색</h4>
+                        <p>신제품과 베스트셀러를 중심으로 메뉴를 정리해<br>관심 제품을 쉽게 탐색하도록 구성했습니다.</p>
+</div>                    </div>
+                    <div class="aesop-demo-macbook">
+                    <div class="aesop-demo-tablet">
+                        <div class="aesop-demo-screen">
+                            <header class="aesop-demo-heading">
+                                <h3>BEST SELLER</h3>
+                                <span aria-hidden="true"></span>
+                                <p>새로운 디자인, 새로운 감각.</p>
+                            </header>
+                            <div class="swiper aesop-demo-swiper">
+                                <div class="swiper-wrapper">
+                                <article class="swiper-slide aesop-demo-card">
+                                    <img src="https://octos8.github.io/Aesop-projects/img/main/1.jpg" alt="레버런스 아로마틱 핸드 워시" loading="lazy">
+                                    <h4>레버런스 아로마틱 핸드 워시</h4>
+                                    <p>베티버와 베르가못 향의 부드러운 각질 케어 핸드 워시</p>
+                                    <span>500ml + 30ml</span>
+                                    <strong>55,000원</strong>
+                                </article>
+                                <article class="swiper-slide aesop-demo-card">
+                                    <img src="https://octos8.github.io/Aesop-projects/img/main/3.jpg" alt="페이블 페이셜 세럼" loading="lazy">
+                                    <h4>페이블 페이셜 세럼</h4>
+                                    <p>피부의 수분 균형과 생기를 되찾아주는 집중 보습 세럼</p>
+                                    <span>30ml + 10ml</span>
+                                    <strong>89,000원</strong>
+                                </article>
+                                <article class="swiper-slide aesop-demo-card">
+                                    <img src="https://octos8.github.io/Aesop-projects/img/main/4.jpg" alt="퓨리파잉 페이셜 클렌저" loading="lazy">
+                                    <h4>퓨리파잉 페이셜 클렌저</h4>
+                                    <p>피부 노폐물을 순하게 씻어내는 데일리 젤 클렌저</p>
+                                    <span>200ml + 30ml</span>
+                                    <strong>53,000원</strong>
+                                </article>
+                                <article class="swiper-slide aesop-demo-card">
+                                    <img src="https://octos8.github.io/Aesop-projects/img/main/5.jpg" alt="테싯 오 드 퍼퓸" loading="lazy">
+                                    <h4>테싯 오 드 퍼퓸</h4>
+                                    <p>바질과 시트러스, 베티버가 어우러진 생기 있는 향</p>
+                                    <span>50ml + 10ml</span>
+                                    <strong>175,000원</strong>
+                                </article>
+                                <article class="swiper-slide aesop-demo-card">
+                                    <img src="https://octos8.github.io/Aesop-projects/img/main/6.jpg" alt="밸런싱 샴푸" loading="lazy">
+                                    <h4>밸런싱 샴푸</h4>
+                                    <p>두피를 산뜻하게 정돈하고 모발에 윤기를 더하는 샴푸</p>
+                                    <span>500ml + 30ml</span>
+                                    <strong>59,000원</strong>
+                                </article>
+                                <article class="swiper-slide aesop-demo-card">
+                                    <img src="https://octos8.github.io/Aesop-projects/img/main/7.jpg" alt="이미디에이트 모이스처 페이셜 미스트" loading="lazy">
+                                    <h4>이미디에이트 모이스처 페이셜 미스트</h4>
+                                    <p>메마른 피부에 즉각적인 수분을 전하는 페이셜 미스트</p>
+                                    <span>100ml + 10ml</span>
+                                    <strong>47,000원</strong>
+                                </article>
+                                <article class="swiper-slide aesop-demo-card">
+                                    <img src="https://octos8.github.io/Aesop-projects/img/main/8.jpg" alt="파슬리 페이셜 하이드레이팅 크림" loading="lazy">
+                                    <h4>파슬리 페이셜 하이드레이팅 크림</h4>
+                                    <p>편안한 보습막으로 피부를 보호하는 데일리 페이셜 크림</p>
+                                    <span>50ml + 10ml</span>
+                                    <strong>78,000원</strong>
+                                </article>
+                                </div>
+                                <div class="swiper-scrollbar aesop-demo-scrollbar"></div>
                             </div>
                         </div>
-                        <div class="aesop-type-body">
-                        <div class="aesop-type-row" style="--sample-size: 39px; --sample-weight:700">
-                            <p class="aesop-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</p>
-                            <p>메인 제목, 큰 제목</p>
-                            <p>39px</p>
-                            <p>2.4375rem</p>
-                        </div>
-                        <div class="aesop-type-row" style="--sample-size: 31px; --sample-weight:700">
-                            <p class="aesop-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</p>
-                            <p>작은 제목</p>
-                            <p>31px</p>
-                            <p>1.9375rem</p>
-                        </div>
-                        <div class="aesop-type-row" style="--sample-size: 25px; --sample-weight:700">
-                            <p class="aesop-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</p>
-                            <p>컨텐츠 소제목1</p>
-                            <p>25px</p>
-                            <p>1.5625rem</p>
-                        </div>
-                        <div class="aesop-type-row" style="--sample-size: 20px; --sample-weight:700">
-                            <p class="aesop-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</p>
-                            <p>컨텐츠 소제목2</p>
-                            <p>20px</p>
-                            <p>1.25rem</p>
-                        </div>
-                        <div class="aesop-type-row" style="--sample-size: 16px; --sample-weight:700">
-                            <p class="aesop-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</p>
-                            <p>본문, 강조 텍스트</p>
-                            <p>16px</p>
-                            <p>1rem</p>
-                        </div>
-                        <div class="aesop-type-row" style="--sample-size: 16px; --sample-weight:400">
-                            <p class="aesop-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</p>
-                            <p>본문, 기본 텍스트</p>
-                            <p>16px</p>
-                            <p>1rem</p>
-                        </div>
-                        <div class="aesop-type-row" style="--sample-size: 13px; --sample-weight:400">
-                            <p class="aesop-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</p>
-                            <p>세부 설명 컨텐츠</p>
-                            <p>13px</p>
-                            <p>0.812rem</p>
-                        </div>
-                        <div class="aesop-type-row" style="--sample-size: 10px; --sample-weight:400">
-                            <p class="aesop-type-sample">여백과 글자의 균형으로 완성한 절제된 감성</p>
-                            <p>각종 버튼, 푸터 등 소형 컨텐츠</p>
-                            <p>10px</p>
-                            <p>0.625rem</p>
-                        </div>
-                        </div>
+                    </div>
+                    <div class="aesop-demo-laptop-base" aria-hidden="true"></div>
                     </div>
                 </section>
-                <section class="aesop-colors" aria-labelledby="aesop-color-title">
-                    <h3 id="aesop-color-title">Color</h3>
-                    <p class="aesop-color-description">메인 컬러는 짙고 차분한 그린 계열로, 자연과 식물에서 느껴지는 안정감과 깊이를 표현하기 위해
-                        선택했습니다.<br>Aesop이 가진 자연 친화적이고 절제된 브랜드 이미지와 잘 어우러지며, 강하게 튀지 않으면서도 전체 디자인에 무게감과 고급스러운 인상을 더해줍니다.
-                    </p>
-                    <div class="aesop-color-layout">
-                        <div class="aesop-main-color" role="img" aria-label="메인 컬러 #354437"></div>
-                        <div class="aesop-palette-content">
-                            <p>컬러 팔레트는 메인 컬러를 중심으로 아이보리, 베이지, 뉴트럴 톤을 함께 구성해 제품 이미지가 자연스럽게 돋보이도록 했습니다. <br>채도가 낮은 색상을 사용해
-                                전체적으로 차분하고 편안한 분위기를 유지하고, 페이지마다 일관된 브랜드 이미지를 전달할 수 있도록 구성했습니다.</p>
-                            <ul class="aesop-palette" aria-label="그린 컬러 팔레트">
-                                <li style="--swatch:#E9F5EA" aria-label="0: #E9F5EA" title="#E9F5EA"></li>
-                                <li style="--swatch:#D6F1DA" aria-label="100: #D6F1DA" title="#D6F1DA"></li>
-                                <li style="--swatch:#C3EBC8" aria-label="200: #C3EBC8" title="#C3EBC8"></li>
-                                <li style="--swatch:#AFE1B6" aria-label="300: #AFE1B6" title="#AFE1B6"></li>
-                                <li style="--swatch:#9BD3A3" aria-label="400: #9BD3A3" title="#9BD3A3"></li>
-                                <li style="--swatch:#87C08F" aria-label="500: #87C08F" title="#87C08F"></li>
-                                <li style="--swatch:#71A678" aria-label="600: #71A678" title="#71A678"></li>
-                                <li style="--swatch:#5A8660" aria-label="700: #5A8660" title="#5A8660"></li>
-                                <li style="--swatch:#406144" aria-label="800: #406144" title="#406144"></li>
-                                <li style="--swatch:#263B29" aria-label="900: #263B29" title="#263B29"></li>
-                            </ul>
+                <section class="aesop-home-demo" aria-label="이솝 메인 페이지 목업">
+                    <div class="aesop-home-macbook">
+                        <div class="aesop-demo-tablet">
+                            <div class="aesop-home-live-screen">
+                                <div class="aesop-home-preview-header" aria-label="이솝 상단 메뉴 미리보기">
+                                    <img class="aesop-preview-logo" src="./img/aesop-logo.svg" alt="Aesop">
+                                    <div class="aesop-preview-menu"><span>HOME</span><span>NEW</span><span>BEST SELLER</span><span>STORE</span><span>PROMOTION</span><span>ABOUT</span></div>
+                                    <div class="aesop-preview-icons" aria-hidden="true">
+                                        <img src="https://octos8.github.io/Aesop-projects/img/material-symbols-light_search-rounded.svg" alt="">
+                                        <img src="https://octos8.github.io/Aesop-projects/img/stash_person-light.svg" alt="">
+                                        <img src="https://octos8.github.io/Aesop-projects/img/teenyicons_basket-minus-outline.svg" alt="">
+                                    </div>
+                                </div>
+                                <img class="aesop-home-fixed-banner" src="./img/aesop-morning-banner.png" alt="A Fresh Beginning — 아침 리프레싱 프로모션" width="1811" height="812" loading="lazy">
+                            </div>
                         </div>
+                        <div class="aesop-demo-laptop-base" aria-hidden="true"></div>
+                    </div>
+                    <div class="aesop-demo-copy"><div class="aesop-demo-copy-content">
+                        <span class="aesop-improvement-number">02</span>
+                        <h4>명확한 프로모션 동선</h4>
+                        <p>메인 배너와 프로모션 메뉴를 연결해<br>캠페인과 혜택을 자연스럽게 발견하도록 했습니다.</p>
+</div>                    </div>
+                </section>
+                <section class="aesop-detail-demo" aria-label="이솝 제품 상세페이지 목업">
+                    <div class="aesop-demo-copy"><div class="aesop-demo-copy-content">
+                        <span class="aesop-improvement-number">03</span>
+                        <h4>구매 판단을 돕는 상품 후기</h4>
+                        <p>상품 상세페이지에 후기 영역을 추가해<br>사용 경험을 참고하며 구매를 결정하도록 했습니다.</p>
+</div>                    </div>
+                    <div class="aesop-home-macbook">
+                        <div class="aesop-demo-tablet">
+                            <div class="aesop-review-screen">
+<div class="aesop-review-content"><div class="aesop-review-tabs"><span>후기</span><span>Q&amp;A</span></div><article class="aesop-review-card"><div class="aesop-review-meta"><span>★★★★★</span><small>한**님</small></div><div class="aesop-review-body"><img src="https://octos8.github.io/Aesop-projects/img/reviews/catalog/forest-cleanser-1.png" alt="포레스트 클렌저 사용 후기 사진" loading="lazy"><p>욕실을 차분한 분위기로 바꾸면서 포레스트 클렌저도 함께 골랐어요. 저녁 샤워할 때 천천히 거품을 내서 쓰는데 하루를 정리하는 느낌이 좋네요. 피부를 세게 문지르기보다는 손으로 부드럽게 씻고 충분히 헹구고 있습니다. 용기도 선반에 잘 어울리고 같은 라인의 바디 밤을 옆에 두니 샤워 후 동선이 편해졌어요.</p></div></article>
+<article class="aesop-review-card"><div class="aesop-review-meta"><span>★★★★</span><small>오**님</small></div><div class="aesop-review-body"><p>저녁 샤워용으로 골랐는데 욕실을 차분한 분위기로 정돈하려던 목적과 잘 맞았어요. 손에 덜어 부드럽게 씻거나 평소 쓰는 도구에 소량을 묻혀 사용하고 있습니다. 처음부터 많이 덜지 않으니 원하는 사용량을 찾기 편하네요. 샤워 후에는 기존에 쓰던 바디 제품으로 마무리하는 편이고, 클렌저만 먼저 바꾸어 사용감을 살펴봤습니다. 욕실 선반에서 손이 잘 닿는 자리에 두니 준비 과정도 단순해졌고, 다른 소품과도 잘 어울려 공간을 크게 바꾸지 않아도 분위기가 달라졌어요.</p></div></article>
+<article class="aesop-review-card"><div class="aesop-review-meta"><span>★★★</span><small>서**님</small></div><div class="aesop-review-body"><img src="https://octos8.github.io/Aesop-projects/img/reviews/catalog/forest-cleanser-2.png" alt="포레스트 클렌저 사용 후기 사진" loading="lazy"><p>숲을 연상시키는 패키지 분위기가 마음에 들어 선택했습니다. 욕실에 여러 제품을 놓기보다 이 클렌저를 꺼내두고 자주 사용하고 있어요.</p></div></article>
+<article class="aesop-review-card"><div class="aesop-review-meta"><span>★★★★</span><small>신**님</small></div><div class="aesop-review-body"><img src="https://octos8.github.io/Aesop-projects/img/reviews/catalog/forest-cleanser-3.png" alt="포레스트 클렌저 사용 후기 사진" loading="lazy"><p>포레스트 캄 바디 클렌저을 가까운 곳에 꺼내 두고 쓰고 있어요. 저녁 샤워 때 조금씩 덜어 거품을 내어 사용하고 있어요. 욕실에서 꺼내 쓰기 편한 자리에 두니 매일의 루틴에 잘 들어왔습니다.<br>사용하는 공간에서 찍어 보니 패키지도 잘 어울려서 사진을 함께 올립니다.</p></div></article>
+<article class="aesop-review-card"><div class="aesop-review-meta"><span>★★★★★</span><small>권**님</small></div><div class="aesop-review-body"><p>포레스트 캄 바디 클렌저을 골라 사용하면서 저만의 루틴을 만들어 보고 있어요. 처음에는 소량으로 시작했고 필요한 순간 꺼내 쓰고 있습니다. 구성과 사용 안내를 확인하기도 편해서 잘 사용하고 있어요.</p></div></article></div>
+                            </div>
+                        </div>
+                        <div class="aesop-demo-laptop-base" aria-hidden="true"></div>
                     </div>
                 </section>
+                </div>
+                <div class="aesop-design-details-surface">
+                <h3 class="aesop-design-details-title">Design Details</h3>
+                <section class="aesop-story-details" aria-label="바디 밤 상세페이지 디자인">
+                <svg class="aesop-story-connector" aria-hidden="true"><path></path></svg>
+                <div class="aesop-design-details-copy">
+                    <h4>제품 특징을 시각화한 상세페이지</h4>
+                    <p>제품과 제형, 향을 연상시키는 이미지를 함께 구성해<br>제품의 특징과 사용 분위기를 시각적으로 전달했습니다.</p>
+                </div>
+                <div class="aesop-story-detail-panel">
+                <header class="aesop-story-detail-header"><span>SCREEN DETAIL</span><h4>01 바디 밤 상세페이지</h4><p>모바일에서 선택한 제품의 상세 화면</p></header>
+                <div class="aesop-story-expanded" tabindex="0" role="region" aria-label="확대된 상세페이지 전체 보기, 스크롤하여 확인">
+                    <img src="./img/aesop-body-story-1.jpg" alt="햇살을 머금은 바디 밤 소개" loading="lazy">
+                    <img src="./img/aesop-body-story-2.jpg" alt="햇빛 이후 피부를 위한 바디 리추얼" loading="lazy">
+                    <img src="./img/aesop-body-story-3.jpg" alt="바디 밤 특징과 사용 방법" loading="lazy">
+                    <img src="./img/aesop-body-story-4.jpg" alt="함께 사용하는 보태니컬 바디 케어" loading="lazy">
+                </div>
+                </div>
+                <div class="aesop-story-iphone">
+                    <div class="aesop-story-phone-screen">
+                        <div class="aesop-story-phone-content">
+                            <span class="aesop-story-selection" aria-label="선택한 제품: 바디 밤"><span>01</span></span>
+                            <img src="./img/aesop-body-ritual-phone.png" alt="당신의 바디 리추얼을 완성하는 보태니컬 케어" width="357" height="807" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                </section>
+                <section class="aesop-nature-details" aria-labelledby="aesop-nature-title">
+                    <div class="aesop-nature-copy">
+                        <h4 id="aesop-nature-title">자연의 감각을 담은 비주얼</h4>
+                        <p>식물과 빛, 자연스러운 그림자를 제품과 함께 구성해<br>향과 사용 분위기가 느껴지는 브랜드 이미지를 표현했습니다.</p>
+                    </div>
+                    <div class="aesop-nature-tablet-stage">
+                    <div class="aesop-nature-tablet">
+                    <div class="aesop-nature-video-screen">
+                        <img class="aesop-nature-page" src="./img/aesop-home-tablet.jpg" alt="이솝 태블릿 메인 페이지" width="1024" height="1986" loading="lazy">
+                        <video autoplay muted loop playsinline preload="metadata" poster="./img/aesop-botanical-video-poster.png" aria-label="빛과 식물의 움직임을 담은 보태니컬 영상">
+                            <source src="https://octos8.github.io/Aesop-projects/img/botanical_motion_loop.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    </div>
+                    </div>
+                </section>
+                </div>
                 <section class="aesop-responsive" aria-labelledby="aesop-responsive-title">
                     <div class="aesop-responsive-hero">
                         <h3 id="aesop-responsive-title" class="aesop-sr-only">반응형 디바이스 목업</h3>
@@ -781,38 +901,6 @@
                             <div class="aesop-device aesop-device--phone responsive-phone">
                                 <div class="aesop-device-screen"><img src="./img/aesop-home-mobile.jpg"
                                         alt="아이폰에서 보는 이솝 메인 홈페이지" width="402" height="716" loading="lazy"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="aesop-responsive-body">
-                        <div class="aesop-responsive-intro">
-                            <div class="aesop-responsive-copy">
-                                <h3>RESPONSIVE WEBSITE DESIGN</h3>
-                                <p>화면의 크기가 달라져도 이솝의 차분한 분위기와 제품 중심의 경험이 자연스럽게 이어지도록 디자인했습니다.</p>
-                            </div>
-                        </div>
-                        <div class="aesop-responsive-finale">
-                            <h3>어떤 화면에서도, 변함없는 브랜드 경험</h3>
-                            <p>각기 다른 화면 속에서도 자연스럽게 이어지는 경험.<br>PC부터 태블릿, 모바일까지 이솝의 디자인을 일관되게 전달합니다.</p>
-                            <div class="aesop-responsive-phones">
-                                <div class="aesop-device aesop-device--phone">
-                                    <div class="aesop-device-screen"><img src="./img/aesop-purchase-mobile.jpg"
-                                            alt="모바일에서 보는 이솝 제품 구매 페이지" width="402" height="1146" loading="lazy"></div>
-                                </div>
-                                <div class="aesop-device aesop-device--phone">
-                                    <div class="aesop-device-screen"><img src="./img/aesop-promotion-mobile.png"
-                                            alt="모바일에서 보는 이솝 프로모션 페이지" width="402" height="1517" loading="lazy"></div>
-                                </div>
-                            </div>
-                            <div class="aesop-responsive-stage">
-                                <div class="aesop-device aesop-device--tablet responsive-stage-tablet">
-                                    <div class="aesop-device-screen"><img src="./img/aesop-purchase-tablet.jpg"
-                                            alt="태블릿에서 보는 이솝 제품 구매 페이지" width="1044" height="2765" loading="lazy"></div>
-                                </div>
-                                <div class="aesop-device aesop-device--phone responsive-stage-phone">
-                                    <div class="aesop-device-screen"><img src="./img/aesop-products-mobile.jpg"
-                                            alt="모바일에서 보는 이솝 상품 목록" width="406" height="1503" loading="lazy"></div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -1040,10 +1128,14 @@
             </div>
         </section>
         <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
-        <script src="./js/index.js"></script>
+        <script src="./js/index.js?v=original-phone-shake-3"></script>
         <script src="./js/device-mockups.js"></script>
+        <script src="./js/aesop-bestseller.js?v=autoplay-faster-3"></script>
+        <script src="./js/aesop-story-connector.js?v=selection-line-3"></script>
+        <script src="./js/aesop-review-preview.js?v=full-list-3"></script>
+        <script src="./js/aesop-promotion-demo.js?v=promotion-one-only-6"></script>
         <script src="./js/project-links.js"></script>
-        <script src="./js/project-reveal.js"></script>
+        <script src="./js/project-reveal.js?v=mockup-copy-6"></script>
     </main>
     <a class="top-link" href="#top" aria-label="페이지 맨 위로 이동"><span class="up">↑</span><span>TOP</span></a>
     <script src="./js/popup-details.js"></script>
@@ -1053,10 +1145,10 @@
     
     <script src="./js/hero-space.js?v=cube-size-9"></script>
     <script src="./js/profile-typewriter.js"></script>
-    <script src="./js/profile-overlap.js"></script>
+    <script src="./js/profile-ribbons.js?v=paper-sync-11"></script>
     <script src="./js/detail-typewriter.js"></script>
     <script src="./js/about-title.js"></script>
-    <script src="./js/detail-popup-transition.js"></script>
+    <script src="./js/detail-popup-transition.js?v=soft-fill-2"></script>
     <script src="./js/about-copy-typewriter.js"></script>
     <script src="./js/about-note.js"></script>
 

@@ -44,7 +44,7 @@
     width: var(--poster-circle-size);
     height: var(--poster-circle-size);
     border-radius: 50%;
-    background: #f3eee7;
+    background: #f7f5f1;
     transform: translate(50%, -50%);
     pointer-events: none;
 }

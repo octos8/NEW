@@ -372,3 +372,7 @@
 .detail-popup-transition.is-iris-ready > #popup {
   margin-top: 0;
 }
+/* A soft warm gray beside About Me's warmer beige. */
+#detail.detail-section,
+.detail-popup-transition { background: #f1efeb; }
+#detail .detail-heading::before { background: #e7e3dd; }

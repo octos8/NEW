@@ -484,3 +484,38 @@
 @media (prefers-reduced-motion: reduce) {
     .site-header { transition: none; }
 }
+
+/* Broad geometric lettering and the construction marks from the reference. */
+#home .hero-inner {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: clamp(28px, 5svh, 64px) clamp(16px, 2.5vw, 48px) 0;
+}
+#home .hero-title {
+    width: 100%;
+    max-width: none;
+    line-height: 0;
+}
+.structure-blueprint {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    fill: #f8f8f7;
+}
+.structure-guides line {
+    stroke: #fff;
+    stroke-width: 1;
+    stroke-opacity: .2;
+    vector-effect: non-scaling-stroke;
+}
+.structure-guides .structure-guide-minor { stroke-opacity: .09; }
+.structure-guides circle {
+    fill: #fff;
+    fill-opacity: .78;
+}
+.structure-blueprint .structure-letter {
+    transform-box: fill-box;
+    transform-origin: center;
+}

@@ -38,16 +38,62 @@
         });
     };
 
-    register('.aesop-opening-copy > *, .lune-intro-copy > *', 'left', 110);
-    register('.aesop-facts > div, .lune-facts > div', 'up', 110);
-    register('.aesop-typography > h3, .aesop-colors > h3, .lune-system-details > h3, .lune-type-heading > h3', 'down');
-    register('.aesop-type-intro', 'left');
-    register('.aesop-color-description', 'right');
-    register('.aesop-palette-content', 'up');
+    register('.lune-intro-copy > *', 'left', 110);
+    register('.lune-facts > div', 'up', 110);
+    register('.aesop-bestseller-demo .aesop-demo-copy-content, .aesop-detail-demo .aesop-demo-copy-content', 'left');
+    register('.aesop-home-demo .aesop-demo-copy-content', 'right');
+    const improvements = project.querySelector('.aesop-improvements-grid');
+    if (improvements) {
+        const pointsObserver = new IntersectionObserver(([entry]) => {
+            const contents = improvements.querySelectorAll('.aesop-improvement-content');
+            if (!entry.isIntersecting) {
+                contents.forEach(content => content.getAnimations().forEach(animation => animation.cancel()));
+                return;
+            }
+            if (reducedMotion.matches) return;
+            contents.forEach((content, index) => {
+                content.animate([
+                    { opacity: 0, translate: '0px 32px' },
+                    { opacity: 1, translate: '0px 0px' }
+                ], {
+                    duration: 800,
+                    delay: index * 1100,
+                    easing: 'cubic-bezier(.22,1,.36,1)',
+                    fill: 'backwards'
+                });
+            });
+        }, { threshold: 0.15 });
+        pointsObserver.observe(improvements);
+        reducedMotion.addEventListener('change', () => {
+            if (reducedMotion.matches) improvements.querySelectorAll('.aesop-improvement-content').forEach(content => {
+                content.getAnimations().forEach(animation => animation.cancel());
+            });
+        });
+    }
+
+    const gaugeObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const fill = entry.target;
+            if (!entry.isIntersecting) {
+                fill.getAnimations().forEach(animation => animation.cancel());
+                return;
+            }
+            if (reducedMotion.matches) return;
+            fill.animate([
+                { transform: 'scaleX(0)' },
+                { transform: 'scaleX(1)' }
+            ], { duration: 1200, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'backwards' });
+        });
+    }, { threshold: .25 });
+    project.querySelectorAll('.aesop-contribution-track > span').forEach(fill => {
+        fill.style.transformOrigin = 'left center';
+        gaugeObserver.observe(fill);
+    });
+    register('.lune-system-details > h3, .lune-type-heading > h3', 'down');
     register('.aesop-responsive-copy > *, .aesop-responsive-detail > *', 'up', 130);
     register('.aesop-responsive-finale > h3, .lune-finale > h3', 'down');
     register('.aesop-responsive-finale > p, .lune-finale > p', 'up');
-    register('.aesop-type-row, .lune-type-body .lune-type-row', 'up', 100);
+    register('.lune-type-body .lune-type-row', 'up', 100);
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -70,8 +116,11 @@
                 up: [0, 32], down: [0, -24]
             };
             const [x, y] = offsets[direction];
+            const isMockupCopy = element.classList.contains('aesop-demo-copy-content');
+            const entranceX = isMockupCopy ? (direction === 'left' ? -48 : 48) : x;
+            const entranceY = isMockupCopy ? 0 : y;
             const animation = element.animate([
-                { opacity: 0, translate: `${x}px ${y}px` },
+                { opacity: 0, translate: `${entranceX}px ${entranceY}px` },
                 { opacity: 1, translate: '0px 0px' }
             ], {
                 duration: 1400,

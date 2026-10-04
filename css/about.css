@@ -2842,14 +2842,14 @@
 
 /* The profile page scrolls over the pinned About Me opening screen. */
 #about-me.profile-chapter > .profile-page-heading {
-    position: sticky;
-    top: 0;
+    position: relative;
+    top: auto;
     z-index: 1;
 }
 
 #about-me.profile-chapter > .profile-story {
-    position: sticky;
-    top: var(--profile-pin-top, 0px);
+    position: relative;
+    top: auto;
     z-index: 2;
     min-height: 100vh;
     min-height: 100svh;
@@ -3817,6 +3817,33 @@
     .about-note-arrow.is-draw-ready path { stroke-dashoffset: 0; animation: none !important; }
 }
 
+.about-monitor-title-line {
+    display: block;
+    white-space: nowrap;
+}
+
+.about-structure-accent {
+    color: #a6a7dc;
+    background: linear-gradient(110deg, #9dddf4 0%, #a9a7ed 45%, #d6afdf 72%, #a1c6e3 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-thought-accent {
+    color: #45464c;
+    background: linear-gradient(115deg,
+        #51535c 0%,
+        #595562 22%,
+        #505a61 43%,
+        #605660 62%,
+        #484953 80%,
+        #36373d 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 /* Mobile monitor heading and full-width explanation lines. */
 @media (max-width: 768px) {
     #about-me .profile-story-stage .profile-left {
@@ -3854,3 +3881,315 @@
         text-align: center;
     }
 }
+
+/* Decorative ribbons only; existing page layout and scrolling stay intact. */
+#about-me .page-memo-ribbon {
+    position: absolute;
+    top: 0;
+    left: clamp(24px, 3vw, 56px);
+    z-index: 70;
+    width: 44px;
+    height: 122px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-rl;
+    transform: translateY(-50%) rotate(-180deg);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 91%, 0 100%);
+    background: #eacac7;
+    color: #514a49;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    pointer-events: none;
+}
+#about-me .page-memo-tools { background: #c7dcd5; }
+#about-me .page-memo-profile { top: -20px; }
+#about-me.profile-chapter > .skills-section { overflow: visible; }
+@media (max-width: 768px) {
+    #about-me .page-memo-ribbon { left: 20px; width: 34px; height: 100px; font-size: 11px; }
+}
+
+/* Keep both page ribbons together as the selected page rises into view. */
+#about-me .profile-ribbon-menu {
+    position: relative;
+    top: auto;
+    height: 0;
+    z-index: 80;
+    overflow: visible;
+}
+#about-me .profile-ribbon-menu .page-memo-ribbon {
+    top: -20px;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    pointer-events: auto;
+}
+#about-me .profile-ribbon-menu .page-memo-tools {
+    left: calc(clamp(24px, 3vw, 56px) + 68px);
+    top: -76px;
+}
+#about-me .profile-ribbon-menu .tools-page-edge {
+    position: absolute;
+    top: -56px;
+    left: 0;
+    width: 100%;
+    height: 56px;
+    border: 0;
+    padding: 0;
+    background: #fcfaf7;
+    box-shadow: 0 -16px 32px -12px rgb(66 49 31 / 28%);
+    cursor: pointer;
+}
+#about-me .profile-ribbon-menu .tools-page-edge::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 24px;
+    background: linear-gradient(to bottom, transparent, rgb(66 49 31 / 14%));
+    pointer-events: none;
+}
+#about-me .profile-ribbon-menu .tools-page-edge:focus-visible {
+    outline: 2px solid #8baea4;
+    outline-offset: -2px;
+}
+#about-me .profile-ribbon-menu .page-memo-ribbon:focus-visible {
+    outline: 3px solid #514a49;
+    outline-offset: -4px;
+}
+@media (max-width: 768px) {
+    #about-me .profile-ribbon-menu .page-memo-tools { left: 74px; }
+}
+/* Continue from the skills content into the following Detail page. */
+#tools-skills-page .skill-detail {
+    overscroll-behavior-y: auto;
+}
+
+/* Raise the actual tools page without resizing its content. */
+#about-me.profile-chapter { position: relative; }
+#about-me .tools-sheet-spacer { display: none; }
+#about-me.is-tools-raised .tools-sheet-spacer { display: block; }
+#about-me.is-tools-raised > .profile-story { visibility: hidden; }
+#about-me.is-tools-raised > #tools-skills-page {
+    position: absolute;
+    top: var(--tools-page-top);
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding-top: 32px;
+    z-index: 3;
+    box-shadow: 0 -16px 32px -12px rgb(66 49 31 / 28%);
+    animation: tools-page-rise 650ms cubic-bezier(.22, .65, .3, 1) both;
+}
+#about-me.is-tools-raised .profile-ribbon-menu .tools-page-edge {
+    visibility: hidden;
+    pointer-events: none;
+}
+#about-me.is-tools-raised > #tools-skills-page > .page-memo-tools {
+    top: 20px;
+    left: calc(clamp(24px, 3vw, 56px) + 68px);
+    border: 0;
+    padding: 0;
+    pointer-events: auto;
+    cursor: pointer;
+}
+@keyframes tools-page-rise {
+    from { transform: translateY(var(--tools-sheet-start, 100svh)); }
+    to { transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+    #about-me.is-tools-raised > #tools-skills-page { animation: none; }
+}
+
+/* Keep both ribbons on the open sheet's upper shadow. */
+#about-me:is(.is-tools-raised, .is-profile-raised) .profile-ribbon-menu {
+    position: absolute;
+    top: var(--tools-page-top);
+    left: 0;
+    right: 0;
+}
+#about-me:is(.is-tools-raised, .is-profile-raised) .profile-ribbon-menu .page-memo-ribbon { top: 20px; }
+#about-me:is(.is-tools-raised, .is-profile-raised) .tools-page-edge { visibility: hidden; pointer-events: none; }
+#about-me .profile-sheet-spacer { display: none; }
+#about-me.is-profile-raised .profile-sheet-spacer { display: block; }
+#about-me.is-profile-raised > .profile-story {
+    position: absolute;
+    top: var(--tools-page-top);
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 4;
+    visibility: visible;
+    animation: tools-page-rise 650ms cubic-bezier(.22, .65, .3, 1) both;
+}
+#about-me.is-sheet-lowering.is-tools-raised > #tools-skills-page,
+#about-me.is-sheet-lowering.is-profile-raised > #profile-story-page {
+    animation: ribbon-sheet-lower 700ms cubic-bezier(.4, 0, .6, 1) both;
+}
+@keyframes ribbon-sheet-lower {
+    from { transform: translateY(0); }
+    to { transform: translateY(var(--tools-sheet-start, 100svh)); }
+}
+@media (prefers-reduced-motion: reduce) {
+    #about-me.is-profile-raised > .profile-story,
+    #about-me.is-sheet-lowering > :is(#tools-skills-page, #profile-story-page) { animation: none; }
+}
+
+/* Both physical sheets keep their own shadow edge and attached ribbon. */
+#about-me:is(.is-tools-raised, .is-profile-raised) > :is(#profile-story-page, #tools-skills-page) {
+    position: absolute;
+    top: var(--tools-page-top);
+    left: 0;
+    right: 0;
+    width: 100%;
+    visibility: visible;
+    background: transparent;
+    box-shadow: none;
+    z-index: auto;
+}
+#about-me:is(.is-tools-raised, .is-profile-raised) :is(.tools-sheet-spacer, .profile-sheet-spacer) { display: block; }
+#about-me:is(.is-tools-raised, .is-profile-raised) > :is(#profile-story-page, #tools-skills-page)::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #fcfaf7;
+    box-shadow: 0 -16px 32px -12px rgb(66 49 31 / 28%);
+    z-index: 1;
+    pointer-events: none;
+}
+#about-me.is-tools-raised > #tools-skills-page::before,
+#about-me.is-profile-raised > #profile-story-page::before { top: 56px; z-index: 2; }
+#about-me:is(.is-tools-raised, .is-profile-raised) > :is(#profile-story-page, #tools-skills-page) > :not(.page-memo-ribbon) {
+    position: relative;
+    z-index: 3;
+}
+#about-me.is-tools-raised > #profile-story-page > :not(.page-memo-ribbon),
+#about-me.is-profile-raised > #tools-skills-page > :not(.page-memo-ribbon) { display: none; pointer-events: none; }
+#about-me:is(.is-tools-raised, .is-profile-raised) > :is(#profile-story-page, #tools-skills-page) > .page-memo-ribbon {
+    top: -20px;
+    z-index: 80;
+    border: 0;
+    padding: 0;
+    pointer-events: auto;
+    cursor: pointer;
+}
+#about-me:is(.is-tools-raised, .is-profile-raised) > #tools-skills-page > .page-memo-tools {
+    left: calc(clamp(24px, 3vw, 56px) + 68px);
+}
+#about-me.is-tools-raised > #tools-skills-page > .page-memo-tools,
+#about-me.is-profile-raised > #profile-story-page > .page-memo-profile { top: 36px; }
+#about-me.is-tools-raised > #tools-skills-page,
+#about-me.is-profile-raised > #profile-story-page { animation-fill-mode: backwards; }
+@media (max-width: 768px) {
+    #about-me:is(.is-tools-raised, .is-profile-raised) > #tools-skills-page > .page-memo-tools { left: 74px; }
+}
+
+/* Smaller labels on both paper ribbons. */
+#about-me .page-memo-ribbon { font-size: 11px; }
+@media (max-width: 768px) {
+    #about-me .page-memo-ribbon { font-size: 10px; }
+}
+
+/* Leave breathing room above the raised page content. */
+#about-me.is-tools-raised > #tools-skills-page > .skills-heading,
+#about-me.is-profile-raised > #profile-story-page > .profile-story-stage {
+    margin-top: 3rem;
+}
+
+/* The sheet entrance is driven on every ribbon click by profile-ribbons.js. */
+#about-me:not(.is-sheet-lowering).is-tools-raised > #tools-skills-page,
+#about-me:not(.is-sheet-lowering).is-profile-raised > #profile-story-page { animation: none; }
+/* Reveal the moving paper over ABOUT ME, rather than an instant backdrop. */
+#about-me.is-sheet-opening.is-tools-raised > #profile-story-page::before,
+#about-me.is-sheet-opening.is-profile-raised > #tools-skills-page::before {
+    visibility: hidden;
+}
+#about-me.is-sheet-opening.is-tools-raised > #profile-story-page > .page-memo-ribbon,
+#about-me.is-sheet-opening.is-profile-raised > #tools-skills-page > .page-memo-ribbon {
+    visibility: hidden;
+}
+/* Keep the complete tools label clear of the ribbon's cut edge. */
+#about-me .page-memo-tools {
+    height: 142px;
+    box-sizing: border-box;
+    padding-block: 10px;
+    white-space: nowrap;
+}
+@media (max-width: 768px) {
+    #about-me .page-memo-tools { height: 120px; }
+}
+/* Hide the complete opening while a paper sheet is raised over it. */
+#about-me:is(.is-tools-raised, .is-profile-raised) > .profile-page-heading {
+    visibility: hidden;
+    pointer-events: none;
+}
+#about-me:is(.is-tools-raised, .is-profile-raised) > .profile-page-heading *,
+#about-me:is(.is-tools-raised, .is-profile-raised) > .profile-page-heading::before,
+#about-me:is(.is-tools-raised, .is-profile-raised) > .profile-page-heading::after { visibility: hidden; }
+
+/* Reveal ABOUT ME behind the retreating paper in one continuous transition. */
+#about-me.is-sheet-lowering > .profile-page-heading,
+#about-me.is-sheet-lowering > .profile-page-heading *,
+#about-me.is-sheet-lowering > .profile-page-heading::before,
+#about-me.is-sheet-lowering > .profile-page-heading::after { visibility: visible; }
+#about-me.is-sheet-lowering > .profile-page-heading { animation: about-paper-return 700ms ease both; }
+#about-me.is-sheet-lowering.is-tools-raised > #profile-story-page::before,
+#about-me.is-sheet-lowering.is-profile-raised > #tools-skills-page::before { visibility: hidden; }
+@keyframes about-paper-return { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+    #about-me.is-sheet-lowering > .profile-page-heading { animation: none; }
+}
+/* Tools exists only as the ribbon's sheet, never as a second scrolling page. */
+#about-me.ribbons-ready:not(.is-tools-raised):not(.is-profile-raised) > #tools-skills-page {
+    display: none;
+}
+#about-me.ribbons-ready:is(.is-tools-raised, .is-profile-raised) > #tools-skills-page {
+    display: block;
+}
+/* Paper and ribbon share the same scroll-return timeline. */
+#about-me .page-memo-ribbon { transition: none; animation: none; }
+#about-me.is-scroll-return > :is(#profile-story-page, #tools-skills-page) { animation: none; }
+/* Place both ribbons along the right edge with more space after ABOUT ME. */
+#about-me .profile-ribbon-menu { margin-top: 56px; }
+#about-me .profile-ribbon-menu .page-memo-profile,
+#about-me:is(.is-tools-raised, .is-profile-raised) > #profile-story-page > .page-memo-profile {
+    left: auto;
+    right: calc(clamp(24px, 3vw, 56px) + 68px);
+}
+#about-me .profile-ribbon-menu .page-memo-tools,
+#about-me:is(.is-tools-raised, .is-profile-raised) > #tools-skills-page > .page-memo-tools {
+    left: auto;
+    right: clamp(24px, 3vw, 56px);
+}
+@media (max-width: 768px) {
+    #about-me .profile-ribbon-menu { margin-top: 40px; }
+    #about-me .profile-ribbon-menu .page-memo-profile,
+    #about-me:is(.is-tools-raised, .is-profile-raised) > #profile-story-page > .page-memo-profile { right: 74px; }
+    #about-me .profile-ribbon-menu .page-memo-tools,
+    #about-me:is(.is-tools-raised, .is-profile-raised) > #tools-skills-page > .page-memo-tools { right: 20px; }
+}
+/* Return both papers with their attached ribbons, including the rear paper. */
+#about-me.is-sheet-lowering.is-tools-raised > #profile-story-page::before,
+#about-me.is-sheet-lowering.is-profile-raised > #tools-skills-page::before {
+    visibility: visible;
+}
+#about-me.is-sheet-lowering.is-tools-raised > :is(#profile-story-page, #tools-skills-page),
+#about-me.is-sheet-lowering.is-profile-raised > :is(#profile-story-page, #tools-skills-page) {
+    animation: ribbon-sheet-lower 700ms cubic-bezier(.4, 0, .6, 1) both;
+}
+#about-me.is-scroll-return.is-sheet-lowering > :is(#profile-story-page, #tools-skills-page) {
+    animation: none;
+}
+@media (prefers-reduced-motion: reduce) {
+    #about-me.is-sheet-lowering > :is(#profile-story-page, #tools-skills-page) { animation: none; }
+}
+/* Lift the tools ribbon slightly clear of the lower shadow. */
+#about-me .profile-ribbon-menu .page-memo-tools { top: -88px; }
+#about-me:is(.is-tools-raised, .is-profile-raised) > #tools-skills-page > .page-memo-tools { top: -32px; }
+#about-me.is-tools-raised > #tools-skills-page > .page-memo-tools { top: 24px; }
+
+/* Keep the skills title and its introduction close together. */
+#tools-skills-page .skills-heading { gap: 12px; }
+#tools-skills-page .skills-heading-line { margin-top: 8px; }

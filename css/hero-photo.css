@@ -53,3 +53,24 @@
 #home.hero-cinematic + #about {
   margin-top: 0;
 }
+
+/* Bring the larger mobile cube closer to the title. */
+@media (min-width: 769px) {
+  #home .hero-title {
+    width: min(100%, calc(var(--fs-hero) * 8.42));
+  }
+
+  #home .structure-blueprint {
+    transform: translate(-2.766%, -18.824%);
+  }
+}
+
+@media (max-width: 768px) {
+  #home .hero-photo-rotate img {
+    top: 0;
+    width: min(117vw, 82svh);
+  }
+}
+
+/* Slightly reduce the title artwork without moving its container. */
+#home .structure-blueprint { width: 94%; }
