@@ -79,6 +79,11 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Returning from a full detail view should land directly on the detail list. */
+html:has(#detail:target) {
+    scroll-behavior: auto;
+}
+
 body {
     width: 100%;
     background: var(--white);

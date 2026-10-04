@@ -751,3 +751,7 @@
     #banner .banner-station .swiper-pagination-bullet,
     #banner .banner-station .swiper-pagination-bullet::before { transition: none; }
 }
+
+/* White Banner page and decorative heading circle. */
+#banner.banner-section,
+#banner .banner-heading::before { background: #fff; }

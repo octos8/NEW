@@ -753,3 +753,6 @@
 @media (prefers-reduced-motion: reduce) {
     #popup .popup-animated-title.is-bounce-ready.is-bouncing { animation: none; }
 }
+
+/* White Popup page and decorative heading circle. */
+#popup.popup-section { background: #fff; --popup-circle-color: #fff; }

@@ -158,3 +158,32 @@ body > .top-link.is-home-hidden {
   visibility: hidden;
   pointer-events: none;
 }
+/* Compact spacing for the five main navigation links. */
+.site-header.is-menu-open .header-inner { width: min(660px, 100%); }
+.nav-list { justify-content: flex-start; gap: 30px; }
+@media(max-width:768px) { .nav-list { gap: 20px; } }
+/* Size the navigation pill to its links instead of leaving space after CONTACT. */
+.site-header:not(.is-compact) .header-inner,
+.site-header.is-menu-open .header-inner { width:max-content; max-width:100%; }
+.site-header:not(.is-compact) .site-nav { padding-right:24px; }
+.site-header.is-menu-open .site-nav { padding-right:24px; }
+.nav-list { width:max-content; }
+
+/* Pastel blue-to-lilac text treatment for navigation interaction. */
+.nav-list a:hover,
+.nav-list a:focus-visible,
+.nav-list a.active {
+    background-image:linear-gradient(90deg, #9ed8f5 0%, #a7adf2 50%, #cfb2dc 100%);
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent;
+    -webkit-text-fill-color:transparent;
+}
+.nav-list a::after { display:none; }
+
+/* Hovering another destination temporarily clears the current section tint. */
+.nav-list:has(a:hover) a.active:not(:hover) {
+    background-image: none;
+    color: #000;
+    -webkit-text-fill-color: #000;
+}

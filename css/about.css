@@ -4193,3 +4193,109 @@
 /* Keep the skills title and its introduction close together. */
 #tools-skills-page .skills-heading { gap: 12px; }
 #tools-skills-page .skills-heading-line { margin-top: 8px; }
+/* White section surfaces from About Me through Visual Work. */
+#about.about-section,
+#about-me.profile-chapter,
+#about-me.profile-chapter > .profile-page-heading,
+#about-me.profile-chapter > .profile-story,
+#about-me.profile-chapter > .skills-section,
+#about-me .profile-ribbon-menu .tools-page-edge,
+#about-me:is(.is-tools-raised, .is-profile-raised) > :is(#profile-story-page, #tools-skills-page)::before {
+    background: #fff;
+}
+
+/* Editorial About Me: reference composition with existing profile content. */
+#about-me.editorial-about {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+}
+#about-me .editorial-profile {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: clamp(36px, 6vw, 100px);
+    row-gap: 44px;
+    width: 100%;
+    max-width: 1400px;
+    margin-inline: auto;
+    padding: 42px var(--page-gutter) 72px;
+    min-height: 760px;
+    color: #17181b;
+    background: #fff;
+    border-bottom: 1px solid #dfe1e5;
+}
+.editorial-profile-top { grid-column: 1 / -1; display: flex; justify-content: space-between; font-size: 11px; letter-spacing: .02em; }
+.editorial-profile-copy { align-self: start; }
+#about-me .editorial-profile-number { margin: 0 0 8px; font-size: clamp(42px, 5vw, 64px); font-weight: 200; line-height: 1; }
+#about-me #profile-page-title { position: static; margin: 0; font-size: clamp(40px, 5.5vw, 72px); font-weight: 700; line-height: 1.08; letter-spacing: -.04em; color: #08090a; transform: none; }
+#about-me .editorial-profile-tagline { margin: 22px 0 0; font-size: 19px; line-height: 1.5; font-weight: 400; color: #424751; }
+#about-me .editorial-profile-description { margin: 58px 0 0; font-size: 16px; line-height: 1.65; font-weight: 400; color: #626874; word-break: keep-all; }
+.editorial-profile-rule { display: block; width: 20px; height: 1px; background: #737983; margin: 38px 0 30px; }
+.editorial-profile-facts { margin: 0; display: grid; gap: 16px; font-size: 14px; line-height: 1.4; }
+.editorial-profile-facts > div { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 14px; }
+.editorial-profile-facts dt { color: #959ba5; font-weight: 400; }
+.editorial-profile-facts dd { margin: 0; color: #424751; }
+#about-me .editorial-profile-photo { position: relative; margin: 0; width: 100%; max-width: 440px; aspect-ratio: auto; align-self: stretch; justify-self: end; overflow: hidden; }
+#about-me .editorial-profile-photo img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: 43% center; transform: translateX(7%) scale(1.18); border-radius: 0; }
+.editorial-profile-page { position: absolute; right: clamp(28px, 5vw, 80px); bottom: 30px; font-size: 12px; color: #858c99; }
+#about-me.editorial-about > .skills-section { position: relative; top: auto; margin-top: 0; transform: none; box-shadow: none; }
+@media (max-width: 768px) {
+    #about-me .editorial-profile { min-height: auto; gap: 30px; padding: 30px var(--page-gutter) 64px; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); }
+    #about-me #profile-page-title { font-size: clamp(28px, 6vw, 44px); }
+    #about-me .editorial-profile-tagline { font-size: 14px; }
+    #about-me .editorial-profile-description { margin-top: 32px; font-size: 13px; }
+    .editorial-profile-facts { font-size: 12px; gap: 12px; }
+    .editorial-profile-facts > div { grid-template-columns: 56px minmax(0, 1fr); gap: 6px; }
+}
+@media (max-width: 480px) {
+    #about-me .editorial-profile { grid-template-columns: minmax(0, 1fr); }
+    #about-me .editorial-profile-photo { grid-row: 2; width: 75%; aspect-ratio: 4 / 5; justify-self: end; }
+    .editorial-profile-copy { grid-row: 3; }
+}
+
+.profile-skills-open { padding: 0 0 3px; border: 0; border-bottom: 1px solid #a2a6ad; background: none; color: #424751; font: inherit; cursor: pointer; }
+#profile-skills-dialog { width: min(1000px, calc(100vw - 40px)); max-width: none; max-height: 90vh; margin: auto; padding: 16px; border: 0; border-radius: 12px; background: rgb(255 255 255 / 90%); color: #17181b; overflow: auto; }
+#profile-skills-dialog::backdrop { background: rgb(0 0 0 / 28%); }
+.profile-skills-image { display: block; width: 100%; height: auto; margin: 12px auto 0; }
+.profile-skills-close { display: block; position: sticky; top: 0; z-index: 10; margin-left: auto; padding: 8px 14px; border: 1px solid #dedfe2; border-radius: 4px; background: white; font: inherit; cursor: pointer; }
+#profile-skills-dialog #tools-skills-page { position: relative; inset: auto; width: 100%; min-height: 0; margin: 0; padding: 28px 16px 48px; transform: none; box-shadow: none; background: #fff; }
+@media (max-width: 480px) { #profile-skills-dialog { padding: 12px; width: calc(100vw - 24px); } }
+
+/* Crisp, selectable skills typography. */
+#profile-skills-dialog { width: min(1200px, calc(100vw - 32px)); }
+.skills-typeset { padding: 40px 24px 30px; background: white; color: #08090a; }
+.skills-typeset > h2 { text-align: center; font-size: clamp(32px, 5vw, 70px); font-weight: 800; margin: 0 0 80px; letter-spacing: -.04em; }
+.skills-typeset-grid { display: grid; grid-template-columns: 1.15fr 1fr 1fr; }
+.skills-typeset-column { padding: 0 28px; }
+.skills-typeset-column + .skills-typeset-column { border-left: 1px solid #ddd; }
+.skills-typeset-number { display: block; font-size: clamp(70px, 10vw, 140px); line-height: .9; font-weight: 800; letter-spacing: -.07em; color: #ebebeb; }
+.skills-typeset-label { color: #f00; font-size: 14px; letter-spacing: .3em; font-weight: 700; margin: 8px 0 10px; }
+.skills-typeset-column h3 { font-size: clamp(22px, 3vw, 43px); font-weight: 800; letter-spacing: -.045em; margin: 0 0 22px; }
+.skills-typeset-intro { font-size: 18px; line-height: 1.5; color: #666; min-height: 60px; }
+.skills-typeset-column ul { list-style: none; padding: 20px 0 0; margin: 0; }
+.skills-typeset-column li { display: grid; grid-template-columns: 48px 1fr; gap: 18px; padding: 25px 0; border-bottom: 1px solid #eee; }
+.skills-typeset-column li:last-child { border: 0; }
+.skills-typeset-column li img { width: 48px; height: 48px; object-fit: contain; }
+.skills-typeset-column h4 { font-size: 18px; margin: 0 0 8px; font-weight: 700; }
+.skills-typeset-column li p { font-size: 14px; line-height: 1.7; color: #707070; margin: 0; word-break: keep-all; }
+.skills-text-icon { font-size: 48px; line-height: 1; text-align: center; }
+@media(max-width:767px) { .skills-typeset { padding: 30px 8px; } .skills-typeset > h2 { margin-bottom: 40px; } .skills-typeset-grid { grid-template-columns: 1fr; gap: 36px; } .skills-typeset-column { padding: 0 16px; } .skills-typeset-column + .skills-typeset-column { border-left: 0; border-top: 1px solid #ddd; padding-top: 30px; } .skills-typeset-number { font-size: 100px; } .skills-typeset-column h3 { font-size: 34px; } }
+/* Separate the introduction from the profile chapter. */
+#about-me.editorial-about { margin-top: clamp(100px, 12vw, 190px); padding-top: clamp(60px, 7vw, 110px); border-top: 1px solid #dfe1e5; }
+/* Opaque skills dialog, including its top and side padding. */
+#profile-skills-dialog { background: #fff; }
+/* Reveal only the profile facts from left to right. */
+#about-me .editorial-profile-facts.is-facts-reveal-ready { opacity: 0; transform: translateX(-48px); transition: opacity 1.6s ease, transform 1.6s cubic-bezier(.22,.61,.36,1); }
+#about-me .editorial-profile-facts.is-facts-visible { opacity: 1; transform: translateX(0); }
+@media(prefers-reduced-motion:reduce) { #about-me .editorial-profile-facts.is-facts-reveal-ready { opacity: 1; transform: none; transition: none; } }
+.skills-typeset > h2 { letter-spacing:.025em; }
+#about-me .editorial-profile-facts.is-facts-reveal-ready:not(.is-facts-visible) { transition: none; }

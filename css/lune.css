@@ -992,7 +992,8 @@
 .lune-finale {
     padding: 80px 96px 35px;
     text-align: center;
-    background: linear-gradient(#fff2d7, #ffe0b5);
+    background: #ded5c5;
+    color: #30251f;
 }
 
 .lune-finale h3 {
@@ -2321,4 +2322,420 @@
     .lune-static-macbook {
         grid-column: 1 / -1;
     }
+}
+
+/* Full-width collection image below the LUNE heading and website link. */
+#project .lune-opening > .lune-collection-banner {
+    --lune-banner-gutter: 96px;
+    display: block;
+    width: calc(100% + 2 * var(--lune-banner-gutter));
+    max-width: none;
+    height: auto;
+    margin: 40px calc(-1 * var(--lune-banner-gutter)) 0;
+}
+@media (max-width: 1280px) {
+    #project .lune-opening > .lune-collection-banner { --lune-banner-gutter: var(--page-gutter); }
+}
+
+/* Opening devices alongside the introduction; mobile trio above Contact. */
+#project .lune-case .lune-system-details > #lune-system-title {
+    font-size: clamp(22px, 2.4vw, 32px);
+    font-weight: 700;
+}
+#project .lune-case .lune-system :is(h3, p, li, small, span) {
+    animation: none;
+    transition: none;
+}
+#project .lune-case .lune-opening {
+    background: linear-gradient(to bottom, #fff2d7 0%, #ffe0b5 55%, #fff 100%);
+}
+#project .lune-case .lune-system {
+    background: #fff;
+}
+#project .lune-introduction { position: relative; margin-top: 64px; padding-top: 64px; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 32px; }
+#project .lune-introduction::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -96px;
+    right: -96px;
+    height: 1px;
+    background: #d8bea0;
+}
+@media (max-width: 1280px) {
+    #project .lune-introduction::before { left: calc(-1 * var(--page-gutter)); right: calc(-1 * var(--page-gutter)); }
+}
+#project .lune-case .lune-introduction > .lune-hero-mockup {
+    position: relative;
+    min-width: 0;
+    width: 100%;
+    margin: 0;
+    align-self: center;
+}
+#project .lune-introduction .lune-hero-mockup > .lune-hero-monitor {
+    width: 105%;
+    transform: perspective(1200px) rotateY(-6deg);
+    transform-origin: center;
+}
+#project .lune-introduction .lune-hero-mockup > .lune-hero-phone { left: 0; right: auto; }
+#project .lune-case .lune-facts .lune-fact-tag { border-color: currentColor; }
+#project .lune-finale > .lune-phone-fan {
+    width: min(80%, 600px);
+    margin: 64px auto 0;
+}
+@media (max-width: 768px) {
+    #project .lune-introduction { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+    #project .lune-finale > .lune-phone-fan { width: min(100%, 600px); margin-top: 40px; }
+}
+
+/* LUNE circular colors: main color on the left, palette on the right. */
+#project .lune-case .lune-color-showcase {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+    gap: clamp(40px, 5vw, 80px);
+    align-items: start;
+    margin: 64px 0 96px;
+}
+#project .lune-case .lune-color-column { min-width: 0; text-align: center; }
+#project .lune-case .lune-color-column > h3 {
+    margin: 0 0 36px;
+    font-size: clamp(22px, 2.4vw, 32px);
+    line-height: 1.2;
+    font-weight: 700;
+}
+#project .lune-case .lune-color-swatch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+#project .lune-case .lune-color-swatch > span {
+    display: block;
+    width: 96px;
+    max-width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--swatch-color);
+}
+#project .lune-case .lune-color-swatch > strong { font-size: 13px; color: var(--swatch-color); }
+#project .lune-case .lune-circle-palette {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(12px, 2vw, 28px);
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+#project .lune-case .lune-color-column > p {
+    margin: 28px 0 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.8;
+    word-break: keep-all;
+}
+@media (max-width: 768px) {
+    #project .lune-case .lune-color-showcase { grid-template-columns: minmax(0, 1fr); gap: 48px; }
+}
+@media (max-width: 402px) {
+    #project .lune-case .lune-color-swatch > strong { font-size: 10px; }
+}
+
+/* Match the Aesop typography layout with LUNE's own text color. */
+#project .lune-case .lune-font-typography {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+    column-gap: clamp(40px, 5vw, 80px);
+    row-gap: 36px;
+    align-items: center;
+}
+#project .lune-case .lune-type-heading { grid-column: 1; margin: 0; text-align: center; }
+#project .lune-case .lune-type-heading > h3 {
+    margin: 0;
+    font-size: clamp(22px, 2.4vw, 32px);
+    color: #30251f;
+    font-weight: 700;
+    line-height: 1.2;
+}
+#project .lune-case .lune-font-intro { display: contents; }
+#project .lune-case .lune-font-overview { display: block; grid-column: 1; grid-row: 2; text-align: center; }
+#project .lune-case .lune-font-overview > .lune-font-name {
+    margin: 0;
+    font-size: clamp(22px, 2.4vw, 32px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: inherit;
+}
+#project .lune-case .lune-font-why { grid-column: 2; grid-row: 1 / 3; align-self: center; }
+#project .lune-case .lune-font-why > p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.8;
+    word-break: keep-all;
+}
+@media (max-width: 768px) {
+    #project .lune-case .lune-font-typography { grid-template-columns: minmax(0, 1fr); }
+    #project .lune-case .lune-font-why { grid-column: 1; grid-row: 3; }
+}
+
+/* Share the Design System heading color across the color and font labels. */
+#project .lune-case .lune-system-details > #lune-system-title,
+#project .lune-case .lune-color-column > h3 {
+    color: #30251f;
+}
+
+#project .lune-case .lune-font-overview > .lune-font-name {
+    color: #30251f;
+}
+
+/* Display the responsive devices one per row, alternating sides. */
+#project .lune-finale:not(.lune-page-details) {
+    padding-bottom: clamp(100px, 10vw, 180px);
+}
+
+#project .lune-page-details {
+    background: #fff;
+}
+
+#project .lune-finale.lune-page-details .lune-device-group {
+    margin-top: 0;
+}
+
+#project .lune-finale .lune-device-group {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(64px, 8vw, 140px);
+    aspect-ratio: auto;
+    max-width: 1100px;
+    margin-top: clamp(60px, 7vw, 110px);
+    margin-bottom: clamp(60px, 7vw, 110px);
+}
+
+#project .lune-finale .lune-device-group > div {
+    position: relative;
+    inset: auto;
+    flex: none;
+    transform: none;
+}
+
+#project .lune-finale .lune-device-group > .lune-monitor {
+    align-self: flex-end;
+    width: 78%;
+}
+
+#project .lune-finale .lune-device-group > .lune-tablet {
+    align-self: flex-start;
+    width: 58%;
+}
+
+#project .lune-tablet-product-rows {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+#project .lune-tablet-product-rows > img {
+    position: static;
+    display: block;
+    width: 100%;
+    height: 0;
+    min-height: 0;
+    object-fit: fill;
+    flex: 700 1 0;
+}
+
+#project .lune-tablet-product-rows > img + img {
+    flex-grow: 550;
+}
+
+#project .lune-finale .lune-device-group > .lune-phone {
+    align-self: flex-end;
+    width: 26%;
+    margin-right: 12%;
+}
+
+@media (max-width: 768px) {
+    #project .lune-finale .lune-device-group > .lune-monitor { width: 94%; }
+    #project .lune-finale .lune-device-group > .lune-tablet { width: 76%; }
+    #project .lune-finale .lune-device-group > .lune-phone { width: 38%; margin-right: 8%; }
+}
+
+/* Front-facing desktop with enlarged screen details and adjacent copy. */
+#project :is(.lune-desktop-detail-title, .lune-product-list-title) > h4 {
+    margin: 0;
+    font: inherit;
+}
+
+#project :is(.lune-desktop-detail-title, .lune-product-list-title) > p {
+    margin: 20px 0 0;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+    word-break: keep-all;
+}
+
+#project .lune-product-list-title {
+    margin: 0;
+    text-align: center;
+    font-size: clamp(22px, 2.4vw, 32px);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+#project .lune-finale .lune-desktop-explainer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: clamp(24px, 3vw, 48px);
+    align-items: center;
+    width: 100%;
+}
+.lune-screen-notes { grid-column: 1; grid-row: 2; text-align: left; }
+#project .lune-desktop-detail-title { grid-column: 1 / -1; grid-row: 1; margin: 0 0 clamp(24px, 3vw, 48px); text-align: center; font-size: clamp(22px, 2.4vw, 32px); font-weight: 700; line-height: 1.3; }
+.lune-screen-note { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; align-items: center; margin-top: 28px; }
+#project .lune-screen-note h4 { margin: 0 0 8px; font-size: 16px; font-weight: 700; }
+#project .lune-screen-note p { margin: 0; font-size: 14px; line-height: 1.8; word-break: keep-all; }
+.lune-screen-zoom { position: relative; container-type: inline-size; overflow: hidden; aspect-ratio: 1.5; border: 1px solid #d8ae7e; border-radius: 8px; background: #fff; }
+.lune-screen-zoom img { position: absolute; width: 100%; max-width: none; height: auto; left: 0; top: 0; }
+.lune-screen-zoom--menu { aspect-ratio: 3; }
+.lune-screen-zoom--banner img { width: 180%; left: -40%; top: -14cqw; }
+.lune-screen-zoom--category img { top: -42cqw; }
+.lune-screen-zoom > span, .lune-screen-marker { position: absolute; z-index: 2; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: #785332; color: white; font-size: 11px; font-weight: 700; }
+.lune-screen-zoom > span { left: 6px; top: 6px; }
+#project .lune-desktop-explainer > .lune-monitor--straight {
+    grid-column: 2;
+    grid-row: 2;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1.38;
+    padding: 0;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+#project .lune-monitor--straight > .lune-screen.lune-screen-pc {
+    position: absolute;
+    inset: 0 0 auto;
+    width: 100%;
+    height: 76%;
+    box-sizing: border-box;
+    border: clamp(5px, .7vw, 10px) solid #252321;
+    border-radius: 10px;
+    clip-path: none;
+    transform: none;
+    overflow: hidden;
+}
+#project .lune-monitor--straight > .lune-screen > img { object-fit: cover; object-position: top; }
+.lune-monitor--straight::before { content: ''; position: absolute; left: 42%; top: 76%; width: 16%; height: 20%; background: linear-gradient(90deg, #a6a6a6, #dedede 50%, #999); }
+.lune-monitor--straight::after { content: ''; position: absolute; left: 28%; bottom: 2%; width: 44%; height: 4%; border-radius: 50% 50% 4px 4px; background: linear-gradient(#dedede, #999); }
+.lune-screen-marker--menu { left: 4%; top: 5%; }
+.lune-screen-marker--banner { left: 48%; top: 38%; }
+.lune-screen-marker--category { left: 4%; top: 76%; }
+@media (max-width: 1024px) {
+    #project .lune-finale .lune-desktop-explainer { grid-template-columns: minmax(0, 1fr); }
+    #project .lune-desktop-explainer > .lune-monitor--straight { grid-column: 1; grid-row: 2; width: 85%; justify-self: end; }
+    #project .lune-desktop-detail-title { grid-column: 1 / -1; grid-row: 1; width: 100%; justify-self: center; }
+    .lune-screen-notes { grid-row: 3; }
+    .lune-screen-note { grid-template-columns: minmax(0, .8fr) minmax(0, 1fr); }
+}
+@media (max-width: 402px) {
+    #project .lune-desktop-explainer > .lune-monitor--straight { width: 100%; }
+    #project .lune-desktop-detail-title { width: 100%; }
+    .lune-screen-note { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+}
+
+/* Product list: tablet on the left, enlarged details on the right. */
+#project .lune-tablet-explainer {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(24px, 3vw, 48px);
+    width: 100%;
+}
+#project .lune-tablet-explainer > .lune-tablet {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-image: url('../img/tablet-premium-landscape.png');
+    transform: none;
+}
+.lune-product-notes { text-align: left; }
+.lune-product-notes .lune-screen-note { margin: 0; }
+.lune-product-notes .lune-screen-note + .lune-screen-note { margin-top: 36px; }
+.lune-product-zoom--grid { aspect-ratio: 1.65; }
+.lune-product-zoom--grid img { width: 200%; top: -17.8cqw; }
+.lune-product-zoom--info { aspect-ratio: 3; }
+.lune-product-zoom--info img { width: 400%; top: -86cqw; }
+.lune-product-marker--grid { left: 3%; top: 20%; }
+.lune-product-marker--info { left: 3%; top: 91%; }
+@media (max-width: 1024px) {
+    #project .lune-tablet-explainer { grid-template-columns: minmax(0, 1fr); }
+    #project .lune-tablet-explainer > .lune-tablet { width: 95%; justify-self: start; }
+}
+@media (max-width: 402px) {
+    #project .lune-tablet-explainer > .lune-tablet { width: 100%; }
+}
+
+/* Mobile product details with enlarged points to the left. */
+#project .lune-mobile-explainer {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(32px, 5vw, 72px);
+    width: 100%;
+}
+#project .lune-mobile-explainer > .lune-phone {
+    position: relative;
+    inset: auto;
+    width: 78%;
+    max-width: 330px;
+    justify-self: end;
+    margin-right: 8%;
+    transform: none;
+}
+.lune-mobile-notes { text-align: left; }
+.lune-mobile-notes .lune-screen-note { margin: 0; }
+.lune-mobile-notes .lune-screen-note + .lune-screen-note { margin-top: 40px; }
+.lune-mobile-zoom--gallery { aspect-ratio: .8; }
+.lune-mobile-zoom--gallery img { width: 100%; top: -38cqw; }
+.lune-mobile-zoom--price { aspect-ratio: 1.6; }
+.lune-mobile-zoom--price img { width: 82%; left: 9%; top: auto; bottom: 6%; }
+.lune-mobile-marker--gallery { left: 4%; top: 24%; }
+.lune-mobile-marker--price { left: 4%; top: 80%; }
+@media (max-width: 768px) {
+    #project .lune-mobile-explainer { grid-template-columns: minmax(0, 1fr); }
+    #project .lune-mobile-explainer > .lune-phone { grid-row: 1; width: 55%; margin-right: 8%; }
+}
+
+/* Static finale heading and centered breakpoint reference. */
+#project .lune-case #lune-finale-title,
+#project .lune-case #lune-finale-title + p {
+    animation: none;
+    transition: none;
+}
+#project .lune-case .lune-finale > .project-breakpoints { text-align: center; }
+#project .lune-case .lune-finale .project-breakpoints > h3 { margin: 0; font-size: 16px; }
+
+/* Unify all live text in the LUNE project with a near-black brown. */
+#project .lune-case,
+#project .lune-case * {
+    color: #3b2b20 !important;
+}
+#project .lune-case :is(.lune-screen-marker, .lune-screen-zoom > span) {
+    background: #e8ded1;
+}
+
+/* Match the introduction-to-device spacing to the Main Page section. */
+#project .lune-device-group > .lune-product-list-title + :is(.lune-tablet-explainer, .lune-mobile-explainer) {
+    margin-top: calc(clamp(48px, 6vw, 96px) - clamp(64px, 8vw, 140px));
+}
+#project .lune-finale.lune-page-details .lune-device-group {
+    margin-bottom: clamp(48px, 6vw, 96px);
+}
+#project .lune-case .lune-page-details > .lune-page-gallery {
+    margin-top: 0;
 }

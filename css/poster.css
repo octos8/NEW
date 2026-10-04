@@ -700,3 +700,7 @@
     }
 
 }
+
+/* White Poster page without the background grid. */
+#poster.poster-section,
+#poster .poster-heading::before { background: #fff; }
