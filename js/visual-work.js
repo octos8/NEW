@@ -513,14 +513,14 @@ document.addEventListener('DOMContentLoaded', () => {
  document.querySelectorAll('.work-gallery').forEach(gallery => {
   if (gallery.id === 'popup' || gallery.id === 'detail') return;
   const choices = [...gallery.querySelectorAll('.work-gallery-choice')];
-  let selected = 0;
+  let selected = Math.max(0, choices.findIndex(choice => choice.classList.contains('is-selected')));
   const select = index => {
    selected = (index + choices.length) % choices.length;
    const choice = choices[selected];
    const image = gallery.querySelector('.work-gallery-main');
    image.src = choice.dataset.src; image.alt = choice.dataset.title;
    if (gallery.id === 'banner') {
-    const tones = ['#eee7df', '#e2efff', '#eee2d0', '#e7e5e1'];
+    const tones = ['#eee7df', '#eee2d0', '#e5ecd8', '#e9e3d9'];
     gallery.style.setProperty('--banner-caption-color', tones[selected] || tones[0]);
    }
    gallery.querySelector('.work-gallery-caption h3').textContent = choice.dataset.title;
@@ -583,8 +583,12 @@ document.addEventListener('DOMContentLoaded', () => {
  const thumbnails = [...track.querySelectorAll('.work-gallery-choice')];
  const originalCount = thumbnails.length / 2;
  let lastIndex = -1;
+ let firstViewUntil = null;
  function syncCenter() {
-  if (!document.hidden && !strip.classList.contains('is-temporarily-paused') && !strip.classList.contains('is-dragging')) {
+  const featureBounds = gallery.querySelector('.work-gallery-feature').getBoundingClientRect();
+  const featureVisible = featureBounds.top < innerHeight * .85 && featureBounds.bottom > 0;
+  if (featureVisible && firstViewUntil === null) firstViewUntil = performance.now() + 2500;
+  if (featureVisible && performance.now() >= firstViewUntil && !document.hidden && !strip.classList.contains('is-temporarily-paused') && !strip.classList.contains('is-dragging')) {
    const bounds = strip.getBoundingClientRect();
    const center = bounds.left + bounds.width / 2;
    let closest = -1;
@@ -676,7 +680,7 @@ document.addEventListener('DOMContentLoaded', () => {
     title.replaceChildren(document.createTextNode('TWOSOME PLACE'), document.createElement('br'), document.createTextNode('시즌 프로모션'));
    }
    if (mobilePopupTitle && choice.dataset.title.startsWith('OLIVE YOUNG')) {
-    title.replaceChildren(document.createTextNode('OLIVE YOUNG'), document.createElement('br'), document.createTextNode('뷰티 프로모션'));
+    title.replaceChildren(document.createTextNode('OLIVE YOUNG'), document.createElement('br'), document.createTextNode(choice.dataset.title.slice('OLIVE YOUNG'.length).trim()));
    }
       card.classList.remove('is-preview');
    more.hidden = true;

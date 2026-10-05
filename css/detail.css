@@ -775,7 +775,7 @@
 }
 /* Fill the visual-works banner card without beige letterboxing. */
 #visual-works .works-showcase-card--banner .works-showcase-image { background: #fff; }
-#visual-works .works-showcase-card--banner .works-showcase-image img { width: 100%; height: 100%; object-fit: cover; object-position: 81% center; }
+#visual-works .works-showcase-card--banner .works-showcase-image img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
 /* Center the poster copy as one group beside the artwork. */
 #poster .work-gallery-feature { grid-template-rows: auto; align-items: center; }
 #poster .work-gallery-stage { grid-column: 1; grid-row: 1; }
