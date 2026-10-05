@@ -3870,7 +3870,7 @@
     .about-heading .about-intro .about-intro-korean.about-copy-typewriter {
         grid-template-columns: minmax(0, 1fr);
         gap: 4px;
-        margin-top: 12px;
+        margin-top: 32px;
     }
 
     .about-heading .about-intro .about-intro-korean.about-copy-typewriter p {
@@ -4299,3 +4299,30 @@
 @media(prefers-reduced-motion:reduce) { #about-me .editorial-profile-facts.is-facts-reveal-ready { opacity: 1; transform: none; transition: none; } }
 .skills-typeset > h2 { letter-spacing:.025em; }
 #about-me .editorial-profile-facts.is-facts-reveal-ready:not(.is-facts-visible) { transition: none; }
+
+/* Center the profile photo and introduction on mobile. */
+@media (max-width: 768px) {
+    #about-me .editorial-profile { grid-template-columns: minmax(0, 1fr); }
+    #about-me .editorial-profile-photo {
+        grid-row: 2;
+        width: 75%;
+        aspect-ratio: 4 / 5;
+        justify-self: center;
+    }
+    #about-me .editorial-profile-copy {
+        grid-row: 3;
+        width: 100%;
+        text-align: center;
+    }
+    #about-me .editorial-profile-rule { margin-inline: auto; }
+    #about-me .editorial-profile-facts {
+        width: fit-content;
+        max-width: 100%;
+        margin-inline: auto;
+        text-align: left;
+    }
+    #about-me .editorial-profile-facts > div {
+        grid-template-columns: 62px minmax(0, 1fr);
+        gap: 14px;
+    }
+}

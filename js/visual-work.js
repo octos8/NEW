@@ -637,8 +637,8 @@ document.addEventListener('DOMContentLoaded', () => {
   slider.updateSlidesClasses();
   slider.animating = false;
  };
- const resumePopup = () => {
-  if (reduced || track.querySelector('.popup-art-description') || track.querySelector('.popup-art-frame:hover')) return;
+ const resumePopup = (force = false) => {
+  if (reduced || track.querySelector('.popup-art-description') || (!force && track.querySelector('.popup-art-frame:hover'))) return;
   slider.autoplay.start();
  };
  choices.forEach(choice => {
@@ -657,6 +657,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const more = document.createElement('button'); more.type = 'button'; more.className = 'popup-art-more'; more.textContent = 'VIEW MORE'; more.hidden = true; more.setAttribute('aria-haspopup', 'dialog');
   photo.addEventListener('click', () => {
    if (slider?.touchEventsData?.isMoved) return;
+   if (matchMedia('(max-width: 767px)').matches) {
+    more.click();
+    return;
+   }
    track.querySelectorAll('.popup-art-more').forEach(button => { button.hidden = true; });
    track.querySelectorAll('.is-preview').forEach(item => item.classList.remove('is-preview'));
    more.hidden = false; card.classList.add('is-preview'); pausePopup(); more.focus({preventScroll: true});
@@ -666,13 +670,21 @@ document.addEventListener('DOMContentLoaded', () => {
    pausePopup();
    if (frame.querySelector('.popup-art-description')) return;
    title.textContent = choice.dataset.title; description.innerHTML = choice.dataset.description;
+   const mobilePopupTitle = matchMedia('(max-width: 767px)').matches;
+   title.classList.toggle('popup-title-twosome', mobilePopupTitle && choice.dataset.title.startsWith('TWOSOME PLACE'));
+   if (title.classList.contains('popup-title-twosome')) {
+    title.replaceChildren(document.createTextNode('TWOSOME PLACE'), document.createElement('br'), document.createTextNode('시즌 프로모션'));
+   }
+   if (mobilePopupTitle && choice.dataset.title.startsWith('OLIVE YOUNG')) {
+    title.replaceChildren(document.createTextNode('OLIVE YOUNG'), document.createElement('br'), document.createTextNode('뷰티 프로모션'));
+   }
       card.classList.remove('is-preview');
    more.hidden = true;
    const overlay = document.createElement('div'); overlay.className = 'popup-art-description';
    const dismiss = close.cloneNode(true);
    overlay.append(dismiss, title.cloneNode(true), description.cloneNode(true));
    frame.append(overlay);
-   dismiss.addEventListener('click', () => { overlay.remove(); resumePopup(); photo.focus({preventScroll:true}); });
+   dismiss.addEventListener('click', () => { overlay.remove(); card.classList.remove('is-preview'); more.hidden = true; resumePopup(true); });
    overlay.addEventListener('keydown', event => { if (event.key === 'Escape') { event.stopPropagation(); dismiss.click(); } });
    dismiss.focus({preventScroll:true});
   });
@@ -747,6 +759,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const title = document.createElement('h3'); title.textContent = choice.dataset.title;
   const copy = document.createElement('p'); copy.textContent = choice.dataset.description;
   link.className = 'detail-preview';
+  link.addEventListener('click', event => {
+   if (!matchMedia('(hover: none)').matches || link.classList.contains('is-preview')) return;
+   event.preventDefault();
+   layout.querySelectorAll('.detail-preview.is-preview').forEach(item => item.classList.remove('is-preview'));
+   link.classList.add('is-preview');
+  });
   const overlay = document.createElement('span'); overlay.className = 'detail-preview-overlay'; overlay.setAttribute('aria-hidden', 'true');
   const label = document.createElement('strong'); label.textContent = 'CLICK'; overlay.append(label);
   link.append(image, overlay); article.append(link, title, copy); return article;

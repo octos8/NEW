@@ -3640,3 +3640,80 @@
 #project > .project-overview .project-breakpoints > h3,
 #project > .project-overview .project-device-list h4,
 #project > .project-overview .project-device-list p { color:#354437; }
+
+@media (max-width: 768px) {
+    #project > .project-overview .project-device-list h4,
+    #project > .project-overview .project-device-list p,
+    #project > .project-overview .project-device-icon {
+        position: relative;
+        left: -6px;
+    }
+    #project .aesop-case .aesop-type-intro > .aesop-type-name + p {
+        font-size: 12px;
+        font-weight: 400;
+        text-align: center;
+    }
+    #project .aesop-type-description-line { font-weight: 400; }
+    #project .aesop-type-description-line { display: block; }
+    #project .aesop-type-desktop-break { display: none; }
+    #project .aesop-case .aesop-nature-copy p {
+        font-size: 13px;
+    }
+    #project .aesop-case .responsive-monitor > .aesop-device {
+        left: -5px;
+    }
+}
+@media (max-width: 560px) {
+    #project .aesop-case .aesop-nature-copy p {
+        font-size: clamp(10px, 2.8vw, 14px);
+    }
+}
+@media (max-width: 768px) {
+    #project .aesop-case .aesop-design-system-surface { padding-bottom: 24px; }
+    #project .aesop-case .aesop-improvements { padding-top: 48px; padding-bottom: 16px; }
+    #project .aesop-case .aesop-improvements > h3 { margin-bottom: 0; }
+    #project .aesop-case .aesop-bestseller-demo { margin-top: 40px; }
+    #project > .project-overview { padding-bottom: 32px; }
+    #project .aesop-case { margin-top: 24px; }
+    #project .aesop-home-demo { margin-top: 80px; }
+    #project .aesop-detail-demo { margin-top: 80px; }
+    #project .aesop-home-demo > .aesop-demo-copy {
+        order: -1;
+        position: relative;
+        z-index: 2;
+    }
+    #project .aesop-home-demo > .aesop-home-macbook { z-index: 1; }
+    #project .aesop-detail-demo > .aesop-demo-copy {
+        position: relative;
+        z-index: 2;
+    }
+    #project .aesop-detail-demo > .aesop-home-macbook { z-index: 1; }
+    #project .aesop-case .aesop-design-details-title { margin-top: 48px; }
+    #project .aesop-case .aesop-story-details { margin-top: 40px; }
+    #project .aesop-case .aesop-story-details .aesop-design-details-copy {
+        width: 100%;
+        text-align: center;
+    }
+    #project .aesop-case .aesop-nature-copy {
+        width: 100%;
+        padding-inline: 0;
+        text-align: center;
+    }
+    #project > .project-overview .project-device-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        width: 100%;
+        max-width: 360px;
+        gap: 0;
+        padding: 0;
+    }
+    #project > .project-overview .project-device-list > li {
+        width: auto;
+        min-width: 0;
+        margin: 0;
+        text-align: center;
+    }
+    #project > .project-overview .project-device-list :is(h4, p, .project-device-icon) {
+        left: 0;
+    }
+}

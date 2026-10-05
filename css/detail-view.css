@@ -275,4 +275,12 @@ body:has(.detail-view) > .top-link {
     .detail-view > .back-link {
         top: 12px;
     }
+    .project-intro h1 {
+        font-size: 16px;
+        text-wrap: wrap;
+        white-space: normal;
+        overflow-wrap: break-word;
+    }
+    .project-brand { font-size: 24px; }
+    .display-title { font-size: clamp(26px, 7vw, 36px); }
 }

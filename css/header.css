@@ -187,3 +187,29 @@ body > .top-link.is-home-hidden {
     color: #000;
     -webkit-text-fill-color: #000;
 }
+
+@media (max-width: 768px) {
+    .site-header:not(.is-compact) .header-inner,
+    .site-header.is-menu-open .header-inner {
+        width: 160px;
+        height: auto;
+        border-radius: 24px;
+    }
+    .site-header:not(.is-compact) .site-nav,
+    .site-header.is-menu-open .site-nav {
+        height: auto;
+        margin-left: 0;
+        padding: var(--nav-size) 18px 8px;
+        overflow: visible;
+    }
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        width: 100%;
+        min-width: 0;
+        height: auto;
+    }
+    .nav-list li { width: 100%; height: auto; }
+    .nav-list a { width: 100%; min-height: 32px; }
+}

@@ -2739,3 +2739,37 @@
 #project .lune-case .lune-page-details > .lune-page-gallery {
     margin-top: 0;
 }
+@media (max-width: 768px) {
+    #project .lune-introduction::before { display: none; }
+    #project .lune-introduction { margin-top: 24px; padding-top: 16px; }
+    #project .lune-case .lune-system-details > #lune-system-title {
+        margin-top: 2rem;
+        margin-bottom: 0;
+    }
+    #project .lune-case .lune-color-showcase { margin-top: 2rem; }
+    #project .lune-case .lune-color-showcase { margin-bottom: 48px; }
+    #project .lune-case .lune-font-typography { margin-top: 0; }
+    #project .lune-case .lune-type-heading > h3 { font-size: 28px; }
+    #project #lune-finale-title { margin-top: 3rem; }
+    #project .lune-finale:not(.lune-page-details) { padding-bottom: 88px; }
+    #project #lune-main-page-title { margin-top: 3rem; }
+    #project .lune-case .lune-color-column > p {
+        font-size: 12px;
+        text-align: center;
+    }
+    #project .lune-case .lune-font-why > p {
+        font-size: 12px;
+        text-align: center;
+    }
+    #project .lune-font-description-line { display: block; }
+    #project .lune-font-desktop-break { display: none; }
+    #project .lune-detail-description-line { display: block; }
+    #project .lune-detail-desktop-break { display: none; }
+    #project :is(.lune-desktop-detail-title, .lune-product-list-title) > p {
+        font-size: 12px;
+    }
+    #project .lune-mobile-explainer > .lune-phone {
+        justify-self: center;
+        margin-inline: 0;
+    }
+}
