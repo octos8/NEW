@@ -1,8 +1,9 @@
 /* Original photo pixels, displayed only inside the cube silhouette. */
-#home .hero-bg { background: #d9dad8; }
+#home .hero-bg { background: #d9dad8; z-index: 0; }
 #home .hero-title { color: rgba(255, 255, 255, .72); }
 #home .hero-meta .hero-profile { color: #fff; }
 #home .hero-visual.hero-photo-rotate {
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,7 +35,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 3;
   background: #fff;
   opacity: var(--hero-white, 0);
   pointer-events: none;
@@ -43,26 +44,49 @@
   #home .hero-photo-rotate img { animation: none; transform: none; }
 }
 
-/* Position the title closer to the upper-left edge at every screen size. */
+/* Center the oversized title behind the cube silhouette. */
 #home .hero-inner {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
   margin: 0;
   max-width: none;
-  padding: clamp(24px, 4vh, 48px) clamp(24px, 4vw, 64px) 0;
+  padding: 0;
+}
+#home .hero-title {
+  position: relative;
+  z-index: 0;
+  inset: auto;
+  width: 96vw;
+  margin: 0;
+  transform: none;
+}
+#home .structure-blueprint {
+  width: 100%;
+  transform: none;
+}
+#home .hero-meta {
+  z-index: 4;
+  top: calc(50% + clamp(18px, 3svh, 32px) + 28px + min(33.6798vw, 30.618svh, calc(var(--hero-identity-offset, 300.6px) * .75)));
+  left: calc(50% + min(44.9064vw, 40.824svh, var(--hero-identity-offset, 300.6px)) + 16px);
+  right: auto;
+  bottom: auto;
+  transform: translateY(-50%);
+}
+#home .hero-meta .hero-profile {
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 8px;
+  font-size: clamp(12px, 1.1vw, 20px);
 }
 /* Keep the desktop introduction after HOME, outside its white overlay. */
 #home.hero-cinematic + #about {
   margin-top: 0;
-}
-
-/* Bring the larger mobile cube closer to the title. */
-@media (min-width: 769px) {
-  #home .hero-title {
-    width: min(100%, calc(var(--fs-hero) * 8.42));
-  }
-
-  #home .structure-blueprint {
-    transform: translate(-2.766%, -18.824%);
-  }
 }
 
 @media (max-width: 768px) {
@@ -70,7 +94,14 @@
     top: 0;
     width: min(117vw, 82svh);
   }
+  #home .hero-meta {
+    top: calc(50% + min(28.08vw, 19.68svh));
+    left: auto;
+    right: 16px;
+    width: auto;
+  }
+  #home .hero-meta .hero-profile {
+    font-size: clamp(8px, 1.8vw, 13px);
+    gap: 6px;
+  }
 }
-
-/* Slightly reduce the title artwork without moving its container. */
-#home .structure-blueprint { width: 94%; }

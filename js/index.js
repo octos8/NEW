@@ -143,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Allow only a small enlargement over the resolution-conscious resting size.
     const sourceWidth=photo?.naturalWidth || 736;
     stage.style.setProperty('--hero-photo-limit', (sourceWidth*1.134)/Math.max(1,devicePixelRatio) + 'px');
+    stage.style.setProperty('--hero-identity-offset', (sourceWidth*1.134*.36)/Math.max(1,devicePixelRatio) + 'px');
     home.classList.toggle('hero-cinematic', !motion.matches);
     const distance=Math.max(1,home.offsetHeight-stage.offsetHeight);
     const p=motion.matches ? 0 : clamp(-home.getBoundingClientRect().top/distance);
