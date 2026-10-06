@@ -90,12 +90,18 @@
 }
 
 @media (max-width: 768px) {
+  #home .hero-title {
+    position: absolute;
+    top: calc(50% - min(50.31vw, 35.26svh) + 8px);
+    left: 50%;
+    transform: translate(-50%, -100%);
+  }
   #home .hero-photo-rotate img {
     top: 0;
     width: min(117vw, 82svh);
   }
   #home .hero-meta {
-    top: calc(50% + min(28.08vw, 19.68svh));
+    top: calc(50% + min(28.08vw, 19.68svh) + 36px);
     left: auto;
     right: 16px;
     width: auto;
