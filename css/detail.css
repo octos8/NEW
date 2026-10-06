@@ -906,3 +906,795 @@
     #detail .detail-three-up p { font-size: 10px; }
 }
 
+
+/* Warm editorial card at the center of the poster gallery. */
+#poster .work-gallery-caption {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    padding: clamp(22px, 2.3vw, 38px);
+    gap: 0;
+    background: #f5f2ed;
+    justify-content: center;
+    text-align: left;
+}
+#poster .work-gallery-caption::before,
+#poster .work-gallery-caption::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    pointer-events: none;
+}
+#poster .work-gallery-caption::before { width: 540px; height: 540px; top: -130px; left: -180px; background: rgb(255 255 255 / 35%); }
+#poster .work-gallery-caption::after { width: 300px; height: 300px; right: -190px; bottom: 20px; background: rgb(211 202 189 / 24%); }
+#poster .poster-caption-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 38px; color: #8b8178; font-size: 9px; letter-spacing: .3em; }
+#poster .poster-caption-top > span:first-child { display: flex; align-items: center; gap: 14px; }
+#poster .poster-caption-top i { width: 48px; height: 1px; background: #cec5bb; }
+#poster .work-gallery-caption h3 { margin: 0; font-size: clamp(22px, 2vw, 30px); line-height: 1.4; }
+#poster .poster-caption-rule { width: 32px; height: 2px; background: linear-gradient(to right, #ae8569 65%, #d7cabc 65%); margin: 22px 0 28px; }
+#poster .work-gallery-caption p { margin: 0; text-align: left; font-size: 12px; line-height: 1.9; color: #77736f; }
+#poster .poster-caption-facts { margin: 34px 0 0; padding-top: 20px; border-top: 1px solid #e3dcd3; display: grid; gap: 14px; }
+#poster .poster-caption-facts > div { display: grid; grid-template-columns: 90px minmax(0, 1fr); gap: 12px; }
+#poster .poster-caption-facts dt { font-size: 9px; letter-spacing: .25em; color: #8b8178; }
+#poster .poster-caption-facts dd { margin: 0; font-size: 12px; color: #77736f; overflow-wrap: anywhere; }
+@media (max-width: 767px) {
+    #poster .work-gallery-caption { padding: 26px 22px; }
+    #poster .poster-caption-top { margin-bottom: 28px; }
+    #poster .poster-caption-facts > div { grid-template-columns: 76px minmax(0, 1fr); }
+}
+/* Plain white background for the poster information card. */
+#poster .work-gallery-caption { background: #ffffff; }
+#poster .work-gallery-caption::before,
+#poster .work-gallery-caption::after { display: none; }
+/* Four-dot editorial marker to the right of the poster thumbnails. */
+#poster .poster-selected-works {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    pointer-events: none;
+    color: #a19b95;
+}
+#poster .poster-selected-works > span {
+    writing-mode: vertical-rl;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: .35em;
+    white-space: nowrap;
+}
+#poster .poster-selected-line { width: 1px; height: 84px; background: #bcb5ae; }
+#poster .poster-selected-dots { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+#poster .poster-selected-dots > i { width: 10px; height: 10px; border: 1px solid #b1aaa3; border-radius: 50%; background: transparent; }
+#poster .poster-selected-dots > i.is-active { background: #a47d60; border-color: #a47d60; }
+@media (max-width: 1024px) {
+    #poster .poster-selected-works { right: 4px; gap: 18px; }
+    #poster .poster-selected-works > span { font-size: 8px; }
+    #poster .poster-selected-line { height: 64px; }
+}
+/* Black typography across the poster information and side marker. */
+#poster .work-gallery-caption h3,
+#poster .work-gallery-caption p,
+#poster .poster-caption-top,
+#poster .poster-caption-facts dt,
+#poster .poster-caption-facts dd,
+#poster .poster-selected-works { color: #000000; }
+/* Black rules and dots match the poster typography. */
+#poster .poster-caption-rule,
+#poster .poster-caption-top i,
+#poster .poster-selected-line { background: #000000; }
+#poster .poster-caption-facts { border-top-color: #000000; }
+#poster .poster-selected-dots > i { border-color: #000000; }
+#poster .poster-selected-dots > i.is-active { background: #000000; border-color: #000000; }
+/* Full-height poster rule with the Selected Works marker outside it. */
+#poster { position: relative; }
+#poster::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: clamp(58px, 8vw, 128px);
+    width: 1px;
+    background: #000000;
+    pointer-events: none;
+}
+#poster > .poster-selected-works {
+    top: 50%;
+    right: clamp(22px, 3.5vw, 56px);
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    #poster::after { right: 36px; }
+    #poster > .poster-selected-works { right: 12px; }
+
+}
+/* Keep the longer Design Point label on one line. */
+#poster .poster-caption-facts > div { grid-template-columns: 112px minmax(0, 1fr); }
+#poster .poster-caption-facts dt { white-space: nowrap; letter-spacing: .2em; }
+@media (max-width: 767px) {
+    #poster .poster-caption-facts > div { grid-template-columns: 100px minmax(0, 1fr); }
+    #poster .poster-caption-facts dt { letter-spacing: .12em; }
+}
+/* Larger poster copy without the small category label. */
+#poster .poster-caption-top { justify-content: flex-end; }
+#poster .work-gallery-caption h3 { font-size: clamp(24px, 2.2vw, 33px); }
+#poster .work-gallery-caption p { font-size: 14px; line-height: 1.9; }
+/* One continuous line through the overview and project pages. */
+.detail-popup-transition { position: relative; }
+.selected-works-page-line {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    bottom: 0;
+    right: clamp(58px, 8vw, 128px);
+    width: 1px;
+    background: #000;
+    pointer-events: none;
+}
+#poster::after { display: none; }
+.work-gallery { position: relative; }
+.work-gallery > .poster-selected-works {
+    position: absolute;
+    top: 50%;
+    right: clamp(22px, 3.5vw, 56px);
+    transform: translateY(-50%);
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    pointer-events: none;
+    color: #000;
+}
+.work-gallery .poster-selected-works > span { writing-mode: vertical-rl; font-size: 9px; font-weight: 500; letter-spacing: .35em; white-space: nowrap; }
+.work-gallery .poster-selected-line { width: 1px; height: 84px; background: #000; }
+.work-gallery .poster-selected-dots { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.work-gallery .poster-selected-dots > i { width: 10px; height: 10px; border: 1px solid #000; border-radius: 50%; background: transparent; }
+.work-gallery .poster-selected-dots > i.is-active { background: #000; }
+@media (max-width: 1024px) {
+    .work-gallery > .poster-selected-works { gap: 18px; }
+    .work-gallery .poster-selected-works > span { font-size: 8px; }
+    .work-gallery .poster-selected-line { height: 64px; }
+}
+@media (max-width: 768px) {
+    .selected-works-page-line { right: 36px; }
+    .work-gallery > .poster-selected-works { right: 12px; }
+}
+/* Draw the rail directly on Poster through Detail only. */
+#poster::after,
+#banner::after,
+#popup::after,
+#detail::after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    bottom: 0;
+    right: clamp(58px, 8vw, 128px);
+    width: 1px;
+    background: #000000;
+    pointer-events: none;
+}
+@media (max-width: 768px) {
+    #poster::after,
+    #banner::after,
+    #popup::after,
+    #detail::after { right: 36px; }
+}
+/* Reference-inspired banner information panel. */
+#banner .work-gallery-caption {
+    align-items: stretch;
+    text-align: left;
+    padding: clamp(24px, 2.5vw, 40px);
+    gap: 0;
+    background: #f7f4ef;
+    justify-content: center;
+}
+#banner .banner-caption-number { margin-bottom: 18px; font-size: 10px; letter-spacing: .14em; color: #878787; }
+#banner .work-gallery-caption h3 { margin: 0; font-size: clamp(18px, 1.6vw, 26px); font-weight: 700; line-height: 1.4; white-space: normal; word-break: keep-all; color: #080808; }
+#banner .banner-caption-rule { display: block; width: 34px; height: 1px; margin: 18px 0 22px; background: #aaa; }
+#banner .work-gallery-caption p { margin: 0; text-align: left; font-size: 14px; line-height: 1.75; color: #747474; }
+#banner .banner-caption-footer { margin-top: 28px; padding-top: 18px; border-top: 1px solid #e2dcd4; display: flex; flex-direction: column; gap: 6px; color: #878787; font-size: 9px; letter-spacing: .2em; line-height: 1.6; }
+#banner .banner-caption-footer i { font-style: normal; padding-inline: 10px; }
+@media (max-width: 767px) {
+    #banner .work-gallery-caption { padding: 26px 24px; }
+    #banner .work-gallery-caption h3 { font-size: 22px; }
+    #banner .work-gallery-caption p { font-size: 13px; }
+}
+/* Match the banner information panel to the artwork height. */
+#banner .work-gallery-stage { align-items: flex-start; align-self: start; }
+#banner .work-gallery-caption {
+    min-height: 0;
+    box-sizing: border-box;
+    padding: clamp(18px, 2vw, 32px);
+}
+#banner .banner-caption-number { margin-bottom: 12px; }
+#banner .banner-caption-rule { margin: 12px 0 16px; }
+#banner .work-gallery-caption p { font-size: 13px; line-height: 1.65; }
+#banner .banner-caption-footer { margin-top: 20px; padding-top: 14px; gap: 10px; letter-spacing: .14em; }
+#banner .banner-caption-footer > div { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 10px; }
+@media (min-width: 768px) {
+    #banner .work-gallery-caption { height: var(--banner-image-height, auto); overflow-y: auto; }
+}
+@media (max-width: 767px) {
+    #banner .work-gallery-caption { height: auto; padding: 26px 24px; }
+}
+/* Poster supporting copy and rules match the gallery introduction gray. */
+#poster .work-gallery-caption p,
+#poster .poster-caption-facts dt,
+#poster .poster-caption-facts dd { color: #777777; }
+#poster .poster-caption-rule { background: #777777; }
+#poster .poster-caption-facts { border-top-color: #777777; }
+/* Reference gray, staggered horizontal artwork rows bounded by the right rail. */
+#banner.banner-mosaic { background: #afafaf; }
+#banner.banner-mosaic .work-gallery-inner { width: 100%; max-width: none; }
+#banner.banner-mosaic .work-gallery-header { margin-inline: 48px; margin-right: calc(clamp(58px, 8vw, 128px) + 32px); }
+#banner.banner-mosaic .work-gallery-layout { padding: 0; display: block; margin-right: calc(clamp(58px, 8vw, 128px) + 16px); }
+.banner-mosaic-viewport { width: 100%; overflow: hidden; display: grid; gap: 26px; padding-block: 20px; }
+.banner-mosaic-track { display: flex; width: max-content; animation: banner-mosaic-left 90s linear infinite; animation-play-state: paused; }
+.banner-mosaic-track:nth-child(2) { margin-left: 120px; animation-duration: 100s; }
+.banner-mosaic-group { display: flex; flex: none; gap: 26px; padding-right: 26px; }
+.banner-mosaic-art { display: block; flex: none; width: clamp(360px, 46vw, 720px); padding: 0; border: 0; background: transparent; cursor: pointer; }
+.banner-mosaic-art img { display: block; width: 100%; height: auto; aspect-ratio: 1920 / 970; object-fit: cover; }
+#banner.is-mosaic-visible .banner-mosaic-track { animation-play-state: running; }
+#banner.is-description-open .banner-mosaic-track,
+.banner-mosaic-viewport:focus-within .banner-mosaic-track { animation-play-state: paused; }
+.banner-mosaic-art:focus-visible { outline: 2px solid #000; outline-offset: 5px; }
+@keyframes banner-mosaic-left { to { transform: translateX(-50%); } }
+.banner-mosaic-dialog { width: min(560px, calc(100vw - 48px)); max-height: 85svh; margin: auto; padding: 40px; border: 1px solid rgb(255 255 255 / 45%); border-radius: 0; background: rgb(35 35 35 / 72%); backdrop-filter: blur(16px); color: #fff; overflow: auto; }
+.banner-mosaic-dialog::backdrop { background: rgb(0 0 0 / 22%); }
+.banner-mosaic-close { display: block; margin-left: auto; padding: 0 4px; border: 0; background: transparent; color: #fff; font-size: 30px; cursor: pointer; }
+.banner-mosaic-dialog h3 { font-family: 'Paperlogy', sans-serif; margin: 14px 0 24px; font-size: 26px; line-height: 1.4; }
+.banner-mosaic-dialog p { font-size: 15px; line-height: 1.9; }
+.banner-mosaic-facts { margin-top: 28px; padding-top: 20px; border-top: 1px solid #ffffff55; display: grid; gap: 12px; }
+.banner-mosaic-facts > div { display: grid; grid-template-columns: 72px 1fr; gap: 12px; font-size: 11px; letter-spacing: .1em; }
+.banner-mosaic-facts dd { margin: 0; }
+@media (max-width: 768px) {
+ #banner.banner-mosaic .work-gallery-header { margin-left: 18px; margin-right: 52px; }
+ #banner.banner-mosaic .work-gallery-layout { margin-right: 48px; }
+ .banner-mosaic-art { width: clamp(280px, 76vw, 520px); }
+ .banner-mosaic-viewport { gap: 18px; }
+ .banner-mosaic-group { gap: 18px; padding-right: 18px; }
+ .banner-mosaic-track:nth-child(2) { margin-left: 60px; }
+ .banner-mosaic-dialog { padding: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+ .banner-mosaic-track { animation: none; }
+ .banner-mosaic-viewport { overflow-x: auto; }
+}
+/* Smaller banner artwork with more breathing room around both rows. */
+#banner.banner-mosaic .work-gallery-layout {
+    margin-left: 40px;
+    margin-right: calc(clamp(58px, 8vw, 128px) + 40px);
+}
+.banner-mosaic-art { width: clamp(300px, 35vw, 560px); }
+.banner-mosaic-viewport { gap: 42px; padding-block: 36px; }
+.banner-mosaic-group { gap: 42px; padding-right: 42px; }
+.banner-mosaic-track:nth-child(2) { margin-left: 100px; }
+@media (max-width: 768px) {
+    #banner.banner-mosaic .work-gallery-layout { margin-left: 20px; margin-right: 56px; }
+    .banner-mosaic-art { width: clamp(240px, 65vw, 420px); }
+    .banner-mosaic-viewport { gap: 28px; padding-block: 26px; }
+    .banner-mosaic-group { gap: 28px; padding-right: 28px; }
+    .banner-mosaic-track:nth-child(2) { margin-left: 52px; }
+}
+/* Fixed starting composition with a manual left-arrow control. */
+#banner.banner-mosaic { background: #b9b9b9; }
+#banner.banner-mosaic .work-gallery-layout { position: relative; }
+#banner.banner-mosaic .banner-mosaic-track {
+    animation: none;
+    transition: transform .65s cubic-bezier(.22, .61, .36, 1);
+}
+.banner-mosaic-advance {
+    position: absolute;
+    z-index: 2;
+    left: 20px;
+    top: 75%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    background: #b9b9b9;
+    color: #222;
+    padding: 12px;
+    cursor: pointer;
+}
+.banner-mosaic-advance svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.banner-mosaic-advance:hover { background: #d0d0d0; }
+.banner-mosaic-advance:focus-visible { outline: 2px solid #222; outline-offset: 4px; }
+@media (max-width: 768px) {
+    .banner-mosaic-advance { left: 2px; width: 38px; height: 38px; padding: 9px; }
+    .banner-mosaic-track:nth-child(2) { margin-left: 60px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    #banner.banner-mosaic .banner-mosaic-track { transition-duration: .01s; }
+}
+
+/* Shift both banner rows right slightly without crossing the right rail. */
+#banner.banner-mosaic .work-gallery-layout { margin-left: 64px; }
+@media (max-width: 768px) {
+    #banner.banner-mosaic .work-gallery-layout { margin-left: 32px; }
+}
+/* More left space, with a stronger offset on the lower banner row. */
+#banner.banner-mosaic .work-gallery-layout { margin-left: 80px; }
+#banner .banner-mosaic-track:nth-child(2) { margin-left: 140px; }
+@media (max-width: 768px) {
+    #banner.banner-mosaic .work-gallery-layout { margin-left: 40px; }
+    #banner .banner-mosaic-track:nth-child(2) { margin-left: 80px; }
+}
+/* Darker banner eyebrow and introduction on the gray background. */
+#banner .work-gallery-eyebrow,
+#banner .work-gallery-header > p,
+#banner .work-gallery-header > p strong { color: #444444; }
+#banner .work-gallery-header > p { border-left-color: #ffffff; }
+/* Static three-item popup catalogue with a selected artwork on the right. */
+#popup.popup-selection .work-gallery-inner {
+    width: calc(100% - clamp(58px, 8vw, 128px) - 72px);
+    max-width: 1280px;
+    margin-left: 40px;
+    margin-right: 0;
+}
+#popup.popup-selection .work-gallery-layout { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); padding: 24px 0; align-items: start; }
+.popup-selection-items { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; align-items: start; }
+.popup-selection-list { padding-top: 34px; }
+.popup-selection-item { padding: 0; border: 0; background: transparent; text-align: left; color: #111; cursor: pointer; min-width: 0; }
+.popup-selection-item img { display: block; width: 100%; aspect-ratio: 2 / 3; object-fit: contain; margin-bottom: 16px; }
+.popup-selection-item small { display: block; font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+.popup-selection-item strong { display: block; font-size: 12px; line-height: 1.6; word-break: keep-all; }
+.popup-selection-item[aria-pressed="true"] img { outline: 2px solid #111; outline-offset: 4px; }
+.popup-selection-item:focus-visible { outline: 2px solid #111; outline-offset: 6px; }
+.popup-selection-pagination { display: flex; justify-content: center; align-items: center; gap: 22px; margin-top: 34px; }
+.popup-selection-pagination button { width: 36px; height: 36px; border: 1px solid #777; border-radius: 50%; background: transparent; font-size: 18px; cursor: pointer; }
+.popup-selection-pagination button:disabled { opacity: .25; cursor: default; }
+.popup-selection-pagination span { color: #777; font-size: 11px; letter-spacing: .1em; }
+.popup-selection-image { display: block; width: 100%; height: 420px; object-fit: contain; object-position: right top; }
+.popup-selection-copy { margin-top: 28px; border-top: 1px solid #ddd; padding-top: 24px; }
+.popup-selection-copy h3 { margin: 0 0 16px; font-family: 'Paperlogy', sans-serif; font-size: 23px; line-height: 1.4; }
+.popup-selection-copy p { font-size: 13px; line-height: 1.85; color: #777; word-break: keep-all; }
+@media (max-width: 768px) {
+ #popup.popup-selection .work-gallery-inner { width: calc(100% - 68px); margin-left: 16px; }
+ #popup.popup-selection .work-gallery-layout { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+ .popup-selection-list { padding-top: 0; }
+ .popup-selection-image { height: 380px; object-position: center top; }
+ .popup-selection-item strong { font-size: 10px; }
+ .popup-selection-copy h3 { font-size: 20px; }
+}
+/* Large selected popup at the upper left, catalogue and heading on the right. */
+#popup.popup-selection .work-gallery-header > div { grid-column: 2; grid-row: 1; text-align: right; }
+#popup.popup-selection .work-gallery-header > p { grid-column: 1; grid-row: 1; text-align: left; }
+#popup.popup-selection .work-gallery-layout { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); }
+#popup .popup-selection-feature { grid-column: 1; grid-row: 1; }
+#popup .popup-selection-list { grid-column: 2; grid-row: 1; }
+#popup .popup-selection-image { width: 100%; height: 560px; object-position: left top; }
+@media (max-width: 768px) {
+    #popup.popup-selection .work-gallery-header > div { grid-column: 1; grid-row: 1; text-align: right; }
+    #popup.popup-selection .work-gallery-header > p { grid-column: 1; grid-row: 2; }
+    #popup.popup-selection .work-gallery-layout { grid-template-columns: minmax(0, 1fr); }
+    #popup .popup-selection-feature { grid-column: 1; grid-row: 1; }
+    #popup .popup-selection-list { grid-column: 1; grid-row: 2; }
+    #popup .popup-selection-image { height: 480px; object-position: left top; }
+}
+/* No selected-thumbnail border; introduction directly below the Popup title. */
+#popup .popup-selection-item[aria-pressed="true"] img { outline: none; }
+#popup.popup-selection .work-gallery-header { align-items: start; row-gap: 20px; }
+#popup.popup-selection .work-gallery-header > p {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: end;
+    text-align: left;
+}
+#popup.popup-selection .work-gallery-header nav { grid-row: 3; }
+@media (max-width: 768px) {
+    #popup.popup-selection .work-gallery-header > p { grid-column: 1; grid-row: 2; }
+}
+/* Raise the selected artwork into the open upper-left area. */
+#popup.popup-selection .popup-selection-feature {
+    margin-top: -140px;
+    align-self: start;
+}
+#popup.popup-selection .popup-selection-image { object-position: left top; }
+@media (max-width: 768px) {
+    #popup.popup-selection .popup-selection-feature { margin-top: 0; }
+}
+/* Balanced translucent banner description with the original caption typography. */
+.banner-mosaic-dialog {
+    width: min(520px, calc(100vw - 48px));
+    padding: 44px 36px;
+    background: rgb(30 30 30 / 32%);
+    backdrop-filter: blur(8px);
+    border-color: rgb(255 255 255 / 25%);
+}
+.banner-mosaic-close { position: absolute; top: 14px; right: 18px; font-size: 26px; }
+.banner-mosaic-dialog h3 {
+    font-family: 'Paperlogy', sans-serif;
+    font-size: clamp(18px, 1.6vw, 26px);
+    font-weight: 700;
+    letter-spacing: -.045em;
+    line-height: 1.4;
+    margin: 0 0 22px;
+}
+.banner-mosaic-dialog p {
+    font-family: 'Paperlogy', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.65;
+    margin: 0;
+}
+.banner-mosaic-facts { margin: 20px 0 0; padding-top: 14px; gap: 10px; }
+.banner-mosaic-facts > div { font-size: 9px; letter-spacing: .14em; font-weight: 400; }
+@media (max-width: 767px) {
+    .banner-mosaic-dialog { padding: 42px 24px; }
+    .banner-mosaic-dialog h3 { font-size: 22px; }
+    .banner-mosaic-dialog p { font-size: 13px; }
+}
+/* Center all copy within the translucent banner explanation. */
+.banner-mosaic-dialog h3,
+.banner-mosaic-dialog p { text-align: center; }
+.banner-mosaic-facts { justify-items: center; }
+.banner-mosaic-facts > div { grid-template-columns: 64px auto; width: fit-content; text-align: left; }
+/* Anchor the selected popup artwork to the page's upper-left corner. */
+@media (min-width: 769px) {
+    #popup.popup-selection { min-height: 1000px; }
+    #popup.popup-selection .popup-selection-feature {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: min(40vw, 560px);
+        margin-top: 0;
+    }
+    #popup.popup-selection .popup-selection-image {
+        width: 100%;
+        height: auto;
+        object-position: left top;
+    }
+    #popup.popup-selection .popup-selection-copy { padding-inline: 24px; }
+}
+@media (max-width: 768px) {
+    #popup.popup-selection .popup-selection-feature { margin-left: -16px; }
+    #popup.popup-selection .popup-selection-image { object-position: left top; }
+}
+/* Higher Popup heading, complete artwork, and a lower-right catalogue. */
+@media (min-width: 769px) {
+    #popup.popup-selection { min-height: max(1000px, var(--popup-feature-height, 0px)); }
+    #popup.popup-selection .work-gallery-header { margin-top: 0; }
+    #popup.popup-selection .popup-selection-image {
+        height: min(750px, 78svh);
+        width: 100%;
+        object-fit: contain;
+        object-position: left top;
+    }
+    #popup.popup-selection .popup-selection-list { padding-top: 0; margin-top: 170px; align-self: end; }
+    #popup.popup-selection .work-gallery-layout { min-height: 540px; align-items: end; }
+}
+@media (min-width: 769px) {
+    #popup.popup-selection .popup-selection-feature { top: var(--popup-title-top, 100px); }
+}
+/* Position the large artwork against the section, not the lower list layout. */
+@media (min-width: 769px) {
+    #popup.popup-selection .work-gallery-inner,
+    #popup.popup-selection .work-gallery-layout { position: static; }
+    #popup.popup-selection .popup-selection-feature {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        margin: 0;
+    }
+}
+/* Asymmetric vertical popup layout inspired by an editorial product spread. */
+#popup.popup-editorial { padding: 48px 0 64px; min-height: 0; }
+#popup.popup-editorial .work-gallery-inner { width: calc(100% - clamp(58px, 8vw, 128px) - 64px); max-width: 1280px; margin-left: 32px; margin-right: 0; }
+#popup.popup-editorial .work-gallery-header { display: none; }
+#popup.popup-editorial .work-gallery-layout { display: block; padding: 0; }
+.popup-editorial-board { display: grid; grid-template-columns: 1.1fr .9fr 1fr; gap: 24px; align-items: start; }
+.popup-editorial-column { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+.popup-editorial-intro { min-height: 290px; display: flex; flex-direction: column; justify-content: center; padding: 12px 20px 20px 0; }
+.popup-editorial-intro > span { color: #777; font-size: 9px; letter-spacing: .25em; }
+.popup-editorial-intro h2 { font-size: clamp(36px, 5vw, 72px); font-weight: 700; line-height: 1.1; letter-spacing: -.04em; margin: 24px 0; }
+.popup-editorial-intro p { font-size: 13px; line-height: 1.8; color: #777; }
+.popup-editorial-left .popup-editorial-art { width: 82%; align-self: flex-end; }
+.popup-editorial-right { padding-top: 64px; }
+.popup-editorial-art { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: pointer; }
+.popup-editorial-art img { display: block; width: 100%; height: auto; }
+.popup-editorial-art:focus-visible { outline: 2px solid #777; outline-offset: 4px; }
+.popup-editorial-copy { background: #111; color: #fff; padding: 28px 24px; min-height: 320px; display: flex; flex-direction: column; }
+.popup-editorial-copy h3 { font-size: 18px; line-height: 1.5; margin: 0 0 18px; font-family: 'Paperlogy', sans-serif; }
+.popup-editorial-copy p { font-size: 12px; line-height: 1.85; color: #ddd; word-break: keep-all; }
+.popup-editorial-copy > span { font-family: Georgia, serif; font-size: 52px; text-align: right; margin-top: auto; padding-top: 28px; }
+.popup-editorial-navigation { display: flex; justify-content: flex-end; align-items: center; gap: 20px; margin-top: 28px; }
+.popup-editorial-navigation button { width: 36px; height: 36px; border: 1px solid #aaa; border-radius: 50%; background: none; cursor: pointer; font-size: 18px; }
+.popup-editorial-navigation button:disabled { opacity: .25; cursor: default; }
+.popup-editorial-navigation span { font-size: 11px; color: #777; }
+@media (max-width: 768px) {
+ #popup.popup-editorial .work-gallery-inner { width: calc(100% - 68px); margin-left: 16px; }
+ .popup-editorial-board { grid-template-columns: minmax(0, 1fr); }
+ .popup-editorial-intro { min-height: 0; }
+ .popup-editorial-left .popup-editorial-art { width: 100%; }
+ .popup-editorial-right { padding-top: 0; }
+ .popup-editorial-art img { max-height: 500px; object-fit: contain; object-position: left; }
+}
+/* Artwork begins at the upper left; the Popup introduction occupies the right. */
+#popup.popup-editorial { padding-top: 0; }
+#popup .popup-editorial-board { grid-template-columns: 1.1fr 1fr 1fr; gap: 24px; }
+#popup .popup-editorial-left { padding-top: 0; }
+#popup .popup-editorial-left .popup-editorial-art { width: 100%; align-self: start; }
+#popup .popup-editorial-center { padding-top: 44px; }
+#popup .popup-editorial-right { padding-top: 72px; }
+#popup .popup-editorial-intro { min-height: 230px; padding: 0 0 24px; justify-content: flex-start; text-align: right; }
+#popup .popup-editorial-intro h2 { margin: 20px 0; }
+#popup .popup-editorial-intro p { text-align: right; }
+#popup .popup-editorial-copy { min-height: 260px; }
+@media (max-width: 768px) {
+    #popup .popup-editorial-board { grid-template-columns: minmax(0, 1fr); }
+    #popup .popup-editorial-center,
+    #popup .popup-editorial-right { padding-top: 0; }
+    #popup .popup-editorial-right { grid-row: 1; }
+    #popup .popup-editorial-intro { min-height: 0; padding-top: 28px; }
+}
+/* Small, evenly aligned popup images across the middle of the page. */
+#popup.popup-inline-gallery { padding: 80px 0; min-height: 100svh; }
+#popup.popup-inline-gallery .work-gallery-inner { width: calc(100% - clamp(58px, 8vw, 128px) - 64px); max-width: 1400px; margin-left: 32px; margin-right: 0; }
+#popup.popup-inline-gallery .work-gallery-header { margin-bottom: 64px; }
+#popup.popup-inline-gallery .work-gallery-header > div { grid-column: 2; grid-row: 1; text-align: right; }
+#popup.popup-inline-gallery .work-gallery-header > p { grid-column: 1; grid-row: 1; }
+#popup.popup-inline-gallery .work-gallery-layout { display: block; padding: 0; }
+.popup-inline-row { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 0; align-items: center; width: 100%; }
+.popup-inline-art { display: block; width: 100%; min-width: 0; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.popup-inline-art img { display: block; width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: contain; }
+.popup-inline-art:focus-visible { outline: 2px solid #777; outline-offset: 4px; position: relative; z-index: 1; }
+.popup-inline-copy { margin: 40px auto 0; max-width: 640px; text-align: center; }
+.popup-inline-copy h3 { margin-bottom: 18px; font-size: 23px; font-family: 'Paperlogy', sans-serif; line-height: 1.4; }
+.popup-inline-copy p { font-size: 13px; line-height: 1.85; color: #777; word-break: keep-all; }
+@media (max-width: 768px) {
+ #popup.popup-inline-gallery .work-gallery-inner { width: calc(100% - 68px); margin-left: 16px; }
+ #popup.popup-inline-gallery .work-gallery-header > div { grid-column: 1; grid-row: 1; }
+ #popup.popup-inline-gallery .work-gallery-header > p { grid-column: 1; grid-row: 2; }
+ .popup-inline-row { display: flex; overflow-x: auto; }
+ .popup-inline-art { flex: 0 0 120px; }
+}
+/* Edge-to-edge popup row, bounded by the right vertical rule. */
+#popup.popup-inline-gallery .work-gallery-inner {
+    width: calc(100% - clamp(58px, 8vw, 128px));
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+#popup.popup-inline-gallery .work-gallery-header { margin-left: 32px; margin-right: 32px; }
+@media (max-width: 768px) {
+    #popup.popup-inline-gallery .work-gallery-inner { width: calc(100% - 36px); margin-left: 0; }
+    #popup.popup-inline-gallery .work-gallery-header { margin-left: 16px; margin-right: 16px; }
+    #popup .popup-inline-art { flex-basis: 140px; }
+}
+/* Match the reference background for the horizontal popup gallery. */
+#popup.popup-inline-gallery { background: #F0F2F1; }
+
+/* Lower the horizontal popup artwork row slightly. */
+#popup.popup-inline-gallery .work-gallery-header { margin-bottom: 88px; }
+/* Popup introduction above the category menu, with a lower artwork row. */
+#popup.popup-inline-gallery .work-gallery-header { margin-bottom: 112px; row-gap: 20px; }
+#popup.popup-inline-gallery .work-gallery-header > p {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: end;
+}
+#popup.popup-inline-gallery .work-gallery-header nav { grid-row: 3; }
+@media (max-width: 768px) {
+    #popup.popup-inline-gallery .work-gallery-header > p { grid-column: 1; grid-row: 2; }
+}
+/* Selected popup details occupy the open upper-left area. */
+#popup.popup-inline-gallery .popup-inline-copy {
+    position: absolute;
+    top: 80px;
+    left: 32px;
+    width: calc(50% - 64px);
+    max-width: 540px;
+    margin: 0;
+    text-align: left;
+}
+#popup .popup-inline-copy[hidden] { display: none; }
+#popup .popup-inline-copy h3 { font-size: 24px; }
+#popup .popup-inline-copy p { font-size: 13px; line-height: 1.85; }
+#popup .popup-inline-art { position: relative; transition: transform .3s ease; }
+#popup .popup-inline-art img { transition: filter .3s ease; }
+#popup.has-popup-selection .popup-inline-art[aria-pressed="false"] img { filter: brightness(.72); }
+#popup .popup-inline-art[aria-pressed="true"] { transform: scale(1.055); z-index: 2; }
+#popup .popup-inline-art[aria-pressed="true"] img { filter: none; }
+@media (max-width: 768px) {
+    #popup.popup-inline-gallery .popup-inline-copy { position: static; width: auto; max-width: none; margin: 32px 20px 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+    #popup .popup-inline-art,
+    #popup .popup-inline-art img { transition: none; }
+}
+#popup.popup-inline-gallery .work-gallery-inner,
+#popup.popup-inline-gallery .work-gallery-layout { position: static; }
+
+/* Larger selected-popup copy, positioned a little lower. */
+#popup.popup-inline-gallery .popup-inline-copy { top: 112px; }
+#popup .popup-inline-copy h3 { font-size: 28px; }
+#popup .popup-inline-copy p { font-size: 15px; line-height: 1.85; }
+#popup .popup-inline-copy h3 { font-weight: 700; }
+
+/* Larger popup description with a lower starting position. */
+#popup.popup-inline-gallery .popup-inline-copy { top: 144px; }
+#popup .popup-inline-copy h3 { font-size: 32px; font-weight: 700; }
+#popup .popup-inline-copy p { font-family: 'Paperlogy', sans-serif; font-size: 17px; line-height: 1.8; }
+/* Perspective lift for the selected popup artwork. */
+#popup .popup-inline-row { perspective: 1400px; perspective-origin: 50% 45%; }
+#popup .popup-inline-art {
+    transform: translateZ(0);
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    transition: transform .65s cubic-bezier(.22, 1, .36, 1);
+}
+#popup .popup-inline-art img {
+    backface-visibility: hidden;
+    transition: filter .55s ease, box-shadow .65s ease;
+}
+#popup .popup-inline-art[aria-pressed="true"] {
+    transform: translate3d(0, -10px, 72px) rotateX(3deg) rotateY(-2deg);
+    z-index: 3;
+}
+#popup .popup-inline-art[aria-pressed="true"] img {
+    box-shadow: 0 24px 32px -16px rgb(0 0 0 / 35%), 0 8px 14px -8px rgb(0 0 0 / 22%);
+}
+@media (prefers-reduced-motion: reduce) {
+    #popup .popup-inline-art { transition: none; }
+    #popup .popup-inline-art[aria-pressed="true"] { transform: none; }
+    #popup .popup-inline-art img { transition: none; }
+}
+/* Straight-on depth lift without sideways perspective drift. */
+#popup .popup-inline-row { perspective: none; }
+#popup .popup-inline-art { perspective: 1400px; }
+#popup .popup-inline-art img { transform-origin: center center; transition: transform .65s cubic-bezier(.22, 1, .36, 1), filter .55s ease, box-shadow .65s ease; transform: translateZ(0); }
+#popup .popup-inline-art[aria-pressed="true"] { transform: none; }
+#popup .popup-inline-art[aria-pressed="true"] img { transform: translateZ(72px); }
+@media (prefers-reduced-motion: reduce) {
+    #popup .popup-inline-art img { transition: none; }
+    #popup .popup-inline-art[aria-pressed="true"] img { transform: none; }
+}
+/* Stronger straight-on selection, with the other artworks receding. */
+#popup.has-popup-selection .popup-inline-art[aria-pressed="true"] { z-index: 4; }
+#popup.has-popup-selection .popup-inline-art[aria-pressed="true"] img { transform: translateZ(140px); }
+#popup.has-popup-selection .popup-inline-art[aria-pressed="false"] img {
+    transform: translateZ(-65px);
+    filter: brightness(.72);
+    box-shadow: none;
+}
+@media (prefers-reduced-motion: reduce) {
+    #popup.has-popup-selection .popup-inline-art[aria-pressed="true"] img,
+    #popup.has-popup-selection .popup-inline-art[aria-pressed="false"] img { transform: none; }
+}
+/* Selected artwork appears in front of the page rule. */
+#popup.has-popup-selection .popup-inline-art[aria-pressed="true"] { z-index: 7; }
+/* Larger selected artwork, with an inset lift for the first image. */
+#popup.has-popup-selection .popup-inline-art[aria-pressed="true"] img { transform: translateZ(220px); }
+#popup .popup-inline-art:first-child { perspective-origin: left center; }
+#popup .popup-inline-art:first-child img { transform-origin: left center; }
+#popup.has-popup-selection .popup-inline-art:first-child[aria-pressed="true"] { transform: translateX(10px); }
+@media (prefers-reduced-motion: reduce) {
+    #popup.has-popup-selection .popup-inline-art[aria-pressed="true"] img { transform: none; }
+    #popup.has-popup-selection .popup-inline-art:first-child[aria-pressed="true"] { transform: none; }
+}
+/* Mirror the popup page furniture while preserving artwork order and sizing. */
+#popup.popup-inline-gallery::after {
+    right: auto;
+    left: clamp(58px, 8vw, 128px);
+}
+#popup.popup-inline-gallery > .poster-selected-works {
+    right: auto;
+    left: clamp(22px, 3.5vw, 56px);
+}
+#popup.popup-inline-gallery .work-gallery-inner {
+    margin-left: clamp(58px, 8vw, 128px);
+    margin-right: 0;
+}
+#popup.popup-inline-gallery .work-gallery-header > div {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: left;
+}
+#popup.popup-inline-gallery .work-gallery-header > p {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: start;
+    text-align: left;
+}
+#popup.popup-inline-gallery .work-gallery-header nav { justify-content: flex-start; }
+#popup.popup-inline-gallery .popup-inline-copy {
+    left: auto;
+    right: 32px;
+    text-align: left;
+}
+#popup .popup-inline-art:first-child { perspective-origin: center center; }
+#popup .popup-inline-art:first-child img { transform-origin: center center; }
+#popup.has-popup-selection .popup-inline-art:first-child[aria-pressed="true"] { transform: none; }
+#popup .popup-inline-art:last-child { perspective-origin: right center; }
+#popup .popup-inline-art:last-child img { transform-origin: right center; }
+#popup.has-popup-selection .popup-inline-art:last-child[aria-pressed="true"] { transform: translateX(-10px); }
+@media (max-width: 768px) {
+    #popup.popup-inline-gallery::after { left: 36px; }
+    #popup.popup-inline-gallery > .poster-selected-works { left: 12px; }
+    #popup.popup-inline-gallery .work-gallery-inner { margin-left: 36px; }
+    #popup.popup-inline-gallery .work-gallery-header > div { grid-column: 1; }
+    #popup.popup-inline-gallery .work-gallery-header > p { grid-column: 1; }
+    #popup.popup-inline-gallery .popup-inline-copy { position: static; }
+}
+@media (prefers-reduced-motion: reduce) {
+    #popup.has-popup-selection .popup-inline-art:last-child[aria-pressed="true"] { transform: none; }
+}
+
+/* Move the Detail page rail and category marker to the left. */
+#detail::after { right: auto; left: clamp(58px, 8vw, 128px); }
+#detail > .poster-selected-works { right: auto; left: clamp(22px, 3.5vw, 56px); }
+@media (max-width: 768px) {
+    #detail::after { left: 36px; }
+    #detail > .poster-selected-works { left: 12px; }
+}
+/* Equal outer padding on the popup artwork strip. */
+#popup .popup-inline-row { box-sizing: border-box; padding-inline: 5px; }
+/* Slightly smaller Detail previews without changing the card layout. */
+#detail .detail-three-up .detail-preview { width: 88%; margin-inline: auto; }
+/* Align the Banner heading with the tennis artwork's left edge. */
+#banner.banner-mosaic .work-gallery-header { margin-left: 80px; }
+@media (max-width: 768px) {
+    #banner.banner-mosaic .work-gallery-header { margin-left: 40px; }
+}
+/* Accessible category links, keeping the four-dot appearance. */
+.work-gallery .poster-selected-dots > a {
+    position: relative;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    background: transparent;
+    pointer-events: auto;
+    cursor: pointer;
+}
+.work-gallery .poster-selected-dots > a::before { content: ''; position: absolute; inset: -7px; }
+.work-gallery .poster-selected-dots > a.is-active { background: #000; }
+.work-gallery .poster-selected-dots > a:focus-visible { outline: 2px solid #000; outline-offset: 5px; }
+/* Three aligned Detail works with restrained numbering and captions. */
+#detail .work-gallery-layout.detail-three-up {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px;
+    width: 88%;
+    margin: 24px auto 0;
+    padding: 0;
+    align-items: start;
+}
+#detail .detail-work-number { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; color: #777; font-size: 14px; }
+#detail .detail-work-number::after { content: ''; width: 48px; height: 1px; background: #aaa; }
+#detail .detail-three-up .detail-preview { width: 100%; margin: 0; aspect-ratio: 2 / 3; overflow: hidden; }
+#detail .detail-three-up img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+#detail .detail-three-up h3 { margin: 14px 0 8px; font-size: 20px; line-height: 1.4; }
+#detail .detail-three-up p { font-size: 13px; line-height: 1.8; color: #777; }
+@media (max-width: 768px) {
+    #detail .work-gallery-layout.detail-three-up { width: 100%; gap: 18px; }
+    #detail .detail-three-up h3 { font-size: 15px; }
+    #detail .detail-three-up p { font-size: 11px; }
+}
+@media (max-width: 480px) {
+    #detail .work-gallery-layout.detail-three-up { grid-template-columns: minmax(0, 1fr); width: 80%; gap: 32px; }
+}
+/* Align Detail heading with the Popup heading inside the left rail. */
+#detail .work-gallery-header > div { padding-left: max(0px, calc(clamp(58px, 8vw, 128px) + 32px - (100vw - min(1280px, calc(100vw - 96px))) / 2)); }
+@media (max-width: 768px) {
+    #detail .work-gallery-header > div { padding-left: 34px; }
+}
+/* Start the popup artwork strip at the marked inset from the left rail. */
+#popup .popup-inline-row { padding-left: 38px; padding-right: 5px; }
+/* Align the poster information with the artwork's bottom edge. */
+@media (min-width: 768px) {
+    #poster .work-gallery-caption { justify-content: flex-end; padding-bottom: 0; }
+}

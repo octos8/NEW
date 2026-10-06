@@ -511,7 +511,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /* Visual works: representative image with category-specific thumbnails. */
 document.addEventListener('DOMContentLoaded', () => {
  document.querySelectorAll('.work-gallery').forEach(gallery => {
-  if (gallery.id === 'popup' || gallery.id === 'detail') return;
+  if (gallery.id === 'popup' || gallery.id === 'detail' || gallery.classList.contains('banner-mosaic')) return;
   const choices = [...gallery.querySelectorAll('.work-gallery-choice')];
   let selected = Math.max(0, choices.findIndex(choice => choice.classList.contains('is-selected')));
   const select = index => {
@@ -522,9 +522,32 @@ document.addEventListener('DOMContentLoaded', () => {
    if (gallery.id === 'banner') {
     const tones = ['#eee7df', '#eee2d0', '#e5ecd8', '#e9e3d9'];
     gallery.style.setProperty('--banner-caption-color', tones[selected] || tones[0]);
+    const bannerNumber = gallery.querySelector('[data-banner-number]');
+    if (bannerNumber) bannerNumber.textContent = String(selected + 1).padStart(2, '0') + ' / ' + String(choices.length).padStart(2, '0');
+    const moods = ['ELEGANT / LUMINOUS', 'DARK / PREMIUM', 'ENERGETIC / SPORTY', 'CALM / PREMIUM'];
+    const focuses = ['PRODUCT / FABRIC', 'PRODUCT / LIGHT', 'TYPOGRAPHY / MOVEMENT', 'PRODUCT / TEXTURE'];
+    const mood = gallery.querySelector('[data-banner-mood]');
+    if (mood) {
+     mood.textContent = moods[selected];
+     gallery.querySelector('[data-banner-focus]').textContent = focuses[selected];
+    }
    }
    gallery.querySelector('.work-gallery-caption h3').textContent = choice.dataset.title;
    gallery.querySelector('.work-gallery-caption p').innerHTML = choice.dataset.description;
+   if (gallery.id === 'poster') {
+    const caption = gallery.querySelector('.work-gallery-caption');
+    const brand = caption.querySelector('[data-poster-brand]');
+    if (brand) {
+     brand.textContent = choice.dataset.title.split(' ')[0] === 'Mango' ? 'Mango Sorbet' : choice.dataset.title.split(' ')[0];
+     caption.querySelector('[data-poster-number]').textContent = String(selected + 1).padStart(2, '0');
+     const purposes = ['욕실 수납 제품 홍보', '여름 시즌 제품 프로모션', '스트리트 라이프스타일 제품 홍보', '뷰티 제품 이미지 홍보', '망고 소르베 여름 메뉴 홍보'];
+     const designPoints = ['패턴 대비를 활용한 제품 시선 집중', '블루 배경과 대형 타이포그래피로 시즌 주목도 강화', '도심의 빈티지한 질감과 제품을 연결한 스트리트 무드', '핑크 톤과 곡선의 흐름으로 제품의 섬세함 강조', '옐로·블루 대비와 유기적 구도로 시원한 계절감 표현'];
+     caption.querySelector('[data-poster-purpose]').textContent = purposes[selected] || '';
+     caption.querySelector('[data-poster-design-point]').textContent = designPoints[selected] || '';
+     const keywords = ['Interior / Lifestyle / Practical', 'Summer / Energy / Promotion', 'Street / Vintage / Lifestyle', 'Beauty / Soft / Curves', 'Summer / Fresh / Dessert'];
+     caption.querySelector('[data-poster-keyword]').textContent = keywords[selected] || 'Design / Visual / Brand';
+    }
+   }
    const link = gallery.querySelector('.work-gallery-detail-link');
    if (link) link.href = choice.dataset.href;
    const count = gallery.querySelector('.work-gallery-count');
@@ -542,7 +565,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* Duplicate banner thumbnails for a seamless right-to-left loop. */
 document.addEventListener('DOMContentLoaded', () => {
- const choices = document.querySelector('#banner .work-gallery-choices');
+ const choices = document.querySelector('#banner:not(.banner-mosaic) .work-gallery-choices');
  if (!choices) return;
  const originals = [...choices.querySelectorAll('.work-gallery-choice')];
  const track = document.createElement('div');
@@ -563,7 +586,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* Pause the thumbnail loop briefly when a banner is chosen. */
 document.addEventListener('DOMContentLoaded', () => {
- const strip = document.querySelector('#banner .work-gallery-choices');
+ const strip = document.querySelector('#banner:not(.banner-mosaic) .work-gallery-choices');
  if (!strip) return;
  let resumeTimer;
  strip.addEventListener('click', event => {
@@ -577,7 +600,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /* Drive the representative banner from the thumbnail nearest the visible center. */
 document.addEventListener('DOMContentLoaded', () => {
  const gallery = document.getElementById('banner');
- const strip = gallery?.querySelector('.work-gallery-choices');
+ const strip = gallery?.classList.contains('banner-mosaic') ? null : gallery?.querySelector('.work-gallery-choices');
  const track = strip?.querySelector('.banner-filmstrip-track');
  if (!track) return;
  const thumbnails = [...track.querySelectorAll('.work-gallery-choice')];
@@ -609,139 +632,43 @@ document.addEventListener('DOMContentLoaded', () => {
  requestAnimationFrame(syncCenter);
 });
 
-/* Popup: click the artwork, then VIEW MORE to read its description. */
+/* Compact popup artworks in one centered horizontal row. */
 document.addEventListener('DOMContentLoaded', () => {
- const gallery = document.querySelector('#popup');
+ const gallery = document.getElementById('popup');
  if (!gallery) return;
- const layout = gallery.querySelector('.work-gallery-layout');
  const choices = [...gallery.querySelectorAll('.work-gallery-choice')];
- const carousel = document.createElement('div');
- carousel.className = 'swiper popup-art-carousel';
- const track = document.createElement('div');
- track.className = 'swiper-wrapper';
- carousel.append(track);
- const dialog = document.createElement('dialog');
- dialog.className = 'popup-art-dialog';
- dialog.setAttribute('aria-label', '팝업 디자인 설명');
- const close = document.createElement('button');
- close.className = 'popup-art-dialog-close'; close.type = 'button'; close.textContent = '×'; close.setAttribute('aria-label', '설명 닫기');
- const title = document.createElement('h3');
- const description = document.createElement('p');
- dialog.append(close, title, description);
- gallery.append(dialog);
- let slider;
- const pausePopup = () => {
-  if (!slider) return;
-  slider.autoplay.stop();
-  const position = slider.getTranslate();
-  slider.setTransition(0);
-  slider.setTranslate(position);
-  slider.updateProgress(position);
-  slider.updateActiveIndex();
-  slider.updateSlidesClasses();
-  slider.animating = false;
+ if (choices.length > 1) [choices[0], choices[choices.length - 1]] = [choices[choices.length - 1], choices[0]];
+ gallery.classList.add('popup-inline-gallery');
+ const layout = gallery.querySelector('.work-gallery-layout');
+ const row = document.createElement('div'); row.className = 'popup-inline-row'; row.setAttribute('aria-label', '팝업 작업 선택');
+ const copy = document.createElement('div'); copy.className = 'popup-inline-copy'; copy.setAttribute('aria-live', 'polite');
+ const title = document.createElement('h3'); const description = document.createElement('p'); copy.append(title, description);
+ let selected = 0, timer = null, visible = false;
+ const stop = () => { clearInterval(timer); timer = null; };
+ const start = () => { stop(); if (visible && !document.hidden) timer = setInterval(() => select((selected + 1) % choices.length), 2500); };
+ const select = index => {
+  selected = index;
+  gallery.classList.add('has-popup-selection');
+  copy.hidden = false;
+  title.textContent = choices[index].dataset.title;
+  description.innerHTML = choices[index].dataset.description;
+  row.querySelectorAll('button').forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
  };
- const resumePopup = (force = false) => {
-  if (reduced || track.querySelector('.popup-art-description') || (!force && track.querySelector('.popup-art-frame:hover'))) return;
-  slider.autoplay.start();
- };
- choices.forEach(choice => {
-  const card = document.createElement('div'); card.className = 'swiper-slide popup-art-card';
-  const photo = document.createElement('button'); photo.type = 'button'; photo.className = 'popup-art-photo'; photo.setAttribute('aria-label', choice.dataset.title + ' 자세히 보기');
+ choices.forEach((choice, index) => {
+  const button = document.createElement('button'); button.type = 'button'; button.className = 'popup-inline-art';
+  button.setAttribute('aria-label', choice.dataset.title + ' 설명 보기');
   const image = document.createElement('img'); image.src = choice.dataset.src; image.alt = choice.dataset.title;
-    photo.append(image);
-  const frame = document.createElement('div'); frame.className = 'popup-art-frame';
-  const syncFrame = () => {
-   if (!image.naturalWidth) return;
-   const cap = innerWidth <= 600 ? 460 : Math.min(650, Math.max(360, innerWidth * .46));
-   frame.style.width = Math.min(card.clientWidth || cap, cap * image.naturalWidth / image.naturalHeight) + 'px';
-  };
-  image.addEventListener('load', syncFrame);
-  new ResizeObserver(syncFrame).observe(card);
-  const more = document.createElement('button'); more.type = 'button'; more.className = 'popup-art-more'; more.textContent = 'VIEW MORE'; more.hidden = true; more.setAttribute('aria-haspopup', 'dialog');
-  photo.addEventListener('click', () => {
-   if (slider?.touchEventsData?.isMoved) return;
-   if (matchMedia('(max-width: 767px)').matches) {
-    more.click();
-    return;
-   }
-   track.querySelectorAll('.popup-art-more').forEach(button => { button.hidden = true; });
-   track.querySelectorAll('.is-preview').forEach(item => item.classList.remove('is-preview'));
-   more.hidden = false; card.classList.add('is-preview'); pausePopup(); more.focus({preventScroll: true});
-  });
-  more.addEventListener('click', event => {
-   event.stopPropagation();
-   pausePopup();
-   if (frame.querySelector('.popup-art-description')) return;
-   title.textContent = choice.dataset.title; description.innerHTML = choice.dataset.description;
-   const mobilePopupTitle = matchMedia('(max-width: 767px)').matches;
-   title.classList.toggle('popup-title-twosome', mobilePopupTitle && choice.dataset.title.startsWith('TWOSOME PLACE'));
-   if (title.classList.contains('popup-title-twosome')) {
-    title.replaceChildren(document.createTextNode('TWOSOME PLACE'), document.createElement('br'), document.createTextNode('시즌 프로모션'));
-   }
-   if (mobilePopupTitle && choice.dataset.title.startsWith('OLIVE YOUNG')) {
-    title.replaceChildren(document.createTextNode('OLIVE YOUNG'), document.createElement('br'), document.createTextNode(choice.dataset.title.slice('OLIVE YOUNG'.length).trim()));
-   }
-      card.classList.remove('is-preview');
-   more.hidden = true;
-   const overlay = document.createElement('div'); overlay.className = 'popup-art-description';
-   const dismiss = close.cloneNode(true);
-   overlay.append(dismiss, title.cloneNode(true), description.cloneNode(true));
-   frame.append(overlay);
-   dismiss.addEventListener('click', () => { overlay.remove(); card.classList.remove('is-preview'); more.hidden = true; resumePopup(true); });
-   overlay.addEventListener('keydown', event => { if (event.key === 'Escape') { event.stopPropagation(); dismiss.click(); } });
-   dismiss.focus({preventScroll:true});
-  });
-  frame.addEventListener('pointerenter', event => {
-   if (event.pointerType === 'touch') return;
-   pausePopup();
-   if (!frame.querySelector('.popup-art-description')) { more.hidden = false; card.classList.add('is-preview'); }
-  });
-  frame.addEventListener('pointerleave', event => {
-   if (event.pointerType === 'touch') return;
-   more.hidden = true; card.classList.remove('is-preview'); resumePopup();
-  });
-  frame.append(photo, more); card.append(frame); track.append(card);
+  image.width = 500; image.height = 750; button.append(image); button.addEventListener('click', () => { select(index); start(); });
+  row.append(button);
  });
- const prev = gallery.querySelector('.work-gallery-prev');
- const next = gallery.querySelector('.work-gallery-next');
- gallery.querySelector('.work-gallery-choices').remove();
- layout.append(carousel, prev, next);
- const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
- slider = new Swiper(carousel, {
-  loop: true, slidesPerView: 1, spaceBetween: 32, speed: reduced ? 0 : 7000,
-  breakpoints: {768: {slidesPerView: 2, spaceBetween: 36}, 1100: {slidesPerView: 3, spaceBetween: 48}},
-  autoplay: reduced ? false : {delay: 0, reverseDirection: true, disableOnInteraction: false, pauseOnMouseEnter: false},
-  preventClicks: false, preventClicksPropagation: false,
-  grabCursor: true
- });
- prev.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5L8 12L15 19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
- next.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5L16 12L9 19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
- const movePopup = direction => {
-  pausePopup();
-  track.querySelectorAll('.popup-art-more').forEach(button => { button.hidden = true; });
-  track.querySelectorAll('.is-preview').forEach(item => item.classList.remove('is-preview'));
-  track.querySelectorAll('.popup-art-description').forEach(item => item.remove());
-  // Advancing translates the artwork to the left; going back moves it right.
-  slider.params.autoplay.reverseDirection = direction === 'right';
-  slider.once('transitionEnd', () => resumePopup());
-  if (direction === 'left') slider.slideNext(reduced ? 0 : 650);
-  else slider.slidePrev(reduced ? 0 : 650);
- };
- prev.addEventListener('click', () => movePopup('left'));
- next.addEventListener('click', () => movePopup('right'));
- close.addEventListener('click', () => dialog.close());
- dialog.addEventListener('click', event => {
-  if (event.target !== dialog) return;
-  const rect = dialog.getBoundingClientRect();
-  if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
- });
- dialog.addEventListener('close', () => {
-  track.querySelectorAll('.popup-art-more').forEach(button => { button.hidden = true; });
-   track.querySelectorAll('.is-preview').forEach(item => item.classList.remove('is-preview'));
-  if (!reduced) slider.autoplay.start();
- });
- slider.on('slideChange', () => track.querySelectorAll('.popup-art-more').forEach(button => { button.hidden = true; }));
+ layout.replaceChildren(row, copy); select(0);
+ const observer = new IntersectionObserver(([entry]) => {
+  const wasVisible = visible;
+  visible = entry.isIntersecting;
+  if (visible) { if (!wasVisible) select(0); start(); } else stop();
+ }, { threshold: .25 });
+ observer.observe(row);
+ document.addEventListener('visibilitychange', start);
 });
 document.addEventListener('click', event => {
  const link = event.target.closest('#detail a[href], .work-gallery-detail-link');
@@ -756,12 +683,13 @@ document.addEventListener('DOMContentLoaded', () => {
  const gallery = document.querySelector('#detail');
  if (!gallery) return;
  const layout = gallery.querySelector('.work-gallery-layout');
- const cards = [...gallery.querySelectorAll('.work-gallery-choice')].map(choice => {
+ const choices = [...gallery.querySelectorAll('.work-gallery-choice')];
+ const cards = [choices[2], choices[1], choices[0]].filter(Boolean).map((choice, index) => {
   const article = document.createElement('article');
   const link = document.createElement('a'); link.href = choice.dataset.href;
   const image = document.createElement('img'); image.src = choice.dataset.src; image.alt = choice.dataset.title; image.loading = 'lazy';
   const title = document.createElement('h3'); title.textContent = choice.dataset.title;
-  const copy = document.createElement('p'); copy.textContent = choice.dataset.description;
+  const copy = document.createElement('p'); copy.innerHTML = choice.dataset.description;
   link.className = 'detail-preview';
   link.addEventListener('click', event => {
    if (!matchMedia('(hover: none)').matches || link.classList.contains('is-preview')) return;
@@ -771,7 +699,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   const overlay = document.createElement('span'); overlay.className = 'detail-preview-overlay'; overlay.setAttribute('aria-hidden', 'true');
   const label = document.createElement('strong'); label.textContent = 'CLICK'; overlay.append(label);
-  link.append(image, overlay); article.append(link, title, copy); return article;
+  const number = document.createElement('span'); number.className = 'detail-work-number';
+  number.textContent = String(index + 1).padStart(2, '0');
+  link.append(image, overlay); article.append(number, link, title, copy); return article;
  });
  layout.replaceChildren(...cards); layout.classList.add('detail-three-up');
 });
@@ -877,7 +807,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* Allow the moving banner strip to be dragged in either direction. */
 document.addEventListener('DOMContentLoaded', () => {
- const strip = document.querySelector('#banner .work-gallery-choices');
+ const strip = document.querySelector('#banner:not(.banner-mosaic) .work-gallery-choices');
  const track = strip?.querySelector('.banner-filmstrip-track');
  if (!track) return;
  let drag = null, suppressClick = false;
@@ -930,12 +860,12 @@ document.addEventListener('DOMContentLoaded', () => {
    if (motion.matches) return;
    const card = entry.target.closest('.works-showcase-card');
    const index = cards.indexOf(card);
-   const delay = matchMedia('(min-width: 769px)').matches ? index * 240 : 0;
+   const delay = matchMedia('(min-width: 769px)').matches ? index * 1000 : 0;
    card.querySelectorAll(':scope > h3, :scope > p').forEach(element => {
     const animation = element.animate([
      { opacity: 0, transform: 'translateY(32px)' },
      { opacity: 1, transform: 'translateY(0)' }
-    ], { duration: 750, delay, easing: 'cubic-bezier(.22, 1, .36, 1)', fill: 'backwards' });
+    ], { duration: 900, delay, easing: 'cubic-bezier(.22, 1, .36, 1)', fill: 'backwards' });
     animations.add(animation);
     animation.finished.then(() => animations.delete(animation)).catch(() => animations.delete(animation));
    });
@@ -943,4 +873,162 @@ document.addEventListener('DOMContentLoaded', () => {
  }, { threshold: .2, rootMargin: '0px 0px -32px 0px' });
  cards.forEach(card => { const title = card.querySelector(':scope > h3'); if (title) observer.observe(title); });
  motion.addEventListener('change', () => { if (motion.matches) animations.forEach(animation => animation.cancel()); });
+});
+
+/* Editorial information panel for the selected poster. */
+document.addEventListener('DOMContentLoaded', () => {
+ const caption = document.querySelector('#poster .work-gallery-caption');
+ if (!caption) return;
+ const header = document.createElement('div');
+ header.className = 'poster-caption-top';
+ header.innerHTML = '<span data-poster-number>01</span>';
+ caption.prepend(header);
+ const rule = document.createElement('span');
+ rule.className = 'poster-caption-rule'; rule.setAttribute('aria-hidden', 'true');
+ caption.querySelector('h3').after(rule);
+ const facts = document.createElement('dl');
+ facts.className = 'poster-caption-facts';
+ facts.innerHTML = '<div><dt>BRAND</dt><dd data-poster-brand>IKEA</dd></div><div><dt>PURPOSE</dt><dd data-poster-purpose>욕실 수납 제품 홍보</dd></div><div><dt>DESIGN POINT</dt><dd data-poster-design-point>패턴 대비를 활용한 제품 시선 집중</dd></div><div><dt>KEYWORD</dt><dd data-poster-keyword>Interior / Lifestyle / Practical</dd></div>';
+ caption.append(facts);
+});
+/* Shared Selected Works rail across the visual-work pages. */
+document.addEventListener('DOMContentLoaded', () => {
+
+ ['poster', 'banner', 'popup', 'detail'].forEach((id, index) => {
+  const gallery = document.getElementById(id);
+  if (!gallery) return;
+  const marker = document.createElement('div');
+  marker.className = 'poster-selected-works';
+  marker.setAttribute('role', 'navigation');
+  marker.setAttribute('aria-label', '비주얼 작업 페이지 이동');
+  marker.innerHTML = '<span>SELECTED WORKS</span><i class="poster-selected-line"></i><div class="poster-selected-dots">' +
+   ['poster', 'banner', 'popup', 'detail'].map((target, dot) => '<a href="#' + target + '" aria-label="' + ['포스터', '배너', '팝업', '디테일'][dot] + ' 페이지로 이동"' + (dot === index ? ' class="is-active" aria-current="location"' : '') + '></a>').join('') + '</div>';
+  gallery.append(marker);
+ });
+});
+/* Editorial hierarchy for the banner explanation panel. */
+document.addEventListener('DOMContentLoaded', () => {
+ const gallery = document.getElementById('banner');
+ const caption = gallery?.classList.contains('banner-mosaic') ? null : gallery?.querySelector('.work-gallery-caption');
+ if (!caption) return;
+ const choices = [...gallery.querySelectorAll('.work-gallery-choice')].filter(choice => choice.getAttribute('aria-hidden') !== 'true');
+ const selected = Math.max(0, choices.findIndex(choice => choice.classList.contains('is-selected')));
+ const number = document.createElement('span');
+ number.className = 'banner-caption-number'; number.setAttribute('data-banner-number', '');
+ number.textContent = String(selected + 1).padStart(2, '0') + ' / ' + String(choices.length).padStart(2, '0');
+ caption.prepend(number);
+ const rule = document.createElement('span');
+ rule.className = 'banner-caption-rule'; rule.setAttribute('aria-hidden', 'true');
+ caption.querySelector('h3').after(rule);
+ const footer = document.createElement('div');
+ footer.className = 'banner-caption-footer';
+ footer.innerHTML = '<div><span>MOOD</span><span data-banner-mood></span></div><div><span>FOCUS</span><span data-banner-focus></span></div>';
+ caption.append(footer);
+ const moods = ['ELEGANT / LUMINOUS', 'DARK / PREMIUM', 'ENERGETIC / SPORTY', 'CALM / PREMIUM'];
+ const focuses = ['PRODUCT / FABRIC', 'PRODUCT / LIGHT', 'TYPOGRAPHY / MOVEMENT', 'PRODUCT / TEXTURE'];
+ footer.querySelector('[data-banner-mood]').textContent = moods[selected];
+ footer.querySelector('[data-banner-focus]').textContent = focuses[selected];
+ const image = gallery.querySelector('.work-gallery-main');
+ const syncHeight = () => gallery.style.setProperty('--banner-image-height', image.getBoundingClientRect().height + 'px');
+ image.addEventListener('load', syncHeight);
+ new ResizeObserver(syncHeight).observe(image);
+ syncHeight();
+});
+/* Two staggered banner rows, with translucent artwork descriptions. */
+document.addEventListener('DOMContentLoaded', () => {
+ const gallery = document.querySelector('#banner.banner-mosaic');
+ if (!gallery) return;
+ const choices = [...gallery.querySelectorAll('.work-gallery-choice')];
+ const layout = gallery.querySelector('.work-gallery-layout');
+ const viewport = document.createElement('div'); viewport.className = 'banner-mosaic-viewport';
+ const dialog = document.createElement('dialog'); dialog.className = 'banner-mosaic-dialog';
+ dialog.setAttribute('aria-label', '배너 디자인 설명');
+ const close = document.createElement('button'); close.type = 'button'; close.className = 'banner-mosaic-close';
+ close.textContent = '×'; close.setAttribute('aria-label', '설명 닫기');
+ const title = document.createElement('h3'); const text = document.createElement('p');
+ const facts = document.createElement('dl'); facts.className = 'banner-mosaic-facts';
+ dialog.append(close, title, text, facts); gallery.append(dialog);
+ const moods = ['ELEGANT / LUMINOUS', 'DARK / PREMIUM', 'ENERGETIC / SPORTY', 'CALM / PREMIUM'];
+ const focuses = ['PRODUCT / FABRIC', 'PRODUCT / LIGHT', 'TYPOGRAPHY / MOVEMENT', 'PRODUCT / TEXTURE'];
+ let opener;
+ const initial = [2, 0, 1, 3].filter(index => choices[index]);
+ for (let row = 0; row < 2; row++) {
+  const track = document.createElement('div'); track.className = 'banner-mosaic-track';
+  const order = row === 0 ? initial : [...initial.slice(2), ...initial.slice(0, 2)];
+  for (let copy = 0; copy < 2; copy++) {
+   const group = document.createElement('div'); group.className = 'banner-mosaic-group';
+   order.forEach(index => {
+    const choice = choices[index];
+    const button = document.createElement('button'); button.type = 'button'; button.className = 'banner-mosaic-art';
+    button.setAttribute('aria-label', choice.dataset.title + ' 설명 보기'); button.setAttribute('aria-haspopup', 'dialog');
+    if (copy) { button.tabIndex = -1; button.setAttribute('aria-hidden', 'true'); }
+    const image = document.createElement('img'); image.src = choice.dataset.src; image.alt = choice.dataset.title;
+    image.width = 1920; image.height = 970; image.loading = 'lazy'; button.append(image);
+    button.addEventListener('click', () => {
+     opener = button; title.textContent = choice.dataset.title; text.innerHTML = choice.dataset.description;
+     facts.innerHTML = '<div><dt>MOOD</dt><dd>' + moods[index] + '</dd></div><div><dt>FOCUS</dt><dd>' + focuses[index] + '</dd></div>';
+     gallery.classList.add('is-description-open'); dialog.showModal();
+    });
+    group.append(button);
+   });
+   track.append(group);
+  }
+  viewport.append(track);
+ }
+ const advance = document.createElement('button');
+ advance.type = 'button'; advance.className = 'banner-mosaic-advance';
+ advance.setAttribute('aria-label', '배너를 왼쪽으로 조금 이동');
+ advance.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg>';
+ layout.replaceChildren(viewport, advance);
+ const tracks = [...viewport.querySelectorAll('.banner-mosaic-track')];
+ let offset = 0, moving = false;
+
+ const paint = instant => tracks.forEach(track => {
+  track.style.transition = instant ? 'none' : '';
+  track.style.transform = 'translateX(' + (-offset) + 'px)';
+ });
+ advance.addEventListener('click', () => {
+  if (moving) return;
+  moving = true;
+  const card = viewport.querySelector('.banner-mosaic-art');
+  const group = viewport.querySelector('.banner-mosaic-group');
+  const gap = parseFloat(getComputedStyle(group).columnGap) || 0;
+  offset += (card.getBoundingClientRect().width + gap) / 2;
+  paint(false);
+ });
+ tracks[0].addEventListener('transitionend', event => {
+  if (event.propertyName !== 'transform') return;
+  const cycle = tracks[0].firstElementChild.getBoundingClientRect().width;
+  if (cycle > 0 && offset >= cycle - 1) { offset %= cycle; paint(true); }
+  moving = false;
+ }); close.addEventListener('click', () => dialog.close());
+ dialog.addEventListener('click', event => {
+  if (event.target !== dialog) return;
+  const box = dialog.getBoundingClientRect();
+  if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
+ });
+ dialog.addEventListener('close', () => { gallery.classList.remove('is-description-open'); opener?.focus({preventScroll:true}); });
+ const observer = new IntersectionObserver(([entry]) => {
+  if (!entry.isIntersecting) { offset = 0; moving = false; paint(true); }
+ });
+ observer.observe(viewport);
+});
+/* Reserve the full selected artwork and description height in the Popup page. */
+document.addEventListener('DOMContentLoaded', () => {
+ const gallery = document.querySelector('#popup.popup-selection');
+ const feature = gallery?.querySelector('.popup-selection-feature');
+ if (!feature) return;
+ const heading = gallery.querySelector('.work-gallery-header h2');
+ const sync = () => {
+  const headingTransform = getComputedStyle(heading).transform;
+  const revealOffset = headingTransform === 'none' ? 0 : new DOMMatrixReadOnly(headingTransform).m42;
+  const titleTop = heading.getBoundingClientRect().top - gallery.getBoundingClientRect().top - revealOffset;
+  gallery.style.setProperty('--popup-title-top', titleTop + 'px');
+  gallery.style.setProperty('--popup-feature-height', (titleTop + feature.getBoundingClientRect().height + 64) + 'px');
+ };
+ const observer = new ResizeObserver(sync);
+ observer.observe(feature);
+ observer.observe(heading.parentElement);
+ window.addEventListener('resize', sync);
+ sync();
 });

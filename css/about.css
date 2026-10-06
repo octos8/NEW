@@ -4237,7 +4237,7 @@
 .editorial-profile-copy { align-self: start; }
 #about-me .editorial-profile-number { margin: 0 0 8px; font-size: clamp(42px, 5vw, 64px); font-weight: 200; line-height: 1; }
 #about-me #profile-page-title { position: static; margin: 0; font-size: clamp(40px, 5.5vw, 72px); font-weight: 700; line-height: 1.08; letter-spacing: -.04em; color: #08090a; transform: none; }
-#about-me .editorial-profile-tagline { margin: 22px 0 0; font-size: 19px; line-height: 1.5; font-weight: 400; color: #424751; }
+#about-me .editorial-profile-tagline { margin: 22px 0 0; font-size: 19px; line-height: 1.5; font-weight: 400; color: #424751; white-space: nowrap; }
 #about-me .editorial-profile-description { margin: 58px 0 0; font-size: 16px; line-height: 1.65; font-weight: 400; color: #626874; word-break: keep-all; }
 .editorial-profile-rule { display: block; width: 20px; height: 1px; background: #737983; margin: 38px 0 30px; }
 .editorial-profile-facts { margin: 0; display: grid; gap: 16px; font-size: 14px; line-height: 1.4; }
@@ -4325,4 +4325,112 @@
         grid-template-columns: 62px minmax(0, 1fr);
         gap: 14px;
     }
+}
+
+/* Match the About Me spread to the Contact palette. */
+#about-me.editorial-about,
+#about-me .editorial-profile {
+    background: #333333;
+    color: #ffffff;
+    border-color: rgb(255 255 255 / 20%);
+}
+#about-me .editorial-profile-top,
+#about-me .editorial-profile-number,
+#about-me #profile-page-title,
+#about-me .editorial-profile-tagline,
+#about-me .editorial-profile-description,
+#about-me .editorial-profile-facts dt,
+#about-me .editorial-profile-facts dd,
+#about-me .profile-skills-open {
+    color: #ffffff;
+}
+#about-me .editorial-profile-rule { background: #ffffff; }
+#about-me .profile-skills-open { border-bottom-color: rgb(255 255 255 / 65%); }
+#about-me .profile-skills-open:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 5px;
+}
+/* Portrait on the left with rotated outline lettering behind it. */
+#about-me .editorial-profile-photo {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: start;
+    overflow: visible;
+    isolation: isolate;
+}
+#about-me .editorial-profile-copy {
+    grid-column: 2;
+    grid-row: 2;
+    position: relative;
+    z-index: 1;
+}
+#about-me .editorial-profile-photo img {
+    z-index: 1;
+    transform: none;
+    object-position: 50% center;
+}
+#about-me .editorial-profile-design {
+    position: absolute;
+    z-index: 0;
+    left: 100%;
+    top: calc(50% - 72px);
+    width: max-content;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(100px, 12vw, 164px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: .065em;
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(255 255 255 / 32%);
+    pointer-events: none;
+    user-select: none;
+}
+@media (max-width: 768px) {
+    #about-me .editorial-profile-photo {
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: center;
+    }
+    #about-me .editorial-profile-copy { grid-column: 1; grid-row: 3; }
+    #about-me .editorial-profile-design { font-size: clamp(66px, 16vw, 110px); }
+}
+
+/* Full-height white rule along the right edge of the dark About Me section. */
+#about-me.editorial-about::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: max(calc(var(--page-gutter) / 2), calc((100% - 1400px) / 2 + var(--page-gutter) / 2));
+    width: 1px;
+    background: #ffffff;
+    pointer-events: none;
+}
+@media (max-width: 768px) {
+    #about-me.editorial-about::after { right: 12px; }
+}
+
+/* Small hollow skill icons in two rows of six and five. */
+#about-me .profile-skill-icons { display: grid; grid-template-columns: repeat(6, 20px); gap: 12px 14px; width: fit-content; padding-top: 1px; }
+#about-me .profile-skill-icon { display: block; width: 20px; height: 20px; }
+#about-me .profile-skill-icon svg { display: block; width: 100%; height: 100%; fill: none; stroke: #fff; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 768px) {
+    #about-me .profile-skill-icons { grid-template-columns: repeat(6, 18px); gap: 10px 12px; }
+    #about-me .profile-skill-icon { width: 18px; height: 18px; }
+}
+/* Gentle forward lift on skill-icon hover. */
+#about-me .profile-skill-icon {
+    perspective: 400px;
+}
+#about-me .profile-skill-icon svg {
+    transform: translateZ(0);
+    transform-origin: center;
+    transition: transform .25s cubic-bezier(.22, 1, .36, 1);
+}
+@media (hover: hover) {
+    #about-me .profile-skill-icon:hover svg { transform: translateZ(72px); }
+}
+@media (prefers-reduced-motion: reduce) {
+    #about-me .profile-skill-icon svg { transition: none; }
 }

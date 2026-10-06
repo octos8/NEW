@@ -77,3 +77,12 @@
     font-weight: 900;
     font-display: swap;
 }
+
+/* Narrow geometric lettering for the profile artwork. */
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('../fonts/Rajdhani-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
