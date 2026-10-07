@@ -637,10 +637,12 @@ document.addEventListener('DOMContentLoaded', () => {
  const gallery = document.getElementById('popup');
  if (!gallery) return;
  const choices = [...gallery.querySelectorAll('.work-gallery-choice')];
- if (choices.length > 1) [choices[0], choices[choices.length - 1]] = [choices[choices.length - 1], choices[0]];
+ const dessertIndex = choices.findIndex(choice => choice.dataset.src.includes('디저트-팝업-디자인'));
+ if (dessertIndex > 0) [choices[0], choices[dessertIndex]] = [choices[dessertIndex], choices[0]];
  gallery.classList.add('popup-inline-gallery');
  const layout = gallery.querySelector('.work-gallery-layout');
  const row = document.createElement('div'); row.className = 'popup-inline-row'; row.setAttribute('aria-label', '팝업 작업 선택');
+ row.style.setProperty('--popup-artwork-count', choices.length);
  const copy = document.createElement('div'); copy.className = 'popup-inline-copy'; copy.setAttribute('aria-live', 'polite');
  const title = document.createElement('h3'); const description = document.createElement('p'); copy.append(title, description);
  let selected = 0, timer = null, visible = false;
