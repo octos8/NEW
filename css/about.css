@@ -4366,15 +4366,8 @@
 }
 #about-me .editorial-profile-photo img {
     z-index: 1;
-    inset: auto;
-    left: 50%;
-    top: 50%;
-    width: 155%;
-    max-width: none;
-    height: auto;
-    transform: translate(-43%, -67%);
-    object-position: center;
-    clip-path: inset(0);
+    transform: none;
+    object-position: 50% center;
 }
 #about-me .editorial-profile-design {
     position: absolute;
@@ -4415,19 +4408,50 @@
     pointer-events: none;
 }
 @media (max-width: 768px) {
-    #about-me.editorial-about::after { right: 12px; }
+    #about-me.editorial-about::after { display: none; }
 }
 
-/* Small hollow skill icons in two rows of six and five. */
+/* Small hollow skill icons in two rows of six. */
 #about-me .profile-skill-icons { display: grid; grid-template-columns: repeat(6, 20px); gap: 12px 14px; width: fit-content; padding-top: 1px; }
 #about-me .profile-skill-icon { display: block; width: 20px; height: 20px; }
+#about-me .profile-skill-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 8px;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+}
 #about-me .profile-skill-icon svg { display: block; width: 100%; height: 100%; fill: none; stroke: #fff; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
 @media (max-width: 768px) {
     #about-me .profile-skill-icons { grid-template-columns: repeat(6, 18px); gap: 10px 12px; }
     #about-me .profile-skill-icon { width: 18px; height: 18px; }
 }
 /* Gentle forward lift on skill-icon hover. */
-#about-me .editorial-profile-photo { overflow: hidden; }
+#about-me .editorial-profile-image-frame {
+    display: contents;
+}
+@media (max-width: 402px) {
+    #about-me .editorial-profile-image-frame {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        display: block;
+        overflow: hidden;
+    }
+    #about-me .editorial-profile-photo img {
+        inset: auto;
+        left: 50%;
+        top: 50%;
+        width: 155%;
+        max-width: none;
+        height: auto;
+        transform: translate(-43%, -67%);
+        object-position: center;
+    }
+}
 #about-me .profile-skill-icon {
     perspective: 400px;
 }

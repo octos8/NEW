@@ -1717,6 +1717,15 @@
 }
 
 @media (max-width: 402px) {
+    #poster::after,
+    #banner::after,
+    #popup::after,
+    #detail::after {
+        width: 0.5px;
+        border: 0;
+        box-shadow: none;
+        background: #000;
+    }
     .work-gallery-header { gap: 18px; }
     .work-gallery-header nav { margin-right: 30px; }
     .work-gallery-header nav a {
