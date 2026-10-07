@@ -1339,8 +1339,17 @@
 /* Center all copy within the translucent banner explanation. */
 .banner-mosaic-dialog h3,
 .banner-mosaic-dialog p { text-align: center; }
-.banner-mosaic-facts { justify-items: center; }
-.banner-mosaic-facts > div { grid-template-columns: 64px auto; width: fit-content; text-align: left; }
+.banner-mosaic-facts {
+    grid-template-columns: 64px minmax(0, max-content);
+    column-gap: 12px;
+    justify-content: center;
+}
+.banner-mosaic-facts > div {
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+    width: 100%;
+    text-align: left;
+}
 /* Anchor the selected popup artwork to the page's upper-left corner. */
 @media (min-width: 769px) {
     #popup.popup-selection { min-height: 1000px; }
@@ -1626,7 +1635,7 @@
     #popup.popup-inline-gallery .work-gallery-inner { margin-left: 36px; }
     #popup.popup-inline-gallery .work-gallery-header > div { grid-column: 1; }
     #popup.popup-inline-gallery .work-gallery-header > p { grid-column: 1; }
-    #popup.popup-inline-gallery .popup-inline-copy { position: static; }
+    #popup.popup-inline-gallery .popup-inline-copy { position: static; margin-left: 38px; }
 }
 @media (prefers-reduced-motion: reduce) {
     #popup.has-popup-selection .popup-inline-art:last-child[aria-pressed="true"] { transform: none; }
@@ -1736,7 +1745,7 @@
 
     #popup .popup-inline-copy h3 { font-size: 20px; margin-bottom: 12px; }
     #popup .popup-inline-copy p { font-size: 12px; line-height: 1.8; }
-    #popup.popup-inline-gallery .popup-inline-copy { margin: 24px 16px 0; }
+    #popup.popup-inline-gallery .popup-inline-copy { margin: 24px 16px 0 38px; }
 
     #detail .work-gallery-header > p {
         margin-left: 34px;
