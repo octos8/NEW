@@ -1709,9 +1709,16 @@
 
 @media (max-width: 402px) {
     .work-gallery-header { gap: 18px; }
-    .work-gallery-header nav a { padding: 9px 4px; font-size: 12px; }
+    .work-gallery-header nav { margin-right: 30px; }
+    .work-gallery-header nav a {
+        flex: 1 1 0;
+        min-width: 0;
+        padding: 8px 2px;
+        font-size: 12px;
+    }
 
     #poster .work-gallery-caption { padding-inline: 14px; }
+    #poster .poster-caption-top { position: relative; top: -12px; }
     #poster .work-gallery-caption p { font-size: 12px; }
     #poster .poster-caption-facts { margin-top: 24px; padding-top: 16px; gap: 12px; }
     #poster .poster-caption-facts > div {
