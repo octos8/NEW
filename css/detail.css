@@ -1891,3 +1891,76 @@
     #poster .poster-caption-rule { margin-block: 16px 20px; flex-shrink: 0; }
     #poster .poster-caption-facts { margin-top: 24px; padding-top: 16px; gap: 10px; }
 }
+
+/* Lower both lines of the Banner heading together. */
+#banner.banner-mosaic .work-gallery-header > div {
+    position: relative;
+    top: 24px;
+}
+
+/* Let the Detail rail follow the full artwork and caption height. */
+@media (min-width: 1025px) {
+    #detail .work-gallery-inner {
+        height: auto;
+        min-height: calc(100svh - 56px);
+    }
+    #detail .work-gallery-layout.detail-three-up { flex: none; }
+    #detail .detail-three-up .detail-preview {
+        flex: none;
+        height: clamp(240px, 55svh, 600px);
+    }
+}
+#detail::after { top: 0; bottom: 0; height: auto; }
+
+/* Add breathing room below Poster before the Banner page. */
+#poster.work-gallery { padding-bottom: 60px; }
+@media (max-width: 768px) {
+    #poster.work-gallery { padding-bottom: 48px; }
+}
+
+/* A small white inset above the Visual Works opening. */
+#visual-works.works-showcase { padding-top: 64px; }
+@media (min-width: 1025px) {
+    #visual-works.works-showcase { padding-top: 40px; }
+    #visual-works .works-showcase-inner { height: calc(100svh - 64px); }
+}
+
+/* A small white inset above the Poster heading. */
+#poster.work-gallery { padding-top: 116px; }
+@media (min-width: 1025px) {
+    #poster.work-gallery { padding-top: 36px; }
+}
+
+/* A small white inset above the Detail heading. */
+#detail.work-gallery { padding-top: 116px; }
+@media (min-width: 1025px) {
+    #detail.work-gallery { padding-top: 52px; }
+    #detail .work-gallery-inner { min-height: calc(100svh - 72px); }
+}
+
+/* Restore equal portrait thumbnails without cropping or viewport compression. */
+#visual-works .works-showcase-inner { height: auto; }
+#visual-works .works-showcase-grid { flex: none; align-items: start; }
+#visual-works .works-showcase-inner .works-showcase-card .works-showcase-image {
+    flex: none;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    padding: 0;
+    margin-bottom: 22px;
+}
+#visual-works .works-showcase-inner .works-showcase-card .works-showcase-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transform: none;
+}
+
+/* Fill the full thumbnail width for Banner and Detail previews. */
+#visual-works .works-showcase-inner .works-showcase-card:nth-child(2) .works-showcase-image img,
+#visual-works .works-showcase-inner .works-showcase-card:nth-child(4) .works-showcase-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}

@@ -3717,3 +3717,8 @@
         left: 0;
     }
 }
+
+/* Leave space above chapter 03 after the Detail gallery. */
+#project > .project-section-label {
+    padding-top: clamp(96px, 10vw, 160px);
+}

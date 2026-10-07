@@ -4290,7 +4290,7 @@
 .skills-text-icon { font-size: 48px; line-height: 1; text-align: center; }
 @media(max-width:767px) { .skills-typeset { padding: 30px 8px; } .skills-typeset > h2 { margin-bottom: 40px; } .skills-typeset-grid { grid-template-columns: 1fr; gap: 36px; } .skills-typeset-column { padding: 0 16px; } .skills-typeset-column + .skills-typeset-column { border-left: 0; border-top: 1px solid #ddd; padding-top: 30px; } .skills-typeset-number { font-size: 100px; } .skills-typeset-column h3 { font-size: 34px; } }
 /* Separate the introduction from the profile chapter. */
-#about-me.editorial-about { margin-top: clamp(100px, 12vw, 190px); padding-top: clamp(60px, 7vw, 110px); border-top: 1px solid #dfe1e5; }
+#about-me.editorial-about { margin-top: clamp(64px, 8vw, 120px); padding-top: clamp(60px, 7vw, 110px); border-top: 1px solid #dfe1e5; }
 /* Opaque skills dialog, including its top and side padding. */
 #profile-skills-dialog { background: #fff; }
 /* Reveal only the profile facts from left to right. */
@@ -4367,7 +4367,7 @@
 #about-me .editorial-profile-photo img {
     z-index: 1;
     transform: none;
-    object-position: 50% center;
+    object-position: left center;
 }
 #about-me .editorial-profile-design {
     position: absolute;
@@ -4476,4 +4476,26 @@
 }
 @media (prefers-reduced-motion: reduce) {
     #about-me .profile-skill-icon svg { transition: none; }
+}
+
+/* Center the complete monitor introduction in its white page. */
+#about.about-section { padding-top: 0; }
+#about-header.about-heading {
+    box-sizing: border-box;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    padding-block: clamp(40px, 6svh, 72px);
+}
+#about-header.about-heading.about-heading-bilingual .about-intro {
+    width: 100%;
+    margin-block: 0;
+}
+
+/* Balance the profile photo's bottom space with its top inset. */
+@media (min-width: 769px) {
+    #about-me .editorial-profile {
+        min-height: calc(100svh + 64px);
+        padding-bottom: calc(clamp(24px, 5svh, 48px) + 64px);
+    }
 }
