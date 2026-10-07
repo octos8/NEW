@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 (() => {
   const home = document.querySelector('#home');
   const stage = home?.querySelector('.hero-stage');
-  if (!stage) return;
+  if (!stage || home?.hasAttribute('data-crystal-hero')) return;
   const photo = stage.querySelector('.hero-photo-rotate img');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const clamp = value => Math.max(0, Math.min(1, value));
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
 (() => {
   const home = document.querySelector('#home');
   const stage = home?.querySelector('.hero-stage');
-  if (!stage) return;
+  if (!stage || home?.hasAttribute('data-crystal-hero')) return;
   const fine = matchMedia('(hover: hover) and (pointer: fine)');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const layer = document.createElement('div');
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
 (async () => {
   const home = document.querySelector('#home');
   const stage = home?.querySelector('.hero-stage');
-  if (!stage) return;
+  if (!stage || home?.hasAttribute('data-crystal-hero')) return;
   let THREE;
   try { THREE = await import('https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js'); }
   catch (error) { console.warn('3D unavailable; showing reference image.', error); return; }

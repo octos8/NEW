@@ -535,6 +535,32 @@
 @media(max-width:480px) { .works-showcase-heading { grid-template-columns: minmax(0,1fr); } .works-showcase-categories { flex-direction: row; flex-wrap: wrap; border: 0; padding: 0; gap: 18px; } .works-showcase-card h3 { font-size: 13px; } .works-showcase-card > p { font-size: 11px; } .works-showcase-more { gap: 8px; } .works-showcase-more i { width: 20px; } }
 /* Upright posters, with a shorter banner arranged below the other works. */
 /* Reference-inspired visual work galleries. */
+@media (min-width: 1025px) {
+    #visual-works.works-showcase { padding-block: 24px; min-height: 100svh; }
+    #visual-works .works-showcase-inner {
+        height: calc(100svh - 48px);
+        display: flex;
+        flex-direction: column;
+    }
+    #visual-works .works-showcase-eyebrow,
+    #visual-works .works-showcase-heading { flex-shrink: 0; }
+    #visual-works .works-showcase-heading { margin-bottom: 24px; }
+    #visual-works .works-showcase-grid { flex: 1; min-height: 0; }
+    #visual-works .works-showcase-card { display: flex; flex-direction: column; min-height: 0; }
+    #visual-works .works-showcase-inner .works-showcase-card .works-showcase-image {
+        flex: 1;
+        min-height: 0;
+        height: 0;
+        aspect-ratio: auto;
+        margin-bottom: 16px;
+    }
+    #visual-works .works-showcase-card .works-showcase-image img { object-fit: contain; }
+    #visual-works .works-showcase-number,
+    #visual-works .works-showcase-card > h3,
+    #visual-works .works-showcase-card > p,
+    #visual-works .works-showcase-more { flex-shrink: 0; }
+    #visual-works .works-showcase-more { margin-top: 16px; }
+}
 .work-gallery { background:#fff; color:#171717; padding:100px 0; scroll-margin-top:80px; }
 .work-gallery-inner { width:min(1280px, calc(100% - 96px)); margin:0 auto; }
 .work-gallery-header { display:grid; grid-template-columns:1fr 1fr; gap:28px 60px; align-items:end; margin-bottom:48px; }
@@ -1768,4 +1794,100 @@
         margin-left: 34px;
         justify-content: flex-end;
     }
+}
+
+/* Fit both banner rows into the desktop destination viewport. */
+@media (min-width: 1025px) {
+    #banner.banner-mosaic {
+        padding-block: 20px;
+        min-height: 100svh;
+        scroll-margin-top: 0;
+    }
+    #banner.banner-mosaic .work-gallery-inner {
+        height: calc(100svh - 40px);
+        display: flex;
+        flex-direction: column;
+    }
+    #banner.banner-mosaic .work-gallery-header {
+        flex-shrink: 0;
+        margin-bottom: 48px;
+    }
+    #banner.banner-mosaic .work-gallery-layout { flex: 1; min-height: 0; }
+    #banner .banner-mosaic-viewport {
+        height: 100%;
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        padding-block: 20px;
+    }
+    #banner .banner-mosaic-track,
+    #banner .banner-mosaic-group { height: 100%; min-height: 0; }
+    #banner .banner-mosaic-art {
+        width: auto;
+        height: 100%;
+        aspect-ratio: 1920 / 970;
+    }
+    #banner .banner-mosaic-art img { height: 100%; }
+}
+
+/* Keep the complete Detail overview in one desktop screen. */
+@media (min-width: 1025px) {
+    #detail.work-gallery {
+        padding-block: 36px 20px;
+        min-height: 100svh;
+        scroll-margin-top: 0;
+    }
+    #detail .work-gallery-inner {
+        height: calc(100svh - 56px);
+        display: flex;
+        flex-direction: column;
+    }
+    #detail .work-gallery-header { flex-shrink: 0; margin-bottom: 24px; }
+    #detail .work-gallery-layout.detail-three-up { flex: 1; min-height: 0; }
+    #detail .detail-three-up > article {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+    }
+    #detail .detail-three-up .detail-preview {
+        flex: 1;
+        min-height: 0;
+        height: 0;
+        aspect-ratio: auto;
+    }
+    #detail .detail-work-number,
+    #detail .detail-three-up h3,
+    #detail .detail-three-up p { flex-shrink: 0; }
+}
+
+/* Fit the selected poster and its information beside the thumbnail column. */
+@media (min-width: 1025px) {
+    #poster.work-gallery {
+        padding-block: 20px;
+        min-height: 100svh;
+        scroll-margin-top: 0;
+    }
+    #poster .work-gallery-inner {
+        height: calc(100svh - 40px);
+        display: flex;
+        flex-direction: column;
+    }
+    #poster .work-gallery-header { flex-shrink: 0; margin-bottom: 48px; }
+    #poster .work-gallery-layout {
+        flex: 1;
+        min-height: 0;
+        padding-block: 0;
+        align-items: stretch;
+    }
+    #poster .work-gallery-feature { height: 100%; min-height: 0; }
+    #poster .work-gallery-stage { height: 100%; min-height: 0; }
+    #poster .work-gallery-main { height: 100%; max-height: 100%; object-fit: contain; }
+    #poster .work-gallery-choices { height: 100%; min-height: 0; align-self: stretch; }
+    #poster .work-gallery-caption {
+        min-height: 0;
+        padding: 0 24px;
+        justify-content: flex-end;
+        overflow-y: auto;
+    }
+    #poster .poster-caption-top { margin-bottom: 24px; }
+    #poster .poster-caption-rule { margin-block: 16px 20px; flex-shrink: 0; }
+    #poster .poster-caption-facts { margin-top: 24px; padding-top: 16px; gap: 10px; }
 }

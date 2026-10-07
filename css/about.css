@@ -4430,6 +4430,17 @@
     #about-me .profile-skill-icon { width: 18px; height: 18px; }
 }
 /* Gentle forward lift on skill-icon hover. */
+@media (min-width: 769px) {
+    #about-me.editorial-about { padding-top: 0; }
+    #about-me .editorial-profile {
+        min-height: 100svh;
+        padding-block: clamp(24px, 5svh, 48px);
+        row-gap: 32px;
+        grid-template-rows: auto 1fr;
+        align-items: center;
+    }
+    #about-me .editorial-profile-copy { align-self: center; }
+}
 #about-me .editorial-profile-image-frame {
     display: contents;
 }

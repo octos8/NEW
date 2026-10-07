@@ -74,21 +74,24 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&amp;display=swap">
-    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/common.css?v=smooth-detail-navigation-20261007">
     <link rel="stylesheet" href="./css/header.css?v=pastel-nav-20261005">
     <link rel="stylesheet" href="./css/hero.css">
     <link rel="stylesheet" href="./css/hero-photo.css?v=mobile-cube-labels-19">
-    <link rel="stylesheet" href="./css/about.css?v=repeat-reveal-20261005">
+    <link rel="stylesheet" href="./css/about.css?v=profile-fullscreen-20261007">
     <link rel="stylesheet" href="./css/popup.css?v=soft-reveal-4">
     <link rel="stylesheet" href="./css/poster.css?v=light-warm-circle-2">
     <link rel="stylesheet" href="./css/banner.css?v=warm-circle-2">
-    <link rel="stylesheet" href="./css/detail.css?v=mobile-thin-rail-20261007">
+    <link rel="stylesheet" href="./css/detail.css?v=poster-fullscreen-20261007">
     <link rel="stylesheet" href="./css/aesop.css?v=project-intro-center-84">
     <link rel="stylesheet" href="./css/lune.css">
     <link rel="stylesheet" href="./css/device-mockups.css">
     <link rel="stylesheet" href="./css/contact.css">
 
     <link rel="stylesheet" href="./css/hero-pointer.css?v=1">
+<link rel="stylesheet" href="./css/hero-crystal.css?v=background-scatter-20261007">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+<script type="module" src="./js/hero-crystal.js?v=balanced-gray-glass-20261007"></script>
 </head>
 
 <body>
@@ -113,9 +116,10 @@
     </header>
     <main>
         <!-- HERO -->
-        <section id="home" class="hero-section">
+        <section id="home" class="hero-section" data-crystal-hero>
           <div class="hero-stage">
             <div class="hero-bg"></div>
+            <canvas id="hero-crystal-canvas" aria-label="드래그로 회전하고 스크롤하면 흩어지는 27조각 크리스탈 큐브"></canvas>
 
             <div class="hero-inner common-frame">
                 <h1 class="hero-title">STRUCTURE</h1>
@@ -797,7 +801,7 @@
     <script src="./js/visual-work.js?v=repeat-reveal-20261005" defer></script>
     <script src="./js/project.js" defer></script>
     <script src="./js/contact.js" defer></script>
-    <script src="./js/header.js" defer></script>
+    <script src="./js/header.js?v=profile-fullscreen-20261007" defer></script>
     <script src="./js/index.js" defer></script>
         
         

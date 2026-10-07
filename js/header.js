@@ -93,8 +93,11 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             closeNav();
             cancelAnimationFrame(heroScrollFrame);
+            const destination = target.id === 'about-me'
+                ? target.querySelector('.editorial-profile') || target
+                : target;
             window.scrollTo({
-                top: getSectionTop(target),
+                top: getSectionTop(destination),
                 behavior: reducedMotion ? 'auto' : 'smooth',
             });
             if (target.id === 'home') replayHeroOnHome(target);

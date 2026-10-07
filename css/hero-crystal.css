@@ -1,0 +1,26 @@
+#home.has-crystal-3d {height:100svh;overflow:clip;background:#d9dad8;}
+#home.has-crystal-3d > .hero-stage {display:block;position:sticky;top:0;height:100svh;width:100%;overflow:hidden;isolation:isolate;}
+#home.has-crystal-3d .hero-photo-rotate {display:none;}
+#home.has-crystal-3d .hero-stage::after {display:none;}
+#hero-crystal-canvas {display:none;}
+#home.has-crystal-3d #hero-crystal-canvas {display:block;position:absolute;inset:0;width:100%;height:100%;z-index:2;cursor:grab;touch-action:pan-y;}
+#home.has-crystal-3d .hero-meta {pointer-events:none;}
+.crystal-transition-canvas#hero-crystal-canvas {
+  display: block;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100svh;
+  z-index: 2;
+  cursor: grab;
+  touch-action: pan-y;
+}
+body:has(#home.has-crystal-3d) #about {
+  z-index: auto;
+  isolation: auto;
+}
+body:has(#home.has-crystal-3d) #about > .about-inner {
+  position: relative;
+  z-index: 3;
+}
+@media(prefers-reduced-motion:reduce){#home.has-crystal-3d{height:100svh;}}
