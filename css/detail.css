@@ -1698,3 +1698,49 @@
 @media (min-width: 768px) {
     #poster .work-gallery-caption { justify-content: flex-end; padding-bottom: 0; }
 }
+
+/* Keep selected mobile popup artwork within the scrolling viewport. */
+@media (max-width: 768px) {
+    #popup .popup-inline-row { padding-block: 12px 20px; }
+    #popup.has-popup-selection .popup-inline-art[aria-pressed="true"] img {
+        transform: none;
+    }
+}
+
+@media (max-width: 402px) {
+    .work-gallery-header { gap: 18px; }
+    .work-gallery-header nav a { padding: 9px 4px; font-size: 12px; }
+
+    #poster .work-gallery-caption { padding-inline: 14px; }
+    #poster .work-gallery-caption p { font-size: 12px; }
+    #poster .poster-caption-facts { margin-top: 24px; padding-top: 16px; gap: 12px; }
+    #poster .poster-caption-facts > div {
+        grid-template-columns: 64px minmax(0, 1fr);
+        gap: 8px;
+        align-items: baseline;
+    }
+    #poster .poster-caption-facts dt { font-size: 8px; letter-spacing: 1px; white-space: nowrap; }
+    #poster .poster-caption-facts dd {
+        font-size: 11px;
+        line-height: 1.7;
+        word-break: keep-all;
+        overflow-wrap: normal;
+    }
+
+    #popup .popup-inline-copy h3 { font-size: 20px; margin-bottom: 12px; }
+    #popup .popup-inline-copy p { font-size: 12px; line-height: 1.8; }
+    #popup.popup-inline-gallery .popup-inline-copy { margin: 24px 16px 0; }
+
+    #detail .work-gallery-header > p {
+        margin-left: 34px;
+        margin-right: 16px;
+        padding: 0 0 0 16px;
+        border-left: 1px solid #ccc;
+        border-right: 0;
+        font-size: 11px;
+    }
+    #detail .work-gallery-header nav {
+        margin-left: 34px;
+        justify-content: flex-end;
+    }
+}

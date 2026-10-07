@@ -653,6 +653,15 @@ document.addEventListener('DOMContentLoaded', () => {
   title.textContent = choices[index].dataset.title;
   description.innerHTML = choices[index].dataset.description;
   row.querySelectorAll('button').forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
+  if (matchMedia('(max-width: 768px)').matches) {
+   const artwork = row.children[index];
+   const viewport = row.getBoundingClientRect();
+   const bounds = artwork.getBoundingClientRect();
+   row.scrollTo({
+    left: row.scrollLeft + bounds.left - viewport.left - (row.clientWidth - bounds.width) / 2,
+    behavior: 'instant'
+   });
+  }
  };
  choices.forEach((choice, index) => {
   const button = document.createElement('button'); button.type = 'button'; button.className = 'popup-inline-art';
