@@ -262,7 +262,7 @@ const glassMaterial =
     */
 
     thickness:
-      0.8,
+      1.6,
 
 
     /*
@@ -284,7 +284,7 @@ const glassMaterial =
 
 
     attenuationDistance:
-      12,
+      4.5,
 
 
     /*
@@ -292,7 +292,7 @@ const glassMaterial =
     */
 
     specularIntensity:
-      0.45,
+      1,
 
 
     specularColor:
@@ -301,7 +301,7 @@ const glassMaterial =
       ),
 
 
-    envMapIntensity: 0.7,
+    envMapIntensity: 1.85,
 
 
     /*
@@ -309,18 +309,18 @@ const glassMaterial =
     */
 
     clearcoat:
-      0.2,
+      1,
 
 
     clearcoatRoughness:
-      0.18,
+      0.01,
 
 
     /*
     약한 홀로그램 느낌
     */
 
-    iridescence: 0.08,
+    iridescence: 0.62,
 
 
     iridescenceIOR:
@@ -654,70 +654,18 @@ for (
 
 
 const pieces = [];
-
-
-for (
-  let i = 0;
-  i < PIECE_COUNT;
-  i++
-) {
-
-  const mesh =
-    new THREE.Mesh(
-      geometry,
-      glassMaterial
-    );
-
-
-  mesh.position.copy(
-    cubePositions[i]
-  );
-
-
-  /*
-  애니메이션용
-  */
-
-  mesh.userData.phase =
-    seededRandom(i + 1000)
-    *
-    Math.PI
-    *
-    2;
-
-
-  mesh.userData.speed =
-    0.7
-    +
-    seededRandom(i + 1100)
-    *
-    1.3;
-
-
-  mesh.userData.float =
-    0.05
-    +
-    seededRandom(i + 1200)
-    *
-    0.15;
-
-
+for (let i = 0; i < PIECE_COUNT; i++) {
+  const mesh = new THREE.Mesh(geometry, glassMaterial);
+  mesh.position.copy(cubePositions[i]);
+  mesh.userData.phase = seededRandom(i + 1000) * Math.PI * 2;
+  mesh.userData.speed = 0.7 + seededRandom(i + 1100) * 1.3;
+  mesh.userData.float = 0.05 + seededRandom(i + 1200) * 0.15;
   group.add(mesh);
-
-
   pieces.push(mesh);
-
 }
 
-
-
-/* =========================================================
-   TEMP OBJECTS
-========================================================= */
-
-
 const tilt=new THREE.Euler(.52,Math.PI / 4,0);
-group.position.set(-.14,.14,0);
+group.position.set(0,0,0);
 const drag={x:0,y:0,id:null,lastX:0,lastY:0};
 canvas.addEventListener('pointerdown',event=>{
   if(event.button!==0 || drag.id!==null)return;
@@ -740,13 +688,13 @@ function resize(){
   const width=stage.clientWidth,height=stage.clientHeight;
   renderer.setSize(width,height,false);
   camera.aspect=width/Math.max(1,height);
-  camera.position.z=width<600 ? 17.5 : 11.8;
+  camera.position.z=width<600 ? 15.7 : 14.6;
   cubePositions.forEach((position, index) => {
     position.copy(originalCubePositions[index]).multiplyScalar(.90 / CUBE_GAP);
   });
-  renderer.toneMappingExposure = 1.2;
-  glassMaterial.color.setHex(0xe8e8e8);
-  glassMaterial.attenuationColor.setHex(0xf2f2f2);
+  renderer.toneMappingExposure = 1.0;
+  glassMaterial.color.setHex(0xdce0e6);
+  glassMaterial.attenuationColor.setHex(0xb8c1cf);
   camera.updateProjectionMatrix();
   const viewHeight=2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2))*(camera.position.z+6);
   const exitRadius=Math.hypot(viewHeight*camera.aspect,viewHeight)/2+3;
@@ -762,14 +710,17 @@ new ResizeObserver(resize).observe(stage);
 canvas.classList.add('crystal-transition-canvas');
 document.body.append(canvas);
 let progress=0;
-function animate(){
+let previousFrameTime=0;
+function animate(time=performance.now()){
   requestAnimationFrame(animate);
+  const delta=Math.min(Math.max((time-previousFrameTime)/1000,0),.05);
+  previousFrameTime=time;
   if(document.hidden)return;
   const height=Math.max(1,stage.clientHeight);
   const scroll=-home.getBoundingClientRect().top;
   const distance=height*2.2;
   const target=motion.matches ? 0 : THREE.MathUtils.clamp(scroll/distance,0,1);
-  progress+=(target-progress)*.16;
+  progress+=(target-progress)*(1-Math.exp(-18*delta));
   if(Math.abs(target-progress)<.0001) progress=target;
   const fade=motion.matches
     ? THREE.MathUtils.clamp(scroll/height,0,1)
@@ -777,7 +728,7 @@ function animate(){
   canvas.style.opacity=String(1-fade);
   canvas.style.pointerEvents=scroll<height*.25 && fade<1 ? 'auto' : 'none';
   if(scroll < -height || fade>=1) return;
-  const t=progress*progress*(3-2*progress);
+  const t=progress+progress*progress-progress*progress*progress;
   const retreat=THREE.MathUtils.smoothstep(progress,0,.5);
   group.position.z=-6*retreat;
   pieces.forEach((piece,index)=>{
