@@ -524,8 +524,8 @@ document.addEventListener('DOMContentLoaded', () => {
     gallery.style.setProperty('--banner-caption-color', tones[selected] || tones[0]);
     const bannerNumber = gallery.querySelector('[data-banner-number]');
     if (bannerNumber) bannerNumber.textContent = String(selected + 1).padStart(2, '0') + ' / ' + String(choices.length).padStart(2, '0');
-    const moods = ['ELEGANT / LUMINOUS', 'DARK / PREMIUM', 'ENERGETIC / SPORTY', 'CALM / PREMIUM'];
-    const focuses = ['PRODUCT / FABRIC', 'PRODUCT / LIGHT', 'TYPOGRAPHY / MOVEMENT', 'PRODUCT / TEXTURE'];
+    const moods = ['ELEGANT / LUMINOUS', 'DARK / PREMIUM', 'ENERGETIC / SPORTY', 'CALM / PREMIUM', 'WARM / CRISPY'];
+    const focuses = ['PRODUCT / FABRIC', 'PRODUCT / LIGHT', 'TYPOGRAPHY / MOVEMENT', 'PRODUCT / TEXTURE', 'TEXTURE / TYPOGRAPHY'];
     const mood = gallery.querySelector('[data-banner-mood]');
     if (mood) {
      mood.textContent = moods[selected];
@@ -935,8 +935,8 @@ document.addEventListener('DOMContentLoaded', () => {
  footer.className = 'banner-caption-footer';
  footer.innerHTML = '<div><span>MOOD</span><span data-banner-mood></span></div><div><span>FOCUS</span><span data-banner-focus></span></div>';
  caption.append(footer);
- const moods = ['ELEGANT / LUMINOUS', 'DARK / PREMIUM', 'ENERGETIC / SPORTY', 'CALM / PREMIUM'];
- const focuses = ['PRODUCT / FABRIC', 'PRODUCT / LIGHT', 'TYPOGRAPHY / MOVEMENT', 'PRODUCT / TEXTURE'];
+ const moods = ['ELEGANT / LUMINOUS', 'DARK / PREMIUM', 'ENERGETIC / SPORTY', 'CALM / PREMIUM', 'WARM / CRISPY'];
+ const focuses = ['PRODUCT / FABRIC', 'PRODUCT / LIGHT', 'TYPOGRAPHY / MOVEMENT', 'PRODUCT / TEXTURE', 'TEXTURE / TYPOGRAPHY'];
  footer.querySelector('[data-banner-mood]').textContent = moods[selected];
  footer.querySelector('[data-banner-focus]').textContent = focuses[selected];
  const image = gallery.querySelector('.work-gallery-main');
@@ -959,13 +959,13 @@ document.addEventListener('DOMContentLoaded', () => {
  const title = document.createElement('h3'); const text = document.createElement('p');
  const facts = document.createElement('dl'); facts.className = 'banner-mosaic-facts';
  dialog.append(close, title, text, facts); gallery.append(dialog);
- const moods = ['ELEGANT / LUMINOUS', 'DARK / PREMIUM', 'ENERGETIC / SPORTY', 'CALM / PREMIUM'];
- const focuses = ['PRODUCT / FABRIC', 'PRODUCT / LIGHT', 'TYPOGRAPHY / MOVEMENT', 'PRODUCT / TEXTURE'];
+ const moods = ['ELEGANT / LUMINOUS', 'DARK / PREMIUM', 'ENERGETIC / SPORTY', 'CALM / PREMIUM', 'WARM / CRISPY'];
+ const focuses = ['PRODUCT / FABRIC', 'PRODUCT / LIGHT', 'TYPOGRAPHY / MOVEMENT', 'PRODUCT / TEXTURE', 'TEXTURE / TYPOGRAPHY'];
  let opener;
- const initial = [2, 0, 1, 3].filter(index => choices[index]);
+ const initial = [2, 0, 1, 3, ...choices.map((_, index) => index).filter(index => index > 3)].filter(index => choices[index]);
  for (let row = 0; row < 2; row++) {
   const track = document.createElement('div'); track.className = 'banner-mosaic-track';
-  const order = row === 0 ? initial : [...initial.slice(2), ...initial.slice(0, 2)];
+  const order = row === 0 ? initial : [...initial].reverse();
   for (let copy = 0; copy < 2; copy++) {
    const group = document.createElement('div'); group.className = 'banner-mosaic-group';
    order.forEach(index => {
