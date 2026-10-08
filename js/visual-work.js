@@ -965,7 +965,7 @@ document.addEventListener('DOMContentLoaded', () => {
  const initial = [2, 0, 1, 3, ...choices.map((_, index) => index).filter(index => index > 3)].filter(index => choices[index]);
  for (let row = 0; row < 2; row++) {
   const track = document.createElement('div'); track.className = 'banner-mosaic-track';
-  const order = row === 0 ? initial : [...initial].reverse();
+  const order = row === 0 ? initial : [...initial.slice(2), ...initial.slice(0, 2)];
   for (let copy = 0; copy < 2; copy++) {
    const group = document.createElement('div'); group.className = 'banner-mosaic-group';
    order.forEach(index => {
