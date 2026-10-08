@@ -2804,3 +2804,30 @@
 }
 #project .lune-hero-monitor .lune-project-video { transform-origin: 0 0; backface-visibility: hidden; }
 #project .lune-hero-monitor .lune-project-video { position: absolute; inset: 0; width: 100%; height: 100%; transform: none; object-fit: cover; }
+
+/* Side-origin loop pointing upward to the note on both screen sizes. */
+#project .lune-hero-monitor > .lune-monitor-doodle {
+ left: calc(91% - 3px); top: 5%; width: 112px; height: 150px;
+}
+#project .lune-monitor-callout { left: calc(91% + 78px); top: calc(5% - 48px); width: 165px; }
+@media(max-width:768px) {
+ #project .lune-introduction .lune-hero-mockup > .lune-hero-monitor { width: 72%; }
+ #project .lune-hero-monitor > .lune-monitor-doodle {
+  left: calc(91% - 2px); top: 5%; width: 58px; height: 86px;
+ }
+ #project .lune-monitor-callout { left: calc(91% + 14px); top: calc(5% - 36px); width: 108px; }
+ #project .lune-monitor-callout p { font-size: 10px; line-height: 1.7; }
+}
+/* Compact mobile annotation with clear separation from the arrow tip. */
+@media(max-width:768px) {
+ #project .lune-monitor-callout {
+  left: calc(91% + 10px); top: calc(5% - 42px); width: 112px;
+ }
+ #project .lune-monitor-callout p {
+  font-size: 10px; line-height: 1.7; word-break: normal; text-wrap: balance;
+ }
+ #project .lune-monitor-callout p br { display: none; }
+ #project .lune-hero-monitor > .lune-monitor-doodle {
+  left: calc(91% - 2px); top: calc(5% + 8px); width: 44px; height: 64px;
+ }
+}
