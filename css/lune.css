@@ -2868,3 +2868,16 @@
  }
  #project .lune-mobile-note-arrow path { stroke: #111; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
 }
+/* Mobile reference: note above the right edge with a left-pointing side curl. */
+@media(max-width:768px) {
+ #project .lune-monitor-callout {
+  left: auto; right: 9%; top: calc(6.5% - 42px); width: 172px;
+ }
+ #project .lune-mobile-note-arrow {
+  left: calc(91% - 2px); top: calc(6.5% - 22px); width: 50px; height: 72px;
+ }
+}
+/* Bring the mobile caption closer to the arrow tip. */
+@media(max-width:768px) {
+ #project .lune-monitor-callout { right: calc(9% - 18px); }
+}
