@@ -29,8 +29,13 @@ body:has(#home.has-crystal-3d) #about > .about-inner {
 #home.has-crystal-3d { background: #929ca9; }
 #home.has-crystal-3d .hero-bg {
   background:
-    radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, .10), transparent 65%),
-    linear-gradient(135deg, #9da7b4 0%, #858f9e 50%, #a0a9b5 100%);
+    radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, .10), transparent 55%),
+    linear-gradient(180deg, #9da7b4 0%, #858f9e 45%, #a0a9b5 75%, #b9c1cc 100%);
 }
 #hero-crystal-canvas.dragging { cursor: grabbing; }
 
+
+/* Continue the silver hero surface into the About introduction. */
+body:has(#home.has-crystal-3d) #about.about-section {
+  background: linear-gradient(180deg, #b9c1cc 0, #d8dde4 35svh, #eef0f4 70svh, #ffffff 100svh);
+}

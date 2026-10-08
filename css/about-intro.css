@@ -1,0 +1,29 @@
+#about-header .about-monitor-title { opacity: 1; filter: none; transform: none; }
+#about-header.about-heading { padding: 90px 32px; flex-direction: column; justify-content: center; align-items: stretch; }
+#about-header .about-workspace-scene { display: none; }
+#about-header .about-intro > .about-monitor-title { font-size: clamp(34px, 5.2vw, 76px); line-height: 1.4; letter-spacing: -.055em; text-align: left; max-width: 1100px; margin: 0 auto 44px; }
+#about-header .about-intro .about-intro-korean { grid-template-columns: 1fr; gap: 10px; margin: 0 auto; }
+#about-header .about-intro .about-copy-left, #about-header .about-intro .about-copy-right { text-align: left; font-size: clamp(15px, 1.6vw, 21px); }
+.about-principles { width: 100%; max-width: 1100px; margin: 64px auto 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; text-align: left; }
+.about-principles article { border-top: 1px solid #6c798555; padding-top: 20px; }
+.about-principles small { color: #657285; font-size: 11px; letter-spacing: .15em; }
+.about-principles h4 { margin: 20px 0 10px; font-size: 22px; color: #252c36; }
+.about-principles p { font-size: 14px; line-height: 1.8; color: #505c6b; word-break: keep-all; }
+@media(max-width:768px) {
+ #about-header.about-heading { padding: 70px 26px 90px; }
+ .about-principles { grid-template-columns: 1fr; gap: 24px; margin-top: 38px; }
+ .about-principles h4 { margin-top: 12px; }
+}
+/* Align the introduction copy with the title and principle columns. */
+#about-header .about-intro .about-intro-korean.about-copy-typewriter {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-inline: 0;
+}
+#about-header .about-intro .about-copy-typewriter .about-copy-left,
+#about-header .about-intro .about-copy-typewriter .about-copy-right {
+  left: 0;
+  margin-inline: 0;
+  text-align: left;
+}
