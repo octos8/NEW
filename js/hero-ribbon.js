@@ -584,6 +584,7 @@ document.body.append(canvas);
 let oldP = -1;
 let previousTime;
 let animationStart;
+let autoRotation = 0;
 
 function animate(ms) {
   requestAnimationFrame(animate);
@@ -598,6 +599,7 @@ function animate(ms) {
   if (document.hidden || scroll < -height || fade >= 1) return;
   const dt = previousTime === undefined ? 1 / 60 : Math.min((ms - previousTime) / 1000, 0.05);
   previousTime = ms;
+  if (!reducedMotion && !dragging) autoRotation = (autoRotation + dt * Math.PI * 2 / 40) % (Math.PI * 2);
   const response = reducedMotion ? 1 : 1 - Math.exp(-8 * dt);
   followX = lerp(followX, pointerX, response);
   followY = lerp(followY, pointerY, response);
@@ -678,7 +680,7 @@ function animate(ms) {
 
     -0.28 +
       (mode === 'orbit' ? orbit * 4.0 : 0) +
-      followX * 1.1 + rotationY,
+      followX * 1.1 + rotationY + autoRotation,
 
     -0.12 +
       (mode === 'unfold' ? -p * 0.05 : 0)
