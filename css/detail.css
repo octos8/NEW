@@ -1964,3 +1964,8 @@
     height: 100%;
     object-fit: fill;
 }
+
+/* Space the mobile Banner introduction below its lowered heading. */
+@media (max-width: 402px) {
+    #banner.banner-mosaic .work-gallery-header > p { margin-top: 20px; }
+}
