@@ -644,3 +644,47 @@ document.addEventListener('DOMContentLoaded', () => {
  facts.classList.add('is-facts-reveal-ready');
  observer.observe(facts);
 });
+/* Staged motion for the introduction title, copy and design principles. */
+document.addEventListener('DOMContentLoaded', () => {
+ const section = document.querySelector('#about-header');
+ if (!section || !('IntersectionObserver' in window) || !Element.prototype.animate) return;
+ const preference = matchMedia('(prefers-reduced-motion: reduce)');
+ const running = new Set();
+ const reveal = (element, frames, delay, duration = 1600) => {
+  if (preference.matches) return;
+  const animation = element.animate(frames, { duration, delay, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'backwards' });
+  running.add(animation);
+  animation.finished.then(() => running.delete(animation)).catch(() => running.delete(animation));
+ };
+ const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+   if (!entry.isIntersecting) {
+    entry.target.getAnimations().forEach(animation => animation.cancel());
+    entry.target.querySelectorAll('*').forEach(element => element.getAnimations().forEach(animation => animation.cancel()));
+    if (entry.target.matches('.about-monitor-title')) section.classList.remove('is-intro-prism-lit');
+    entry.target.classList.remove('is-principle-revealed');
+    return;
+   }
+   if (preference.matches) return;
+   if (entry.target.matches('.about-monitor-title')) {
+    entry.target.querySelectorAll('.about-monitor-title-line').forEach((line,index) => {
+     reveal(line,[{opacity:0,transform:'translateY(40px)',filter:'blur(8px)'},{opacity:1,transform:'translateY(0)',filter:'blur(0)'}],index*350,1900);
+    });
+    section.classList.add('is-intro-prism-lit');
+   } else if (entry.target.matches('.about-intro-korean')) {
+    entry.target.querySelectorAll(':scope > p').forEach((p,index) => {
+     reveal(p,[{opacity:0,transform:'translateY(28px)'},{opacity:1,transform:'translateY(0)'}],index*300);
+    });
+   } else {
+    const index = [...section.querySelectorAll('.about-principles article')].indexOf(entry.target);
+    const delay = innerWidth > 768 ? index*280 : 0;
+    entry.target.classList.add('is-principle-revealed');
+    entry.target.querySelectorAll('small,h4,p').forEach((element,i) => {
+     reveal(element,[{opacity:0,transform:'translateY(22px)'},{opacity:1,transform:'translateY(0)'}],delay+i*200);
+    });
+   }
+  });
+ }, {threshold:.15});
+ section.querySelectorAll('.about-monitor-title,.about-intro-korean,.about-principles article').forEach(element=>observer.observe(element));
+ preference.addEventListener('change',()=> { if(preference.matches) running.forEach(animation=>animation.cancel()); });
+});

@@ -2831,3 +2831,40 @@
   left: calc(91% - 2px); top: calc(5% + 8px); width: 44px; height: 64px;
  }
 }
+/* Center the complete mobile monitor and annotation composition. */
+@media(max-width:768px) {
+ #project .lune-introduction .lune-hero-mockup > .lune-hero-monitor {
+  margin-left: 0; margin-right: auto; left: 0;
+ }
+ #project .lune-case .lune-introduction > .lune-hero-mockup {
+  width: min(100%, 390px); margin-inline: auto;
+ }
+}
+/* Mobile reference: centered monitor with an upper-right note, no arrow. */
+@media(max-width:768px) {
+ #project .lune-introduction .lune-hero-mockup > .lune-hero-monitor {
+  width: 88%; margin-inline: auto; left: 0;
+ }
+ #project .lune-hero-monitor > .lune-monitor-doodle { display: none; }
+ #project .lune-monitor-callout {
+  left: auto; right: -4%; top: calc(6.5% - 42px); width: 138px;
+ }
+ #project .lune-monitor-callout p {
+  font-size: 11px; line-height: 1.7; text-align: left; text-wrap: balance;
+ }
+}
+/* Preserve the requested two-line mobile caption. */
+@media(max-width:768px) {
+ #project .lune-monitor-callout { width: 172px; right: -4%; }
+ #project .lune-monitor-callout p { white-space: nowrap; text-wrap: nowrap; }
+ #project .lune-monitor-callout p br { display: block; }
+}
+/* Mobile sketch: curl upward from the right bezel toward the caption. */
+#project .lune-mobile-note-arrow { display: none; }
+@media(max-width:768px) {
+ #project .lune-mobile-note-arrow {
+  display: block; position: absolute; left: calc(91% - 2px); top: calc(6.5% - 28px);
+  width: 56px; height: 80px; z-index: 5; overflow: visible; pointer-events: none;
+ }
+ #project .lune-mobile-note-arrow path { stroke: #111; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+}

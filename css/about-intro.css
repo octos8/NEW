@@ -27,3 +27,18 @@
   margin-inline: 0;
   text-align: left;
 }
+/* Gentle spectrum sweep and drawing rules for the introduction. */
+#about-header .about-monitor-title-line { display: block; }
+#about-header.is-intro-prism-lit .about-structure-accent { background-size: 220% 100%; animation: intro-prism-sweep 3s ease-in-out 1; }
+#about-header .about-principles article { position: relative; border-top-color: transparent; }
+#about-header .about-principles article::before { content: ''; position: absolute; inset: 0 0 auto; height: 1px; background: #6c798555; transform-origin: left; }
+#about-header .about-principles article.is-principle-revealed::before { animation: intro-rule-draw 1.8s cubic-bezier(.22,1,.36,1) both; }
+#about-header .about-principles article h4 { transition: color .3s ease; }
+@media(hover:hover) { #about-header .about-principles article:hover h4 { color: #7874ac; } }
+@keyframes intro-prism-sweep { from { background-position: 100% 50%; } to { background-position: 0% 50%; } }
+@keyframes intro-rule-draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@media(prefers-reduced-motion:reduce) {
+ #about-header.is-intro-prism-lit .about-structure-accent,
+ #about-header .about-principles article.is-principle-revealed::before { animation: none; }
+ #about-header .about-principles article h4 { transition: none; }
+}
