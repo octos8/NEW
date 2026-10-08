@@ -29,6 +29,9 @@ body:has(#home.has-crystal-3d) #about > .about-inner {
 #home.has-crystal-3d { background: #929ca9; }
 #home.has-crystal-3d .hero-bg {
   background:
+    radial-gradient(ellipse at 12% 28%, rgba(42, 48, 60, .22), transparent 48%),
+    radial-gradient(ellipse at 83% 44%, rgba(49, 43, 59, .17), transparent 46%),
+    radial-gradient(ellipse at 45% 68%, rgba(43, 51, 65, .12), transparent 44%),
     radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, .10), transparent 55%),
     linear-gradient(180deg, #9da7b4 0%, #858f9e 45%, #a0a9b5 75%, #b9c1cc 100%);
 }

@@ -2773,3 +2773,32 @@
         margin-inline: 0;
     }
 }
+/* Video and annotation anchored to the visible bezel, inset inside the PNG. */
+#project .lune-hero-monitor .lune-project-video { display: block; width: 100%; height: 100%; object-fit: contain; background: #fff; }
+#project .lune-introduction .lune-hero-mockup > .lune-hero-monitor { width: 82%; }
+#project .lune-hero-monitor > .lune-monitor-doodle {
+ position: absolute; left: calc(91% - 2px); top: calc(5% - 49px);
+ width: 76px; height: 50px; z-index: 5; overflow: visible; pointer-events: none;
+}
+#project .lune-monitor-doodle path { stroke: #111; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+#project .lune-monitor-callout {
+ position: absolute; left: calc(91% + 78px); top: calc(5% - 48px);
+ width: 165px; z-index: 5;
+}
+#project .lune-monitor-callout p { font-family: 'Paperlogy', sans-serif; margin: 0; color: #111; font-size: 13px; line-height: 1.7; word-break: keep-all; }
+@media(min-width:769px) {
+ #project .lune-case .lune-introduction > .lune-hero-mockup { left: -32px; }
+}
+@media(max-width:768px) {
+ #project .lune-introduction .lune-intro-copy { width: 100%; max-width: 360px; margin-inline: auto; text-align: center; }
+ #project .lune-introduction .lune-intro-copy h3 { text-align: center; font-size: 20px; line-height: 1.5; margin-bottom: 20px; }
+ #project .lune-introduction .lune-intro-copy h4 { text-align: center; font-size: 16px; line-height: 1.5; margin: 24px 0 16px; }
+ #project .lune-introduction .lune-intro-copy p { text-align: center; max-width: 330px; font-size: 13px; line-height: 1.9; letter-spacing: -.02em; text-wrap: balance; word-break: keep-all; margin: 0 auto 10px; }
+ #project .lune-introduction .lune-intro-copy p br { display: none; }
+ #project .lune-introduction .lune-facts { width: fit-content; max-width: 100%; margin-inline: auto; }
+ #project .lune-introduction .lune-hero-mockup > .lune-hero-monitor { width: 88%; }
+ #project .lune-case .lune-introduction > .lune-hero-mockup { margin-top: 52px; }
+ #project .lune-hero-monitor > .lune-monitor-doodle { left: 48%; top: calc(6.5% - 49px); width: 64px; height: 50px; }
+ #project .lune-monitor-callout { left: calc(48% + 66px); top: calc(6.5% - 50px); width: 138px; }
+ #project .lune-monitor-callout p { font-size: 11px; }
+}
