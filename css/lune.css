@@ -2774,7 +2774,7 @@
     }
 }
 /* Video and annotation anchored to the visible bezel, inset inside the PNG. */
-#project .lune-hero-monitor .lune-project-video { display: block; width: 100%; height: 100%; object-fit: contain; background: #fff; }
+#project .lune-hero-monitor .lune-project-video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; background: #fff; }
 #project .lune-introduction .lune-hero-mockup > .lune-hero-monitor { width: 82%; }
 #project .lune-hero-monitor > .lune-monitor-doodle {
  position: absolute; left: calc(91% - 2px); top: calc(5% - 49px);
@@ -2802,3 +2802,5 @@
  #project .lune-monitor-callout { left: calc(48% + 66px); top: calc(6.5% - 50px); width: 138px; }
  #project .lune-monitor-callout p { font-size: 11px; }
 }
+#project .lune-hero-monitor .lune-project-video { transform-origin: 0 0; backface-visibility: hidden; }
+#project .lune-hero-monitor .lune-project-video { position: absolute; inset: 0; width: 100%; height: 100%; transform: none; object-fit: cover; }
