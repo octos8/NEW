@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const heroName = document.querySelector('.hero-name');
     const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
+    if (heroTitle && !heroTitle.querySelector('.structure-blueprint')) {
         const title = heroTitle.textContent.trim();
         heroTitle.setAttribute('aria-label', title);
         const ns = 'http://www.w3.org/2000/svg';

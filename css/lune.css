@@ -2881,3 +2881,51 @@
 @media(max-width:768px) {
  #project .lune-monitor-callout { right: calc(9% - 18px); }
 }
+
+/* Smaller, lighter annotation and more room above the monitor. */
+#project .lune-monitor-doodle path { stroke-width: 2.5; }
+@media (min-width: 769px) {
+ #project .lune-hero-monitor > .lune-monitor-doodle {
+  width: 84px; height: 112px; top: calc(5% + 16px);
+ }
+ #project .lune-monitor-callout { left: calc(91% + 54px); top: calc(5% - 32px); }
+ #project .lune-case .lune-introduction > .lune-hero-mockup { margin-top: 24px; }
+}
+@media (max-width: 768px) {
+ #project .lune-mobile-note-arrow { width: 40px; height: 58px; }
+ #project .lune-mobile-note-arrow path { stroke-width: 2.5; }
+ #project .lune-case .lune-introduction > .lune-hero-mockup { margin-top: 72px; }
+}
+
+
+/* Separate the annotation arrow from the monitor bezel. */
+@media (min-width: 769px) {
+ #project .lune-hero-monitor > .lune-monitor-doodle { left: calc(91% + 16px); }
+ #project .lune-monitor-callout { left: calc(91% + 73px); }
+}
+@media (max-width: 768px) {
+ #project .lune-mobile-note-arrow { left: calc(91% + 10px); }
+}
+
+
+/* Short upward curl with the caption centered over its arrowhead. */
+@media (min-width: 769px) {
+ #project .lune-hero-monitor > .lune-monitor-doodle {
+  width: 84px; height: 60px;
+ }
+ #project .lune-monitor-callout {
+  left: calc(91% + 93px); right: auto; top: auto;
+  bottom: calc(95% - 7px); width: 190px;
+  transform: translateX(-50%);
+ }
+ #project .lune-monitor-callout p { text-align: center; }
+}
+
+
+/* Hide mockup annotation arrows on mobile only. */
+@media (max-width: 768px) {
+  #project .lune-mobile-note-arrow,
+  #project .lune-hero-monitor > .lune-monitor-doodle {
+    display: none;
+  }
+}

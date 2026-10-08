@@ -669,3 +669,19 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-scroll-cue svg { animation: none; }
 }
+
+@media (min-width: 769px) {
+  #home .hero-scroll-cue { display: none; }
+}
+
+
+/* Mobile publisher identity: slightly lower, farther left, and larger. */
+@media (max-width: 768px) {
+  #home .hero-meta {
+    top: calc(50% + min(28.08vw, 19.68svh) + 48px);
+    right: 28px;
+  }
+  #home .hero-meta .hero-profile {
+    font-size: clamp(9px, 2.1vw, 14px);
+  }
+}

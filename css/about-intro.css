@@ -42,3 +42,11 @@
  #about-header .about-principles article.is-principle-revealed::before { animation: none; }
  #about-header .about-principles article h4 { transition: none; }
 }
+
+/* Paperlogy for the three design principles. */
+#about-header .about-principles,
+#about-header .about-principles small,
+#about-header .about-principles h4,
+#about-header .about-principles p {
+  font-family: 'Paperlogy', sans-serif;
+}
