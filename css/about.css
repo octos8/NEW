@@ -4444,22 +4444,27 @@
 #about-me .editorial-profile-image-frame {
     display: contents;
 }
-@media (max-width: 402px) {
+/* Keep the full portrait at its natural proportions on mobile. */
+@media (max-width: 768px) {
+    #about-me .editorial-profile-photo {
+        aspect-ratio: auto;
+        align-self: start;
+    }
     #about-me .editorial-profile-image-frame {
-        position: absolute;
-        inset: 0;
-        z-index: 1;
+        position: relative;
         display: block;
+        z-index: 1;
         overflow: hidden;
     }
     #about-me .editorial-profile-photo img {
+        position: static;
         inset: auto;
-        left: 50%;
-        top: 50%;
-        width: 155%;
-        max-width: none;
+        display: block;
+        width: 100%;
+        max-width: 100%;
         height: auto;
-        transform: translate(-43%, -67%);
+        transform: none;
+        object-fit: contain;
         object-position: center;
     }
 }
