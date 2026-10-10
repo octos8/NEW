@@ -2313,6 +2313,12 @@
     animation: none;
 }
 
+/* Preserve the full mobile capture inside the phone's taller screen. */
+#project .lune-case .lune-page-gallery .lune-static-iphone .lune-static-screen > img {
+    height: auto;
+    object-fit: contain;
+}
+
 @media (max-width: 768px) {
     #project .lune-case .lune-page-gallery {
         grid-template-columns: minmax(0, 1fr) minmax(0, .58fr);
