@@ -2193,6 +2193,7 @@ body:has(.detail-view) {
     position: fixed;
     z-index: 40;
     top: 24px;
+    left: auto;
     right: var(--detail-action-right);
     width: var(--detail-action-size);
     height: var(--detail-action-size);
@@ -2257,6 +2258,18 @@ body:has(.detail-view) > .top-link {
 
 }
 
+
+/* Define action dimensions on the body outside its scoped descendants. */
+body:has(.detail-view) {
+    --detail-action-right: 24px;
+    --detail-action-size: 56px;
+}
+@media (max-width: 768px) {
+    body:has(.detail-view) {
+        --detail-action-right: 12px;
+        --detail-action-size: 44px;
+    }
+}
 
 /* Preserve equal portrait previews independently of viewport height. */
 #detail .work-gallery-inner { height: auto; }
